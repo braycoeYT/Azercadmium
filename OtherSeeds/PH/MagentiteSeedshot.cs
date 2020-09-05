@@ -7,20 +7,16 @@ using static Terraria.ModLoader.ModContent;
 
 namespace Azercadmium.Projectiles.OtherSeeds.PH
 {
-	public class FleshSeedshot : ModProjectile
+	public class MagentiteSeedshot : ModProjectile
 	{
         public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Flesh Seedshot");
+			DisplayName.SetDefault("Magentite Seedshot");
         }
 		public override void SetDefaults()
 		{
 			projectile.CloneDefaults(ProjectileID.Seed);
 			aiType = ProjectileID.Seed;
-		}
-		public override void Kill(int timeLeft)
-		{
-			Projectile.NewProjectile(projectile.Center - projectile.velocity, new Vector2(-projectile.velocity.X, -projectile.velocity.Y), mod.ProjectileType("FleshClump"), projectile.damage, projectile.knockBack, Main.myPlayer);
 		}
 		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
 		{

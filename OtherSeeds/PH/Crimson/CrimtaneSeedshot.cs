@@ -5,13 +5,13 @@ using Terraria.ModLoader;
 using Terraria.ID;
 using static Terraria.ModLoader.ModContent;
 
-namespace Azercadmium.Projectiles.OtherSeeds.PH
+namespace Azercadmium.Projectiles.OtherSeeds.PH.Crimson
 {
-	public class FleshSeedshot : ModProjectile
+	public class CrimtaneSeedshot : ModProjectile
 	{
         public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Flesh Seedshot");
+			DisplayName.SetDefault("Crimtane Seedshot");
         }
 		public override void SetDefaults()
 		{
@@ -20,7 +20,9 @@ namespace Azercadmium.Projectiles.OtherSeeds.PH
 		}
 		public override void Kill(int timeLeft)
 		{
-			Projectile.NewProjectile(projectile.Center - projectile.velocity, new Vector2(-projectile.velocity.X, -projectile.velocity.Y), mod.ProjectileType("FleshClump"), projectile.damage, projectile.knockBack, Main.myPlayer);
+			Dust dust = Dust.NewDustDirect(projectile.position, projectile.width, projectile.height, 90);
+			dust.noGravity = true;
+			dust.scale = 1.6f;
 		}
 		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
 		{

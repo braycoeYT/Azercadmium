@@ -7,20 +7,26 @@ using static Terraria.ModLoader.ModContent;
 
 namespace Azercadmium.Projectiles.OtherSeeds.PH
 {
-	public class FleshSeedshot : ModProjectile
+	public class IcySeedshot : ModProjectile
 	{
         public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Flesh Seedshot");
+			DisplayName.SetDefault("Icy Seedshot");
         }
 		public override void SetDefaults()
 		{
 			projectile.CloneDefaults(ProjectileID.Seed);
 			aiType = ProjectileID.Seed;
 		}
-		public override void Kill(int timeLeft)
+		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
 		{
-			Projectile.NewProjectile(projectile.Center - projectile.velocity, new Vector2(-projectile.velocity.X, -projectile.velocity.Y), mod.ProjectileType("FleshClump"), projectile.damage, projectile.knockBack, Main.myPlayer);
+			if (Main.rand.NextFloat() < .1f)
+		    target.AddBuff(BuffID.Frostburn, 120, false);
+		}
+		public override void OnHitPlayer(Player target, int damage, bool crit)
+		{
+			if (Main.rand.NextFloat() < .1f)
+				target.AddBuff(BuffID.Frostburn, 120, false);
 		}
 		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
 		{

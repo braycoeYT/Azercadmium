@@ -5,22 +5,33 @@ using Terraria.ModLoader;
 using Terraria.ID;
 using static Terraria.ModLoader.ModContent;
 
-namespace Azercadmium.Projectiles.OtherSeeds.PH
+namespace Azercadmium.Projectiles.OtherSeeds.PH.Corruption
 {
-	public class FleshSeedshot : ModProjectile
+	public class CorruptSeedshotGood : ModProjectile
 	{
         public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Flesh Seedshot");
+			DisplayName.SetDefault("Corrupt Seedshot");
         }
 		public override void SetDefaults()
 		{
 			projectile.CloneDefaults(ProjectileID.Seed);
 			aiType = ProjectileID.Seed;
+			projectile.penetrate = 5;
+		}
+		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+		{
+			Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, 0, 0, mod.ProjectileType("CorruptOrb"), projectile.damage, 0, Main.myPlayer);
+		}
+		public override void OnHitPlayer(Player target, int damage, bool crit)
+		{
+			Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, 0, 0, mod.ProjectileType("CorruptOrb"), projectile.damage, 0, Main.myPlayer);
 		}
 		public override void Kill(int timeLeft)
 		{
-			Projectile.NewProjectile(projectile.Center - projectile.velocity, new Vector2(-projectile.velocity.X, -projectile.velocity.Y), mod.ProjectileType("FleshClump"), projectile.damage, projectile.knockBack, Main.myPlayer);
+			Dust dust = Dust.NewDustDirect(projectile.position, projectile.width, projectile.height, 86);
+			dust.noGravity = true;
+			dust.scale = 1.6f;
 		}
 		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
 		{
