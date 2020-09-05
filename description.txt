@@ -3,11 +3,11 @@ Some dire changes are happening soon, including this description. Please leave s
 Discord Server: (homepage link is better) https://discord.gg/qv97wNV
 
 Stats:
-~285 Items
-~90 total NPCs
+~279 Items
+~81 total NPCs
 ~36 total Tiles
-~28 Buffs
-~5 unique, custom AI, Bosses:
+~27 Buffs
+~5 Bosses:
 ^3 Prehardmode Bosses
 ^2 Hardmode Bosses
 ~4 Town NPCs
@@ -31,9 +31,8 @@ Sness (Two sprites)
 
 Multiplayer support is unknown, but most of us play alone anyway.
 
-Update V0.2.2.2: Evolution Update Part 2
-~Code Optimization
-~Internal Sorting
-~Removed all post-Moon Lord content. It is being remade after the Evolution Updates.
-~Slimebender projectiles now ignore invincibility frames.
-~Fixed Sick Debuff
+Update V0.2.2.3: Frantic Fixes
+~Linked Github
+~Readded Soundtrack
+~Added Logo
+~Fixed Homepage

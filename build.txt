@@ -1,7 +1,7 @@
-displayName = [c/0000FF:A][c/0033FF:z][c/0066FF:e][c/00A6FF:r][c/00C6FF:c][c/00E6FF:a][c/00FFFF:d][c/00FFE6:m][c/00FFC6:i][c/00FFC6:u][c/00FFA6:m] Mod
+displayName = [c/0000FF:Azer][c/00C6FF:cad][c/00FFA6:mium] Mod
 author = BraycoeYT
-version = 0.2.2.2
-homepage = https://forums.terraria.org/index.php?threads/zylon-mod-terraria.87521/
+version = 0.2.2.3
+homepage = https://forums.terraria.org/index.php?threads/azercadmium-mod.97680/
 hideCode = true;
 hideResources = true;
 includeSource = false;
