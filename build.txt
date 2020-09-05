@@ -1,0 +1,7 @@
+displayName = [c/0000FF:A][c/0033FF:z][c/0066FF:e][c/00A6FF:r][c/00C6FF:c][c/00E6FF:a][c/00FFFF:d][c/00FFE6:m][c/00FFC6:i][c/00FFC6:u][c/00FFA6:m] Mod
+author = BraycoeYT
+version = 0.2.2.2
+homepage = https://forums.terraria.org/index.php?threads/zylon-mod-terraria.87521/
+hideCode = true;
+hideResources = true;
+includeSource = false;

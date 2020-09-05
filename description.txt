@@ -1,0 +1,39 @@
+Reborn version of the Zylon Mod. Give me a few updates, and this mod will be completely remade from craziness to something actually good.
+Some dire changes are happening soon, including this description. Please leave support/suggestions on the discord server or dm Braycoe#3181.
+Discord Server: (homepage link is better) https://discord.gg/qv97wNV
+
+Stats:
+~285 Items
+~90 total NPCs
+~36 total Tiles
+~28 Buffs
+~5 unique, custom AI, Bosses:
+^3 Prehardmode Bosses
+^2 Hardmode Bosses
+~4 Town NPCs
+~3 Ores
+~1 Biome
+~2 Subclasses
+~5 Custom Songs
+~1 Secret Rarity
+
+Cross-mod Content with Asteri and Havoc Mod.
+
+Spriters/Other Help:
+GOA7 (Spriter/Songwriter)
+Koolaidlemonade (Inactive Spriter)
+HBDeus (Spriter)
+VaultyBoi (Spriter)
+
+Very Minor Help/Quit:
+CrazySapling1 (Quit Spriter)
+Sness (Two sprites)
+
+Multiplayer support is unknown, but most of us play alone anyway.
+
+Update V0.2.2.2: Evolution Update Part 2
+~Code Optimization
+~Internal Sorting
+~Removed all post-Moon Lord content. It is being remade after the Evolution Updates.
+~Slimebender projectiles now ignore invincibility frames.
+~Fixed Sick Debuff
