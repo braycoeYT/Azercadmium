@@ -94,7 +94,6 @@ namespace Azercadmium.NPCs.Bosses
 		int attack = 0;
 		int attackMax = 0;
 		int attackNum = 0;
-		int dirtSpawn = 0;
 		bool attackDone = true;
 		bool chat1 = !AzercadmiumWorld.downedDirtball;
 		bool chat2 = !AzercadmiumWorld.downedDirtball;
@@ -168,7 +167,6 @@ namespace Azercadmium.NPCs.Bosses
 					attackDone = false;
 					attackMax = 3;
 					attackNum = 0;
-					dirtSpawn = Main.rand.Next(1, 3);
 				}
 				
 				if (attack == 1)
@@ -204,7 +202,6 @@ namespace Azercadmium.NPCs.Bosses
 					attackDone = false;
 					attackMax = 3;
 					attackNum = 0;
-					dirtSpawn = Main.rand.Next(1, 3);
 				}
 				
 				if (attack == 1)
