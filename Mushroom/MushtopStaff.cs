@@ -21,8 +21,8 @@ namespace Azercadmium.Items.Mushroom
 			item.damage = 12;
 			item.knockBack = 3f;
 			item.mana = 10;
-			item.width = 38;
-			item.height = 38;
+			item.width = 46;
+			item.height = 46;
 			item.useTime = 36;
 			item.useAnimation = 36;
 			item.useStyle = ItemUseStyleID.SwingThrow;
@@ -40,13 +40,9 @@ namespace Azercadmium.Items.Mushroom
 			position = Main.MouseWorld;
 			return true;
 		}
-		public override void AddRecipes() 
-		{
+		public override void AddRecipes() {
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.Wood, 9);
-			recipe.AddIngredient(ItemID.Gel);
-			recipe.AddIngredient(ItemID.Lens);
-			recipe.AddIngredient(ItemID.Mushroom, 11);
+			recipe.AddIngredient(ItemID.Mushroom, 19);
 			recipe.AddTile(TileID.WorkBenches);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

@@ -30,11 +30,9 @@ namespace Azercadmium.Items.Mushroom
 			item.shoot = mod.ProjectileType("MushroomWave");
 			item.shootSpeed = 20f;
 		}
-		public override void AddRecipes() 
-		{
+		public override void AddRecipes() {
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.WoodenSword);
-			recipe.AddIngredient(ItemID.Mushroom, 14);
+			recipe.AddIngredient(ItemID.Mushroom, 19);
 			recipe.AddTile(TileID.WorkBenches);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

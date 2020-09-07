@@ -15,8 +15,8 @@ namespace Azercadmium.Items.Mushroom
 			item.useAnimation = 24;
 			item.useTime = 24;
 			item.damage = 9;
-			item.width = 12;
-			item.height = 24;
+			item.width = 28;
+			item.height = 60;
 			item.knockBack = 0;
 			item.shoot = ProjectileID.WoodenArrowFriendly;
 			item.shootSpeed = 10f;
@@ -25,11 +25,9 @@ namespace Azercadmium.Items.Mushroom
 			item.useAmmo = AmmoID.Arrow;
 			item.UseSound = SoundID.Item5;
 		}
-		public override void AddRecipes() 
-		{
+		public override void AddRecipes() {
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.WoodenBow);
-			recipe.AddIngredient(ItemID.Mushroom, 14);
+			recipe.AddIngredient(ItemID.Mushroom, 19);
 			recipe.AddTile(TileID.WorkBenches);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

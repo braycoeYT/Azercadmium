@@ -21,8 +21,8 @@ namespace Azercadmium.Items.MushroomGlow
 			item.damage = 14;
 			item.knockBack = 3f;
 			item.mana = 10;
-			item.width = 38;
-			item.height = 38;
+			item.width = 46;
+			item.height = 46;
 			item.useTime = 36;
 			item.useAnimation = 36;
 			item.useStyle = ItemUseStyleID.SwingThrow;
