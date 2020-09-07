@@ -6,13 +6,12 @@ namespace Azercadmium.Projectiles.OtherSeeds.PH.Corruption
 {
 	public class SproutedCorruptDeathweed : ModProjectile
 	{
-        public override void SetStaticDefaults()
-		{
+        public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Sprouted Corrupt Deathweed");
 			Main.projFrames[projectile.type] = 2;
         }
-		public override void SetDefaults()
-		{
+		int frameRand = Main.rand.Next(0, 2);
+		public override void SetDefaults() {
 			aiType = ProjectileID.Bullet;
 			projectile.width = 16;
 			projectile.height = 18;
@@ -23,13 +22,7 @@ namespace Azercadmium.Projectiles.OtherSeeds.PH.Corruption
 			projectile.ignoreWater = true;
 			projectile.tileCollide = false;
 			projectile.penetrate = -1;
-		}
-		int Timer;
-		int frameRand = Main.rand.Next(0, 2);
-		public override void AI()
-		{
 			projectile.rotation = 0;
-			Timer++;
 			projectile.frameCounter = frameRand;
 			projectile.frame = frameRand;
 		}
