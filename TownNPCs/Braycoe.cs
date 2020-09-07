@@ -174,52 +174,11 @@ namespace Azercadmium.NPCs.TownNPCs
 
 		public override void SetupShop(Chest shop, ref int nextSlot)
 		{
-				if (Main.moonPhase > 5)
-				{
-					if (NPC.downedBoss1)
-					{
-						shop.item[nextSlot].SetDefaults(ItemType<Items.Braycoe.StarNova>());
-						nextSlot++;
-					}
-				}
-				
-				else if (Main.moonPhase > 3)
-				{
-					if (NPC.downedBoss1)
-					{
-						shop.item[nextSlot].SetDefaults(ItemType<Items.Braycoe.CheckeredFlag>());
-						shop.item[nextSlot].shopCustomPrice = 100000;
-						nextSlot++;
-					}
-				}
-				
-				else if (Main.moonPhase > 1)
-				{
-					if (NPC.downedBoss1)
-					{
-						shop.item[nextSlot].SetDefaults(ItemType<Items.Braycoe.OddFungus>());
-						shop.item[nextSlot].shopCustomPrice = 100000;
-						nextSlot++;
-					}
-				}
-				
-				else
-				{
-					if (NPC.downedBoss1)
-					{
-						shop.item[nextSlot].SetDefaults(ItemType<Items.Braycoe.DreamyRod>());
-						nextSlot++;
-					}
-				}
 			shop.item[nextSlot].SetDefaults(ItemID.Gel);
 			if (Main.raining)
-			{
 				shop.item[nextSlot].shopCustomPrice = 1;
-			}
 			else
-			{
 				shop.item[nextSlot].shopCustomPrice = 3;
-			}
 			nextSlot++;
 			shop.item[nextSlot].SetDefaults(mod.ItemType("SlimySeedshot"));
 			shop.item[nextSlot].shopCustomPrice = 5;
