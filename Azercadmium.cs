@@ -49,7 +49,7 @@ namespace Azercadmium
 					new List<int> { ModContent.ItemType<Items.Discus.DriedEssence>() }, //other
 					$"Use a [i:{ModContent.ItemType<Items.Discus.SuspiciousLookingDisc>()}]  to summon the discus leader in the desert night."
 				);
-				bossChecklist.Call(
+				/*bossChecklist.Call(
 					"AddBoss",
 					3.05f,
 					new List<int> { ModContent.NPCType<NPCs.Bosses.ColossalCell>() },
@@ -60,7 +60,7 @@ namespace Azercadmium
 					new List<int> { ModContent.ItemType<Items.Microbiome.Cytoplasm>() }, //collectables
 					new List<int> { ModContent.ItemType<Items.Microbiome.Cytoplasm>() }, //other
 					$"Use a [i:{ModContent.ItemType<Items.Microbiome.CellularSnack>()}] in the microbiome."
-				);
+				);*/
 				bossChecklist.Call(
 					"AddBoss",
 					8.75f,
@@ -373,15 +373,6 @@ namespace Azercadmium
 			recipe.AddRecipe();
 
 			recipe = new ModRecipe(this);
-			recipe.AddIngredient(null, "EyeOpener");
-			recipe.AddIngredient(ItemID.Muramasa);
-			recipe.AddIngredient(ItemID.BladeofGrass);
-			recipe.AddIngredient(ItemID.FieryGreatsword);
-			recipe.AddTile(TileID.DemonAltar);
-			recipe.SetResult(ItemID.NightsEdge);
-			recipe.AddRecipe();
-
-			recipe = new ModRecipe(this);
 			recipe.AddIngredient(null, "SlimyCore", 4);
 			recipe.AddIngredient(ItemID.Hook);
 			recipe.AddTile(TileID.Solidifier);
@@ -417,20 +408,6 @@ namespace Azercadmium
 			recipe.AddIngredient(ItemID.Stinger);
 			recipe.AddTile(TileID.Bottles);
 			recipe.SetResult(ItemID.ThornsPotion);
-			recipe.AddRecipe();
-
-			recipe = new ModRecipe(this);
-			recipe.AddIngredient(null, "NucleusShard", 5);
-			recipe.AddTile(TileID.WorkBenches);
-			recipe.SetResult(ItemID.Leather);
-			recipe.AddRecipe();
-
-			recipe = new ModRecipe(this);
-			recipe.AddIngredient(ItemID.BottledWater);
-			recipe.AddIngredient(ItemID.Deathweed);
-			recipe.AddIngredient(null, "NucleusShard");
-			recipe.AddTile(TileID.Bottles);
-			recipe.SetResult(ItemID.BattlePotion);
 			recipe.AddRecipe();
 
 			recipe = new ModRecipe(this);
@@ -491,20 +468,6 @@ namespace Azercadmium
 			recipe.AddTile(TileID.CrystalBall);
 			recipe.SetResult(ItemID.GoldenShower);
 			recipe.AddRecipe();
-			//conversion
-			recipe = new ModRecipe(this);
-			recipe.AddIngredient(ItemID.RottenChunk);
-			recipe.AddIngredient(null, "NucleusShard");
-			recipe.AddTile(TileID.DemonAltar);
-			recipe.SetResult(ItemID.Vertebrae);
-			recipe.AddRecipe();
-
-			recipe = new ModRecipe(this);
-			recipe.AddIngredient(ItemID.Vertebrae);
-			recipe.AddIngredient(null, "NucleusShard");
-			recipe.AddTile(TileID.DemonAltar);
-			recipe.SetResult(ItemID.RottenChunk);
-			recipe.AddRecipe();
 
 			recipe = new ModRecipe(this);
 			recipe.AddIngredient(ItemID.Silk, 20);
@@ -514,7 +477,7 @@ namespace Azercadmium
 			recipe.SetResult(ItemID.HandWarmer);
 			recipe.AddRecipe();
 		}
-		public override void UpdateMusic(ref int music, ref MusicPriority priority)
+		/*public override void UpdateMusic(ref int music, ref MusicPriority priority)
 		{
 			if (Main.myPlayer == -1 || Main.gameMenu || !Main.LocalPlayer.active)
 			{
@@ -530,6 +493,6 @@ namespace Azercadmium
 				music = GetSoundSlot(SoundType.Music, "Sounds/Music/Micro");
 				priority = MusicPriority.BiomeHigh;
 			}
-		}
+		}*/
 	}
 }

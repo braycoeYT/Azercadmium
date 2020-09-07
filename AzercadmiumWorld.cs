@@ -137,13 +137,13 @@ namespace Azercadmium
 			if (ShiniesIndex != -1)
 			{
 		    tasks.Insert(ShiniesIndex + 1, new PassLegacy("Azercadmiumian Ores", AzercadmiumOres));
-			}*/
+			}
 
 			int Underworld = tasks.FindIndex(genpass => genpass.Name.Equals("Underworld"));
 			if (Underworld != -1)
 			{
 				tasks.Insert(Underworld + 1, new PassLegacy("Microbiome", Microbiome));
-			}
+			}*/
 		}
 		
 		public override void PreUpdate()
@@ -241,7 +241,7 @@ namespace Azercadmium
 				int y = WorldGen.genRand.Next((int)WorldGen.worldSurfaceLow, Main.maxTilesY / 2);
 				WorldGen.TileRunner(x, y, (double)WorldGen.genRand.Next(4, 12), WorldGen.genRand.Next(6, 17), TileType<CyanixOre>(), false, 0f, 0f, false, true);
 			}
-		}*/
+		}
 		int sizeBonus;
 		int sizeBonus2;
 		private void Microbiome(GenerationProgress progress)
@@ -252,7 +252,7 @@ namespace Azercadmium
 			sizeBonus = 150;
 			if (Main.maxTilesX > 6201)
 			sizeBonus = 300;
-			int size = 230 + sizeBonus;
+			int size = 170 + sizeBonus;
 			if (Main.maxTilesX > 4201)
 			sizeBonus2 = 11;
 			if (Main.maxTilesX > 6201)
@@ -307,7 +307,7 @@ namespace Azercadmium
 			WorldGen.TileRunner(microSpawnX, (int)Main.worldSurface - 150, 60, 60, TileType<Tiles.Microbiome.CellMembrane>(), true, 0f, 0f, true, true);
 			WorldGen.TileRunner(microSpawnX, (int)Main.worldSurface - 150, 30, 30, TileType<Tiles.Microbiome.DiseasedStone>(), true, 0f, 0f, true, true);
 			WorldGen.TileRunner(microSpawnX, (int)Main.worldSurface - 150, 15, 15, TileType<Tiles.Microbiome.TwistedMembraneOre>(), true, 0f, 0f, true, true);
-			for (int i = 0; i < WorldGen.genRand.Next(20, 41) + sizeBonus2; i++)
+			for (int i = 0; i < WorldGen.genRand.Next(15, 36) + sizeBonus2; i++)
 			{
 				int cellX;
 				if (WorldGen.genRand.Next(0, 2) == 0)
@@ -318,7 +318,7 @@ namespace Azercadmium
 				WorldGen.TileRunner(cellX, cellY, WorldGen.genRand.Next(12, 27), WorldGen.genRand.Next(12, 27), TileType<Tiles.Microbiome.CellMembrane>(), true, 0f, 0.4f, true, true);
 				WorldGen.TileRunner(cellX, cellY, WorldGen.genRand.Next(4, 9), WorldGen.genRand.Next(4, 9), TileType<Tiles.Microbiome.TwistedMembraneOre>(), true, 0f, 0.4f, true, true);
 			}
-		}
+		}*/
 		public override void PostWorldGen() {
 			int[] itemsToPlaceInSkywareChests = { ItemType<Items.OtherSwords.Starfrenzy>() };
 			int itemsToPlaceInSkywareChestsChoice = 0;
@@ -337,12 +337,12 @@ namespace Azercadmium
 		}
 		public override void ResetNearbyTileEffects()
 		{
-			microbiomeTiles = 0;
+			//microbiomeTiles = 0;
 		}
 
 		public override void TileCountsAvailable(int[] tileCounts)
 		{
-			microbiomeTiles = tileCounts[TileType<Tiles.Microbiome.CellMembrane>()] + tileCounts[TileType<Tiles.Microbiome.DiseasedStone>()];
+			//microbiomeTiles = tileCounts[TileType<Tiles.Microbiome.CellMembrane>()] + tileCounts[TileType<Tiles.Microbiome.DiseasedStone>()];
 		}
 	}
 }
