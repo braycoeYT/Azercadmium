@@ -1,4 +1,3 @@
-using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -12,13 +11,12 @@ namespace Azercadmium.Items.Discus
 			DisplayName.SetDefault("Lightningbringer");
 			Tooltip.SetDefault("It was struck seven times by Radias\nFrostburns enemies on critical strikes");
 		}
-
 		public override void SetDefaults()
 		{
 			item.damage = 18;
 			item.melee = true;
-			item.width = 55;
-			item.height = 55;
+			item.width = 54;
+			item.height = 62;
 			item.useTime = 21;
 			item.useAnimation = 21;
 			item.useStyle = ItemUseStyleID.SwingThrow;
@@ -29,7 +27,6 @@ namespace Azercadmium.Items.Discus
 			item.autoReuse = false;
 			item.useTurn = true;
 		}
-
 		public override void OnHitNPC(Player player, NPC target, int damage, float knockBack, bool crit)
 		{
 			if (crit)

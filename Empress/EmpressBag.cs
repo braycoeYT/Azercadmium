@@ -48,7 +48,7 @@ namespace Azercadmium.Items.Empress
 			if (ran == 6) player.QuickSpawnItem(mod.ItemType("EmpressTears"));
 			player.QuickSpawnItem(mod.ItemType("SpikySac"));
 			player.QuickSpawnItem(mod.ItemType("EmpressShard"), Main.rand.Next(11, 19));
-			player.QuickSpawnItem(mod.ItemType("ElementamaxSludge"), Main.rand.Next(8, 13));
+			player.QuickSpawnItem(mod.ItemType("ElementalGel"), Main.rand.Next(30, 71));
 		}
 		public override int BossBagNPC => NPCType<NPCs.Bosses.EmpressSlime>();
 	}

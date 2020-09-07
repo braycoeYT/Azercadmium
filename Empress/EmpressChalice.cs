@@ -45,7 +45,7 @@ namespace Azercadmium.Items.Empress
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddRecipeGroup("Azercadmium:AnyPHBar", 5);
-			recipe.AddIngredient(mod.ItemType("ElementamaxSludge"), 6);
+			recipe.AddIngredient(mod.ItemType("ElementalGel"), 20);
 			recipe.AddIngredient(ItemID.Gel, 30);
 			recipe.AddTile(TileID.MythrilAnvil);
 			recipe.SetResult(this);

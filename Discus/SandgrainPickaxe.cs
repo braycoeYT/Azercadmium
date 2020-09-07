@@ -5,18 +5,15 @@ namespace Azercadmium.Items.Discus
 {
 	public class SandgrainPickaxe : ModItem
 	{
-		public override void SetStaticDefaults() 
-		{
+		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Sandgrain Pickaxe");
 			Tooltip.SetDefault("Can mine meteorite");
 		}
-
-		public override void SetDefaults() 
-		{
+		public override void SetDefaults() {
 			item.damage = 7;
 			item.melee = true;
-			item.width = 28;
-			item.height = 28;
+			item.width = 54;
+			item.height = 54;
 			item.useTime = 24;
 			item.useAnimation = 24;
 			item.useStyle = ItemUseStyleID.SwingThrow;
@@ -28,9 +25,7 @@ namespace Azercadmium.Items.Discus
 			item.useTurn = true;
 			item.pick = 54;
 		}
-
-		public override void AddRecipes()
-		{
+		public override void AddRecipes() {
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(mod.ItemType("DriedEssence"), 4);
 			recipe.AddIngredient(mod.ItemType("BrokenDiscus"), 3);

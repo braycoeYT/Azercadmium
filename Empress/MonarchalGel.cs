@@ -58,7 +58,7 @@ namespace Azercadmium.Items.Empress
 			recipe.AddIngredient(ItemID.RoyalGel);
 			recipe.AddIngredient(mod.ItemType("SpikySac"));
 			recipe.AddIngredient(mod.ItemType("EmpressShard"), 3);
-			recipe.AddIngredient(mod.ItemType("ElementamaxSludge"), 5);
+			recipe.AddIngredient(mod.ItemType("ElementalGel"), 25);
 			recipe.AddTile(TileID.MythrilAnvil);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
