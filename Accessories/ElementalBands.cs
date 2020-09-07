@@ -36,7 +36,7 @@ namespace Azercadmium.Items.Accessories
 			recipe.AddIngredient(ItemID.SharkToothNecklace);
 			recipe.AddIngredient(ItemID.CrossNecklace);
 			recipe.AddIngredient(mod.ItemType("DealersStone"));
-			recipe.AddIngredient(mod.ItemType("ElementamaxSludge"), 15);
+			recipe.AddIngredient(mod.ItemType("ElementalGel"), 250);
 			recipe.AddIngredient(ItemID.LunarBar, 10);
 			recipe.AddTile(TileID.LunarCraftingStation);
 			recipe.SetResult(this);

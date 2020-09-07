@@ -36,7 +36,7 @@ namespace Azercadmium.Items.Accessories
 			recipe.AddIngredient(ItemID.LifeCrystal);
 			recipe.AddIngredient(ItemID.LifeFruit);
 			recipe.AddIngredient(mod.ItemType("PlainNoodle"));
-			recipe.AddIngredient(mod.ItemType("ElementamaxSludge"), 10);
+			recipe.AddIngredient(mod.ItemType("ElementalGel"), 40);
 			recipe.AddIngredient(mod.ItemType("InfectedOnyx"));
 			recipe.AddTile(TileID.LunarCraftingStation);
 			recipe.SetResult(this);
