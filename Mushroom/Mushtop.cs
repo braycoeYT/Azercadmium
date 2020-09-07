@@ -166,7 +166,7 @@ namespace Azercadmium.Projectiles.Mushroom
             #region Animation and visuals
             projectile.rotation = projectile.velocity.X * 0.05f;
 
-			int frameSpeed = 32;
+			int frameSpeed = 8;
 			projectile.frameCounter++;
 			if (projectile.frameCounter >= frameSpeed) {
 				projectile.frameCounter = 0;

@@ -18,7 +18,7 @@ namespace Azercadmium.Projectiles.Minions.Ores
 			projectile.aiStyle = 1;
 			projectile.hostile = false;
 			projectile.friendly = true;
-			projectile.timeLeft = 600;
+			projectile.timeLeft = 300;
 			projectile.ignoreWater = true;
 			projectile.tileCollide = false;
 			projectile.penetrate = -1;

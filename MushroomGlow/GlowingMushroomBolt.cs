@@ -18,7 +18,7 @@ namespace Azercadmium.Projectiles.MushroomGlow
 			projectile.aiStyle = 1;
 			projectile.hostile = false;
 			projectile.friendly = true;
-			projectile.timeLeft = 600;
+			projectile.timeLeft = 240;
 			projectile.ignoreWater = true;
 			projectile.tileCollide = true;
 		}

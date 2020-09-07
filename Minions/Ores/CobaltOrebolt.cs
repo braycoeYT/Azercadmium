@@ -18,9 +18,8 @@ namespace Azercadmium.Projectiles.Minions.Ores
 			projectile.aiStyle = 1;
 			projectile.hostile = false;
 			projectile.friendly = true;
-			projectile.timeLeft = 600;
+			projectile.timeLeft = 300;
 			projectile.ignoreWater = true;
-			projectile.tileCollide = true;
 			projectile.penetrate = 1;
 		}
 		public override void AI()

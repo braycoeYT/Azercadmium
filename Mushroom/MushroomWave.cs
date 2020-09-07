@@ -18,7 +18,7 @@ namespace Azercadmium.Projectiles.Mushroom
 			projectile.aiStyle = 1;
 			projectile.hostile = false;
 			projectile.friendly = true;
-			projectile.timeLeft = 600;
+			projectile.timeLeft = 180;
 			projectile.ignoreWater = true;
 			projectile.tileCollide = false;
 			projectile.penetrate = -1;
