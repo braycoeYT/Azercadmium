@@ -6,25 +6,22 @@ namespace Azercadmium.Projectiles.Mushroom
 {
 	public class MushroomWave : ModProjectile
 	{
-        public override void SetStaticDefaults()
-		{
+        public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Mushroom Wave");
         }
-		public override void SetDefaults()
-		{
+		public override void SetDefaults() {
 			aiType = ProjectileID.Bullet;
 			projectile.width = 64;
 			projectile.height = 64;
 			projectile.aiStyle = 1;
 			projectile.hostile = false;
 			projectile.friendly = true;
-			projectile.timeLeft = 180;
+			projectile.timeLeft = 60;
 			projectile.ignoreWater = true;
 			projectile.tileCollide = false;
 			projectile.penetrate = -1;
 		}
-		public override void AI()
-		{
+		public override void AI() {
 			/*for (int i = 0; i < 10; i++)
 			{
 				int dustType = 90;
