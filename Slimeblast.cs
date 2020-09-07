@@ -17,7 +17,7 @@ namespace Azercadmium.Projectiles
 			projectile.aiStyle = 1;
 			projectile.friendly = true;
 			projectile.penetrate = -1;
-			projectile.timeLeft = 300;
+			projectile.timeLeft = 60;
 			projectile.ignoreWater = true;
 			projectile.tileCollide = false;
 			projectile.light = 0.5f;

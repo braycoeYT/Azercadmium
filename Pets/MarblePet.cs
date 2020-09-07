@@ -21,7 +21,6 @@ namespace Azercadmium.Projectiles.Pets
 
 		public override bool PreAI()
 		{
-			Player player = Main.player[projectile.owner];
 			return true;
 		}
 

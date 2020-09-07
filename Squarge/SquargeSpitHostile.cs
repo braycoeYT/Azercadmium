@@ -20,7 +20,6 @@ namespace Azercadmium.Projectiles.Squarge
 			projectile.friendly = false;
 			projectile.timeLeft = 9999;
 			projectile.ignoreWater = false;
-			projectile.tileCollide = true;
 		}
 		public override void OnHitPlayer(Player target, int damage, bool crit)
 		{
