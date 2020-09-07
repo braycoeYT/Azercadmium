@@ -1,5 +1,3 @@
-using Microsoft.Xna.Framework;
-using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
@@ -8,13 +6,11 @@ namespace Azercadmium.Items.OtherSeeds.PH
 {
 	public class PinkySeedshot : ModItem
 	{
-		public override void SetStaticDefaults()
-		{
+		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Pinky's Seedshot");
 			Tooltip.SetDefault("For use with blowpipes\nEach seedshot is slightly larger than normal\nEach seedshot has a very high chance of sliming enemies");
         }
-		public override void SetDefaults()
-		{
+		public override void SetDefaults() {
 			item.damage = 5; //3
 			item.ranged = true;
 			item.width = 12;
@@ -30,14 +26,12 @@ namespace Azercadmium.Items.OtherSeeds.PH
 			item.width = 16;
 			item.height = 14;
 		}
-		
-		public override void AddRecipes()
-		{
+		public override void AddRecipes() {
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(mod.ItemType("SlimySeedshot"), 80);
+			recipe.AddIngredient(mod.ItemType("SlimySeedshot"), 100);
 			recipe.AddIngredient(ItemID.PinkGel);
 			recipe.AddTile(TileID.Solidifier);
-			recipe.SetResult(this, 80);
+			recipe.SetResult(this, 100);
 			recipe.AddRecipe();
 		}
 	}

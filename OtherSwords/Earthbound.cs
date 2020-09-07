@@ -36,7 +36,7 @@ namespace Azercadmium.Items.OtherSwords
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(mod.ItemType("BrokenDirtballCopperShortsword"));
 			recipe.AddIngredient(ItemID.DirtBlock, 150);
-			recipe.AddIngredient(mod.ItemType("ElementamaxSludge"), 7);
+			recipe.AddIngredient(mod.ItemType("ElementalGel"), 50);
 			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

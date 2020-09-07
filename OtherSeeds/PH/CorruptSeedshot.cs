@@ -38,7 +38,6 @@ namespace Azercadmium.Items.OtherSeeds.PH
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.Seed, 200);
 			recipe.AddIngredient(ItemID.DemoniteBar);
 			recipe.AddIngredient(ItemID.RottenChunk);
 			recipe.AddIngredient(ItemID.VilePowder);
