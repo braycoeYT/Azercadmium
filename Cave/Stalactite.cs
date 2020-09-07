@@ -9,8 +9,8 @@ namespace Azercadmium.Items.Cave
 		{
 			item.damage = 14;
 			item.melee = true;
-			item.width = 33;
-			item.height = 33;
+			item.width = 38;
+			item.height = 38;
 			item.useTime = 26;
 			item.useAnimation = 26;
 			item.useStyle = ItemUseStyleID.SwingThrow;
