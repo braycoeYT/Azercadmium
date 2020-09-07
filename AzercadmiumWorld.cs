@@ -181,7 +181,7 @@ namespace Azercadmium
 			if (!hasAlertSlime && NPC.downedPlantBoss)
 			{
 				Color messageColor = Color.Green;
-				string chat = "Slimes have begun oozing a shiny green substance...";
+				string chat = "Elemental Slimes have begun oozing a shiny green substance...";
 				if (Main.netMode == NetmodeID.Server)
 				{
 					NetMessage.BroadcastChatMessage(NetworkText.FromKey(chat), messageColor);

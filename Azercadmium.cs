@@ -139,11 +139,10 @@ namespace Azercadmium
 			});
 			RecipeGroup.RegisterGroup("Azercadmium:AnyGem", group);
 
-			group = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " Shadow Scale, Tissue Sample, or Cytoplasm", new int[]
+			group = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " Shadow Scale", new int[]
 			{
 			ItemID.ShadowScale,
 			ItemID.TissueSample,
-			ItemType("Cytoplasm")
 			});
 			RecipeGroup.RegisterGroup("Azercadmium:AnyShadowScale", group);
 		}
