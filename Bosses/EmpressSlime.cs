@@ -1,4 +1,5 @@
 using Microsoft.Xna.Framework;
+using System;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -88,7 +89,7 @@ namespace Azercadmium.NPCs.Bosses
 		int jumpMode = 0;
 		int jumpTimer = 0;
 		int jumpTimer2 = 0;
-		int jumpTimer3 = 0;
+		//int jumpTimer3 = 0;
 		int jumpDir;
 		bool attackDone = true;
 		Vector2 targetPos;
@@ -105,15 +106,15 @@ namespace Azercadmium.NPCs.Bosses
 				npc.noGravity = false;
 				npc.noTileCollide = false;
 				if (npc.lifeMax / 2 > npc.life)
-				jumpTimer2 = 11;
+				jumpTimer2 = 7;
 				else
-				jumpTimer2 = 9;
+				jumpTimer2 = 6;
 				if (Main.expertMode)
 				jumpTimer2 += 2;
 				jumpTimer++;
-				if (jumpTimer > 120)
+				if (jumpTimer > 240)
 					jumpMode = 1;
-				jumpTimer3 = 0;
+				//jumpTimer3 = 0;
 			}
 			if (jumpMode == 1)
 			{
@@ -128,11 +129,21 @@ namespace Azercadmium.NPCs.Bosses
 			if (jumpMode == 2)
 			{
 				jumpTimer++;
-				if (jumpTimer % 60 == 0)
+				if (jumpTimer % 30 == 0)
 				jumpTimer2 += 1;
 				npc.noGravity = true;
 				npc.noTileCollide = true;
 				if (jumpDir == 0)
+					npc.velocity.X = jumpTimer2;
+				else
+					npc.velocity.X = jumpTimer2 * -1;
+				if (npc.position.Y < target.position.Y - 150 && Math.Abs(npc.position.X - target.position.X) < 10)
+				jumpMode = 3;
+				if (npc.position.X > target.position.X)
+					jumpDir = 1;
+				else
+					jumpDir = 0;
+				/*if (jumpDir == 0)
 				{
 					npc.velocity.X = jumpTimer2;
 					if (npc.position.X > target.position.X - 5 && npc.position.Y < target.position.Y)
@@ -143,7 +154,7 @@ namespace Azercadmium.NPCs.Bosses
 					npc.velocity.X = jumpTimer2 * -1;
 					if (npc.position.X < target.position.X + 5 && npc.position.Y < target.position.Y)
 					jumpMode = 3;
-				}
+				}*/
 				if (npc.position.Y < target.position.Y - 400)
 					npc.position.Y = target.position.Y - 400;
 				if (npc.lifeMax / 2 > npc.life && Main.expertMode)
@@ -156,11 +167,14 @@ namespace Azercadmium.NPCs.Bosses
 			if (jumpMode == 3)
 			{
 				npc.noGravity = false;
-				npc.noTileCollide = false;
+				if (npc.position.Y < target.position.Y)
+					npc.noTileCollide = true;
+				else
+					npc.noTileCollide = false;
 				npc.velocity.X = 0;
 				npc.velocity.Y = 8;
-				jumpTimer3++;
-				if (jumpTimer3 % 61 == 60)
+				//jumpTimer3++;
+				if (npc.collideY || npc.position.Y > target.position.Y + 600)
 				jumpMode = 4;
 			}
 			if (jumpMode == 4)
@@ -168,31 +182,15 @@ namespace Azercadmium.NPCs.Bosses
 				jumpDir = 0;
 				jumpTimer = 0;
 				jumpTimer2 = 0;
-				jumpTimer3 = 0;
+				//jumpTimer3 = 0;
 				jumpMode = 0;
 				Main.PlaySound(SoundID.Item62);
-				if (Main.expertMode && npc.lifeMax / 2.5 > npc.life)
+				if (Main.expertMode)
 				{
-					float numberProjectiles = Main.rand.Next(32, 49);
-					for (int i = 0; i < numberProjectiles; i++)
+					for (float rotation = 0; rotation < 360;)
 					{
-						Projectile.NewProjectile(npc.Center, new Vector2(1, 4).RotatedByRandom(MathHelper.TwoPi), mod.ProjectileType("EmpressSpike"), 29, 2, Main.myPlayer);
-					}
-				}
-				else if (Main.expertMode && npc.lifeMax / 1.5 > npc.life)
-				{
-					float numberProjectiles = Main.rand.Next(25, 36);
-					for (int i = 0; i < numberProjectiles; i++)
-					{
-						Projectile.NewProjectile(npc.Center, new Vector2(1, 4).RotatedByRandom(MathHelper.TwoPi), mod.ProjectileType("EmpressSpike"), 29, 2, Main.myPlayer);
-					}
-				}
-				else if (Main.expertMode)
-				{
-					float numberProjectiles = Main.rand.Next(20, 31);
-					for (int i = 0; i < numberProjectiles; i++)
-					{
-						Projectile.NewProjectile(npc.Center, new Vector2(1, 4).RotatedByRandom(MathHelper.TwoPi), mod.ProjectileType("EmpressSpike"), 29, 2, Main.myPlayer);
+						rotation += 30;
+						Projectile.NewProjectile(npc.Center, new Vector2(0, 5).RotatedBy((Math.PI / 180) * rotation, default), mod.ProjectileType("EmpressSpike"), 35, 1f, Main.myPlayer);
 					}
 				}
 			}
@@ -382,14 +380,10 @@ namespace Azercadmium.NPCs.Bosses
 				}
 			}
 		}
-		public override void NPCLoot()
-		{
+		public override void NPCLoot() {
 			if (Main.expertMode)
-			{
 				Item.NewItem(npc.getRect(), mod.ItemType("EmpressBag"));
-			}
-			else
-			{
+			else {
 				int ran = Main.rand.Next(1, 7);
 				if (ran == 1) Item.NewItem(npc.getRect(), mod.ItemType("EmpressYolk"));
 				if (ran == 2) Item.NewItem(npc.getRect(), mod.ItemType("EmpressBleeders"));
@@ -397,14 +391,12 @@ namespace Azercadmium.NPCs.Bosses
 				if (ran == 4) Item.NewItem(npc.getRect(), mod.ItemType("EmpressShuriken"));
 				if (ran == 5) Item.NewItem(npc.getRect(), mod.ItemType("Eggspray"));
 				if (ran == 6) Item.NewItem(npc.getRect(), mod.ItemType("EmpressTears"));
-
 				Item.NewItem(npc.getRect(), mod.ItemType("EmpressShard"), Main.rand.Next(9, 15));
-				Item.NewItem(npc.getRect(), mod.ItemType("ElementamaxSludge"), Main.rand.Next(6, 11));
+				Item.NewItem(npc.getRect(), mod.ItemType("ElementalGel"), Main.rand.Next(30, 61));
 			}
 			AzercadmiumWorld.downedEmpress = true;
 		}
-		public override void BossLoot(ref string name, ref int potionType)
-		{
+		public override void BossLoot(ref string name, ref int potionType) {
 			potionType = ItemID.GreaterHealingPotion;
 		}
 	}

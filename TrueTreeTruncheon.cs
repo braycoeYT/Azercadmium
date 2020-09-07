@@ -53,7 +53,7 @@ namespace Azercadmium.Items
 			recipe.AddIngredient(ItemID.Pearlwood);
 			recipe.AddIngredient(ItemID.RichMahogany);
 			recipe.AddIngredient(ItemID.Wood);
-			recipe.AddIngredient(mod.ItemType("ElementamaxSludge"), 12);
+			recipe.AddIngredient(mod.ItemType("ElementalGel"), 40);
 			recipe.AddTile(TileID.MythrilAnvil);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
@@ -66,7 +66,7 @@ namespace Azercadmium.Items
 			recipe.AddIngredient(ItemID.RichMahogany);
 			recipe.AddIngredient(ItemID.Shadewood);
 			recipe.AddIngredient(ItemID.Wood);
-			recipe.AddIngredient(mod.ItemType("ElementamaxSludge"), 12);
+			recipe.AddIngredient(mod.ItemType("ElementalGel"), 40);
 			recipe.AddTile(TileID.MythrilAnvil);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
