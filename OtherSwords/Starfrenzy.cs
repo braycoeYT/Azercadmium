@@ -23,10 +23,12 @@ namespace Azercadmium.Items.OtherSwords
 			item.value = 50000;
 			item.rare = ItemRarityID.Green;
 			item.UseSound = SoundID.Item1;
-			item.autoReuse = true;
+			item.autoReuse = false;
 			item.useTurn = true;
 			item.shoot = ProjectileID.Starfury;
 			item.shootSpeed = 20f;
+			item.alpha = 100;
+			item.color = new Color(150, 150, 150, 0);
 		}
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack) {
 			position.X = Main.MouseWorld.X;
