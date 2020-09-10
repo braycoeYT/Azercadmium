@@ -10,8 +10,8 @@ namespace Azercadmium.Items.Accessories.EyeThemed
 			Tooltip.SetDefault("Increases max number of minions");
 		}
 		public override void SetDefaults() {
-			item.width = 40;
-			item.height = 40;
+			item.width = 76;
+			item.height = 66;
 			item.accessory = true;
 			item.value = 150000;
 			item.rare = ItemRarityID.LightRed;
