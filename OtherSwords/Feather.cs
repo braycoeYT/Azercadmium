@@ -25,5 +25,8 @@ namespace Azercadmium.Projectiles.OtherSwords
 			projectile.ignoreWater = true;
 			aiType = 1;
 		}
+		public override void Kill(int timeLeft) {
+			Collision.HitTiles(projectile.position + projectile.velocity, projectile.velocity, projectile.width, projectile.height);
+		}
 	}   
 }
