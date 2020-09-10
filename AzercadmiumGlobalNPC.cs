@@ -121,10 +121,6 @@ namespace Azercadmium.NPCs
 				if (Main.rand.Next(100) == 1)
 				Item.NewItem(npc.getRect(), ItemType<Items.Dirtball.CreepyMud>());
 			}
-			if (npc.type == NPCID.IceSlime || npc.type == NPCID.SpikedIceSlime || npc.type == NPCID.SnowFlinx || npc.type == NPCID.IceBat) {
-				if (Main.rand.Next(3) == 0)
-				Item.NewItem(npc.getRect(), ItemType<Items.Snow.CryoCrystal>());
-			}
 			if (npc.type == NPCID.JungleBat || npc.type == NPCID.CaveBat || npc.type == NPCID.IceBat || npc.type == NPCID.CaveBat) {
 			    if (Main.rand.Next(50) == 0)
 				Item.NewItem(npc.getRect(), ItemType<Items.Accessories.MagicalVaccine>());
