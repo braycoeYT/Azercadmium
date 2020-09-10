@@ -40,7 +40,7 @@ namespace Azercadmium.Items
 		{
 			position.X = Main.MouseWorld.X;
 			position.Y = player.position.Y - 600;
-			speedX = Main.rand.Next(-2, 2);
+			speedX = Main.rand.NextFloat(-2, 3);
 			speedY = 27;
 			return true;
 		}

@@ -13,8 +13,8 @@ namespace Azercadmium.NPCs.Discus
 
         public override void SetDefaults()
 		{
-			npc.width = 53;
-			npc.height = 53;
+			npc.width = 62;
+			npc.height = 70;
 			npc.damage = 39;
 			npc.defense = 10;
 			npc.lifeMax = 150;

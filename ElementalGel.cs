@@ -1,5 +1,6 @@
 using Terraria.ModLoader;
 using Terraria.ID;
+using Terraria;
 
 namespace Azercadmium.Items
 {
@@ -12,7 +13,7 @@ namespace Azercadmium.Items
 			item.width = 40;
 			item.height = 30;
 			item.maxStack = 999;
-			item.value = 10000;
+			item.value = Item.sellPrice(0, 0, 0, 50);
 			item.rare = ItemRarityID.Lime;
 		}
 	}
