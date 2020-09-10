@@ -1,9 +1,10 @@
 Reborn version of the Zylon Mod. Give me a few updates, and this mod will be completely remade from craziness to something actually good.
 If you are worried about a custom biome ruining your world, don't worry, it has been removed.
+Note to players: School has started for me and I can't work on the mod all day anymore, sorry.
 Discord Server: (homepage link is better) https://discord.gg/qv97wNV
 
 Stats:
-~248 Items
+~240 Items
 ~53 total NPCs
 ~4 Bosses:
 ^2 Prehardmode Bosses
@@ -30,19 +31,13 @@ Sness (Two sprites)
 
 Multiplayer support is unknown, but most of us play alone anyway.
 
-Update V0.2.2.5: Evolution Update pt. 4
-~Updated Discus, Mushroom, Glowing Mushroom, and Cave item sprites
-~Minor Dirtball sprite fixes
-~Fixed Empress Slime AI and synced expert mode spikes
-~Made Empress Slime use smash attack less often
-~Changed Book of Shrooms and Book of Glowing Shrooms names to Shroom Tome and Glowing Shroom Tome
-~Added Wearable Adamantite Bar
-~Changed Red Rose colors
-~Fixed projectiles
-~Fixed Global NPC file
-~Removed more bad/unused content
-~Changed many Seedshot recipes to be easier to obtain
-~Code rewrites and fixes
-~Changed Elementamax Sludge to Elemental Gel
-~Added Elemental Gel tooltip
-~Made Elemental Gel drop as common as regular gel and changed recipes accordingly
+Update V0.2.2.6: Evolution Update pt. 5
+~Changed Empress Slime Expert drop
+~Removed Snow items
+~Changed Meteor Suit and Leggings
+~Added Melee and Ranged options to Meteor armor
+~Starfrenzy is no longer has autoswing
+~Fixed Dirty Discus (item)
+~Lowered Elemental Gel price
+~Made Starfrenzy look more like its vanilla brother
+~Resprited icy discus

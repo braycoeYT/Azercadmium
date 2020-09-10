@@ -42,7 +42,8 @@ namespace Azercadmium
 		public bool gemstoneMagic;
 		public bool gemstoneSummon;
 		public bool trueMelee35;
-		public bool microDelusion;
+		public bool empressExpert;
+		public bool meteorMelee;
 		int numberShot = 0;
 		public int upgradeHearts;
 		public int upgradeStars;
@@ -76,7 +77,8 @@ namespace Azercadmium
 			gemstoneMagic = false;
 			gemstoneSummon = false;
 			trueMelee35 = false;
-			microDelusion = false;
+			empressExpert = false;
+			meteorMelee = false;
 			player.statLifeMax2 += upgradeHearts * 25;
 			player.statManaMax2 += upgradeStars * 50;
 			playerTimer = 0;
@@ -84,7 +86,6 @@ namespace Azercadmium
 		}
 		public override void UpdateDead() {
 			xenicAcid = false;
-			microDelusion = false;
 		}
 		int badRegenTimer;
 		public override void UpdateBadLifeRegen() {
@@ -105,13 +106,6 @@ namespace Azercadmium
 					player.statLife += 1;
 					player.HealEffect(1, true);
 				}
-			}
-			if (microDelusion) {
-				if (player.lifeRegen > 0 && !xenicExpert) {
-					player.lifeRegen = 0;
-				}
-				player.lifeRegenTime = 0;
-				player.lifeRegen -= 6;
 			}
 			if (healHurt > 0) {
 				if (player.lifeRegen > 0) {
@@ -379,13 +373,9 @@ namespace Azercadmium
 					Projectile.NewProjectile(player.Center.X, player.Center.Y, Main.rand.Next(-6, 6), Main.rand.Next(-17, -3), mod.ProjectileType("GemstoneSpike"), 100, 2, Main.myPlayer);
 				}
 			}
-			if (empressSpikes)
+			if (empressExpert)
 			{
-				float numberProjectiles = Main.rand.Next(3, 9);
-				for (int i = 0; i < numberProjectiles; i++)
-				{
-					Projectile.NewProjectile(player.Center, new Vector2(0, 4).RotatedByRandom(MathHelper.TwoPi), mod.ProjectileType("EmpressSpikePassive"), 75, 1, Main.myPlayer);
-				}
+				Projectile.NewProjectile(player.Center, new Vector2(0, 0), mod.ProjectileType("EmpressGlobPassive"), 75, 1, Main.myPlayer);
 			}
 			if (darkstarFall)
 			{
@@ -446,6 +436,7 @@ namespace Azercadmium
 			}
 			return true;
         }
+		
 		public override void OnHitNPC(Item item, NPC target, int damage, float knockback, bool crit) {
 			if (xenicExpert && Main.rand.NextFloat() < .25f) {
 				target.AddBuff(mod.BuffType("XenicAcid"), 60 * Main.rand.Next(3, 11), false);

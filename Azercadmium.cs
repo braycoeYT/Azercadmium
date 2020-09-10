@@ -471,7 +471,7 @@ namespace Azercadmium
 			recipe = new ModRecipe(this);
 			recipe.AddIngredient(ItemID.Silk, 20);
 			recipe.AddIngredient(ItemID.SnowBlock, 12);
-			recipe.AddIngredient(null, "CryoCrystal", 9);
+			recipe.AddIngredient(ItemID.IceBlock, 8);
 			recipe.AddTile(TileID.Loom);
 			recipe.SetResult(ItemID.HandWarmer);
 			recipe.AddRecipe();
