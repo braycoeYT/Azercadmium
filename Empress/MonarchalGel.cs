@@ -12,7 +12,7 @@ namespace Azercadmium.Items.Empress
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Monarchal Gel");
-			Tooltip.SetDefault("You are a slime monarch\nMost slimes are friendly\nWhen you get hurt, you unleash a barrage of empress spikes");
+			Tooltip.SetDefault("You are a slime monarch\nMost slimes are friendly\nFor every 10% of hp lost, defense increases by 2");
 		}
 
 		public override void SetDefaults()
@@ -48,15 +48,17 @@ namespace Azercadmium.Items.Empress
 			player.npcTypeNoAggro[334] = true;
 			player.npcTypeNoAggro[336] = true;
 			player.npcTypeNoAggro[537] = true;
-			AzercadmiumPlayer p = player.GetModPlayer<AzercadmiumPlayer>();
-			p.empressSpikes = true;
+			player.statDefense += 20;
+			for (int i = 0; i < player.statLife; i += player.statLifeMax2 / 10) {
+				player.statDefense -= 2;
+			}
 		}
 		
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.RoyalGel);
-			recipe.AddIngredient(mod.ItemType("SpikySac"));
+			recipe.AddIngredient(mod.ItemType("SackofProtection"));
 			recipe.AddIngredient(mod.ItemType("EmpressShard"), 3);
 			recipe.AddIngredient(mod.ItemType("ElementalGel"), 25);
 			recipe.AddTile(TileID.MythrilAnvil);
