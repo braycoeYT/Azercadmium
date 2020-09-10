@@ -22,6 +22,8 @@ namespace Azercadmium.Projectiles.Discus
 			projectile.light = 0.5f;
 			projectile.damage = 14;
 			projectile.tileCollide = false;
+			projectile.usesLocalNPCImmunity = true;
+			projectile.localNPCHitCooldown = 10;
 		}
 		bool sound = true;
 		public override void AI()
