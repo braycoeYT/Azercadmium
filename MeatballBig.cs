@@ -12,8 +12,8 @@ namespace Azercadmium.Projectiles
         }
 		public override void SetDefaults()
 		{
-			projectile.width = 78;
-			projectile.height = 78;
+			projectile.width = 40;
+			projectile.height = 40;
 			projectile.aiStyle = 1;
 			projectile.friendly = true;
 			projectile.penetrate = 10;

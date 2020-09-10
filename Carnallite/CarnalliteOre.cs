@@ -1,28 +1,36 @@
+using Microsoft.Xna.Framework;
 using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
-using Terraria.ID;
 
-namespace Azercadmium.Items.Carnallite
+namespace Azercadmium.Tiles.Carnallite
 {
-	public class CarnalliteOre : ModItem
+	public class CarnalliteOre : ModTile
 	{
-		public override void SetStaticDefaults() {
-			Tooltip.SetDefault("Works well with floral matter");
+		public override void SetDefaults()
+		{
+			TileID.Sets.Ore[Type] = true;
+			Main.tileSpelunker[Type] = true;
+			Main.tileValue[Type] = 750;
+			Main.tileShine2[Type] = true;
+			Main.tileShine[Type] = 835;
+			Main.tileMergeDirt[Type] = true;
+			Main.tileSolid[Type] = true;
+			Main.tileBlockLight[Type] = true;
+			ModTranslation name = CreateMapEntryName();
+			name.SetDefault("Carnallite Ore");
+			AddMapEntry(new Color(230, 73, 73), name);
+			dustType = mod.DustType("CarnalliteDust");
+			drop = ItemType<Items.Carnallite.CarnalliteOre>();
+			soundType = SoundID.Tink;
+			soundStyle = 1;
+			mineResist = 4f;
+			minPick = 200;
 		}
-		public override void SetDefaults() {
-			item.useStyle = ItemUseStyleID.SwingThrow;
-			item.useTurn = true;
-			item.useAnimation = 15;
-			item.useTime = 10;
-			item.autoReuse = true;
-			item.maxStack = 9999;
-			item.consumable = true;
-			item.createTile = TileType<Tiles.Carnallite.CarnalliteOre>();
-			item.width = 12;
-			item.height = 12;
-			item.value = Item.sellPrice(0, 0, 15, 0);
-			item.rare = ItemRarityID.Lime;
+		public override bool CanExplode(int i, int j)
+		{
+			return false;
 		}
 	}
 }
