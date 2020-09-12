@@ -31,5 +31,5 @@ Sness (Two sprites)
 
 Multiplayer support is unknown, but most of us play alone anyway.
 
-Update V0.2.2.7: Fatal Fixes
-~Fixed a fatal glitch that would delete your items, revert your saves, and break thousands of items in the game
+Update V0.2.2.8: Quick Fix
+~Fixed Melee Meteor Armor Set Bonus

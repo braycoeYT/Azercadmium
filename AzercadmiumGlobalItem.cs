@@ -56,7 +56,7 @@ namespace Azercadmium.Tiles
 		{
 			AzercadmiumPlayer p = player.GetModPlayer<AzercadmiumPlayer>();
 			useItemCount++;
-			if (p.meteorMelee && item.melee && useItemCount % 3 == 0) {
+			if (p.meteorMelee && item.melee && useItemCount % 120 == 0) {
 				Vector2 pos = Main.MouseWorld;
 				pos.Y = player.position.Y - 400;
 				Projectile.NewProjectile(pos, new Vector2(Main.rand.NextFloat(-2, 2), 10), ProjectileID.FallingStar, 40, 2, Main.myPlayer);
