@@ -52,7 +52,7 @@ namespace Azercadmium.Tiles
 			}
 		}
 		static int useItemCount;
-		public override bool UseItem(Item item, Player player)
+		public override void UseStyle(Item item, Player player)
 		{
 			AzercadmiumPlayer p = player.GetModPlayer<AzercadmiumPlayer>();
 			useItemCount++;
@@ -61,18 +61,6 @@ namespace Azercadmium.Tiles
 				pos.Y = player.position.Y - 400;
 				Projectile.NewProjectile(pos, new Vector2(Main.rand.NextFloat(-2, 2), 10), ProjectileID.FallingStar, 40, 2, Main.myPlayer);
 			}
-			return true;
-		}
-		public override void AddRecipes()
-		{
-			/*RecipeFinder finder = new RecipeFinder();
-			finder.SetResult(ItemID.MeteorHelmet);
-			Recipe recipe2 = finder.FindExactRecipe();
-			if (recipe2 != null)
-			{
-				RecipeEditor editor = new RecipeEditor(recipe2);
-				editor.AddIngredient(ItemID.FallenStar, 5);
-			}*/
 		}
 	}
 }

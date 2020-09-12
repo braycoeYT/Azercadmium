@@ -31,13 +31,5 @@ Sness (Two sprites)
 
 Multiplayer support is unknown, but most of us play alone anyway.
 
-Update V0.2.2.6: Evolution Update pt. 5
-~Changed Empress Slime Expert drop
-~Removed Snow items
-~Changed Meteor Suit and Leggings
-~Added Melee and Ranged options to Meteor armor
-~Starfrenzy is no longer has autoswing
-~Fixed Dirty Discus (item)
-~Lowered Elemental Gel price
-~Made Starfrenzy look more like its vanilla brother
-~Resprited icy discus
+Update V0.2.2.7: Fatal Fixes
+~Fixed a fatal glitch that would delete your items, revert your saves, and break thousands of items in the game
