@@ -1,9 +1,6 @@
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.ID;
-using static Terraria.ModLoader.ModContent;
 
 namespace Azercadmium.Projectiles.OtherJavelances
 {
@@ -23,6 +20,7 @@ namespace Azercadmium.Projectiles.OtherJavelances
 			projectile.ranged = true;
 			projectile.timeLeft = 3000;
 			projectile.ignoreWater = true;
+			projectile.alpha = 100;
 			aiType = 1;
 		}
 		int rand = Main.rand.Next(0, 90);
@@ -39,7 +37,7 @@ namespace Azercadmium.Projectiles.OtherJavelances
 				p.HealEffect(1, true);
 			}
 		}
-		public override void OnHitPlayer(Player target, int damage, bool crit) {
+		public override void OnHitPvp(Player target, int damage, bool crit) {
 			AzercadmiumPlayer zp = Main.player[projectile.owner].GetModPlayer<AzercadmiumPlayer>();
 			if (zp.bloodJavelance && Main.rand.NextFloat() < .06f) {
 				Player p = Main.player[projectile.owner];

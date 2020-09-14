@@ -1,9 +1,5 @@
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using Terraria;
-using Terraria.ID;
 using Terraria.ModLoader;
-using static Terraria.ModLoader.ModContent;
 
 namespace Azercadmium.Projectiles.OtherJavelances
 {
@@ -24,6 +20,7 @@ namespace Azercadmium.Projectiles.OtherJavelances
 			projectile.ranged = true;
 			projectile.timeLeft = 3000;
 			projectile.ignoreWater = true;
+			projectile.alpha = 100;
 			aiType = 1;
 		}
 		public override void Kill(int timeLeft)
