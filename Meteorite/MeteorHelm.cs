@@ -21,7 +21,7 @@ namespace Azercadmium.Items.Meteorite
 			return body.type == ItemID.MeteorSuit && legs.type == ItemID.MeteorLeggings;
 		}
 		public override void UpdateArmorSet(Player player) {
-			player.setBonus = "Every third melee attack spawns a fallen star\nSome melee weapons may acheive this effect faster, and others may not recieve this effect";
+			player.setBonus = "Rains fallen stars from above the cursor every two seconds while using a melee weapon";
 		}
 		public override void UpdateEquip(Player player) {
 			player.meleeSpeed -= 0.06f;
