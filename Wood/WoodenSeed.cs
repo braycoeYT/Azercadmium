@@ -1,34 +1,20 @@
-using Terraria.ID;
+using Terraria;
 using Terraria.ModLoader;
-using static Terraria.ModLoader.ModContent;
+using Terraria.ID;
 
-namespace Azercadmium.Items.Wood
+namespace Azercadmium.Projectiles.Wood
 {
-	public class WoodenSeed : ModItem
+	public class WoodenSeed : ModProjectile
 	{
-		public override void SetStaticDefaults() {
-			Tooltip.SetDefault("For use with blowpipes\nNot a very viable choice, and does not grow trees");
+        public override void SetStaticDefaults() {
+			DisplayName.SetDefault("Wooden Seed");
         }
 		public override void SetDefaults() {
-			item.damage = 2; //3
-			item.ranged = true;
-			item.width = 12;
-			item.height = 8;
-			item.maxStack = 999;
-			item.consumable = true;
-			item.knockBack = 0f; //0
-			item.value = 0; //0
-			item.rare = ItemRarityID.White;
-			item.shoot = ProjectileType<Projectiles.Wood.WoodenSeed>();
-			item.shootSpeed = 0f; //0
-			item.ammo = AmmoID.Dart;
+			projectile.CloneDefaults(ProjectileID.Seed);
+			aiType = ProjectileID.Seed;
 		}
-		public override void AddRecipes() {
-			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.Wood);
-			recipe.AddTile(TileID.WorkBenches);
-			recipe.SetResult(this, 25);
-			recipe.AddRecipe();
+		public override void Kill(int timeLeft) {
+			Collision.HitTiles(projectile.position + projectile.velocity, projectile.velocity, projectile.width, projectile.height);
 		}
-	}
+	}   
 }
