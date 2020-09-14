@@ -8,7 +8,7 @@ namespace Azercadmium.Items.Dirtball
 	public class EarthmightHelm : ModItem
 	{
 		public override void SetStaticDefaults() {
-			Tooltip.SetDefault("Become one with dirt\nIncreases armor penetration by 1");
+			Tooltip.SetDefault("Wearing this makes your mind dirty\nIncreases armor penetration by 1");
 		}
 		public override void SetDefaults() {
 			item.width = 18;
