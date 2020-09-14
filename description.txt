@@ -4,14 +4,14 @@ Note to players: School has started for me and I can't work on the mod all day a
 Discord Server: (homepage link is better) https://discord.gg/qv97wNV
 
 Stats:
-~240 Items
-~53 total NPCs
+~239 Items
+~48 total NPCs
 ~4 Bosses:
 ^2 Prehardmode Bosses
 ^2 Hardmode Bosses
 ~3 Town NPCs
 ~32 Tiles
-~20 Buffs
+~21 Buffs
 ~2 Ores
 ~2 Subclasses
 ~1 Song
@@ -31,5 +31,20 @@ Sness (Two sprites)
 
 Multiplayer support is unknown, but most of us play alone anyway.
 
-Update V0.2.2.8: Quick Fix
-~Fixed Melee Meteor Armor Set Bonus
+Update V0.2.2.9: Content Update
+~Added Lost Hero Sword and Lobera
+~Updated Stalagmite sprite (oops forgot to update it)
+~Changed Stalagmite and Stalactite recipe
+~Changed Meteorite Helm set bonus tooltip
+~Swapped Stalagmite and Stalactite sprites
+~Replaced Electrifying Scent with Beaker of Lightning
+~Moss Hornets now drop stingers and vines
+~Made some Flesh items inaccessable
+~Removed Meatball npcs and items for now
+~Added Wooden Seed
+~Made Shard and Eye of Prejudice's Bleeding Javelance see-through
+~Added The Heartbreaker
+~Resprited Wooden Blowpipe
+~Swapped Earthmight Helm and Breastplate tooltips
+~Internal Sorting
+~Added Wooden Spear, the mod's first spear

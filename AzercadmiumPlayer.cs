@@ -142,9 +142,11 @@ namespace Azercadmium
 			upgradeHearts = tag.GetInt("upgradeHearts");
 			upgradeStars = tag.GetInt("upgradeStars");
 		}
-		public override void SetupStartInventory(IList<Item> items, bool mediumcoreDeath)
-		{
+		public override void SetupStartInventory(IList<Item> items, bool mediumcoreDeath) {
 			Item item = new Item();
+			item.SetDefaults(mod.ItemType("MysteriousNova"));
+			items.Add(item);
+			item = new Item();
 			item.SetDefaults(ItemID.Seed);
 			item.stack = 500;
 			items.Add(item);

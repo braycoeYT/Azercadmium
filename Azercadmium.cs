@@ -158,102 +158,6 @@ namespace Azercadmium
 			recipe.SetResult(ItemID.MagicMirror);
 			recipe.AddRecipe();
 			
-			/*recipe = new ModRecipe(this);
-			recipe.AddIngredient(ItemID.BottledWater);
-			recipe.AddIngredient(ItemID.Stinger, 2);
-			recipe.AddIngredient(null, "DriedEssence");
-			recipe.AddIngredient(ItemID.PinkGel, 2);
-			recipe.AddTile(TileID.Bottles);
-			recipe.SetResult(ItemID.ThornsPotion);
-			recipe.AddRecipe();
-			
-			recipe = new ModRecipe(this);
-			recipe.AddIngredient(ItemID.BottledWater);
-			recipe.AddIngredient(ItemID.Daybloom);
-			recipe.AddIngredient(null, "DriedEssence");
-			recipe.AddIngredient(ItemID.PinkGel, 4);
-			recipe.AddTile(TileID.Bottles);
-			recipe.SetResult(ItemID.CalmingPotion);
-			recipe.AddRecipe();
-			
-			recipe = new ModRecipe(this);
-			recipe.AddIngredient(ItemID.BottledWater, 10);
-			recipe.AddIngredient(ItemID.LifeCrystal);
-			recipe.AddIngredient(null, "DriedEssence", 10);
-			recipe.AddIngredient(ItemID.PinkGel, 30);
-			recipe.AddTile(TileID.Bottles);
-			recipe.SetResult(ItemID.HeartreachPotion, 10);
-			recipe.AddRecipe();
-			
-			recipe = new ModRecipe(this);
-			recipe.AddIngredient(ItemID.BottledWater);
-			recipe.AddIngredient(ItemID.Moonglow);
-			recipe.AddIngredient(null, "DriedEssence");
-			recipe.AddIngredient(ItemID.CobaltOre);
-			recipe.AddTile(TileID.Bottles);
-			recipe.SetResult(ItemID.AmmoReservationPotion);
-			recipe.AddRecipe();
-			
-			recipe = new ModRecipe(this);
-			recipe.AddIngredient(ItemID.BottledWater);
-			recipe.AddIngredient(ItemID.Torch);
-			recipe.AddIngredient(null, "DriedEssence");
-			recipe.AddIngredient(ItemID.PalladiumOre);
-			recipe.AddTile(TileID.Bottles);
-			recipe.SetResult(ItemID.InfernoPotion);
-			recipe.AddRecipe();
-			
-			recipe = new ModRecipe(this);
-			recipe.AddIngredient(ItemID.BottledWater);
-			recipe.AddIngredient(ItemID.Fireblossom);
-			recipe.AddIngredient(null, "DriedEssence");
-			recipe.AddIngredient(ItemID.MythrilOre);
-			recipe.AddTile(TileID.Bottles);
-			recipe.SetResult(ItemID.RagePotion);
-			recipe.AddRecipe();
-			
-			recipe = new ModRecipe(this);
-			recipe.AddIngredient(ItemID.BottledWater);
-			recipe.AddIngredient(ItemID.Blinkroot);
-			recipe.AddIngredient(null, "DriedEssence");
-			recipe.AddIngredient(ItemID.OrichalcumOre);
-			recipe.AddTile(TileID.Bottles);
-			recipe.SetResult(ItemID.WrathPotion);
-			recipe.AddRecipe();
-			
-			recipe = new ModRecipe(this);
-			recipe.AddIngredient(ItemID.BottledWater, 10);
-			recipe.AddIngredient(ItemID.LifeCrystal);
-			recipe.AddIngredient(null, "DriedEssence", 10);
-			recipe.AddIngredient(ItemID.AdamantiteOre, 10);
-			recipe.AddTile(TileID.Bottles);
-			recipe.SetResult(ItemID.LifeforcePotion, 10);
-			recipe.AddRecipe();
-			
-			recipe = new ModRecipe(this);
-			recipe.AddIngredient(ItemID.BottledWater);
-			recipe.AddIngredient(ItemID.Blinkroot);
-			recipe.AddIngredient(ItemID.Waterleaf);
-			recipe.AddIngredient(null, "DriedEssence");
-			recipe.AddIngredient(ItemID.TitaniumOre);
-			recipe.AddTile(TileID.Bottles);
-			recipe.SetResult(ItemID.EndurancePotion);
-			recipe.AddRecipe();
-			
-			recipe = new ModRecipe(this);
-			recipe.AddIngredient(ItemID.DemoniteBar, 7);
-			recipe.AddIngredient(ItemID.Cobweb, 25);
-			recipe.AddTile(TileID.Anvils);
-			recipe.SetResult(ItemID.StylistKilLaKillScissorsIWish);
-			recipe.AddRecipe();
-			
-			recipe = new ModRecipe(this);
-			recipe.AddIngredient(ItemID.CrimtaneBar, 7);
-			recipe.AddIngredient(ItemID.Cobweb, 25);
-			recipe.AddTile(TileID.Anvils);
-			recipe.SetResult(ItemID.StylistKilLaKillScissorsIWish);
-			recipe.AddRecipe();*/
-			
 			recipe = new ModRecipe(this);
 			recipe.AddIngredient(ItemID.HallowedBar, 12);
 			recipe.AddIngredient(ItemID.Spike, 8);
@@ -266,30 +170,6 @@ namespace Azercadmium
 			recipe.AddTile(TileID.MythrilAnvil);
 			recipe.SetResult(ItemID.Pwnhammer);
 			recipe.AddRecipe();
-			
-			/*recipe = new ModRecipe(this);
-			recipe.AddIngredient(null, "CyanixBar", 10);
-			recipe.AddIngredient(ItemID.Ruby, 5);
-			recipe.AddIngredient(null, "GlazedLens");
-			recipe.AddTile(TileID.Anvils);
-			recipe.SetResult(ItemID.EnchantedSword);
-			recipe.AddRecipe();
-			
-			recipe = new ModRecipe(this);
-			recipe.AddIngredient(null, "CyanixBar", 11);
-			recipe.AddIngredient(ItemID.Diamond, 7);
-			recipe.AddIngredient(null, "GlazedLens");
-			recipe.AddTile(TileID.Anvils);
-			recipe.SetResult(ItemID.Arkhalis);
-			recipe.AddRecipe();
-			
-			recipe = new ModRecipe(this);
-			recipe.AddIngredient(null, "CyanixBar", 9);
-			recipe.AddIngredient(ItemID.GoldBar, 2);
-			recipe.AddIngredient(ItemID.Bone, 9);
-			recipe.AddTile(TileID.Anvils);
-			recipe.SetResult(ItemID.Muramasa);
-			recipe.AddRecipe();*/
 			
 			recipe = new ModRecipe(this);
 			recipe.AddIngredient(ItemID.MarbleBlock, 25);
@@ -306,23 +186,6 @@ namespace Azercadmium
 			recipe.AddTile(TileID.MythrilAnvil);
 			recipe.SetResult(ItemID.MinecartMech);
 			recipe.AddRecipe();
-			
-			/*recipe = new ModRecipe(this);
-			recipe.AddIngredient(null, "CyanixBar", 8);
-			recipe.AddIngredient(null, "GlazedLens");
-			recipe.AddIngredient(ItemID.Ruby);
-			recipe.AddTile(TileID.Anvils);
-			recipe.SetResult(ItemID.EnchantedBoomerang);
-			recipe.AddRecipe();
-			
-			recipe = new ModRecipe(this);
-			recipe.AddIngredient(null, "MagentiteBar", 16);
-			recipe.AddIngredient(ItemID.Cloud, 12);
-			recipe.AddIngredient(ItemID.FallenStar, 8);
-			recipe.AddIngredient(ItemID.RainCloud, 4);
-			recipe.AddTile(TileID.Anvils);
-			recipe.SetResult(ItemID.Starfury);
-			recipe.AddRecipe();*/
 			
 			recipe = new ModRecipe(this);
 			recipe.AddRecipeGroup("IronBar", 5);
