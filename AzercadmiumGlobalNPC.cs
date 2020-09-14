@@ -56,6 +56,7 @@ namespace Azercadmium.NPCs
 			if (npc.type == NPCID.SkeletronPrime || npc.type == NPCID.TheDestroyer || npc.type == NPCID.TheDestroyerBody || npc.type == NPCID.TheDestroyerTail || npc.type == NPCID.Retinazer || npc.type == NPCID.Spazmatism || npc.type == NPCID.Golem || npc.type == NPCID.GolemFistLeft || npc.type == NPCID.GolemFistRight || npc.type == NPCID.GolemHead || npc.type == NPCID.GolemHeadFree || npc.type == NPCID.CultistBoss || npc.type == NPCID.MoonLordCore || npc.type == NPCID.MoonLordFreeEye || npc.type == NPCID.MoonLordHand || npc.type == NPCID.MoonLordHead) {
 				npc.buffImmune[mod.BuffType("Sick")] = true;
 			}
+			npc.buffImmune[mod.BuffType("LoberaSoulslash")] = false;
 		}
 		public override void UpdateLifeRegen(NPC npc, ref int damage) {
 			if (xenicAcid) {
@@ -151,37 +152,25 @@ namespace Azercadmium.NPCs
 				if (Main.rand.Next(3) == 0)
 					Item.NewItem(npc.getRect(), ItemType<Items.Accessories.SunProtection>());
 			}
+			if (npc.type == NPCID.MossHornet) {
+				if (Main.rand.Next(2) == 0)
+					Item.NewItem(npc.getRect(), ItemID.Stinger, Main.rand.Next(1, 4));
+				if (Main.rand.Next(10) == 0)
+					Item.NewItem(npc.getRect(), ItemID.Vine);
+			}
 			if (npc.type == NPCID.WallofFlesh) {
-				int rand = Main.rand.Next(0, 5);
-				if (rand == 0)
-					Item.NewItem(npc.getRect(), mod.ItemType("FleshCutter"));
-				if (rand == 1)
-					Item.NewItem(npc.getRect(), mod.ItemType("FleshyCube"));
-				if (rand == 2)
-					Item.NewItem(npc.getRect(), mod.ItemType("Fleshbow"));
-				if (rand == 3)
-					Item.NewItem(npc.getRect(), mod.ItemType("Fleshclump"));
-				if (rand == 4)
+				if (Main.rand.NextFloat() < .3f)
 					Item.NewItem(npc.getRect(), mod.ItemType("FleshBlowpipe"));
 			}
 			if (npc.type == NPCID.BloodCrawler || npc.type == NPCID.BloodCrawlerWall) {
 				if (Main.rand.NextFloat() < .12f)
 					Item.NewItem(npc.getRect(), mod.ItemType("BloodySpiderLeg"));
 			}
-			if (npc.type == NPCID.MartianSaucerCore) {
-				if (Main.rand.NextFloat() < .4f)
-					Item.NewItem(npc.getRect(), mod.ItemType("ElectrifyingScent"));
-			}
 			//blowpipes:
 			if (Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)].HasItem(mod.ItemType("FrostBlowpipe")))
 				if (npc.type == NPCID.IceSlime || npc.type == NPCID.SpikedIceSlime || npc.type == mod.NPCType("IcyDiscus")) {
 					if (Main.rand.NextFloat() < .5f)
 					Item.NewItem(npc.getRect(), mod.ItemType("IcySeedshot"), Main.rand.Next(1, 3));
-				}
-			if (Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)].HasItem(mod.ItemType("MagentiteBlowpipe")))
-				if (npc.type == mod.NPCType("MagentiteSlime") || npc.type == mod.NPCType("MagentiteDiscus") || npc.type == mod.NPCType("MagentiteStinger")) {
-					if (Main.rand.NextFloat() < .5f)
-					Item.NewItem(npc.getRect(), mod.ItemType("MagentiteSeedshot"), Main.rand.Next(1, 3));
 				}
 			if (Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)].HasItem(mod.ItemType("WoodenBlowpipe")))
 				if (npc.type == -3 || npc.type == NPCID.BlueSlime) {
