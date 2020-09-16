@@ -1,6 +1,6 @@
 Reborn version of the Zylon Mod. Give me a few updates, and this mod will be completely remade from craziness to something actually good.
 If you are worried about a custom biome ruining your world, don't worry, it has been removed.
-Note to players: School has started for me and I can't work on the mod all day anymore, sorry.
+School has started for me and I can't work on the mod all day anymore, sorry.
 Discord Server: (homepage link is better) https://discord.gg/qv97wNV
 
 Stats:
@@ -24,27 +24,18 @@ GOA7 (Spriter/Songwriter)
 Koolaidlemonade (Inactive Spriter)
 HBDeus (Spriter)
 VaultyBoi (Spriter)
+UWU (Spriter)
+Unboxing Video (Wiki)
 
 Very Minor Help/Quit:
 CrazySapling1 (Quit Spriter)
 Sness (Two sprites)
+Math (Minor Wiki)
+
 
 Multiplayer support is unknown, but most of us play alone anyway.
 
-Update V0.2.2.9: Content Update
-~Added Lost Hero Sword and Lobera
-~Updated Stalagmite sprite (oops forgot to update it)
-~Changed Stalagmite and Stalactite recipe
-~Changed Meteorite Helm set bonus tooltip
-~Swapped Stalagmite and Stalactite sprites
-~Replaced Electrifying Scent with Beaker of Lightning
-~Moss Hornets now drop stingers and vines
-~Made some Flesh items inaccessable
-~Removed Meatball npcs and items for now
-~Added Wooden Seed
-~Made Shard and Eye of Prejudice's Bleeding Javelance see-through
-~Added The Heartbreaker
-~Resprited Wooden Blowpipe
-~Swapped Earthmight Helm and Breastplate tooltips
-~Internal Sorting
-~Added Wooden Spear, the mod's first spear
+Update V0.2.3: Update
+~Updated credits
+~Renamed Rollercoaster Enthusiast to Engineer
+~Rewrote Stealth Potion

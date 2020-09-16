@@ -44,6 +44,7 @@ namespace Azercadmium
 		public bool trueMelee35;
 		public bool empressExpert;
 		public bool meteorMelee;
+		public bool stealthPotion;
 		int numberShot = 0;
 		public int upgradeHearts;
 		public int upgradeStars;
@@ -79,6 +80,7 @@ namespace Azercadmium
 			trueMelee35 = false;
 			empressExpert = false;
 			meteorMelee = false;
+			stealthPotion = false;
 			player.statLifeMax2 += upgradeHearts * 25;
 			player.statManaMax2 += upgradeStars * 50;
 			playerTimer = 0;
@@ -364,6 +366,16 @@ namespace Azercadmium
 			}
 			if (hyperCell)
 				player.AddBuff(mod.BuffType("CellBoost"), 60, false);
+		}
+		public override bool PreHurt(bool pvp, bool quiet, ref int damage, ref int hitDirection, ref bool crit, ref bool customDamage, ref bool playSound, ref bool genGore, ref PlayerDeathReason damageSource)
+		{
+			if (stealthPotion && Main.rand.NextFloat() < .04f) {
+				quiet = true;
+				damage = 0;
+				player.NinjaDodge();
+				return false;
+			}
+			return true;
 		}
 		public override void Hurt(bool pvp, bool quiet, double damage, int hitDirection, bool crit)
 		{
