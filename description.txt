@@ -39,3 +39,5 @@ Update V0.2.3: Update
 ~Updated credits
 ~Renamed Rollercoaster Enthusiast to Engineer
 ~Rewrote Stealth Potion
+~Fixed Elemental Bands
+~Fixed Ancient Medieval Javelance sell price
