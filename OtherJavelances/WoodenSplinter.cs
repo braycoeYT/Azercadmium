@@ -1,51 +1,44 @@
 using Microsoft.Xna.Framework;
-using System;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace Azercadmium.Items.OtherJavelances
 {
-	public class AncientMedievalJavelance : ModItem
+	public class WoodenSplinter : ModItem
 	{
-		public override void SetStaticDefaults()  {
-			Tooltip.SetDefault("Not much use due to its age, but could be used for empowering other javelances\nStacks up to 5\nMore javelances means more javelances thrown\nUse time is decreased with more javelances");
+		public override void SetStaticDefaults() {
+			Tooltip.SetDefault("Stacks up to 2\nMore javelances means more javelances thrown\nUse time is decreased with more javelances");
 		}
-
-		public override void SetDefaults() 
-		{
-			item.damage = 10;
+		public override void SetDefaults() {
+			item.damage = 6;
 			item.ranged = true;
-			item.width = 48;
-			item.height = 54;
-			item.useTime = 50;
-			item.useAnimation = 50;
+			item.width = 46;
+			item.height = 46;
+			item.useTime = 32;
+			item.useAnimation = 32;
 			item.useStyle = ItemUseStyleID.SwingThrow;
-			item.knockBack = 6.3f;
-			item.value = Item.sellPrice(0, 1, 0, 0);
-			item.rare = ItemRarityID.Green;
+			item.knockBack = 2.3f;
+			item.value = Item.sellPrice(0, 0, 1, 0);
+			item.rare = ItemRarityID.White;
 			item.autoReuse = true;
 			item.useTurn = true;
-			item.shoot = mod.ProjectileType("AncientMedievalJavelance");
+			item.shoot = mod.ProjectileType("WoodenSplinter");
 			item.shootSpeed = 12f;
 			item.noMelee = true;
-			item.maxStack = 5;
+			item.maxStack = 2;
 			item.UseSound = SoundID.Item1;
 			item.noUseGraphic = true;
 			item.consumable = false;
 		}
-		public override void UpdateInventory(Player player)
-		{
-			item.useTime = 50 + (item.stack * 10) - 10;
-			item.useAnimation = 50 + (item.stack * 10) - 10;
+		public override void UpdateInventory(Player player) {
+			item.useTime = 32 + (item.stack * 10) - 10;
+			item.useAnimation = 32 + (item.stack * 10) - 10;
 		}
-		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
-		{
+		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack) {
 			AzercadmiumPlayer p = player.GetModPlayer<AzercadmiumPlayer>();
 			if (p.redJavelance)
-			{
 				Projectile.NewProjectile(position.X, position.Y, speedX, speedY, mod.ProjectileType("BleedingJavelance"), 45, 3f, player.whoAmI);
-			}
 			float numberProjectiles = item.stack;
 			float rotation = MathHelper.ToRadians(18);
 			if (numberProjectiles > 1)
@@ -59,6 +52,13 @@ namespace Azercadmium.Items.OtherJavelances
 			return false;
 			}
 			return true;
+		}
+		public override void AddRecipes() {
+			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(ItemID.Wood, 12);
+			recipe.AddTile(TileID.WorkBenches);
+			recipe.SetResult(this, 2);
+			recipe.AddRecipe();
 		}
 	}
 }

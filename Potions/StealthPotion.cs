@@ -9,7 +9,7 @@ namespace Azercadmium.Items.Potions
 	{
         public override void SetStaticDefaults()
         {
-            Tooltip.SetDefault("Increased movement speed, ranged damage, and you have a chance to dodge attacks\nDodging doesn't stack with the black belt");
+            Tooltip.SetDefault("Increased movement speed and you have a 4% chance to dodge attacks");
         }
 
         public override void SetDefaults()
