@@ -7,7 +7,7 @@ namespace Azercadmium.Projectiles.OtherJavelances
 	{
         public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Bleeding Javelance Blood");
+			DisplayName.SetDefault("Blood of the Slaughtered");
         }
 		public override void SetDefaults()
 		{
@@ -26,6 +26,11 @@ namespace Azercadmium.Projectiles.OtherJavelances
 		public override void Kill(int timeLeft)
 		{
 			Collision.HitTiles(projectile.position + projectile.velocity, projectile.velocity, projectile.width, projectile.height);
+			for (int i = 0; i < 4; i++) {
+				Dust dust = Dust.NewDustDirect(projectile.position, projectile.width, projectile.height, 12);
+				dust.noGravity = true;
+				dust.scale = 1f;
+			}
 		}
 	}   
 }
