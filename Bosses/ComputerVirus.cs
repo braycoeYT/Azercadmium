@@ -31,7 +31,7 @@ namespace Azercadmium.NPCs.Bosses
 			npc.value = 120000;
 			npc.boss = true;
 			npc.lavaImmune = true;
-			music = MusicID.Boss4;
+			music = mod.GetSoundSlot(SoundType.Music, "Sounds/Music/CV");
 			for (int k = 0; k < npc.buffImmune.Length; k++) {
 				npc.buffImmune[k] = true;
 			}
