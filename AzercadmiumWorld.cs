@@ -200,7 +200,7 @@ namespace Azercadmium
 				{
 					Main.NewText(Language.GetTextValue(chat), messageColor);
 				}
-				for (int k = 0; k < (int)((Main.maxTilesX * Main.maxTilesY) * 0.00024); k++) {
+				for (int k = 0; k < (int)((Main.maxTilesX * Main.maxTilesY) * 0.00033); k++) {
 					int x = WorldGen.genRand.Next(0, Main.maxTilesX);
 					int y = WorldGen.genRand.Next((int)WorldGen.worldSurfaceLow, Main.maxTilesY - 200);
 					Tile tile = Framing.GetTileSafely(x, y);
@@ -208,8 +208,6 @@ namespace Azercadmium
 						WorldGen.TileRunner(x, y, WorldGen.genRand.Next(1, 11), WorldGen.genRand.Next(1, 11), TileType<Tiles.Carnallite.CarnalliteOre>());
 					}
 				}
-				
-
 				hasAlertSlime = true;
 			}
 			
@@ -329,6 +327,21 @@ namespace Azercadmium
 						if (chest.item[inventoryIndex].type == ItemID.None) {
 							chest.item[inventoryIndex].SetDefaults(itemsToPlaceInSkywareChests[itemsToPlaceInSkywareChestsChoice]);
 							itemsToPlaceInSkywareChestsChoice = (itemsToPlaceInSkywareChestsChoice + 1) % itemsToPlaceInSkywareChests.Length;
+							break;
+						}
+					}
+				}
+			}
+
+			int[] itemsToPlaceInDungeonChests = { ItemType<Items.OtherSwords.Starfrenzy>() };
+			int itemsToPlaceInDungeonChestsChoice = 0;
+			for (int chestIndex = 0; chestIndex < 1000; chestIndex++) {
+				Chest chest = Main.chest[chestIndex];
+				if (chest != null && Main.tile[chest.x, chest.y].type == TileID.Containers && Main.tile[chest.x, chest.y].frameX == 1 * 36 && WorldGen.genRand.Next(3) == 0 && (Main.tile[chest.x, chest.y].type == TileID.BlueDungeonBrick || Main.tile[chest.x, chest.y].type == TileID.GreenDungeonBrick || Main.tile[chest.x, chest.y].type == TileID.PinkDungeonBrick)) {
+					for (int inventoryIndex = 0; inventoryIndex < 40; inventoryIndex++) {
+						if (chest.item[inventoryIndex].type == ItemID.None) {
+							chest.item[inventoryIndex].SetDefaults(itemsToPlaceInDungeonChests[itemsToPlaceInDungeonChestsChoice]);
+							itemsToPlaceInSkywareChestsChoice = (itemsToPlaceInDungeonChestsChoice + 1) % itemsToPlaceInDungeonChests.Length;
 							break;
 						}
 					}

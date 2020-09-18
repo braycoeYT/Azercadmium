@@ -20,24 +20,42 @@ Stats:
 Cross-mod Content with Asteri and Havoc Mod.
 
 Spriters/Other Help:
-GOA7 (Spriter/Songwriter)
+GOA7 (Spriter/Music)
 Koolaidlemonade (Inactive Spriter)
 HBDeus (Spriter)
 VaultyBoi (Spriter)
-UWU (Spriter)
+ULTIMATEDQVID (Spriter)
 Unboxing Video (Wiki)
+Setnour6 (Spriter/Music)
 
 Very Minor Help/Quit:
 CrazySapling1 (Quit Spriter)
 Sness (Two sprites)
 Math (Minor Wiki)
-
+Ashe (Minor Wiki)
 
 Multiplayer support is unknown, but most of us play alone anyway.
 
-Update V0.2.3: Update
-~Updated credits
-~Renamed Rollercoaster Enthusiast to Engineer
-~Rewrote Stealth Potion
-~Fixed Elemental Bands
-~Fixed Ancient Medieval Javelance sell price
+Update V0.2.3.1: Content Update
+~Renamed Icy Greatsword to Icy Greatblade
+~Resprited Icy Greatblade
+~Resprited Creepy Mud
+~Changed Engineer quotes and shop
+~Resprited Mysterious Nova
+~Added Computer Virus Theme
+~Increased Floral Undergrowth craft rate
+~Renamed Feral Potion to Feral Chemicals
+~Resprited Feral Chemicals
+~Changed Broken Discus tooltip
+~Renamed Wooden Javelance to Wooden Splinter and changed sprite
+~Added Cold Crusher
+~Removed Pragmatic Shotgun temporarily
+~Changed Ancient Medieval Javelance tooltip
+~Increased Carnallite spawn rate
+~Resprited Aquatic Javelance
+~Aquatic Javelance is no longer dropped by enemies, changed tooltip, and changed crafting recipe.
+~Renamed Blood Drop Potion to Bloodied Vial
+~Changed Bloodied Vial sprite and recipe
+~Resprited Floater Potion
+~Resprited Archive and Shard/Eye of Prejudice projectiles
+~Improved projectile dusts
