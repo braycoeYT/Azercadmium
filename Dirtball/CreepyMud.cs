@@ -1,6 +1,3 @@
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -11,14 +8,14 @@ namespace Azercadmium.Items.Dirtball
 	{
 		public override void SetStaticDefaults() 
 		{
-			Tooltip.SetDefault("'It is literally just dirt, mud, slime, and a lens mashed together...\nSummons Dirtball'");
+			Tooltip.SetDefault("It is literally just dirt, mud, slime, and a lens mashed together...\nSummons Dirtball");
 			ItemID.Sets.SortingPriorityBossSpawns[item.type] = 13;
 		}
 
 		public override void SetDefaults() 
 		{
-			item.width = 40;
-			item.height = 40;
+			item.width = 38;
+			item.height = 68;
 			item.maxStack = 20;
 			item.value = 0;
 			item.rare = -1;
