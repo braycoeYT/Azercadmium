@@ -26,7 +26,7 @@ namespace Azercadmium.Items.Carnallite
 			recipe.AddIngredient(ItemID.ChlorophyteBar);
 			recipe.AddIngredient(mod.ItemType("CarnalliteBar"));
 			recipe.AddTile(TileID.MythrilAnvil);
-			recipe.SetResult(this, 5);
+			recipe.SetResult(this, 6);
 			recipe.AddRecipe();
 		}
 	}
