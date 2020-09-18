@@ -7,14 +7,14 @@ namespace Azercadmium.Buffs.Potions
     {
         public override void SetDefaults() {
             DisplayName.SetDefault("Stealthy");
-            Description.SetDefault("Increased movement speed, ranged damage, and you have a chance to dodge attacks");
+            Description.SetDefault("Increased movement speed and you have a 4% chance to dodge attacks");
             Main.buffNoTimeDisplay[Type] = false;
             Main.debuff[Type] = false;
         }
         public override void Update(Player player, ref int buffIndex) {
-			player.rangedDamage += 0.04f;
-			player.maxRunSpeed += 0.07f;
-			player.blackBelt = true;
+			player.maxRunSpeed += 0.1f;
+			AzercadmiumPlayer p = player.GetModPlayer<AzercadmiumPlayer>();
+            p.stealthPotion = true;
         }
     }
 }
