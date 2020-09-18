@@ -1,40 +1,25 @@
 using Terraria;
-using Terraria.ID;
 using Terraria.ModLoader;
+using Terraria.ID;
 
-namespace Azercadmium.Items.Dirtball
+namespace Azercadmium.Projectiles.Dirtball
 {
-	public class DirtyDiscus : ModItem
+	public class DirtyDiscus : ModProjectile
 	{
-		public override void SetStaticDefaults() {
-			Tooltip.SetDefault("Feeling it makes you feel dirty...\nRapidly throw discuses");
-		}
-		public override void SetDefaults() {
-			item.damage = 12;
-			item.melee = true;
-			item.width = 33;
-			item.height = 33;
-			item.useTime = 31;
-			item.useAnimation = 31;
-			item.useStyle = ItemUseStyleID.HoldingUp;
-			item.knockBack = 1.5f;
-			item.value = 2000;
-			item.rare = -1;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = true;
-			item.useTurn = true;
-			item.noMelee = true;
-			item.noUseGraphic = true;
-			item.shoot = mod.ProjectileType("DirtyDiscus");
-			item.shootSpeed = 12f;
-		}
-		public override bool CanUseItem(Player player) {
-            for (int i = 0; i < 1000; ++i) {
-                if (Main.projectile[i].active && Main.projectile[i].owner == Main.myPlayer && Main.projectile[i].type == item.shoot) {
-                    return false;
-                }
-            }
-            return true;
+        public override void SetStaticDefaults()
+		{
+			DisplayName.SetDefault("Dirty Discus");
         }
-	}
+		public override void SetDefaults()
+		{
+			projectile.width = 25;
+			projectile.height = 25;
+			projectile.aiStyle = 3;
+			projectile.friendly = true;
+			projectile.penetrate = 8;
+			projectile.melee = true;
+			projectile.timeLeft = 360;
+			projectile.ignoreWater = false;
+		}
+	}   
 }

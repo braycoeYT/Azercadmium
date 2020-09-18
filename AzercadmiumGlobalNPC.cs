@@ -111,9 +111,6 @@ namespace Azercadmium.NPCs
 			if (Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)].ZoneSkyHeight && Main.hardMode && Main.rand.NextFloat() < .1f) {
 				Item.NewItem(npc.getRect(), mod.ItemType("Electrolight"));
 			}
-			if (Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)].ZoneBeach && NPC.downedBoss3 && !NPC.downedMechBossAny && Main.rand.NextFloat() < .01f) {
-				Item.NewItem(npc.getRect(), mod.ItemType("AquaticJavelance"));
-			}
 			if (npc.type == NPCID.Derpling || npc.type == NPCID.GiantTortoise || npc.type == NPCID.GiantFlyingFox || npc.type == NPCID.AngryTrapper || npc.type == NPCID.Arapaima) {
 				if (Main.rand.NextFloat() < .01f)
 					Item.NewItem(npc.getRect(), mod.ItemType("VenomousPill"));
