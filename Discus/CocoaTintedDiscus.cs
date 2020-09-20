@@ -26,6 +26,8 @@ namespace Azercadmium.NPCs.Discus
 			npc.aiStyle = 44;
 			npc.noGravity = true;
 			npc.noTileCollide = true;
+			banner = npc.type;
+			bannerItem = ItemType<Items.Banners.Discus.CocoaTintedDiscusBanner>();
         }
 		
 		public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
@@ -47,6 +49,8 @@ namespace Azercadmium.NPCs.Discus
 			Item.NewItem(npc.getRect(), mod.ItemType("BrokenDiscus"), 1 + Main.rand.Next(1));
 		    if (Main.rand.NextFloat() < .03f)
 	        Item.NewItem(npc.getRect(), ItemID.Meteorite);
+			if (Main.rand.NextFloat() < .05f)
+	        Item.NewItem(npc.getRect(), mod.ItemType("CocoaBeans"));
         }
 	}
 }

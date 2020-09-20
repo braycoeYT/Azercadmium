@@ -7,13 +7,10 @@ namespace Azercadmium.Items.Potions
 {
 	public class StealthPotion : ModItem
 	{
-        public override void SetStaticDefaults()
-        {
-            Tooltip.SetDefault("Increased movement speed and you have a 4% chance to dodge attacks");
+        public override void SetStaticDefaults() {
+            Tooltip.SetDefault("Gives you have a 4% chance to dodge attacks");
         }
-
-        public override void SetDefaults()
-        {
+        public override void SetDefaults() {
             item.width = 20;
             item.height = 28;
             item.useStyle = ItemUseStyleID.EatingUsing;
@@ -26,11 +23,9 @@ namespace Azercadmium.Items.Potions
             item.rare = ItemRarityID.Blue;
             item.value = 390;
             item.buffType = mod.BuffType("Stealthy");
-            item.buffTime = 14400;
+            item.buffTime = 10800;
         }
-		
-		public override void AddRecipes() 
-		{
+		public override void AddRecipes() {
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.BottledWater);
 			recipe.AddIngredient(ItemID.Silk, 1);

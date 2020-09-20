@@ -7,13 +7,10 @@ namespace Azercadmium.NPCs.Discus
 {
 	public class AquamarineTintedDiscus : ModNPC
 	{
-		public override void SetStaticDefaults() 
-		{
+		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Aquamarine Tinted Discus");
 		}
-
-        public override void SetDefaults()
-		{
+        public override void SetDefaults() {
 			npc.width = 36;
 			npc.height = 48;
 			npc.damage = 29;
@@ -26,24 +23,20 @@ namespace Azercadmium.NPCs.Discus
 			npc.aiStyle = 44;
 			npc.noGravity = true;
 			npc.noTileCollide = true;
+			banner = npc.type;
+			bannerItem = ItemType<Items.Banners.Discus.AquamarineTintedDiscusBanner>();
         }
-		
-		public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
-        {
+		public override void ScaleExpertStats(int numPlayers, float bossLifeScale) {
             npc.lifeMax = 141;
             npc.damage = 59;
 			npc.defense = 1;
         }
-		
-		public override float SpawnChance(NPCSpawnInfo spawnInfo)
-        {
+		public override float SpawnChance(NPCSpawnInfo spawnInfo) {
 			if (AzercadmiumWorld.downedDiscus && spawnInfo.player.ZoneBeach && GetInstance<AzercadmiumConfig>().elemDiscus)
 				return 0.1f;
 			return 0f;
         }
-		
-	    public override void NPCLoot()
-        {
+	    public override void NPCLoot() {
 			Item.NewItem(npc.getRect(), mod.ItemType("BrokenDiscus"), 1 + Main.rand.Next(1));
 		    if (Main.rand.NextFloat() < .03f)
 	        Item.NewItem(npc.getRect(), ItemID.Coral);
