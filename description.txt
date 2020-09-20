@@ -43,4 +43,3 @@ Update V0.2.3.3: Banner Update pt. 1
 ~Decreased Stealth Potion buff time
 ~Added Cocoa Beans
 ~Resprited Elemental Gel and Starfrenzy
-~Elemental Gel code
