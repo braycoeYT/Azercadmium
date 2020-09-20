@@ -1,6 +1,7 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 
 namespace Azercadmium.NPCs.Discus
 {
@@ -44,11 +45,8 @@ namespace Azercadmium.NPCs.Discus
 		
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {
-			if (AzercadmiumWorld.downedDiscus)
-			{
-				if(spawnInfo.player.ZoneSnow)
+			if (AzercadmiumWorld.downedDiscus && spawnInfo.player.ZoneSnow && GetInstance<AzercadmiumConfig>().elemDiscus)
 				return 0.1f;
-			}
 			return 0f;
         }
 	}

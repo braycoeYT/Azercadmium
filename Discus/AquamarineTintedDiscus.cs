@@ -1,6 +1,7 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 
 namespace Azercadmium.NPCs.Discus
 {
@@ -36,24 +37,21 @@ namespace Azercadmium.NPCs.Discus
 		
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {
-			if (AzercadmiumWorld.downedDiscus)
-			{
-				if(spawnInfo.player.ZoneBeach)
+			if (AzercadmiumWorld.downedDiscus && spawnInfo.player.ZoneBeach && GetInstance<AzercadmiumConfig>().elemDiscus)
 				return 0.1f;
-			}
 			return 0f;
         }
 		
 	    public override void NPCLoot()
         {
 			Item.NewItem(npc.getRect(), mod.ItemType("BrokenDiscus"), 1 + Main.rand.Next(1));
-		    if (Main.rand.NextFloat() < .1f)
+		    if (Main.rand.NextFloat() < .03f)
 	        Item.NewItem(npc.getRect(), ItemID.Coral);
-			if (Main.rand.NextFloat() < .1f)
+			if (Main.rand.NextFloat() < .03f)
 	        Item.NewItem(npc.getRect(), ItemID.Seashell);
-			if (Main.rand.NextFloat() < .1f)
+			if (Main.rand.NextFloat() < .03f)
 	        Item.NewItem(npc.getRect(), ItemID.Starfish);
-			if (Main.rand.NextFloat() < .01f)
+			if (Main.rand.NextFloat() < .005f)
 	        Item.NewItem(npc.getRect(), ItemID.JellyfishNecklace);
         }
 	}

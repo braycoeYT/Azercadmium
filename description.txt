@@ -5,7 +5,7 @@ Discord Server: (homepage link is better) https://discord.gg/qv97wNV
 
 Stats:
 ~239 Items
-~48 total NPCs
+~49 total NPCs
 ~4 Bosses:
 ^2 Prehardmode Bosses
 ^2 Hardmode Bosses
@@ -36,26 +36,9 @@ Ashe (Minor Wiki)
 
 Multiplayer support is unknown, but most of us play alone anyway.
 
-Update V0.2.3.1: Content Update
-~Renamed Icy Greatsword to Icy Greatblade
-~Resprited Icy Greatblade
-~Resprited Creepy Mud
-~Changed Engineer quotes and shop
-~Resprited Mysterious Nova
-~Added Computer Virus Theme
-~Increased Floral Undergrowth craft rate
-~Renamed Feral Potion to Feral Chemicals
-~Resprited Feral Chemicals
-~Changed Broken Discus tooltip
-~Renamed Wooden Javelance to Wooden Splinter and changed sprite
-~Added Cold Crusher
-~Removed Pragmatic Shotgun temporarily
-~Changed Ancient Medieval Javelance tooltip
-~Increased Carnallite spawn rate
-~Resprited Aquatic Javelance
-~Aquatic Javelance is no longer dropped by enemies, changed tooltip, and changed crafting recipe.
-~Renamed Blood Drop Potion to Bloodied Vial
-~Changed Bloodied Vial sprite and recipe
-~Resprited Floater Potion
-~Resprited Archive and Shard/Eye of Prejudice projectiles
-~Improved projectile dusts
+Update V0.2.3.2: Config and Discus Update
+~Added a config to disable elemental discus spawns
+~Decreased Aquamarine Tinted Discus and Magma Assault Discus drop rates
+~Decreased Sandgrain Assault Discus and Vinefury Discus spawnrate
+~Made Sandgrain Assault Discus spawn naturally outside of expert mode
+~Added a themeless Discus which only spawns if its config is enabled (disabled by default)

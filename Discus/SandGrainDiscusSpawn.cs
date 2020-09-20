@@ -39,12 +39,8 @@ namespace Azercadmium.NPCs.Discus
 		
 		public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {
-			if (AzercadmiumWorld.downedDiscus)
-			{
-				if(spawnInfo.player.ZoneUndergroundDesert)
-				if(Main.expertMode)
-				return 0.1f;
-			}
+			if (AzercadmiumWorld.downedDiscus && spawnInfo.player.ZoneUndergroundDesert)
+				return 0.025f;
 			return 0f;
         }
 		
