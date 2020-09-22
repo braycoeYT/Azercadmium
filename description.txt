@@ -4,7 +4,7 @@ School has started for me and I can't work on the mod all day anymore, sorry.
 Discord Server: (homepage link is better) https://discord.gg/qv97wNV
 
 Stats:
-~245 Items
+~244 Items
 ~49 total NPCs
 ~4 Bosses:
 ^2 Prehardmode Bosses
@@ -26,20 +26,18 @@ HBDeus (Spriter)
 VaultyBoi (Spriter)
 ULTIMATEDQVID (Spriter)
 Unboxing Video (Wiki)
-Setnour6 (Spriter/Music)
 
 Very Minor Help/Quit:
 CrazySapling1 (Quit Spriter)
 Sness (Two sprites)
 Math (Minor Wiki)
 Ashe (Minor Wiki)
+Setnour6 (M.Nova Sprite and C.Virus Theme)
 
 Multiplayer support is unknown, but most of us play alone anyway.
 
-Update V0.2.3.3: Banner Update pt. 1
-~Added banners for 5 discuses
-~Code optimization
-~Decreased Amber drop rate of the Desert Discus
-~Decreased Stealth Potion buff time
-~Added Cocoa Beans
-~Resprited Elemental Gel and Starfrenzy
+Update V0.2.3.4: Small Update
+~Changed Heartbreaker recipe
+~Removed Sunblaze
+~Changed Trident recipe
+~Lobera now requires Mythril Anvil instead of regular Anvil

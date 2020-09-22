@@ -222,6 +222,8 @@ namespace Azercadmium
 			recipe.AddIngredient(ItemID.GoldBar, 9);
 			recipe.AddRecipeGroup("Azercadmium:AnyGem");
 			recipe.AddIngredient(ItemID.Seashell);
+			recipe.AddIngredient(ItemID.Starfish);
+			recipe.AddIngredient(ItemID.Coral);
 			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(ItemID.Trident);
 			recipe.AddRecipe();
@@ -337,6 +339,12 @@ namespace Azercadmium
 			recipe.AddIngredient(ItemID.IceBlock, 8);
 			recipe.AddTile(TileID.Loom);
 			recipe.SetResult(ItemID.HandWarmer);
+			recipe.AddRecipe();
+
+			recipe = new ModRecipe(this);
+			recipe.AddIngredient(null, "CocoaBeans");
+			recipe.AddTile(TileID.DyeVat);
+			recipe.SetResult(ItemID.BrownDye);
 			recipe.AddRecipe();
 		}
 		/*public override void UpdateMusic(ref int music, ref MusicPriority priority)
