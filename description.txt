@@ -36,8 +36,6 @@ Setnour6 (M.Nova Sprite and C.Virus Theme)
 
 Multiplayer support is unknown, but most of us play alone anyway.
 
-Update V0.2.3.4: Small Update
-~Changed Heartbreaker recipe
-~Removed Sunblaze
-~Changed Trident recipe
-~Lobera now requires Mythril Anvil instead of regular Anvil
+Update V0.2.3.5: Worm Update
+~Updated Worm AI
+~Fixed Vein Tunneler spawning

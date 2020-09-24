@@ -1,40 +1,23 @@
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ID;
-using Terraria.ModLoader;
-using Azercadmium;
-using Azercadmium.NPCs.OtherWorms;
 
 namespace Azercadmium.NPCs.OtherWorms
 {
-	public class VeinTunnelerTail : VeinTunnelerPart
+	internal class VeinTunnelerTail : VeinTunneler
 	{
-		public override void SetDefaults()
-		{
-			base.SetDefaults();
-			npc.width = 18;
-			npc.height = 36;
-			if (Main.expertMode)
-			npc.damage = 26;
-			else
-			npc.damage = 14;
-			npc.defense = 10;
+		public override string Texture { get { return "Azercadmium/NPCs/OtherWorms/VeinTunnelerTail"; } }
+		public override void SetDefaults() {
+			npc.CloneDefaults(NPCID.DiggerBody);
+			npc.aiStyle = -1;
+			npc.damage = 11;
+			npc.defense = 12;
 		}
-
-		public override void AI()
-		{
-			CheckSegments();
+		public override void ScaleExpertStats(int numPlayers, float bossLifeScale) {
+			npc.damage = 23;
 		}
-
-		public override bool CheckActive()
-		{
-			return false;
-		}
-
-		public override bool? DrawHealthBar(byte hbPosition, ref float scale, ref Vector2 position)
-		{
-			return false;
+		public override void Init() {
+			base.Init();
+			tail = true;
 		}
 	}
 }
