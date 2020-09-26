@@ -17,8 +17,8 @@ namespace Azercadmium.Items.Slime
 		{
 			item.damage = 10;
 			item.ranged = true;
-			item.width = 33;
-			item.height = 33;
+			item.width = 52;
+			item.height = 52;
 			item.useTime = 31;
 			item.useAnimation = 31;
 			item.useStyle = ItemUseStyleID.SwingThrow;

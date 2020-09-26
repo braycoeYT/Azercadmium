@@ -4,22 +4,24 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
 
-namespace Azercadmium.Items.Slime
+namespace Azercadmium.Items.Blowpipes.PH
 {
-	public class SlimyBlowpipe : ModItem
+	public class BloodyBlowpipe : ModItem
 	{
 		public override void SetStaticDefaults() 
 		{
-			Tooltip.SetDefault("Uses seed shots as ammo\nWhile in your inventory, the following enemies will drop Slimy Seedshots:\nBlue Slime, Spiked Slime, Purple Slime");
+			DisplayName.SetDefault("Bloody Blowpipe");
+			Tooltip.SetDefault("Uses seed shots as ammo\nWhile in your inventory, the following enemies will drop Crimtane Seedshots:\nBlood Crawler, Vein Tunneler, Face Monster, Crimera");
 		}
 		public override void SetDefaults() 
 		{
 			item.CloneDefaults(ItemID.Blowpipe);
-			item.damage = 12; //9, mod 14
-			item.knockBack = 3.5f; //3.5
-			item.shootSpeed = 10f; //11
-			item.useTime = 43; //45
-			item.useAnimation = 43; //45
+			item.damage = 14; //9
+			item.knockBack = 2.3f; //3.5
+			item.shootSpeed = 11.5f; //11
+			item.useTime = 21; //45
+			item.useAnimation = 21; //45
+			item.rare = ItemRarityID.Blue;
 		}
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
@@ -27,13 +29,13 @@ namespace Azercadmium.Items.Slime
 			return true;
 		}
 		public override Vector2? HoldoutOffset() {
-			return new Vector2(8, -5);
+			return new Vector2(0, -7);
 		}
-		public override void AddRecipes()
+		public override void AddRecipes() 
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(mod.ItemType("SlimyCore"), 3);
-			recipe.AddTile(TileID.Solidifier);
+			recipe.AddIngredient(ItemID.CrimtaneBar, 8);
+			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}

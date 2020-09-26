@@ -32,10 +32,12 @@ CrazySapling1 (Quit Spriter)
 Sness (Two sprites)
 Math (Minor Wiki)
 Ashe (Minor Wiki)
+Pufferfish (Minor Concepts and Sprites)
 Setnour6 (M.Nova Sprite and C.Virus Theme)
 
 Multiplayer support is unknown, but most of us play alone anyway.
 
-Update V0.2.3.5: Worm Update
-~Updated Worm AI
-~Fixed Vein Tunneler spawning
+Update V0.2.3.6: Update
+~Updated author to include the spriters, this mod would not be possible without them.
+~Resprited Slime items
+~Fixed Bloody Blowpipe
