@@ -2,7 +2,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace Azercadmium.Items.OtherSwords
+namespace Azercadmium.Items.Cave
 {
 	public class Heartbreaker : ModItem
 	{

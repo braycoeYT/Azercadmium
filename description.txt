@@ -32,7 +32,7 @@ CrazySapling1 (Quit Spriter)
 Sness (Two sprites)
 Math (Minor Wiki)
 Ashe (Minor Wiki)
-Pufferfish (Minor Concepts and Sprites)
+Pufferfish77 (Minor Concepts and Sprites)
 Setnour6 (M.Nova Sprite and C.Virus Theme)
 
 Multiplayer support is unknown, but most of us play alone anyway.
@@ -40,7 +40,7 @@ Multiplayer support is unknown, but most of us play alone anyway.
 Update V0.2.3.7: Good Update
 ~Internal decompilation and sorting
 ~Code optimazations
-~Removed Mysterious Conversation
+~Removed Mysterious Conversation for being really outdated
 ~Removed Eye of Oblivion
 ~Removed Zenith items for being unused for a long time
 ~Changed slime items
@@ -58,4 +58,7 @@ Update V0.2.3.7: Good Update
 ~Removed Mystery Bag
 ~Removed Spiky Sac for being outdated
 ~Removed Stone Shield
-//Test Featherfall Shield
+~Changed internal stuff
+~Fixed Engineer chat grammar mistake
+~Fixed multiple javelance recipes
+~Removed Code 3 tooltip

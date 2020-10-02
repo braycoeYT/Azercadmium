@@ -1,10 +1,9 @@
 using Microsoft.Xna.Framework;
-using System;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace Azercadmium.Items.OtherJavelances
+namespace Azercadmium.Items.Corruption
 {
 	public class Shadowdance : ModItem
 	{
@@ -54,15 +53,6 @@ namespace Azercadmium.Items.OtherJavelances
 		}
 		public override void AddRecipes() {
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(mod.ItemType("RoyalCorruptJavelance"));
-			recipe.AddIngredient(mod.ItemType("AquaticJavelance"));
-			recipe.AddIngredient(mod.ItemType("VinepowerJavelance"));
-			recipe.AddIngredient(mod.ItemType("FirebentJavelance"));
-			recipe.AddTile(TileID.DemonAltar);
-			recipe.SetResult(this);
-			recipe.AddRecipe();
-			
-			recipe = new ModRecipe(mod);
 			recipe.AddIngredient(mod.ItemType("RoyalCorruptJavelance"), 3);
 			recipe.AddIngredient(mod.ItemType("AquaticJavelance"), 3);
 			recipe.AddIngredient(mod.ItemType("VinepowerJavelance"), 3);

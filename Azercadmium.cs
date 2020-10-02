@@ -59,10 +59,10 @@ namespace Azercadmium
 					new List<int> { ModContent.NPCType<NPCs.Bosses.ComputerVirus>() },
 					this,
 					"$Mods.Azercadmium.NPCName.ComputerVirus",
-					(Func<bool>)(() => AzercadmiumWorld.downedComVirus),
+					(Func<bool>)(() => AzercadmiumWorld.downedCVirus),
 					ModContent.ItemType<Items.CVirus.FloppyDisc>(),
-					new List<int> { ModContent.ItemType<Items.ComputerVirus.SoulofByte>() }, //collectables
-					new List<int> { ModContent.ItemType<Items.ComputerVirus.SoulofByte>() }, //other
+					new List<int> { ModContent.ItemType<Items.CVirus.SoulofByte>() }, //collectables
+					new List<int> { ModContent.ItemType<Items.CVirus.SoulofByte>() }, //other
 					$"Use a [i:{ModContent.ItemType<Items.CVirus.FloppyDisc>()}]  to taunt the cyber plague."
 				);
 				bossChecklist.Call(

@@ -19,7 +19,7 @@ namespace Azercadmium
 		public static bool downedDiscus;
 		public static bool downedMineral;
 		public static bool generatedEctojewelo;
-		public static bool downedComVirus;
+		public static bool downedCVirus;
 		public static bool generatedOblivion;
 		public static bool downedMeatball;
 		public static bool downedMechaball;
@@ -39,7 +39,7 @@ namespace Azercadmium
 			downedDiscus = false;
 			downedMineral = false;
 			generatedEctojewelo = false;
-			downedComVirus = false;
+			downedCVirus = false;
 			generatedOblivion = false;
 			downedMeatball = false;
 			downedMechaball = false;
@@ -60,7 +60,7 @@ namespace Azercadmium
                 {"downedDiscus", downedDiscus},
                 {"downedMineral", downedMineral},
 				{"generatedEctojewelo", generatedEctojewelo},
-				{"downedComVirus", downedComVirus},
+				{"downedCVirus", downedCVirus},
 				{"generatedOblivion", generatedOblivion},
 				{"downedMeatball", downedMeatball},
 				{"downedMechaball", downedMechaball},
@@ -80,7 +80,7 @@ namespace Azercadmium
 			downedDiscus = tag.GetBool("downedDiscus");
 			downedMineral = tag.GetBool("downedMineral");
 			generatedEctojewelo = tag.GetBool("generatedEctojewelo");
-			downedComVirus = tag.GetBool("downedComVirus");
+			downedCVirus = tag.GetBool("downedCVirus");
 			generatedOblivion = tag.GetBool("generatedOblivion");
 			downedMeatball = tag.GetBool("downedMeatball");
 			downedMechaball = tag.GetBool("downedMechaball");
@@ -100,7 +100,7 @@ namespace Azercadmium
             flags[1] = downedDiscus;
             flags[2] = downedMineral;
 			flags[3] = generatedEctojewelo;
-			flags[4] = downedComVirus;
+			flags[4] = downedCVirus;
 			flags[5] = downedXenic;
 			flags[6] = downedEmpress;
 			flags[7] = downedCell;
@@ -120,7 +120,7 @@ namespace Azercadmium
             downedDiscus = flags[1];
             downedMineral = flags[2];
 			generatedEctojewelo = flags[3];
-			downedComVirus = flags[4];
+			downedCVirus = flags[4];
 			downedXenic = flags[5];
 			downedEmpress = flags[6];
 			downedCell = flags[7];
@@ -318,7 +318,7 @@ namespace Azercadmium
 			}
 		}*/
 		public override void PostWorldGen() {
-			int[] itemsToPlaceInSkywareChests = { ItemType<Items.OtherSwords.Starfrenzy>() };
+			int[] itemsToPlaceInSkywareChests = { ItemType<Items.Sky.Starfrenzy>() };
 			int itemsToPlaceInSkywareChestsChoice = 0;
 			for (int chestIndex = 0; chestIndex < 1000; chestIndex++) {
 				Chest chest = Main.chest[chestIndex];
@@ -333,7 +333,7 @@ namespace Azercadmium
 				}
 			}
 
-			int[] itemsToPlaceInDungeonChests = { ItemType<Items.OtherSwords.Starfrenzy>() };
+			int[] itemsToPlaceInDungeonChests = { ItemType<Items.Sky.Starfrenzy>() };
 			int itemsToPlaceInDungeonChestsChoice = 0;
 			for (int chestIndex = 0; chestIndex < 1000; chestIndex++) {
 				Chest chest = Main.chest[chestIndex];
