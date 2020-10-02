@@ -1,4 +1,3 @@
-using Azercadmium.Items;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -8,14 +7,11 @@ namespace Azercadmium.Items.Dirtball
 {
 	public class DirtballBag : ModItem
 	{
-		public override void SetStaticDefaults()
-		{
+		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Treasure Bag");
 			Tooltip.SetDefault("{$CommonItemTooltip.RightClickToOpen}");
 		}
-
-		public override void SetDefaults()
-		{
+		public override void SetDefaults() {
 			item.maxStack = 99;
 			item.consumable = true;
 			item.width = 40;
@@ -23,14 +19,10 @@ namespace Azercadmium.Items.Dirtball
 			item.rare = 12;
 			item.expert = true;
 		}
-
-		public override bool CanRightClick()
-		{
+		public override bool CanRightClick() {
 			return true;
 		}
-
-		public override void OpenBossBag(Player player)
-		{
+		public override void OpenBossBag(Player player) {
 			int ran = Main.rand.Next(1, 7);
 			if (ran == 1) player.QuickSpawnItem(mod.ItemType("BrokenDirtballCopperShortsword"));
 			if (ran == 2) player.QuickSpawnItem(mod.ItemType("DirtyDiscus"));

@@ -17,7 +17,7 @@ namespace Azercadmium.Items.Dirtball
 			item.shootSpeed = 13f; //11
 			item.useTime = 51; //45
 			item.useAnimation = 51; //45
-			item.value = Item.sellPrice(0, 1, 0, 0);
+			item.value = Item.sellPrice(0, 0, 10, 0);
 			item.rare = -1;
 		}
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack) {

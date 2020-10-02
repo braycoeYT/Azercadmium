@@ -2,31 +2,27 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace Azercadmium.Items.Dirtball
+namespace Azercadmium.Items.Desert
 {
-	public class DirtyDiscus : ModItem
+	public class Cactirang : ModItem
 	{
-		public override void SetStaticDefaults() {
-			Tooltip.SetDefault("Feeling it makes you feel dirty...\nRapidly throw discuses");
-		}
 		public override void SetDefaults() {
-			item.damage = 12;
+			item.damage = 6;
 			item.melee = true;
-			item.width = 33;
-			item.height = 33;
-			item.useTime = 31;
-			item.useAnimation = 31;
+			item.width = 30;
+			item.height = 30;
+			item.useTime = 72;
+			item.useAnimation = 72;
 			item.useStyle = ItemUseStyleID.HoldingUp;
-			item.knockBack = 1.5f;
-			item.value = 2000;
-			item.rare = -1;
+			item.knockBack = 4.5f;
+			item.value = 500;
+			item.rare = ItemRarityID.White;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
 			item.useTurn = true;
-			item.noMelee = true;
+			item.shoot = mod.ProjectileType("Cactirang");
+			item.shootSpeed = 8f;
 			item.noUseGraphic = true;
-			item.shoot = mod.ProjectileType("DirtyDiscus");
-			item.shootSpeed = 12f;
 		}
 		public override bool CanUseItem(Player player) {
             for (int i = 0; i < 1000; ++i) {
@@ -36,5 +32,12 @@ namespace Azercadmium.Items.Dirtball
             }
             return true;
         }
+		public override void AddRecipes() {
+			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(ItemID.Cactus, 11);
+			recipe.AddTile(TileID.WorkBenches);
+			recipe.SetResult(this);
+			recipe.AddRecipe();
+		}
 	}
 }

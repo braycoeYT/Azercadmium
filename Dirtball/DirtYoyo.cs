@@ -1,4 +1,3 @@
-using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -8,17 +7,13 @@ namespace Azercadmium.Items.Dirtball
 {
 	public class DirtYoyo : ModItem
 	{
-		public override void SetStaticDefaults() 
-		{
+		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Dirt Yoyo");
-			Tooltip.SetDefault("Disgust from a long range");
 			ItemID.Sets.Yoyo[item.type] = true;
 			ItemID.Sets.GamepadExtraRange[item.type] = 15;
 			ItemID.Sets.GamepadSmartQuickReach[item.type] = true;
 		}
-
-		public override void SetDefaults()
-		{
+		public override void SetDefaults() {
 			item.useStyle = ItemUseStyleID.HoldingOut;
 			item.width = 24;
 			item.height = 24;
@@ -33,7 +28,7 @@ namespace Azercadmium.Items.Dirtball
 			item.noMelee = true;
 			item.noUseGraphic = true;
 			item.UseSound = SoundID.Item1;
-			item.value = 2500;
+			item.value = Item.sellPrice(0, 0, 10, 0);
 			item.shoot = ProjectileType<Projectiles.OtherYoyos.DirtYoyo>();
 		}
 	}

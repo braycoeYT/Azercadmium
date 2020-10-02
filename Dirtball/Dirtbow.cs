@@ -6,14 +6,11 @@ namespace Azercadmium.Items.Dirtball
 {
 	public class Dirtbow : ModItem
 	{
-		public override void SetStaticDefaults() 
-		{
+		public override void SetStaticDefaults() {
 			Tooltip.SetDefault("It's oozing!");
 		}
-
-		public override void SetDefaults() 
-		{
-			item.value = Item.sellPrice(0, 0, 5, 0);
+		public override void SetDefaults() {
+			item.value = Item.sellPrice(0, 0, 10, 0);
 			item.useStyle = ItemUseStyleID.HoldingOut;
 			item.useAnimation = 16;
 			item.useTime = 16;

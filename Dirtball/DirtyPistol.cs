@@ -11,7 +11,7 @@ namespace Azercadmium.Items.Dirtball
 			DisplayName.SetDefault("Paydirt Pistol");
 		}
 		public override void SetDefaults() {
-			item.value = Item.sellPrice(0, 1, 0, 0);
+			item.value = Item.sellPrice(0, 0, 10, 0);
 			item.useStyle = ItemUseStyleID.HoldingOut;
 			item.useAnimation = 17;
 			item.useTime = 17;
