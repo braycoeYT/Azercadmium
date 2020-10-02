@@ -6,15 +6,12 @@ namespace Azercadmium.Items.Empress
 {
 	public class Eggspray : ModItem
 	{
-		public override void SetStaticDefaults() 
-		{
+		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Eggspray");
 			Tooltip.SetDefault("Shoots slow moving eggs which shoot venomous orbs");
 			//Item.staff[item.type] = true;
 		}
-
-		public override void SetDefaults() 
-		{
+		public override void SetDefaults() {
 			item.damage = 67;
 			item.magic = true;
 			item.width = 33;
@@ -23,7 +20,7 @@ namespace Azercadmium.Items.Empress
 			item.useAnimation = 31;
 			item.useStyle = ItemUseStyleID.HoldingOut;
 			item.knockBack = 2.5f;
-			item.value = 500000;
+			item.value = Item.sellPrice(0, 5, 0, 0);
 			item.rare = ItemRarityID.Lime;
 			item.autoReuse = true;
 			item.useTurn = true;

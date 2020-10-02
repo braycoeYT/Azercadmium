@@ -1,32 +1,24 @@
-using System;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using Terraria.Utilities;
-using static Terraria.ModLoader.ModContent;
 
 namespace Azercadmium.Items.Empress
 {
 	public class MonarchalGel : ModItem
 	{
-		public override void SetStaticDefaults()
-		{
+		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Monarchal Gel");
 			Tooltip.SetDefault("You are a slime monarch\nMost slimes are friendly\nFor every 10% of hp lost, defense increases by 2");
 		}
-
-		public override void SetDefaults()
-		{
+		public override void SetDefaults() {
 			item.width = 40;
 			item.height = 40;
 			item.accessory = true;
-			item.value = 1500000;
+			item.value = Item.sellPrice(0, 5, 0, 0);
 			item.rare = ItemRarityID.Yellow;
 			item.expert = true;
 		}
-
-		public override void UpdateAccessory(Player player, bool hideVisual)
-		{
+		public override void UpdateAccessory(Player player, bool hideVisual) {
 			player.npcTypeNoAggro[1] = true;
 			player.npcTypeNoAggro[16] = true;
 			player.npcTypeNoAggro[59] = true;
@@ -53,9 +45,7 @@ namespace Azercadmium.Items.Empress
 				player.statDefense -= 2;
 			}
 		}
-		
-		public override void AddRecipes()
-		{
+		public override void AddRecipes() {
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.RoyalGel);
 			recipe.AddIngredient(mod.ItemType("SackofProtection"));

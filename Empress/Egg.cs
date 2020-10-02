@@ -7,14 +7,12 @@ namespace Azercadmium.Items.Empress
 {
 	public class Egg : ModItem
 	{
-		public override void SetStaticDefaults() 
-		{
+		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Egg");
 			Tooltip.SetDefault("Has a low chance of shooting an egg which venoms enemies");
 		}
-		public override void SetDefaults() 
-		{
-			item.value = 500000;
+		public override void SetDefaults() {
+			item.value = Item.sellPrice(0, 5, 0, 0);
 			item.useStyle = ItemUseStyleID.HoldingOut;
 			item.useAnimation = 13;
 			item.useTime = 13;
@@ -31,8 +29,7 @@ namespace Azercadmium.Items.Empress
 			item.autoReuse = false;
 			item.rare = ItemRarityID.Lime;
 		}
-		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
-		{
+		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack) {
 			int ran = Main.rand.Next(1, 10);
 			if (ran == 1) type = mod.ProjectileType("Egg");
 			return true;

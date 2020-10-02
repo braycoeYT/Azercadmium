@@ -1,4 +1,3 @@
-using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -8,17 +7,14 @@ namespace Azercadmium.Items.Empress
 {
 	public class EmpressYolk : ModItem
 	{
-		public override void SetStaticDefaults() 
-		{
+		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Empress's Yolk");
 			Tooltip.SetDefault("Let go of the yoyo to barrage with poisonous yolk\nRight click to end the yolk barrage\nYou cannot use any items until you stop the yolk barrage");
 			ItemID.Sets.Yoyo[item.type] = true;
 			ItemID.Sets.GamepadExtraRange[item.type] = 15;
 			ItemID.Sets.GamepadSmartQuickReach[item.type] = true;
 		}
-
-		public override void SetDefaults()
-		{
+		public override void SetDefaults() {
 			item.useStyle = ItemUseStyleID.HoldingOut;
 			item.width = 24;
 			item.height = 24;
@@ -33,7 +29,7 @@ namespace Azercadmium.Items.Empress
 			item.noMelee = true;
 			item.noUseGraphic = true;
 			item.UseSound = SoundID.Item1;
-			item.value = 500000;
+			item.value = Item.sellPrice(0, 5, 0, 0);
 			item.shoot = ProjectileType<Projectiles.OtherYoyos.EmpressYolk>();
 		}
 	}
