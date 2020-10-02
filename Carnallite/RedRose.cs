@@ -1,5 +1,3 @@
-using Microsoft.Xna.Framework;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -11,7 +9,7 @@ namespace Azercadmium.Items.Carnallite
 		public override void SetStaticDefaults() {
 			Tooltip.SetDefault("Shoots roses that may confuse enemies");
 		}
-		public override void SetDefaults()  {
+		public override void SetDefaults() {
 			item.damage = 85;
 			item.melee = true;
 			item.width = 40;

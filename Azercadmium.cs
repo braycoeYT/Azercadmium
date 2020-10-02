@@ -1,17 +1,9 @@
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using Terraria;
-using Terraria.GameContent.UI;
-using Terraria.Graphics.Effects;
-using Terraria.Graphics.Shaders;
 using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
-using Terraria.UI;
-using static Terraria.ModLoader.ModContent;
 
 namespace Azercadmium
 {
@@ -68,10 +60,10 @@ namespace Azercadmium
 					this,
 					"$Mods.Azercadmium.NPCName.ComputerVirus",
 					(Func<bool>)(() => AzercadmiumWorld.downedComVirus),
-					ModContent.ItemType<Items.ComputerVirus.MechanicalDisc>(),
-					new List<int> { ModContent.ItemType<Items.ComputerVirus.SoulOfByte>() }, //collectables
-					new List<int> { ModContent.ItemType<Items.ComputerVirus.SoulOfByte>() }, //other
-					$"Use a [i:{ModContent.ItemType<Items.ComputerVirus.MechanicalDisc>()}]  to taunt the cyber plague."
+					ModContent.ItemType<Items.CVirus.FloppyDisc>(),
+					new List<int> { ModContent.ItemType<Items.ComputerVirus.SoulofByte>() }, //collectables
+					new List<int> { ModContent.ItemType<Items.ComputerVirus.SoulofByte>() }, //other
+					$"Use a [i:{ModContent.ItemType<Items.CVirus.FloppyDisc>()}]  to taunt the cyber plague."
 				);
 				bossChecklist.Call(
 					"AddBoss",

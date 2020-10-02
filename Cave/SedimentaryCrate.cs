@@ -1,13 +1,15 @@
+using Azercadmium.Items;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 
 namespace Azercadmium.Items.Cave
 {
-	public class CaveCrate : ModItem
+	public class SedimentaryCrate : ModItem
 	{
 		public override void SetStaticDefaults() {
-			DisplayName.SetDefault("Cave Crate"); //not cave camp
+			DisplayName.SetDefault("Sedimentary Crate"); //not cave camp
 			Tooltip.SetDefault("{$CommonItemTooltip.RightClickToOpen}");
 		}
 		public override void SetDefaults() {
@@ -22,9 +24,9 @@ namespace Azercadmium.Items.Cave
 			item.rare = ItemRarityID.Green;
 			item.autoReuse = true;
 			item.consumable = true;
-			item.createTile = mod.TileType("CaveCrate");
+			item.createTile = mod.TileType("SedimentaryCrate");
 			item.placeStyle = 0;
-			item.value = 50000;
+			item.value = Item.sellPrice(0, 1, 0, 0);
         }
 		public override bool CanRightClick() {
 			return true;
@@ -44,39 +46,65 @@ namespace Azercadmium.Items.Cave
 			if (crateRand == 5)
 			player.QuickSpawnItem(mod.ItemType("FloatingPebbleStaff"));
 
-			if (Main.rand.Next(7) == 0)
+			if (Main.rand.Next(14) == 0)
 			player.QuickSpawnItem(ItemID.CopperOre, Main.rand.Next(30, 50));
-			if (Main.rand.Next(7) == 0)
+			if (Main.rand.Next(14) == 0)
 			player.QuickSpawnItem(ItemID.TinOre, Main.rand.Next(30, 50));
-			if (Main.rand.Next(7) == 0)
+			if (Main.rand.Next(14) == 0)
 			player.QuickSpawnItem(ItemID.IronOre, Main.rand.Next(30, 50));
-			if (Main.rand.Next(7) == 0)
+			if (Main.rand.Next(14) == 0)
 			player.QuickSpawnItem(ItemID.LeadOre, Main.rand.Next(30, 50));
-			if (Main.rand.Next(7) == 0)
+			if (Main.rand.Next(14) == 0)
 			player.QuickSpawnItem(ItemID.SilverOre, Main.rand.Next(30, 50));
-			if (Main.rand.Next(7) == 0)
+			if (Main.rand.Next(14) == 0)
 			player.QuickSpawnItem(ItemID.TungstenOre, Main.rand.Next(30, 50));
-			if (Main.rand.Next(7) == 0)
+			if (Main.rand.Next(14) == 0)
 			player.QuickSpawnItem(ItemID.GoldOre, Main.rand.Next(30, 50));
-			if (Main.rand.Next(7) == 0)
+			if (Main.rand.Next(14) == 0)
 			player.QuickSpawnItem(ItemID.PlatinumOre, Main.rand.Next(30, 50));
 
-			if (Main.rand.Next(4) == 0)
+			if (Main.rand.Next(12) == 0)
 			player.QuickSpawnItem(ItemID.CopperBar, Main.rand.Next(10, 21));
-			if (Main.rand.Next(4) == 0)
+			if (Main.rand.Next(12) == 0)
 			player.QuickSpawnItem(ItemID.TinBar, Main.rand.Next(10, 21));
-			if (Main.rand.Next(4) == 0)
+			if (Main.rand.Next(12) == 0)
 			player.QuickSpawnItem(ItemID.IronBar, Main.rand.Next(10, 21));
-			if (Main.rand.Next(4) == 0)
+			if (Main.rand.Next(12) == 0)
 			player.QuickSpawnItem(ItemID.LeadBar, Main.rand.Next(10, 21));
-			if (Main.rand.Next(4) == 0)
+			if (Main.rand.Next(12) == 0)
 			player.QuickSpawnItem(ItemID.SilverBar, Main.rand.Next(10, 21));
-			if (Main.rand.Next(4) == 0)
+			if (Main.rand.Next(12) == 0)
 			player.QuickSpawnItem(ItemID.TungstenBar, Main.rand.Next(10, 21));
-			if (Main.rand.Next(4) == 0)
+			if (Main.rand.Next(12) == 0)
 			player.QuickSpawnItem(ItemID.GoldBar, Main.rand.Next(10, 21));
-			if (Main.rand.Next(4) == 0)
+			if (Main.rand.Next(12) == 0)
 			player.QuickSpawnItem(ItemID.PlatinumBar, Main.rand.Next(10, 21));
+
+			if (Main.rand.Next(14) == 0)
+			player.QuickSpawnItem(ItemID.CobaltOre, Main.rand.Next(30, 50));
+			if (Main.rand.Next(14) == 0)
+			player.QuickSpawnItem(ItemID.PalladiumOre, Main.rand.Next(30, 50));
+			if (Main.rand.Next(14) == 0)
+			player.QuickSpawnItem(ItemID.MythrilOre, Main.rand.Next(30, 50));
+			if (Main.rand.Next(14) == 0)
+			player.QuickSpawnItem(ItemID.OrichalcumOre, Main.rand.Next(30, 50));
+			if (Main.rand.Next(14) == 0)
+			player.QuickSpawnItem(ItemID.AdamantiteOre, Main.rand.Next(30, 50));
+			if (Main.rand.Next(14) == 0)
+			player.QuickSpawnItem(ItemID.TitaniumBar, Main.rand.Next(30, 50));
+
+			if (Main.rand.Next(6) == 0)
+			player.QuickSpawnItem(ItemID.CobaltBar, Main.rand.Next(8, 21));
+			if (Main.rand.Next(6) == 0)
+			player.QuickSpawnItem(ItemID.PalladiumBar, Main.rand.Next(8, 21));
+			if (Main.rand.Next(6) == 0)
+			player.QuickSpawnItem(ItemID.MythrilBar, Main.rand.Next(8, 21));
+			if (Main.rand.Next(6) == 0)
+			player.QuickSpawnItem(ItemID.OrichalcumBar, Main.rand.Next(8, 21));
+			if (Main.rand.Next(6) == 0)
+			player.QuickSpawnItem(ItemID.AdamantiteBar, Main.rand.Next(8, 21));
+			if (Main.rand.Next(6) == 0)
+			player.QuickSpawnItem(ItemID.TitaniumBar, Main.rand.Next(8, 21));
 
 			if (Main.rand.Next(7) == 0)
 			player.QuickSpawnItem(ItemID.Amethyst, Main.rand.Next(3, 5));
@@ -98,18 +126,16 @@ namespace Azercadmium.Items.Cave
 			if (Main.rand.Next(4) == 0)
 			player.QuickSpawnItem(ItemID.SpelunkerPotion, Main.rand.Next(1, 4));
 
-			if (Main.rand.Next(3) == 0)
-			player.QuickSpawnItem(ItemID.LesserHealingPotion, Main.rand.Next(5, 16));
-			if (Main.rand.Next(3) == 0)
-			player.QuickSpawnItem(ItemID.LesserManaPotion, Main.rand.Next(5, 16));
-
 			if (Main.rand.Next(2) == 0)
 			player.QuickSpawnItem(ItemID.Worm, Main.rand.Next(1, 5));
 
-			if (Main.rand.Next(11) == 0)
-			player.QuickSpawnItem(ItemID.SilverCoin, Main.rand.Next(20, 91));
-			if (Main.rand.Next(21) == 0)
-			player.QuickSpawnItem(ItemID.GoldCoin, Main.rand.Next(1, 6));
+			if (Main.rand.Next(2) == 0)
+			player.QuickSpawnItem(ItemID.HealingPotion, Main.rand.Next(5, 18));
+			if (Main.rand.Next(2) == 0)
+			player.QuickSpawnItem(ItemID.ManaPotion, Main.rand.Next(5, 18));
+
+			if (Main.rand.Next(4) == 0)
+			player.QuickSpawnItem(ItemID.GoldCoin, Main.rand.Next(5, 13));
 		}
 	}
 }

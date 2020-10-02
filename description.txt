@@ -14,7 +14,7 @@ Stats:
 ~21 Buffs
 ~2 Ores
 ~2 Subclasses
-~1 Song
+~2 Custom Soundtracks
 ~1 Secret Rarity
 
 Cross-mod Content with Asteri and Havoc Mod.
@@ -37,7 +37,25 @@ Setnour6 (M.Nova Sprite and C.Virus Theme)
 
 Multiplayer support is unknown, but most of us play alone anyway.
 
-Update V0.2.3.6: Update
-~Updated author to include the spriters, this mod would not be possible without them.
-~Resprited Slime items
-~Fixed Bloody Blowpipe
+Update V0.2.3.7: Good Update
+~Internal decompilation and sorting
+~Code optimazations
+~Removed Mysterious Conversation
+~Removed Eye of Oblivion
+~Removed Zenith items for being unused for a long time
+~Changed slime items
+~Added goldfish to Aquatic Javelance recipe
+~Changed Slimy Javelance recipe
+~Removed Ordinary Amoeba for having almost no use
+~Changed many sell prices and max stacks
+~Changed Delicious Gelatin tooltip
+~Fixed ADD bag dropping twice (?)
+~Increased recipe for Discus Medal
+~Earthbound now requires Mythril Anvil instead of a regular anvil
+~Removed unused Flesh Items
+~Featherfall Shield now only activates when down key is held
+~Fixed First Aid Kit recipe
+~Removed Mystery Bag
+~Removed Spiky Sac for being outdated
+~Removed Stone Shield
+//Test Featherfall Shield

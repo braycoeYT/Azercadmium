@@ -1,5 +1,4 @@
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Input;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -8,15 +7,12 @@ namespace Azercadmium.Items.Cave
 {
 	public class PebbleRod : ModItem
 	{
-		public override void SetStaticDefaults()
-		{
+		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Pebble Rod");
 			Tooltip.SetDefault("Rains pebbles which can confuse enemies");
 			Item.staff[item.type] = true;
 		}
-
-		public override void SetDefaults()
-		{
+		public override void SetDefaults() {
 			item.damage = 15;
 			item.magic = true;
 			item.width = 62;
@@ -25,7 +21,7 @@ namespace Azercadmium.Items.Cave
 			item.useAnimation = 23;
 			item.useStyle = ItemUseStyleID.HoldingOut;
 			item.knockBack = 5.1f;
-			item.value = 50000;
+			item.value = Item.sellPrice(0, 0, 64, 0);
 			item.rare = ItemRarityID.Blue;
 			item.autoReuse = true;
 			item.useTurn = true;
@@ -36,16 +32,14 @@ namespace Azercadmium.Items.Cave
 			item.stack = 1;
 			item.UseSound = SoundID.Item8;
 		}
-		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
-		{
+		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack) {
 			position.X = Main.MouseWorld.X;
 			position.Y = player.position.Y - 600;
 			speedX = Main.rand.Next(-2, 2);
 			speedY = 15;
 			return true;
 		}
-		public override void AddRecipes() 
-		{
+		public override void AddRecipes() {
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.StoneBlock, 40);
 			recipe.AddIngredient(ItemID.MarbleBlock, 10);

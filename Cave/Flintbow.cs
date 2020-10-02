@@ -11,7 +11,7 @@ namespace Azercadmium.Items.Cave
 			Tooltip.SetDefault("Turns normal arrows into stalagmites that can confuse enemies");
 		}
 		public override void SetDefaults() {
-			item.value = 50000;
+			item.value = Item.sellPrice(0, 0, 64, 0);
 			item.useStyle = ItemUseStyleID.HoldingOut;
 			item.useAnimation = 24;
 			item.useTime = 24;

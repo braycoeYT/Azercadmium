@@ -13,7 +13,7 @@ namespace Azercadmium.Items.Carnallite
 		}
 		public override void SetDefaults() {
 			item.maxStack = 999;
-			item.value = 75000;
+			item.value = Item.sellPrice(0, 0, 30, 0);
 			item.rare = ItemRarityID.Yellow;
 		}
 		public override void AddRecipes() {
