@@ -1,15 +1,12 @@
-using Azercadmium.Items;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using static Terraria.ModLoader.ModContent;
 
 namespace Azercadmium.Items.Mushroom
 {
 	public class MushroomCrate : ModItem
 	{
-		public override void SetStaticDefaults()
-		{
+		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Mushroom Crate");
 			Tooltip.SetDefault("{$CommonItemTooltip.RightClickToOpen}");
 		}
@@ -28,10 +25,9 @@ namespace Azercadmium.Items.Mushroom
 			item.consumable = true;
 			item.createTile = mod.TileType("MushroomCrate");
 			item.placeStyle = 0;
-			item.value = 50000;
+			item.value = Item.sellPrice(0, 1, 0, 0);
         }
-		public override bool CanRightClick()
-		{
+		public override bool CanRightClick() {
 			return true;
 		}
 		public override void RightClick(Player player)

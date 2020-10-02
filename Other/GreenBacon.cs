@@ -1,14 +1,13 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using static Terraria.ModLoader.ModContent;
 
-namespace Azercadmium.Items.Potions
+namespace Azercadmium.Items.Other
 {
-	public class StealthPotion : ModItem
+    public class GreenBacon : ModItem
 	{
         public override void SetStaticDefaults() {
-            Tooltip.SetDefault("Gives you have a 4% chance to dodge attacks");
+            Tooltip.SetDefault("Bacon power"); //300th item, lol
         }
         public override void SetDefaults() {
             item.width = 20;
@@ -17,22 +16,19 @@ namespace Azercadmium.Items.Potions
             item.useAnimation = 15;
             item.useTime = 15;
             item.useTurn = true;
-            item.UseSound = SoundID.Item3;
+            item.UseSound = SoundID.Item2;
             item.maxStack = 30;
             item.consumable = true;
             item.rare = ItemRarityID.Blue;
-            item.value = 390;
-            item.buffType = mod.BuffType("Stealthy");
-            item.buffTime = 10800;
+            item.value = Item.sellPrice(0, 0, 26, 0);
+            item.buffType = BuffID.WellFed;
+            item.buffTime = 216000;
         }
 		public override void AddRecipes() {
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.BottledWater);
-			recipe.AddIngredient(ItemID.Silk, 1);
-			recipe.AddIngredient(ItemID.Waterleaf, 1);
-			recipe.AddIngredient(ItemID.Deathweed, 1);
-            recipe.AddIngredient(ItemID.Bone);
-			recipe.AddTile(TileID.Bottles);
+			recipe.AddIngredient(ItemID.Bacon);
+            recipe.AddIngredient(ItemID.Emerald);
+            recipe.AddTile(TileID.CookingPots);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}

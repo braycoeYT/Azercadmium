@@ -1,3 +1,4 @@
+using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -6,7 +7,7 @@ namespace Azercadmium.Items.Mushroom
 	public class ShroomTome : ModItem
 	{
 		public override void SetDefaults()  {
-			item.value = 50000;
+			item.value = Item.sellPrice(0, 0, 36, 0);
 			item.useStyle = ItemUseStyleID.HoldingOut;
 			item.useAnimation = 19;
 			item.useTime = 19;

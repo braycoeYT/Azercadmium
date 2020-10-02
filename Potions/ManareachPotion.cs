@@ -1,19 +1,14 @@
-using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using static Terraria.ModLoader.ModContent;
 
 namespace Azercadmium.Items.Potions
 {
-	public class ManareachPotion : ModItem
+    public class ManareachPotion : ModItem
 	{
-        public override void SetStaticDefaults()
-        {
+        public override void SetStaticDefaults() {
             Tooltip.SetDefault("Increases pickup range for mana stars\nDoes not stack with Celestial Magnet");
         }
-
-        public override void SetDefaults()
-        {
+        public override void SetDefaults() {
             item.width = 20;
             item.height = 28;
             item.useStyle = ItemUseStyleID.EatingUsing;
@@ -28,9 +23,7 @@ namespace Azercadmium.Items.Potions
             item.buffType = mod.BuffType("Manareach");
             item.buffTime = 28800;
         }
-		
-		public override void AddRecipes() 
-		{
+		public override void AddRecipes()  {
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.BottledWater);
 			recipe.AddIngredient(ItemID.FallenStar, 1);

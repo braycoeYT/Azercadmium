@@ -1,4 +1,3 @@
-using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -7,13 +6,10 @@ namespace Azercadmium.Items.Mushroom
 {
 	public class MushroomMusher : ModItem
 	{
-		public override void SetStaticDefaults() 
-		{
-			Tooltip.SetDefault("Shoots a large wave");
+		public override void SetStaticDefaults() {
+			Tooltip.SetDefault("Fires a large wave");
 		}
-
-		public override void SetDefaults() 
-		{
+		public override void SetDefaults() {
 			item.damage = 11;
 			item.melee = true;
 			item.width = 40;
@@ -22,7 +18,7 @@ namespace Azercadmium.Items.Mushroom
 			item.useAnimation = 51;
 			item.useStyle = ItemUseStyleID.SwingThrow;
 			item.knockBack = 4.2f;
-			item.value = 50000;
+			item.value = Item.sellPrice(0, 0, 36, 0);
 			item.rare = ItemRarityID.Blue;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = false;
