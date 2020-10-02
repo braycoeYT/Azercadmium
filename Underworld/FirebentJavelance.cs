@@ -4,28 +4,28 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace Azercadmium.Items.Slime
+namespace Azercadmium.Items.Underworld
 {
-	public class SlimyJavelance : ModItem
+	public class FirebentJavelance : ModItem
 	{
 		public override void SetStaticDefaults() {
-			Tooltip.SetDefault("Inflicts slime on enemies\nStacks up to 3\nMore javelances means more javelances thrown\nUse time is decreased with more javelances");
+			Tooltip.SetDefault("Not to be confused with a burning cocktail\nMay burn enemies\nStacks up to 3\nMore javelances means more javelances thrown\nUse time is decreased with more javelances");
 		}
 		public override void SetDefaults() {
-			item.damage = 10;
+			item.damage = 19;
 			item.ranged = true;
-			item.width = 52;
-			item.height = 52;
-			item.useTime = 31;
-			item.useAnimation = 31;
+			item.width = 48;
+			item.height = 48;
+			item.useTime = 25;
+			item.useAnimation = 25;
 			item.useStyle = ItemUseStyleID.SwingThrow;
-			item.knockBack = 3.8f;
-			item.value = Item.sellPrice(0, 0, 6, 66);
-			item.rare = ItemRarityID.White;
+			item.knockBack = 5.9f;
+			item.value = Item.sellPrice(0, 0, 18, 0);
+			item.rare = ItemRarityID.Green;
 			item.autoReuse = true;
 			item.useTurn = true;
-			item.shoot = mod.ProjectileType("SlimyJavelance");
-			item.shootSpeed = 12f;
+			item.shoot = mod.ProjectileType("FirebentJavelance");
+			item.shootSpeed = 15f;
 			item.noMelee = true;
 			item.maxStack = 3;
 			item.UseSound = SoundID.Item1;
@@ -33,8 +33,8 @@ namespace Azercadmium.Items.Slime
 			item.consumable = false;
 		}
 		public override void UpdateInventory(Player player) {
-			item.useTime = 31 + (item.stack * 10) - 10;
-			item.useAnimation = 31 + (item.stack * 10) - 10;
+			item.useTime = 25 + (item.stack * 10) - 10;
+			item.useAnimation = 25 + (item.stack * 10) - 10;
 		}
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack) {
 			AzercadmiumPlayer p = player.GetModPlayer<AzercadmiumPlayer>();
@@ -48,14 +48,14 @@ namespace Azercadmium.Items.Slime
 					Vector2 perturbedSpeed = new Vector2(speedX, speedY).RotatedBy(MathHelper.Lerp(-rotation, rotation, i / (numberProjectiles - 1))) * .9f;
 					Projectile.NewProjectile(position.X, position.Y, perturbedSpeed.X, perturbedSpeed.Y, type, damage, knockBack, player.whoAmI);
 				}
-				return false;
+			return false;
 			}
 			return true;
 		}
 		public override void AddRecipes() {
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(mod.ItemType("SlimyCore"), 3);
-			recipe.AddTile(TileID.Solidifier);
+			recipe.AddIngredient(ItemID.HellstoneBar, 16);
+			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this, 3);
 			recipe.AddRecipe();
 		}

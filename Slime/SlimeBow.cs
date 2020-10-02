@@ -8,14 +8,11 @@ namespace Azercadmium.Items.Slime
 {
 	public class SlimeBow : ModItem
 	{
-		public override void SetStaticDefaults() 
-		{
+		public override void SetStaticDefaults() {
 			Tooltip.SetDefault("Turns regular arrows into slime arrows");
 		}
-
-		public override void SetDefaults() 
-		{
-			item.value = 18000;
+		public override void SetDefaults() {
+			item.value = Item.sellPrice(0, 0, 20, 0);
 			item.useStyle = ItemUseStyleID.HoldingOut;
 			item.useAnimation = 24;
 			item.useTime = 24;
@@ -30,16 +27,12 @@ namespace Azercadmium.Items.Slime
 			item.useAmmo = AmmoID.Arrow;
 			item.UseSound = SoundID.Item5;
 		}
-		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
-		{
+		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack) {
 			if (type == ProjectileID.WoodenArrowFriendly)
-			{
 				type = mod.ProjectileType("SlimeArrow");
-			}
 			return true;
 		}
-		public override void AddRecipes()
-		{
+		public override void AddRecipes() {
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(mod.ItemType("SlimyCore"), 3);
 			recipe.AddTile(TileID.Solidifier);
