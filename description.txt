@@ -4,7 +4,7 @@ School has started for me and I can't work on the mod all day anymore, sorry.
 Discord Server: (homepage link is better) https://discord.gg/qv97wNV
 
 Stats:
-~244 Items
+~230 Items
 ~49 total NPCs
 ~4 Bosses:
 ^2 Prehardmode Bosses
@@ -62,3 +62,6 @@ Update V0.2.3.7: Good Update
 ~Fixed Engineer chat grammar mistake
 ~Fixed multiple javelance recipes
 ~Removed Code 3 tooltip
+
+Update V0.2.3.8: Fixed Description
+~Fixed Description
