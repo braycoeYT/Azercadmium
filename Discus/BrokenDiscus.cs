@@ -12,7 +12,7 @@ namespace Azercadmium.Items.Discus
 		public override void SetDefaults()  {
 			item.value = Item.sellPrice(0, 0, 0, 50);
 			item.rare = ItemRarityID.Blue;
-			item.maxStack = 9999;
+			item.maxStack = 999;
 		}
 	}
 }

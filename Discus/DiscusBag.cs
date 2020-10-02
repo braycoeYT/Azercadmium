@@ -34,6 +34,6 @@ namespace Azercadmium.Items.Discus
 			else
 				player.QuickSpawnItem(mod.ItemType("VoidingMotherboard"));
 		}
-		public override int BossBagNPC => NPCType<NPCs.Bosses.AncientDesertDiscus>();
+		public override int BossBagNPC => NPCType<NPCs.Bosses.AncientDesertDiscus2>();
 	}
 }

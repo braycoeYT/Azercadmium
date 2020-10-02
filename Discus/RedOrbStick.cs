@@ -6,13 +6,11 @@ namespace Azercadmium.Items.Discus
 {
 	public class RedOrbStick : ModItem
 	{
-		public override void SetStaticDefaults() 
-		{
+		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Red Orb on a Stick");
 			Tooltip.SetDefault("Who did this? Who put a powerful orb on the end of a random stick?\nShoots crumbling red orbs which drop shards");
 		}
-		public override void SetDefaults() 
-		{
+		public override void SetDefaults() {
 			item.damage = 10;
 			item.magic = true;
 			item.width = 29;
@@ -21,7 +19,7 @@ namespace Azercadmium.Items.Discus
 			item.useAnimation = 21;
 			item.useStyle = ItemUseStyleID.SwingThrow;
 			item.knockBack = 4.1f;
-			item.value = 25000;
+			item.value = Item.sellPrice(0, 0, 25, 0);
 			item.rare = ItemRarityID.Blue;
 			item.autoReuse = true;
 			item.useTurn = true;
@@ -32,8 +30,7 @@ namespace Azercadmium.Items.Discus
 			item.stack = 1;
 			item.UseSound = SoundID.Item12;
 		}
-		public override void AddRecipes()
-		{
+		public override void AddRecipes() {
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.WandofSparking);
 			recipe.AddIngredient(mod.ItemType("DriedEssence"), 3);

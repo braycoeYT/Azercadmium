@@ -12,21 +12,17 @@ namespace Azercadmium.Items.Discus
 		public override void SetStaticDefaults() {
 			Tooltip.SetDefault("Increases max mana by 20\nIncreases mana regen by 1");
 		}
-
 		public override void SetDefaults() {
 			item.width = 40;
 			item.height = 40;
 			item.accessory = true;
-			item.value = 6000;
+			item.value = Item.sellPrice(0, 0, 25, 0);
 			item.rare = ItemRarityID.Blue;
 		}
-
-		public override void UpdateAccessory(Player player, bool hideVisual)
-		{
+		public override void UpdateAccessory(Player player, bool hideVisual) {
 			player.statManaMax2 += 20;
 			player.manaRegen += 1;
 		}
-
 		public override void AddRecipes() {
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(mod.ItemType("DiscusMedal"));

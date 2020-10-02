@@ -1,32 +1,23 @@
-using System;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using Terraria.Utilities;
-using static Terraria.ModLoader.ModContent;
 
 namespace Azercadmium.Items.Discus
 {
 	public class VoidingMotherboard : ModItem
 	{
-		public override void SetStaticDefaults()
-		{
-			DisplayName.SetDefault("Voiding Motherboard");
+		public override void SetStaticDefaults() {
 			Tooltip.SetDefault("Immune to slow\nRandomly electrocutes the player for low damage\nA lot more commonly, buffs are given to the player");
 		}
-
-		public override void SetDefaults()
-		{
+		public override void SetDefaults() {
 			item.width = 40;
 			item.height = 40;
 			item.accessory = true;
-			item.value = 60000;
+			item.value = Item.sellPrice(0, 1, 0, 0);
 			item.rare = ItemRarityID.Green;
 			item.expert = true;
 		}
-
-		public override void UpdateAccessory(Player player, bool hideVisual)
-		{
+		public override void UpdateAccessory(Player player, bool hideVisual) {
 			player.buffImmune[32] = true;
 			if (Main.rand.NextFloat() < .00075f)
 			player.AddBuff(144, 15, false);

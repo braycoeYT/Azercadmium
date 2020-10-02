@@ -23,7 +23,7 @@ namespace Azercadmium.Items.Discus
 			item.useTime = 36;
 			item.useAnimation = 36;
 			item.useStyle = ItemUseStyleID.SwingThrow;
-			item.value = 10000;
+			item.value = Item.sellPrice(0, 0, 25, 0);
 			item.rare = ItemRarityID.Blue;
 			item.UseSound = SoundID.Item44;
 			item.noMelee = true;

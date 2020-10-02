@@ -1,6 +1,3 @@
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -9,14 +6,11 @@ namespace Azercadmium.Items.Discus
 {
 	public class SuspiciousLookingDisc : ModItem
 	{
-		public override void SetStaticDefaults() 
-		{
-			Tooltip.SetDefault("'You stare at it, and it stares back at you... Only usable in the desert night'");
+		public override void SetStaticDefaults() {
+			Tooltip.SetDefault("It appears to be moving, but that is all an illusion.\nSummons the Ancient Desert Discus in the desert night");
 			ItemID.Sets.SortingPriorityBossSpawns[item.type] = 13;
 		}
-
-		public override void SetDefaults() 
-		{
+		public override void SetDefaults() {
 			item.width = 40;
 			item.height = 40;
 			item.maxStack = 20;
@@ -27,24 +21,15 @@ namespace Azercadmium.Items.Discus
 			item.useStyle = ItemUseStyleID.HoldingUp;
 			item.consumable = true;
 		}
-		
-		public override bool CanUseItem(Player player)
-		{
-			if(player.ZoneDesert)
-				if(!Main.dayTime)
-					return !NPC.AnyNPCs(mod.NPCType("AncientDesertDiscus"));
-				return false;
+		public override bool CanUseItem(Player player) {
+			return !NPC.AnyNPCs(mod.NPCType("AncientDesertDiscus")) && !Main.dayTime && player.ZoneDesert;
 		}
-		
-		public override bool UseItem(Player player)
-		{
+		public override bool UseItem(Player player) {
 			NPC.SpawnOnPlayer(player.whoAmI, ModContent.NPCType<NPCs.Bosses.AncientDesertDiscus>());
 			Main.PlaySound(SoundID.Roar, player.position, 0);
 			return true;
 		}
-
-		public override void AddRecipes() 
-		{
+		public override void AddRecipes() {
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(mod.ItemType("BrokenDiscus"), 6);
 			recipe.AddIngredient(ItemID.AntlionMandible, 2);

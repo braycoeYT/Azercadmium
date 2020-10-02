@@ -1,4 +1,3 @@
-using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -8,17 +7,13 @@ namespace Azercadmium.Items.Discus
 {
 	public class DiscusYoyo : ModItem
 	{
-		public override void SetStaticDefaults() 
-		{
+		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Electro Yoyo");
-			Tooltip.SetDefault("Nice throw, bro");
 			ItemID.Sets.Yoyo[item.type] = true;
 			ItemID.Sets.GamepadExtraRange[item.type] = 15;
 			ItemID.Sets.GamepadSmartQuickReach[item.type] = true;
 		}
-
-		public override void SetDefaults()
-		{
+		public override void SetDefaults() {
 			item.useStyle = ItemUseStyleID.HoldingOut;
 			item.width = 24;
 			item.height = 24;
@@ -33,11 +28,10 @@ namespace Azercadmium.Items.Discus
 			item.noMelee = true;
 			item.noUseGraphic = true;
 			item.UseSound = SoundID.Item1;
-			item.value = 25000;
+			item.value = Item.sellPrice(0, 0, 25, 0);
 			item.shoot = ProjectileType<Projectiles.OtherYoyos.DiscusYoyo>();
 		}
-		public override void AddRecipes() 
-		{
+		public override void AddRecipes() {
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(mod.ItemType("DriedEssence"), 3);
 			recipe.AddIngredient(mod.ItemType("BrokenDiscus"), 2);

@@ -12,7 +12,7 @@ namespace Azercadmium.Items.Discus
 			Tooltip.SetDefault("Shoots an electro barrage every twelve shots");
 		}
 		public override void SetDefaults() {
-			item.value = 25000;
+			item.value = Item.sellPrice(0, 0, 32, 0);
 			item.useStyle = ItemUseStyleID.HoldingOut;
 			item.useAnimation = 21;
 			item.useTime = 21;

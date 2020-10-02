@@ -3,37 +3,37 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace Azercadmium.Items.Electrolight
+namespace Azercadmium.Items.Eclipse
 {
-	public class Storm : ModItem
+	public class AncientMedievalJavelance : ModItem
 	{
-		public override void SetStaticDefaults() {
-			Tooltip.SetDefault("Attacks can electrocute enemies\nJavelance stack penalty is decreased by 10%\nStacks up to 4\nMore javelances means more javelances thrown\nUse time is decreased with more javelances");
+		public override void SetStaticDefaults()  {
+			Tooltip.SetDefault("Not much use due to its age, but could be used for empowering other javelances\nStacks up to 5\nMore javelances means more javelances thrown\nUse time is decreased with more javelances");
 		}
 		public override void SetDefaults() {
-			item.damage = 42;
+			item.damage = 10;
 			item.ranged = true;
-			item.width = 33;
-			item.height = 33;
-			item.useTime = 23;
-			item.useAnimation = 23;
+			item.width = 48;
+			item.height = 54;
+			item.useTime = 50;
+			item.useAnimation = 50;
 			item.useStyle = ItemUseStyleID.SwingThrow;
-			item.knockBack = 2.1f;
-			item.value = Item.sellPrice(0, 0, 30, 0);
-			item.rare = ItemRarityID.Pink;
+			item.knockBack = 6.3f;
+			item.value = Item.sellPrice(0, 1, 0, 0);
+			item.rare = ItemRarityID.Green;
 			item.autoReuse = true;
 			item.useTurn = true;
-			item.shoot = mod.ProjectileType("Storm");
-			item.shootSpeed = 18f;
+			item.shoot = mod.ProjectileType("AncientMedievalJavelance");
+			item.shootSpeed = 12f;
 			item.noMelee = true;
-			item.maxStack = 4;
+			item.maxStack = 5;
 			item.UseSound = SoundID.Item1;
 			item.noUseGraphic = true;
 			item.consumable = false;
 		}
 		public override void UpdateInventory(Player player) {
-			item.useTime = 23 + (item.stack * 9) - 9;
-			item.useAnimation = 23 + (item.stack * 9) - 9;
+			item.useTime = 50 + (item.stack * 10) - 10;
+			item.useAnimation = 50 + (item.stack * 10) - 10;
 		}
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack) {
 			AzercadmiumPlayer p = player.GetModPlayer<AzercadmiumPlayer>();
@@ -50,16 +50,6 @@ namespace Azercadmium.Items.Electrolight
 				return false;
 			}
 			return true;
-		}
-		public override void AddRecipes() {
-			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.SoulofFlight, 20);
-			recipe.AddIngredient(ItemID.Cloud, 15);
-			recipe.AddIngredient(mod.ItemType("Electrolight"), 11);
-			recipe.AddIngredient(ItemID.RainCloud, 9);
-			recipe.AddTile(TileID.MythrilAnvil);
-			recipe.SetResult(this, 4);
-			recipe.AddRecipe();
 		}
 	}
 }

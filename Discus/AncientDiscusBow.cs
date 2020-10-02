@@ -12,7 +12,7 @@ namespace Azercadmium.Items.Discus
 			Tooltip.SetDefault("10% chance of shooting an electrical bolt instead");
 		}
 		public override void SetDefaults() {
-			item.value = 25000;
+			item.value = Item.sellPrice(0, 0, 25, 0);
 			item.useStyle = ItemUseStyleID.HoldingOut;
 			item.useAnimation = 26;
 			item.useTime = 26;

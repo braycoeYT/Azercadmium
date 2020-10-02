@@ -1,3 +1,4 @@
+using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -18,7 +19,7 @@ namespace Azercadmium.Items.Discus
 			item.useAnimation = 24;
 			item.useStyle = ItemUseStyleID.SwingThrow;
 			item.knockBack = 2.1f;
-			item.value = 35000;
+			item.value = Item.sellPrice(0, 0, 25, 0);
 			item.rare = ItemRarityID.Blue;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
