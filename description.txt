@@ -4,7 +4,7 @@ School has started for me and I can't work on the mod all day anymore, sorry.
 Discord Server: (homepage link is better) https://discord.gg/qv97wNV
 
 Stats:
-~230 Items
+~231 Items
 ~49 total NPCs
 ~4 Bosses:
 ^2 Prehardmode Bosses
@@ -37,31 +37,8 @@ Setnour6 (M.Nova Sprite and C.Virus Theme)
 
 Multiplayer support is unknown, but most of us play alone anyway.
 
-Update V0.2.3.7: Good Update
-~Internal decompilation and sorting
-~Code optimazations
-~Removed Mysterious Conversation for being really outdated
-~Removed Eye of Oblivion
-~Removed Zenith items for being unused for a long time
-~Changed slime items
-~Added goldfish to Aquatic Javelance recipe
-~Changed Slimy Javelance recipe
-~Removed Ordinary Amoeba for having almost no use
-~Changed many sell prices and max stacks
-~Changed Delicious Gelatin tooltip
-~Fixed ADD bag dropping twice (?)
-~Increased recipe for Discus Medal
-~Earthbound now requires Mythril Anvil instead of a regular anvil
-~Removed unused Flesh Items
-~Featherfall Shield now only activates when down key is held
-~Fixed First Aid Kit recipe
-~Removed Mystery Bag
-~Removed Spiky Sac for being outdated
-~Removed Stone Shield
-~Changed internal stuff
-~Fixed Engineer chat grammar mistake
-~Fixed multiple javelance recipes
-~Removed Code 3 tooltip
-
-Update V0.2.3.8: Fixed Description
-~Fixed Description
+Update V0.2.3.9: Update
+~Changed Braycoe Town NPC's shoes to grey
+~Nerfed Adamantite and Titanium Ore Staves
+~Added Caelum, the Mysterious Nova Yoyo
+~Fixed Shrubweed attacking friendly creatures
