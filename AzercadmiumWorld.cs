@@ -30,11 +30,9 @@ namespace Azercadmium
 		public static bool downedEmpress;
 		public static bool downedCell;
 		public static bool rollercoasterTown;
+		public static bool devastation;
 		public static int microbiomeTiles;
-		//public Vector2 ZMETarget;
-		
-		public override void Initialize()
-		{
+		public override void Initialize() {
 			downedDirtball = false;
 			downedDiscus = false;
 			downedMineral = false;
@@ -50,8 +48,8 @@ namespace Azercadmium
 			downedEmpress = false;
 			downedCell = false;
 			rollercoasterTown = false;
+			devastation = false;
 		}
-		
 		public override TagCompound Save()
         {
             return new TagCompound
@@ -70,12 +68,11 @@ namespace Azercadmium
 				{"downedXenic", downedXenic},
 				{"downedEmpress", downedEmpress},
 				{"downedCell", downedCell},
-				{"rollercoasterTown", rollercoasterTown}
+				{"rollercoasterTown", rollercoasterTown},
+				{"devastation", devastation}
 			};
         }
-		
-        public override void Load(TagCompound tag)
-        {
+        public override void Load(TagCompound tag) {
             downedDirtball = tag.GetBool("downedDirtball");
 			downedDiscus = tag.GetBool("downedDiscus");
 			downedMineral = tag.GetBool("downedMineral");
@@ -91,6 +88,7 @@ namespace Azercadmium
 			downedEmpress = tag.GetBool("downedEmpress");
 			downedCell = tag.GetBool("downedCell");
 			rollercoasterTown = tag.GetBool("rollercoasterTown");
+			devastation = tag.GetBool("devastation");
 		}
 		
 		 public override void NetSend(BinaryWriter writer)
@@ -110,6 +108,7 @@ namespace Azercadmium
 			flags2[1] = hasAlertEvil;
 			flags2[2] = hasConversationDrop;
 			flags2[3] = rollercoasterTown;
+			flags2[4] = devastation;
 			writer.Write(flags2);
 		}
 		
@@ -130,6 +129,7 @@ namespace Azercadmium
 			hasAlertEvil = flags2[1];
 			hasConversationDrop = flags2[2];
 			rollercoasterTown = flags2[3];
+			devastation = flags2[4];
 		}
 		public override void ModifyWorldGenTasks(List<GenPass> tasks, ref float totalWeight)
 		{

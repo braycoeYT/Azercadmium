@@ -7,18 +7,18 @@ School has started for me and I can't work on the mod all day anymore, sorry.
 Discord Server: (homepage link is better) https://discord.gg/qv97wNV
 
 Stats:
-~241 Items
+~243 Items
 ~49 total NPCs
 ~4 Bosses:
 ^2 Prehardmode Bosses
 ^2 Hardmode Bosses
 ~3 Town NPCs
 ~42 Tiles
-~21 Buffs
-~2 Ores
+~24 Buffs
+~1 Ore
 ~2 Subclasses
 ~2 Custom Soundtracks
-~1 Secret Rarity
+~2 Rarities
 
 Cross-mod Content with Asteri and Havoc Mod.
 
@@ -40,16 +40,14 @@ Setnour6 (M.Nova Sprite and C.Virus Theme)
 
 Multiplayer support is unknown, but most of us play alone anyway.
 
-Update V0.2.4: Update
-~Added Volcanic Flame
-~Rearranged Furniture files
-~Fixed Carnallite Bar
-~Added Cobalt Chair
-~Resprited True Archive
-~Added Copper, Tin, Iron, Lead, Silver, Tungsten, Gold, and Platinum Tables
-~Changed Aquatic Javelance recipe and now creates a shattering noise
-~Resprited Discus Armor
-~Renamed Starfury Slime to Starpack Slime
+Update V0.2.4.1: Update
+~Added Devastation Mode, a new really unfinished challenge.
+~Added Chocolate Mint rarity for Devastation Mode.
+~Resprited Braycoe Boots (lol)
+~Resprited Starpack Slime
+~Removed Breaker Blade recipe
+~Updated Pwnhammer recipe
+~Updated Cobalt Chair rarity
+~Updated Soul of Byte tooltip
 ~Updated Logo
-~Resprited Alternate Gold Workbench and Platinum Workbench
-~Changed Soul of the Jungle recipe
+~Added Code Breaker, a Computer Virus weapon that messes with your enemies.

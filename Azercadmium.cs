@@ -152,13 +152,6 @@ namespace Azercadmium
 			
 			recipe = new ModRecipe(this);
 			recipe.AddIngredient(ItemID.HallowedBar, 12);
-			recipe.AddIngredient(ItemID.Spike, 8);
-			recipe.AddTile(TileID.MythrilAnvil);
-			recipe.SetResult(ItemID.BreakerBlade);
-			recipe.AddRecipe();
-			
-			recipe = new ModRecipe(this);
-			recipe.AddIngredient(ItemID.HallowedBar, 10);
 			recipe.AddTile(TileID.MythrilAnvil);
 			recipe.SetResult(ItemID.Pwnhammer);
 			recipe.AddRecipe();

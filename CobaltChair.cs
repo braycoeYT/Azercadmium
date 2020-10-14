@@ -18,6 +18,7 @@ namespace Azercadmium.Items.Cobalt
 			item.useStyle = ItemUseStyleID.SwingThrow;
 			item.consumable = true;
 			item.value = Item.sellPrice(0, 0, 84, 0);
+			item.rare = ItemRarityID.Orange;
 			item.createTile = TileType<Tiles.Furniture.Cobalt.CobaltChair>();
 		}
 		public override void AddRecipes() {

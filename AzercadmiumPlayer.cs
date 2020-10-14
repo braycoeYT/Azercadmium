@@ -45,6 +45,7 @@ namespace Azercadmium
 		public bool empressExpert;
 		public bool meteorMelee;
 		public bool stealthPotion;
+		public bool slimyOoze;
 		int numberShot = 0;
 		public int upgradeHearts;
 		public int upgradeStars;
@@ -81,6 +82,7 @@ namespace Azercadmium
 			empressExpert = false;
 			meteorMelee = false;
 			stealthPotion = false;
+			slimyOoze = false;
 			player.statLifeMax2 += upgradeHearts * 25;
 			player.statManaMax2 += upgradeStars * 50;
 			playerTimer = 0;
@@ -88,6 +90,7 @@ namespace Azercadmium
 		}
 		public override void UpdateDead() {
 			xenicAcid = false;
+			slimyOoze = false;
 		}
 		int badRegenTimer;
 		public override void UpdateBadLifeRegen() {
@@ -109,6 +112,13 @@ namespace Azercadmium
 					player.HealEffect(1, true);
 				}
 			}
+			if (slimyOoze) {
+				if (player.lifeRegen > 0) {
+					player.lifeRegen = 0;
+				}
+				player.lifeRegenTime = 0;
+				player.lifeRegen -= 4;
+			}
 			if (healHurt > 0) {
 				if (player.lifeRegen > 0) {
 					player.lifeRegen = 0;
@@ -121,6 +131,19 @@ namespace Azercadmium
 			if (xenicAcid) {
 				if (Main.rand.NextBool(4) && drawInfo.shadow == 0f) {
 					int dust = Dust.NewDust(drawInfo.position - new Vector2(2f, 2f), player.width + 4, player.height + 4, 193, player.velocity.X * 0.4f, player.velocity.Y * 0.4f, 0, default(Color), 2f);
+					Main.dust[dust].noGravity = true;
+					Main.dust[dust].velocity *= 1.8f;
+					Main.dust[dust].velocity.Y -= 0.5f;
+					Main.playerDrawDust.Add(dust);
+				}
+				r *= 0.1f;
+				g *= 0.5f;
+				b *= 0.1f;
+				fullBright = true;
+			}
+			if (slimyOoze) {
+				if (Main.rand.NextBool(4) && drawInfo.shadow == 0f) {
+					int dust = Dust.NewDust(drawInfo.position - new Vector2(2f, 2f), player.width + 4, player.height + 4, mod.DustType("SlimyOozeDust"), player.velocity.X * 0.4f, player.velocity.Y * 0.4f, 0, default(Color), 2f);
 					Main.dust[dust].noGravity = true;
 					Main.dust[dust].velocity *= 1.8f;
 					Main.dust[dust].velocity.Y -= 0.5f;
