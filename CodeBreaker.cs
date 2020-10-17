@@ -9,10 +9,10 @@ namespace Azercadmium.Items.CVirus
 	{
 		public override void SetStaticDefaults() {
 			Tooltip.SetDefault("Damaged enemies have a chance to glitch out");
-			Main.RegisterItemAnimation(item.type, new DrawAnimationVertical(5, 8)); //first is speed, second is amount of frames
+			//Main.RegisterItemAnimation(item.type, new DrawAnimationVertical(5, 8)); //first is speed, second is amount of frames
 		}
 		public override void SetDefaults() {
-			item.damage = 71;
+			item.damage = 86;
 			item.melee = true;
 			item.width = 38;
 			item.height = 38;
@@ -20,7 +20,7 @@ namespace Azercadmium.Items.CVirus
 			item.useAnimation = 18;
 			item.useStyle = ItemUseStyleID.SwingThrow;
 			item.knockBack = 4.2f;
-			item.value = Item.sellPrice(0, 0, 5, 0);
+			item.value = Item.sellPrice(0, 0, 7, 0);
 			item.rare = ItemRarityID.Pink;
 			item.UseSound = SoundID.Item93;
 			item.autoReuse = true;

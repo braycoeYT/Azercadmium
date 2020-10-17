@@ -110,38 +110,26 @@ namespace Azercadmium.NPCs.TownNPCs
 
 			chat.Add("You won the lottery! No, not really.", 0.001);
 			
-			chat.Add("I'm cool, right? Just what I thought.", 0.6);
-			
 			chat.Add("Can my house be a bit bigger? Oh, never mind...", 0.8);
 
 			chat.Add("I may seem a bit shorter than you, but that's just my hair style.", 0.75);
-			
-			chat.Add("I know the Azercadmiumians pretty well...", 1.1);
-			
-			chat.Add("My job? My job is to be awesome.", 1.2);
-			
+
 			chat.Add("Oh, you want me to defend you now. Do you want me to bake cookies too?", 0.75);
 			
 			chat.Add("Destroy the dark power of this world!", 0.4);
 			
 			chat.Add("Get stronger and I will sell stronger items and reveal more of my power.", 2.2);
-			
-			chat.Add("Have you ever heard of a Starlite Crystal? Never mind...", 0.6);
-
-			chat.Add("The Microbiome appears to take the looks of its surroundings. How odd.", 1.6);
 
 			chat.Add("Lemonade Tea is an excellent drink!", 0.9);
 
+			chat.Add("Devastation mode is very WIP, I hope you like it so far.", 0.75);
+
 			if (Main.raining)
 			chat.Add("Hey, since I generate slime a lot faster while its raining, I'll sell gel to you for a discount price! Buy some now!", 0.8);
-		    if (AzercadmiumWorld.downedCell == true)
-			chat.Add("I got some big amoeba in the back... want some?", 0.9);
 		    if (NPC.downedSlimeKing == true)
 			chat.Add("That King Slime is such a loser, thanks for breaking him into thousands of normal size slimes.", 1.0);
-		    if (Main.hardMode == true)
-			chat.Add("I feel something underground sucking my powers...", 1.9);
-			if (AzercadmiumWorld.downedMineral == true)
-			chat.Add("The Azercadmiumians like to manipulate everything. Too bad that lead to the death of the Azercadmiumian Mineral Extractor.", 1.3);
+			if (NPC.downedMoonlord)
+			chat.Add("You defeated the Moon Lord? It appears you have broken the Moon Seal, and new things will happen in your world. Of course, that is for a future update.", 1.3);
 		
 			return chat;
 		}

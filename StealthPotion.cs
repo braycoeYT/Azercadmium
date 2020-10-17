@@ -8,7 +8,7 @@ namespace Azercadmium.Items.Potions
 	public class StealthPotion : ModItem
 	{
         public override void SetStaticDefaults() {
-            Tooltip.SetDefault("Gives you have a 4% chance to dodge attacks");
+            Tooltip.SetDefault("Gives you a 4% chance to dodge attacks");
         }
         public override void SetDefaults() {
             item.width = 20;

@@ -11,8 +11,10 @@ namespace Azercadmium.NPCs
 		public override bool InstancePerEntity => true;
 
 		public bool xenicAcid;
+		public bool slimyOoze;
 		public override void ResetEffects(NPC npc) {
 			xenicAcid = false;
+			slimyOoze = false;
 		}
 		public override void EditSpawnRate(Player player, ref int spawnRate, ref int maxSpawns) {
 			if (player.GetModPlayer<AzercadmiumPlayer>().ZoneMicrobiome && player.ZoneSkyHeight) {
@@ -28,7 +30,7 @@ namespace Azercadmium.NPCs
 			if (type == NPCID.ArmsDealer) {
 				if (NPC.downedBoss2) {
 					if (Main.hardMode || !Main.dayTime) {
-						shop.item[nextSlot].SetDefaults(ItemType<Items.OtherArrows.UnethicalArrow>());
+						shop.item[nextSlot].SetDefaults(ItemType<Items.Crimson.UnethicalArrow>());
 						nextSlot++;
 					}
 				}
@@ -68,6 +70,15 @@ namespace Azercadmium.NPCs
 					damage = 25;
 				}
 			}
+			if (slimyOoze) {
+				if (npc.lifeRegen > 0) {
+					npc.lifeRegen = 0;
+				}
+				npc.lifeRegen -= 4;
+				if (damage < 1) {
+					damage = 1;
+				}
+			}
 		}
 		public override void DrawEffects(NPC npc, ref Color drawColor) {
 			if (xenicAcid) {
@@ -82,6 +93,18 @@ namespace Azercadmium.NPCs
 					}
 				}
 				Lighting.AddLight(npc.position, 0.1f, 0.2f, 0.7f);
+			}
+			if (xenicAcid) {
+				if (Main.rand.Next(4) < 3) {
+					int dust = Dust.NewDust(npc.position - new Vector2(2f, 2f), npc.width + 4, npc.height + 4, mod.DustType("SlimyOozeDust"), npc.velocity.X * 0.4f, npc.velocity.Y * 0.4f, 100, default(Color), 1.5f);
+					Main.dust[dust].noGravity = true;
+					Main.dust[dust].velocity *= 1.8f;
+					Main.dust[dust].velocity.Y -= 0.5f;
+					if (Main.rand.NextBool(4)) {
+						Main.dust[dust].noGravity = false;
+						Main.dust[dust].scale *= 0.5f;
+					}
+				}
 			}
 		}
 		public override void NPCLoot(NPC npc) {
@@ -121,7 +144,7 @@ namespace Azercadmium.NPCs
 			}
 			if (npc.type == NPCID.JungleBat || npc.type == NPCID.CaveBat || npc.type == NPCID.IceBat || npc.type == NPCID.CaveBat) {
 			    if (Main.rand.Next(50) == 0)
-				Item.NewItem(npc.getRect(), ItemType<Items.Accessories.MagicalVaccine>());
+				Item.NewItem(npc.getRect(), ItemType<Items.Jungle.MagicalVaccine>());
 			}
 			if (npc.type == NPCID.EyeofCthulhu) {
 				if (Main.rand.NextFloat() < .25f)
@@ -134,20 +157,20 @@ namespace Azercadmium.NPCs
 			}
 			if (npc.type == NPCID.Retinazer || npc.type == NPCID.SkeletronPrime) {
 				if (Main.rand.Next(2) == 0)
-				Item.NewItem(npc.getRect(), ItemType<Items.Accessories.EyeThemed.ShardOfPrejudice>());
+				Item.NewItem(npc.getRect(), ItemType<Items.Other.Accessories.ShardOfPrejudice>());
 			}
 			if (npc.type == NPCID.Plantera) {
-				Item.NewItem(npc.getRect(), ItemType<Items.PlanteraTooth>(), Main.rand.Next(1, 5));
+				Item.NewItem(npc.getRect(), ItemType<Items.Plantera.PlanteraTooth>(), Main.rand.Next(1, 5));
 				if (Main.rand.Next(3) == 0)
-					Item.NewItem(npc.getRect(), ItemType<Items.Accessories.FruitOfLife>());
+					Item.NewItem(npc.getRect(), ItemType<Items.Plantera.FruitOfLife>());
 			}
 			if (npc.type == NPCID.Mothron) {
 				if (Main.rand.Next(3) == 0)
-				Item.NewItem(npc.getRect(), ItemType<Items.OtherJavelances.AncientMedievalJavelance>(), Main.rand.Next(1, 6));
+				Item.NewItem(npc.getRect(), ItemType<Items.Eclipse.AncientMedievalJavelance>(), Main.rand.Next(1, 6));
 			}
 			if (npc.type == NPCID.Golem) {
 				if (Main.rand.Next(3) == 0)
-					Item.NewItem(npc.getRect(), ItemType<Items.Accessories.SunProtection>());
+					Item.NewItem(npc.getRect(), ItemType<Items.Other.Accessories.SunProtection>());
 			}
 			if (npc.type == NPCID.MossHornet) {
 				if (Main.rand.Next(2) == 0)
@@ -162,6 +185,10 @@ namespace Azercadmium.NPCs
 			if (npc.type == NPCID.BloodCrawler || npc.type == NPCID.BloodCrawlerWall) {
 				if (Main.rand.NextFloat() < .12f)
 					Item.NewItem(npc.getRect(), mod.ItemType("BloodySpiderLeg"));
+			}
+			if (npc.type == NPCID.SeekerHead) {
+				Item.NewItem(npc.getRect(), ItemID.RottenChunk, Main.rand.Next(1, 3));
+				Item.NewItem(npc.getRect(), ItemID.WormTooth, Main.rand.Next(3, 9));
 			}
 			//blowpipes:
 			if (Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)].HasItem(mod.ItemType("FrostBlowpipe")))

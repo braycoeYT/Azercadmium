@@ -175,6 +175,10 @@ namespace Azercadmium
 			item.SetDefaults(ItemID.Seed);
 			item.stack = 500;
 			items.Add(item);
+			item = new Item();
+			item.SetDefaults(mod.ItemType("EyeoftheCosmos"));
+			items.Add(item);
+			item = new Item();
 		}
 		public override void UpdateBiomes()
 		{

@@ -1,14 +1,15 @@
 Reborn version of the Zylon Mod. Give me a few updates, and this mod will be completely remade from craziness to something actually good.
 
 This mod has many interesting things, including ore furniture, crimson alternates, and a giant floating ball of dirt.
+This mod also has QoL changes, such as an easier Slime Crown recipe and some hardmode enemies drop prehardmode loot.
 
 If you are worried about a custom biome ruining your world, don't worry, it has been removed.
 School has started for me and I can't work on the mod all day anymore, sorry.
 Discord Server: (homepage link is better) https://discord.gg/qv97wNV
 
 Stats:
-~243 Items
-~49 total NPCs
+~244 Items
+~52 total NPCs
 ~4 Bosses:
 ^2 Prehardmode Bosses
 ^2 Hardmode Bosses
@@ -19,6 +20,7 @@ Stats:
 ~2 Subclasses
 ~2 Custom Soundtracks
 ~2 Rarities
+~1 Unfinished Game Mode
 
 Cross-mod Content with Asteri and Havoc Mod.
 
@@ -30,24 +32,33 @@ VaultyBoi (Spriter)
 ULTIMATEDQVID (Spriter)
 Unboxing Video (Wiki)
 
-Very Minor Help/Quit:
+Minor Help/Quit:
 CrazySapling1 (Quit Spriter)
 Sness (Two sprites)
 Math (Minor Wiki)
 Ashe (Minor Wiki)
 Pufferfish77 (Minor Concepts and Sprites)
 Setnour6 (M.Nova Sprite and C.Virus Theme)
+Woodio (Some Devastation Mode code)
 
 Multiplayer support is unknown, but most of us play alone anyway.
 
-Update V0.2.4.1: Update
-~Added Devastation Mode, a new really unfinished challenge.
-~Added Chocolate Mint rarity for Devastation Mode.
-~Resprited Braycoe Boots (lol)
-~Resprited Starpack Slime
-~Removed Breaker Blade recipe
-~Updated Pwnhammer recipe
-~Updated Cobalt Chair rarity
-~Updated Soul of Byte tooltip
-~Updated Logo
-~Added Code Breaker, a Computer Virus weapon that messes with your enemies.
+Update V0.2.4.2: Update that can be associated with Updates
+~Resprited Mechanical Slime
+~Increased Mechanical Slime laser speed
+~Fixed Code Breaker animation mistake
+~Increased Code Breaker damage and value
+~Added Artery Clogger, Vein Tunneler's older brother
+~Made Vein Tunneler immune to Confused
+~World Feeder now drops Rotten Chunk and Worm Tooth
+~Buffed Aerospace I
+~Added Extra Neon Slimy Core, King Slime's Devastation Mode drop
+~Increased Dirt Rod drop rate from Dirtball
+~Fixed Stealth Potion grammar
+~Resprited Volcanic Flame and Fatal Error
+~Changed a lot of Braycoe's chat messages
+~Updated logo
+~Changed Fatal Error tooltip
+~Eye of the Cosmos now spawns in a new player's inventory
+~Resprited Bone Slime
+~Resprited Dirtball and Empress Slime
