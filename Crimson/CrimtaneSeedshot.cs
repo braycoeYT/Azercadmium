@@ -1,44 +1,33 @@
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using Terraria;
-using Terraria.ID;
 using Terraria.ModLoader;
-using static Terraria.ModLoader.ModContent;
+using Terraria.ID;
 
-namespace Azercadmium.Items.Crimson
+namespace Azercadmium.Projectiles.Crimson
 {
-	public class CrimtaneSeedshot : ModItem
+	public class CrimtaneSeedshot : ModProjectile
 	{
-		public override void SetStaticDefaults() {
+        public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Crimtane Seedshot");
-			Tooltip.SetDefault("For use with blowpipes\nWhile in the crimson, each seed pierces five times, and spawns a temporary stationary crimtane heart after piercing");
         }
 		public override void SetDefaults() {
-			item.damage = 6; //3
-			item.ranged = true;
-			item.width = 12;
-			item.height = 8;
-			item.maxStack = 999;
-			item.consumable = true;
-			item.knockBack = 0f; //0
-			item.value = Item.sellPrice(0, 0, 0, 2); //0
-			item.rare = ItemRarityID.Blue;
-			item.shoot = ProjectileType<Projectiles.OtherSeeds.PH.Crimson.CrimtaneSeedshot>();
-			item.shootSpeed = 0f; //0
-			item.ammo = AmmoID.Dart;
+			projectile.CloneDefaults(ProjectileID.Seed);
+			aiType = ProjectileID.Seed;
 		}
-		public override void UpdateInventory(Player player) {
-			if (player.ZoneCrimson)
-			item.shoot = ProjectileType<Projectiles.OtherSeeds.PH.Crimson.CrimtaneSeedshotGood>();
-			else
-			item.shoot = ProjectileType<Projectiles.OtherSeeds.PH.Crimson.CrimtaneSeedshot>();
+		public override void Kill(int timeLeft) {
+			Dust dust = Dust.NewDustDirect(projectile.position, projectile.width, projectile.height, 90);
+			dust.noGravity = true;
+			dust.scale = 1.6f;
 		}
-		public override void AddRecipes() {
-			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.CrimtaneBar);
-			recipe.AddIngredient(ItemID.Vertebrae);
-			recipe.AddIngredient(ItemID.ViciousPowder);
-			recipe.AddTile(TileID.Anvils);
-			recipe.SetResult(this, 200);
-			recipe.AddRecipe();
+		public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor) {
+			Vector2 drawOrigin = new Vector2(Main.projectileTexture[projectile.type].Width * 0.5f, projectile.height * 0.5f);
+			for (int k = 0; k < projectile.oldPos.Length; k++) {
+				Vector2 drawPos = projectile.oldPos[k] - Main.screenPosition + drawOrigin + new Vector2(0f, projectile.gfxOffY);
+				Color color = projectile.GetAlpha(lightColor) * ((float)(projectile.oldPos.Length - k) / (float)projectile.oldPos.Length);
+				spriteBatch.Draw(Main.projectileTexture[projectile.type], drawPos, null, color, projectile.rotation, drawOrigin, projectile.scale, SpriteEffects.None, 0f);
+			}
+			return true;
 		}
-	}
+	}   
 }

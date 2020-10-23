@@ -1,65 +1,57 @@
-using Microsoft.Xna.Framework;
 using Terraria;
-using Terraria.ID;
 using Terraria.ModLoader;
+using Terraria.ID;
 
-namespace Azercadmium.Items.Corruption
+namespace Azercadmium.Projectiles.Corruption
 {
-	public class Shadowdance : ModItem
+	public class Shadowdance : ModProjectile
 	{
-		public override void SetStaticDefaults()  {
-			Tooltip.SetDefault("Each Javelance rains shadowdance orbs\nStacks up to 4\nMore javelances means more javelances thrown\nUse time is decreased with more javelances");
-		}
+        public override void SetStaticDefaults() {
+			DisplayName.SetDefault("Shadowdance");
+        }
 		public override void SetDefaults() {
-			item.damage = 30;
-			item.ranged = true;
-			item.width = 52;
-			item.height = 52;
-			item.useTime = 39;
-			item.useAnimation = 39;
-			item.useStyle = ItemUseStyleID.SwingThrow;
-			item.knockBack = 3.8f;
-			item.value = Item.sellPrice(0, 1, 0, 0);
-			item.rare = ItemRarityID.LightRed;
-			item.autoReuse = true;
-			item.useTurn = true;
-			item.shoot = mod.ProjectileType("Shadowdance");
-			item.shootSpeed = 12f;
-			item.noMelee = true;
-			item.maxStack = 4;
-			item.UseSound = SoundID.Item1;
-			item.noUseGraphic = true;
-			item.consumable = false;
+			projectile.width = 32;
+			projectile.height = 32;
+			projectile.aiStyle = 1;
+			projectile.friendly = true;
+			projectile.penetrate = 6;
+			projectile.ranged = true;
+			projectile.timeLeft = 3000;
+			projectile.ignoreWater = true;
+			aiType = 1;
 		}
-		public override void UpdateInventory(Player player) {
-			item.useTime = 39 + (item.stack * 10) - 10;
-			item.useAnimation = 39 + (item.stack * 10) - 10;
-		}
-		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack) {
-			AzercadmiumPlayer p = player.GetModPlayer<AzercadmiumPlayer>();
-			if (p.redJavelance)
-				Projectile.NewProjectile(position.X, position.Y, speedX, speedY, mod.ProjectileType("BleedingJavelance"), 45, 3f, player.whoAmI);
-			float numberProjectiles = item.stack;
-			float rotation = MathHelper.ToRadians(18);
-			if (numberProjectiles > 1) {
-				position += Vector2.Normalize(new Vector2(speedX, speedY)) * 45f;
-				for (int i = 0; i < numberProjectiles; i++) {
-					Vector2 perturbedSpeed = new Vector2(speedX, speedY).RotatedBy(MathHelper.Lerp(-rotation, rotation, i / (numberProjectiles - 1))) * .9f;
-					Projectile.NewProjectile(position.X, position.Y, perturbedSpeed.X, perturbedSpeed.Y, type, damage, knockBack, player.whoAmI);
-				}
-				return false;
+		int rand = Main.rand.Next(0, 120);
+		int Timer;
+		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit) {
+			AzercadmiumPlayer zp = Main.player[projectile.owner].GetModPlayer<AzercadmiumPlayer>();
+			if (zp.bloodJavelance && Main.rand.NextFloat() < .06f && target.type != NPCID.TargetDummy) {
+				Player p = Main.player[projectile.owner];
+				p.statLife += 1;
+				p.HealEffect(1, true);
 			}
-			return true;
 		}
-		public override void AddRecipes() {
-			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(mod.ItemType("RoyalCorruptJavelance"), 3);
-			recipe.AddIngredient(mod.ItemType("AquaticJavelance"), 3);
-			recipe.AddIngredient(mod.ItemType("VinepowerJavelance"), 3);
-			recipe.AddIngredient(mod.ItemType("FirebentJavelance"), 3);
-			recipe.AddTile(TileID.DemonAltar);
-			recipe.SetResult(this, 4);
-			recipe.AddRecipe();
+		public override void OnHitPlayer(Player target, int damage, bool crit) {
+			AzercadmiumPlayer zp = Main.player[projectile.owner].GetModPlayer<AzercadmiumPlayer>();
+			if (zp.bloodJavelance && Main.rand.NextFloat() < .06f) {
+				Player p = Main.player[projectile.owner];
+				p.statLife += 1;
+				p.HealEffect(1, true);
+			}
 		}
-	}
+		public override void AI() {
+			Timer++;
+			if (Timer % 120 == rand)
+				Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, 0, 7, mod.ProjectileType("ShadowdanceOrb"), 20, 0, Main.myPlayer);
+		}
+		public override void PostAI() {
+			if (Main.rand.NextBool()) {
+				Dust dust = Dust.NewDustDirect(projectile.position, projectile.width, projectile.height, 27);
+				dust.noGravity = false;
+				dust.scale = 0.8f;
+			}
+		}
+		public override void Kill(int timeLeft) {
+			Collision.HitTiles(projectile.position + projectile.velocity, projectile.velocity, projectile.width, projectile.height);
+		}
+	}   
 }

@@ -1,20 +1,15 @@
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.ID;
-using static Terraria.ModLoader.ModContent;
 
 namespace Azercadmium.Projectiles.Asteri
 {
 	public class DrakonsGhostGrasp : ModProjectile
 	{
-        public override void SetStaticDefaults()
-		{
+        public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Drakon's Grasp");
         }
-		public override void SetDefaults()
-		{
+		public override void SetDefaults() {
 			projectile.width = 32;
 			projectile.height = 32;
 			projectile.aiStyle = 1;
@@ -26,8 +21,7 @@ namespace Azercadmium.Projectiles.Asteri
 			projectile.alpha = 127;
 			aiType = 1;
 		}
-		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
-		{
+		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit) {
 			target.AddBuff(BuffID.Venom, 40, false);
 			AzercadmiumPlayer zp = Main.player[projectile.owner].GetModPlayer<AzercadmiumPlayer>();
 			if (zp.bloodJavelance && Main.rand.NextFloat() < .06f && target.type != NPCID.TargetDummy) {
@@ -36,8 +30,7 @@ namespace Azercadmium.Projectiles.Asteri
 				p.HealEffect(1, true);
 			}
 		}
-		public override void OnHitPlayer(Player target, int damage, bool crit)
-		{
+		public override void OnHitPlayer(Player target, int damage, bool crit) {
 			target.AddBuff(BuffID.Venom, 40, false);
 			AzercadmiumPlayer zp = Main.player[projectile.owner].GetModPlayer<AzercadmiumPlayer>();
 			if (zp.bloodJavelance && Main.rand.NextFloat() < .06f) {
@@ -46,14 +39,15 @@ namespace Azercadmium.Projectiles.Asteri
 				p.HealEffect(1, true);
 			}
 		}
-		public override void PostAI()
-		{
-			if (Main.rand.NextBool())
-			{
+		public override void PostAI() {
+			if (Main.rand.NextBool()) {
 				Dust dust = Dust.NewDustDirect(projectile.position, projectile.width, projectile.height, 52);
 				dust.noGravity = false;
 				dust.scale = 0.8f;
 			}
+		}
+		public override void Kill(int timeLeft) {
+			Collision.HitTiles(projectile.position + projectile.velocity, projectile.velocity, projectile.width, projectile.height);
 		}
 	}   
 }
