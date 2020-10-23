@@ -1,48 +1,38 @@
-using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using static Terraria.ModLoader.ModContent;
 
-namespace Azercadmium.Items.Slime
+namespace Azercadmium.Projectiles.Slime
 {
-	public class SlimyThrow : ModItem
+	public class SlimyThrow : ModProjectile
 	{
-		public override void SetStaticDefaults() 
-		{
-			DisplayName.SetDefault("Slimy Throw");
-			Tooltip.SetDefault("Spread slime from far away");
-			ItemID.Sets.Yoyo[item.type] = true;
-			ItemID.Sets.GamepadExtraRange[item.type] = 15;
-			ItemID.Sets.GamepadSmartQuickReach[item.type] = true;
+		public override void SetStaticDefaults() {
+			//3-16 Vanilla, -1 = Infinite
+			ProjectileID.Sets.YoyosLifeTimeMultiplier[projectile.type] = 5.5f;
+			//130-400 Vanilla
+			ProjectileID.Sets.YoyosMaximumRange[projectile.type] = 235f;
+			//9-17.5 Vanilla, for future reference
+			ProjectileID.Sets.YoyosTopSpeed[projectile.type] = 10.8f;
 		}
-
-		public override void SetDefaults()
-		{
-			item.useStyle = ItemUseStyleID.HoldingOut;
-			item.width = 24;
-			item.height = 24;
-			item.useAnimation = 25;
-			item.useTime = 25;
-			item.shootSpeed = 16f;
-			item.knockBack = 1f;
-			item.damage = 13;
-			item.rare = ItemRarityID.White;
-			item.melee = true;
-			item.channel = true;
-			item.noMelee = true;
-			item.noUseGraphic = true;
-			item.UseSound = SoundID.Item1;
-			item.value = 18000;
-			item.shoot = ProjectileType<Projectiles.OtherYoyos.SlimyThrow>();
+		public override void SetDefaults() {
+			projectile.extraUpdates = 0;
+			projectile.width = 16;
+			projectile.height = 16;
+			projectile.aiStyle = 99;
+			projectile.friendly = true;
+			projectile.penetrate = -1;
+			projectile.melee = true;
+			projectile.scale = 1f;
 		}
-		public override void AddRecipes()
-		{
-			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(mod.ItemType("SlimyCore"), 3);
-			recipe.AddTile(TileID.Solidifier);
-			recipe.SetResult(this);
-			recipe.AddRecipe();
+		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit) {
+			target.AddBuff(BuffID.Slimed, 300, false);
+		}
+		public override void PostAI() {
+			if (Main.rand.NextBool()) {
+				Dust dust = Dust.NewDustDirect(projectile.position, projectile.width, projectile.height, 80);
+				dust.noGravity = true;
+				dust.scale = 1f;
+			}
 		}
 	}
 }
