@@ -8,14 +8,14 @@ School has started for me and I can't work on the mod all day anymore, sorry.
 Discord Server: (homepage link is better) https://discord.gg/qv97wNV
 
 Stats:
-~244 Items
-~52 total NPCs
+~245 Items
+~43 total NPCs
 ~4 Bosses:
 ^2 Prehardmode Bosses
 ^2 Hardmode Bosses
 ~3 Town NPCs
 ~42 Tiles
-~24 Buffs
+~25 Buffs
 ~1 Ore
 ~2 Subclasses
 ~2 Custom Soundtracks
@@ -43,22 +43,18 @@ Woodio (Some Devastation Mode code)
 
 Multiplayer support is unknown, but most of us play alone anyway.
 
-Update V0.2.4.2: Update that can be associated with Updates
-~Resprited Mechanical Slime
-~Increased Mechanical Slime laser speed
-~Fixed Code Breaker animation mistake
-~Increased Code Breaker damage and value
-~Added Artery Clogger, Vein Tunneler's older brother
-~Made Vein Tunneler immune to Confused
-~World Feeder now drops Rotten Chunk and Worm Tooth
-~Buffed Aerospace I
-~Added Extra Neon Slimy Core, King Slime's Devastation Mode drop
-~Increased Dirt Rod drop rate from Dirtball
-~Fixed Stealth Potion grammar
-~Resprited Volcanic Flame and Fatal Error
-~Changed a lot of Braycoe's chat messages
-~Updated logo
-~Changed Fatal Error tooltip
-~Eye of the Cosmos now spawns in a new player's inventory
-~Resprited Bone Slime
-~Resprited Dirtball and Empress Slime
+Update V0.2.4.3: Final Sorting Update
+~Replaced Fiery Scent with the Egg of the Inferno
+~Added Hungering Javelance, a Wall of Flesh drop
+~Updated True Archive projectile
+~Removed True Wand of Sparking
+~Removed unnecessary npcs
+~Resprited Fatal Error
+~Added Floating Amethyst Staff
+~Internal sorting
+~Code optimazations
+~Organized NPC folder
+~Removed unnecessary projectiles
+~Organized projectile folder
+~Fixed passive stinger display name error
+~Changed Coldnea sell price

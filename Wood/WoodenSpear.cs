@@ -1,32 +1,70 @@
+using Microsoft.Xna.Framework;
 using Terraria;
-using Terraria.ID;
 using Terraria.ModLoader;
-using static Terraria.ModLoader.ModContent;
 
-namespace Azercadmium.Items.Wood
+namespace Azercadmium.Projectiles.Wood
 {
-	public class WoodenSpear : ModItem
+	public class WoodenSpear : ModProjectile
 	{
-		public override void SetDefaults() {
-			item.damage = 6;
-			item.useStyle = ItemUseStyleID.HoldingOut;
-			item.useAnimation = 18;
-			item.useTime = 24;
-			item.shootSpeed = 3.7f;
-			item.knockBack = 6.5f;
-			item.width = 32;
-			item.height = 32;
-			item.rare = ItemRarityID.White;
-			item.value = Item.sellPrice(silver: 10);
-			item.melee = true;
-			item.noMelee = true;
-			item.noUseGraphic = true;
-			item.autoReuse = false;
-			item.UseSound = SoundID.Item1;
-			item.shoot = ProjectileType<Projectiles.Wood.WoodenSpearProjectile>();
+		public override void SetStaticDefaults() {
+			DisplayName.SetDefault("Wooden Spear");
 		}
-		public override bool CanUseItem(Player player) {
-			return player.ownedProjectileCounts[item.shoot] < 1;
+		public override void SetDefaults() {
+			projectile.width = 18;
+			projectile.height = 18;
+			projectile.aiStyle = 19;
+			projectile.penetrate = -1;
+			projectile.scale = 1.3f;
+			projectile.alpha = 0;
+			projectile.hide = true;
+			projectile.ownerHitCheck = true;
+			projectile.melee = true;
+			projectile.tileCollide = false;
+			projectile.friendly = true;
+		}
+		public float MovementFactor {
+			get => projectile.ai[0];
+			set => projectile.ai[0] = value;
+		}
+		public override void AI() {
+			Player projOwner = Main.player[projectile.owner];
+			Vector2 ownerMountedCenter = projOwner.RotatedRelativePoint(projOwner.MountedCenter, true);
+			projectile.direction = projOwner.direction;
+			projOwner.heldProj = projectile.whoAmI;
+			projOwner.itemTime = projOwner.itemAnimation;
+			projectile.position.X = ownerMountedCenter.X - (float)(projectile.width / 2);
+			projectile.position.Y = ownerMountedCenter.Y - (float)(projectile.height / 2);
+			// As long as the player isn't frozen, the spear can move
+			if (!projOwner.frozen) {
+				if (MovementFactor == 0f)
+				{
+					MovementFactor = 3f;
+					projectile.netUpdate = true;
+				}
+				if (projOwner.itemAnimation < projOwner.itemAnimationMax / 3)
+				{
+					MovementFactor -= 2.4f;
+				}
+				else // Otherwise, increase the movement factor
+				{
+					MovementFactor += 2.1f;
+				}
+			}
+			projectile.position += projectile.velocity * MovementFactor;
+			if (projOwner.itemAnimation == 0) {
+				projectile.Kill();
+			}
+			projectile.rotation = projectile.velocity.ToRotation() + MathHelper.ToRadians(135f);
+			if (projectile.spriteDirection == -1) {
+				projectile.rotation -= MathHelper.ToRadians(90f);
+			}
+		}
+		public override void PostAI() {
+			if (Main.rand.NextBool()) {
+				Dust dust = Dust.NewDustDirect(projectile.position, projectile.width, projectile.height, 7);
+				dust.noGravity = true;
+				dust.scale = 1f;
+			}
 		}
 	}
 }
