@@ -179,8 +179,10 @@ namespace Azercadmium.NPCs
 					Item.NewItem(npc.getRect(), ItemID.Vine);
 			}
 			if (npc.type == NPCID.WallofFlesh) {
-				if (Main.rand.NextFloat() < .3f)
+				if (Main.rand.Next(2) == 0)
 					Item.NewItem(npc.getRect(), mod.ItemType("FleshBlowpipe"));
+				else
+					Item.NewItem(npc.getRect(), mod.ItemType("HungeringJavelance"), 4);
 			}
 			if (npc.type == NPCID.BloodCrawler || npc.type == NPCID.BloodCrawlerWall) {
 				if (Main.rand.NextFloat() < .12f)

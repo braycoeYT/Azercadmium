@@ -24,7 +24,7 @@ namespace Azercadmium.NPCs.Discus
 			npc.noGravity = true;
 			npc.noTileCollide = true;
 			banner = npc.type;
-			bannerItem = ItemType<Items.Banners.Discus.AquamarineTintedDiscusBanner>();
+			bannerItem = ItemType<Items.Discus.Banners.AquamarineTintedDiscusBanner>();
         }
 		public override void ScaleExpertStats(int numPlayers, float bossLifeScale) {
             npc.lifeMax = 141;

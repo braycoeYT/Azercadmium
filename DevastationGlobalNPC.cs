@@ -3,6 +3,7 @@ using System;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
 
 namespace Azercadmium.NPCs
 {
@@ -111,6 +112,13 @@ namespace Azercadmium.NPCs
 					break;
 			}
 			return true;
+		}
+		public override void NPCLoot(NPC npc) {
+			if (AzercadmiumWorld.devastation) {
+				if (npc.type == NPCID.KingSlime) {
+					Item.NewItem(npc.getRect(), ItemType<Items.Slime.ExtraNeonSlimyCore>());
+				}
+			}
 		}
 		private void Shoot(NPC npc, int delay, float distance, int speed, int proj, int dmg, float kb, bool hostile = false, int dustID = -1)
         {

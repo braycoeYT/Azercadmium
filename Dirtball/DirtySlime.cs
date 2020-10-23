@@ -4,24 +4,25 @@ using Terraria.ModLoader;
 
 namespace Azercadmium.NPCs.Dirtball
 {
-	public class DirtyDiscus : ModNPC
+	public class DirtySlime : ModNPC
 	{
 		public override void SetStaticDefaults() {
-			DisplayName.SetDefault("Dirty Discus");
+			DisplayName.SetDefault("Dirty Slime");
+			Main.npcFrameCount[npc.type] = 2;
 		}
         public override void SetDefaults() {
-			npc.value = 0;
-			npc.width = 38;
-			npc.height = 33;
-			npc.damage = 12;
-			npc.defense = 2;
-			npc.lifeMax = 21;
+			npc.width = 30;
+			npc.height = 24;
+			npc.damage = 19;
+			npc.defense = 1;
+			npc.lifeMax = 26;
 			npc.HitSound = SoundID.NPCHit1;
 			npc.DeathSound = SoundID.NPCDeath3;
-			npc.knockBackResist = 0.2f;
-			npc.aiStyle = 14;
-			npc.noGravity = true;
-			npc.noTileCollide = true;
+			npc.value = 0f;
+			npc.aiStyle = 1;
+			npc.knockBackResist = 0f;
+			animationType = 1;
+			npc.alpha = 50;
         }
 		public override void HitEffect(int hitDirection, double damage) {
 			for (int i = 0; i < 10; i++) {
@@ -34,9 +35,8 @@ namespace Azercadmium.NPCs.Dirtball
 			}
 		}
 		public override void ScaleExpertStats(int numPlayers, float bossLifeScale) {
-            npc.lifeMax = 41;
-            npc.damage = 18;
-			npc.knockBackResist = 0.1f;
+            npc.lifeMax = 37;
+            npc.damage = 31;
         }
 	}
 }

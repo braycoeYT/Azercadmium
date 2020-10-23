@@ -27,7 +27,7 @@ namespace Azercadmium.NPCs.Discus
 			npc.noGravity = true;
 			npc.noTileCollide = true;
 			banner = npc.type;
-			bannerItem = ItemType<Items.Banners.Discus.CorruptDiscusBanner>();
+			bannerItem = ItemType<Items.Discus.Banners.CorruptDiscusBanner>();
         }
 		
 		public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
