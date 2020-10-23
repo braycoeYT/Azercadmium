@@ -6,12 +6,10 @@ namespace Azercadmium.Projectiles.Empress
 {
 	public class EmpressGlob : ModProjectile
 	{
-        public override void SetStaticDefaults()
-		{
+        public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Empress Glob");
         }
-		public override void SetDefaults()
-		{
+		public override void SetDefaults() {
 			aiType = ProjectileID.Bullet;
 			projectile.width = 40;
 			projectile.height = 40;
@@ -23,10 +21,8 @@ namespace Azercadmium.Projectiles.Empress
 			projectile.extraUpdates = 2;
 			projectile.tileCollide = false;
 		}
-		public override void AI()
-		{
-			for (int i = 0; i < 10; i++)
-			{
+		public override void AI() {
+			for (int i = 0; i < 10; i++) {
 				int dustType = 183;
 				int dustIndex = Dust.NewDust(projectile.position, projectile.width, projectile.height, dustType);
 				Dust dust = Main.dust[dustIndex];

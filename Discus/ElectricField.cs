@@ -6,12 +6,10 @@ namespace Azercadmium.Projectiles.Discus
 {
 	public class ElectricField : ModProjectile
 	{
-        public override void SetStaticDefaults()
-		{
+        public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Electric Field");
         }
-		public override void SetDefaults()
-		{
+		public override void SetDefaults() {
 			projectile.width = 180;
 			projectile.height = 180;
 			projectile.aiStyle = -1;
@@ -26,10 +24,8 @@ namespace Azercadmium.Projectiles.Discus
 			projectile.localNPCHitCooldown = 10;
 		}
 		bool sound = true;
-		public override void AI()
-		{
-			if (sound)
-			{
+		public override void AI() {
+			if (sound) {
 				Main.PlaySound(SoundID.Item12);
 				sound = false;
 			}
@@ -45,8 +41,7 @@ namespace Azercadmium.Projectiles.Discus
 				dust.scale *= 1f + Main.rand.Next(-30, 31) * 0.01f;
 			}
 		}
-		public override void OnHitPlayer(Player target, int damage, bool crit)
-		{
+		public override void OnHitPlayer(Player target, int damage, bool crit) {
 			if (Main.rand.Next(2) == 0)
 				target.AddBuff(BuffID.Electrified, 75, false);
 		}

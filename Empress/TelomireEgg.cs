@@ -1,12 +1,13 @@
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
 
 namespace Azercadmium.Projectiles.Empress
 {
-	public class EmpressShuriken : ModProjectile
+	public class TelomireEgg : ModProjectile
 	{
         public override void SetStaticDefaults() {
-			DisplayName.SetDefault("Empress Nuclei");
+			DisplayName.SetDefault("Egg");
         }
 		public override void SetDefaults() {
 			projectile.width = 36;
@@ -15,35 +16,29 @@ namespace Azercadmium.Projectiles.Empress
 			projectile.hostile = false;
 			projectile.friendly = true;
 			projectile.ignoreWater = true;
-			projectile.timeLeft = 600;
+			projectile.tileCollide = false;
+			projectile.timeLeft = Main.rand.Next(300, 501);
 			projectile.penetrate = -1;
 			aiType = -1;
 		}
 		int Timer;
-		int rand = Main.rand.Next(48, 241);
+		int rand = Main.rand.Next(20, 181);
 		public override void AI() {
 			Timer++;
-			if (Timer % rand == 0)
-				Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, 0, 6, mod.ProjectileType("EggResidue"), projectile.damage + 20, 3, Main.myPlayer);
-			if (Timer % 10 == 0) {
-				if (Main.rand.NextBool()) 
-					projectile.velocity.X += 2;
-				else 
-					projectile.velocity.X -= 2;
+			if (Timer % rand == 0) {
+				projectile.velocity.X = 0;
+				projectile.velocity.Y = 0;
 			}
-			if (Timer % 10 == 0) {
-				if (Main.rand.NextBool())
-					projectile.velocity.Y += 2;
-				else
-					projectile.velocity.Y -= 2;
+			if (Timer % 26 == 0) {
+				Projectile.NewProjectile(projectile.Center, new Vector2(0, 8).RotatedByRandom(MathHelper.TwoPi), mod.ProjectileType("EggResidue"), projectile.damage + 30, 2, Main.myPlayer);
 			}
-			projectile.rotation += 1;
+			projectile.rotation += 10;
 		}
 		public override void PostAI() {
 			if (Main.rand.NextBool()) {
 				Dust dust = Dust.NewDustDirect(projectile.position, projectile.width, projectile.height, 153);
 				dust.noGravity = true;
-				dust.scale = 1f;
+				dust.scale = 1.6f;
 			}
 		}
 	}   

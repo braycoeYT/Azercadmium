@@ -1,43 +1,21 @@
-using Terraria;
-using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace Azercadmium.Items.Desert
+namespace Azercadmium.Projectiles.Desert
 {
-	public class Cactirang : ModItem
+	public class Cactirang : ModProjectile
 	{
-		public override void SetDefaults() {
-			item.damage = 6;
-			item.melee = true;
-			item.width = 30;
-			item.height = 30;
-			item.useTime = 72;
-			item.useAnimation = 72;
-			item.useStyle = ItemUseStyleID.HoldingUp;
-			item.knockBack = 4.5f;
-			item.value = 500;
-			item.rare = ItemRarityID.White;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = true;
-			item.useTurn = true;
-			item.shoot = mod.ProjectileType("Cactirang");
-			item.shootSpeed = 8f;
-			item.noUseGraphic = true;
-		}
-		public override bool CanUseItem(Player player) {
-            for (int i = 0; i < 1000; ++i) {
-                if (Main.projectile[i].active && Main.projectile[i].owner == Main.myPlayer && Main.projectile[i].type == item.shoot) {
-                    return false;
-                }
-            }
-            return true;
+        public override void SetStaticDefaults() {
+			DisplayName.SetDefault("Cactirang");
         }
-		public override void AddRecipes() {
-			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.Cactus, 11);
-			recipe.AddTile(TileID.WorkBenches);
-			recipe.SetResult(this);
-			recipe.AddRecipe();
+		public override void SetDefaults() {
+			projectile.width = 30;
+			projectile.height = 30;
+			projectile.aiStyle = 3;
+			projectile.friendly = true;
+			projectile.penetrate = 7;
+			projectile.melee = true;
+			projectile.timeLeft = 9999;
+			projectile.ignoreWater = true;
 		}
-	}
+	}   
 }

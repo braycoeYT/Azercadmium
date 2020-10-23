@@ -6,13 +6,11 @@ namespace Azercadmium.Projectiles.Dirtball
 {
 	public class DirtBall : ModProjectile
 	{
-        public override void SetStaticDefaults()
-		{
+        public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Dirt Ball");
 			Main.projFrames[projectile.type] = 6;
         }
-		public override void SetDefaults()
-		{
+		public override void SetDefaults() {
 			aiType = ProjectileID.Bullet;
 			projectile.width = 40;
 			projectile.height = 40;
@@ -26,21 +24,18 @@ namespace Azercadmium.Projectiles.Dirtball
 		}
 		int dirtRan = Main.rand.Next(0, 120);
 		int Timer;
-		public override void AI()
-		{
+		public override void AI() {
 			Timer++;
-			if (++projectile.frameCounter >= 6)
-			{
+			if (++projectile.frameCounter >= 6) {
 				projectile.frameCounter = 0;
 				if (++projectile.frame >= 6)
-				{
 					projectile.frame = 0;
-				}
 			}
-			if (Main.expertMode && Timer % 120 == dirtRan)
-			Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, 0, -6, mod.ProjectileType("DirtTile"), 9, 0, Main.myPlayer);
-			if (Main.expertMode && Timer % 120 == dirtRan)
-			Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, 0, 6, mod.ProjectileType("DirtTile"), 9, 0, Main.myPlayer);
+			if (Main.expertMode && Timer % 120 == dirtRan) {
+				Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, 0, -6, mod.ProjectileType("DirtTile"), 9, 0, Main.myPlayer);
+				Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, 0, 6, mod.ProjectileType("DirtTile"), 9, 0, Main.myPlayer);
+			}
+			
 		}
 	}   
 }

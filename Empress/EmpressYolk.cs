@@ -1,36 +1,61 @@
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
 
-namespace Azercadmium.Items.Empress
+namespace Azercadmium.Projectiles.Empress
 {
-	public class EmpressYolk : ModItem
+	public class EmpressYolk : ModProjectile
 	{
-		public override void SetStaticDefaults() {
-			DisplayName.SetDefault("Empress's Yolk");
-			Tooltip.SetDefault("Let go of the yoyo to barrage with poisonous yolk\nRight click to end the yolk barrage\nYou cannot use any items until you stop the yolk barrage");
-			ItemID.Sets.Yoyo[item.type] = true;
-			ItemID.Sets.GamepadExtraRange[item.type] = 15;
-			ItemID.Sets.GamepadSmartQuickReach[item.type] = true;
+		public override void SetStaticDefaults()
+		{
+			//3-16 Vanilla, -1 = Infinite
+			ProjectileID.Sets.YoyosLifeTimeMultiplier[projectile.type] = -1f;
+			//130-400 Vanilla
+			ProjectileID.Sets.YoyosMaximumRange[projectile.type] = 300f;
+			//9-17.5 Vanilla, for future reference
+			ProjectileID.Sets.YoyosTopSpeed[projectile.type] = 12.7f;
 		}
-		public override void SetDefaults() {
-			item.useStyle = ItemUseStyleID.HoldingOut;
-			item.width = 24;
-			item.height = 24;
-			item.useAnimation = 25;
-			item.useTime = 25;
-			item.shootSpeed = 16f;
-			item.knockBack = 4f;
-			item.damage = 90;
-			item.rare = ItemRarityID.Lime;
-			item.melee = true;
-			item.channel = true;
-			item.noMelee = true;
-			item.noUseGraphic = true;
-			item.UseSound = SoundID.Item1;
-			item.value = Item.sellPrice(0, 5, 0, 0);
-			item.shoot = ProjectileType<Projectiles.OtherYoyos.EmpressYolk>();
+
+		public override void SetDefaults()
+		{
+			projectile.extraUpdates = 0;
+			projectile.width = 16;
+			projectile.height = 16;
+			projectile.aiStyle = 99;
+			projectile.friendly = true;
+			projectile.penetrate = -1;
+			projectile.melee = true;
+			projectile.scale = 1f;
+		}
+		public float Timer
+		{
+			get => projectile.ai[0];
+			set => projectile.ai[0] = value;
+		}
+		public override void AI()
+		{
+			Timer++;
+			if (Timer % 120 == 0)
+			{
+				if (Main.rand.Next(0, 3) == 0)
+					Projectile.NewProjectile(projectile.Center, new Vector2(0, 8).RotatedByRandom(MathHelper.TwoPi), mod.ProjectileType("Yolk"), projectile.damage / 2, 2, Main.myPlayer);
+				projectile.velocity.X = 0;
+				projectile.velocity.Y = 0;
+			}
+			if (Main.mouseRight)
+				projectile.timeLeft = 0;
+		}
+		public override void PostAI()
+		{
+			if (Main.rand.NextBool())
+			{
+				Dust dust = Dust.NewDustDirect(projectile.position, projectile.width, projectile.height, 153);
+				dust.noGravity = true;
+				dust.scale = 1.6f;
+			}
 		}
 	}
 }

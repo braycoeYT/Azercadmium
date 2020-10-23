@@ -1,4 +1,3 @@
-using Terraria;
 using Terraria.ModLoader;
 using Terraria.ID;
 
@@ -6,12 +5,10 @@ namespace Azercadmium.Projectiles.Dirtball
 {
 	public class DirtTile : ModProjectile
 	{
-        public override void SetStaticDefaults()
-		{
+        public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Falling Dirt Ball");
         }
-		public override void SetDefaults()
-		{
+		public override void SetDefaults() {
 			aiType = ProjectileID.Bullet;
 			projectile.width = 14;
 			projectile.height = 14;
@@ -22,8 +19,7 @@ namespace Azercadmium.Projectiles.Dirtball
 			projectile.ignoreWater = true;
 			projectile.tileCollide = true;
 		}
-		public override void AI()
-		{
+		public override void AI() {
 			projectile.rotation += 0.05f;
 		}
 	}   

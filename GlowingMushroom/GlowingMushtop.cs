@@ -5,12 +5,12 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
 
-namespace Azercadmium.Projectiles.Mushroom
+namespace Azercadmium.Projectiles.GlowingMushroom
 {
-	public class Mushtop : ModProjectile
+	public class GlowingMushtop : ModProjectile
 	{
 		public override void SetStaticDefaults() {
-			DisplayName.SetDefault("Mushtop");
+			DisplayName.SetDefault("Glowing Mushtop");
 			Main.projFrames[projectile.type] = 5;
 			ProjectileID.Sets.MinionTargettingFeature[projectile.type] = true;
 			Main.projPet[projectile.type] = true;
@@ -39,9 +39,9 @@ namespace Azercadmium.Projectiles.Mushroom
 			#region Active check
 			if (player.dead || !player.active)
 			{
-				player.ClearBuff(BuffType<Buffs.Minions.Mushtop>());
+				player.ClearBuff(BuffType<Buffs.Minions.GlowingMushtop>());
 			}
-			if (player.HasBuff(BuffType<Buffs.Minions.Mushtop>()))
+			if (player.HasBuff(BuffType<Buffs.Minions.GlowingMushtop>()))
 			{
 				projectile.timeLeft = 2;
 			}
@@ -149,9 +149,9 @@ namespace Azercadmium.Projectiles.Mushroom
             #endregion
 
             #region Projectile
-			Vector2 projDir = Vector2.Normalize(targetCenter - projectile.Center) * 10;
-			if (Timer % 120 == 0 && foundTarget)
-			Projectile.NewProjectile(projectile.Center, projDir, mod.ProjectileType("MushroomBolt"), projectile.damage, projectile.knockBack, Main.myPlayer);
+			Vector2 projDir = Vector2.Normalize(targetCenter - projectile.Center) * 13;
+			if (Timer % 60 == 0 && foundTarget)
+			Projectile.NewProjectile(projectile.Center, projDir, mod.ProjectileType("GlowingMushroomBolt"), 10, 3, Main.myPlayer);
 
 			#endregion
 

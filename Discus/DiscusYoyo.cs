@@ -1,43 +1,35 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using static Terraria.ModLoader.ModContent;
 
-namespace Azercadmium.Items.Discus
+namespace Azercadmium.Projectiles.Discus
 {
-	public class DiscusYoyo : ModItem
+	public class DiscusYoyo : ModProjectile
 	{
 		public override void SetStaticDefaults() {
-			DisplayName.SetDefault("Electro Yoyo");
-			ItemID.Sets.Yoyo[item.type] = true;
-			ItemID.Sets.GamepadExtraRange[item.type] = 15;
-			ItemID.Sets.GamepadSmartQuickReach[item.type] = true;
+			//3-16 Vanilla, -1 = Infinite
+			ProjectileID.Sets.YoyosLifeTimeMultiplier[projectile.type] = 5f;
+			//130-400 Vanilla
+			ProjectileID.Sets.YoyosMaximumRange[projectile.type] = 245f;
+			//9-17.5 Vanilla, for future reference
+			ProjectileID.Sets.YoyosTopSpeed[projectile.type] = 8.75f;
 		}
 		public override void SetDefaults() {
-			item.useStyle = ItemUseStyleID.HoldingOut;
-			item.width = 24;
-			item.height = 24;
-			item.useAnimation = 25;
-			item.useTime = 25;
-			item.shootSpeed = 16f;
-			item.knockBack = 3f;
-			item.damage = 14;
-			item.rare = ItemRarityID.Blue;
-			item.melee = true;
-			item.channel = true;
-			item.noMelee = true;
-			item.noUseGraphic = true;
-			item.UseSound = SoundID.Item1;
-			item.value = Item.sellPrice(0, 0, 25, 0);
-			item.shoot = ProjectileType<Projectiles.OtherYoyos.DiscusYoyo>();
+			projectile.extraUpdates = 0;
+			projectile.width = 16;
+			projectile.height = 16;
+			projectile.aiStyle = 99;
+			projectile.friendly = true;
+			projectile.penetrate = -1;
+			projectile.melee = true;
+			projectile.scale = 1f;
 		}
-		public override void AddRecipes() {
-			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(mod.ItemType("DriedEssence"), 3);
-			recipe.AddIngredient(mod.ItemType("BrokenDiscus"), 2);
-			recipe.AddTile(TileID.Anvils);
-			recipe.SetResult(this);
-			recipe.AddRecipe();
+		public override void PostAI() {
+			if (Main.rand.NextBool()) {
+				Dust dust = Dust.NewDustDirect(projectile.position, projectile.width, projectile.height, 226);
+				dust.noGravity = true;
+				dust.scale = 1f;
+			}
 		}
 	}
 }

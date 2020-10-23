@@ -6,8 +6,7 @@ namespace Azercadmium.Projectiles.Havoc
 {
 	public class ThrowableFloatingPotionExp : ModProjectile
 	{
-        public override void SetStaticDefaults()
-		{
+        public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Throwable Floating Potion");
         }
 		public override void SetDefaults()
@@ -23,19 +22,15 @@ namespace Azercadmium.Projectiles.Havoc
 			projectile.tileCollide = false;
 			projectile.penetrate = -1;
 		}
-		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
-		{
+		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit) {
 			if (target.boss == false && target.type != NPCID.TargetDummy && target.type != mod.NPCType("XenicAcidpumperGood"))
 			target.velocity.Y -= 10;
 		}
-		public override void OnHitPvp(Player target, int damage, bool crit)
-		{
+		public override void OnHitPvp(Player target, int damage, bool crit) {
 			target.velocity.Y -= 10;
 		}
-		public override void AI()
-		{
-			for (int i = 0; i < 10; i++)
-			{
+		public override void AI() {
+			for (int i = 0; i < 10; i++) {
 				int dustType = 56;
 				int dustIndex = Dust.NewDust(projectile.position, projectile.width, projectile.height, dustType);
 				Dust dust = Main.dust[dustIndex];

@@ -1,39 +1,27 @@
 using Terraria;
-using Terraria.ID;
 using Terraria.ModLoader;
-using static Terraria.ModLoader.ModContent;
 
-namespace Azercadmium.Items.Discus
+namespace Azercadmium.Projectiles.Discus
 {
-	public class DiscusArrow : ModItem
+	public class DiscusArrow : ModProjectile
 	{
         public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Discus Arrow");
-			Tooltip.SetDefault("Penetrates infinitely");
         }
 		public override void SetDefaults() {
-			item.damage = 10;
-			item.ranged = true;
-			item.width = 8;
-			item.height = 8;
-			item.maxStack = 999;
-			item.consumable = true;
-			item.knockBack = 2f;
-			item.value = Item.sellPrice(0, 0, 0, 7);
-			item.rare = ItemRarityID.Blue;
-			item.shoot = ProjectileType<Projectiles.Discus.DiscusArrow>();
-			item.shootSpeed = 6.5f;
-			item.ammo = AmmoID.Arrow;
+			projectile.width = 8;
+			projectile.height = 8;
+			projectile.aiStyle = 1;
+			projectile.friendly = true;
+			projectile.penetrate = -1;
+			projectile.ranged = true;
+			projectile.damage = 10;
+			projectile.timeLeft = 3000;
+			projectile.ignoreWater = true;
+			aiType = 1;
 		}
-		
-		public override void AddRecipes()
-		{
-			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.WoodenArrow, 200);
-			recipe.AddIngredient(ItemType<DriedEssence>(), 1);
-			recipe.AddTile(TileID.Anvils);
-			recipe.SetResult(this, 200);
-			recipe.AddRecipe();
+		public override void Kill(int timeLeft) {
+			Collision.HitTiles(projectile.position + projectile.velocity, projectile.velocity, projectile.width, projectile.height);
 		}
 	}   
 }

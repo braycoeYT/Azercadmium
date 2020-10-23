@@ -1,48 +1,34 @@
 using Terraria;
-using Terraria.ID;
 using Terraria.ModLoader;
+using Terraria.ID;
+using Microsoft.Xna.Framework;
 
-namespace Azercadmium.Items.Mech
+namespace Azercadmium.Projectiles.Mech
 {
-	public class Mecharang : ModItem
+	public class Mecharang : ModProjectile
 	{
-		public override void SetStaticDefaults() {
-			Tooltip.SetDefault("Occasionally fires lasers");
-		}
-		public override void SetDefaults() {
-			item.melee = true;
-			item.damage = 49;
-			item.width = 45;
-			item.height = 45;
-			item.useTime = 15;
-			item.useAnimation = 15;
-			item.useStyle = ItemUseStyleID.SwingThrow;
-			item.knockBack = 1.5f;
-			item.value = Item.sellPrice(0, 4, 50, 0);
-			item.rare = ItemRarityID.LightPurple;
-			item.UseSound = SoundID.Item1;
-			item.autoReuse = true;
-			item.useTurn = true;
-			item.shoot = mod.ProjectileType("Mecharang");
-			item.shootSpeed = 17;
-			item.crit = 6;
-			item.noUseGraphic = true;
-		}
-		public override bool CanUseItem(Player player) {
-            for (int i = 0; i < 1000; ++i) {
-                if (Main.projectile[i].active && Main.projectile[i].owner == Main.myPlayer && Main.projectile[i].type == item.shoot) {
-                    return false;
-                }
-            }
-            return true;
+        public override void SetStaticDefaults() {
+			DisplayName.SetDefault("Mecharang");
         }
-		public override void AddRecipes() {
-			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.HallowedBar, 13);
-			recipe.AddIngredient(ItemID.SoulofMight, 6);
-			recipe.AddTile(TileID.MythrilAnvil);
-			recipe.SetResult(this);
-			recipe.AddRecipe();
+		public override void SetDefaults() {
+			projectile.CloneDefaults(ProjectileID.EnchantedBoomerang);
+			projectile.width = 40;
+			projectile.height = 40;
+			projectile.friendly = true;
+			projectile.penetrate = 999;
+			projectile.timeLeft = 630;
+			projectile.ignoreWater = true;
 		}
-	}
+		int Timer;
+		public override void AI() {
+			Timer++;
+			projectile.timeLeft = 999;
+			Vector2 velocity2 = projectile.velocity;
+			velocity2 *= 2;
+			if (Timer % 180 == 0 || Timer % 180 == 30 || Timer % 180 == 60) {
+				Main.PlaySound(SoundID.Item12);
+				Projectile.NewProjectile(projectile.Center, velocity2, ProjectileID.Bullet, projectile.damage, projectile.knockBack / 3, Main.myPlayer);
+			}
+		}
+	}   
 }

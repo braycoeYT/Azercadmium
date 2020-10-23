@@ -1,12 +1,13 @@
+using Terraria;
 using Terraria.ModLoader;
 using Terraria.ID;
 
-namespace Azercadmium.Projectiles.Mushroom
+namespace Azercadmium.Projectiles.GlowingMushroom
 {
-	public class MushroomWave : ModProjectile
+	public class GlowingMushroomWave : ModProjectile
 	{
         public override void SetStaticDefaults() {
-			DisplayName.SetDefault("Mushroom Wave");
+			DisplayName.SetDefault("Glowing Mushroom Wave");
         }
 		public override void SetDefaults() {
 			aiType = ProjectileID.Bullet;

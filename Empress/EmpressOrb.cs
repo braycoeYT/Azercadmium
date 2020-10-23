@@ -1,21 +1,15 @@
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using Terraria;
-using Terraria.ID;
 using Terraria.ModLoader;
-using static Terraria.ModLoader.ModContent;
 
 namespace Azercadmium.Projectiles.Empress
 {
 	public class EmpressOrb : ModProjectile
 	{
-        public override void SetStaticDefaults()
-		{
+        public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Empress Orb");
 			Main.projFrames[projectile.type] = 1;
         }
-		public override void SetDefaults()
-		{
+		public override void SetDefaults() {
 			projectile.width = 40;
 			projectile.height = 40;
 			projectile.aiStyle = -1;
@@ -26,22 +20,16 @@ namespace Azercadmium.Projectiles.Empress
 			projectile.timeLeft = 1200;
 			aiType = -1;
 		}
-		public float Timer
-		{
-	        get => projectile.ai[0];
-	        set => projectile.ai[0] = value;
-        }
+		int Timer;
 		int rand = Main.rand.Next(60, 261);
 		public override void AI()
 		{
 			Timer++;
-			if (Timer % rand == 0)
-			{
+			if (Timer % rand == 0) {
 				projectile.velocity.X = 0;
 				projectile.velocity.Y = 0;
 			}
-			for (int i = 0; i < 10; i++)
-			{
+			for (int i = 0; i < 10; i++) {
 				int dustType = 183;
 				int dustIndex = Dust.NewDust(projectile.position, projectile.width, projectile.height, dustType);
 				Dust dust = Main.dust[dustIndex];

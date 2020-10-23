@@ -1,20 +1,13 @@
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using Terraria;
 using Terraria.ModLoader;
-using Terraria.ID;
-using static Terraria.ModLoader.ModContent;
 
 namespace Azercadmium.Projectiles.Discus
 {
 	public class RedOrbShard : ModProjectile
 	{
-        public override void SetStaticDefaults()
-		{
+        public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Red Orb Shard");
         }
-		public override void SetDefaults()
-		{
+		public override void SetDefaults() {
 			projectile.width = 17;
 			projectile.height = 17;
 			projectile.aiStyle = 1;

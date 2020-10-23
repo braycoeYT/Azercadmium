@@ -5,13 +5,11 @@ namespace Azercadmium.Projectiles.Dirtball
 {
 	public class CrazyDirtStuff : ModProjectile
 	{
-        public override void SetStaticDefaults()
-		{
-			DisplayName.SetDefault("thee strongest dirt ball");
+        public override void SetStaticDefaults() {
+			DisplayName.SetDefault("Dirt Ball");
 			Main.projFrames[projectile.type] = 6;
         }
-		public override void SetDefaults()
-		{
+		public override void SetDefaults() {
 			projectile.width = 32;
 			projectile.height = 32;
 			projectile.aiStyle = 1;
@@ -22,19 +20,14 @@ namespace Azercadmium.Projectiles.Dirtball
 			projectile.ignoreWater = true;
 			aiType = 1;
 		}
-		public override void AI()
-		{
-			if (++projectile.frameCounter >= 6)
-			{
+		public override void AI() {
+			if (++projectile.frameCounter >= 6) {
 				projectile.frameCounter = 0;
 				if (++projectile.frame >= 6)
-				{
 					projectile.frame = 0;
-				}
 			}
 		}
-		public override void Kill(int timeLeft)
-		{
+		public override void Kill(int timeLeft) {
 			Collision.HitTiles(projectile.position + projectile.velocity, projectile.velocity, projectile.width, projectile.height);
 		}
 	}   

@@ -20,10 +20,8 @@ namespace Azercadmium.Projectiles.Empress
 			projectile.ignoreWater = true;
 			projectile.tileCollide = false;
 		}
-		public override void AI()
-		{
-			for (int i = 0; i < 10; i++)
-			{
+		public override void AI() {
+			for (int i = 0; i < 10; i++) {
 				int dustType = 183;
 				int dustIndex = Dust.NewDust(projectile.position, projectile.width, projectile.height, dustType);
 				Dust dust = Main.dust[dustIndex];
