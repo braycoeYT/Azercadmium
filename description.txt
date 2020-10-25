@@ -1,7 +1,7 @@
 Reborn version of the Zylon Mod. Give me a few updates, and this mod will be completely remade from craziness to something actually good.
 
-This mod has many interesting things, including ore furniture, crimson alternates, and a giant floating ball of dirt.
-This mod also has QoL changes, such as an easier Slime Crown recipe and some hardmode enemies drop prehardmode loot.
+This mod has many peculiar things, including ore furniture, two unique subclasses, and a giant floating ball of dirt.
+This mod also has QoL changes, such as an easier Slime Crown recipe, crimson alternates, and some hardmode enemies dropping prehardmode loot.
 
 If you are worried about a custom biome ruining your world, don't worry, it has been removed.
 School has started for me and I can't work on the mod all day anymore, sorry.
@@ -9,11 +9,11 @@ Discord Server: (homepage link is better) https://discord.gg/qv97wNV
 
 Stats:
 ~245 Items
-~43 total NPCs
+~42 total NPCs
 ~4 Bosses:
 ^2 Prehardmode Bosses
 ^2 Hardmode Bosses
-~3 Town NPCs
+~2 Town NPCs
 ~42 Tiles
 ~25 Buffs
 ~1 Ore
@@ -27,7 +27,7 @@ Cross-mod Content with Asteri and Havoc Mod.
 Spriters/Other Help:
 GOA7 (Spriter/Music)
 Koolaidlemonade (Inactive Spriter)
-HBDeus (Spriter)
+HBDeus (Inactive Spriter)
 VaultyBoi (Spriter)
 ULTIMATEDQVID (Spriter)
 Unboxing Video (Wiki)
@@ -43,18 +43,8 @@ Woodio (Some Devastation Mode code)
 
 Multiplayer support is unknown, but most of us play alone anyway.
 
-Update V0.2.4.3: Final Sorting Update
-~Replaced Fiery Scent with the Egg of the Inferno
-~Added Hungering Javelance, a Wall of Flesh drop
-~Updated True Archive projectile
-~Removed True Wand of Sparking
-~Removed unnecessary npcs
-~Resprited Fatal Error
-~Added Floating Amethyst Staff
-~Internal sorting
-~Code optimazations
-~Organized NPC folder
-~Removed unnecessary projectiles
-~Organized projectile folder
-~Fixed passive stinger display name error
-~Changed Coldnea sell price
+Update V0.2.4.4: Town NPC Update
+~Updated Braycoe Town NPC chat
+~Braycoe Town NPC now lets you cycle through options
+~With the above change, a new "Impressions" option has been added, where I leave my thoughts on bosses, biomes, and more.
+~Removed Hitman for being low quality
