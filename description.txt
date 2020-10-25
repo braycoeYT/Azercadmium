@@ -3,10 +3,6 @@ Reborn version of the Zylon Mod. Give me a few updates, and this mod will be com
 This mod has many peculiar things, including ore furniture, two unique subclasses, and a giant floating ball of dirt.
 This mod also has QoL changes, such as an easier Slime Crown recipe, crimson alternates, and some hardmode enemies dropping prehardmode loot.
 
-If you are worried about a custom biome ruining your world, don't worry, it has been removed.
-School has started for me and I can't work on the mod all day anymore, sorry.
-Discord Server: (homepage link is better) https://discord.gg/qv97wNV
-
 Stats:
 ~245 Items
 ~42 total NPCs
