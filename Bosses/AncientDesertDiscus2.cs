@@ -11,11 +11,9 @@ namespace Azercadmium.NPCs.Bosses
 	public class AncientDesertDiscus2 : ModNPC
 	{
 		
-		public override void SetStaticDefaults() 
-		{
+		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Ancient Desert Discus");
 		}
-
         public override void SetDefaults()
 		{
 			npc.width = 140;
@@ -128,14 +126,14 @@ namespace Azercadmium.NPCs.Bosses
 			{
 				if  (Timer % 350 == 0)
 				{
-					NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y, NPCType<NPCs.Minions.Discus.ElectricAssaultDiscus>(), 0, npc.whoAmI);
+					NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y, NPCType<NPCs.Discus.ElectricAssaultDiscus>(), 0, npc.whoAmI);
 				}
 			}
 			else
 			{
 				if  (Timer % 450 == 0)
 				{
-					NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y, NPCType<NPCs.Minions.Discus.ElectricAssaultDiscus>(), 0, npc.whoAmI);
+					NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y, NPCType<NPCs.Discus.ElectricAssaultDiscus>(), 0, npc.whoAmI);
 				}
 			}
         }
@@ -169,6 +167,7 @@ namespace Azercadmium.NPCs.Bosses
 	            Item.NewItem(npc.getRect(), ItemID.Amber, 2 + Main.rand.Next(3));
 			    Item.NewItem(npc.getRect(), ItemID.GoldBar, 4 + Main.rand.Next(3));
 				Item.NewItem(npc.getRect(), mod.ItemType("DriedEssence"), Main.rand.Next(5, 9));
+				Item.NewItem(npc.getRect(), mod.ItemType("Electroid"));
 			}
 			AzercadmiumWorld.downedDiscus = true;
         }

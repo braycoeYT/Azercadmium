@@ -46,6 +46,7 @@ namespace Azercadmium
 		public bool meteorMelee;
 		public bool stealthPotion;
 		public bool slimyOoze;
+		public bool dirtboi;
 		int numberShot = 0;
 		public int upgradeHearts;
 		public int upgradeStars;
@@ -83,6 +84,7 @@ namespace Azercadmium
 			meteorMelee = false;
 			stealthPotion = false;
 			slimyOoze = false;
+			dirtboi = false;
 			player.statLifeMax2 += upgradeHearts * 25;
 			player.statManaMax2 += upgradeStars * 50;
 			playerTimer = 0;

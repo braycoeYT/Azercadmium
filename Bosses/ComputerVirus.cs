@@ -171,14 +171,14 @@ namespace Azercadmium.NPCs.Bosses
 			Item.NewItem(npc.getRect(), ItemID.GreaterHealingPotion, Main.rand.Next(5, 16));
 			if (Main.expertMode)
 			{
-				Item.NewItem(npc.getRect(), mod.ItemType("ComVirusBag"));
+				Item.NewItem(npc.getRect(), mod.ItemType("CVirusBag"));
 			}
 			else
 			{
-				Item.NewItem(npc.getRect(), mod.ItemType("SoulOfByte"), Main.rand.Next(20, 40));
+				Item.NewItem(npc.getRect(), mod.ItemType("SoulofByte"), Main.rand.Next(20, 40));
 				Item.NewItem(npc.getRect(), ItemID.HallowedBar, Main.rand.Next(15, 31));
 			}
-			AzercadmiumWorld.downedComVirus = true;
+			AzercadmiumWorld.downedCVirus = true;
 		}
 	}
 }

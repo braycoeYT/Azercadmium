@@ -138,14 +138,14 @@ namespace Azercadmium.NPCs.Bosses
 			{
 				if  (Timer % 350 == 0)
 				{
-					NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y, NPCType<NPCs.Minions.Discus.SandGrainDiscus>(), 0, npc.whoAmI);
+					NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y, NPCType<NPCs.Discus.SandGrainDiscus>(), 0, npc.whoAmI);
 				}
 			}
 			else
 			{
 				if  (Timer % 450 == 0)
 				{
-					NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y, NPCType<NPCs.Minions.Discus.SandGrainDiscus>(), 0, npc.whoAmI);
+					NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y, NPCType<NPCs.Discus.SandGrainDiscus>(), 0, npc.whoAmI);
 				}
 			}
         }

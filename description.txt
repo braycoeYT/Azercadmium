@@ -4,43 +4,55 @@ This mod has many peculiar things, including ore furniture, two unique subclasse
 This mod also has QoL changes, such as an easier Slime Crown recipe, crimson alternates, and some hardmode enemies dropping prehardmode loot.
 
 Stats:
-~245 Items
+~253 Items
 ~42 total NPCs
 ~4 Bosses:
 ^2 Prehardmode Bosses
 ^2 Hardmode Bosses
 ~2 Town NPCs
 ~42 Tiles
-~25 Buffs
+~26 Buffs
 ~1 Ore
 ~2 Subclasses
 ~2 Custom Soundtracks
-~2 Rarities
+~3 Rarities
 ~1 Unfinished Game Mode
 
 Cross-mod Content with Asteri and Havoc Mod.
 
-Spriters/Other Help:
-GOA7 (Spriter/Music)
-Koolaidlemonade (Inactive Spriter)
-HBDeus (Inactive Spriter)
+Active Spriters:
 VaultyBoi (Spriter)
 ULTIMATEDQVID (Spriter)
-Unboxing Video (Wiki)
+LoginatorV (Minor Spriter)
 
-Minor Help/Quit:
+Inactive Spriters:
+Skymanisbtman (Inactive Spriter/Music)
+Koolaidlemonade (Inactive Spriter)
+HBDeus (Inactive Spriter)
+
+Other Help:
+Unboxing Video (Wiki)
+Woodio (Some Devastation Mode code)
+
+Quit:
 CrazySapling1 (Quit Spriter)
+
+Very Minor Help:
 Sness (Two sprites)
 Math (Minor Wiki)
 Ashe (Minor Wiki)
 Pufferfish77 (Minor Concepts and Sprites)
 Setnour6 (M.Nova Sprite and C.Virus Theme)
-Woodio (Some Devastation Mode code)
 
 Multiplayer support is unknown, but most of us play alone anyway.
 
-Update V0.2.4.4: Town NPC Update
-~Updated Braycoe Town NPC chat
-~Braycoe Town NPC now lets you cycle through options
-~With the above change, a new "Impressions" option has been added, where I leave my thoughts on bosses, biomes, and more.
-~Removed Hitman for being low quality
+Update V0.2.4.5: Dirtball Update Pt. 1
+~Added Dirtball Fragment Items, which are almost useless at first but can be upgraded into more powerful versions
+~Fixed Floating Amethyst buff tooltip
+~Added the Mini Creepy Mud, which summons a pet Dirtboi
+~Updated credits once again
+~Resprited Empress Slime Treasure Bag
+~Replaced Vinepower Javelance with Snarevine
+~Increased Snarevine poison chance and time
+~Replaced Firebent Javelance with Infernal Javelance
+~Resprited Dirty Slime

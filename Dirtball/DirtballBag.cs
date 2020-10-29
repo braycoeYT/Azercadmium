@@ -35,6 +35,11 @@ namespace Azercadmium.Items.Dirtball
 			if (ran == 1) player.QuickSpawnItem(mod.ItemType("EarthmightHelm"));
 			if (ran == 2) player.QuickSpawnItem(mod.ItemType("EarthmightBreastplate"));
 			if (ran == 3) player.QuickSpawnItem(mod.ItemType("EarthmightLeggings"));
+
+			ran = Main.rand.Next(1, 4);
+			if (ran == 1) player.QuickSpawnItem(mod.ItemType("OvergrownHilt"));
+			if (ran == 2) player.QuickSpawnItem(mod.ItemType("OvergrownHandgunFragment"));
+			if (ran == 3) player.QuickSpawnItem(mod.ItemType("OvergrownElectricalComponent"));
 			
 			player.QuickSpawnItem(ItemID.CopperBar, 1 + Main.rand.Next(5));
 			player.QuickSpawnItem(ItemID.DirtBlock, 1 + Main.rand.Next(5));
@@ -43,8 +48,10 @@ namespace Azercadmium.Items.Dirtball
 			player.QuickSpawnItem(ItemID.Lens, 1 + Main.rand.Next(1));
 			if (Main.rand.NextFloat() < .75f)
 			player.QuickSpawnItem(mod.ItemType("DirtyMedal"));
+			if (Main.rand.NextFloat() < .18f)
+			player.QuickSpawnItem(mod.ItemType("CreepyBlob"));
 			player.QuickSpawnItem(mod.ItemType("DirtShieldOfOblivion"));
-			if (Main.rand.NextFloat() < .15f)
+			if (Main.rand.NextFloat() < .33f)
 			player.QuickSpawnItem(ItemID.DirtRod);
 		}
 		public override int BossBagNPC => NPCType<NPCs.Bosses.Dirtball>();

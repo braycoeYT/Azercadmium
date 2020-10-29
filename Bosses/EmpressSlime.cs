@@ -10,12 +10,10 @@ namespace Azercadmium.NPCs.Bosses
 	[AutoloadBossHead]
 	public class EmpressSlime : ModNPC
 	{
-		public override void SetStaticDefaults() 
-		{
+		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Empress Slime");
-			Main.npcFrameCount[npc.type] = 2;
+			Main.npcFrameCount[npc.type] = 6;
 		}
-
         public override void SetDefaults()
 		{
 			npc.width = 165;
@@ -37,7 +35,6 @@ namespace Azercadmium.NPCs.Bosses
 			npc.buffImmune[BuffID.Venom] = true;
 			npc.buffImmune[BuffID.Confused] = true;
 			npc.buffImmune[BuffID.Poisoned] = true;
-			animationType = 1;
 			npc.alpha = 50;
 		}
 		public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
@@ -57,12 +54,12 @@ namespace Azercadmium.NPCs.Bosses
 			if (npc.lifeMax / 2 < npc.life)
 			{
 				if (Main.rand.Next(30) == 0)
-				NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y, NPCType<Minions.Empress.RoyalMotherSlime>(), 0, npc.whoAmI);
+				NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y, NPCType<Empress.RoyalMotherSlime>(), 0, npc.whoAmI);
 			}
 			else
 			{
 				if (Main.rand.Next(30) == 0)
-				NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y, NPCType<Minions.Empress.RoyalSlimer>(), 0, npc.whoAmI);
+				NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y, NPCType<Empress.RoyalSlimer>(), 0, npc.whoAmI);
 			}
 
 			for (int i = 0; i < 10; i++)
@@ -76,12 +73,8 @@ namespace Azercadmium.NPCs.Bosses
 			}
 		}
 		
-        public float Timer
-		{
-	        get => npc.ai[0];
-	        set => npc.ai[0] = value;
-        }
-		
+        int Timer;
+		int animationTimer;
 		int flee = 0;
 		int attack = 0;
 		int attackMax = 0;
@@ -379,6 +372,11 @@ namespace Azercadmium.NPCs.Bosses
 					}
 				}
 			}
+			if (Timer % 4 == 0)
+				animationTimer++;
+			if (animationTimer > 5)
+				animationTimer = 0;
+			npc.frame.Y = animationTimer * 140;
 		}
 		public override void NPCLoot() {
 			if (Main.expertMode)
