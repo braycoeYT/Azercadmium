@@ -7,15 +7,14 @@ namespace Azercadmium.NPCs.Empress
 	public class RoyalMotherSlime : ModNPC
 	{
 		public override void SetStaticDefaults() {
-			DisplayName.SetDefault("Royal Mother Slime");
 			Main.npcFrameCount[npc.type] = 2;
 		}
         public override void SetDefaults() {
-			npc.width = 39;
-			npc.height = 31;
+			npc.width = 30;
+			npc.height = 38;
 			npc.damage = 61;
 			npc.defense = 10;
-			npc.lifeMax = 950;
+			npc.lifeMax = 196;
 			npc.HitSound = SoundID.NPCHit1;
 			npc.DeathSound = SoundID.NPCDeath1;
 			npc.value = 0f;
@@ -25,12 +24,12 @@ namespace Azercadmium.NPCs.Empress
 			npc.alpha = 50;
         }
 		public override void ScaleExpertStats(int numPlayers, float bossLifeScale) {
-            npc.lifeMax = 1900;
+            npc.lifeMax = 392;
             npc.damage = 122;
         }
 		public override void HitEffect(int hitDirection, double damage) {
 			if (npc.life <= 0) {
-				float numberNPC = Main.rand.Next(2, 5);
+				float numberNPC = Main.rand.Next(1, 4);
 				for (int i = 0; i < numberNPC; i++) {
 					NPC.NewNPC((int)npc.position.X + Main.rand.Next(-50, 50), (int)npc.position.Y + Main.rand.Next(-50, 50), mod.NPCType("SlimeLarva"));
 				}
@@ -38,12 +37,7 @@ namespace Azercadmium.NPCs.Empress
 		}
 		public override void OnHitPlayer(Player player, int damage, bool crit) {
 			if (Main.rand.NextBool(4))
-				player.AddBuff(163, 300, true);
-		}
-		public override float SpawnChance(NPCSpawnInfo spawnInfo) {
-			if (AzercadmiumWorld.downedEmpress)
-				return SpawnCondition.Cavern.Chance * 0.04f;
-			return 0f;
+				player.AddBuff(BuffID.Venom, 300, true);
 		}
 	}
 }

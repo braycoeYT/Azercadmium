@@ -107,6 +107,14 @@ namespace Azercadmium.NPCs
 				}
 			}
 		}
+		int Timer;
+		public override void AI(NPC npc) {
+			if (GetInstance<AzercadmiumConfig>().nebulaAttack && npc.type == NPCID.LunarTowerNebula) {
+				Timer++;
+				if ((Main.expertMode == true && Timer % 300 == 0) || (!Main.expertMode && Timer % 360 == 0))
+					Projectile.NewProjectile(npc.Center, new Vector2(Main.rand.NextFloat(-2, 3), -20), ProjectileID.NebulaSphere, 37, 1f);
+			}
+		}
 		public override void NPCLoot(NPC npc) {
 			/*if (AzercadmiumWorld.microbiomeTiles > 140 && Main.hardMode) {
 				if (Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)].ZoneSkyHeight) {

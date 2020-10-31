@@ -2,6 +2,7 @@ Reborn version of the Zylon Mod. Give me a few updates, and this mod will be com
 
 This mod has many peculiar things, including ore furniture, two unique subclasses, and a giant floating ball of dirt.
 This mod also has QoL changes, such as an easier Slime Crown recipe, crimson alternates, and some hardmode enemies dropping prehardmode loot.
+Some changes can be only accessed via the config, like the Pearlwood buff.
 
 Stats:
 ~253 Items
@@ -17,8 +18,7 @@ Stats:
 ~2 Custom Soundtracks
 ~3 Rarities
 ~1 Unfinished Game Mode
-
-Cross-mod Content with Asteri and Havoc Mod.
+~Cross content with Asteri and Havoc Mod
 
 Active Spriters:
 VaultyBoi (Spriter)
@@ -46,13 +46,12 @@ Setnour6 (M.Nova Sprite and C.Virus Theme)
 
 Multiplayer support is unknown, but most of us play alone anyway.
 
-Update V0.2.4.5: Dirtball Update Pt. 1
-~Added Dirtball Fragment Items, which are almost useless at first but can be upgraded into more powerful versions
-~Fixed Floating Amethyst buff tooltip
-~Added the Mini Creepy Mud, which summons a pet Dirtboi
-~Updated credits once again
-~Resprited Empress Slime Treasure Bag
-~Replaced Vinepower Javelance with Snarevine
-~Increased Snarevine poison chance and time
-~Replaced Firebent Javelance with Infernal Javelance
-~Resprited Dirty Slime
+Update V0.2.4.6: QoL Update
+~Added "Pearlwood Buff" config that buffs Pearlwood to be placed inbetween Hellstone and Cobalt/Palladium.
+~Added "Attack of the Nebula Pillar" config that gives the Nebula Pillar a unique attack (launches Nebula Spheres in the air) since it does not have one in vanilla.
+~Increased Empress Slime size, and changed debuff from Obstructed to Venom.
+~Gave Slime Larvae custom ai.
+~Slime Larvae, Royal Mother Slime, and Royal Slimer no longer spawn naturally after the defeat of Empress Slime.
+~Decreased amount of Slime Larva spawned on Royal Mother Slime death.
+~Resprited Royal Mother Slime and Royal Slimer.
+~Decreased Royal Mother Slime and Royal Slimer health.

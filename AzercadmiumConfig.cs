@@ -1,20 +1,5 @@
-  using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using Newtonsoft.Json.Linq;
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Runtime.Serialization;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
 using Terraria.ModLoader.Config;
-using Terraria.ModLoader.Config.UI;
-using Terraria.UI;
 
 namespace Azercadmium
 {
@@ -24,11 +9,19 @@ namespace Azercadmium
 
 		[DefaultValue(true)]
 		[Label("Elemental Discus Spawns")]
-		[Tooltip("Allows elemental discuses to spawn after the Ancient Desert Discus is defeated.")]
+		[Tooltip("Allows elemental discuses to spawn after the Ancient Desert Discus is defeated. Reload may be required.")]
 		public bool elemDiscus;
 
 		[Label("Basic Discus Spawns")]
-		[Tooltip("Allows a themeless discus to spawn rarely on the surface after the Ancient Desert Discus is defeated.")]
+		[Tooltip("Allows a themeless discus to spawn rarely on the surface after the Ancient Desert Discus is defeated. Reload may be required.")]
 		public bool plainDiscus;
+
+		[Label("Pearlwood Buff")]
+		[Tooltip("Buffs pearlwood tools and armor. Reload required.")]
+		public bool pearlwoodBuff;
+
+		[Label("Attack of the Nebula Pillar")]
+		[Tooltip("Gives the Nebula Pillar a unique attack (as it is the only pillar without one in vanilla). Reload may be required.")]
+		public bool nebulaAttack;
 	}
 }
