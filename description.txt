@@ -46,7 +46,7 @@ Setnour6 (M.Nova Sprite and C.Virus Theme)
 
 Multiplayer support is unknown, but most of us play alone anyway.
 
-Update V0.2.4.6: QoL Update
+Update V0.2.4.6: 2, 4, 6 Update
 ~Added "Pearlwood Buff" config that buffs Pearlwood to be placed inbetween Hellstone and Cobalt/Palladium.
 ~Added "Attack of the Nebula Pillar" config that gives the Nebula Pillar a unique attack (launches Nebula Spheres in the air) since it does not have one in vanilla.
 ~Increased Empress Slime size, and changed debuff from Obstructed to Venom.
