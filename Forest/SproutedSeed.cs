@@ -21,7 +21,7 @@ namespace Azercadmium.Items.Forest
 			item.knockBack = 0f; //0
 			item.value = Item.sellPrice(0, 0, 0, 2); //0
 			item.rare = ItemRarityID.White;
-			item.shoot = ProjectileType<Projectiles.OtherSeeds.PH.SproutedSeed>();
+			item.shoot = ProjectileType<Projectiles.Wood.SproutedSeed>();
 			item.shootSpeed = 0f; //0
 			item.ammo = AmmoID.Dart;
 		}

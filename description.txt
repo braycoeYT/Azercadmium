@@ -1,7 +1,7 @@
 Reborn version of the Zylon Mod. Give me a few updates, and this mod will be completely remade from craziness to something actually good.
 
 This mod has many peculiar things, including ore furniture, two unique subclasses, and a giant floating ball of dirt.
-This mod also has QoL changes, such as an easier Slime Crown recipe, crimson alternates, and some hardmode enemies dropping prehardmode loot.
+This mod also has QoL changes, such as an easier Slime Crown recipe, crimson alternates, tons of vanilla recipes, and some hardmode enemies dropping prehardmode loot.
 Some changes can be only accessed via the config, like the Pearlwood buff.
 
 Stats:
@@ -18,6 +18,7 @@ Stats:
 ~2 Custom Soundtracks
 ~3 Rarities
 ~1 Unfinished Game Mode
+~7 Modifiers
 ~Cross content with Asteri and Havoc Mod
 
 Active Spriters:
@@ -46,12 +47,7 @@ Setnour6 (M.Nova Sprite and C.Virus Theme)
 
 Multiplayer support is unknown, but most of us play alone anyway.
 
-Update V0.2.4.6: 2, 4, 6 Update
-~Added "Pearlwood Buff" config that buffs Pearlwood to be placed inbetween Hellstone and Cobalt/Palladium.
-~Added "Attack of the Nebula Pillar" config that gives the Nebula Pillar a unique attack (launches Nebula Spheres in the air) since it does not have one in vanilla.
-~Increased Empress Slime size, and changed debuff from Obstructed to Venom.
-~Gave Slime Larvae custom ai.
-~Slime Larvae, Royal Mother Slime, and Royal Slimer no longer spawn naturally after the defeat of Empress Slime.
-~Decreased amount of Slime Larva spawned on Royal Mother Slime death.
-~Resprited Royal Mother Slime and Royal Slimer.
-~Decreased Royal Mother Slime and Royal Slimer health.
+Update V0.2.4.7: Modifier Update
+~Added 7 modifiers, all for accessories.
+~Updated True Tree Truncheon tooltip.
+~Added Iron and Lead bands, for easier crafting of other bands.

@@ -9,7 +9,7 @@ namespace Azercadmium.Items.Forest
 	{
 		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("True Tree Truncheon");
-			Tooltip.SetDefault("Rain powerful leaves down on your enemies, at no cost!\nRare Item");
+			Tooltip.SetDefault("Rain powerful leaves down on your enemies, at no cost!");
 			Item.staff[item.type] = true;
 		}
 		public override void SetDefaults() {

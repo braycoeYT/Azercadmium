@@ -23,5 +23,10 @@ namespace Azercadmium
 		[Label("Attack of the Nebula Pillar")]
 		[Tooltip("Gives the Nebula Pillar a unique attack (as it is the only pillar without one in vanilla). Reload may be required.")]
 		public bool nebulaAttack;
+
+		[DefaultValue(true)]
+		[Label("Azercadmium Prefixes")]
+		[Tooltip("Allows Azercadmium prefixes to be rolled.")]
+		public bool azercadmiumPrefixes;
 	}
 }

@@ -180,17 +180,29 @@ namespace Azercadmium
 			recipe.AddRecipe();
 			
 			recipe = new ModRecipe(this);
+			recipe.AddIngredient(null, "IronBand");
 			recipe.AddIngredient(ItemID.LifeCrystal);
-			recipe.AddRecipeGroup("IronBar", 5);
-			recipe.AddIngredient(null, "GlazedLens", 3);
+			recipe.AddTile(TileID.Anvils);
+			recipe.SetResult(ItemID.BandofRegeneration);
+			recipe.AddRecipe();
+
+			recipe = new ModRecipe(this);
+			recipe.AddIngredient(null, "LeadBand");
+			recipe.AddIngredient(ItemID.LifeCrystal);
 			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(ItemID.BandofRegeneration);
 			recipe.AddRecipe();
 			
 			recipe = new ModRecipe(this);
+			recipe.AddIngredient(null, "IronBand");
 			recipe.AddIngredient(ItemID.ManaCrystal);
-			recipe.AddRecipeGroup("IronBar", 5);
-			recipe.AddIngredient(null, "GlazedLens", 3);
+			recipe.AddTile(TileID.Anvils);
+			recipe.SetResult(ItemID.BandofStarpower);
+			recipe.AddRecipe();
+
+			recipe = new ModRecipe(this);
+			recipe.AddIngredient(null, "LeadBand");
+			recipe.AddIngredient(ItemID.ManaCrystal);
 			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(ItemID.BandofStarpower);
 			recipe.AddRecipe();
