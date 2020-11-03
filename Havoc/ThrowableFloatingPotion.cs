@@ -1,34 +1,44 @@
-using Microsoft.Xna.Framework;
-using System;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace Azercadmium.Projectiles.Havoc
+namespace Azercadmium.Items.Havoc
 {
-	public class ThrowableFloatingPotion : ModProjectile
+	public class ThrowableFloatingPotion : ModItem
 	{
-        public override void SetStaticDefaults() {
-			DisplayName.SetDefault("Throwable Floating Potion");
-        }
+		public override void SetStaticDefaults() {
+			Tooltip.SetDefault("Mod Crossover Item: Havoc Mod\nEach potion can launch enemies into the air");
+		}
 		public override void SetDefaults() {
-			projectile.width = 23;
-			projectile.height = 23;
-			projectile.aiStyle = 1;
-			projectile.friendly = true;
-			projectile.penetrate = 1;
-			projectile.magic = true;
-			projectile.timeLeft = 9999;
-			projectile.ignoreWater = true;
-			aiType = 1;
+			item.damage = 30;
+			item.ranged = true;
+			item.width = 20;
+			item.height = 26;
+			item.useTime = 20;
+			item.useAnimation = 20;
+			item.useStyle = ItemUseStyleID.HoldingOut;
+			item.knockBack = 4.5f;
+			item.value = Item.sellPrice(0, 0, 0, 5);
+			item.rare = ItemRarityID.Blue;
+			item.autoReuse = true;
+			item.useTurn = true;
+			item.shoot = mod.ProjectileType("ThrowableFloatingPotion");
+			item.shootSpeed = 8f;
+			item.noUseGraphic = true;
+			item.noMelee = true;
+			item.maxStack = 999;
+			item.UseSound = SoundID.Item1;
+			item.consumable = true;
 		}
-		public override void AI() {
-			projectile.rotation += (float)(Math.PI / 180);
+		public override void AddRecipes() {
+			Mod xtraarmory = ModLoader.GetMod("Xtraarmory");
+			if (xtraarmory != null) {
+				ModRecipe recipe = new ModRecipe(mod);
+				recipe.AddIngredient(mod.ItemType("FloaterPotion"));
+				recipe.AddTile(TileID.Bottles);
+				recipe.SetResult(this, 150);
+				recipe.AddRecipe();
+			}
 		}
-		public override void Kill(int timeLeft) {
-			Collision.HitTiles(projectile.position + projectile.velocity, projectile.velocity, projectile.width, projectile.height);
-			Projectile.NewProjectile(projectile.Center, new Vector2(0, 0), mod.ProjectileType("ThrowableFloatingPotionExp"), projectile.damage, projectile.knockBack, Main.myPlayer);
-			Main.PlaySound(SoundID.Shatter);
-		}
-	}   
+	}
 }
