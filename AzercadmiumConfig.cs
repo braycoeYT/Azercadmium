@@ -7,7 +7,6 @@ namespace Azercadmium
 	{
 		public override ConfigScope Mode => ConfigScope.ServerSide;
 
-		[DefaultValue(true)]
 		[Label("Elemental Discus Spawns")]
 		[Tooltip("Allows elemental discuses to spawn after the Ancient Desert Discus is defeated. Reload may be required.")]
 		public bool elemDiscus;

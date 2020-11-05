@@ -5,8 +5,8 @@ This mod also has QoL changes, such as an easier Slime Crown recipe, crimson alt
 Some changes can be only accessed via the config, like the Pearlwood buff.
 
 Stats:
-~255 Items
-~42 total NPCs
+~254 Items
+~43 total NPCs
 ~4 Bosses:
 ^2 Prehardmode Bosses
 ^2 Hardmode Bosses
@@ -47,7 +47,13 @@ Setnour6 (M.Nova Sprite and C.Virus Theme)
 
 Multiplayer support is unknown, but most of us play alone anyway.
 
-Update V0.2.4.7: Modifier Update
-~Added 7 modifiers, all for accessories.
-~Updated True Tree Truncheon tooltip.
-~Added Iron and Lead bands, for easier crafting of other bands.
+Update V0.2.4.8: Squares of 2 Pattern Update
+~Removed some Bone Slime drops, and now drops gel.
+~Changed all npc coin drops, and increased efficiency.
+~Made Rainyday Discus weaker and spawn less.
+~Decreased Sandgrain Assault Discus spawnrate.
+~Nerfed Space Scavenger Discus
+~The "Elemental Discus Spawns" is now automatically disabled.
+~Nerfed Starpack Slime
+~Removed Floating Amethyst Staff
+~Nerfed Squarge
