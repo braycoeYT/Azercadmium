@@ -18,7 +18,7 @@ namespace Azercadmium.NPCs.Discus
 			npc.height = 48;
 			npc.damage = 25;
 			npc.defense = 0;
-			npc.lifeMax = 100;
+			npc.lifeMax = 74;
 			npc.HitSound = SoundID.NPCHit1;
 			npc.DeathSound = SoundID.NPCDeath3;
 			npc.value = 60f;
@@ -30,7 +30,7 @@ namespace Azercadmium.NPCs.Discus
 		
 		public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
         {
-            npc.lifeMax = 200;
+            npc.lifeMax = 148;
             npc.damage = 50;
 			npc.defense = 1;
         }

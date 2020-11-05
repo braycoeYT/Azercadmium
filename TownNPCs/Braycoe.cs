@@ -1,7 +1,3 @@
-using System;
-using Azercadmium.Items;
-using Azercadmium.Projectiles;
-using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.Utilities;
@@ -15,6 +11,8 @@ namespace Azercadmium.NPCs.TownNPCs
 	public class Braycoe : ModNPC
 	{
 		public override string Texture => "Azercadmium/NPCs/TownNPCs/Braycoe";
+		private static bool impression = false;
+		private static int shopNum = 1;
 		public override bool Autoload(ref string name)
 		{
 			name = "Slime Master";
@@ -84,8 +82,7 @@ namespace Azercadmium.NPCs.TownNPCs
 
 		public override bool CanTownNPCSpawn(int numTownNPCs, int money)
 		{
-			if (Main.dayTime && Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)].active)
-			{
+			if (Main.dayTime && Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)].active) {
 				if (NPC.downedSlimeKing)
 				return true;
 			}
@@ -103,46 +100,42 @@ namespace Azercadmium.NPCs.TownNPCs
 		public override string GetChat()
 		{
 			WeightedRandom<string> chat = new WeightedRandom<string>();
-			
-			chat.Add("No, I will NOT turn into a green slime for you.", 0.8);
-
-			chat.Add("I can turn into any slime, name one and I could do it.", 1.2);
-
-			chat.Add("You won the lottery! No, not really.", 0.001);
-			
-			chat.Add("I'm cool, right? Just what I thought.", 0.6);
-			
-			chat.Add("Can my house be a bit bigger? Oh, never mind...", 0.8);
-
-			chat.Add("I may seem a bit shorter than you, but that's just my hair style.", 0.75);
-			
-			chat.Add("I know the Azercadmiumians pretty well...", 1.1);
-			
-			chat.Add("My job? My job is to be awesome.", 1.2);
-			
-			chat.Add("Oh, you want me to defend you now. Do you want me to bake cookies too?", 0.75);
-			
-			chat.Add("Destroy the dark power of this world!", 0.4);
-			
-			chat.Add("Get stronger and I will sell stronger items and reveal more of my power.", 2.2);
-			
-			chat.Add("Have you ever heard of a Starlite Crystal? Never mind...", 0.6);
-
-			chat.Add("The Microbiome appears to take the looks of its surroundings. How odd.", 1.6);
-
-			chat.Add("Lemonade Tea is an excellent drink!", 0.9);
-
-			if (Main.raining)
-			chat.Add("Hey, since I generate slime a lot faster while its raining, I'll sell gel to you for a discount price! Buy some now!", 0.8);
-		    if (AzercadmiumWorld.downedCell == true)
-			chat.Add("I got some big amoeba in the back... want some?", 0.9);
-		    if (NPC.downedSlimeKing == true)
-			chat.Add("That King Slime is such a loser, thanks for breaking him into thousands of normal size slimes.", 1.0);
-		    if (Main.hardMode == true)
-			chat.Add("I feel something underground sucking my powers...", 1.9);
-			if (AzercadmiumWorld.downedMineral == true)
-			chat.Add("The Azercadmiumians like to manipulate everything. Too bad that lead to the death of the Azercadmiumian Mineral Extractor.", 1.3);
-		
+			if (!impression) {
+				chat.Add("No, I will not turn into a green slime for you.");
+				chat.Add("I can turn into any slime, name one and I could do it.");
+				chat.Add("You won the lottery! No, not really.", 0.001);
+				chat.Add("Can my house be a bit bigger? Oh, never mind...");
+				chat.Add("I may seem a bit shorter than you, but that's just my hair style.");
+				chat.Add("Oh, you want me to defend you now. Do you want me to bake cookies too?");
+				chat.Add("Destroy the dark power of this world!");
+				chat.Add("Get stronger and I will sell stronger items and reveal more of my power.");
+				chat.Add("Lemonade Tea is an excellent drink!");
+				chat.Add("Devastation mode is very WIP, I hope you like it so far.");
+				if (Main.raining)
+					chat.Add("Hey, since I generate slime a lot faster while its raining, I'll sell gel to you for a discount price! Buy some now!", 2);
+			    if (NPC.downedSlimeKing == true)
+					chat.Add("That King Slime is such a loser, thanks for breaking him into hundreds of normal size slimes.");
+				if (Main.hardMode && !NPC.downedMechBossAny)
+					chat.Add("Early hardmode getting the best of you?", 2);
+				if (NPC.downedMoonlord)
+					chat.Add("You defeated the Moon Lord? It appears you have broken the Moon Seal, and new things will happen in your world. Of course, that is for a future update.", 1.5);
+			}
+			else {
+				chat.Add("Braycoe: I am Braycoe, the slime shapeshifter and owner of Azercadmium.");
+				chat.Add("Forest: A nice lovely place full of lovely creatures, also known as slimes.");
+				chat.Add("Corruption: A nasty place with even nastier enemies.");
+				chat.Add("Crimson: If you love blood and gore, the Crimson is the place for you.");
+				chat.Add("Snow: A beautiful wonderland that is sadly extremely ignored and weak against other biomes.");
+				chat.Add("Desert: A dry, dry, land with a giant hole filled with peculiar bugs.");
+				chat.Add("Jungle: A wet forest filled with life, and very annoying life at that.");
+				chat.Add("Dungeon: I guess it is a spooky place, I don't have much to say about it.");
+				chat.Add("Ocean: A pretty empty place, unless you have certain mods enabled. Also, it's a pretty calm place too.");
+				chat.Add("Underworld: I like to get out of that hecking place as soon as possible.");
+				if (AzercadmiumWorld.downedDirtball) chat.Add("Dirtball: The most glorious and well known Azercadmium boss. I didn't know we could get so attached to a ball of dirt.");
+				if (NPC.downedSlimeKing) chat.Add("King Slime: A gigaslime that I don't really like since he claims to be a king over some of us slimes, but has no political power whatsoever.");
+				if (NPC.downedBoss1) chat.Add("Eye of Cthulhu: A certain someone's giant organ which for some reason ignores gravity, and loves to jumpscare terrarians.");
+				if (AzercadmiumWorld.downedDiscus) chat.Add("Ancient Desert Discus: An ancient machine which had lead a failed expedition of Terraria.");
+			}
 			return chat;
 		}
 		int Timer;
@@ -157,18 +150,64 @@ namespace Azercadmium.NPCs.TownNPCs
 		}
 		public override void SetChatButtons(ref string button, ref string button2)
 		{
-			button = Language.GetTextValue("LegacyInterface.28");
+			switch (shopNum) {
+                case 1:
+                    button = Language.GetTextValue("LegacyInterface.28");
+                    break;
+                case 2:
+                    button = "Impressions";
+                    break;
+            }
+			button2 = "Cycle Options";
         }
         public override void OnChatButtonClicked(bool firstButton, ref bool shop)
         {
 			if (firstButton)
 			{
-			shop = true;
+				if (shopNum == 1)
+				shop = true;
+				else if (shopNum == 2) {
+					WeightedRandom<string> impressions = new WeightedRandom<string>();
+					impressions.Add("Braycoe: I am Braycoe, the slime shapeshifter and owner of Azercadmium.");
+					impressions.Add("Forest: A nice lovely place full of lovely creatures, also known as slimes.");
+					impressions.Add("Corruption: A nasty place with even nastier enemies.");
+					impressions.Add("Crimson: If you love blood and gore, the Crimson is the place for you.");
+					impressions.Add("Snow: A beautiful wonderland that is extremely fragile.");
+					impressions.Add("Desert: A dry, dry, land with a giant hole filled with peculiar bugs.");
+					impressions.Add("Jungle: A wet forest filled with life, and very annoying life at that.");
+					impressions.Add("Dungeon: I guess it is a spooky place, I don't have much to say about it.");
+					impressions.Add("Ocean: A pretty empty place, unless you have certain mods enabled. Also, it's a pretty calm place too.");
+					impressions.Add("Underworld: I like to get out of that hecking place as soon as possible.");
+					if (AzercadmiumWorld.downedDirtball) impressions.Add("Dirtball: The most glorious and well known Azercadmium boss. I didn't know we could get so attached to a ball of dirt.");
+					if (NPC.downedSlimeKing) impressions.Add("King Slime: A gigaslime that I don't really like since he claims to be a king over some of us slimes, but has no political power whatsoever.");
+					if (NPC.downedBoss1) impressions.Add("Eye of Cthulhu: A certain someone's giant organ which for some reason ignores gravity, and loves to jumpscare terrarians.");
+					if (AzercadmiumWorld.downedDiscus) impressions.Add("Ancient Desert Discus: An ancient machine which had lead a failed expedition of Terraria.");
+					if (NPC.downedBoss2 && !WorldGen.crimson) impressions.Add("Eater of Worlds: The original worm boss. Also, he is similar to a hydra, don't cut too many body segments out.");
+					if (NPC.downedBoss2 && WorldGen.crimson) impressions.Add("Brain of Cthulhu: Yet another certain someone's giant floating organ. Luckily the creepers it summons don't make you go 'Aw man'.");
+					if (NPC.downedBoss3) impressions.Add("Skeletron: A giant floating head that must have drank a lot of milk. He likes to torture elderly people.");
+					if (Main.hardMode) impressions.Add("Wall of Flesh: I do wonder how many creatures it took to make sometimes. Also, a very scary beast that traps you in that unpleasant biome.");
+					if (Main.hardMode) impressions.Add("Hallow: A very sparkly and wonderous world, which will consume you if you are not careful!");
+					if (Main.hardMode) impressions.Add("Souls: I see much farming in your future, at least they look pretty.");
+					if (NPC.downedMechBoss1) impressions.Add("The Destroyer: Big worm, V2.0... He is relatively weak since his probes drop hearts.");
+					if (NPC.downedMechBoss2) impressions.Add("The Twins: Twice the fun of the original boss, now with lasers and green fire!");
+					if (NPC.downedMechBoss3) impressions.Add("Skeletron Prime: A teeth grinding killing machine. Maybe it is just stressed?");
+					if (AzercadmiumWorld.downedCVirus) impressions.Add("Computer Virus: Many rumors of the plague's origin have been going around recently. Some people believe that it existed since the beginning of time.");
+					if (NPC.downedPlantBoss) impressions.Add("Plantera: A very angry plant because you killed and ate its brethren. Maybe I'm thinking too hard on this one?");
+					if (AzercadmiumWorld.downedEmpress) impressions.Add("Empress Slime: One of the most powerful slimes, and puts King Slime to shame. A truly worthy leader of the slimes!");
+					if (NPC.downedGolemBoss) impressions.Add("Golem: An extraordinarily weak machine, and an ugly one at that. What were they thinking?");
+					if (NPC.downedAncientCultist) impressions.Add("Lunatic Cultist: I've always wondered... Lunatic because he is related to the stars, or lunatic because he is mentally insane? Probably both.");
+					if (NPC.downedTowerSolar) impressions.Add("Solar Pillar: A very high temperature pillar, and the hardest one at that. Not the crawltipedes!");
+					if (NPC.downedTowerVortex) impressions.Add("Vortex Pillar: Probably the zappiest pillar of them all. Watch out for those storm divers who want to distort you.");
+					if (NPC.downedTowerNebula) impressions.Add("Nebula Pillar: I like the colors, though the enemies are kind of annoying. Obstruction!");
+					if (NPC.downedTowerStardust) impressions.Add("Stardust Pillar: The easiest pillar of them all, just farm the stardust cells. Also they have a pretty nice color theme.");
+					if (NPC.downedMoonlord) impressions.Add("Moon Lord: The man of the moon himself. Some cosmic beings had created a moon seal that caused some creatures to be trapped in time until the Moon Lord was revived and killed.");
+					Main.npcChatText = impressions;
+				}
 			}
-			else
-			{
-				Main.playerInventory = true;
-				Main.npcChatText = "";
+			else {
+				shopNum += 1;
+				if (shopNum > 2)
+					shopNum = 1;
 			}
 		}
 
@@ -186,26 +225,9 @@ namespace Azercadmium.NPCs.TownNPCs
 			shop.item[nextSlot].SetDefaults(mod.ItemType("DeliciousGelatin"));
 			shop.item[nextSlot].shopCustomPrice = 2000;
 			nextSlot++;
-			if (NPC.downedBoss2 == true)
-			{
-				if (!WorldGen.crimson)
-				{
-				shop.item[nextSlot].SetDefaults(ItemID.VilePowder);
-					shop.item[nextSlot].shopCustomPrice = 800;
-					nextSlot++;
-				}
-				else
-				{
-				shop.item[nextSlot].SetDefaults(ItemID.ViciousPowder);
-					shop.item[nextSlot].shopCustomPrice = 800;
-					nextSlot++;
-				}
-			}
-			if (AzercadmiumWorld.downedCell == true)
-			{
-				shop.item[nextSlot].SetDefaults(ItemType<BraycoeSludge>());
-				nextSlot++;
-			}
+			shop.item[nextSlot].SetDefaults(mod.ItemType("CheckeredFlag"));
+			shop.item[nextSlot].shopCustomPrice = 250000;
+			nextSlot++;
 			if (Main.hardMode == true)
 			{
 				shop.item[nextSlot].SetDefaults(ItemType<Items.Braycoe.LemonadeTea>());
@@ -213,13 +235,6 @@ namespace Azercadmium.NPCs.TownNPCs
 			    nextSlot++;
 				shop.item[nextSlot].SetDefaults(ItemID.SlimeCrown);
 				shop.item[nextSlot].shopCustomPrice = 10000;
-				nextSlot++;
-			}
-			if (NPC.downedMoonlord == true)
-			{
-				//shop.item[nextSlot].SetDefaults(ItemType<Items.BluePotion>());
-				//nextSlot++;
-				shop.item[nextSlot].SetDefaults(ItemType<Items.MysteryBag>());
 				nextSlot++;
 			}
 		}

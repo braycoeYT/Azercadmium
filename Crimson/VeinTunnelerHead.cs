@@ -16,6 +16,7 @@ namespace Azercadmium.NPCs.Crimson
 			npc.lifeMax = 92;
 			npc.damage = 25;
 			npc.defense = 6;
+			npc.value = Item.buyPrice(0, 0, 1, 40);
 		}
 		public override void ScaleExpertStats(int numPlayers, float bossLifeScale) {
 			npc.lifeMax = 189;

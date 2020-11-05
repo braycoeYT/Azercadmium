@@ -14,21 +14,20 @@ namespace Azercadmium.NPCs.Squarge
         public override void SetDefaults() {
 			npc.width = 46;
 			npc.height = 48;
-			npc.damage = 69;
-			npc.defense = 25;
-			npc.lifeMax = 2100;
+			npc.damage = 59;
+			npc.defense = 15;
+			npc.lifeMax = 345;
 			npc.HitSound = SoundID.NPCHit1;
 			npc.DeathSound = SoundID.NPCDeath3;
-			npc.value = 250f;
+			npc.value = Item.buyPrice(0, 0, 10, 0);
 			npc.aiStyle = 2;
 			npc.knockBackResist = 0f;
 			npc.noGravity = true;
 			npc.noTileCollide = true;
         }
 		public override void ScaleExpertStats(int numPlayers, float bossLifeScale) {
-            npc.lifeMax = 4200;
-            npc.damage = 138;
-			npc.defense = 35;
+            npc.lifeMax = 690;
+            npc.damage = 118;
         }
 		int Timer;
 		int animationTimer;
@@ -65,8 +64,6 @@ namespace Azercadmium.NPCs.Squarge
 	    public override void NPCLoot() {
 			if (Main.rand.NextFloat() < .3f)
 	        Item.NewItem(npc.getRect(), ItemID.LunarTabletFragment);
-			if (Main.rand.NextFloat() < .01f)
-	        Item.NewItem(npc.getRect(), mod.ItemType("SquargeSpitStaff"));
 			if (Main.rand.NextFloat() < .005f)
 	        Item.NewItem(npc.getRect(), mod.ItemType("VenomousPill"));
 			if (Main.rand.NextFloat() < .005f)

@@ -28,7 +28,7 @@ namespace Azercadmium.NPCs.Bosses
 			npc.aiStyle = -1;
 			npc.noGravity = true;
 			npc.noTileCollide = true;
-			npc.value = 120000;
+			npc.value = Item.buyPrice(0, 13, 0, 0);
 			npc.boss = true;
 			npc.lavaImmune = true;
 			music = mod.GetSoundSlot(SoundType.Music, "Sounds/Music/CV");

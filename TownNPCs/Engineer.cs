@@ -1,13 +1,8 @@
-using System;
-using Azercadmium.Items;
-using Azercadmium.Projectiles;
-using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.Utilities;
 using Terraria.Localization;
 using Terraria.ModLoader;
-using static Terraria.ModLoader.ModContent;
 
 namespace Azercadmium.NPCs.TownNPCs
 {
@@ -97,7 +92,7 @@ namespace Azercadmium.NPCs.TownNPCs
 			
 			chat.Add("To an engineer like me, good enough is perfect.", 1.2);
 			chat.Add("I'm constantly spotting problems and finding out how to solve them.", 1);
-			chat.Add("I hope you realize that there are more than one type of engineer.", 0.9);
+			chat.Add("I hope you realize that there is more than one type of engineer.", 0.9);
 			chat.Add("I'm an engineer by training.", 1.1);
 			chat.Add("My parents always wanted me to be an engineer.", 0.8);
 			chat.Add("Failure is vital for engineering and success.", 0.8);
@@ -167,7 +162,7 @@ namespace Azercadmium.NPCs.TownNPCs
 				shop.item[nextSlot].shopCustomPrice = 25000;
 				nextSlot++;
 			}
-			if (AzercadmiumWorld.downedComVirus && Main.expertMode)
+			if (AzercadmiumWorld.downedCVirus && Main.expertMode)
 			{
 				shop.item[nextSlot].SetDefaults(mod.ItemType("MechanicalGearPiece"));
 				shop.item[nextSlot].shopCustomPrice = 25000;

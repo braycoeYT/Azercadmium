@@ -4,10 +4,10 @@ using Terraria.ModLoader;
 
 namespace Azercadmium.NPCs.Slimes
 {
-	public class BoneSlime : ModNPC
+	public class LivingMarshmellow : ModNPC
 	{
 		public override void SetStaticDefaults() {
-			DisplayName.SetDefault("Bone Slime");
+			DisplayName.SetDefault("Living Marshmellow");
 			Main.npcFrameCount[npc.type] = 2;
 		}
         public override void SetDefaults() {
@@ -30,13 +30,13 @@ namespace Azercadmium.NPCs.Slimes
 			npc.defense = 10;
         }
 		public override float SpawnChance(NPCSpawnInfo spawnInfo) {
-			return SpawnCondition.Dungeon.Chance * 0.1f;
+			//if (spawnInfo.player.ZoneSnow && Main.raining)
+			//return 0.1f;
+			return 0f;
         }
 	    public override void NPCLoot() {
-			Item.NewItem(npc.getRect(), ItemID.Bone, Main.rand.Next(4));
-			Item.NewItem(npc.getRect(), ItemID.Gel, Main.rand.Next(1, 4));
-            if (Main.rand.NextFloat() < .053f)
-	        Item.NewItem(npc.getRect(), ItemID.GoldenKey);
+			Item.NewItem(npc.getRect(), ItemID.Gel, Main.rand.Next(1, 3));
+            //if (Main.rand.NextFloat() < .053f)
         }
 	}
 }

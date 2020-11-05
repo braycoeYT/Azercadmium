@@ -15,7 +15,7 @@ namespace Azercadmium.NPCs.Discus
 
         public override void SetDefaults()
 		{
-			npc.value = 125f;
+			npc.value = Item.buyPrice(0, 0, 0, 22);
 			npc.width = 45;
 			npc.height = 23;
 			npc.damage = 76;

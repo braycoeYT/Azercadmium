@@ -16,14 +16,14 @@ namespace Azercadmium.NPCs.Bosses
 		}
         public override void SetDefaults()
 		{
-			npc.width = 165;
-			npc.height = 150;
+			npc.width = 158;
+			npc.height = 172;
 			npc.damage = 61;
 			npc.defense = 41;
 			npc.lifeMax = 35000;
 			npc.HitSound = SoundID.NPCHit1;
 			npc.DeathSound = SoundID.NPCDeath1;
-			npc.value = 150000f;
+			npc.value = Item.buyPrice(0, 16, 0, 0);
 			npc.knockBackResist = 0f;
 			npc.aiStyle = 1; //51 original
 			npc.noGravity = false;
@@ -42,12 +42,9 @@ namespace Azercadmium.NPCs.Bosses
             npc.lifeMax = 48000 + numPlayers * 8000;
 			npc.damage = 120;
         }
-		public override void OnHitPlayer(Player player, int damage, bool crit)
-		{
+		public override void OnHitPlayer(Player player, int damage, bool crit) {
 			if (Main.rand.NextBool(2))
-			{
-				player.AddBuff(BuffID.Obstructed, 200, true);
-			}
+				player.AddBuff(BuffID.Venom, 200, true);
 		}
 		public override void HitEffect(int hitDirection, double damage)
         {
@@ -376,7 +373,7 @@ namespace Azercadmium.NPCs.Bosses
 				animationTimer++;
 			if (animationTimer > 5)
 				animationTimer = 0;
-			npc.frame.Y = animationTimer * 140;
+			npc.frame.Y = animationTimer * 178;
 		}
 		public override void NPCLoot() {
 			if (Main.expertMode)

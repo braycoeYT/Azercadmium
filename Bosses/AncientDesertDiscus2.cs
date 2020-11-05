@@ -23,7 +23,7 @@ namespace Azercadmium.NPCs.Bosses
 			npc.lifeMax = 900;
 			npc.HitSound = SoundID.NPCHit7;
 			npc.DeathSound = SoundID.NPCDeath7;
-			npc.value = 2000f;
+			npc.value = Item.buyPrice(0, 2, 50, 0);
 			npc.knockBackResist = 0f;
 			npc.aiStyle = 56;
 			npc.noGravity = true;
@@ -140,29 +140,13 @@ namespace Azercadmium.NPCs.Bosses
 		
 	    public override void NPCLoot()
         {
-			if (!AzercadmiumWorld.downedDiscus)
-			{
-				Color messageColor = Color.CornflowerBlue;
-				string chat = "As the Ancient Desert Discus dies, the other discuses flee into all of the other biomes...";
-				if (Main.netMode == NetmodeID.Server)
-				{
-					NetMessage.BroadcastChatMessage(NetworkText.FromKey(chat), messageColor);
-				}
-				else if (Main.netMode == NetmodeID.SinglePlayer)
-				{
-					Main.NewText(Language.GetTextValue(chat), messageColor);
-				}
-			}
 			if (Main.rand.NextFloat() < .1f)
 			Item.NewItem(npc.getRect(), mod.ItemType("PolandballMask"));
 			if (Main.rand.NextFloat() < .1f)
 			Item.NewItem(npc.getRect(), mod.ItemType("AncientDesertDiscusMask"));
 			if (Main.expertMode)
-			{
 				Item.NewItem(npc.getRect(), mod.ItemType("DiscusBag"));
-			}
-		    else
-			{
+		    else {
 			    Item.NewItem(npc.getRect(), mod.ItemType("BrokenDiscus"), 9 + Main.rand.Next(2));
 	            Item.NewItem(npc.getRect(), ItemID.Amber, 2 + Main.rand.Next(3));
 			    Item.NewItem(npc.getRect(), ItemID.GoldBar, 4 + Main.rand.Next(3));
@@ -171,8 +155,7 @@ namespace Azercadmium.NPCs.Bosses
 			}
 			AzercadmiumWorld.downedDiscus = true;
         }
-		public override void BossLoot(ref string name, ref int potionType)
-		{
+		public override void BossLoot(ref string name, ref int potionType) {
 			name = "Ancient Desert Discus";
 		}
 	}

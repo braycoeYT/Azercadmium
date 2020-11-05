@@ -20,7 +20,7 @@ namespace Azercadmium.NPCs.Discus
 			npc.lifeMax = 45;
 			npc.HitSound = SoundID.NPCHit1;
 			npc.DeathSound = SoundID.NPCDeath3;
-			npc.value = 75f;
+			npc.value = Item.buyPrice(0, 0, 0, 18);
 			npc.knockBackResist = 0.8f;
 			npc.aiStyle = 44;
 			npc.noGravity = true;

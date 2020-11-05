@@ -23,7 +23,7 @@ namespace Azercadmium.NPCs.Bosses
 			npc.lifeMax = 590;
 			npc.HitSound = SoundID.NPCHit1;
 			npc.DeathSound = SoundID.NPCDeath9;
-			npc.value = 9000f;
+			npc.value = Item.buyPrice(0, 0, 75, 0);
 			npc.knockBackResist = 0f;
 			npc.aiStyle = -1;
 			npc.noGravity = true;
