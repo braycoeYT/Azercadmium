@@ -1,5 +1,4 @@
 using Microsoft.Xna.Framework;
-using System;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -19,8 +18,8 @@ namespace Azercadmium.Items.Mythril
 			item.damage = 43;
 			item.knockBack = 4.55f;
 			item.mana = 10;
-			item.width = 38;
-			item.height = 38;
+			item.width = 42;
+			item.height = 42;
 			item.useTime = 36;
 			item.useAnimation = 36;
 			item.useStyle = ItemUseStyleID.SwingThrow;
@@ -31,7 +30,7 @@ namespace Azercadmium.Items.Mythril
 			item.noMelee = true;
 			item.summon = true;
 			item.buffType = BuffType<Buffs.Minions.Ores.FloatingMythrilOre>();
-			item.shoot = ProjectileType<Projectiles.Minions.Ores.FloatingMythrilOre>();
+			item.shoot = ProjectileType<Projectiles.Mythril.FloatingMythrilOre>();
 		}
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack) {
 			player.AddBuff(item.buffType, 2);

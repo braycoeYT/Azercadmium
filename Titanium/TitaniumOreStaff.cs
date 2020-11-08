@@ -14,11 +14,11 @@ namespace Azercadmium.Items.Titanium
 			ItemID.Sets.LockOnIgnoresCollision[item.type] = true;
 		}
 		public override void SetDefaults() {
-			item.damage = 58;
+			item.damage = 54;
 			item.knockBack = 4.85f;
 			item.mana = 10;
-			item.width = 38;
-			item.height = 38;
+			item.width = 54;
+			item.height = 54;
 			item.useTime = 36;
 			item.useAnimation = 36;
 			item.useStyle = ItemUseStyleID.SwingThrow;
@@ -29,7 +29,7 @@ namespace Azercadmium.Items.Titanium
 			item.noMelee = true;
 			item.summon = true;
 			item.buffType = BuffType<Buffs.Minions.Ores.FloatingTitaniumOre>();
-			item.shoot = ProjectileType<Projectiles.Minions.Ores.FloatingTitaniumOre>();
+			item.shoot = ProjectileType<Projectiles.Titanium.FloatingTitaniumOre>();
 		}
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack) {
 			player.AddBuff(item.buffType, 2);
