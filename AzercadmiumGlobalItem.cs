@@ -25,6 +25,8 @@ namespace Azercadmium.Tiles
 				item.damage = 34;
 			if (item.type == ItemID.BoneArrow)
 				item.damage = 10;
+			if (item.type == ItemID.CookedMarshmallow)
+				item.buffTime = 7200;
 			if (GetInstance<AzercadmiumConfig>().pearlwoodBuff) {
 				if (item.type == ItemID.PearlwoodBow)
 					item.damage = 29;
@@ -67,6 +69,8 @@ namespace Azercadmium.Tiles
 				player.npcTypeNoAggro[mod.NPCType("BoneSlime")] = true;
 				player.npcTypeNoAggro[mod.NPCType("MechanicalSlime")] = true;
 				player.npcTypeNoAggro[mod.NPCType("StarfurrySlime")] = true;
+				player.npcTypeNoAggro[mod.NPCType("LivingMarshmellow")] = true;
+				player.npcTypeNoAggro[mod.NPCType("RoastedLivingMarshmellow")] = true;
 			}
 		}
 		public override void RightClick(Item item, Player player) {

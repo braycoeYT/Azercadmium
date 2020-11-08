@@ -15,11 +15,11 @@ namespace Azercadmium.Items.Adamantite
 			ItemID.Sets.LockOnIgnoresCollision[item.type] = true;
 		}
 		public override void SetDefaults() {
-			item.damage = 54;
+			item.damage = 52;
 			item.knockBack = 4.85f;
 			item.mana = 10;
-			item.width = 38;
-			item.height = 38;
+			item.width = 50;
+			item.height = 50;
 			item.useTime = 36;
 			item.useAnimation = 36;
 			item.useStyle = ItemUseStyleID.SwingThrow;
@@ -30,7 +30,7 @@ namespace Azercadmium.Items.Adamantite
 			item.noMelee = true;
 			item.summon = true;
 			item.buffType = BuffType<Buffs.Minions.Ores.FloatingAdamantiteOre>();
-			item.shoot = ProjectileType<Projectiles.Minions.Ores.FloatingAdamantiteOre>();
+			item.shoot = ProjectileType<Projectiles.Adamantite.FloatingAdamantiteOre>();
 		}
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack) {
 			player.AddBuff(item.buffType, 2);
