@@ -2,7 +2,7 @@ Reborn version of the Zylon Mod. Give me a few updates, and this mod will be com
 
 This mod has many peculiar things, including [i:12] ore furniture, two [i:281] unique subclasses, and a [i:2] giant floating ball of dirt.
 This mod also has QoL changes, such as an easier [i:560] Slime Crown recipe, [i:1330] crimson alternates, tons of [i:36] vanilla recipes, and some [i:210] hardmode enemies dropping prehardmode loot.
-Some changes can be only accessed via the config, like the Pearlwood buff.
+Some changes can be only accessed via the config, like the [i:621] Pearlwood buff.
 
 Stats:
 ~262 Items
