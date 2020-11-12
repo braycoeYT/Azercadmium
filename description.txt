@@ -1,7 +1,7 @@
 Reborn version of the Zylon Mod. Give me a few updates, and this mod will be completely remade from craziness to something actually good.
 
-This mod has many peculiar things, including ore furniture, two unique subclasses, and a giant floating ball of dirt.
-This mod also has QoL changes, such as an easier Slime Crown recipe, crimson alternates, tons of vanilla recipes, and some hardmode enemies dropping prehardmode loot.
+This mod has many peculiar things, including [i:12] ore furniture, two [i:281] unique subclasses, and a [i:2] giant floating ball of dirt.
+This mod also has QoL changes, such as an easier [i:560] Slime Crown recipe, [i:1330] crimson alternates, tons of [i:36] vanilla recipes, and some [i:210] hardmode enemies dropping prehardmode loot.
 Some changes can be only accessed via the config, like the Pearlwood buff.
 
 Stats:
@@ -19,7 +19,8 @@ Stats:
 ~3 Rarities
 ~1 Unfinished Game Mode
 ~7 Modifiers
-~Cross content with Asteri and Havoc Mod
+
+[i:458]Cross content with: Asteri (dead), Havoc (dead), and Cacti and More 2 Mod
 
 Active Spriters:
 VaultyBoi (Spriter)
@@ -57,7 +58,7 @@ Update V0.2.5: Special Update
 ~Fixed some Devastation stuff.
 ~Added Devastation Mode King Slime changes.
 ~Nerfed Slimy Ooze Debuff a bit.
-~Eye of Cthulhu now inflicts Scared in Devastation Mode.
 ~Fixed Starpack Slime Royal Gel immunity.
 ~Decreased Dirtball spawn rate.
 ~Replaced Dirtbow with Dirty 3-String.
+~Made the description prettier.
