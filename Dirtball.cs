@@ -23,7 +23,7 @@ namespace Azercadmium.NPCs.Bosses
 			npc.lifeMax = 590;
 			npc.HitSound = SoundID.NPCHit1;
 			npc.DeathSound = SoundID.NPCDeath9;
-			npc.value = 9000f;
+			npc.value = Item.buyPrice(0, 0, 75, 0);
 			npc.knockBackResist = 0f;
 			npc.aiStyle = -1;
 			npc.noGravity = true;
@@ -66,10 +66,6 @@ namespace Azercadmium.NPCs.Bosses
 			npc.scale -= 0.01f;
 			if (npc.scale < 0.5f)
 				npc.scale = 0.5f;
-			if (Main.rand.Next(30) == 0)
-				NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y, NPCType<Minions.Dirtball.DirtySlime>(), 0, npc.whoAmI);
-			if (Main.rand.Next(30) == 0)
-				NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y, NPCType<Minions.Dirtball.DirtyDiscus>(), 0, npc.whoAmI);
 			for (int i = 0; i < 10; i++) {
 				int dustType = 0;
 				int dustIndex = Dust.NewDust(npc.position, npc.width, npc.height, dustType);
@@ -237,12 +233,17 @@ namespace Azercadmium.NPCs.Bosses
 			if (ran == 3) Item.NewItem(npc.getRect(), mod.ItemType("DirtyBlowpipw"));
 			if (ran == 4) Item.NewItem(npc.getRect(), mod.ItemType("DirtyPistol"));
 			if (ran == 5) Item.NewItem(npc.getRect(), mod.ItemType("DirtYoyo"));
-			if (ran == 6) Item.NewItem(npc.getRect(), mod.ItemType("DirtBow"));
+			if (ran == 6) Item.NewItem(npc.getRect(), mod.ItemType("Dirty3String"));
 			
 			ran = Main.rand.Next(1, 4);
 			if (ran == 1) Item.NewItem(npc.getRect(), mod.ItemType("EarthmightHelm"));
 			if (ran == 2) Item.NewItem(npc.getRect(), mod.ItemType("EarthmightBreastplate"));
 			if (ran == 3) Item.NewItem(npc.getRect(), mod.ItemType("EarthmightLeggings"));
+
+			ran = Main.rand.Next(1, 4);
+			if (ran == 1) Item.NewItem(npc.getRect(), mod.ItemType("OvergrownHilt"));
+			if (ran == 2) Item.NewItem(npc.getRect(), mod.ItemType("OvergrownHandgunFragment"));
+			if (ran == 3) Item.NewItem(npc.getRect(), mod.ItemType("OvergrownElectricalComponent"));
 			
 			Item.NewItem(npc.getRect(), ItemID.CopperBar, 1 + Main.rand.Next(5));
 			Item.NewItem(npc.getRect(), ItemID.DirtBlock, 1 + Main.rand.Next(5));
@@ -255,13 +256,16 @@ namespace Azercadmium.NPCs.Bosses
 
 			if (Main.rand.NextFloat() < .25f)
 			Item.NewItem(npc.getRect(), ItemID.DirtRod);
+
+			if (Main.rand.NextFloat() < .12f)
+			Item.NewItem(npc.getRect(), mod.ItemType("CreepyBlob"));
 			}
 			
 			AzercadmiumWorld.downedDirtball = true;
 		}
 		public override float SpawnChance(NPCSpawnInfo spawnInfo) {
 			if (!AzercadmiumWorld.downedDirtball && Main.dayTime)
-			    return 0.00015f;
+			    return 0.0001f;
 			return 0f;
         }
 	}

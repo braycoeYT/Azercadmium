@@ -23,6 +23,10 @@ namespace Azercadmium.NPCs
 							break;
 						}
 					break;
+					case NPCID.KingSlime:
+						npc.lifeMax += 600;
+						//npc.damage += 4;
+						break;
 				}
 			}
 		}
@@ -78,12 +82,22 @@ namespace Azercadmium.NPCs
 							break;
 					}
 					break;
+					case NPCID.DemonEye:
+						target.AddBuff(mod.BuffType("Scared"), Main.rand.Next(1, 4) * 60, true);
+						break;
+					case NPCID.KingSlime:
+						target.AddBuff(mod.BuffType("SlimyOoze"), Main.rand.Next(3, 9) * 60, true);
+						break;
+					case NPCID.EyeofCthulhu:
+						target.AddBuff(mod.BuffType("Scared"), Main.rand.Next(3, 9) * 60, true);
+						break;
 				}
 			}
 		}
 		public override bool PreAI(NPC npc)
 		{
-			if (Stop > 0)
+			if (AzercadmiumWorld.devastation) {
+				if (Stop > 0)
             {
                 Stop--;
                 npc.position = npc.oldPosition;
@@ -111,7 +125,29 @@ namespace Azercadmium.NPCs
 					}
 					break;
 			}
+			}
 			return true;
+		}
+		int AITimer;
+		public override void AI(NPC npc) {
+			if (AzercadmiumWorld.devastation)
+			switch (npc.type)
+			{
+				case NPCID.KingSlime:
+					AITimer++;
+					if (AITimer % 300 == 299) {
+						if ((double)npc.life < (double)npc.lifeMax * 0.5) {
+							Projectile.NewProjectile(npc.Center.X, npc.Center.Y - 100, 0, 0, mod.ProjectileType("GiantSlimeSpike"), npc.damage / 3, 0f, Main.myPlayer);
+							Projectile.NewProjectile(npc.Center.X, npc.Center.Y + 100, 0, 0, mod.ProjectileType("GiantSlimeSpike"), npc.damage / 3, 0f, Main.myPlayer);
+						}
+						Projectile.NewProjectile(npc.Center.X - 200, npc.Center.Y, 0, 0, mod.ProjectileType("GiantSlimeSpike"), npc.damage / 3, 0f, Main.myPlayer);
+						Projectile.NewProjectile(npc.Center.X + 200, npc.Center.Y, 0, 0, mod.ProjectileType("GiantSlimeSpike"), npc.damage / 3, 0f, Main.myPlayer);
+					}
+					if (!(npc.ai[1] == 5f || npc.ai[1] == 6f)) {
+						npc.ai[0] += 2f;
+					}
+					break;
+			}
 		}
 		public override void NPCLoot(NPC npc) {
 			if (AzercadmiumWorld.devastation) {
@@ -122,7 +158,9 @@ namespace Azercadmium.NPCs
 		}
 		private void Shoot(NPC npc, int delay, float distance, int speed, int proj, int dmg, float kb, bool hostile = false, int dustID = -1)
         {
-            int t = npc.HasPlayerTarget ? npc.target : npc.FindClosestPlayer();
+			if (AzercadmiumWorld.devastation)
+			{
+				int t = npc.HasPlayerTarget ? npc.target : npc.FindClosestPlayer();
             if (t == -1)
                 return;
 
@@ -174,6 +212,7 @@ namespace Azercadmium.NPCs
                     } 
                 }
             }
+			}
         }
 	}
 }

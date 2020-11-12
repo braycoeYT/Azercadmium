@@ -229,6 +229,9 @@ namespace Azercadmium
 		}
 		public override void CatchFish(Item fishingRod, Item bait, int power, int liquidType, int poolSize, int worldLayer, int questFish, ref int caughtType, ref bool junk)
 		{
+			if ((Main.player[(int)Player.FindClosest(player.position, player.width, player.height)].ZoneDirtLayerHeight || Main.player[(int)Player.FindClosest(player.position, player.width, player.height)].ZoneRockLayerHeight) && Main.rand.NextFloat() < .05f)
+				caughtType = mod.ItemType("LabyrinthFish");
+
 			if (Main.player[(int)Player.FindClosest(player.position, player.width, player.height)].GetModPlayer<AzercadmiumPlayer>().ZoneMicrobiome)
 			{
 				if (player.cratePotion)

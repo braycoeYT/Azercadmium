@@ -19,6 +19,7 @@ namespace Azercadmium.Projectiles.Other
 			projectile.ranged = true;
 			projectile.timeLeft = 600;
 			projectile.ignoreWater = true;
+			projectile.light = 0.3f;
 			aiType = ProjectileID.Bullet;
 		}
 		public override bool OnTileCollide(Vector2 oldVelocity) {

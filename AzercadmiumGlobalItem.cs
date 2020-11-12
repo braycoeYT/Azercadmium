@@ -68,7 +68,7 @@ namespace Azercadmium.Tiles
 			{
 				player.npcTypeNoAggro[mod.NPCType("BoneSlime")] = true;
 				player.npcTypeNoAggro[mod.NPCType("MechanicalSlime")] = true;
-				player.npcTypeNoAggro[mod.NPCType("StarfurrySlime")] = true;
+				player.npcTypeNoAggro[mod.NPCType("StarpackSlime")] = true;
 				player.npcTypeNoAggro[mod.NPCType("LivingMarshmellow")] = true;
 				player.npcTypeNoAggro[mod.NPCType("RoastedLivingMarshmellow")] = true;
 			}
