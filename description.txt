@@ -1,17 +1,17 @@
 Reborn version of the Zylon Mod. Give me a few updates, and this mod will be completely remade from craziness to something actually good.
 
-This mod has many peculiar things, including [i:12] ore furniture, two [i:281] unique subclasses, and a [i:2] giant floating ball of dirt.
-This mod also has QoL changes, such as an easier [i:560] Slime Crown recipe, [i:1330] crimson alternates, tons of [i:36] vanilla recipes, and some [i:210] hardmode enemies dropping prehardmode loot.
-Some changes can be only accessed via the config, like the [i:621] Pearlwood buff.
+This mod has many peculiar things, including ore furniture, two unique subclasses, and a giant floating ball of dirt.
+This mod also has QoL changes, such as an easier Slime Crown recipe, crimson alternates, tons of vanilla recipes, and some hardmode enemies dropping prehardmode loot.
+Some changes can be only accessed via the config, like the Pearlwood buff.
 
 Stats:
-~262 Items
+~260 Items
 ~43 total NPCs
 ~4 Bosses:
 ^2 Prehardmode Bosses
 ^2 Hardmode Bosses
 ~2 Town NPCs
-~42 Tiles
+~43 Tiles
 ~27 Buffs
 ~1 Ore
 ~2 Subclasses
@@ -20,7 +20,7 @@ Stats:
 ~1 Unfinished Game Mode
 ~7 Modifiers
 
-[i:458]Cross content with: Asteri (dead), Havoc (dead), and Cacti and More 2 Mod
+[i:458]Cross content with: Asteri (dead), Havoc (dead), and Cacti and More 2 Mod.
 
 Active Spriters:
 VaultyBoi (Spriter)
@@ -48,17 +48,10 @@ Setnour6 (M.Nova Sprite and C.Virus Theme)
 
 Multiplayer support is unknown, but most of us play alone anyway.
 
-Update V0.2.5: Special Update
-~Added Labyrinth Fish and Psychic Potion.
-~Fixed Glorious Sun rarity.
-~Added dust to Blazing Backlasher.
-~Glorious Sun now inflicts Daybroken.
-~Tactical Megaphone projectile now emits light.
-~Demon Eyes and Eye of Cthulhu now inflict Scared in Devastation Mode.
-~Fixed some Devastation stuff.
-~Added Devastation Mode King Slime changes.
-~Nerfed Slimy Ooze Debuff a bit.
-~Fixed Starpack Slime Royal Gel immunity.
-~Decreased Dirtball spawn rate.
-~Replaced Dirtbow with Dirty 3-String.
-~Made the description prettier.
+Update V0.2.5.1: Updated Update
+~Resprited Dirty Pistol.
+~Resprited Tactical Megaphone.
+~Removed Empress Slime transparency
+~Reduced Carnallite Bar max stack
+~Added an unobtainable bar.
+~Note: Working on new Dirtball AI behind the scenes!

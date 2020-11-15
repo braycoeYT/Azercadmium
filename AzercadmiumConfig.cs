@@ -27,5 +27,10 @@ namespace Azercadmium
 		[Label("Azercadmium Prefixes")]
 		[Tooltip("Allows Azercadmium prefixes to be rolled.")]
 		public bool azercadmiumPrefixes;
+
+		/*[DefaultValue(true)]
+		[Label("Dirtball Hint")]
+		[Tooltip("When Dirtball is summoned, gives a hint if Dirtball has not yet been defeated.")]
+		public bool dirtballHint;*/
 	}
 }

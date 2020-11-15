@@ -219,48 +219,37 @@ namespace Azercadmium.NPCs.Bosses
 				animationTimer = 0;
 			npc.frame.Y = animationTimer * 164;
 		}
-		public override void BossLoot(ref string name, ref int potionType)
-		{
-			if(Main.expertMode)
-			{
+		public override void BossLoot(ref string name, ref int potionType) {
+			if (Main.expertMode)
 				Item.NewItem(npc.getRect(), mod.ItemType("DirtballBag"));
+		    else {
+				int ran = Main.rand.Next(1, 7);
+				if (ran == 1) Item.NewItem(npc.getRect(), mod.ItemType("MuddyGreatsword"));
+				if (ran == 2) Item.NewItem(npc.getRect(), mod.ItemType("DirtyBeholder"));
+				if (ran == 3) Item.NewItem(npc.getRect(), mod.ItemType("DirtyDiscus"));
+				if (ran == 4) Item.NewItem(npc.getRect(), mod.ItemType("Dirty3String"));
+				if (ran == 5) Item.NewItem(npc.getRect(), mod.ItemType("PaydirtPistol"));
+				if (ran == 6) Item.NewItem(npc.getRect(), mod.ItemType("DirtyBlowpipe"));
+				ran = Main.rand.Next(1, 4);
+				if (ran == 1) Item.NewItem(npc.getRect(), mod.ItemType("EarthmightHelm"));
+				if (ran == 2) Item.NewItem(npc.getRect(), mod.ItemType("EarthmightBreastplate"));
+				if (ran == 3) Item.NewItem(npc.getRect(), mod.ItemType("EarthmightLeggings"));
+				ran = Main.rand.Next(1, 4);
+				if (ran == 1) Item.NewItem(npc.getRect(), mod.ItemType("OvergrownHilt"));
+				if (ran == 2) Item.NewItem(npc.getRect(), mod.ItemType("OvergrownHandgunFragment"));
+				if (ran == 3) Item.NewItem(npc.getRect(), mod.ItemType("OvergrownElectricalComponent"));
+				Item.NewItem(npc.getRect(), ItemID.CopperBar, 1 + Main.rand.Next(5));
+				Item.NewItem(npc.getRect(), ItemID.DirtBlock, 1 + Main.rand.Next(5));
+				Item.NewItem(npc.getRect(), ItemID.MudBlock, 1 + Main.rand.Next(5));
+				Item.NewItem(npc.getRect(), ItemID.Gel, 1 + Main.rand.Next(5));
+				Item.NewItem(npc.getRect(), ItemID.Lens, 1 + Main.rand.Next(1));
+				if (Main.rand.NextFloat() < .5f)
+				Item.NewItem(npc.getRect(), mod.ItemType("DirtyMedal"));
+				if (Main.rand.NextFloat() < .25f)
+				Item.NewItem(npc.getRect(), ItemID.DirtRod);
+				if (Main.rand.NextFloat() < .12f)
+				Item.NewItem(npc.getRect(), mod.ItemType("CreepyBlob"));
 			}
-		    else
-			{
-			int ran = Main.rand.Next(1, 7);
-			if (ran == 1) Item.NewItem(npc.getRect(), mod.ItemType("BrokenDirtballCopperShortsword"));
-			if (ran == 2) Item.NewItem(npc.getRect(), mod.ItemType("DirtyDiscus"));
-			if (ran == 3) Item.NewItem(npc.getRect(), mod.ItemType("DirtyBlowpipw"));
-			if (ran == 4) Item.NewItem(npc.getRect(), mod.ItemType("DirtyPistol"));
-			if (ran == 5) Item.NewItem(npc.getRect(), mod.ItemType("DirtYoyo"));
-			if (ran == 6) Item.NewItem(npc.getRect(), mod.ItemType("Dirty3String"));
-			
-			ran = Main.rand.Next(1, 4);
-			if (ran == 1) Item.NewItem(npc.getRect(), mod.ItemType("EarthmightHelm"));
-			if (ran == 2) Item.NewItem(npc.getRect(), mod.ItemType("EarthmightBreastplate"));
-			if (ran == 3) Item.NewItem(npc.getRect(), mod.ItemType("EarthmightLeggings"));
-
-			ran = Main.rand.Next(1, 4);
-			if (ran == 1) Item.NewItem(npc.getRect(), mod.ItemType("OvergrownHilt"));
-			if (ran == 2) Item.NewItem(npc.getRect(), mod.ItemType("OvergrownHandgunFragment"));
-			if (ran == 3) Item.NewItem(npc.getRect(), mod.ItemType("OvergrownElectricalComponent"));
-			
-			Item.NewItem(npc.getRect(), ItemID.CopperBar, 1 + Main.rand.Next(5));
-			Item.NewItem(npc.getRect(), ItemID.DirtBlock, 1 + Main.rand.Next(5));
-			Item.NewItem(npc.getRect(), ItemID.MudBlock, 1 + Main.rand.Next(5));
-			Item.NewItem(npc.getRect(), ItemID.Gel, 1 + Main.rand.Next(5));
-			Item.NewItem(npc.getRect(), ItemID.Lens, 1 + Main.rand.Next(1));
-			
-			if (Main.rand.NextFloat() < .5f)
-			Item.NewItem(npc.getRect(), mod.ItemType("DirtyMedal"));
-
-			if (Main.rand.NextFloat() < .25f)
-			Item.NewItem(npc.getRect(), ItemID.DirtRod);
-
-			if (Main.rand.NextFloat() < .12f)
-			Item.NewItem(npc.getRect(), mod.ItemType("CreepyBlob"));
-			}
-			
 			AzercadmiumWorld.downedDirtball = true;
 		}
 		public override float SpawnChance(NPCSpawnInfo spawnInfo) {

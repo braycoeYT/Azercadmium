@@ -221,7 +221,7 @@ namespace Azercadmium.NPCs
 					Item.NewItem(npc.getRect(), mod.ItemType("SlimySeedshot"), Main.rand.Next(1, 3));
 				}
 			if (Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)].HasItem(mod.ItemType("DirtyBlowpipe")))
-				if (npc.type == mod.NPCType("DirtySlime") || npc.type == mod.NPCType("DirtyDiscus")) {
+				if (npc.type == mod.NPCType("DirtSlime")) {
 					if (Main.rand.NextFloat() < .5f)
 					Item.NewItem(npc.getRect(), ItemID.Seed, Main.rand.Next(1, 3));
 				}
@@ -244,16 +244,6 @@ namespace Azercadmium.NPCs
 				if (npc.type == NPCID.Demon || npc.type == NPCID.FireImp || npc.type == NPCID.LavaSlime) {
 					if (Main.rand.NextFloat() < .5f)
 					Item.NewItem(npc.getRect(), mod.ItemType("FleshSeedshot"), Main.rand.Next(1, 3));
-				}
-			if (Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)].HasItem(mod.ItemType("HitmansBlowscope")))
-				if (npc.type == mod.NPCType("MechanicalSlime")) {
-					if (Main.rand.NextFloat() < .5f)
-					Item.NewItem(npc.getRect(), ItemID.Seed, Main.rand.Next(1, 3));
-				}
-			if (Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)].HasItem(mod.ItemType("MeatCannon")))
-				if (npc.type == mod.NPCType("Meatball1") || npc.type == mod.NPCType("Meatball2") || npc.type == mod.NPCType("Meatball3") || npc.type == mod.NPCType("Meatball4") || npc.type == mod.NPCType("Meatball5")) {
-					if (Main.rand.NextFloat() < .5f)
-					Item.NewItem(npc.getRect(), ItemID.Seed, Main.rand.Next(1, 3));
 				}
 		}
 		public override void SetupTravelShop(int[] shop, ref int nextSlot) {

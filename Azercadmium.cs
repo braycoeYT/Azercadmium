@@ -25,8 +25,8 @@ namespace Azercadmium
 					"$Mods.Azercadmium.NPCName.Dirtball",
 					(Func<bool>)(() => AzercadmiumWorld.downedDirtball),
 					ModContent.ItemType<Items.Dirtball.CreepyMud>(),
-					new List<int> { ModContent.ItemType<Items.Dirtball.BrokenDirtballCopperShortsword>() }, //collectables
-					new List<int> { ModContent.ItemType<Items.Dirtball.BrokenDirtballCopperShortsword>()}, //other
+					new List<int> { ModContent.ItemType<Items.Dirtball.MuddyGreatsword>() }, //collectables
+					new List<int> { ModContent.ItemType<Items.Dirtball.MuddyGreatsword>()}, //other
 					$"Dirtball spawns rarely until it is defeated. It can also be manually summoned with a [i:{ModContent.ItemType<Items.Dirtball.CreepyMud>()}], which can be crafted or rarely dropped from enemies."
 				);
 				bossChecklist.Call(

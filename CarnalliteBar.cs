@@ -11,7 +11,7 @@ namespace Azercadmium.Items.Carnallite
 			item.rare = ItemRarityID.Lime;
 			item.width = 20;
 			item.height = 20;
-			item.maxStack = 9999;
+			item.maxStack = 999;
 			item.value = Item.sellPrice(0, 0, 60, 0);
 			item.useStyle = ItemUseStyleID.SwingThrow;
 			item.useTurn = true;

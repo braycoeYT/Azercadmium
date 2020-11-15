@@ -23,7 +23,7 @@ namespace Azercadmium.NPCs.Bosses
 			npc.lifeMax = 35000;
 			npc.HitSound = SoundID.NPCHit1;
 			npc.DeathSound = SoundID.NPCDeath1;
-			npc.value = 150000f;
+			npc.value = Item.buyPrice(0, 16, 0, 0);
 			npc.knockBackResist = 0f;
 			npc.aiStyle = 1; //51 original
 			npc.noGravity = false;
@@ -35,7 +35,6 @@ namespace Azercadmium.NPCs.Bosses
 			npc.buffImmune[BuffID.Venom] = true;
 			npc.buffImmune[BuffID.Confused] = true;
 			npc.buffImmune[BuffID.Poisoned] = true;
-			npc.alpha = 50;
 		}
 		public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
         {
