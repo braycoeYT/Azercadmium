@@ -172,10 +172,6 @@ namespace Azercadmium.NPCs
 				if (Main.rand.Next(3) == 0)
 					Item.NewItem(npc.getRect(), ItemType<Items.Plantera.FruitOfLife>());
 			}
-			if (npc.type == NPCID.Mothron) {
-				if (Main.rand.Next(3) == 0)
-				Item.NewItem(npc.getRect(), ItemType<Items.Eclipse.AncientMedievalJavelance>(), Main.rand.Next(1, 6));
-			}
 			if (npc.type == NPCID.Golem) {
 				if (Main.rand.Next(3) == 0)
 					Item.NewItem(npc.getRect(), ItemType<Items.Other.Accessories.SunProtection>());

@@ -5,14 +5,14 @@ This mod also has QoL changes, such as an easier Slime Crown recipe, crimson alt
 Some changes can be only accessed via the config, like the Pearlwood buff.
 
 Stats:
-~260 Items
-~43 total NPCs
+~256 Items
+~44 total NPCs
 ~4 Bosses:
 ^2 Prehardmode Bosses
 ^2 Hardmode Bosses
 ~2 Town NPCs
 ~43 Tiles
-~27 Buffs
+~28 Buffs
 ~1 Ore
 ~2 Subclasses
 ~2 Custom Soundtracks
@@ -40,7 +40,6 @@ Quit:
 CrazySapling1 (Quit Spriter)
 
 Very Minor Help:
-Sness (Two sprites)
 Math (Minor Wiki)
 Ashe (Minor Wiki)
 Pufferfish77 (Minor Concepts and Sprites)
@@ -48,10 +47,12 @@ Setnour6 (M.Nova Sprite and C.Virus Theme)
 
 Multiplayer support is unknown, but most of us play alone anyway.
 
-Update V0.2.5.1: Updated Update
-~Resprited Dirty Pistol.
-~Resprited Tactical Megaphone.
-~Removed Empress Slime transparency
-~Reduced Carnallite Bar max stack
-~Added an unobtainable bar.
-~Note: Working on new Dirtball AI behind the scenes!
+Update V0.2.5.2: Devastation Update
+~Removed Shadowdance, True Shadowdance, Fleshleech, True Fleshleech, and Ancient Medieval Javelance to differentiate from the "Terra ____" stereotype.
+~Added an unobtainable weapon set, for the near future.
+~Added some Eye of Cthulhu Devastation changes.
+~Demon Eyes and Servants of Cthulhu now shoot lasers.
+~Servant of Cthulhu now inflicts Scared.
+~Fixed Scared Debuff.
+~Heavily nerfed Floating Pebble Staff.
+~Note: Working on new Dirtball AI still.
