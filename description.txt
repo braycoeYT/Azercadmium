@@ -5,16 +5,16 @@ This mod also has QoL changes, such as an easier Slime Crown recipe, crimson alt
 Some changes can be only accessed via the config, like the Pearlwood buff.
 
 Stats:
-~256 Items
-~44 total NPCs
+~271 Items
 ~4 Bosses:
 ^2 Prehardmode Bosses
 ^2 Hardmode Bosses
 ~2 Town NPCs
-~43 Tiles
-~28 Buffs
+~45 total NPCs
+~44 Tiles
+~29 Buffs
 ~1 Ore
-~2 Subclasses
+~3 Subclasses
 ~2 Custom Soundtracks
 ~3 Rarities
 ~1 Unfinished Game Mode
@@ -33,7 +33,7 @@ Koolaidlemonade (Inactive Spriter)
 HBDeus (Inactive Spriter)
 
 Other Help:
-Unboxing Video (Wiki)
+Unboxing Video (Inactive Wiki)
 Woodio (Some Devastation Mode code)
 
 Quit:
@@ -43,16 +43,29 @@ Very Minor Help:
 Math (Minor Wiki)
 Ashe (Minor Wiki)
 Pufferfish77 (Minor Concepts and Sprites)
-Setnour6 (M.Nova Sprite and C.Virus Theme)
+Setnour6 (C.Virus Theme)
+ChimneyEggs (Ore Staff Sprites)
 
 Multiplayer support is unknown, but most of us play alone anyway.
 
-Update V0.2.5.2: Devastation Update
-~Removed Shadowdance, True Shadowdance, Fleshleech, True Fleshleech, and Ancient Medieval Javelance to differentiate from the "Terra ____" stereotype.
-~Added an unobtainable weapon set, for the near future.
-~Added some Eye of Cthulhu Devastation changes.
-~Demon Eyes and Servants of Cthulhu now shoot lasers.
-~Servant of Cthulhu now inflicts Scared.
-~Fixed Scared Debuff.
-~Heavily nerfed Floating Pebble Staff.
-~Note: Working on new Dirtball AI still.
+Update V0.2.5.3: Baseball Bat Update
+~Added the mod's third subclass, the baseball bat! Bats are similar to swords but have special right click abilities.
+~Added Rookie Bat, The Sandman, Boreal Bat, Bat Basher, Rich Mahogany Bat, Onett Bat, Palm Wood Bat, Batsaber, Prickly Club, Marshmallow Bat, and Ghastly Swinger.
+~Removed Mysterious Nova items (until they are more finished).
+~Fixed Lobera Soulslash removing npc color.
+~Added Eater of Worlds Devastation changes.
+~Finished Eye of Cthulhu Devastation changes.
+~Updated Out of Breath sprite.
+~Fixed Out of Breath damage bugs.
+~Resprited Wooden Blowpipe.
+~Rebalanced and remade the entire blowpipe subclass to be more similar to bows and guns.
+~Added config that lets you enable and disable vanilla seeds being ammo for blowpipes.
+~Reworked Fatal Error.
+~Added Copper Spear, Tin Spear, Iron Spear, Lead Spear, Silver Spear, Tungsten Spear, Gold Spear, and Platinum Spear.
+~Reimplemented Dirt Slime as a standalone enemy.
+~Added Cobalt Wakizashi, Palladium Piercer, Mythril Shortsword, Orichalcum Jabber, Adamantite Stabber, and Titanium Knife.
+~Updated Cobalt Chair.
+~Added Cobalt Table.
+~Fixed Slimy Ooze Dust.
+~Unethical Arrow now has a 25% chance of returning after being shot.
+~Still working on Dirtball AI.

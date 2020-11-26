@@ -29,8 +29,21 @@ namespace Azercadmium.NPCs
 						break;
 					case NPCID.EyeofCthulhu:
 						npc.lifeMax += 700;
-						//npc.damage += 4;
-						npc.defense = 2;
+						npc.damage += 14;
+						npc.defense += 6;
+						break;
+					case NPCID.EaterofWorldsHead:
+						npc.lifeMax += 70;
+						npc.damage += 12;
+						break;
+					case NPCID.EaterofWorldsBody:
+						npc.lifeMax += 70;
+						npc.damage += 6;
+						npc.defense += 6;
+						break;
+					case NPCID.EaterofWorldsTail:
+						npc.lifeMax += 70;
+						npc.defense += 12;
 						break;
 				}
 			}
@@ -48,6 +61,34 @@ namespace Azercadmium.NPCs
 									projectile.hostile = true;
 								}
 							break;
+						}
+					break;
+					case NPCID.EyeofCthulhu:
+						if (projectile.type == ProjectileID.FallingStar) {
+							npc.life += damage;
+							npc.HealEffect(damage, true);
+						}
+						break;
+					case NPCID.EaterofWorldsBody:
+						if (projectile.type == ProjectileID.Grenade || projectile.type == ProjectileID.BouncyGrenade || projectile.type == ProjectileID.StickyGrenade || projectile.type == ProjectileID.Bomb || projectile.type == ProjectileID.BombFish || projectile.type == ProjectileID.StickyBomb || projectile.type == ProjectileID.BouncyBomb || projectile.type == ProjectileID.Dynamite || projectile.type == ProjectileID.BouncyDynamite || projectile.type == ProjectileID.StickyDynamite || projectile.type == ProjectileID.HappyBomb || projectile.type == ProjectileID.RocketFireworkBlue || projectile.type == ProjectileID.RocketFireworkGreen || projectile.type == ProjectileID.RocketFireworkRed || projectile.type == ProjectileID.RocketFireworkYellow || projectile.type == ProjectileID.RocketFireworksBoxBlue || projectile.type == ProjectileID.RocketFireworksBoxGreen || projectile.type == ProjectileID.RocketFireworksBoxYellow || projectile.type == ProjectileID.RocketFireworksBoxRed || projectile.type == ProjectileID.RocketI || projectile.type == ProjectileID.RocketII || projectile.type == ProjectileID.RocketIII || projectile.type == ProjectileID.RocketIV || projectile.type == ProjectileID.RocketSkeleton || projectile.type == ProjectileID.RocketSnowmanI || projectile.type == ProjectileID.RocketSnowmanII || projectile.type == ProjectileID.RocketSnowmanIII || projectile.type == ProjectileID.RocketSnowmanIV || projectile.type == ProjectileID.GrenadeI || projectile.type == ProjectileID.GrenadeII || projectile.type == ProjectileID.GrenadeIII || projectile.type == ProjectileID.GrenadeIV || projectile.type == ProjectileID.PartyGirlGrenade) {
+							npc.life += damage;
+							npc.HealEffect(damage, true);
+						}
+						else if (projectile.penetrate == -1) {
+							npc.life += damage / 2;
+							npc.HealEffect(damage / 2, true);
+						}
+						else if (projectile.penetrate >= 10) {
+							npc.life += damage / 2;
+							npc.HealEffect(damage / 2, true);
+						}
+						else if (projectile.penetrate >= 5) {
+							npc.life += damage / 4;
+							npc.HealEffect(damage / 4, true);
+						}
+						else if (projectile.penetrate >= 2) {
+							npc.life += 1;
+							npc.HealEffect(1, true);
 						}
 					break;
 				}
@@ -139,6 +180,7 @@ namespace Azercadmium.NPCs
 		int AITimer;
 		int AITimer2;
 		int AITimer3;
+		int AITimer4;
 		bool AIFlag;
 		bool AIFlag2;
 		public override void AI(NPC npc) {
@@ -183,11 +225,19 @@ namespace Azercadmium.NPCs
 							AITimer2++;
 							if (AITimer2 % 60 == 5)
 								NPC.NewNPC((int)npc.position.X, (int)npc.position.Y, mod.NPCType("DreaminEye"));
+							//lasers everywhere while spin
+							if (AITimer2 % 10 == 0)
+								Projectile.NewProjectile(npc.Center, new Vector2(0, 10).RotatedBy(npc.rotation), ProjectileID.DeathLaser, npc.damage / 4, 0f, Main.myPlayer);
 						}
 						//lasers lol
-						if ((float)npc.life > (float)npc.lifeMax * 0.65f)
+						if ((float)npc.life > (float)npc.lifeMax * 0.65f) {
 							if (AITimer % (int)(240 * ((float)npc.life/(float)npc.lifeMax)) == 0)
 								Projectile.NewProjectile(npc.Center, new Vector2(0, 8).RotatedBy(npc.rotation), ProjectileID.EyeLaser, npc.damage / 4, 0f, Main.myPlayer);
+							if (AITimer % (int)(240 * ((float)npc.life/(float)npc.lifeMax)) == 20)
+								Projectile.NewProjectile(npc.Center, new Vector2(0, 8).RotatedBy(npc.rotation), ProjectileID.EyeLaser, npc.damage / 4, 0f, Main.myPlayer);
+							if (AITimer % (int)(240 * ((float)npc.life/(float)npc.lifeMax)) == 40)
+								Projectile.NewProjectile(npc.Center, new Vector2(0, 8).RotatedBy(npc.rotation), ProjectileID.EyeLaser, npc.damage / 4, 0f, Main.myPlayer);
+						}
 						//keep on dreamin
 						Vector2 vector = new Vector2(npc.position.X + (float)npc.width * 0.5f, npc.position.Y + (float)npc.height * 0.5f);
 						float num13 = Main.player[npc.target].position.X + (float)(Main.player[npc.target].width / 2) - vector.X;
@@ -203,53 +253,74 @@ namespace Azercadmium.NPCs
 								}
 							}
 						}
-						if (Main.expertMode && (double)npc.life < (double)npc.lifeMax * 0.25f)
+						if (Main.expertMode && (double)npc.life < (double)npc.lifeMax * 0.3f)
 							AIFlag = true;
-						if (Main.expertMode && (double)npc.life < (double)npc.lifeMax * 0.1f)
+						if (Main.expertMode && (double)npc.life < (double)npc.lifeMax * 0.15f)
 							AIFlag2 = true;
-						/*if ((float)npc.life < (float)npc.lifeMax * 0.65f && ((float)npc.life > (float)npc.lifeMax * 0.15f) && !(npc.ai[0] == 1 || npc.ai[0] == 2))
+						if ((float)npc.life < (float)npc.lifeMax * 0.65f && !(npc.ai[0] == 1 || npc.ai[0] == 2))
 						{
-							if (AITimer % (int)(240 * ((float)npc.life/(float)npc.lifeMax)) == 0)
+							npc.damage = 57;
+							npc.defense = 6;
+							for (int i = 0; i < npc.life; i += npc.lifeMax / 20) {
+								npc.damage += 2;
+								npc.defense += 1;
+							}
+							if (AITimer % 120 == 0)
 							{
 								if (AIFlag2) {
-										Projectile.NewProjectile(npc.position, new Vector2(0, 8).RotatedBy(npc.rotation), mod.ProjectileType("GiantDemonScythe"), npc.damage / 2, 0f, Main.myPlayer);
+									Vector2 projDir = Vector2.Normalize(target.Center - npc.Center) * 8;
+									Projectile.NewProjectile(npc.Center, projDir.RotatedBy(-0.54f), ProjectileID.DeathLaser, npc.damage / 4, 0f, Main.myPlayer);
+									Projectile.NewProjectile(npc.Center, projDir.RotatedBy(-0.27f), ProjectileID.DeathLaser, npc.damage / 4, 0f, Main.myPlayer);
+									Projectile.NewProjectile(npc.Center, projDir, ProjectileID.DeathLaser, npc.damage / 4, 0f, Main.myPlayer);
+									Projectile.NewProjectile(npc.Center, projDir.RotatedBy(0.27f), ProjectileID.DeathLaser, npc.damage / 4, 0f, Main.myPlayer);
+									Projectile.NewProjectile(npc.Center, projDir.RotatedBy(0.54f), ProjectileID.DeathLaser, npc.damage / 4, 0f, Main.myPlayer);
 								}
 								else if (AIFlag) {
-									if (Main.rand.NextFloat() < .5f)
-										Projectile.NewProjectile(npc.position, new Vector2(0, 8).RotatedBy(npc.rotation), mod.ProjectileType("GiantDemonScythe"), npc.damage / 2, 0f, Main.myPlayer);
-									else
-										Projectile.NewProjectile(npc.position, new Vector2(0, 14).RotatedBy(npc.rotation), mod.ProjectileType("CthulhuTooth"), npc.damage / 3, 0f, Main.myPlayer);
+									Vector2 projDir = Vector2.Normalize(target.Center - npc.Center) * 8;
+									Projectile.NewProjectile(npc.Center, projDir.RotatedBy(-0.27f), ProjectileID.DeathLaser, npc.damage / 4, 0f, Main.myPlayer);
+									Projectile.NewProjectile(npc.Center, projDir, ProjectileID.DeathLaser, npc.damage / 4, 0f, Main.myPlayer);
+									Projectile.NewProjectile(npc.Center, projDir.RotatedBy(0.27f), ProjectileID.DeathLaser, npc.damage / 4, 0f, Main.myPlayer);
 								}
 								else {
-									if (Main.rand.NextFloat() < .25f)
-										Projectile.NewProjectile(npc.position, new Vector2(0, 8).RotatedBy(npc.rotation), mod.ProjectileType("GiantDemonScythe"), npc.damage / 2, 0f, Main.myPlayer);
-									else
-										Projectile.NewProjectile(npc.position, new Vector2(0, 14).RotatedBy(npc.rotation), mod.ProjectileType("CthulhuTooth"), npc.damage / 3, 0f, Main.myPlayer);
+									Projectile.NewProjectile(npc.position, new Vector2(0, 8).RotatedBy(npc.rotation), ProjectileID.DeathLaser, npc.damage / 4, 0f, Main.myPlayer);
 								}
 							}
+							if (AITimer % 5 == 0)
+							Projectile.NewProjectile(npc.position, new Vector2(0, 0), mod.ProjectileType("FlameTrailEye"), npc.damage / 2, 0f, Main.myPlayer);
 						}
-						else if ((float)npc.life < (float)npc.lifeMax * 0.15f && !(npc.ai[0] == 1 || npc.ai[0] == 2))
-						{
-							if (AITimer % (int)(240 * 0.15f) == 0)
-							{
-								if (AIFlag2) {
-										Projectile.NewProjectile(npc.position, new Vector2(0, 8).RotatedBy(npc.rotation), mod.ProjectileType("GiantDemonScythe"), npc.damage / 2, 0f, Main.myPlayer);
-								}
-								else if (AIFlag) {
-									if (Main.rand.NextFloat() < .5f)
-										Projectile.NewProjectile(npc.position, new Vector2(0, 8).RotatedBy(npc.rotation), mod.ProjectileType("GiantDemonScythe"), npc.damage / 2, 0f, Main.myPlayer);
-									else
-										Projectile.NewProjectile(npc.position, new Vector2(0, 8).RotatedBy(npc.rotation), mod.ProjectileType("CthulhuTooth"), npc.damage / 3, 0f, Main.myPlayer);
-								}
-								else {
-									if (Main.rand.NextFloat() < .25f)
-										Projectile.NewProjectile(npc.position, new Vector2(0, 8).RotatedBy(npc.rotation), mod.ProjectileType("GiantDemonScythe"), npc.damage / 2, 0f, Main.myPlayer);
-									else
-										Projectile.NewProjectile(npc.position, new Vector2(0, 8).RotatedBy(npc.rotation), mod.ProjectileType("CthulhuTooth"), npc.damage / 3, 0f, Main.myPlayer);
-								}
-							}
-						}*/
+						else {
+							npc.damage = 41;
+							npc.defense = 17;
+						}
+						//dash upgrade
+						if (npc.ai[1] == 2f && npc.ai[2] == 0f) {
+							npc.velocity *= 2f;
+						}
 							
+						break;
+						case NPCID.EaterofWorldsHead:
+						npc.noGravity = true;
+						AITimer++;
+						if (AITimer % 10 == 0)
+							Projectile.NewProjectile(npc.Center, new Vector2(0, -8).RotatedBy(npc.rotation + Main.rand.NextFloat(-0.25f, 0.26f)), ProjectileID.CursedFlameHostile, npc.damage / 4, 0f, Main.myPlayer);
+						if (!AIFlag && npc.life < npc.lifeMax * 0.5f) {
+							AIFlag = true;
+							NPC.NewNPC((int)npc.position.X, (int)npc.position.Y, mod.NPCType("VileObserver"));
+						}
+						break;
+						case NPCID.EaterofWorldsBody:
+						npc.noGravity = true;
+						if (!AIFlag && npc.life < npc.lifeMax * 0.5f) {
+							AIFlag = true;
+							NPC.NewNPC((int)npc.position.X, (int)npc.position.Y, mod.NPCType("VileObserver"));
+						}
+						break;
+						case NPCID.EaterofWorldsTail:
+						npc.noGravity = true;
+						if (!AIFlag && npc.life < npc.lifeMax * 0.5f) {
+							AIFlag = true;
+							NPC.NewNPC((int)npc.position.X, (int)npc.position.Y, mod.NPCType("VileObserver"));
+						}
 						break;
 			}
 		}
@@ -257,6 +328,10 @@ namespace Azercadmium.NPCs
 			if (AzercadmiumWorld.devastation) {
 				if (npc.type == NPCID.KingSlime) {
 					Item.NewItem(npc.getRect(), ItemType<Items.Slime.ExtraNeonSlimyCore>());
+				}
+				if (npc.type == NPCID.EaterofWorldsHead || npc.type == NPCID.EaterofWorldsBody || npc.type == NPCID.EaterofWorldsTail || npc.type == mod.NPCType("VileObserver")) {
+					if (Main.rand.Next(4) == 0)
+					Item.NewItem(npc.getRect(), ItemType<Items.Corruption.VileHeart>());
 				}
 			}
 		}

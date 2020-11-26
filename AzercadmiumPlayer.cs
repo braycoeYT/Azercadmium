@@ -47,6 +47,8 @@ namespace Azercadmium
 		public bool stealthPotion;
 		public bool slimyOoze;
 		public bool dirtboi;
+		public bool outofBreath;
+		public bool shroomed;
 		int numberShot = 0;
 		public int upgradeHearts;
 		public int upgradeStars;
@@ -85,6 +87,8 @@ namespace Azercadmium
 			stealthPotion = false;
 			slimyOoze = false;
 			dirtboi = false;
+			outofBreath = false;
+			shroomed = false;
 			player.statLifeMax2 += upgradeHearts * 25;
 			player.statManaMax2 += upgradeStars * 50;
 			playerTimer = 0;
@@ -93,6 +97,8 @@ namespace Azercadmium
 		public override void UpdateDead() {
 			xenicAcid = false;
 			slimyOoze = false;
+			outofBreath = false;
+			shroomed = false;
 		}
 		int badRegenTimer;
 		public override void UpdateBadLifeRegen() {
@@ -120,6 +126,20 @@ namespace Azercadmium
 				}
 				player.lifeRegenTime = 0;
 				player.lifeRegen -= 4;
+			}
+			if (outofBreath) {
+				if (player.lifeRegen > 0) {
+					player.lifeRegen = 0;
+				}
+				player.lifeRegenTime = 0;
+				player.lifeRegen -= 12;
+			}
+			if (shroomed) {
+				if (player.lifeRegen > 0) {
+					player.lifeRegen = 0;
+				}
+				player.lifeRegenTime = 0;
+				player.lifeRegen -= 8;
 			}
 			if (healHurt > 0) {
 				if (player.lifeRegen > 0) {
@@ -156,6 +176,19 @@ namespace Azercadmium
 				b *= 0.1f;
 				fullBright = true;
 			}
+			if (shroomed) {
+				if (Main.rand.NextBool(4) && drawInfo.shadow == 0f) {
+					int dust = Dust.NewDust(drawInfo.position - new Vector2(2f, 2f), player.width + 4, player.height + 4, 17, player.velocity.X * 0.4f, player.velocity.Y * 0.4f, 0, default(Color), 2f);
+					Main.dust[dust].noGravity = true;
+					Main.dust[dust].velocity *= 1.8f;
+					Main.dust[dust].velocity.Y -= 0.5f;
+					Main.playerDrawDust.Add(dust);
+				}
+				r *= 0.1f;
+				g *= 0.1f;
+				b *= 0.5f;
+				fullBright = true;
+			}
 		}
 		public override TagCompound Save()
 		{
@@ -171,16 +204,12 @@ namespace Azercadmium
 		}
 		public override void SetupStartInventory(IList<Item> items, bool mediumcoreDeath) {
 			Item item = new Item();
-			item.SetDefaults(mod.ItemType("MysteriousNova"));
-			items.Add(item);
-			item = new Item();
-			item.SetDefaults(ItemID.Seed);
-			item.stack = 500;
-			items.Add(item);
-			item = new Item();
 			item.SetDefaults(mod.ItemType("EyeoftheCosmos"));
 			items.Add(item);
-			item = new Item();
+			/*item = new Item();
+			item.SetDefaults(ItemID.Seed);
+			item.stack = 500;
+			items.Add(item);*/
 		}
 		public override void UpdateBiomes()
 		{

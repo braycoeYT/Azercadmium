@@ -12,9 +12,11 @@ namespace Azercadmium.NPCs
 
 		public bool xenicAcid;
 		public bool slimyOoze;
+		public bool shroomed;
 		public override void ResetEffects(NPC npc) {
 			xenicAcid = false;
 			slimyOoze = false;
+			shroomed = false;
 		}
 		public override void EditSpawnRate(Player player, ref int spawnRate, ref int maxSpawns) {
 			if (player.GetModPlayer<AzercadmiumPlayer>().ZoneMicrobiome && player.ZoneSkyHeight) {
@@ -53,6 +55,11 @@ namespace Azercadmium.NPCs
 				shop.item[nextSlot].shopCustomPrice = 10;
 				nextSlot++;
 			}
+			if (type == NPCID.Cyborg) {
+				shop.item[nextSlot].SetDefaults(mod.ItemType("Batsaber"));
+				shop.item[nextSlot].shopCustomPrice = Item.buyPrice(1, 0, 0, 0);
+				nextSlot++;
+			}
 		}
 		public override void SetDefaults(NPC npc) {
 			if (npc.type == NPCID.SkeletronPrime || npc.type == NPCID.TheDestroyer || npc.type == NPCID.TheDestroyerBody || npc.type == NPCID.TheDestroyerTail || npc.type == NPCID.Retinazer || npc.type == NPCID.Spazmatism || npc.type == NPCID.Golem || npc.type == NPCID.GolemFistLeft || npc.type == NPCID.GolemFistRight || npc.type == NPCID.GolemHead || npc.type == NPCID.GolemHeadFree || npc.type == NPCID.CultistBoss || npc.type == NPCID.MoonLordCore || npc.type == NPCID.MoonLordFreeEye || npc.type == NPCID.MoonLordHand || npc.type == NPCID.MoonLordHead) {
@@ -79,6 +86,15 @@ namespace Azercadmium.NPCs
 					damage = 1;
 				}
 			}
+			if (shroomed) {
+				if (npc.lifeRegen > 0) {
+					npc.lifeRegen = 0;
+				}
+				npc.lifeRegen -= 16;
+				if (damage < 1) {
+					damage = 1;
+				}
+			}
 		}
 		public override void DrawEffects(NPC npc, ref Color drawColor) {
 			if (xenicAcid) {
@@ -94,9 +110,21 @@ namespace Azercadmium.NPCs
 				}
 				Lighting.AddLight(npc.position, 0.1f, 0.2f, 0.7f);
 			}
-			if (xenicAcid) {
+			if (slimyOoze) {
 				if (Main.rand.Next(4) < 3) {
 					int dust = Dust.NewDust(npc.position - new Vector2(2f, 2f), npc.width + 4, npc.height + 4, mod.DustType("SlimyOozeDust"), npc.velocity.X * 0.4f, npc.velocity.Y * 0.4f, 100, default(Color), 1.5f);
+					Main.dust[dust].noGravity = true;
+					Main.dust[dust].velocity *= 1.8f;
+					Main.dust[dust].velocity.Y -= 0.5f;
+					if (Main.rand.NextBool(4)) {
+						Main.dust[dust].noGravity = false;
+						Main.dust[dust].scale *= 0.5f;
+					}
+				}
+			}
+			if (shroomed) {
+				if (Main.rand.Next(4) < 3) {
+					int dust = Dust.NewDust(npc.position - new Vector2(2f, 2f), npc.width + 4, npc.height + 4, 17, npc.velocity.X * 0.4f, npc.velocity.Y * 0.4f, 100, default(Color), 1.5f);
 					Main.dust[dust].noGravity = true;
 					Main.dust[dust].velocity *= 1.8f;
 					Main.dust[dust].velocity.Y -= 0.5f;
@@ -150,9 +178,11 @@ namespace Azercadmium.NPCs
 				if (Main.rand.Next(100) == 1)
 				Item.NewItem(npc.getRect(), ItemType<Items.Dirtball.CreepyMud>());
 			}
-			if (npc.type == NPCID.JungleBat || npc.type == NPCID.CaveBat || npc.type == NPCID.IceBat || npc.type == NPCID.CaveBat) {
+			if (npc.type == NPCID.JungleBat || npc.type == NPCID.CaveBat || npc.type == NPCID.IceBat) {
 			    if (Main.rand.Next(50) == 0)
-				Item.NewItem(npc.getRect(), ItemType<Items.Jungle.MagicalVaccine>());
+					Item.NewItem(npc.getRect(), ItemType<Items.Jungle.MagicalVaccine>());
+				if (Main.rand.NextFloat() < .005f)
+					Item.NewItem(npc.getRect(), mod.ItemType("BatBasher"));
 			}
 			if (npc.type == NPCID.EyeofCthulhu) {
 				if (Main.rand.NextFloat() < .25f)
@@ -196,7 +226,11 @@ namespace Azercadmium.NPCs
 				Item.NewItem(npc.getRect(), ItemID.RottenChunk, Main.rand.Next(1, 3));
 				Item.NewItem(npc.getRect(), ItemID.WormTooth, Main.rand.Next(3, 9));
 			}
-			//blowpipes:
+			if (npc.type == NPCID.Necromancer || npc.type == NPCID.NecromancerArmored || npc.type == NPCID.DungeonSpirit) {
+				if (Main.rand.NextFloat() < .005f)
+					Item.NewItem(npc.getRect(), mod.ItemType("GhastlySwinger"));
+			}
+			/*//blowpipes:
 			if (Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)].HasItem(mod.ItemType("FrostBlowpipe")))
 				if (npc.type == NPCID.IceSlime || npc.type == NPCID.SpikedIceSlime || npc.type == mod.NPCType("IcyDiscus")) {
 					if (Main.rand.NextFloat() < .5f)
@@ -240,7 +274,7 @@ namespace Azercadmium.NPCs
 				if (npc.type == NPCID.Demon || npc.type == NPCID.FireImp || npc.type == NPCID.LavaSlime) {
 					if (Main.rand.NextFloat() < .5f)
 					Item.NewItem(npc.getRect(), mod.ItemType("FleshSeedshot"), Main.rand.Next(1, 3));
-				}
+				}*/
 		}
 		public override void SetupTravelShop(int[] shop, ref int nextSlot) {
 			if (Main.rand.Next(0, 5) == 0) {

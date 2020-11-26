@@ -28,9 +28,9 @@ namespace Azercadmium
 		[Tooltip("Allows Azercadmium prefixes to be rolled.")]
 		public bool azercadmiumPrefixes;
 
-		/*[DefaultValue(true)]
-		[Label("Dirtball Hint")]
-		[Tooltip("When Dirtball is summoned, gives a hint if Dirtball has not yet been defeated.")]
-		public bool dirtballHint;*/
+		[DefaultValue(true)]
+		[Label("Vanilla Seeds are Blowpipe Ammo")]
+		[Tooltip("Turns all vanilla seeds into blowpipe ammo, and increases their max stack.")]
+		public bool vanillaSeed;
 	}
 }

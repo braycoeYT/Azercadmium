@@ -14,6 +14,28 @@ namespace Azercadmium.Tiles
 				TooltipLine line = new TooltipLine(mod, "Tooltip#0", "Increases ranged critcal strike chance by 5\nIncreases melee speed by 6%");
 				tooltips.Add(line);
 			}
+			if (GetInstance<AzercadmiumConfig>().vanillaSeed) {
+				if (item.type == ItemID.GrassSeeds) {
+					TooltipLine line = new TooltipLine(mod, "Tooltip#0", "For use with blowpipes\nBecause of the sharpness of the seed, it has a chance to deal an extra 2 damage to enemies (shown in dark green)");
+					tooltips.Add(line);
+				}
+				if (item.type == ItemID.JungleGrassSeeds) {
+					TooltipLine line = new TooltipLine(mod, "Tooltip#0", "For use with blowpipes\nBecause of the sharpness of the seed, it has a chance to deal an extra 2 damage to enemies (shown in dark green)\nHas a chance to poison enemies");
+					tooltips.Add(line);
+				}
+				if (item.type == ItemID.MushroomGrassSeeds) {
+					TooltipLine line = new TooltipLine(mod, "Tooltip#0", "For use with blowpipes\nBecause of the sharpness of the seed, it has a chance to deal an extra 2 damage to enemies (shown in dark green)\nHas a chance to shroomify enemies");
+					tooltips.Add(line);
+				}
+				if (item.type == ItemID.CorruptSeeds) {
+					TooltipLine line = new TooltipLine(mod, "Tooltip#0", "For use with blowpipes\nPierces enemies 5 times");
+					tooltips.Add(line);
+				}
+				if (item.type == ItemID.CrimsonSeeds) {
+					TooltipLine line = new TooltipLine(mod, "Tooltip#0", "For use with blowpipes\nPierces enemies 4 times");
+					tooltips.Add(line);
+				}
+			}
 		}
 		public override void SetDefaults(Item item)
 		{
@@ -22,7 +44,7 @@ namespace Azercadmium.Tiles
 			if (item.type == ItemID.Blowpipe)
 				item.damage = 10;
 			if (item.type == ItemID.Blowgun)
-				item.damage = 34;
+				item.damage = 29;
 			if (item.type == ItemID.BoneArrow)
 				item.damage = 10;
 			if (item.type == ItemID.CookedMarshmallow)
@@ -40,6 +62,53 @@ namespace Azercadmium.Tiles
 					item.hammer = 80;
 				if (item.type == ItemID.PearlwoodSword)
 					item.damage = 46;
+			}
+			if (GetInstance<AzercadmiumConfig>().vanillaSeed) {
+				if (item.type == ItemID.GrassSeeds) {
+					item.damage = 7;
+					item.ranged = true;
+					item.knockBack = 0f;
+					item.shoot = ProjectileType<Projectiles.Other.Blowpipes.GrassSeed>();
+					item.shootSpeed = 0f;
+					item.ammo = AmmoID.Dart;
+					item.maxStack = 999;
+				}
+				if (item.type == ItemID.JungleGrassSeeds) {
+					item.damage = 7;
+					item.ranged = true;
+					item.knockBack = 0f;
+					item.shoot = ProjectileType<Projectiles.Jungle.JungleGrassSeed>();
+					item.shootSpeed = 0f;
+					item.ammo = AmmoID.Dart;
+					item.maxStack = 999;
+				}
+				if (item.type == ItemID.MushroomGrassSeeds) {
+					item.damage = 7;
+					item.ranged = true;
+					item.knockBack = 0f;
+					item.shoot = ProjectileType<Projectiles.GlowingMushroom.MushroomGrassSeed>();
+					item.shootSpeed = 0f;
+					item.ammo = AmmoID.Dart;
+					item.maxStack = 999;
+				}
+				if (item.type == ItemID.CorruptSeeds) {
+					item.damage = 12;
+					item.ranged = true;
+					item.knockBack = 0f;
+					item.shoot = ProjectileType<Projectiles.Corruption.CorruptSeed>();
+					item.shootSpeed = 0f;
+					item.ammo = AmmoID.Dart;
+					item.maxStack = 999;
+				}
+				if (item.type == ItemID.CrimsonSeeds) {
+					item.damage = 14;
+					item.ranged = true;
+					item.knockBack = 0f;
+					item.shoot = ProjectileType<Projectiles.Crimson.CrimsonSeed>();
+					item.shootSpeed = 0f;
+					item.ammo = AmmoID.Dart;
+					item.maxStack = 999;
+				}
 			}
 		}
 		public override void UpdateEquip(Item item, Player player)
@@ -71,6 +140,7 @@ namespace Azercadmium.Tiles
 				player.npcTypeNoAggro[mod.NPCType("StarpackSlime")] = true;
 				player.npcTypeNoAggro[mod.NPCType("LivingMarshmellow")] = true;
 				player.npcTypeNoAggro[mod.NPCType("RoastedLivingMarshmellow")] = true;
+				player.npcTypeNoAggro[mod.NPCType("DirtSlime")] = true;
 			}
 		}
 		public override void RightClick(Item item, Player player) {
