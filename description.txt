@@ -49,7 +49,7 @@ ChimneyEggs (Ore Staff Sprites)
 
 Multiplayer support is unknown, but most of us play alone anyway.
 
-Update V0.2.5.4: Edgy Superboss Update
+Update V0.2.5.5: Edgy Superboss Update
 ~Fixed Ghastly Swinger rarity.
 ~Removed a vanity item I accidentally left in from making a youtube video.
 ~Added a joke superboss, the Suspicious Looking Eye. Please don't take the boss seriously, it was created because someone asked me to.
