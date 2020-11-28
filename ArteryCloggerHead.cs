@@ -18,6 +18,7 @@ namespace Azercadmium.NPCs.Crimson
 			npc.defense = 30;
 			npc.height = 106;
 			npc.width = 68;
+			npc.value = Item.buyPrice(0, 0, 7, 0);
 		}
 		public override void ScaleExpertStats(int numPlayers, float bossLifeScale) {
 			npc.lifeMax = 950;
@@ -451,7 +452,9 @@ namespace Azercadmium.NPCs.Crimson
 			return head ? (bool?)null : false;
 		}
 		public override float SpawnChance(NPCSpawnInfo spawnInfo) {
-			return SpawnCondition.Crimson.Chance * 0.015f;
+			if (Main.hardMode)
+				return SpawnCondition.Crimson.Chance * 0.015f;
+			return 0f;
         }
 		public override void NPCLoot() {
 			Item.NewItem(npc.getRect(), ItemID.Vertebrae, Main.rand.Next(1, 3));
