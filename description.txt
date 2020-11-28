@@ -6,11 +6,12 @@ Some changes can be only accessed via the config, like the Pearlwood buff.
 
 Stats:
 ~271 Items
-~4 Bosses:
+~5 Bosses:
 ^2 Prehardmode Bosses
 ^2 Hardmode Bosses
+^1 Joke Superboss
 ~2 Town NPCs
-~45 total NPCs
+~47 total NPCs
 ~44 Tiles
 ~29 Buffs
 ~1 Ore
@@ -48,24 +49,8 @@ ChimneyEggs (Ore Staff Sprites)
 
 Multiplayer support is unknown, but most of us play alone anyway.
 
-Update V0.2.5.3: Baseball Bat Update
-~Added the mod's third subclass, the baseball bat! Bats are similar to swords but have special right click abilities.
-~Added Rookie Bat, The Sandman, Boreal Bat, Bat Basher, Rich Mahogany Bat, Onett Bat, Palm Wood Bat, Batsaber, Prickly Club, Marshmallow Bat, and Ghastly Swinger.
-~Removed Mysterious Nova items (until they are more finished).
-~Fixed Lobera Soulslash removing npc color.
-~Added Eater of Worlds Devastation changes.
-~Finished Eye of Cthulhu Devastation changes.
-~Updated Out of Breath sprite.
-~Fixed Out of Breath damage bugs.
-~Resprited Wooden Blowpipe.
-~Rebalanced and remade the entire blowpipe subclass to be more similar to bows and guns.
-~Added config that lets you enable and disable vanilla seeds being ammo for blowpipes.
-~Reworked Fatal Error.
-~Added Copper Spear, Tin Spear, Iron Spear, Lead Spear, Silver Spear, Tungsten Spear, Gold Spear, and Platinum Spear.
-~Reimplemented Dirt Slime as a standalone enemy.
-~Added Cobalt Wakizashi, Palladium Piercer, Mythril Shortsword, Orichalcum Jabber, Adamantite Stabber, and Titanium Knife.
-~Updated Cobalt Chair.
-~Added Cobalt Table.
-~Fixed Slimy Ooze Dust.
-~Unethical Arrow now has a 25% chance of returning after being shot.
-~Still working on Dirtball AI.
+Update V0.2.5.4: Edgy Superboss Update
+~Fixed Ghastly Swinger rarity.
+~Removed a vanity item I accidentally left in from making a youtube video.
+~Added a joke superboss, the Suspicious Looking Eye. Please don't take the boss seriously, it was created because someone asked me to.
+~Fixed Artery Cloggers spawning in prehardmode.

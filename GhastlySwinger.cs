@@ -20,7 +20,7 @@ namespace Azercadmium.Items.Dungeon
 			item.useStyle = ItemUseStyleID.SwingThrow;
 			item.knockBack = 7.6f;
 			item.value = Item.sellPrice(0, 0, 5, 0);
-			item.rare = ItemRarityID.White;
+			item.rare = ItemRarityID.Yellow;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = false;
 			item.useTurn = true;

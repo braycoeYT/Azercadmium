@@ -19,8 +19,8 @@ namespace Azercadmium
 			if (bossChecklist != null) {
 				bossChecklist.Call(
 					"AddBoss",
-					0.85f,
-					new List<int> { ModContent.NPCType<NPCs.Bosses.Dirtball>() },
+					0.5f,
+					new List<int> { ModContent.NPCType<NPCs.Dirtball.Dirtball>() },
 					this,
 					"$Mods.Azercadmium.NPCName.Dirtball",
 					(Func<bool>)(() => AzercadmiumWorld.downedDirtball),
