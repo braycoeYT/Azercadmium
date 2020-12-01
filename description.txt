@@ -5,7 +5,7 @@ This mod also has QoL changes, such as an easier Slime Crown recipe, crimson alt
 Some changes can be only accessed via the config, like the Pearlwood buff.
 
 Stats:
-~271 Items
+~272 Items
 ~5 Bosses:
 ^2 Prehardmode Bosses
 ^2 Hardmode Bosses
