@@ -1,4 +1,5 @@
 using Azercadmium.Tiles;
+using Azercadmium.Tiles.Carnallite;
 using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using System.IO;
@@ -21,8 +22,6 @@ namespace Azercadmium
 		public static bool generatedEctojewelo;
 		public static bool downedCVirus;
 		public static bool generatedOblivion;
-		public static bool downedMeatball;
-		public static bool downedMechaball;
 		public static bool hasAlertSlime;
 		public static bool hasAlertEvil;
 		public static bool hasConversationDrop;
@@ -31,6 +30,7 @@ namespace Azercadmium
 		public static bool downedCell;
 		public static bool rollercoasterTown;
 		public static bool devastation;
+		public static bool hasAlertCarnallite;
 		public static int microbiomeTiles;
 		public override void Initialize() {
 			downedDirtball = false;
@@ -39,8 +39,6 @@ namespace Azercadmium
 			generatedEctojewelo = false;
 			downedCVirus = false;
 			generatedOblivion = false;
-			downedMeatball = false;
-			downedMechaball = false;
 			hasAlertSlime = false;
 			hasAlertEvil = false;
 			hasConversationDrop = false;
@@ -49,6 +47,7 @@ namespace Azercadmium
 			downedCell = false;
 			rollercoasterTown = false;
 			devastation = false;
+			hasAlertCarnallite = false;
 		}
 		public override TagCompound Save()
         {
@@ -60,8 +59,6 @@ namespace Azercadmium
 				{"generatedEctojewelo", generatedEctojewelo},
 				{"downedCVirus", downedCVirus},
 				{"generatedOblivion", generatedOblivion},
-				{"downedMeatball", downedMeatball},
-				{"downedMechaball", downedMechaball},
 				{"hasAlertSlime", hasAlertSlime},
 				{"hasAlertEvil", hasAlertEvil},
 				{"hasConversationDrop", hasConversationDrop},
@@ -69,7 +66,8 @@ namespace Azercadmium
 				{"downedEmpress", downedEmpress},
 				{"downedCell", downedCell},
 				{"rollercoasterTown", rollercoasterTown},
-				{"devastation", devastation}
+				{"devastation", devastation},
+				{"hasAlertCarnallite", hasAlertCarnallite}
 			};
         }
         public override void Load(TagCompound tag) {
@@ -79,8 +77,6 @@ namespace Azercadmium
 			generatedEctojewelo = tag.GetBool("generatedEctojewelo");
 			downedCVirus = tag.GetBool("downedCVirus");
 			generatedOblivion = tag.GetBool("generatedOblivion");
-			downedMeatball = tag.GetBool("downedMeatball");
-			downedMechaball = tag.GetBool("downedMechaball");
 			hasAlertSlime = tag.GetBool("hasAlertSlime");
 			hasAlertEvil = tag.GetBool("hasAlertEvil");
 			hasConversationDrop = tag.GetBool("hasConversationDrop");
@@ -89,6 +85,7 @@ namespace Azercadmium
 			downedCell = tag.GetBool("downedCell");
 			rollercoasterTown = tag.GetBool("rollercoasterTown");
 			devastation = tag.GetBool("devastation");
+			hasAlertCarnallite = tag.GetBool("hasAlertCarnallite");
 		}
 		
 		 public override void NetSend(BinaryWriter writer)
@@ -99,7 +96,7 @@ namespace Azercadmium
             flags[2] = downedMineral;
 			flags[3] = generatedEctojewelo;
 			flags[4] = downedCVirus;
-			flags[5] = downedXenic;
+			flags[5] = hasAlertCarnallite;
 			flags[6] = downedEmpress;
 			flags[7] = downedCell;
 			writer.Write(flags);
@@ -120,7 +117,7 @@ namespace Azercadmium
             downedMineral = flags[2];
 			generatedEctojewelo = flags[3];
 			downedCVirus = flags[4];
-			downedXenic = flags[5];
+			hasAlertCarnallite = flags[5];
 			downedEmpress = flags[6];
 			downedCell = flags[7];
 
@@ -133,30 +130,18 @@ namespace Azercadmium
 		}
 		public override void ModifyWorldGenTasks(List<GenPass> tasks, ref float totalWeight)
 		{
-			/*int ShiniesIndex = tasks.FindIndex(genpass => genpass.Name.Equals("Shinies"));
+			int ShiniesIndex = tasks.FindIndex(genpass => genpass.Name.Equals("Shinies"));
 			if (ShiniesIndex != -1)
 			{
-		    tasks.Insert(ShiniesIndex + 1, new PassLegacy("Azercadmiumian Ores", AzercadmiumOres));
+				tasks.Insert(ShiniesIndex + 1, new PassLegacy("Azercadmium Ores", AzercadmiumOres));
 			}
-
-			int Underworld = tasks.FindIndex(genpass => genpass.Name.Equals("Underworld"));
-			if (Underworld != -1)
-			{
-				tasks.Insert(Underworld + 1, new PassLegacy("Microbiome", Microbiome));
-			}*/
 		}
 		
 		public override void PreUpdate()
         {
-			/*if (!generatedEctojewelo && downedMineral)
-			{
-				for (int k = 0; k < (int)((double)(Main.maxTilesX * Main.maxTilesY) * 0.00002); k++) {
-				int x = WorldGen.genRand.Next(0, Main.maxTilesX);
-				int y = WorldGen.genRand.Next((int)WorldGen.worldSurfaceLow, Main.maxTilesY / 2);
-				WorldGen.TileRunner(x, y, (double)WorldGen.genRand.Next(2, 14), WorldGen.genRand.Next(5, 19), TileType<Tiles.Ectojewelo.EctojeweloOre>(), false, 0f, 0f, false, true);
-				}
-				Color messageColor = Color.LightBlue;
-					string chat = "The Azercadmiumian Mineral Extrator has blessed your world with Ectojewelo Ore!";
+			if (!hasAlertCarnallite && NPC.downedBoss1) {
+				Color messageColor = Color.LawnGreen;
+					string chat = "A green light shimmers from the jungle.";
 					if (Main.netMode == NetmodeID.Server)
 					{
 						NetMessage.BroadcastChatMessage(NetworkText.FromKey(chat), messageColor);
@@ -165,18 +150,8 @@ namespace Azercadmium
 					{
 						Main.NewText(Language.GetTextValue(chat), messageColor);
 					}
-				messageColor = Color.Navy;
-				chat = "The microbiome grows restless...";
-				if (Main.netMode == NetmodeID.Server)
-				{
-					NetMessage.BroadcastChatMessage(NetworkText.FromKey(chat), messageColor);
-				}
-				else if (Main.netMode == NetmodeID.SinglePlayer)
-				{
-					Main.NewText(Language.GetTextValue(chat), messageColor);
-				}
-				generatedEctojewelo = true;
-			}*/
+				hasAlertCarnallite = true;
+			}
 			
 			if (!hasAlertSlime && NPC.downedPlantBoss)
 			{
@@ -189,24 +164,6 @@ namespace Azercadmium
 				else if (Main.netMode == NetmodeID.SinglePlayer)
 				{
 					Main.NewText(Language.GetTextValue(chat), messageColor);
-				}
-				messageColor = Color.Red;
-				chat = "The deep jungle shines a bright red.";
-				if (Main.netMode == NetmodeID.Server)
-				{
-					NetMessage.BroadcastChatMessage(NetworkText.FromKey(chat), messageColor);
-				}
-				else if (Main.netMode == NetmodeID.SinglePlayer)
-				{
-					Main.NewText(Language.GetTextValue(chat), messageColor);
-				}
-				for (int k = 0; k < (int)((Main.maxTilesX * Main.maxTilesY) * 0.00033); k++) {
-					int x = WorldGen.genRand.Next(0, Main.maxTilesX);
-					int y = WorldGen.genRand.Next((int)WorldGen.worldSurfaceLow, Main.maxTilesY - 200);
-					Tile tile = Framing.GetTileSafely(x, y);
-					if (tile.active() && tile.type == TileID.Mud) {
-						WorldGen.TileRunner(x, y, WorldGen.genRand.Next(1, 11), WorldGen.genRand.Next(1, 11), TileType<Tiles.Carnallite.CarnalliteOre>());
-					}
 				}
 				hasAlertSlime = true;
 			}
@@ -231,16 +188,22 @@ namespace Azercadmium
 			}*/
 		}
 		
-		/*private void AzercadmiumOres(GenerationProgress progress)
-		{
-			progress.Message = "Sprinkling your world with Azercadmiumian Ores";
-			for (int k = 0; k < (int)((double)(Main.maxTilesX * Main.maxTilesY) * 0.00002); k++) {
+		private void AzercadmiumOres(GenerationProgress progress) {
+			progress.Message = "Azercadmium Ores (You can read this? How ancient IS your computer?)";
+
+			// "6E-05" = 0.00006 = normal ore
+			for (int k = 0; k < (int)((Main.maxTilesX * Main.maxTilesY) * 0.0005); k++) {
+				// The inside of this for loop corresponds to one single splotch of our Ore.
+				// First, we randomly choose any coordinate in the world by choosing a random x and y value.
 				int x = WorldGen.genRand.Next(0, Main.maxTilesX);
-				int y = WorldGen.genRand.Next((int)WorldGen.worldSurfaceLow, Main.maxTilesY / 2);
-				WorldGen.TileRunner(x, y, (double)WorldGen.genRand.Next(4, 12), WorldGen.genRand.Next(6, 17), TileType<CyanixOre>(), false, 0f, 0f, false, true);
+				int y = WorldGen.genRand.Next((int)WorldGen.worldSurfaceLow, Main.maxTilesY);
+				Tile tile = Framing.GetTileSafely(x, y);
+				if (tile.active() && tile.type == TileID.Mud) {
+					WorldGen.TileRunner(x, y, WorldGen.genRand.Next(3, 8), WorldGen.genRand.Next(2, 8), ModContent.TileType<GreenCarnalliteOre>());
+				}
 			}
 		}
-		int sizeBonus;
+		/*int sizeBonus;
 		int sizeBonus2;
 		private void Microbiome(GenerationProgress progress)
 		{

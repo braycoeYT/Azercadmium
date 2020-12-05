@@ -5,16 +5,15 @@ This mod also has QoL changes, such as an easier Slime Crown recipe, crimson alt
 Some changes can be only accessed via the config, like the Pearlwood buff.
 
 Stats:
-~272 Items
+~273 Items
 ~5 Bosses:
 ^2 Prehardmode Bosses
 ^2 Hardmode Bosses
 ^1 Joke Superboss
 ~2 Town NPCs
 ~47 total NPCs
-~44 Tiles
-~29 Buffs
-~1 Ore
+~45 Tiles
+~30 Buffs
 ~3 Subclasses
 ~2 Custom Soundtracks
 ~3 Rarities
@@ -50,8 +49,8 @@ ChimneyEggs (Ore Staff Sprites)
 
 Multiplayer support is unknown, but most of us play alone anyway.
 
-Update V0.2.5.6: The "Sorry but I have been busy recently so here's a small update" Update
-~Did more Dirtball reworks.
-~Updated the credits.
-~Resprited Lobera Tropical Orb.
-~Added Solar Homerun Hitter.
+Update V0.2.5.7: Carnallite Update
+~Added Stardust Fragment Staff (the oldest brother of the floating object summon weapons, for now).
+~Heavily nerfed ore staves (what was I thinking!?).
+~Completely reworked Carnallite Bars: Green bars are mineable after EoC is defeated, and Red bars are crafted with Green bars and Empress Shards.
+~Made Empress Slime drop more Empress Shards due to above change.
