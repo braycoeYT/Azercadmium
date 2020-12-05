@@ -15,7 +15,7 @@ namespace Azercadmium.Items.Orichalcum
 			ItemID.Sets.LockOnIgnoresCollision[item.type] = true;
 		}
 		public override void SetDefaults() {
-			item.damage = 47;
+			item.damage = 27;
 			item.knockBack = 4.55f;
 			item.mana = 10;
 			item.width = 50;

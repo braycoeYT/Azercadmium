@@ -15,7 +15,7 @@ namespace Azercadmium.Items.Adamantite
 			ItemID.Sets.LockOnIgnoresCollision[item.type] = true;
 		}
 		public override void SetDefaults() {
-			item.damage = 52;
+			item.damage = 31;
 			item.knockBack = 4.85f;
 			item.mana = 10;
 			item.width = 50;

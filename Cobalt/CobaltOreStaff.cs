@@ -15,7 +15,7 @@ namespace Azercadmium.Items.Cobalt
 			ItemID.Sets.LockOnIgnoresCollision[item.type] = true;
 		}
 		public override void SetDefaults() {
-			item.damage = 31;
+			item.damage = 19;
 			item.knockBack = 4.15f;
 			item.mana = 10;
 			item.width = 40;

@@ -14,7 +14,7 @@ namespace Azercadmium.Items.Palladium
 			ItemID.Sets.LockOnIgnoresCollision[item.type] = true;
 		}
 		public override void SetDefaults() {
-			item.damage = 36;
+			item.damage = 21;
 			item.knockBack = 4.15f;
 			item.mana = 10;
 			item.width = 46;
