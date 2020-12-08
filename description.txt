@@ -49,8 +49,10 @@ ChimneyEggs (Ore Staff Sprites)
 
 Multiplayer support is unknown, but most of us play alone anyway.
 
-Update V0.2.5.7: Carnallite Update
-~Added Stardust Fragment Staff (the oldest brother of the floating object summon weapons, for now).
-~Heavily nerfed ore staves (what was I thinking!?).
-~Completely reworked Carnallite Bars: Green bars are mineable after EoC is defeated, and Red bars are crafted with Green bars and Empress Shards.
-~Made Empress Slime drop more Empress Shards due to above change.
+Update V0.2.5.8: Smol Update
+~Creepy Mud has a decreased drop rate (1% --> 0.1%) and critters no longer drop them.
+~Dirtball now only spawns if a player has over 100 max hp.
+~Pumpkin Seeds now work with the blowpipe subclass.
+~Fixed Herbattalage rarity.
+~Solar Homerun Hitter now is auto reuse.
+~Added Vortex Blowpipe.

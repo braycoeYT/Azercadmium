@@ -175,8 +175,8 @@ namespace Azercadmium.NPCs
 					Item.NewItem(npc.getRect(), mod.ItemType("VenomousPill"));
 			}
 			if (!AzercadmiumWorld.downedDirtball) {
-				if (Main.rand.Next(100) == 1)
-				Item.NewItem(npc.getRect(), ItemType<Items.Dirtball.CreepyMud>());
+				if (Main.rand.NextFloat() < .001f && npc.lifeMax > 5)
+					Item.NewItem(npc.getRect(), ItemType<Items.Dirtball.CreepyMud>());
 			}
 			if (npc.type == NPCID.JungleBat || npc.type == NPCID.CaveBat || npc.type == NPCID.IceBat) {
 			    if (Main.rand.Next(50) == 0)

@@ -35,6 +35,10 @@ namespace Azercadmium.Tiles
 					TooltipLine line = new TooltipLine(mod, "Tooltip#0", "For use with blowpipes\nPierces enemies 4 times");
 					tooltips.Add(line);
 				}
+				if (item.type == ItemID.PumpkinSeed) {
+					TooltipLine line = new TooltipLine(mod, "Tooltip#0", "For use with blowpipes");
+					tooltips.Add(line);
+				}
 			}
 		}
 		public override void SetDefaults(Item item)
@@ -105,6 +109,15 @@ namespace Azercadmium.Tiles
 					item.ranged = true;
 					item.knockBack = 0f;
 					item.shoot = ProjectileType<Projectiles.Crimson.CrimsonSeed>();
+					item.shootSpeed = 0f;
+					item.ammo = AmmoID.Dart;
+					item.maxStack = 999;
+				}
+				if (item.type == ItemID.PumpkinSeed) {
+					item.damage = 12;
+					item.ranged = true;
+					item.knockBack = 2f;
+					item.shoot = ProjectileType<Projectiles.Pumpkin.PumpkinSeed>();
 					item.shootSpeed = 0f;
 					item.ammo = AmmoID.Dart;
 					item.maxStack = 999;
