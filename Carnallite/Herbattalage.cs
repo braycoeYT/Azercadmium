@@ -14,7 +14,7 @@ namespace Azercadmium.Items.Carnallite
 			item.useStyle = ItemUseStyleID.HoldingOut;
 			item.useAnimation = 27;
 			item.useTime = 27;
-			item.damage = 79;
+			item.damage = 81;
 			item.width = 62;
 			item.height = 96;
 			item.knockBack = 1.3f;
@@ -26,7 +26,7 @@ namespace Azercadmium.Items.Carnallite
 			item.UseSound = SoundID.Item5;
 			item.autoReuse = true;
 			item.value = Item.sellPrice(0, 4, 0, 0);
-			item.rare = ItemRarityID.Blue;
+			item.rare = ItemRarityID.Lime;
 		}
 		public override Vector2? HoldoutOffset() {
 			return new Vector2(-16, 0);

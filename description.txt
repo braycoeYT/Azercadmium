@@ -5,7 +5,7 @@ This mod also has QoL changes, such as an easier Slime Crown recipe, crimson alt
 Some changes can be only accessed via the config, like the Pearlwood buff.
 
 Stats:
-~273 Items
+~276 Items
 ~5 Bosses:
 ^2 Prehardmode Bosses
 ^2 Hardmode Bosses
@@ -49,10 +49,16 @@ ChimneyEggs (Ore Staff Sprites)
 
 Multiplayer support is unknown, but most of us play alone anyway.
 
-Update V0.2.5.8: Smol Update
+Update V0.2.5.8: Update of Updating
 ~Creepy Mud has a decreased drop rate (1% --> 0.1%) and critters no longer drop them.
 ~Dirtball now only spawns if a player has over 100 max hp.
 ~Pumpkin Seeds now work with the blowpipe subclass.
 ~Fixed Herbattalage rarity.
 ~Solar Homerun Hitter now is auto reuse.
 ~Added Vortex Blowpipe.
+~Increased Poisonous Arrow poison time.
+~Changed Fatal Error tooltip.
+~Nerfed Ironfist Medal (35% --> 15%).
+~Slightly buffed Herbattalage damage (79 --> 81).
+~Added Leaf Tunneler and Leaf Bloomer.
+~Fixed a small vanilla blowpipe issue.

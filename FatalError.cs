@@ -8,7 +8,7 @@ namespace Azercadmium.Items.CVirus
 	public class FatalError : ModItem
 	{
 		public override void SetStaticDefaults() {
-			Tooltip.SetDefault("[c/01A1FF:CoRrUpTeD dAtA!]\nSummons several corrupted text that can do random things (and can very rarely spawn dirt and ropes in your world)");
+			Tooltip.SetDefault("[c/01A1FF:CoRrUpTeD dAtA!]\nSummons several corrupted text that can do random things\nWarning: Can heavily damage your character and can make tml output errors in the chat");
 		}
 		public override void SetDefaults() {
 			item.value = Item.sellPrice(0, 4, 0, 0);

@@ -7,6 +7,7 @@ using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
+using static Terraria.ModLoader.ModContent;
 
 namespace Azercadmium
 {
@@ -41,7 +42,7 @@ namespace Azercadmium
 		public bool gemstoneRanged;
 		public bool gemstoneMagic;
 		public bool gemstoneSummon;
-		public bool trueMelee35;
+		public bool trueMelee15;
 		public bool empressExpert;
 		public bool meteorMelee;
 		public bool stealthPotion;
@@ -49,6 +50,7 @@ namespace Azercadmium
 		public bool dirtboi;
 		public bool outofBreath;
 		public bool shroomed;
+		public bool webdriver;
 		int numberShot = 0;
 		public int upgradeHearts;
 		public int upgradeStars;
@@ -81,7 +83,7 @@ namespace Azercadmium
 			gemstoneMelee = false;
 			gemstoneMagic = false;
 			gemstoneSummon = false;
-			trueMelee35 = false;
+			trueMelee15 = false;
 			empressExpert = false;
 			meteorMelee = false;
 			stealthPotion = false;
@@ -89,6 +91,7 @@ namespace Azercadmium
 			dirtboi = false;
 			outofBreath = false;
 			shroomed = false;
+			webdriver = false;
 			player.statLifeMax2 += upgradeHearts * 25;
 			player.statManaMax2 += upgradeStars * 50;
 			playerTimer = 0;
@@ -503,11 +506,11 @@ namespace Azercadmium
             }
 			if (player.HeldItem.type == ItemID.Blowpipe)
 			{
-				player.AddBuff(mod.BuffType("OutOfBreath"), 45, false);
+				player.AddBuff(mod.BuffType("OutOfBreath"), item.useTime, false);
 			}
 			if (player.HeldItem.type == ItemID.Blowgun)
 			{
-				player.AddBuff(mod.BuffType("OutOfBreath"), 35, false);
+				player.AddBuff(mod.BuffType("OutOfBreath"), item.useTime, false);
 			}
 			return true;
         }
@@ -532,16 +535,17 @@ namespace Azercadmium
 					player.manaCost -= 0.75f;
 			}*/
 		}
-		public override void PreUpdateBuffs()
-		{
-			if (gemstoneSummon)
-			{
-				player.AddBuff(mod.BuffType("Ubercabochon"), 2);
-			}
+		public override void PreUpdateBuffs() {
+			/*if (webdriver) {
+				if (player.ownedProjectileCounts[ProjectileType<Projectiles.Other.Webdriver.BlueWebdriverRectangle>()] < 1)
+					Projectile.NewProjectile(player.Center.X, player.Center.Y, 0, 0, mod.ProjectileType("BlueWebdriverRectangle"), (int)(125 * player.minionDamage), 2f, Main.myPlayer);
+				if (player.ownedProjectileCounts[ProjectileType<Projectiles.Other.Webdriver.RedWebdriverRectangle>()] < 1)
+					Projectile.NewProjectile(player.Center.X, player.Center.Y, 0, 0, mod.ProjectileType("RedWebdriverRectangle"), (int)(125 * player.minionDamage), 2f, Main.myPlayer);
+			}*/
 		}
 		public override void ModifyHitNPC(Item item, NPC target, ref int damage, ref float knockback, ref bool crit) {	
-			if (trueMelee35)
-			damage += (int)(damage * .35f);
+			if (trueMelee15)
+			damage += (int)(damage * .15f);
 		}
 	}
 }
