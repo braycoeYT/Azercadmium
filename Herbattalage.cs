@@ -14,7 +14,7 @@ namespace Azercadmium.Items.Carnallite
 			item.useStyle = ItemUseStyleID.HoldingOut;
 			item.useAnimation = 27;
 			item.useTime = 27;
-			item.damage = 79;
+			item.damage = 81;
 			item.width = 62;
 			item.height = 96;
 			item.knockBack = 1.3f;
@@ -39,7 +39,7 @@ namespace Azercadmium.Items.Carnallite
 		}
 		public override void AddRecipes() {
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(mod.ItemType("Carnallage"));
+			recipe.AddIngredient(mod.ItemType("Herbarage"));
 			recipe.AddIngredient(mod.ItemType("RedCarnalliteBar"), 10);
 			recipe.AddTile(TileID.Mythril);
 			recipe.SetResult(this);

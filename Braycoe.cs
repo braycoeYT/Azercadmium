@@ -105,12 +105,17 @@ namespace Azercadmium.NPCs.TownNPCs
 				chat.Add("I can turn into any slime, name one and I could do it.");
 				chat.Add("You won the lottery! No, not really.", 0.001);
 				chat.Add("Can my house be a bit bigger? Oh, never mind...");
-				chat.Add("I may seem a bit shorter than you, but that's just my hair style.");
 				chat.Add("Oh, you want me to defend you now. Do you want me to bake cookies too?");
 				chat.Add("Destroy the dark power of this world!");
 				chat.Add("Get stronger and I will sell stronger items and reveal more of my power.");
 				chat.Add("Lemonade Tea is an excellent drink!");
-				chat.Add("Devastation mode is very WIP, I hope you like it so far.");
+				chat.Add("If you think about it, blackberries are just very small grapes.");
+				chat.Add("Have you happened to see any Azercadmium Ore anywhere? No?");
+				chat.Add("Have you ever heard of a Starlite Crystal..? Never mind.");
+				chat.Add("Yes, being a slime is fun.");
+				chat.Add("Have you seen my slimebender anywhere?");
+				if (AzercadmiumWorld.devastation)
+					chat.Add("Devastation mode is very WIP, I hope you like it so far.");
 				if (Main.raining)
 					chat.Add("Hey, since I generate slime a lot faster while its raining, I'll sell gel to you for a discount price! Buy some now!", 2);
 			    if (NPC.downedSlimeKing == true)

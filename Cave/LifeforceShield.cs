@@ -14,8 +14,8 @@ namespace Azercadmium.Items.Cave
 			item.width = 30;
 			item.height = 26;
 			item.accessory = true;
-			item.value = 65000;
-			item.rare = ItemRarityID.White;
+			item.value = Item.sellPrice(0, 0, 50, 0);
+			item.rare = ItemRarityID.Blue;
 			item.defense = 1;
 		}
 		public override void UpdateAccessory(Player player, bool hideVisual) {

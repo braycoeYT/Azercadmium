@@ -32,7 +32,7 @@ namespace Azercadmium.Items.Cave
 			return true;
 		}
 		public override void RightClick(Player player) {
-			int crateRand = Main.rand.Next(0, 6);
+			int crateRand = Main.rand.Next(0, 4);
 			if (crateRand == 0)
 			player.QuickSpawnItem(mod.ItemType("WetDryMedal"));
 			if (crateRand == 1)
@@ -41,10 +41,6 @@ namespace Azercadmium.Items.Cave
 			player.QuickSpawnItem(mod.ItemType("Stalagmite"));
 			if (crateRand == 3)
 			player.QuickSpawnItem(mod.ItemType("Flintbow"));
-			if (crateRand == 4)
-			player.QuickSpawnItem(mod.ItemType("PebbleRod"));
-			if (crateRand == 5)
-			player.QuickSpawnItem(mod.ItemType("FloatingPebbleStaff"));
 
 			if (Main.rand.Next(14) == 0)
 			player.QuickSpawnItem(ItemID.CopperOre, Main.rand.Next(30, 50));

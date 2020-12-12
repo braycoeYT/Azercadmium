@@ -22,7 +22,7 @@ namespace Azercadmium.Items.CVirus
 			item.knockBack = 4.2f;
 			item.value = Item.sellPrice(0, 0, 7, 0);
 			item.rare = ItemRarityID.Pink;
-			item.UseSound = SoundID.Item93;
+			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
 			item.useTurn = true;
 		}

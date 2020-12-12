@@ -186,7 +186,8 @@ namespace Azercadmium.NPCs
 			if (npc.type == NPCID.EyeofCthulhu) {
 				//if (Main.rand.NextFloat() < .25f)
 				//Item.NewItem(npc.getRect(), mod.ItemType("OpticBlowpipe"));
-				//Item.NewItem(npc.getRect(), ItemType<Items.Eye.GlazedLens>(), Main.rand.Next(2, 6));
+				if (WorldGen.crimson)
+				Item.NewItem(npc.getRect(), ItemType<Items.Crimson.BloodiedArrow>(), Main.rand.Next(20, 51));
 				//Item.NewItem(npc.getRect(), ItemType<Items.Microbiome.TwistedMembraneOre>(), Main.rand.Next(30, 88));
 			}
 			if (npc.type == NPCID.KingSlime) {
