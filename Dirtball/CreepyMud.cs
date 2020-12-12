@@ -25,7 +25,7 @@ namespace Azercadmium.Items.Dirtball
 			return !NPC.AnyNPCs(mod.NPCType("Dirtball"));
 		}
 		public override bool UseItem(Player player) {
-			NPC.SpawnOnPlayer(player.whoAmI, ModContent.NPCType<NPCs.Bosses.Dirtball>());
+			NPC.SpawnOnPlayer(player.whoAmI, ModContent.NPCType<NPCs.Dirtball.Dirtball>());
 			Main.PlaySound(SoundID.Roar, player.position, 0);
 			return true;
 		}

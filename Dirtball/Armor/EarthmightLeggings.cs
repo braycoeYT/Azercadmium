@@ -15,7 +15,7 @@ namespace Azercadmium.Items.Dirtball.Armor
 			item.height = 18;
 			item.value = Item.sellPrice(0, 0, 30, 0);
 			item.rare = -1;
-			item.defense = 3;
+			item.defense = 5;
 		}
 		public override void UpdateEquip(Player player) {
 			player.armorPenetration += 1;

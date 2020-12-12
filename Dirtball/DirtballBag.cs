@@ -23,24 +23,36 @@ namespace Azercadmium.Items.Dirtball
 			return true;
 		}
 		public override void OpenBossBag(Player player) {
-			int ran = Main.rand.Next(1, 7);
-			if (ran == 1) player.QuickSpawnItem(mod.ItemType("BrokenDirtballCopperShortsword"));
-			if (ran == 2) player.QuickSpawnItem(mod.ItemType("DirtyDiscus"));
-			if (ran == 3) player.QuickSpawnItem(mod.ItemType("DirtyBlowpipe"));
-			if (ran == 4) player.QuickSpawnItem(mod.ItemType("DirtyPistol"));
-			if (ran == 5) player.QuickSpawnItem(mod.ItemType("DirtYoyo"));
-			if (ran == 6) player.QuickSpawnItem(mod.ItemType("DirtBow"));
-			
-			ran = Main.rand.Next(1, 4);
-			if (ran == 1) player.QuickSpawnItem(mod.ItemType("EarthmightHelm"));
-			if (ran == 2) player.QuickSpawnItem(mod.ItemType("EarthmightBreastplate"));
-			if (ran == 3) player.QuickSpawnItem(mod.ItemType("EarthmightLeggings"));
-
-			ran = Main.rand.Next(1, 4);
-			if (ran == 1) player.QuickSpawnItem(mod.ItemType("OvergrownHilt"));
-			if (ran == 2) player.QuickSpawnItem(mod.ItemType("OvergrownHandgunFragment"));
-			if (ran == 3) player.QuickSpawnItem(mod.ItemType("OvergrownElectricalComponent"));
-			
+			switch (Main.rand.Next(1, 7)) {
+					case 1: player.QuickSpawnItem(mod.ItemType("MuddyGreatsword"));
+						break;
+					case 2: player.QuickSpawnItem(mod.ItemType("DirtyBeholder"));
+						break;
+					case 3: player.QuickSpawnItem(mod.ItemType("Dirty3String"));
+						break;
+					case 4: player.QuickSpawnItem(mod.ItemType("PaydirtPistol"));
+						break;
+					case 5: player.QuickSpawnItem(mod.ItemType("DirtyBlowpipe"));
+						break;
+					case 6: player.QuickSpawnItem(mod.ItemType("DirtballsScepter"));
+						break;
+			}
+			switch (Main.rand.Next(1, 4)) {
+					case 1: player.QuickSpawnItem(mod.ItemType("EarthmightHelm"));
+						break;
+					case 2: player.QuickSpawnItem(mod.ItemType("EarthmightBreastplate"));
+						break;
+					case 3: player.QuickSpawnItem(mod.ItemType("EarthmightLeggings"));
+						break;
+			}
+			switch (Main.rand.Next(1, 4)) {
+					case 1: player.QuickSpawnItem(mod.ItemType("OvergrownHilt"));
+						break;
+					case 2: player.QuickSpawnItem(mod.ItemType("OvergrownHandgunFragment"));
+						break;
+					case 3: player.QuickSpawnItem(mod.ItemType("OvergrownElectricalComponent"));
+						break;
+			}
 			player.QuickSpawnItem(ItemID.CopperBar, 1 + Main.rand.Next(5));
 			player.QuickSpawnItem(ItemID.DirtBlock, 1 + Main.rand.Next(5));
 			player.QuickSpawnItem(ItemID.MudBlock, 1 + Main.rand.Next(5));
@@ -54,6 +66,6 @@ namespace Azercadmium.Items.Dirtball
 			if (Main.rand.NextFloat() < .33f)
 			player.QuickSpawnItem(ItemID.DirtRod);
 		}
-		public override int BossBagNPC => NPCType<NPCs.Bosses.Dirtball>();
+		public override int BossBagNPC => NPCType<NPCs.Dirtball.Dirtball>();
 	}
 }

@@ -145,7 +145,6 @@ namespace Azercadmium
 			recipe.AddIngredient(ItemID.Glass, 15);
 			recipe.AddIngredient(ItemID.RecallPotion, 5);
 			recipe.AddIngredient(ItemID.Gel, 25);
-			recipe.AddIngredient(null, "GlazedLens", 5);
 			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(ItemID.MagicMirror);
 			recipe.AddRecipe();
@@ -170,13 +169,6 @@ namespace Azercadmium
 			recipe.AddIngredient(null, "MechanicalGearPiece");
 			recipe.AddTile(TileID.MythrilAnvil);
 			recipe.SetResult(ItemID.MinecartMech);
-			recipe.AddRecipe();
-			
-			recipe = new ModRecipe(this);
-			recipe.AddRecipeGroup("IronBar", 5);
-			recipe.AddIngredient(null, "GlazedLens", 3);
-			recipe.AddTile(TileID.Anvils);
-			recipe.SetResult(ItemID.Aglet);
 			recipe.AddRecipe();
 			
 			recipe = new ModRecipe(this);
@@ -322,12 +314,6 @@ namespace Azercadmium
 			recipe.AddIngredient(ItemID.EmptyBullet, 50);
 			recipe.AddIngredient(null, "Electrolight");
 			recipe.SetResult(ItemID.HighVelocityBullet, 50);
-			recipe.AddRecipe();
-
-			recipe = new ModRecipe(this);
-			recipe.AddIngredient(null, "GoldenShowerHidden");
-			recipe.AddTile(TileID.CrystalBall);
-			recipe.SetResult(ItemID.GoldenShower);
 			recipe.AddRecipe();
 
 			recipe = new ModRecipe(this);

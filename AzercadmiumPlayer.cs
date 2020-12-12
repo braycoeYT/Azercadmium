@@ -295,7 +295,7 @@ namespace Azercadmium
 					}
 				}
 			}
-			if (Main.player[(int)Player.FindClosest(player.position, player.width, player.height)].ZoneOverworldHeight || Main.player[(int)Player.FindClosest(player.position, player.width, player.height)].ZoneDirtLayerHeight)
+			/*if (Main.player[(int)Player.FindClosest(player.position, player.width, player.height)].ZoneOverworldHeight || Main.player[(int)Player.FindClosest(player.position, player.width, player.height)].ZoneDirtLayerHeight)
 			{
 				if (Main.hardMode)
 				{
@@ -382,7 +382,7 @@ namespace Azercadmium
 						caughtType = mod.ItemType("MushroomCrate");
 					}
 				}
-			}
+			}*/
 			if (Main.player[(int)Player.FindClosest(player.position, player.width, player.height)].ZoneRockLayerHeight)
 			{
 				if (Main.hardMode)

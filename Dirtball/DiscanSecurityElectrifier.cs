@@ -40,14 +40,14 @@ namespace Azercadmium.Items.Dirtball
 		}
 		public override void PostUpdate() {
 			if (Main.rand.NextBool()) {
-				Dust dust = Dust.NewDustDirect(item.position, item.width, item.height, 0);
+				Dust dust = Dust.NewDustDirect(item.position, item.width, item.height, DustID.Electric);
 				dust.noGravity = true;
 				dust.scale = 0.5f;
 			}
 		}
 		public override void AddRecipes() {
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(mod.ItemType("OvergrownHandgunFragment"));
+			recipe.AddIngredient(mod.ItemType("OvergrownElectricalComponent"));
 			recipe.AddIngredient(mod.ItemType("BrokenDiscus"), 8);
 			recipe.AddIngredient(mod.ItemType("Electroid"));
 			recipe.AddIngredient(ItemID.HellstoneBar);

@@ -16,8 +16,8 @@ namespace Azercadmium.NPCs.Dirtball
 			npc.height = 18;
 			npc.damage = 10;
 			npc.defense = 0;
-			npc.lifeMax = 24;
-			npc.HitSound = SoundID.NPCHit1;
+			npc.lifeMax = 16;
+			npc.HitSound = SoundID.NPCHit4;
 			npc.DeathSound = SoundID.NPCDeath3;
 			npc.knockBackResist = 0f;
 			npc.aiStyle = 14;
@@ -25,10 +25,10 @@ namespace Azercadmium.NPCs.Dirtball
 			npc.noTileCollide = true;
         }
 		public override void ScaleExpertStats(int numPlayers, float bossLifeScale) {
-            npc.lifeMax = 48;
+            npc.lifeMax = 32;
             npc.damage = 20;
 			if (AzercadmiumWorld.devastation) {
-				npc.lifeMax = 72;
+				npc.lifeMax = 48;
 				npc.damage = 30;
 			}
         }

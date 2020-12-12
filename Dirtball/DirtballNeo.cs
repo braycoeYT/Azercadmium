@@ -12,7 +12,7 @@ namespace Azercadmium.NPCs.Dirtball
 		
 		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Dirtball");
-			Main.npcFrameCount[npc.type] = 14;
+			Main.npcFrameCount[npc.type] = 16;
 		}
         public override void SetDefaults() {
 			npc.width = 138;
@@ -84,14 +84,29 @@ namespace Azercadmium.NPCs.Dirtball
 		float num321;
 		float num322;
 		bool dashDone = true;
+		bool summonedDirtBlocks = Main.expertMode;
+		bool summonedDirtboi = true;
 		int dashTimer = 0;
 		int summonNum = 0;
 		public override void AI() {
+			AzercadmiumGlobalNPC.dirtballBoss = npc.whoAmI;
 			//npc.takenDamageMultiplier = 1 - shieldValue;
 			if (AzercadmiumWorld.devastation) difficultyBonus = 60;
 			else if (Main.expertMode) difficultyBonus = 30;
 			else difficultyBonus = 0;
 			Timer++;
+			if (summonedDirtBlocks) {
+				int dirtBlockCount = 75;
+				if (AzercadmiumWorld.devastation) dirtBlockCount = 90;
+				for (int i = 0; i < dirtBlockCount; i++) {
+					NPC.NewNPC((int)npc.Center.X + Main.rand.Next(-60, 61), (int)npc.Center.Y + Main.rand.Next(-60, 61), mod.NPCType("DirtBlock"));
+					summonedDirtBlocks = false;
+				}
+			}
+			if (summonedDirtboi) {
+				NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y, mod.NPCType("Dirtboi"));
+				summonedDirtboi = false;
+			}
 			npc.TargetClosest(true);
 			/*if (chat1 && GetInstance<AzercadmiumConfig>().dirtballHint) {
 				Color messageColor = Color.SaddleBrown;
@@ -215,7 +230,7 @@ namespace Azercadmium.NPCs.Dirtball
 
 									if (npc.justHit) {
 										//npc.ai[3] = 0f;
-										npc.localAI[1] = 0f;
+										//npc.localAI[1] = 0f;
 									}
 									float num291 = 10f; //7f
 									Vector2 vector33 = new Vector2(npc.position.X + (float)npc.width * 0.5f, npc.position.Y + (float)npc.height * 0.5f);
@@ -227,8 +242,8 @@ namespace Azercadmium.NPCs.Dirtball
 									num293 *= num294;
 									if (npc.ai[3] == 32f) {
 										int num297;
-										if (phase == 1) num297 = Projectile.NewProjectile(vector33.X, vector33.Y, num292 / 2, num293 / 2, mod.ProjectileType("DirtGlobHostile"), 11, 0f, Main.myPlayer, 0f, 0f);
-										if (phase == 2) num297 = Projectile.NewProjectile(vector33.X, vector33.Y, num292, num293, ProjectileID.EyeLaser, 13, 0f, Main.myPlayer, 0f, 0f);
+										if (phase == 1 && attack != 4) num297 = Projectile.NewProjectile(vector33.X, vector33.Y, num292 / 2, num293 / 2, mod.ProjectileType("DirtGlobHostile"), 11, 0f, Main.myPlayer, 0f, 0f);
+										if (phase == 2 && attack != 4) num297 = Projectile.NewProjectile(vector33.X, vector33.Y, (int)(num292 / 1.75), (int)(num293 / 1.75), ProjectileID.EyeLaser, 15, 0f, Main.myPlayer);
 									}
 									num290 = 8;
 									if (npc.ai[3] > 0f)
@@ -407,38 +422,70 @@ namespace Azercadmium.NPCs.Dirtball
 							}
 			}
 			if (attackDone == true) {
-				attack = Main.rand.Next(1, 4);
+				//int attackMax = 4;
+				//if (Main.expertMode) attackMax = 5;
+				attack = Main.rand.Next(1, 5);
 				attackDone = false;
 				attackTimer = 0;
-				npc.velocity = new Vector2(0, 0);
+				//npc.velocity = new Vector2(0, 0);
 				movement = true;
 				summonNum = 0;
+				npc.noTileCollide = true;
+				npc.noGravity = true;
+				npc.dontTakeDamage = false;
 			}
 			if (attack == 1 || attack == 2) {
 				if (attackTimer == 0) {
 					if (phase == 1)
-						Projectile.NewProjectile(npc.position, Vector2.Normalize((target.position - new Vector2(0, -10)) - npc.Center) * 12, mod.ProjectileType("DirtGlobuleHostile"), 15, 0f, Main.myPlayer, 0f, 0f);
+						Projectile.NewProjectile(npc.Center, Vector2.Normalize((target.position - new Vector2(0, -10)) - npc.Center) * 12, mod.ProjectileType("DirtGlobuleHostile"), 10, 0f, Main.myPlayer, 0f, 0f);
 					if (phase == 2)
-						Projectile.NewProjectile(npc.position, Vector2.Normalize((target.position - new Vector2(0, -10)) - npc.Center) * 12, mod.ProjectileType("DirtGlobuleLaserHostile"), 18, 0f, Main.myPlayer, 0f, 0f);
+						Projectile.NewProjectile(npc.Center, Vector2.Normalize((target.position - new Vector2(0, -10)) - npc.Center) * 12, mod.ProjectileType("DirtGlobuleLaserHostile"), 12, 0f, Main.myPlayer, 0f, 0f);
 				}
 				attackTimer++;
-				if (attackTimer == 300 - difficultyBonus)
+				if (attackTimer >= 300 - difficultyBonus)
 					attackDone = true;
 			}
 			if (attack == 3) {
 				attackTimer++;
 				int minionCount = 1;
-				if (Main.expertMode) minionCount = 2;
-				if (AzercadmiumWorld.devastation) minionCount = 3;
-				if (phase == 2) minionCount += 1;
+				if (Main.expertMode) minionCount += Main.rand.Next(0, 2);
+				if (AzercadmiumWorld.devastation) minionCount += Main.rand.Next(0, 2);
+				if (phase == 2) minionCount += Main.rand.Next(0, 2);
 				if (attackTimer % 10 == 0 && attackTimer <= minionCount * 10) {
+					if (Main.expertMode)
+						NPC.NewNPC((int)npc.Center.X + Main.rand.Next(-60, 61), (int)npc.Center.Y + Main.rand.Next(-60, 61), mod.NPCType("DirtBlock"));
 					summonNum += 1;
-					NPC.NewNPC((int)npc.position.X + Main.rand.Next(-60, 61), (int)npc.position.Y + Main.rand.Next(-60, 61), mod.NPCType("SecurityDiscus"));
+					NPC.NewNPC((int)npc.Center.X + Main.rand.Next(-60, 61), (int)npc.Center.Y + Main.rand.Next(-60, 61), mod.NPCType("SecurityDiscus"));
 				}	
-				if (attackTimer == (minionCount * 10) + 60 - difficultyBonus)
+				if (attackTimer >= (minionCount * 10) + 90 - difficultyBonus)
 					attackDone = true;
 			}
-			if (Vector2.Distance(npc.Center, target.Center) > 700 || dashDone == false) {
+			if (attack == 4) {
+				attackTimer++;
+				movement = true;
+				//npc.noTileCollide = false;
+				//npc.noGravity = false;
+				npc.dontTakeDamage = true;
+				if (phase == 1)
+					npc.frame.Y = 14 * 164;
+				else if (phase == 2)
+					npc.frame.Y = 15 * 164;
+				if (attackTimer < 80)
+					npc.velocity /= 4;
+				else if (attackTimer < 90)
+					npc.velocity /= 3;
+				else if (attackTimer < 100)
+					npc.velocity /= 2;
+				else if (attackTimer < 110)
+					npc.velocity /= 1.5f;
+				else
+					npc.velocity /= 1.25f;
+				if (attackTimer % 5 == 0)
+					Projectile.NewProjectile(npc.Center, new Vector2(Main.rand.Next(-6, 7), Main.rand.Next(-14, -6)), mod.ProjectileType("DirtSphereHostile"), 12, 0f, Main.myPlayer, 0f, 0f);
+				if (attackTimer >= 120)
+					attackDone = true;
+			}
+			if ((Vector2.Distance(npc.Center, target.Center) > 700 || dashDone == false) && attack != 4 && Timer > 300) {
 				movement = false;
 				dashTimer++;
 				dashDone = false;
@@ -471,21 +518,36 @@ namespace Azercadmium.NPCs.Dirtball
 			if (Main.expertMode)
 				Item.NewItem(npc.getRect(), mod.ItemType("DirtballBag"));
 		    else {
-				int ran = Main.rand.Next(1, 7);
-				if (ran == 1) Item.NewItem(npc.getRect(), mod.ItemType("MuddyGreatsword"));
-				if (ran == 2) Item.NewItem(npc.getRect(), mod.ItemType("DirtyBeholder"));
-				if (ran == 3) Item.NewItem(npc.getRect(), mod.ItemType("DirtyDiscus"));
-				if (ran == 4) Item.NewItem(npc.getRect(), mod.ItemType("Dirty3String"));
-				if (ran == 5) Item.NewItem(npc.getRect(), mod.ItemType("PaydirtPistol"));
-				if (ran == 6) Item.NewItem(npc.getRect(), mod.ItemType("DirtyBlowpipe"));
-				ran = Main.rand.Next(1, 4);
-				if (ran == 1) Item.NewItem(npc.getRect(), mod.ItemType("EarthmightHelm"));
-				if (ran == 2) Item.NewItem(npc.getRect(), mod.ItemType("EarthmightBreastplate"));
-				if (ran == 3) Item.NewItem(npc.getRect(), mod.ItemType("EarthmightLeggings"));
-				ran = Main.rand.Next(1, 4);
-				if (ran == 1) Item.NewItem(npc.getRect(), mod.ItemType("OvergrownHilt"));
-				if (ran == 2) Item.NewItem(npc.getRect(), mod.ItemType("OvergrownHandgunFragment"));
-				if (ran == 3) Item.NewItem(npc.getRect(), mod.ItemType("OvergrownElectricalComponent"));
+				switch (Main.rand.Next(1, 7)) {
+					case 1: Item.NewItem(npc.getRect(), mod.ItemType("MuddyGreatsword"));
+						break;
+					case 2: Item.NewItem(npc.getRect(), mod.ItemType("DirtyBeholder"));
+						break;
+					case 3: Item.NewItem(npc.getRect(), mod.ItemType("Dirty3String"));
+						break;
+					case 4: Item.NewItem(npc.getRect(), mod.ItemType("PaydirtPistol"));
+						break;
+					case 5: Item.NewItem(npc.getRect(), mod.ItemType("DirtyBlowpipe"));
+						break;
+					case 6: Item.NewItem(npc.getRect(), mod.ItemType("DirtballsScepter"));
+						break;
+				}
+				switch (Main.rand.Next(1, 4)) {
+					case 1: Item.NewItem(npc.getRect(), mod.ItemType("EarthmightHelm"));
+						break;
+					case 2: Item.NewItem(npc.getRect(), mod.ItemType("EarthmightBreastplate"));
+						break;
+					case 3: Item.NewItem(npc.getRect(), mod.ItemType("EarthmightLeggings"));
+						break;
+				}
+				switch (Main.rand.Next(1, 4)) {
+					case 1: Item.NewItem(npc.getRect(), mod.ItemType("OvergrownHilt"));
+						break;
+					case 2: Item.NewItem(npc.getRect(), mod.ItemType("OvergrownHandgunFragment"));
+						break;
+					case 3: Item.NewItem(npc.getRect(), mod.ItemType("OvergrownElectricalComponent"));
+						break;
+				}
 				Item.NewItem(npc.getRect(), ItemID.CopperBar, 1 + Main.rand.Next(5));
 				Item.NewItem(npc.getRect(), ItemID.DirtBlock, 1 + Main.rand.Next(5));
 				Item.NewItem(npc.getRect(), ItemID.MudBlock, 1 + Main.rand.Next(5));
@@ -501,7 +563,14 @@ namespace Azercadmium.NPCs.Dirtball
 			AzercadmiumWorld.downedDirtball = true;
 		}
 		public override float SpawnChance(NPCSpawnInfo spawnInfo) {
-			if (!AzercadmiumWorld.downedDirtball && Main.dayTime)
+			bool canSpawn = false;
+			int playerCount;
+			for (playerCount = 0; playerCount < 255; playerCount++) {
+				if (Main.player[playerCount].statLifeMax2 > 100) {
+					canSpawn = true;
+				}
+			}
+			if (!AzercadmiumWorld.downedDirtball && Main.dayTime && canSpawn)
 			    return 0f; //0.00005
 			return 0f;
         }

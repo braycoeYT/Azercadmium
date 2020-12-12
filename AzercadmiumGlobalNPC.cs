@@ -13,6 +13,7 @@ namespace Azercadmium.NPCs
 		public bool xenicAcid;
 		public bool slimyOoze;
 		public bool shroomed;
+		public static int dirtballBoss = -1;
 		public override void ResetEffects(NPC npc) {
 			xenicAcid = false;
 			slimyOoze = false;
@@ -32,7 +33,7 @@ namespace Azercadmium.NPCs
 			if (type == NPCID.ArmsDealer) {
 				if (NPC.downedBoss2) {
 					if (Main.hardMode || !Main.dayTime) {
-						shop.item[nextSlot].SetDefaults(ItemType<Items.Crimson.UnethicalArrow>());
+						shop.item[nextSlot].SetDefaults(ItemType<Items.Crimson.BloodiedArrow>());
 						nextSlot++;
 					}
 				}
@@ -179,15 +180,13 @@ namespace Azercadmium.NPCs
 					Item.NewItem(npc.getRect(), ItemType<Items.Dirtball.CreepyMud>());
 			}
 			if (npc.type == NPCID.JungleBat || npc.type == NPCID.CaveBat || npc.type == NPCID.IceBat) {
-			    if (Main.rand.Next(50) == 0)
-					Item.NewItem(npc.getRect(), ItemType<Items.Jungle.MagicalVaccine>());
 				if (Main.rand.NextFloat() < .005f)
 					Item.NewItem(npc.getRect(), mod.ItemType("BatBasher"));
 			}
 			if (npc.type == NPCID.EyeofCthulhu) {
-				if (Main.rand.NextFloat() < .25f)
-				Item.NewItem(npc.getRect(), mod.ItemType("OpticBlowpipe"));
-				Item.NewItem(npc.getRect(), ItemType<Items.Eye.GlazedLens>(), Main.rand.Next(2, 6));
+				//if (Main.rand.NextFloat() < .25f)
+				//Item.NewItem(npc.getRect(), mod.ItemType("OpticBlowpipe"));
+				//Item.NewItem(npc.getRect(), ItemType<Items.Eye.GlazedLens>(), Main.rand.Next(2, 6));
 				//Item.NewItem(npc.getRect(), ItemType<Items.Microbiome.TwistedMembraneOre>(), Main.rand.Next(30, 88));
 			}
 			if (npc.type == NPCID.KingSlime) {
