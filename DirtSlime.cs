@@ -22,7 +22,7 @@ namespace Azercadmium.NPCs.Slimes
 			npc.aiStyle = 1;
 			npc.knockBackResist = 0.2f;
 			animationType = 1;
-			npc.alpha = 50;
+			//npc.alpha = 50;
         }
 		public override void ScaleExpertStats(int numPlayers, float bossLifeScale) {
             npc.lifeMax = 32;

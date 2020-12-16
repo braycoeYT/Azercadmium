@@ -122,6 +122,9 @@ namespace Azercadmium.Tiles
 					item.ammo = AmmoID.Dart;
 					item.maxStack = 999;
 				}
+				if (item.type == ItemID.Coal) {
+					item.maxStack = 999;
+				}
 			}
 		}
 		public override void UpdateEquip(Item item, Player player)

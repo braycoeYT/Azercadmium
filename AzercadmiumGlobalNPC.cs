@@ -1,4 +1,5 @@
 using Microsoft.Xna.Framework;
+using System;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -162,6 +163,12 @@ namespace Azercadmium.NPCs
 			if (Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)].GetModPlayer<AzercadmiumPlayer>().mineralExpert) {
 				Item.NewItem(npc.getRect(), mod.ItemType("GalacticSoul"));
 			}*/
+			if (npc.lifeMax > 1 && npc.damage > 0 && npc.value > 0 && Main.rand.NextFloat() < .05f) {
+				int month = DateTime.Now.Month;
+				int day = DateTime.Now.Day;
+				if (month == 12 && day > 14)
+					Item.NewItem(npc.getRect(), mod.ItemType("RedPresent"));
+			}
 			if (NPC.downedPlantBoss && (npc.type == NPCID.IceSlime || npc.type == NPCID.SandSlime || npc.type == NPCID.JungleSlime || npc.type == NPCID.SpikedJungleSlime || npc.type == NPCID.SpikedIceSlime || npc.type == NPCID.LavaSlime || npc.type == NPCID.DungeonSlime || npc.type == NPCID.UmbrellaSlime)) {
 				Item.NewItem(npc.getRect(), mod.ItemType("ElementalGel"), Main.rand.Next(1, 4));
 			}

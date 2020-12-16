@@ -11,6 +11,10 @@ namespace Azercadmium.NPCs.Dirtball
 	{
 		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Dirtboi");
+			int month = DateTime.Now.Month;
+			int day = DateTime.Now.Day;
+			if (month == 12 && day > 14)
+				Main.npcTexture[npc.type] = mod.GetTexture("Projectiles/Dirtball/ChristmasDirtboi");
 		}
         public override void SetDefaults() {
 			npc.value = 0;
@@ -25,10 +29,7 @@ namespace Azercadmium.NPCs.Dirtball
 			npc.aiStyle = 14;
 			npc.noGravity = true;
 			npc.noTileCollide = true;
-			if (!AzercadmiumWorld.devastation) {
-				//npc.friendly = true;
-				npc.dontTakeDamage = true;
-			}
+			npc.dontTakeDamage = true;
         }
 		int Timer;
 		int attack;

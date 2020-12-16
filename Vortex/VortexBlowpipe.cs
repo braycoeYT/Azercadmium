@@ -8,7 +8,7 @@ namespace Azercadmium.Items.Vortex
 	public class VortexBlowpipe : ModItem
 	{
 		public override void SetStaticDefaults() {
-			Tooltip.SetDefault("66% chance to not consume ammo\nFires a multitude of seeds and a vortex rocket that chases enemies\nUses seeds as ammo");
+			Tooltip.SetDefault("Fires a multitude of seeds and a vortex rocket that chases enemies\nUses seeds as ammo");
 		}
 		public override void SetDefaults() {
 			item.CloneDefaults(ItemID.Blowpipe);
@@ -33,10 +33,10 @@ namespace Azercadmium.Items.Vortex
 			player.AddBuff(mod.BuffType("OutOfBreath"), item.useTime, false);
 			return false;
 		}
-		public override bool ConsumeAmmo(Player player) {
+		/*public override bool ConsumeAmmo(Player player) {
 			if (Main.rand.NextFloat() < .66f) return false;
 			else return true;
-        }
+        }*/
 		public override Vector2? HoldoutOffset() {
 			return new Vector2(4, -4);
 		}
