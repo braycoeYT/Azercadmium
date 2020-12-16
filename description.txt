@@ -1,14 +1,14 @@
 This mod has unique content, including ore furniture and three new subclasses.
 This mod also has QoL changes, such as an easier Slime Crown recipe, crimson alternates, tons of vanilla recipes, and some hardmode enemies dropping prehardmode loot.
 Some changes can be only accessed via the config, like the Pearlwood buff.
-PLEASE READ: Some parts of the mod are very bad, I am trying my hardest to fix them as soon as possible, please be patient (depression and anxiety hit hard)...
+PLEASE READ: Some parts of the mod are very bad, I am trying my hardest to fix them as soon as possible, please be patient...
 
 Stats:
-~253 Items
-~5 Bosses:
+~259 Items
+~4 Bosses:
 ^2 Prehardmode Bosses
 ^2 Hardmode Bosses
-^1 Unobtainable Joke Superboss
+^(1) Unobtainable Joke Superboss
 ~2 Town NPCs
 ~49 total NPCs
 ~45 Tiles
@@ -21,12 +21,10 @@ Stats:
 
 [i:458]Cross content with: Asteri (dead), Havoc (dead), and Cacti and More 2 Mod.
 
-Active Spriters:
+Spriters:
 VaultyBoi (Spriter)
 Astrum (Spriter)
 LoginatorV (Spriter)
-
-Inactive Spriters:
 Skymanisbtman (Inactive Spriter/Music)
 Koolaidlemonade (Inactive Spriter)
 HBDeus (Inactive Spriter)
@@ -45,26 +43,20 @@ Ashe (Minor Wiki)
 Pufferfish77 (Minor Concepts and Sprites)
 Setnour6 (C.Virus Theme)
 ChimneyEggs (Ore Staff Sprites)
+Don't Call Me Klarson (Wooden Shield)
 
 Multiplayer support is unknown, but most of us play alone anyway.
 
-Update V0.2.5.9: Dirtball's Update
-~Finished Dirtball Reworks!!
-~Nerfed Life Crystal Shield.
-~Changed Lifeforce and Life Crystal Shield rarities.
-~Added new Braycoe quotes.
-~Changed Eye of the Cosmos description.
-~Fixed Discan Security Electrifier and Herbattalage recipes.
-~Fixed Discan Security Electrifier dust.
-~Removed True Leecher Javelance once and for all.
-~Removed all mushroom and glowing mushroom items.
-~Changed Code Breaker use sound.
-~Removed Glazed Lens.
-~Heavily nerfed Twin Opticbow.
-~Renamed Unethical Arrows to Bloodied Arrows and added a tooltip.
-
-Also Update V0.2.5.9: Goodbye Hopes and Dreams
-~Apparently this mod is supposedly too silly, so...
-^Deleted the following things: Wearable Adamantite Bar, Blue Potion, Pebble Rod, most Gem Bows, Glazed Lens, Red orb on a Stick, Green Bacon and Invisible Golden Shower.
-^Made Suspicious Looking Eye even more obvious that it is an unobtainable joke boss.
-^Reworked Magical Vaccine.
+Update V0.2.6: Matrix Update
+~Completely reworked Matrix Scavenger (Computer Virus).
+~Resprited Wooden Shield
+~Removed True Archive
+~Dirtboi is no longer damageable in Devastation Mode.
+~Removed Dirt Slime alpha.
+~Removed Vortex Blowpipe's chance to not consume ammo.
+~Added recipe for truffle worm.
+~Added Christmas Content: (Red) Present, Red Pivot, Green Pivot, Pinecone, Candy Cane Crusher, Candy Cane Pike, and Ugly Socks.
+~Changed Coal max stack to 999.
+~Changed Eye of the Cosmo's tooltip.
+~Increased chance of Dirtball using a Dirt Barrage.
+~Gave Dirtboi a christmas sprite for the holidays!

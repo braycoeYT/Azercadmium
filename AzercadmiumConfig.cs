@@ -33,6 +33,7 @@ namespace Azercadmium
 		[Tooltip("Turns all vanilla seeds into blowpipe ammo, and increases their max stack.")]
 		public bool vanillaSeed;
 		
+		[DefaultValue(true)]
 		[Label("Dirtboi Cries for its Father")]
 		[Tooltip("If you defeat Dirtball, he will cry before running away.")]
 		public bool dirtboiCries;

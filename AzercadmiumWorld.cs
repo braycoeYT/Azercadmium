@@ -20,8 +20,7 @@ namespace Azercadmium
 		public static bool downedDiscus;
 		public static bool downedMineral;
 		public static bool generatedEctojewelo;
-		public static bool downedCVirus;
-		public static bool generatedOblivion;
+		public static bool downedScavenger;
 		public static bool hasAlertSlime;
 		public static bool hasAlertEvil;
 		public static bool hasConversationDrop;
@@ -37,8 +36,7 @@ namespace Azercadmium
 			downedDiscus = false;
 			downedMineral = false;
 			generatedEctojewelo = false;
-			downedCVirus = false;
-			generatedOblivion = false;
+			downedScavenger = false;
 			hasAlertSlime = false;
 			hasAlertEvil = false;
 			hasConversationDrop = false;
@@ -57,8 +55,7 @@ namespace Azercadmium
                 {"downedDiscus", downedDiscus},
                 {"downedMineral", downedMineral},
 				{"generatedEctojewelo", generatedEctojewelo},
-				{"downedCVirus", downedCVirus},
-				{"generatedOblivion", generatedOblivion},
+				{"downedScavenger", downedScavenger},
 				{"hasAlertSlime", hasAlertSlime},
 				{"hasAlertEvil", hasAlertEvil},
 				{"hasConversationDrop", hasConversationDrop},
@@ -75,8 +72,7 @@ namespace Azercadmium
 			downedDiscus = tag.GetBool("downedDiscus");
 			downedMineral = tag.GetBool("downedMineral");
 			generatedEctojewelo = tag.GetBool("generatedEctojewelo");
-			downedCVirus = tag.GetBool("downedCVirus");
-			generatedOblivion = tag.GetBool("generatedOblivion");
+			downedScavenger = tag.GetBool("downedScavenger");
 			hasAlertSlime = tag.GetBool("hasAlertSlime");
 			hasAlertEvil = tag.GetBool("hasAlertEvil");
 			hasConversationDrop = tag.GetBool("hasConversationDrop");
@@ -95,7 +91,7 @@ namespace Azercadmium
             flags[1] = downedDiscus;
             flags[2] = downedMineral;
 			flags[3] = generatedEctojewelo;
-			flags[4] = downedCVirus;
+			flags[4] = downedScavenger;
 			flags[5] = hasAlertCarnallite;
 			flags[6] = downedEmpress;
 			flags[7] = downedCell;
@@ -116,7 +112,7 @@ namespace Azercadmium
             downedDiscus = flags[1];
             downedMineral = flags[2];
 			generatedEctojewelo = flags[3];
-			downedCVirus = flags[4];
+			downedScavenger = flags[4];
 			hasAlertCarnallite = flags[5];
 			downedEmpress = flags[6];
 			downedCell = flags[7];

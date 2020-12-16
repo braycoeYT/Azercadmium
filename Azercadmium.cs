@@ -55,15 +55,15 @@ namespace Azercadmium
 				);*/
 				bossChecklist.Call(
 					"AddBoss",
-					8.75f,
-					new List<int> { ModContent.NPCType<NPCs.Bosses.ComputerVirus>() },
+					9.25f,
+					new List<int> { ModContent.NPCType<NPCs.Scavenger.MatrixScavenger>() },
 					this,
-					"$Mods.Azercadmium.NPCName.ComputerVirus",
-					(Func<bool>)(() => AzercadmiumWorld.downedCVirus),
-					ModContent.ItemType<Items.CVirus.FloppyDisc>(),
-					new List<int> { ModContent.ItemType<Items.CVirus.SoulofByte>() }, //collectables
-					new List<int> { ModContent.ItemType<Items.CVirus.SoulofByte>() }, //other
-					$"Use a [i:{ModContent.ItemType<Items.CVirus.FloppyDisc>()}]  to taunt the cyber plague."
+					"$Mods.Azercadmium.NPCName.MatrixScavenger",
+					(Func<bool>)(() => AzercadmiumWorld.downedScavenger),
+					ModContent.ItemType<Items.Scavenger.FloppyDisc>(),
+					new List<int> { ModContent.ItemType<Items.Scavenger.SoulofByte>() }, //collectables
+					new List<int> { ModContent.ItemType<Items.Scavenger.SoulofByte>() }, //other
+					$"Use a [i:{ModContent.ItemType<Items.Scavenger.FloppyDisc>()}]."
 				);
 				bossChecklist.Call(
 					"AddBoss",
@@ -328,6 +328,16 @@ namespace Azercadmium
 			recipe.AddIngredient(null, "CocoaBeans");
 			recipe.AddTile(TileID.DyeVat);
 			recipe.SetResult(ItemID.BrownDye);
+			recipe.AddRecipe();
+
+			recipe = new ModRecipe(this);
+			recipe.AddIngredient(ItemID.Worm);
+			recipe.AddIngredient(ItemID.GlowingMushroom, 75);
+			recipe.AddIngredient(ItemID.ShroomiteBar, 12);
+			recipe.AddIngredient(ItemID.Mushroom, 10);
+			recipe.AddIngredient(ItemID.Ectoplasm, 6);
+			recipe.AddTile(TileID.Autohammer);
+			recipe.SetResult(ItemID.TruffleWorm);
 			recipe.AddRecipe();
 		}
 		/*public override void UpdateMusic(ref int music, ref MusicPriority priority)
