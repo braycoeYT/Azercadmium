@@ -1,0 +1,36 @@
+using Terraria;
+using Terraria.ID;
+using Terraria.ModLoader;
+
+namespace Azercadmium.Items.Other
+{
+    public class GreenBacon : ModItem
+	{
+        public override void SetStaticDefaults() {
+            Tooltip.SetDefault("Bacon power"); //300th item, lol
+        }
+        public override void SetDefaults() {
+            item.width = 20;
+            item.height = 28;
+            item.useStyle = ItemUseStyleID.EatingUsing;
+            item.useAnimation = 15;
+            item.useTime = 15;
+            item.useTurn = true;
+            item.UseSound = SoundID.Item2;
+            item.maxStack = 30;
+            item.consumable = true;
+            item.rare = ItemRarityID.Blue;
+            item.value = Item.sellPrice(0, 0, 26, 0);
+            item.buffType = BuffID.WellFed;
+            item.buffTime = 216000;
+        }
+		public override void AddRecipes() {
+			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(ItemID.Bacon);
+            recipe.AddIngredient(ItemID.Emerald);
+            recipe.AddTile(TileID.CookingPots);
+			recipe.SetResult(this);
+			recipe.AddRecipe();
+		}
+    }
+}

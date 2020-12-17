@@ -1,0 +1,7 @@
+displayName = [c/0000FF:Azer][c/00C6FF:cad][c/00FFA6:mium] Mod
+author = BraycoeYT and the Spriters
+version = 0.2.6
+homepage = https://forums.terraria.org/index.php?threads/azercadmium-mod.97680/
+hideCode = true;
+hideResources = true;
+includeSource = false;
