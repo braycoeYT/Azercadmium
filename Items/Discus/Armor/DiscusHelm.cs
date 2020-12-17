@@ -1,0 +1,45 @@
+using Terraria;
+using Terraria.ID;
+using Terraria.ModLoader;
+using static Terraria.ModLoader.ModContent;
+
+namespace Azercadmium.Items.Discus.Armor
+{
+	[AutoloadEquip(EquipType.Head)]
+	public class DiscusHelm : ModItem
+	{
+		public override void SetStaticDefaults() {
+			DisplayName.SetDefault("Sandgrain Electrohelm");
+			Tooltip.SetDefault("Mining speed increased by 2%\nDamage increased by 2%\nMovement speed increased by 5%");
+		}
+		public override void SetDefaults() {
+			item.width = 24;
+			item.height = 26;
+			item.value = Item.sellPrice(0, 0, 60, 0);
+			item.rare = ItemRarityID.Blue;
+			item.defense = 3;
+		}
+		public override bool IsArmorSet(Item head, Item body, Item legs) {
+			return body.type == ItemType<DiscusBreastplate>() && legs.type == ItemType<DiscusLeggings>();
+		}
+		public override void UpdateArmorSet(Player player) {
+			player.setBonus = "Immune to electricity\nTaking over 40 damage summons a temporary electric field to damage enemies";
+			player.buffImmune[144] = true;
+			AzercadmiumPlayer p = player.GetModPlayer<AzercadmiumPlayer>();
+			p.electricField = true;
+		}
+		public override void UpdateEquip(Player player) {
+			player.allDamage += 0.02f;
+			player.maxRunSpeed += 0.05f;
+			player.pickSpeed -= 0.02f;
+		}
+		public override void AddRecipes() {
+			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(mod.ItemType("DriedEssence"), 7);
+			recipe.AddIngredient(mod.ItemType("BrokenDiscus"), 6);
+			recipe.AddTile(TileID.Anvils);
+			recipe.SetResult(this);
+			recipe.AddRecipe();
+		}
+	}
+}
