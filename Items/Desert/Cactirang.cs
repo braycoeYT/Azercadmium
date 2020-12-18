@@ -6,7 +6,8 @@ namespace Azercadmium.Items.Desert
 {
 	public class Cactirang : ModItem
 	{
-		public override void SetDefaults() {
+		public override void SetDefaults() 
+		{
 			item.damage = 6;
 			item.melee = true;
 			item.width = 30;
@@ -25,7 +26,8 @@ namespace Azercadmium.Items.Desert
 			item.noUseGraphic = true;
 		}
 		public override bool CanUseItem(Player player) {
-            for (int i = 0; i < 1000; ++i) {
+            for (int i = 0; i < 1000; ++i) 
+			{
                 if (Main.projectile[i].active && Main.projectile[i].owner == Main.myPlayer && Main.projectile[i].type == item.shoot) {
                     return false;
                 }

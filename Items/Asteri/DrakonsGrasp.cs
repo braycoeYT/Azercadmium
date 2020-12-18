@@ -40,7 +40,8 @@ namespace Azercadmium.Items.Asteri
 			item.useAnimation = 26 + (item.stack * 10) - 10;
 			float numberProjectiles = item.stack;
 			float rotation = MathHelper.ToRadians(18);
-			if (numberProjectiles > 1) {
+			if (numberProjectiles > 1) 
+			{
 				position += Vector2.Normalize(new Vector2(speedX, speedY)) * 45f;
 				for (int i = 0; i < numberProjectiles; i++) {
 					Vector2 perturbedSpeed = new Vector2(speedX, speedY).RotatedBy(MathHelper.Lerp(-rotation, rotation, i / (numberProjectiles - 1))) * .9f;
@@ -52,7 +53,8 @@ namespace Azercadmium.Items.Asteri
 		}
 		public override void AddRecipes() {
 			Mod asteri = ModLoader.GetMod("Asteri");
-			if (asteri != null) {
+			if (asteri != null) 
+			{
 				ModRecipe recipe = new ModRecipe(mod);
 				recipe.AddIngredient(asteri.ItemType("DrakonScale"), 45);
 				recipe.AddTile(TileID.MythrilAnvil);

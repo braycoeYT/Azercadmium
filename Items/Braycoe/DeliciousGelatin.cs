@@ -27,7 +27,8 @@ namespace Azercadmium.Items.Braycoe
 			item.buffType = BuffID.Slimed;
             item.buffTime = 10 * 3600;
 		}
-		public override void OnConsumeItem(Player player) {
+		public override void OnConsumeItem(Player player) 
+		{
 			player.AddBuff(BuffID.WellFed, 10 * 3600, false);
 		}
 	}

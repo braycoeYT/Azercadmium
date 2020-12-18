@@ -9,7 +9,7 @@ namespace Azercadmium.Items.Braycoe
 	public class Slimebender : ModItem
 	{
 		public override void SetStaticDefaults() {
-			Tooltip.SetDefault("Developer Item\nShoots a large slimeblast that explodes into smaller slimeblasts");
+			Tooltip.SetDefault("[c/ff0000:-Developer Item-]\nShoots a large slimeblast that explodes into smaller slimeblasts.");
 		}
 		public override void SetDefaults() {
 			item.damage = 917;
@@ -30,13 +30,16 @@ namespace Azercadmium.Items.Braycoe
 		}
 		public override void ModifyTooltips(List<TooltipLine> list) {
             foreach (TooltipLine tooltipLine in list) {
-                if (tooltipLine.mod == "Terraria" && tooltipLine.Name == "ItemName") {
+                if (tooltipLine.mod == "Terraria" && tooltipLine.Name == "ItemName") 
+				{
                     tooltipLine.overrideColor = new Color(116, 179, 237);
                 }
             }
         }
-		public override void PostUpdate() {
-			if (Main.rand.NextBool()) {
+		public override void PostUpdate() 
+		{
+			if (Main.rand.NextBool()) 
+			{
 				Dust dust = Dust.NewDustDirect(item.position, item.width, item.height, 80);
 				dust.noGravity = true;
 				dust.scale = 1.5f;

@@ -32,7 +32,8 @@ namespace Azercadmium.Items.Carnallite
 			return new Vector2(-16, 0);
 		}
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack) {
-			if (type == ProjectileID.WoodenArrowFriendly) {
+			if (type == ProjectileID.WoodenArrowFriendly) 
+			{
 				type = mod.ProjectileType("GreenCarnalliteArrow");
 			}
 			return true;
