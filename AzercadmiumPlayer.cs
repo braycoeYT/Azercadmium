@@ -42,13 +42,12 @@ namespace Azercadmium
 		public bool gemstoneRanged;
 		public bool gemstoneMagic;
 		public bool gemstoneSummon;
-		public bool trueMelee15;
+		public float trueMeleeMult;
 		public bool empressExpert;
 		public bool meteorMelee;
 		public bool stealthPotion;
 		public bool slimyOoze;
 		public bool dirtboi;
-		public bool outofBreath;
 		public bool shroomed;
 		public bool webdriver;
 		int numberShot = 0;
@@ -83,13 +82,11 @@ namespace Azercadmium
 			gemstoneMelee = false;
 			gemstoneMagic = false;
 			gemstoneSummon = false;
-			trueMelee15 = false;
+			trueMeleeMult = 1f;
 			empressExpert = false;
 			meteorMelee = false;
 			stealthPotion = false;
-			slimyOoze = false;
 			dirtboi = false;
-			outofBreath = false;
 			shroomed = false;
 			webdriver = false;
 			player.statLifeMax2 += upgradeHearts * 25;
@@ -99,8 +96,6 @@ namespace Azercadmium
 		}
 		public override void UpdateDead() {
 			xenicAcid = false;
-			slimyOoze = false;
-			outofBreath = false;
 			shroomed = false;
 		}
 		int badRegenTimer;
@@ -123,28 +118,8 @@ namespace Azercadmium
 					player.HealEffect(1, true);
 				}
 			}
-			if (slimyOoze) {
-				if (player.lifeRegen > 0) {
-					player.lifeRegen = 0;
-				}
-				player.lifeRegenTime = 0;
-				player.lifeRegen -= 4;
-			}
-			if (outofBreath) {
-				if (player.lifeRegen > 0) {
-					player.lifeRegen = 0;
-				}
-				player.lifeRegenTime = 0;
-				player.lifeRegen -= 12;
-			}
-			if (shroomed) {
-				if (player.lifeRegen > 0) {
-					player.lifeRegen = 0;
-				}
-				player.lifeRegenTime = 0;
-				player.lifeRegen -= 8;
-			}
-			if (healHurt > 0) {
+			if (healHurt > 0) 
+			{
 				if (player.lifeRegen > 0) {
 					player.lifeRegen = 0;
 				}
@@ -433,7 +408,8 @@ namespace Azercadmium
 		}
 		public override bool PreHurt(bool pvp, bool quiet, ref int damage, ref int hitDirection, ref bool crit, ref bool customDamage, ref bool playSound, ref bool genGore, ref PlayerDeathReason damageSource)
 		{
-			if (stealthPotion && Main.rand.NextFloat() < .04f) {
+			if (stealthPotion && Main.rand.Next(25) == 0) 
+			{
 				quiet = true;
 				damage = 0;
 				player.NinjaDodge();
@@ -490,7 +466,7 @@ namespace Azercadmium
 			}
 			if (gemstoneMelee)
 			{
-				if (Main.rand.NextFloat() < .25f)
+				if (Main.rand.Next(4) == 0) //25% chance its that simple, so basically stop using NextFloat
 				player.AddBuff(mod.BuffType("Encased"), Main.rand.Next(240, 601));
 			}
 		}
@@ -543,9 +519,10 @@ namespace Azercadmium
 					Projectile.NewProjectile(player.Center.X, player.Center.Y, 0, 0, mod.ProjectileType("RedWebdriverRectangle"), (int)(125 * player.minionDamage), 2f, Main.myPlayer);
 			}*/
 		}
-		public override void ModifyHitNPC(Item item, NPC target, ref int damage, ref float knockback, ref bool crit) {	
-			if (trueMelee15)
-			damage += (int)(damage * .15f);
+		public override void ModifyHitNPC(Item item, NPC target, ref int damage, ref float knockback, ref bool crit) 
+		{	
+			if (item.melee)
+			damage *= trueMeleeMult;
 		}
 	}
 }

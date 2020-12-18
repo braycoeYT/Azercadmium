@@ -12,7 +12,7 @@ namespace Azercadmium.Buffs.Potions
             Main.debuff[Type] = false;
         }
         public override void Update(Player player, ref int buffIndex) {
-			player.statLifeMax2 = (int)(player.statLifeMax2 * 0.95f);
+			player.statLifeMax2 *= .95;
             player.manaRegen += 5;
         }
     }

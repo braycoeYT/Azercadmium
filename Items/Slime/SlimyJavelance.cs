@@ -44,7 +44,8 @@ namespace Azercadmium.Items.Slime
 			float rotation = MathHelper.ToRadians(18);
 			if (numberProjectiles > 1) {
 				position += Vector2.Normalize(new Vector2(speedX, speedY)) * 45f;
-				for (int i = 0; i < numberProjectiles; i++) {
+				for (int i = 0; i < numberProjectiles; i++) 
+				{
 					Vector2 perturbedSpeed = new Vector2(speedX, speedY).RotatedBy(MathHelper.Lerp(-rotation, rotation, i / (numberProjectiles - 1))) * .9f;
 					Projectile.NewProjectile(position.X, position.Y, perturbedSpeed.X, perturbedSpeed.Y, type, damage, knockBack, player.whoAmI);
 				}

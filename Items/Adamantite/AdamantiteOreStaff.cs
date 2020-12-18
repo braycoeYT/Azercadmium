@@ -10,7 +10,7 @@ namespace Azercadmium.Items.Adamantite
 	{
 		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Adamantite Ore Staff");
-			Tooltip.SetDefault("Summons a floating adamantite ore to fight for you");
+			Tooltip.SetDefault("Summons a floating adamantite ore to fight for you.");
 			ItemID.Sets.GamepadWholeScreenUseRange[item.type] = true;
 			ItemID.Sets.LockOnIgnoresCollision[item.type] = true;
 		}

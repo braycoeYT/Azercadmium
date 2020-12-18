@@ -11,7 +11,8 @@ namespace Azercadmium.Buffs.Potions
             Main.buffNoTimeDisplay[Type] = false;
             Main.debuff[Type] = false;
         }
-        public override void Update(Player player, ref int buffIndex) {
+        public override void Update(Player player, ref int buffIndex) 
+        {
 			player.manaMagnet = true;
         }
     }
