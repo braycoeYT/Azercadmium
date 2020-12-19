@@ -4,7 +4,7 @@ Some changes can be only accessed via the config, like the Pearlwood buff.
 PLEASE READ: Some parts of the mod are very bad, I am trying my hardest to fix them as soon as possible, please be patient...
 
 Stats:
-~259 Items
+~261 Items
 ~4 Bosses:
 ^2 Prehardmode Bosses
 ^2 Hardmode Bosses
@@ -12,7 +12,7 @@ Stats:
 ~2 Town NPCs
 ~49 total NPCs
 ~45 Tiles
-~30 Buffs
+~31 Buffs
 ~3 Subclasses
 ~2 Custom Soundtracks
 ~3 Rarities
@@ -41,22 +41,16 @@ Very Minor Help:
 Math (Minor Wiki)
 Ashe (Minor Wiki)
 Pufferfish77 (Minor Concepts and Sprites)
-Setnour6 (C.Virus Theme)
+Setnour6 (Old Matrix Scavenger Theme)
 ChimneyEggs (Ore Staff Sprites)
 Don't Call Me Klarson (Wooden Shield)
+EternalAvant (Featherfall Shield)
 
 Multiplayer support is unknown, but most of us play alone anyway.
 
-Update V0.2.6: Matrix Update
-~Completely reworked Matrix Scavenger (Computer Virus).
-~Resprited Wooden Shield
-~Removed True Archive
-~Dirtboi is no longer damageable in Devastation Mode.
-~Removed Dirt Slime alpha.
-~Removed Vortex Blowpipe's chance to not consume ammo.
-~Added recipe for truffle worm.
-~Added Christmas Content: (Red) Present, Red Pivot, Green Pivot, Pinecone, Candy Cane Crusher, Candy Cane Pike, and Ugly Socks.
-~Changed Coal max stack to 999.
-~Changed Eye of the Cosmo's tooltip.
-~Increased chance of Dirtball using a Dirt Barrage.
-~Gave Dirtboi a christmas sprite for the holidays!
+Update V0.2.6.1: Matrix Update Part 2
+~Added sounds to Space Remnant explosions and changed their movement speed.
+~Added a new Matrix Scavenger theme.
+~Added Alien Blaster, Matrix Machinegun, and Spacetime Remote.
+~Resprited Featherfall Shield.
+~Renamed Empress Shard to Royal Gelatin and changed sprite.

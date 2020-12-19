@@ -30,7 +30,7 @@ namespace Azercadmium.Projectiles.Scavenger
 		}*/
 		public override void Kill(int timeLeft) {
 			Collision.HitTiles(projectile.position + projectile.velocity, projectile.velocity, projectile.width, projectile.height);
-			Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, 0, -10, mod.ProjectileType("SpaceRemnantShardBlast"), projectile.damage, 0, Main.myPlayer);
+			Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, 0, -5, mod.ProjectileType("SpaceRemnantShardBlast"), projectile.damage, 0, Main.myPlayer);
 		}
 	}   
 }

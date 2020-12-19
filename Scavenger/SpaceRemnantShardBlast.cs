@@ -1,5 +1,6 @@
 using Microsoft.Xna.Framework;
 using Terraria;
+using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -12,8 +13,8 @@ namespace Azercadmium.Projectiles.Scavenger
         }
 		public override void SetDefaults()
 		{
-			projectile.width = 40;
-			projectile.height = 40;
+			projectile.width = 0;
+			projectile.height = 0;
 			projectile.aiStyle = 1;
 			projectile.friendly = true;
 			projectile.penetrate = -1;
@@ -26,7 +27,7 @@ namespace Azercadmium.Projectiles.Scavenger
 		public override void AI() {
 			Timer++;
 			if (Timer % 30 == 1) {
-				//Main.PlaySound(SoundID., projectile.position, 0);
+				Main.PlaySound(SoundID.Item14.WithVolume(.25f));
 				Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, 0, 0, ProjectileID.DD2ExplosiveTrapT1Explosion, projectile.damage, 2f, Main.myPlayer);
 			}
 		}

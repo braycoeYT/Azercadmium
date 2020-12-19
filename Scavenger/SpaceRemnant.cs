@@ -10,7 +10,7 @@ namespace Azercadmium.Items.Scavenger
 			Tooltip.SetDefault("Shoots a shard that explodes upward");
 		}
 		public override void SetDefaults() {
-			item.damage = 65;
+			item.damage = 58;
 			item.melee = true;
 			item.width = 72;
 			item.height = 78;
@@ -30,7 +30,7 @@ namespace Azercadmium.Items.Scavenger
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.HallowedBar, 12);
 			recipe.AddIngredient(mod.ItemType("SoulofByte"), 14);
-			recipe.AddTile(TileID.Anvils);
+			recipe.AddTile(TileID.MythrilAnvil);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}
