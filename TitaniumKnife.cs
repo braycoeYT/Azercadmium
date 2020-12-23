@@ -20,6 +20,7 @@ namespace Azercadmium.Items.Titanium
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
 			item.useTurn = true;
+			item.crit = 20;
 		}
 		public override void AddRecipes()  {
 			ModRecipe recipe = new ModRecipe(mod);

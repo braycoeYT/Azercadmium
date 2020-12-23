@@ -114,10 +114,11 @@ namespace Azercadmium.NPCs.TownNPCs
 				chat.Add("Have you ever heard of a Starlite Crystal..? Never mind.");
 				chat.Add("Yes, being a slime is fun.");
 				chat.Add("Have you seen my slimebender anywhere?");
+				chat.Add("If you get your hands on Azercadmium, you would probably be one of the greatest terrarians of all time. Or a cheater.");
 				if (AzercadmiumWorld.devastation)
 					chat.Add("Devastation mode is very WIP, I hope you like it so far.");
 				if (Main.raining)
-					chat.Add("Hey, since I generate slime a lot faster while its raining, I'll sell gel to you for a discount price! Buy some now!", 2);
+					chat.Add("Hey, since I generate slime a lot faster while its raining, I'll sell gel to you for a discount price! Buy some now!", 6);
 			    if (NPC.downedSlimeKing == true)
 					chat.Add("That King Slime is such a loser, thanks for breaking him into hundreds of normal size slimes.");
 				if (Main.hardMode && !NPC.downedMechBossAny)
@@ -196,7 +197,7 @@ namespace Azercadmium.NPCs.TownNPCs
 					if (NPC.downedMechBoss1) impressions.Add("The Destroyer: Big worm, V2.0... He is relatively weak since his probes drop hearts.");
 					if (NPC.downedMechBoss2) impressions.Add("The Twins: Twice the fun of the original boss, now with lasers and green fire!");
 					if (NPC.downedMechBoss3) impressions.Add("Skeletron Prime: A teeth grinding killing machine. Maybe it is just stressed?");
-					if (AzercadmiumWorld.downedCVirus) impressions.Add("Computer Virus: Many rumors of the plague's origin have been going around recently. Some people believe that it existed since the beginning of time.");
+					if (AzercadmiumWorld.downedScavenger) impressions.Add("Computer Virus: Many rumors of the plague's origin have been going around recently. Some people believe that it existed since the beginning of time.");
 					if (NPC.downedPlantBoss) impressions.Add("Plantera: A very angry plant because you killed and ate its brethren. Maybe I'm thinking too hard on this one?");
 					if (AzercadmiumWorld.downedEmpress) impressions.Add("Empress Slime: One of the most powerful slimes, and puts King Slime to shame. A truly worthy leader of the slimes!");
 					if (NPC.downedGolemBoss) impressions.Add("Golem: An extraordinarily weak machine, and an ugly one at that. What were they thinking?");
