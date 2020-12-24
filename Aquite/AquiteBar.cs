@@ -1,35 +1,34 @@
-using Microsoft.Xna.Framework;
 using Terraria;
-using Terraria.Localization;
+using Terraria.ID;
 using Terraria.ModLoader;
-using Terraria.ObjectData;
 using static Terraria.ModLoader.ModContent;
 
-namespace Azercadmium.Tiles.Aquite
+namespace Azercadmium.Items.Aquite
 {
-	public class AquiteBar : ModTile
+	public class AquiteBar : ModItem
 	{
-		public override void SetDefaults()
-		{
-			Main.tileShine[Type] = 1000;
-			Main.tileSolid[Type] = true;
-			Main.tileSolidTop[Type] = true;
-			Main.tileFrameImportant[Type] = true;
-			TileObjectData.newTile.CopyFrom(TileObjectData.Style1x1);
-			TileObjectData.newTile.StyleHorizontal = true;
-			TileObjectData.newTile.LavaDeath = false;
-			TileObjectData.addTile(Type);
-			AddMapEntry(new Color(29, 215, 215), Language.GetText("MapObject.MetalBar"));
+		public override void SetDefaults() {
+			item.rare = ItemRarityID.Cyan;
+			item.width = 30;
+			item.height = 24;
+			item.maxStack = 999;
+			item.value = Item.sellPrice(0, 0, 90, 0);
+			item.useStyle = ItemUseStyleID.SwingThrow;
+			item.useTurn = true;
+			item.useAnimation = 15;
+			item.useTime = 10;
+			item.autoReuse = true;
+			item.consumable = true;
+			item.createTile = TileType<Tiles.Aquite.AquiteBar>();
+			item.placeStyle = 0;
 		}
-		public override bool Drop(int i, int j)
-		{
-			Tile t = Main.tile[i, j];
-			int style = t.frameX / 18;
-			if (style == 0)
-			{
-				Item.NewItem(i * 16, j * 16, 16, 16, ItemType<Items.Aquite.AquiteBar>());
-			}
-			return base.Drop(i, j);
+		public override void AddRecipes() {
+			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(mod.ItemType("AquiteOre"), 4);
+			recipe.AddTile(TileID.AdamantiteForge);
+			recipe.needWater = true;
+			recipe.SetResult(this);
+			recipe.AddRecipe();
 		}
 	}
 }

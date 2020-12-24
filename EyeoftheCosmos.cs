@@ -11,7 +11,7 @@ namespace Azercadmium.Items.Devastation
 	{
 		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Eye of the Cosmos");
-			Tooltip.SetDefault("Used to activate and deactivate Devastation Mode.\nNote: Heavily unfinished.\nCan only be activated in Expert Mode and when no bosses are alive.\nDevastation mode only items will have the Mint Chocolate rarity.\nCheck the Azercadmium Discord Server in #info for full list of changes.\nDue to an odd glitch, after fighting a boss, you may or may not have to reload your world to change the difficulty again.");
+			Tooltip.SetDefault("Used to activate and deactivate Devastation Mode\nDevastation mode heavily increases the difficulty of the game and is not recommended for a first playthrough\nNote: Heavily unfinished\nCan only be activated in Expert Mode and when no bosses are alive\nDevastation mode only items will have the Mint Chocolate rarity\nCheck the Azercadmium Discord Server in #info for full list of changes");
 			ItemID.Sets.SortingPriorityBossSpawns[item.type] = 13;
 		}
 		public override void SetDefaults() {
@@ -26,7 +26,7 @@ namespace Azercadmium.Items.Devastation
 		}
 		public bool BossAlive() {
 			for (int i = 0; i < Main.maxNPCs; i++) {
-				if (Main.npc[i].boss || Main.npc[i].type == NPCID.EaterofWorldsHead) {
+				if (Main.npc[i].boss || Main.npc[i].type == NPCID.EaterofWorldsHead && Main.npc[i].active) {
 					return true;
 				}
             }

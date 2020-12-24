@@ -4,7 +4,7 @@ Some changes can be only accessed via the config, like the Pearlwood buff.
 PLEASE READ: Some parts of the mod are very bad, I am trying my hardest to fix them as soon as possible, please be patient...
 
 Stats:
-~267 Items
+~271 Items
 ~4 Bosses:
 ^2 Prehardmode Bosses
 ^2 Hardmode Bosses
@@ -22,7 +22,7 @@ Stats:
 [i:458]Cross content with: Asteri (dead), Havoc (dead), and Cacti and More 2 Mod.
 
 Spriters:
-VaultyBoi (Spriter)
+FunkItOut (Spriter)
 Astrum (Spriter)
 LoginatorV (Spriter)
 Skymanisbtman (Inactive Spriter/Music)
@@ -45,16 +45,14 @@ Setnour6 (Old Matrix Scavenger Theme)
 ChimneyEggs (Ore Staff Sprites)
 Don't Call Me Klarson (Wooden Shield)
 EternalAvant (Old Featherfall Shield)
+Nalyddd (Help with bugfixing)
 
 Multiplayer support is unknown, but most of us play alone anyway.
 
-Update V0.2.6.2: Aquite Update (not to be confused with Update Aquatic)
-~Added Aquite, a new ore that generates beneath the ocean once Duke Fishron is defeated (unfinished).
-~Fixed Earthbound recipe.
-~Added more Braycoe chat messages.
-~Heavily increased hardmode ore shortsword crit.
-~Resprited Wooden items.
-~Renamed Wooden Blowpipe to Lobbing Log.
-~Resprited Slimebender.
-~Resprited Featherfall Shield and Feathered Fury.
-~Added Giygaclaws, the mod's "first" post Moon Lord weapon.
+Update V0.2.6.3: Some Bugfixing Update
+~Fixed the unusable Eye of the Cosmos glitch.
+~Fixed Aquite Dust.
+~Resprited Aquite Saber, Aquite Stabber, Poisonous Arrow, Plantera Tooth, Magical Vaccine, Carnallite Bars, and Prehardmode Ore Spears.
+~Added Desert Rose.
+~Fixed Tree Truncheon and True Tree Truncheon projectile rotation.
+~Added Aquite Pickaxe, Aquite Axe, and Aquite Hammer.

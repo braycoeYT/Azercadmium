@@ -1,36 +1,28 @@
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using Terraria;
-using Terraria.ID;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
+using Terraria.ID;
 
-namespace Azercadmium.Tiles.Aquite
+namespace Azercadmium.Items.Aquite
 {
-	public class AquiteOre : ModTile
+	public class AquiteOre : ModItem
 	{
-		public override void SetDefaults()
-		{
-			TileID.Sets.Ore[Type] = true;
-			Main.tileSpelunker[Type] = true;
-			Main.tileValue[Type] = 710;
-			Main.tileShine2[Type] = true;
-			Main.tileShine[Type] = 400;
-			Main.tileMergeDirt[Type] = true;
-			Main.tileSolid[Type] = true;
-			Main.tileBlockLight[Type] = true;
-			ModTranslation name = CreateMapEntryName();
-			name.SetDefault("Aquite Ore");
-			AddMapEntry(new Color(57, 237, 237), name); //110, 150, 98
-			dustType = mod.DustType("AquiteDust");
-			drop = ItemType<Items.Aquite.AquiteOre>();
-			soundType = SoundID.Tink;
-			soundStyle = 1;
-			mineResist = 6f;
-			minPick = 200;
+		public override void SetStaticDefaults() {
+			Tooltip.SetDefault("From the oceanic depths, materialized from oceanic fossils and microbes");
 		}
-		public override bool CanExplode(int i, int j) {
-			return false;
+		public override void SetDefaults() {
+			item.useStyle = ItemUseStyleID.SwingThrow;
+			item.useTurn = true;
+			item.useAnimation = 15;
+			item.useTime = 10;
+			item.autoReuse = true;
+			item.maxStack = 9999;
+			item.consumable = true;
+			item.createTile = TileType<Tiles.Aquite.AquiteOre>();
+			item.width = 16;
+			item.height = 16;
+			item.value = Item.sellPrice(0, 0, 18, 0);
+			item.rare = ItemRarityID.Cyan;
 		}
 	}
 }
