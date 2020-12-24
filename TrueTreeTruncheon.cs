@@ -1,22 +1,18 @@
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Input;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace Azercadmium.Items
+namespace Azercadmium.Items.Forest
 {
 	public class TrueTreeTruncheon : ModItem
 	{
-		public override void SetStaticDefaults()
-		{
+		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("True Tree Truncheon");
-			Tooltip.SetDefault("Rain powerful leaves down on your enemies, at no cost!\nRare Item");
+			Tooltip.SetDefault("Rain powerful leaves down on your enemies, at no cost!");
 			Item.staff[item.type] = true;
 		}
-
-		public override void SetDefaults()
-		{
+		public override void SetDefaults() {
 			item.damage = 37;
 			item.magic = true;
 			item.width = 33;
@@ -25,8 +21,8 @@ namespace Azercadmium.Items
 			item.useAnimation = 5;
 			item.useStyle = ItemUseStyleID.HoldingOut;
 			item.knockBack = 4.5f;
-			item.value = 450000;
-			item.rare = -11;
+			item.value = Item.sellPrice(0, 5, 0, 0);
+			item.rare = ItemRarityID.Pink;
 			item.autoReuse = true;
 			item.useTurn = true;
 			item.shoot = ProjectileID.Leaf;
@@ -36,11 +32,10 @@ namespace Azercadmium.Items
 			item.stack = 1;
 			item.UseSound = SoundID.Item8;
 		}
-		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
-		{
+		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack) {
 			position.X = Main.MouseWorld.X;
 			position.Y = player.position.Y - 600;
-			speedX = Main.rand.NextFloat(-2, 3);
+			speedX = Main.rand.NextFloat(-2, 2);
 			speedY = 27;
 			return true;
 		}
@@ -48,11 +43,11 @@ namespace Azercadmium.Items
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(mod.ItemType("TreeTruncheon"));
 			recipe.AddIngredient(ItemID.BorealWood);
-			recipe.AddIngredient(ItemID.Ebonwood);
 			recipe.AddIngredient(ItemID.PalmWood);
 			recipe.AddIngredient(ItemID.Pearlwood);
 			recipe.AddIngredient(ItemID.RichMahogany);
 			recipe.AddIngredient(ItemID.Wood);
+			recipe.AddIngredient(ItemID.Ebonwood);
 			recipe.AddIngredient(mod.ItemType("ElementalGel"), 40);
 			recipe.AddTile(TileID.MythrilAnvil);
 			recipe.SetResult(this);
@@ -64,8 +59,8 @@ namespace Azercadmium.Items
 			recipe.AddIngredient(ItemID.PalmWood);
 			recipe.AddIngredient(ItemID.Pearlwood);
 			recipe.AddIngredient(ItemID.RichMahogany);
-			recipe.AddIngredient(ItemID.Shadewood);
 			recipe.AddIngredient(ItemID.Wood);
+			recipe.AddIngredient(ItemID.Shadewood);
 			recipe.AddIngredient(mod.ItemType("ElementalGel"), 40);
 			recipe.AddTile(TileID.MythrilAnvil);
 			recipe.SetResult(this);

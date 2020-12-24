@@ -4,19 +4,16 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace Azercadmium.Items
+namespace Azercadmium.Items.Forest
 {
 	public class TreeTruncheon : ModItem
 	{
-		public override void SetStaticDefaults()
-		{
+		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Tree Truncheon");
 			Tooltip.SetDefault("Rain leaves down on your enemies, at no cost!");
 			Item.staff[item.type] = true;
 		}
-
-		public override void SetDefaults()
-		{
+		public override void SetDefaults() {
 			item.damage = 8;
 			item.magic = true;
 			item.width = 33;
@@ -25,7 +22,7 @@ namespace Azercadmium.Items
 			item.useAnimation = 11;
 			item.useStyle = ItemUseStyleID.HoldingOut;
 			item.knockBack = 4.5f;
-			item.value = 68000;
+			item.value = Item.sellPrice(0, 0, 52, 0);
 			item.rare = ItemRarityID.Blue;
 			item.autoReuse = true;
 			item.useTurn = true;
@@ -36,11 +33,10 @@ namespace Azercadmium.Items
 			item.stack = 1;
 			item.UseSound = SoundID.Item8;
 		}
-		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
-		{
+		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack) {
 			position.X = Main.MouseWorld.X;
 			position.Y = player.position.Y - 600;
-			speedX = Main.rand.NextFloat(-3, 4);
+			speedX = Main.rand.NextFloat(-3, 3);
 			speedY = 10;
 			return true;
 		}
