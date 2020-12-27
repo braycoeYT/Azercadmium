@@ -8,14 +8,13 @@ namespace Azercadmium.Projectiles.Scavenger
 	public class MatrixScavengerTarget : ModProjectile
 	{
         public override void SetStaticDefaults() {
-			DisplayName.SetDefault("Matrix Scavenger");
-			Main.projFrames[projectile.type] = 4;
+			DisplayName.SetDefault("Matrix Scavenger Vortex");
         }
 		public override void SetDefaults() {
 			aiType = ProjectileID.Bullet;
-			projectile.width = 80;
-			projectile.height = 70;
-			projectile.aiStyle = 0;
+			projectile.width = 130;
+			projectile.height = 162;
+			projectile.aiStyle = -1;
 			projectile.hostile = false;
 			projectile.friendly = false;
 			if (Main.expertMode)
@@ -29,6 +28,7 @@ namespace Azercadmium.Projectiles.Scavenger
 			projectile.alpha = 100;
 		}
 		public override void AI() {
+			projectile.rotation += 0.1f;
 			Lighting.AddLight(projectile.Center, Color.DarkGoldenrod.ToVector3() * 0.5f);
 			if (++projectile.frameCounter >= 6) {
 				projectile.frameCounter = 0;

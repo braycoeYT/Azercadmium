@@ -60,6 +60,7 @@ namespace Azercadmium.NPCs.Scavenger
 		int flee;
 		int attack;
 		int attackTimer;
+		int subattack;
 		bool attackDone = true;
 		Vector2 landingPos;
 		Vector2 targetPos;
@@ -143,7 +144,7 @@ namespace Azercadmium.NPCs.Scavenger
 				phase = 5;
 			if (Timer % 90 == 0)
 				Projectile.NewProjectile(npc.Center, npc.DirectionTo(targetPos) * (4 + phase / 10), ProjectileID.DeathLaser, 22 + phase, 2f, Main.myPlayer);
-			if (Timer % 200 == 0)
+			if (Timer % 200 == 0 && attack != 3)
 			{
 				if (!(Main.player[npc.target].statLife < 1)) {
 					if (Main.rand.NextBool())
@@ -154,10 +155,10 @@ namespace Azercadmium.NPCs.Scavenger
 						landingPos.Y = Main.player[npc.target].Center.Y + Main.rand.Next(200, 400);
 					else
 						landingPos.Y = Main.player[npc.target].Center.Y + Main.rand.Next(-400, -200);
-				Projectile.NewProjectile(landingPos + new Vector2(-24, 108), new Vector2(0, 0), mod.ProjectileType("MatrixScavengerTarget"), 0, 0f, Main.myPlayer);
+					Projectile.NewProjectile(landingPos + new Vector2(0, 0), new Vector2(0, 0), mod.ProjectileType("MatrixScavengerTarget"), 0, 0f, Main.myPlayer);
 				}
 			}
-			if ((Timer % 200 == 60 && !Main.expertMode) || (Timer % 200 == 45 && Main.expertMode))
+			if ((Timer % 200 == 60 && !Main.expertMode) || (Timer % 200 == 45 && Main.expertMode) && attack != 3)
 			{
 				npc.Center = landingPos;
 				int minionMax = 10;
@@ -173,7 +174,9 @@ namespace Azercadmium.NPCs.Scavenger
 				if (phase >= 2) attackMax = 5;
 				if (phase >= 3) attackMax = 6;
 				attack = Main.rand.Next(0, attackMax);
+				subattack = Main.rand.Next(0, 2);
 				npc.velocity = new Vector2(0, 0);
+				//attack = 3;
 			}
 			if (attack == 0) {
 				if (attackTimer == 0)
@@ -213,24 +216,37 @@ namespace Azercadmium.NPCs.Scavenger
 			}
 			if (attack == 3) {
 				attackTimer++;
-				if (target.position.Y > npc.position.Y)
-					npc.velocity.Y = 8;
-				else if (target.position.Y < npc.position.Y)
-					npc.velocity.Y = -8;
-				if (Math.Abs(npc.position.X - target.position.X) < 240) {
-					if (npc.position.X < target.position.X)
-						npc.velocity.X = -20;
+				npc.Center = new Vector2(npc.Center.X, target.Center.Y - 10);
+				if (attackTimer == 1) {
+					if (npc.position.X > target.position.X)
+						subattack = 0;
 					else
-						npc.velocity.X = 20;
+						subattack = 1;
 				}
-				else if (Math.Abs(npc.position.X - target.position.X) > 400) {
-				if (npc.position.X < target.position.X)
-					npc.velocity.X = 20;
-				else
-					npc.velocity.X = -20;
+				float distance = npc.position.X - target.position.X;
+				if (subattack == 0)
+				{
+					if (distance < 240) {  //Math.Abs(distance)
+						npc.position.X += 240 - distance; //distance
+					}
+					else if (distance > 400) {
+						npc.position.X += 400 - distance; //distance
+					}
+					else
+						npc.velocity.X = 0;
 				}
-				else
-					npc.velocity.X = 0;
+				else if (subattack == 1)
+				{
+					if (distance > -360) {  //Math.Abs(distance)
+						npc.position.X += -360 - distance; //distance
+					}
+					else if (distance < -560) {
+						npc.position.X += -560 - distance; //distance
+					}
+					else
+						npc.velocity.X = 0;
+				}
+				
 				if (attackTimer % (30 - phase * 2) == 0) {
 					Projectile.NewProjectile(npc.Center, new Vector2(-7 - phase, 0), mod.ProjectileType("MatrixFlame"), 16 + phase, 2f, Main.myPlayer);
 					Projectile.NewProjectile(npc.Center, new Vector2(7 + phase, 0), mod.ProjectileType("MatrixFlame"), 16 + phase, 2f, Main.myPlayer);

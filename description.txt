@@ -46,13 +46,11 @@ ChimneyEggs (Ore Staff Sprites)
 Don't Call Me Klarson (Wooden Shield)
 EternalAvant (Old Featherfall Shield)
 Nalyddd (Help with bugfixing)
+Thunderminer79 (Help with Matrix Scavenger movement)
 
 Multiplayer support is unknown, but most of us play alone anyway.
 
-Update V0.2.6.3: Some Bugfixing Update
-~Fixed the unusable Eye of the Cosmos glitch.
-~Fixed Aquite Dust.
-~Resprited Aquite Saber, Aquite Stabber, Poisonous Arrow, Plantera Tooth, Magical Vaccine, Carnallite Bars, and Prehardmode Ore Spears.
-~Added Desert Rose.
-~Fixed Tree Truncheon and True Tree Truncheon projectile rotation.
-~Added Aquite Pickaxe, Aquite Axe, and Aquite Hammer.
+Update V0.2.6.4: The Extraordinarily Average Update
+~Changed (unobtainable as an item) Vile Heart sell price from 666000000 to 666669 because of an overflow.
+~Polished Matrix Scavenger.
+~Resprited Heartbreaker.
