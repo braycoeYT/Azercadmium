@@ -4,7 +4,7 @@ Some changes can be only accessed via the config, like the Pearlwood buff.
 PLEASE READ: Some parts of the mod are very bad, I am trying my hardest to fix them as soon as possible, please be patient...
 
 Stats:
-~271 Items
+~272 Items
 ~4 Bosses:
 ^2 Prehardmode Bosses
 ^2 Hardmode Bosses
@@ -37,20 +37,23 @@ Quit:
 CrazySapling1 (Quit Spriter)
 ULTIMATEDQVID (Quit Spriter)
 
-Very Minor Help:
+Minor Help:
 Math (Minor Wiki)
 Ashe (Minor Wiki)
 Pufferfish77 (Minor Concepts and Sprites)
 Setnour6 (Old Matrix Scavenger Theme)
-ChimneyEggs (Ore Staff Sprites)
+ChimneyEggs (Ore Staff Sprites and Heartbreaker Sprite)
 Don't Call Me Klarson (Wooden Shield)
 EternalAvant (Old Featherfall Shield)
 Nalyddd (Help with bugfixing)
 Thunderminer79 (Help with Matrix Scavenger movement)
+Mr. Raccoon (A couple sprites)
 
 Multiplayer support is unknown, but most of us play alone anyway.
 
-Update V0.2.6.4: The Extraordinarily Average Update
-~Changed (unobtainable as an item) Vile Heart sell price from 666000000 to 666669 because of an overflow.
-~Polished Matrix Scavenger.
-~Resprited Heartbreaker.
+Update V0.2.6.5: Update
+~Fixed Multiplayer not working (thanks Nalyddd).
+~Resprited Code 3 and Coldnea.
+~Buffed Code 3.
+~Resprited Aquite Pickaxe and Axe.
+~Added Triple Striker.
