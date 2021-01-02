@@ -20,7 +20,7 @@ namespace Azercadmium.Items.Desert
 			item.useStyle = ItemUseStyleID.SwingThrow;
 			item.knockBack = 4.8f;
 			item.value = Item.sellPrice(0, 10, 0, 0);
-			item.rare = ItemRarityID.Yellow;
+			item.rare = ItemRarityID.Blue;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
 			item.useTurn = true;

@@ -115,6 +115,7 @@ namespace Azercadmium.NPCs.TownNPCs
 				chat.Add("Yes, being a slime is fun.");
 				chat.Add("Have you seen my slimebender anywhere?");
 				chat.Add("If you get your hands on Azercadmium, you would probably be one of the greatest terrarians of all time. Or a cheater.");
+				chat.Add("I wish I didn't make an earlygame desert boss... whyyy 2019 me!?");
 				if (AzercadmiumWorld.devastation)
 					chat.Add("Devastation mode is very WIP, I hope you like it so far.");
 				if (Main.raining)
