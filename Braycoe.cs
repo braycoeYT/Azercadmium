@@ -103,7 +103,7 @@ namespace Azercadmium.NPCs.TownNPCs
 			if (!impression) {
 				chat.Add("No, I will not turn into a green slime for you.");
 				chat.Add("I can turn into any slime, name one and I could do it.");
-				chat.Add("You won the lottery! No, not really.", 0.001);
+				chat.Add("You won the lottery! No, not really. Acutally, you have found the S.e.c.r.e.t C.o.d.e.: 48 6f 6e 65 73 74 6c 79 20 79 6f 75 20 68 61 76 65 20 77 61 79 20 74 6f 6f 20 6d 75 63 68 20 66 72 65 65 20 74 69 6d 65", 0.001);
 				chat.Add("Can my house be a bit bigger? Oh, never mind...");
 				chat.Add("Oh, you want me to defend you now. Do you want me to bake cookies too?");
 				chat.Add("Destroy the dark power of this world!");
