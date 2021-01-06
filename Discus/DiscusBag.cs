@@ -29,10 +29,19 @@ namespace Azercadmium.Items.Discus
 			player.QuickSpawnItem(ItemID.GoldBar, Main.rand.Next(5, 8));
 			player.QuickSpawnItem(mod.ItemType("DriedEssence"), Main.rand.Next(8, 11));
 			player.QuickSpawnItem(mod.ItemType("BrokenDiscus"), Main.rand.Next(10, 15));
+			player.QuickSpawnItem(mod.ItemType("Electroid"));
 			if (Main.rand.NextFloat() < .5f)
 				player.QuickSpawnItem(mod.ItemType("HappyDiscus"));
 			else
 				player.QuickSpawnItem(mod.ItemType("VoidingMotherboard"));
+
+			//Dev sets Azercadmium
+			if (Main.rand.NextFloat() < .05f) {
+				switch (Main.rand.Next(1, 2)) {
+					case 1: player.QuickSpawnItem(mod.ItemType("BraycoesHair"));
+						break;
+				}
+			}
 		}
 		public override int BossBagNPC => NPCType<NPCs.Bosses.AncientDesertDiscus2>();
 	}

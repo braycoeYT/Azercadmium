@@ -4,7 +4,7 @@ Some changes can be only accessed via the config, like the Pearlwood buff.
 PLEASE READ: Some parts of the mod are very bad, I am trying my hardest to fix them as soon as possible, please be patient...
 
 Stats:
-~275 Items
+~263 Items
 ~4 Bosses:
 ^2 Prehardmode Bosses
 ^2 Hardmode Bosses
@@ -17,7 +17,9 @@ Stats:
 ~2 Custom Soundtracks
 ~3 Rarities
 ~1 Unfinished Game Mode
-~7 Modifiers
+~18 Modifiers
+^11 Weapon Modifiers
+^7 Accessory Modifiers
 
 [i:458]Cross content with: Asteri (dead), Havoc (dead), and Cacti and More 2 Mod.
 
@@ -25,9 +27,10 @@ Spriters:
 FunkItOut (Spriter)
 Astrum (Spriter)
 LoginatorV (Spriter)
+HBDeus (Spriter)
+Pufferfish77 (Spriter)
 Skymanisbtman (Inactive Spriter/Music)
 Koolaidlemonade (Inactive Spriter)
-HBDeus (Inactive Spriter)
 
 Other Help:
 Unboxing Video (Wiki)
@@ -40,7 +43,6 @@ ULTIMATEDQVID (Quit Spriter)
 Minor Help:
 Math (Minor Wiki)
 Ashe (Minor Wiki)
-Pufferfish77 (Minor Concepts and Sprites)
 Setnour6 (Old Matrix Scavenger Theme)
 ChimneyEggs (Ore Staff Sprites and Heartbreaker Sprite)
 Don't Call Me Klarson (Wooden Shield)
@@ -51,12 +53,13 @@ Mr. Raccoon (A couple sprites)
 
 Multiplayer support is unknown, but most of us play alone anyway.
 
-Update V0.2.6.6: Update
-~Removed elemental discuses.
-~Removed config corresponding to above entry.
-~Added more Braycoe chat dialog.
-~Added Aquite Throw.
-~Removed an unused enemy.
-~Fixed Desert Rose rarity.
-~Added HBDeus's Greatsword (Developer Weapon).
-~Added Braycoe's Hair.
+Update V0.2.6.7: Discus Reworks Part 1 (and more)
+~Reworked/Removed all of ADD's drops.
+~Fixed Desert Discus hitbox.
+~Removed Elemental Discus banners.
+~Changed Desert Discus stats.
+~Added banner for Vein Tunneler.
+~Fixed Azercadmium Prefixes still appearing when config is disabled.
+~Added 11 new weapon prefixes: Rough, Blessed, Cursed, Epic, Odd, Egotistical, Exotic, Tremendous, Atomic, Wasted, and Empowered.
+~Added a secret code.
+~Readded Vortex Blowpipe's chance not to consume ammo.

@@ -1,5 +1,6 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using Terraria;
@@ -51,6 +52,7 @@ namespace Azercadmium
 		public bool outofBreath;
 		public bool shroomed;
 		public bool webdriver;
+		public bool erodedMotherboard;
 		int numberShot = 0;
 		public int upgradeHearts;
 		public int upgradeStars;
@@ -92,6 +94,7 @@ namespace Azercadmium
 			outofBreath = false;
 			shroomed = false;
 			webdriver = false;
+			erodedMotherboard = false;
 			player.statLifeMax2 += upgradeHearts * 25;
 			player.statManaMax2 += upgradeStars * 50;
 			playerTimer = 0;
@@ -222,10 +225,14 @@ namespace Azercadmium
 			ZoneMicrobiome = AzercadmiumWorld.microbiomeTiles > 200;
 			if (ZoneMicrobiome)
 			{
-				player.AddBuff(mod.BuffType(""), 5, true);
+				//player.AddBuff(mod.BuffType(""), 5, true);
 			}
 		}
-		
+		public override void PreUpdate() {
+			if (erodedMotherboard && player.velocity != new Vector2(0, 0) && Main.GameUpdateCount % 5 == 0) {
+				Projectile.NewProjectile(player.Center, new Vector2(0, 0), mod.ProjectileType("MotherboardZap"), 30, 0.5f, Main.myPlayer);
+			}
+		}
 		public override bool CustomBiomesMatch(Player other) 
 		{
 			AzercadmiumPlayer modOther = other.GetModPlayer<AzercadmiumPlayer>();
@@ -471,7 +478,7 @@ namespace Azercadmium
 			if (electricField)
 			{
 				if (damage >= 40)
-				Projectile.NewProjectile(player.Center.X - 90, player.Center.Y + 90, 0, 0, mod.ProjectileType("ElectricField"), 12, 0, Main.myPlayer);
+				Projectile.NewProjectile(player.Center.X - 90, player.Center.Y + 90, 0, 0, mod.ProjectileType("ElectricField"), (int)damage, 0, Main.myPlayer);
 			}
 			if (eyeCandy)
 			{

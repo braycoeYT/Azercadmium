@@ -1,54 +1,165 @@
+using Microsoft.Xna.Framework;
+using System;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
 
-namespace Azercadmium.NPCs.Discus
+namespace Azercadmium.Projectiles.Discus
 {
-	public class DesertDiscus : ModNPC
+	public class DesertDiscus : ModProjectile
 	{
 		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Desert Discus");
+			Main.projFrames[projectile.type] = 4;
+			ProjectileID.Sets.MinionTargettingFeature[projectile.type] = true;
+			Main.projPet[projectile.type] = true;
+			ProjectileID.Sets.MinionSacrificable[projectile.type] = true;
+			ProjectileID.Sets.Homing[projectile.type] = true;
 		}
-        public override void SetDefaults() {
-			npc.width = 36;
-			npc.height = 48;
-			npc.damage = 12;
-			npc.defense = 3;
-			npc.lifeMax = 33;
-			npc.HitSound = SoundID.NPCHit1;
-			npc.DeathSound = SoundID.NPCDeath3;
-			npc.value = Item.buyPrice(0, 0, 0, 14);
-			npc.knockBackResist = 0.8f;
-			npc.aiStyle = 44;
-			npc.noGravity = true;
-			npc.noTileCollide = true;
-			banner = npc.type;
-			bannerItem = ItemType<Items.Discus.Banners.DesertDiscusBanner>();
-        }
-		public override void ScaleExpertStats(int numPlayers, float bossLifeScale) {
-            npc.lifeMax = 76;
-            npc.damage = 25;
-			npc.defense = 6;
-			npc.knockBackResist = 0.2f;
-        }
-		public override void HitEffect(int hitDirection, double damage) {
-			for (int i = 0; i < 10; i++) {
-				int dustType = 216;
-				int dustIndex = Dust.NewDust(npc.position, npc.width, npc.height, dustType);
-				Dust dust = Main.dust[dustIndex];
-				dust.velocity.X = dust.velocity.X + Main.rand.Next(-50, 51) * 0.01f;
-				dust.velocity.Y = dust.velocity.Y + Main.rand.Next(-50, 51) * 0.01f;
-				dust.scale *= 1f + Main.rand.Next(-30, 31) * 0.01f;
+		public sealed override void SetDefaults() {
+			projectile.width = 40;
+			projectile.height = 40;
+			projectile.tileCollide = false;
+			projectile.friendly = true;
+			projectile.minion = true;
+			projectile.minionSlots = 1f;
+			projectile.penetrate = -1;
+		}
+		public override bool? CanCutTiles() {
+			return true;
+		}
+		public override bool MinionContactDamage() {
+			return true;
+		}
+		public override void AI() {
+			Player player = Main.player[projectile.owner];
+			#region Active check
+			if (player.dead || !player.active)
+			{
+				player.ClearBuff(BuffType<Buffs.Minions.DesertDiscus>());
 			}
+			if (player.HasBuff(BuffType<Buffs.Minions.DesertDiscus>()))
+			{
+				projectile.timeLeft = 2;
+			}
+			#endregion
+
+			#region General behavior
+			Vector2 idlePosition = player.Center;
+
+			float minionPositionOffsetX = (10 + projectile.minionPos * 40) * -player.direction;
+			idlePosition.X += minionPositionOffsetX;
+			
+			Vector2 vectorToIdlePosition = idlePosition - projectile.Center;
+			float distanceToIdlePosition = vectorToIdlePosition.Length();
+			if (Main.myPlayer == player.whoAmI && distanceToIdlePosition > 2000f)
+			{
+				projectile.position = idlePosition;
+				projectile.velocity *= 0.1f;
+				projectile.netUpdate = true;
+			}
+			float overlapVelocity = 0.04f;
+			for (int i = 0; i < Main.maxProjectiles; i++)
+			{
+				Projectile other = Main.projectile[i];
+				if (i != projectile.whoAmI && other.active && other.owner == projectile.owner && Math.Abs(projectile.position.X - other.position.X) + Math.Abs(projectile.position.Y - other.position.Y) < projectile.width) {
+					if (projectile.position.X < other.position.X) projectile.velocity.X -= overlapVelocity;
+					else projectile.velocity.X += overlapVelocity;
+
+					if (projectile.position.Y < other.position.Y) projectile.velocity.Y -= overlapVelocity;
+					else projectile.velocity.Y += overlapVelocity;
+				}
+			}
+			#endregion
+
+			#region Find target
+			float distanceFromTarget = 700f;
+			Vector2 targetCenter = projectile.position;
+			bool foundTarget = false;
+
+			if (player.HasMinionAttackTargetNPC)
+			{
+				NPC npc = Main.npc[player.MinionAttackTargetNPC];
+				float between = Vector2.Distance(npc.Center, projectile.Center);
+				if (between < 2000f)
+				{
+					distanceFromTarget = between;
+					targetCenter = npc.Center;
+					foundTarget = true;
+				}
+			}
+			if (!foundTarget)
+			{
+				for (int i = 0; i < Main.maxNPCs; i++) {
+					NPC npc = Main.npc[i];
+					if (npc.CanBeChasedBy()) {
+						float between = Vector2.Distance(npc.Center, projectile.Center);
+						bool closest = Vector2.Distance(projectile.Center, targetCenter) > between;
+						bool inRange = between < distanceFromTarget;
+						bool lineOfSight = Collision.CanHitLine(projectile.position, projectile.width, projectile.height, npc.position, npc.width, npc.height);
+						bool closeThroughWall = between < 100f;
+						if (((closest && inRange) || !foundTarget) && (lineOfSight || closeThroughWall)) {
+							distanceFromTarget = between;
+							targetCenter = npc.Center;
+							foundTarget = true;
+						}
+					}
+				}
+			}
+			projectile.friendly = foundTarget;
+			#endregion
+
+			#region Movement
+
+			float speed = 8f;
+			float inertia = 20f;
+
+			if (foundTarget)
+			{
+				if (distanceFromTarget > 40f) {
+					Vector2 direction = targetCenter - projectile.Center;
+					direction.Normalize();
+					direction *= speed;
+					projectile.velocity = (projectile.velocity * (inertia - 1) + direction) / inertia;
+				}
+			}
+			else {
+				if (distanceToIdlePosition > 600f) {
+					speed = 12f;
+					inertia = 60f;
+				}
+				else {
+					speed = 4f;
+					inertia = 80f;
+				}
+				if (distanceToIdlePosition > 20f) {
+					vectorToIdlePosition.Normalize();
+					vectorToIdlePosition *= speed;
+					projectile.velocity = (projectile.velocity * (inertia - 1) + vectorToIdlePosition) / inertia;
+				}
+				else if (projectile.velocity == Vector2.Zero) {
+					projectile.velocity.X = -0.15f;
+					projectile.velocity.Y = -0.05f;
+				}
+			}
+			#endregion
+
+			#region Animation and visuals
+			projectile.rotation = projectile.velocity.X * 0.05f;
+
+			int frameSpeed = 5;
+			projectile.frameCounter++;
+			if (projectile.frameCounter >= frameSpeed) {
+				projectile.frameCounter = 0;
+				projectile.frame++;
+				if (projectile.frame >= Main.projFrames[projectile.type]) {
+					projectile.frame = 0;
+				}
+			}
+
+			Lighting.AddLight(projectile.Center, Color.White.ToVector3() * 0.78f);
+			#endregion
 		}
-		public override float SpawnChance(NPCSpawnInfo spawnInfo) {
-			return SpawnCondition.OverworldDayDesert.Chance * 3f;
-        }
-	    public override void NPCLoot() {
-			Item.NewItem(npc.getRect(), mod.ItemType("BrokenDiscus"), 1 + Main.rand.Next(2));
-		    if (Main.rand.NextFloat() < .1f)
-	        Item.NewItem(npc.getRect(), ItemID.Amber);
-        }
 	}
 }

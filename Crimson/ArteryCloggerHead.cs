@@ -452,7 +452,9 @@ namespace Azercadmium.NPCs.Crimson
 			return head ? (bool?)null : false;
 		}
 		public override float SpawnChance(NPCSpawnInfo spawnInfo) {
-			return SpawnCondition.Crimson.Chance * 0.015f;
+			if (Main.hardMode)
+				return SpawnCondition.Crimson.Chance * 0.015f;
+			return 0f;
         }
 		public override void NPCLoot() {
 			Item.NewItem(npc.getRect(), ItemID.Vertebrae, Main.rand.Next(1, 3));

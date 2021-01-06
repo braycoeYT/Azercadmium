@@ -7,11 +7,11 @@ namespace Azercadmium.Projectiles.Discus
 	public class ElectricField : ModProjectile
 	{
         public override void SetStaticDefaults() {
-			DisplayName.SetDefault("Electric Field");
+			DisplayName.SetDefault("Electric Cube");
         }
 		public override void SetDefaults() {
-			projectile.width = 180;
-			projectile.height = 180;
+			projectile.width = 160;
+			projectile.height = 160;
 			projectile.aiStyle = -1;
 			projectile.friendly = true;
 			projectile.penetrate = -1;
@@ -41,7 +41,7 @@ namespace Azercadmium.Projectiles.Discus
 				dust.scale *= 1f + Main.rand.Next(-30, 31) * 0.01f;
 			}
 		}
-		public override void OnHitPlayer(Player target, int damage, bool crit) {
+		public override void OnHitPvp(Player target, int damage, bool crit) {
 			if (Main.rand.Next(2) == 0)
 				target.AddBuff(BuffID.Electrified, 75, false);
 		}

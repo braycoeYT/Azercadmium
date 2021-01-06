@@ -1,8 +1,10 @@
+using Azercadmium.Prefixes;
 using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Terraria.Utilities;
 using static Terraria.ModLoader.ModContent;
 
 namespace Azercadmium.Tiles
@@ -126,6 +128,40 @@ namespace Azercadmium.Tiles
 					item.maxStack = 999;
 				}
 			}
+		}
+		public override int ChoosePrefix(Item item, UnifiedRandom rand)
+		{
+			if (item.damage > 1 && !item.accessory) {
+				if (Main.rand.Next(25) == 0)
+					return ModContent.PrefixType<Rough>();
+				if (Main.rand.Next(30) == 0)
+					return ModContent.PrefixType<Blessed>();
+				if (Main.rand.Next(30) == 0)
+					return ModContent.PrefixType<Cursed>();
+				if (item.knockBack > 0) {
+					if (Main.rand.Next(30) == 0)
+						return ModContent.PrefixType<Epic>();
+					if (Main.rand.Next(30) == 0)
+						return ModContent.PrefixType<Odd>();
+					if (Main.rand.Next(30) == 0)
+						return ModContent.PrefixType<Egotistical>();
+					if (Main.rand.Next(50) == 0)
+						return ModContent.PrefixType<Exotic>();
+				}
+				if (item.melee) {
+					if (Main.rand.Next(30) == 0)
+						return ModContent.PrefixType<Tremendous>();
+					if (Main.rand.Next(30) == 0)
+						return ModContent.PrefixType<Atomic>();
+				}
+				if (item.ranged) {
+					if (Main.rand.Next(30) == 0)
+						return ModContent.PrefixType<Wasted>();
+					if (Main.rand.Next(30) == 0)
+						return ModContent.PrefixType<Empowered>();
+				}
+			}
+			return -1;
 		}
 		public override void UpdateEquip(Item item, Player player)
 		{

@@ -29,7 +29,7 @@ namespace Azercadmium.Items.Discus
 			item.noMelee = true;
 			item.summon = true;
 			item.buffType = BuffType<Buffs.Minions.DesertDiscus>();
-			item.shoot = ProjectileType<Projectiles.Minions.DesertDiscus>();
+			item.shoot = ProjectileType<Projectiles.Discus.DesertDiscus>();
 		}
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack) {
 			player.AddBuff(item.buffType, 2);

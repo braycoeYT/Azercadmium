@@ -59,6 +59,8 @@ namespace Azercadmium.NPCs.Crimson
 		}
 		public override void SetDefaults() {
 			npc.buffImmune[BuffID.Confused] = true;
+			banner = npc.type;
+			bannerItem = ItemType<Items.Crimson.Banners.VeinTunnelerBanner>();
 		}
 		public override void Init() {
 			minLength = 6;
