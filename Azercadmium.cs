@@ -137,6 +137,12 @@ namespace Azercadmium
 			ItemID.TissueSample,
 			});
 			RecipeGroup.RegisterGroup("Azercadmium:AnyShadowScale", group);
+
+			if (RecipeGroup.recipeGroupIDs.ContainsKey("IronBar")) {
+				int index = RecipeGroup.recipeGroupIDs["IronBar"];
+				group = RecipeGroup.recipeGroups[index];
+				group.ValidItems.Add(ItemType("ZincBar"));
+			}
 		}
 		public override void AddRecipes()
 		{
@@ -338,6 +344,14 @@ namespace Azercadmium
 			recipe.AddIngredient(ItemID.Ectoplasm, 6);
 			recipe.AddTile(TileID.Autohammer);
 			recipe.SetResult(ItemID.TruffleWorm);
+			recipe.AddRecipe();
+
+			recipe = new ModRecipe(this);
+			recipe.AddIngredient(ItemID.BottledWater);
+			recipe.AddIngredient(ItemID.Daybloom);
+			recipe.AddIngredient(null, "ZincOre");
+			recipe.AddTile(TileID.Bottles);
+			recipe.SetResult(ItemID.IronskinPotion);
 			recipe.AddRecipe();
 		}
 		/*public override void UpdateMusic(ref int music, ref MusicPriority priority)

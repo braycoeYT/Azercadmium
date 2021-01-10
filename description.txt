@@ -4,14 +4,14 @@ Some changes can be only accessed via the config, like the Pearlwood buff.
 PLEASE READ: Some parts of the mod are very bad, I am trying my hardest to fix them as soon as possible, please be patient...
 
 Stats:
-~263 Items
+~276 Items
 ~4 Bosses:
 ^2 Prehardmode Bosses
 ^2 Hardmode Bosses
 ^(1) Unobtainable Joke Superboss
 ~2 Town NPCs
 ~34 total NPCs
-~47 Tiles
+~50 Tiles
 ~31 Buffs
 ~3 Subclasses
 ~2 Custom Soundtracks
@@ -32,9 +32,12 @@ Pufferfish77 (Spriter)
 Skymanisbtman (Inactive Spriter/Music)
 Koolaidlemonade (Inactive Spriter)
 
-Other Help:
+Coders:
+Nalyddd (Coder)
+Woodio (Coder)
+
+Wiki:
 Unboxing Video (Wiki)
-Woodio (Some Devastation Mode code)
 
 Quit:
 CrazySapling1 (Quit Spriter)
@@ -44,22 +47,17 @@ Minor Help:
 Math (Minor Wiki)
 Ashe (Minor Wiki)
 Setnour6 (Old Matrix Scavenger Theme)
+Polaris (Minor Wiki)
 ChimneyEggs (Ore Staff Sprites and Heartbreaker Sprite)
 Don't Call Me Klarson (Wooden Shield)
 EternalAvant (Old Featherfall Shield)
-Nalyddd (Help with bugfixing)
 Thunderminer79 (Help with Matrix Scavenger movement)
 Mr. Raccoon (A couple sprites)
 
 Multiplayer support is unknown, but most of us play alone anyway.
 
-Update V0.2.6.7: Discus Reworks Part 1 (and more)
-~Reworked/Removed all of ADD's drops.
-~Fixed Desert Discus hitbox.
-~Removed Elemental Discus banners.
-~Changed Desert Discus stats.
-~Added banner for Vein Tunneler.
-~Fixed Azercadmium Prefixes still appearing when config is disabled.
-~Added 11 new weapon prefixes: Rough, Blessed, Cursed, Epic, Odd, Egotistical, Exotic, Tremendous, Atomic, Wasted, and Empowered.
-~Added a secret code.
-~Readded Vortex Blowpipe's chance not to consume ammo.
+Update V0.2.6.8: Update
+~Added Banner for Artery Clogger.
+~Fixed Vortex Blowpipe tooltip.
+~Added Zinc, an alternate to Lead and Iron.
+~Decreased Exotic reforge rate (2% --> 1.33%)
