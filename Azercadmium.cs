@@ -353,6 +353,30 @@ namespace Azercadmium
 			recipe.AddTile(TileID.Bottles);
 			recipe.SetResult(ItemID.IronskinPotion);
 			recipe.AddRecipe();
+
+			recipe = new ModRecipe(this);
+			recipe.AddIngredient(null, "NeutronFragment", 4);
+			recipe.AddTile(TileID.LunarCraftingStation);
+			recipe.SetResult(ItemID.FragmentSolar);
+			recipe.AddRecipe();
+
+			recipe = new ModRecipe(this);
+			recipe.AddIngredient(null, "NeutronFragment", 4);
+			recipe.AddTile(TileID.LunarCraftingStation);
+			recipe.SetResult(ItemID.FragmentVortex);
+			recipe.AddRecipe();
+
+			recipe = new ModRecipe(this);
+			recipe.AddIngredient(null, "NeutronFragment", 4);
+			recipe.AddTile(TileID.LunarCraftingStation);
+			recipe.SetResult(ItemID.FragmentNebula);
+			recipe.AddRecipe();
+
+			recipe = new ModRecipe(this);
+			recipe.AddIngredient(null, "NeutronFragment", 4);
+			recipe.AddTile(TileID.LunarCraftingStation);
+			recipe.SetResult(ItemID.FragmentStardust);
+			recipe.AddRecipe();
 		}
 		/*public override void UpdateMusic(ref int music, ref MusicPriority priority)
 		{

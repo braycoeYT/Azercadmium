@@ -19,11 +19,10 @@ namespace Azercadmium
 		[Label("Azercadmium Prefixes")]
 		[Tooltip("Allows Azercadmium prefixes to be rolled.")]
 		public bool azercadmiumPrefixes;
-
-		[DefaultValue(true)]
+		
 		[Label("Vanilla Seeds are Blowpipe Ammo")]
 		[Tooltip("Turns all vanilla seeds into blowpipe ammo, and increases their max stack.")]
-		public bool vanillaSeed;
+		public bool vanillaSeedAmmo;
 		
 		[DefaultValue(true)]
 		[Label("Dirtboi Cries for its Father")]

@@ -8,11 +8,11 @@ namespace Azercadmium.Items.Vortex
 	public class VortexBlowpipe : ModItem
 	{
 		public override void SetStaticDefaults() {
-			Tooltip.SetDefault("Fires a multitude of seeds and a vortex rocket that chases enemies\nUses seeds as ammo");
+			Tooltip.SetDefault("Fires a multitude of seeds and a vortex rocket that chases enemies\nUses seeds as ammo\n66% chance to not consume ammo");
 		}
 		public override void SetDefaults() {
 			item.CloneDefaults(ItemID.Blowpipe);
-			item.damage = 50;
+			item.damage = 65;
 			item.knockBack = 3.1f;
 			item.shootSpeed = 16f;
 			item.useTime = 18;
