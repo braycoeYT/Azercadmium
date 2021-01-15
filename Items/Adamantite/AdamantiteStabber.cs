@@ -11,8 +11,8 @@ namespace Azercadmium.Items.Adamantite
 			item.melee = true;
 			item.width = 30;
 			item.height = 30;
-			item.useTime = 16;
-			item.useAnimation = 16;
+			item.useTime = 24;
+			item.useAnimation = 24;
 			item.useStyle = ItemUseStyleID.Stabbing;
 			item.knockBack = 6.2f;
 			item.value = Item.sellPrice(0, 2, 76, 0);
@@ -20,6 +20,7 @@ namespace Azercadmium.Items.Adamantite
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
 			item.useTurn = true;
+			item.crit = 20;
 		}
 		public override void AddRecipes()  {
 			ModRecipe recipe = new ModRecipe(mod);

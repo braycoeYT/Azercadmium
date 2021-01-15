@@ -18,8 +18,7 @@ namespace Azercadmium.Items.Cave
 			item.rare = ItemRarityID.Green;
 			item.defense = 1;
 		}
-		public override void UpdateAccessory(Player player, bool hideVisual) 
-		{
+		public override void UpdateAccessory(Player player, bool hideVisual) {
 			player.statLifeMax2 += 20;
 			player.lifeRegen += 2;
 		}
