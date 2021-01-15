@@ -114,10 +114,12 @@ namespace Azercadmium.NPCs.TownNPCs
 				chat.Add("Have you ever heard of a Starlite Crystal..? Never mind.");
 				chat.Add("Yes, being a slime is fun.");
 				chat.Add("Have you seen my slimebender anywhere?");
+				chat.Add("If you get your hands on Azercadmium, you would probably be one of the greatest terrarians of all time. Or a cheater.");
+				chat.Add("I wish I didn't make an earlygame desert boss... whyyy 2019 me!?");
 				if (AzercadmiumWorld.devastation)
 					chat.Add("Devastation mode is very WIP, I hope you like it so far.");
 				if (Main.raining)
-					chat.Add("Hey, since I generate slime a lot faster while its raining, I'll sell gel to you for a discount price! Buy some now!", 2);
+					chat.Add("Hey, since I generate slime a lot faster while its raining, I'll sell gel to you for a discount price! Buy some now!", 6);
 			    if (NPC.downedSlimeKing == true)
 					chat.Add("That King Slime is such a loser, thanks for breaking him into hundreds of normal size slimes.");
 				if (Main.hardMode && !NPC.downedMechBossAny)

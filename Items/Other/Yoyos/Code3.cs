@@ -21,7 +21,7 @@ namespace Azercadmium.Items.Other.Yoyos
 			item.useTime = 25;
 			item.shootSpeed = 16f;
 			item.knockBack = 4f;
-			item.damage = 97;
+			item.damage = 98;
 			item.rare = ItemRarityID.Lime;
 			item.melee = true;
 			item.channel = true;

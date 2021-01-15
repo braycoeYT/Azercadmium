@@ -9,11 +9,11 @@ namespace Azercadmium.Items.Corruption
 	public class VileHeart : ModItem
 	{
 		public override void SetDefaults() {
-			item.rare = ItemRarityID.Green;
+			item.rare = ItemRarityID.White;
 			item.width = 20;
 			item.height = 20;
 			item.maxStack = 999;
-			item.value = Item.sellPrice(666, 0, 0, 0);
+			item.value = Item.sellPrice(0, 66, 66, 69);
 			item.useStyle = ItemUseStyleID.SwingThrow;
 			item.useAnimation = 15;
 			item.useTime = 15;
@@ -24,22 +24,13 @@ namespace Azercadmium.Items.Corruption
 			if (Timer >= 3600)
 				item.active = false;
 		}
-		public override bool OnPickup(Player player) 
-		{
-			player.hurtCooldowns[0] = 0;
-            int defense = player.statDefense;
-            float endurance = player.endurance;
-            player.statDefense = 0;
-            player.endurance = 0;
-            player.Hurt(PlayerDeathReason.ByCustomReason(player.name + " was corrupted."), 20, 0, false, false, false, 0);
-            player.statDefense = defense;
-            player.endurance = endurance;
-			/*player.statLife -= 10;
+		public override bool OnPickup(Player player) {
+			player.statLife -= 10;
 			player.HealEffect(-10, true);
 			if (player.statLife <= 0) {
 				player.statLife = 0;
 				player.KillMe(PlayerDeathReason.ByCustomReason(player.name + " was corrupted."), 10, 0, false);
-			}*/
+			}
 			return false;
 		}
 	}

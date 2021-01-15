@@ -20,6 +20,7 @@ namespace Azercadmium.Items.Orichalcum
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
 			item.useTurn = true;
+			item.crit = 15;
 		}
 		public override void AddRecipes()  {
 			ModRecipe recipe = new ModRecipe(mod);

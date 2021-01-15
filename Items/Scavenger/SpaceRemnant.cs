@@ -30,7 +30,7 @@ namespace Azercadmium.Items.Scavenger
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.HallowedBar, 12);
 			recipe.AddIngredient(mod.ItemType("SoulofByte"), 14);
-			recipe.AddTile(TileID.Anvils);
+			recipe.AddTile(TileID.MythrilAnvil);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}

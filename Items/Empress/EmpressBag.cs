@@ -33,6 +33,14 @@ namespace Azercadmium.Items.Empress
 			player.QuickSpawnItem(mod.ItemType("SackofProtection"));
 			player.QuickSpawnItem(mod.ItemType("EmpressShard"), Main.rand.Next(16, 24));
 			player.QuickSpawnItem(mod.ItemType("ElementalGel"), Main.rand.Next(30, 71));
+
+			//Dev sets Azercadmium
+			if (Main.rand.NextFloat() < .05f) {
+				switch (Main.rand.Next(1, 2)) {
+					case 1: player.QuickSpawnItem(mod.ItemType("BraycoesHair"));
+						break;
+				}
+			}
 		}
 		public override int BossBagNPC => NPCType<NPCs.Bosses.EmpressSlime>();
 	}

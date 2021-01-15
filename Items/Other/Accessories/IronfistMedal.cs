@@ -16,10 +16,9 @@ namespace Azercadmium.Items.Other.Accessories
 			item.value = Item.sellPrice(0, 1, 0, 0);
 			item.rare = ItemRarityID.Green;
 		}
-		public override void UpdateAccessory(Player player, bool hideVisual) 
-		{
+		public override void UpdateAccessory(Player player, bool hideVisual) {
 			AzercadmiumPlayer p = player.GetModPlayer<AzercadmiumPlayer>();
-			p.trueMeleeMult += .15f;
+			p.trueMelee15 = true;
 		}
 	}
 }

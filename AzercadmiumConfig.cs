@@ -7,14 +7,6 @@ namespace Azercadmium
 	{
 		public override ConfigScope Mode => ConfigScope.ServerSide;
 
-		[Label("Elemental Discus Spawns")]
-		[Tooltip("Allows elemental discuses to spawn after the Ancient Desert Discus is defeated. Reload may be required.")]
-		public bool elemDiscus;
-
-		[Label("Basic Discus Spawns")]
-		[Tooltip("Allows a themeless discus to spawn rarely on the surface after the Ancient Desert Discus is defeated. Reload may be required.")]
-		public bool plainDiscus;
-
 		[Label("Pearlwood Buff")]
 		[Tooltip("Buffs pearlwood tools and armor. Reload required.")]
 		public bool pearlwoodBuff;
@@ -27,11 +19,10 @@ namespace Azercadmium
 		[Label("Azercadmium Prefixes")]
 		[Tooltip("Allows Azercadmium prefixes to be rolled.")]
 		public bool azercadmiumPrefixes;
-
-		[DefaultValue(true)]
+		
 		[Label("Vanilla Seeds are Blowpipe Ammo")]
 		[Tooltip("Turns all vanilla seeds into blowpipe ammo, and increases their max stack.")]
-		public bool vanillaSeed;
+		public bool vanillaSeedAmmo;
 		
 		[DefaultValue(true)]
 		[Label("Dirtboi Cries for its Father")]

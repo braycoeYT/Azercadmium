@@ -14,15 +14,9 @@ namespace Azercadmium.Buffs.Debuffs.Devastation
         public override void Update(Player player, ref int buffIndex) {
             player.blind = true;
             if (Main.hardMode)
-            {
-                player.statDefense *= 0.8;
-                player.statDefense -= 20;
-            }
+                player.statDefense = (int)(player.statDefense * 0.8f) - 20;
             else
-            {
-                player.statDefense *= 0.8;
-                player.statDefense -= 5;
-            }
+                player.statDefense = (int)(player.statDefense * 0.8f) - 5;
             player.moveSpeed *= 0.8f;
 		}
   		public override void Update(NPC npc, ref int buffIndex) {

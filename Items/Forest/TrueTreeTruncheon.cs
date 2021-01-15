@@ -35,7 +35,7 @@ namespace Azercadmium.Items.Forest
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack) {
 			position.X = Main.MouseWorld.X;
 			position.Y = player.position.Y - 600;
-			speedX = Main.rand.NextFloat(-2, 3);
+			speedX = Main.rand.NextFloat(-2, 2);
 			speedY = 27;
 			return true;
 		}

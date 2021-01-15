@@ -12,7 +12,7 @@ namespace Azercadmium.Buffs.Potions
             Main.debuff[Type] = false;
         }
         public override void Update(Player player, ref int buffIndex) {
-			player.wingTimeMax *= .1f;
+			player.wingTimeMax += 60;
         }
     }
 }

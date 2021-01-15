@@ -34,6 +34,14 @@ namespace Azercadmium.Items.Discus
 				player.QuickSpawnItem(mod.ItemType("HappyDiscus"));
 			else
 				player.QuickSpawnItem(mod.ItemType("VoidingMotherboard"));
+
+			//Dev sets Azercadmium
+			if (Main.rand.NextFloat() < .05f) {
+				switch (Main.rand.Next(1, 2)) {
+					case 1: player.QuickSpawnItem(mod.ItemType("BraycoesHair"));
+						break;
+				}
+			}
 		}
 		public override int BossBagNPC => NPCType<NPCs.Bosses.AncientDesertDiscus2>();
 	}

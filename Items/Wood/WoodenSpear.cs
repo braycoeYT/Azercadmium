@@ -12,7 +12,7 @@ namespace Azercadmium.Items.Wood
 			item.useStyle = ItemUseStyleID.HoldingOut;
 			item.useAnimation = 18;
 			item.useTime = 24;
-			item.shootSpeed = 3.7f;
+			item.shootSpeed = 2.5f;
 			item.knockBack = 6.5f;
 			item.width = 32;
 			item.height = 32;

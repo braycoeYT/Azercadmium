@@ -21,10 +21,9 @@ namespace Azercadmium.Buffs.Blowpipes
             player.breath -= 3;
             else
             player.breath -= 4;
-            if (player.breath <= 0) 
-            {
+            if (player.breath <= 0) {
                 player.breath = 0;
-                player.lifeRegen -= 12;
+                player.GetModPlayer<AzercadmiumPlayer>().outofBreath = true;
             }
         }
     }

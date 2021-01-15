@@ -30,6 +30,7 @@ namespace Azercadmium
 		public static bool rollercoasterTown;
 		public static bool devastation;
 		public static bool hasAlertCarnallite;
+		public static bool generatedAquite;
 		public static int microbiomeTiles;
 		public override void Initialize() {
 			downedDirtball = false;
@@ -46,6 +47,7 @@ namespace Azercadmium
 			rollercoasterTown = false;
 			devastation = false;
 			hasAlertCarnallite = false;
+			generatedAquite = false;
 		}
 		public override TagCompound Save()
         {
@@ -64,7 +66,8 @@ namespace Azercadmium
 				{"downedCell", downedCell},
 				{"rollercoasterTown", rollercoasterTown},
 				{"devastation", devastation},
-				{"hasAlertCarnallite", hasAlertCarnallite}
+				{"hasAlertCarnallite", hasAlertCarnallite},
+				{"generatedAquite", generatedAquite}
 			};
         }
         public override void Load(TagCompound tag) {
@@ -82,6 +85,7 @@ namespace Azercadmium
 			rollercoasterTown = tag.GetBool("rollercoasterTown");
 			devastation = tag.GetBool("devastation");
 			hasAlertCarnallite = tag.GetBool("hasAlertCarnallite");
+			generatedAquite = tag.GetBool("generatedAquite");
 		}
 		
 		 public override void NetSend(BinaryWriter writer)
@@ -102,6 +106,7 @@ namespace Azercadmium
 			flags2[2] = hasConversationDrop;
 			flags2[3] = rollercoasterTown;
 			flags2[4] = devastation;
+			flags2[5] = generatedAquite;
 			writer.Write(flags2);
 		}
 		
@@ -123,6 +128,7 @@ namespace Azercadmium
 			hasConversationDrop = flags2[2];
 			rollercoasterTown = flags2[3];
 			devastation = flags2[4];
+			generatedAquite = flags2[5];
 		}
 		public override void ModifyWorldGenTasks(List<GenPass> tasks, ref float totalWeight)
 		{
@@ -137,7 +143,7 @@ namespace Azercadmium
         {
 			if (!hasAlertCarnallite && NPC.downedBoss1) {
 				Color messageColor = Color.LawnGreen;
-					string chat = "A green light shimmers from the jungle.";
+					string chat = "A green light shimmers from the jungle!";
 					if (Main.netMode == NetmodeID.Server)
 					{
 						NetMessage.BroadcastChatMessage(NetworkText.FromKey(chat), messageColor);
@@ -162,6 +168,42 @@ namespace Azercadmium
 					Main.NewText(Language.GetTextValue(chat), messageColor);
 				}
 				hasAlertSlime = true;
+			}
+			if (!generatedAquite && NPC.downedFishron)
+			{
+				Color messageColor = Color.DarkCyan;
+				string chat = "The areas beneath the ocean have begun to condense...";
+				if (Main.netMode == NetmodeID.Server)
+				{
+					NetMessage.BroadcastChatMessage(NetworkText.FromKey(chat), messageColor);
+				}
+				else if (Main.netMode == NetmodeID.SinglePlayer)
+				{
+					Main.NewText(Language.GetTextValue(chat), messageColor);
+				}
+
+				// "6E-05" = 0.00006 = normal ore
+				for (int k = 0; k < (int)((Main.maxTilesX * Main.maxTilesY) * 0.00006); k++) {
+					// The inside of this for loop corresponds to one single splotch of our Ore.
+					// First, we randomly choose any coordinate in the world by choosing a random x and y value.
+					int x = WorldGen.genRand.Next(0, 338);
+					int y = WorldGen.genRand.Next((int)WorldGen.worldSurfaceLow, Main.maxTilesY);
+					Tile tile = Framing.GetTileSafely(x, y);
+					if (tile.active() && (tile.type == TileID.Dirt || tile.type == TileID.Stone)) {
+						WorldGen.TileRunner(x, y, WorldGen.genRand.Next(3, 8), WorldGen.genRand.Next(2, 8), ModContent.TileType<Tiles.Aquite.AquiteOre>());
+					}
+				}	
+				for (int k = 0; k < (int)((Main.maxTilesX * Main.maxTilesY) * 0.00006); k++) {
+					// The inside of this for loop corresponds to one single splotch of our Ore.
+					// First, we randomly choose any coordinate in the world by choosing a random x and y value.
+					int x = WorldGen.genRand.Next(Main.maxTilesX - 338, Main.maxTilesX);
+					int y = WorldGen.genRand.Next((int)WorldGen.worldSurfaceLow, Main.maxTilesY);
+					Tile tile = Framing.GetTileSafely(x, y);
+					if (tile.active() && (tile.type == TileID.Dirt || tile.type == TileID.Stone)) {
+						WorldGen.TileRunner(x, y, WorldGen.genRand.Next(3, 8), WorldGen.genRand.Next(2, 8), ModContent.TileType<Tiles.Aquite.AquiteOre>());
+					}
+				}	
+				generatedAquite = true;
 			}
 			
 			/*if (!hasAlertEvil && NPC.downedMoonlord)
@@ -197,6 +239,11 @@ namespace Azercadmium
 				if (tile.active() && tile.type == TileID.Mud) {
 					WorldGen.TileRunner(x, y, WorldGen.genRand.Next(3, 8), WorldGen.genRand.Next(2, 8), ModContent.TileType<GreenCarnalliteOre>());
 				}
+			}
+			for (int k = 0; k < (int)((Main.maxTilesX * Main.maxTilesY) * 6E-05); k++) {
+				int x = WorldGen.genRand.Next(0, Main.maxTilesX);
+				int y = WorldGen.genRand.Next((int)WorldGen.worldSurfaceLow, Main.maxTilesY); 
+				WorldGen.TileRunner(x, y, WorldGen.genRand.Next(3, 6), WorldGen.genRand.Next(2, 6), mod.TileType("ZincOre"));
 			}
 		}
 		/*int sizeBonus;

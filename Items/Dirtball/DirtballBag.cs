@@ -65,6 +65,14 @@ namespace Azercadmium.Items.Dirtball
 			player.QuickSpawnItem(mod.ItemType("DirtShieldOfOblivion"));
 			if (Main.rand.NextFloat() < .33f)
 			player.QuickSpawnItem(ItemID.DirtRod);
+
+			//Dev sets Azercadmium
+			if (Main.rand.NextFloat() < .05f) {
+				switch (Main.rand.Next(1, 2)) {
+					case 1: player.QuickSpawnItem(mod.ItemType("BraycoesHair"));
+						break;
+				}
+			}
 		}
 		public override int BossBagNPC => NPCType<NPCs.Dirtball.Dirtball>();
 	}

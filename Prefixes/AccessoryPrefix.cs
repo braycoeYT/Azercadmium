@@ -13,12 +13,12 @@ namespace Azercadmium.Prefixes
 
         public override float RollChance(Item item)
         {
-            return GetInstance<AzercadmiumConfig>().azercadmiumPrefixes ? 1.2f : 0f;
+            return 1.2f;
         }
 
         public override bool CanRoll(Item item)
         {
-            return true;
+            return GetInstance<AzercadmiumConfig>().azercadmiumPrefixes;
         }
 
         public override PrefixCategory Category { get { return PrefixCategory.Accessory; } }

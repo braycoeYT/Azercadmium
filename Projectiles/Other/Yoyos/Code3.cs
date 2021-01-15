@@ -15,8 +15,8 @@ namespace Azercadmium.Projectiles.Other.Yoyos
 		}
 		public override void SetDefaults() {
 			projectile.extraUpdates = 0;
-			projectile.width = 16;
-			projectile.height = 16;
+			projectile.width = 24;
+			projectile.height = 24;
 			projectile.aiStyle = 99;
 			projectile.friendly = true;
 			projectile.penetrate = -1;

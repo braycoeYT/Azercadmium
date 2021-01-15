@@ -7,8 +7,8 @@ namespace Azercadmium.Items.Empress
 	public class EmpressShard : ModItem
 	{
 		public override void SetStaticDefaults() {
-			DisplayName.SetDefault("Empress Shard");
-			Tooltip.SetDefault("A shard of the highest slime ruler");
+			DisplayName.SetDefault("Royal Gelatin");
+			Tooltip.SetDefault("It shines and pulsates slowly");
 		}
 		public override void SetDefaults() {
 			item.width = 40;

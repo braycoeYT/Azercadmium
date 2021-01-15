@@ -12,12 +12,8 @@ namespace Azercadmium.Buffs.Debuffs.Devastation
             Main.buffNoTimeDisplay[Type] = false;
             Main.debuff[Type] = true;
         }
-        public override void Update(Player player, ref int buffIndex) 
-        {
-            player.GetModPlayer<AzercadmiumPlayer>().slimyOoze = true;
-            if (player.lifeRegen > 0)
-                player.lifeRegen = 0;
-			player.lifeRegen -= 4;
+        public override void Update(Player player, ref int buffIndex) {
+			player.GetModPlayer<AzercadmiumPlayer>().slimyOoze = true;
             if (player.velocity.Y == 0f && Math.Abs(player.velocity.X) > 1f)
 				player.velocity.X = player.velocity.X / 1.5f;
 		}

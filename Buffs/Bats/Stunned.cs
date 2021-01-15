@@ -6,8 +6,7 @@ namespace Azercadmium.Buffs.Bats
 {
     public class Stunned : ModBuff
     {
-        public override void SetDefaults() 
-        {
+        public override void SetDefaults() {
             DisplayName.SetDefault("Stunned");
             Description.SetDefault("Your movement has been greatly hindered");
             Main.buffNoTimeDisplay[Type] = false;
@@ -15,13 +14,11 @@ namespace Azercadmium.Buffs.Bats
 			Main.pvpBuff[Type] = true;
 			Main.buffNoSave[Type] = true;
         }
-        public override void Update(Player player, ref int buffIndex) 
-        {
-            player.dazed = true;
+        public override void Update(Player player, ref int buffIndex) {
+            player.velocity *= 0.3f;
         }
-        public override void Update(NPC npc, ref int buffIndex) 
-        {
-            if (!npc.boss)
+        public override void Update(NPC npc, ref int buffIndex) {
+            if (npc.boss == false)
             npc.velocity *= 0.3f;
         }
     }

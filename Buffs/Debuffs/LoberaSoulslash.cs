@@ -15,7 +15,7 @@ namespace Azercadmium.Buffs.Debuffs
 			Main.buffNoSave[Type] = true;
         }
         public override void Update(Player player, ref int buffIndex) {
-            player.statDefense *= .5f;
+            player.statDefense = (int)(player.statDefense * 0.5f);
             for (int i = 0; i < 3; i++) {
                 int dustType = mod.DustType("LoberaDust");
                 int dustIndex = Dust.NewDust(player.position, player.width, player.height, dustType);
@@ -28,8 +28,7 @@ namespace Azercadmium.Buffs.Debuffs
         bool safe;
         Color safeColor;
         public override void Update(NPC npc, ref int buffIndex) {
-            if (safe) 
-            {
+            if (safe) {
                 safeColor = npc.color;
                 safe = false;
             }

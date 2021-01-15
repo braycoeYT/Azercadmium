@@ -7,11 +7,11 @@ namespace Azercadmium.Projectiles.Discus
 	public class ElectricField : ModProjectile
 	{
         public override void SetStaticDefaults() {
-			DisplayName.SetDefault("Electric Field");
+			DisplayName.SetDefault("Electric Cube");
         }
 		public override void SetDefaults() {
-			projectile.width = 180;
-			projectile.height = 180;
+			projectile.width = 160;
+			projectile.height = 160;
 			projectile.aiStyle = -1;
 			projectile.friendly = true;
 			projectile.penetrate = -1;

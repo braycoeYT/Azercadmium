@@ -18,8 +18,7 @@ namespace Azercadmium.Items.Dirtball
 			item.expert = true;
 			item.defense = 1;
 		}
-		public override void UpdateAccessory(Player player, bool hideVisual) 
-		{
+		public override void UpdateAccessory(Player player, bool hideVisual) {
 			if (player.statLifeMax2 / 2 > player.statLife)
 				player.endurance += 0.1f;
 		}

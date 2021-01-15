@@ -15,6 +15,7 @@ namespace Azercadmium.NPCs
 		public bool slimyOoze;
 		public bool shroomed;
 		public static int dirtballBoss = -1;
+		public static int droneBoss = -1;
 		public override void ResetEffects(NPC npc) {
 			xenicAcid = false;
 			slimyOoze = false;

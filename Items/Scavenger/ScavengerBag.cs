@@ -27,6 +27,14 @@ namespace Azercadmium.Items.Scavenger
 			player.QuickSpawnItem(mod.ItemType("SoulofByte"), Main.rand.Next(25, 40));
 			player.QuickSpawnItem(ItemID.HallowedBar, Main.rand.Next(20, 35));
 			player.QuickSpawnItem(mod.ItemType("MechanicalGearPiece"));
+
+			//Dev sets Azercadmium
+			if (Main.rand.NextFloat() < .05f) {
+				switch (Main.rand.Next(1, 2)) {
+					case 1: player.QuickSpawnItem(mod.ItemType("BraycoesHair"));
+						break;
+				}
+			}
 		}
 		public override int BossBagNPC => NPCType<NPCs.Scavenger.MatrixScavenger>();
 	}

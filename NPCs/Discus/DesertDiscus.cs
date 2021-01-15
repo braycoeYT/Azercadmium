@@ -11,15 +11,15 @@ namespace Azercadmium.NPCs.Discus
 			DisplayName.SetDefault("Desert Discus");
 		}
         public override void SetDefaults() {
-			npc.width = 36;
-			npc.height = 48;
+			npc.width = 40;
+			npc.height = 46;
 			npc.damage = 12;
-			npc.defense = 3;
+			npc.defense = 6;
 			npc.lifeMax = 33;
 			npc.HitSound = SoundID.NPCHit1;
 			npc.DeathSound = SoundID.NPCDeath3;
 			npc.value = Item.buyPrice(0, 0, 0, 14);
-			npc.knockBackResist = 0.8f;
+			npc.knockBackResist = 0.2f;
 			npc.aiStyle = 44;
 			npc.noGravity = true;
 			npc.noTileCollide = true;
@@ -29,8 +29,7 @@ namespace Azercadmium.NPCs.Discus
 		public override void ScaleExpertStats(int numPlayers, float bossLifeScale) {
             npc.lifeMax = 76;
             npc.damage = 25;
-			npc.defense = 6;
-			npc.knockBackResist = 0.2f;
+			npc.knockBackResist = 0.1f;
         }
 		public override void HitEffect(int hitDirection, double damage) {
 			for (int i = 0; i < 10; i++) {
