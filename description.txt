@@ -105,3 +105,7 @@ Update V0.2.7: Titan Update
 ~Resprited, buffed, and renamed Dirt Shield of Oblivion to Hardened Dirt Shield.
 ~Added a new boss: Titan Tankorb!
 ^Early hardmode, here to "help" you get several early hardmode materials.
+
+Update V0.2.7.1: Titan Update Bugfixes
+~Fixed Earthmight armor looking odd.
+~Fixed Earthmight Visor not dropping.

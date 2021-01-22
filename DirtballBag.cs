@@ -38,7 +38,7 @@ namespace Azercadmium.Items.Dirtball
 						break;
 			}
 			switch (Main.rand.Next(1, 4)) {
-					case 1: player.QuickSpawnItem(mod.ItemType("EarthmightHelm"));
+					case 1: player.QuickSpawnItem(mod.ItemType("EarthmightVisor"));
 						break;
 					case 2: player.QuickSpawnItem(mod.ItemType("EarthmightBreastplate"));
 						break;
