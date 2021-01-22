@@ -16,6 +16,7 @@ namespace Azercadmium.NPCs
 		public bool shroomed;
 		public static int dirtballBoss = -1;
 		public static int droneBoss = -1;
+		public static int titanBoss = -1;
 		public override void ResetEffects(NPC npc) {
 			xenicAcid = false;
 			slimyOoze = false;
@@ -176,7 +177,7 @@ namespace Azercadmium.NPCs
 			if (NPC.downedPlantBoss && (npc.type == NPCID.RainbowSlime || npc.type == NPCID.Pinky)) {
 				Item.NewItem(npc.getRect(), mod.ItemType("ElementalGel"), Main.rand.Next(20, 51));
 			}
-			if (Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)].ZoneSkyHeight && Main.hardMode && Main.rand.NextFloat() < .1f) {
+			if (Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)].ZoneSkyHeight && Main.hardMode && Main.rand.NextFloat() < .2f) {
 				Item.NewItem(npc.getRect(), mod.ItemType("Electrolight"));
 			}
 			if (npc.type == NPCID.Derpling || npc.type == NPCID.GiantTortoise || npc.type == NPCID.GiantFlyingFox || npc.type == NPCID.AngryTrapper || npc.type == NPCID.Arapaima) {

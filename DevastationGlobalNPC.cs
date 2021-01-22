@@ -322,6 +322,11 @@ namespace Azercadmium.NPCs
 							NPC.NewNPC((int)npc.position.X, (int)npc.position.Y, mod.NPCType("VileObserver"));
 						}
 						break;
+						case NPCID.BlazingWheel:
+						AITimer++;
+						if (AITimer % 5 == 0)
+							Projectile.NewProjectile(npc.Center, new Vector2(0, 0), mod.ProjectileType("FlameTrailEye"), npc.damage, 0f, Main.myPlayer);
+						break;
 			}
 		}
 		public override void NPCLoot(NPC npc) {

@@ -3,17 +3,17 @@ using Terraria.ModLoader;
 
 namespace Azercadmium.Buffs.Potions
 {
-    public class BloodiedVial : ModBuff
+    public class Psychic : ModBuff
     {
         public override void SetDefaults() {
-            DisplayName.SetDefault("Bloodied Vial");
-            Description.SetDefault("8% chance of any attack to leech health from enemies");
+            DisplayName.SetDefault("Psychic");
+            Description.SetDefault("You are focused on your psychic ability");
             Main.buffNoTimeDisplay[Type] = false;
             Main.debuff[Type] = false;
         }
         public override void Update(Player player, ref int buffIndex) {
-            AzercadmiumPlayer p = player.GetModPlayer<AzercadmiumPlayer>();
-            p.bloodVial = true;
+			player.statLifeMax2 = (int)(player.statLifeMax2 * 0.95f);
+            player.manaRegen += 5;
         }
     }
 }

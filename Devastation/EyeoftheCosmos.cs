@@ -11,7 +11,7 @@ namespace Azercadmium.Items.Devastation
 	{
 		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Eye of the Cosmos");
-			Tooltip.SetDefault("Used to activate and deactivate Devastation Mode\nDevastation mode heavily increases the difficulty of the game and is not recommended for a first playthrough\nNote: Heavily unfinished\nCan only be activated in Expert Mode and when no bosses are alive\nDevastation mode only items will have the Mint Chocolate rarity\nCheck the Azercadmium Discord Server in #info for full list of changes\nDue to an odd glitch, after fighting a boss, you may or may not have to reload your world to change the difficulty again");
+			Tooltip.SetDefault("Used to activate and deactivate Devastation Mode\nDevastation mode heavily increases the difficulty of the game and is not recommended for a first playthrough\nNote: Heavily unfinished\nCan only be activated in Expert Mode and when no bosses are alive\nDevastation mode only items will have the Mint Chocolate rarity\nCheck the Azercadmium Discord Server in #info for full list of changes");
 			ItemID.Sets.SortingPriorityBossSpawns[item.type] = 13;
 		}
 		public override void SetDefaults() {
@@ -24,14 +24,6 @@ namespace Azercadmium.Items.Devastation
 			item.useStyle = ItemUseStyleID.HoldingUp;
 			item.consumable = false;
 		}
-		public bool BossAlive() {
-			for (int i = 0; i < Main.maxNPCs; i++) {
-				if (Main.npc[i].boss || Main.npc[i].type == NPCID.EaterofWorldsHead) {
-					return true;
-				}
-            }
-			return false;
-        }
 		public override void ModifyTooltips(List<TooltipLine> list) {
             foreach (TooltipLine tooltipLine in list) {
                 if (tooltipLine.mod == "Terraria" && tooltipLine.Name == "ItemName") {
@@ -44,14 +36,14 @@ namespace Azercadmium.Items.Devastation
             }
         }
 		public override bool CanUseItem(Player player) {
-			return !BossAlive() && Main.expertMode;
+			return !AzercadmiumUtils.BossAlive() && Main.expertMode;
 		}
 		public override bool UseItem(Player player) {
 			AzercadmiumWorld.devastation = !AzercadmiumWorld.devastation;
 			Main.PlaySound(SoundID.Roar, player.position, 0);
 			if (AzercadmiumWorld.devastation == true) {
 				Color messageColor = Color.LightGreen;
-				string chat = "Devastation Mode activated! Prepare for pain (and mint)!";
+				string chat = "Devastation Mode activated! Prepare for suffering!";
 				if (Main.netMode == NetmodeID.Server)
 					NetMessage.BroadcastChatMessage(NetworkText.FromKey(chat), messageColor);
 				else if (Main.netMode == NetmodeID.SinglePlayer)

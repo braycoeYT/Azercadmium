@@ -3,17 +3,16 @@ using Terraria.ModLoader;
 
 namespace Azercadmium.Buffs.Potions
 {
-    public class BloodiedVial : ModBuff
+    public class Manareach : ModBuff
     {
         public override void SetDefaults() {
-            DisplayName.SetDefault("Bloodied Vial");
-            Description.SetDefault("8% chance of any attack to leech health from enemies");
+            DisplayName.SetDefault("Manareach");
+            Description.SetDefault("Increases mana star pickup range");
             Main.buffNoTimeDisplay[Type] = false;
             Main.debuff[Type] = false;
         }
         public override void Update(Player player, ref int buffIndex) {
-            AzercadmiumPlayer p = player.GetModPlayer<AzercadmiumPlayer>();
-            p.bloodVial = true;
+			player.manaMagnet = true;
         }
     }
 }

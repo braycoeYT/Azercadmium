@@ -7,7 +7,7 @@ using Terraria.ModLoader;
 using Terraria.Utilities;
 using static Terraria.ModLoader.ModContent;
 
-namespace Azercadmium.Tiles
+namespace Azercadmium.Items
 {
 	public class AzercadmiumGlobalItem : GlobalItem
 	{
@@ -16,7 +16,7 @@ namespace Azercadmium.Tiles
 				TooltipLine line = new TooltipLine(mod, "Tooltip#0", "Increases ranged critcal strike chance by 5\nIncreases melee speed by 6%");
 				tooltips.Add(line);
 			}
-			if (GetInstance<AzercadmiumConfig>().vanillaSeed) {
+			if (GetInstance<AzercadmiumConfig>().vanillaSeedAmmo) {
 				if (item.type == ItemID.GrassSeeds) {
 					TooltipLine line = new TooltipLine(mod, "Tooltip#0", "For use with blowpipes\nBecause of the sharpness of the seed, it has a chance to deal an extra 2 damage to enemies (shown in dark green)");
 					tooltips.Add(line);
@@ -55,6 +55,8 @@ namespace Azercadmium.Tiles
 				item.damage = 10;
 			if (item.type == ItemID.CookedMarshmallow)
 				item.buffTime = 7200;
+			if (item.type == ItemID.Coal) 
+				item.maxStack = 999;
 			if (GetInstance<AzercadmiumConfig>().pearlwoodBuff) {
 				if (item.type == ItemID.PearlwoodBow)
 					item.damage = 29;
@@ -69,7 +71,7 @@ namespace Azercadmium.Tiles
 				if (item.type == ItemID.PearlwoodSword)
 					item.damage = 46;
 			}
-			if (GetInstance<AzercadmiumConfig>().vanillaSeed) {
+			if (GetInstance<AzercadmiumConfig>().vanillaSeedAmmo) {
 				if (item.type == ItemID.GrassSeeds) {
 					item.damage = 7;
 					item.ranged = true;
@@ -124,9 +126,10 @@ namespace Azercadmium.Tiles
 					item.ammo = AmmoID.Dart;
 					item.maxStack = 999;
 				}
-				if (item.type == ItemID.Coal) {
-					item.maxStack = 999;
-				}
+			}
+			if (GetInstance<AzercadmiumConfig>().iceSickleAuto) {
+				if (item.type == ItemID.IceSickle)
+					item.autoReuse = true;
 			}
 		}
 		public override int ChoosePrefix(Item item, UnifiedRandom rand)
@@ -145,7 +148,7 @@ namespace Azercadmium.Tiles
 						return ModContent.PrefixType<Odd>();
 					if (Main.rand.Next(30) == 0)
 						return ModContent.PrefixType<Egotistical>();
-					if (Main.rand.Next(50) == 0)
+					if (Main.rand.Next(75) == 0)
 						return ModContent.PrefixType<Exotic>();
 				}
 				if (item.melee) {

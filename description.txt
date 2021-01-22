@@ -1,19 +1,20 @@
+The best Terraria mod that starts with Aze!
 This mod has unique content, including ore furniture and three new subclasses.
 This mod also has QoL changes, such as an easier Slime Crown recipe, crimson alternates, tons of vanilla recipes, and some hardmode enemies dropping prehardmode loot.
 Some changes can be only accessed via the config, like the Pearlwood buff.
 PLEASE READ: Some parts of the mod are very bad, I am trying my hardest to fix them as soon as possible, please be patient...
 
 Stats:
-~280 Items
+~262 Items
 ~4 Bosses:
-^2 Prehardmode Bosses
-^2 Hardmode Bosses
+^1 Prehardmode Bosses
+^3 Hardmode Bosses
 ^(1) Unobtainable Joke Superboss
 ~2 Town NPCs
-~34 total NPCs
+~30 total NPCs
 ~50 Tiles
-~31 Buffs
-~3 Subclasses
+~29 Buffs
+~2 Subclasses
 ~2 Custom Soundtracks
 ~3 Rarities
 ~1 Unfinished Game Mode
@@ -26,10 +27,10 @@ Stats:
 Spriters:
 FunkItOut (Spriter)
 Astrum (Spriter)
-LoginatorV (Spriter)
+That One Book Man (Spriter)
 HBDeus (Spriter)
 Pufferfish77 (Spriter)
-Skymanisbtman (Inactive Spriter/Music)
+Skymanisbtman (Inactive Spriter/ Active Music)
 Koolaidlemonade (Inactive Spriter)
 
 Coders:
@@ -53,12 +54,54 @@ Don't Call Me Klarson (Wooden Shield)
 EternalAvant (Old Featherfall Shield)
 Thunderminer79 (Help with Matrix Scavenger movement)
 Mr. Raccoon (A couple sprites)
+Lamb Sauce (Empress Chalice sprite)
 
 Multiplayer support is unknown, but most of us play alone anyway.
 
-Update V0.2.6.9: The Update
-~Changed author name ("BraycoeYT and the Spriters" to "BraycoeYT and the Developers").
-~Added Neutron Fragment, a new fragment for classless weapons.
-~Added an unfinished unobtainable item.
-~Buffed Vortex Blowpipe.
-~Removed the secret code because it was pointless.
+Update V0.2.7: Titan Update
+~Added Zinc Band.
+~Fixed Eye of the Cosmos glitch for real.
+~Removed discus content temporarily as the reworks will take a while.
+~Removed Javelances.
+~Changed Any Prehardmode Bar to Any Basic Prehardmode Bar.
+~Added Zinc Bar to Any Basic Prehardmode Bar.
+~Buffed HBDeus's Greatsword.
+~Reworked Bloodied Vial.
+~Resprited Empress Chalice.
+~Resprited Slimebender projectiles.
+~Added Zinc Bar Tooltip.
+~Resprited Bloodied Vial buff icon.
+~Fixed Bloodied Vial buff inaccuracies.
+~Resprited Feral Chemicals, Floater Potion, Manareach Potion, and Psychic Potion.
+~Resprited Icy Greatblade.
+~Resprited Green Carnallite Ore tile.
+~Resprited and renamed Green and Red Carnallite items.
+~Fixed Royal Rose recipe.
+~Fixed Red Carnallite item crafting requiring Mythril Ore instead of a Mythril/Orichalcum Anvil.
+~Fixed Royal Rose flowers not dealing damage.
+~Removed an unused dust.
+~Fixed Carnallite Bar tile dusts.
+~Devastation Blazing Wheels now leave trails of fire.
+~Resprited Starfrenzy.
+~Added some important coding stuff.
+~Fixed a coding error in the global item.
+~Resprited Phoenix Driver.
+~Disabled use turn for the Phoenix Driver.
+~Resprited and renamed Frozen Flesh Knuckles to Aurorous Knuckles.
+~Resprited and renamed Egg of the Inferno to Blazing Egg.
+~Resprited Earthmight Armor.
+~Renamed Earthmight Helm to Earthmight Visor.
+~Replaced Sack of Protection with Empress Crown.
+~Monarchal Gel now requires Tinkerer's Workbench instead of Mythril Anvil.
+~Bone Slime now turns around correctly.
+~Added Inhaler.
+~Added The Avalanche, an upgrade to the Sandgun and Snow Cannon.
+~Resprited Soul of Byte.
+~Increased Electrolight drop rate.
+~Added Ice Sickle Auto Re-use config.
+~Fixed mistake involving Coal max stack only increasing if the vanilla ammo config is enabled.
+~Changed Dirtball Fragment item recipes.
+~Various internal sorting.
+~Resprited, buffed, and renamed Dirt Shield of Oblivion to Hardened Dirt Shield.
+~Added a new boss: Titan Tankorb!
+^Early hardmode, here to "help" you get several early hardmode materials.
