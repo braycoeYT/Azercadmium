@@ -2,16 +2,11 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace Azercadmium.Items
+namespace Azercadmium.Items.Underworld
 {
 	public class PhoenixDriver : ModItem
 	{
-		public override void SetStaticDefaults() 
-		{
-			DisplayName.SetDefault("Phoenix Driver");
-		}
-		public override void SetDefaults() 
-		{
+		public override void SetDefaults() {
 			item.damage = 29;
 			item.magic = true;
 			item.width = 33;
@@ -20,10 +15,10 @@ namespace Azercadmium.Items
 			item.useAnimation = 14;
 			item.useStyle = ItemUseStyleID.HoldingOut;
 			item.knockBack = 0.5f;
-			item.value = 37500;
+			item.value = Item.sellPrice(0, 0, 54, 0);
 			item.rare = ItemRarityID.Green;
 			item.autoReuse = true;
-			item.useTurn = true;
+			item.useTurn = false;
 			item.shoot = ProjectileID.ImpFireball;
 			item.shootSpeed = 10f;
 			item.noMelee = true;

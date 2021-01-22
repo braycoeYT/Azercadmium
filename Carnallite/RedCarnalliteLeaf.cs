@@ -44,7 +44,7 @@ namespace Azercadmium.Projectiles.Carnallite
 		}
 		public override void Kill(int timeLeft) {
 			Collision.HitTiles(projectile.position + projectile.velocity, projectile.velocity, projectile.width, projectile.height);
-			Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, 0, 0, mod.ProjectileType("RedCarnalliteFlower"), 0, 0, Main.myPlayer);
+			Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, 0, 0, ModContent.ProjectileType<Projectiles.Carnallite.RedCarnalliteFlower>(), projectile.damage, 0, Main.myPlayer);
 		}
-	}   
+	}
 }
