@@ -3,13 +3,13 @@ using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace Azercadmium.Items.CVirus
+namespace Azercadmium.Items.Scavenger
 {
 	public class SoulofByte : ModItem
 	{
 		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Soul of Byte");
-			Tooltip.SetDefault("The essence of the computer destroyer");
+			Tooltip.SetDefault("The essence of the matrix scavenger");
 			Main.RegisterItemAnimation(item.type, new DrawAnimationVertical(5, 4)); //first is speed, second is amount of frames
 			ItemID.Sets.AnimatesAsSoul[item.type] = true;
 			ItemID.Sets.ItemIconPulse[item.type] = true;
