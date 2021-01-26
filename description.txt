@@ -30,7 +30,7 @@ Astrum (Spriter)
 That One Book Man (Spriter)
 HBDeus (Spriter)
 Pufferfish77 (Spriter)
-Skymanisbtman (Inactive Spriter/ Active Music)
+Skymanisbtman (Spriter/Composer)
 Koolaidlemonade (Inactive Spriter)
 
 Coders:
@@ -109,3 +109,9 @@ Update V0.2.7: Titan Update
 Update V0.2.7.1: Titan Update Bugfixes
 ~Fixed Earthmight armor looking odd.
 ~Fixed Earthmight Visor not dropping.
+
+Update V0.2.7.2: Titan Update Bugfixes 2
+~Nerfed Starfrenzy.
+~Fixed Titan Tankorb spawning naturally.
+~Fixed Titan Tankorb not having a downed bool.
+~Added Titan Tankorb boss checklist support.

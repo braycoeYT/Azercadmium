@@ -571,7 +571,7 @@ namespace Azercadmium.NPCs.Dirtball
 				}
 			}
 			if (!AzercadmiumWorld.downedDirtball && Main.dayTime && canSpawn)
-			    return 0f; //0.00005
+			    return 0.000025f; //0.00005
 			return 0f;
         }
 	}

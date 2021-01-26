@@ -30,30 +30,18 @@ namespace Azercadmium
 					new List<int> { ModContent.ItemType<Items.Dirtball.MuddyGreatsword>()}, //other
 					$"Dirtball has an extremely low chance of spawning if not defeated and any player's max health is over 100. It can also be manually summoned with a [i:{ModContent.ItemType<Items.Dirtball.CreepyMud>()}], which can be crafted or rarely dropped from enemies."
 				);
-				/*bossChecklist.Call(
+				bossChecklist.Call(
 					"AddBoss",
-					1.95f,
-					new List<int> { ModContent.NPCType<NPCs.Bosses.AncientDesertDiscus>() },
+					6.75f,
+					new List<int> { ModContent.NPCType<NPCs.Titan.TitanTankorb>() },
 					this,
-					"$Mods.Azercadmium.NPCName.AncientDesertDiscus",
-					(Func<bool>)(() => AzercadmiumWorld.downedDiscus),
-					ModContent.ItemType<Items.Discus.SuspiciousLookingDisc>(),
-					new List<int> { ModContent.ItemType<Items.Discus.DriedEssence>() }, //collectables
-					new List<int> { ModContent.ItemType<Items.Discus.DriedEssence>() }, //other
-					$"Use a [i:{ModContent.ItemType<Items.Discus.SuspiciousLookingDisc>()}]  to summon the discus leader in the desert night."
-				);*/
-				/*bossChecklist.Call(
-					"AddBoss",
-					3.05f,
-					new List<int> { ModContent.NPCType<NPCs.Bosses.ColossalCell>() },
-					this,
-					"$Mods.Azercadmium.NPCName.ColossalCell",
-					(Func<bool>)(() => AzercadmiumWorld.downedCell),
-					ModContent.ItemType<Items.Microbiome.CellularSnack>(),
-					new List<int> { ModContent.ItemType<Items.Microbiome.Cytoplasm>() }, //collectables
-					new List<int> { ModContent.ItemType<Items.Microbiome.Cytoplasm>() }, //other
-					$"Use a [i:{ModContent.ItemType<Items.Microbiome.CellularSnack>()}] in the microbiome."
-				);*/
+					"$Mods.Azercadmium.NPCName.TitanTankorb",
+					(Func<bool>)(() => AzercadmiumWorld.downedTitan),
+					ModContent.ItemType<Items.Titan.TitaniumEnergyCore>(),
+					new List<int> { ModContent.ItemType<Items.Titan.TitanicEnergy>() }, //collectables
+					new List<int> { ModContent.ItemType<Items.Titan.TitanicEnergy>() }, //other
+					$"Use a [i:{ModContent.ItemType<Items.Titan.AdamantiteEnergyCore>()}] or [i:{ModContent.ItemType<Items.Titan.TitaniumEnergyCore>()}]."
+				);
 				bossChecklist.Call(
 					"AddBoss",
 					9.25f,
@@ -78,32 +66,7 @@ namespace Azercadmium
 					new List<int> { ModContent.ItemType<Items.Empress.EmpressShard>() }, //other
 					$"Use a [i:{ModContent.ItemType<Items.Empress.EmpressChalice>()}]"
 				);
-				/*bossChecklist.Call(
-					"AddBoss",
-					14.5f,
-					new List<int> { ModContent.NPCType<NPCs.Bosses.AzercadmiumianMineralExtractor>()},
-					this,
-					"$Mods.Azercadmium.NPCName.AzercadmiumianMineralExtractor",
-					(Func<bool>)(() => AzercadmiumWorld.downedMineral),
-					ModContent.ItemType<Items.Mineral.GigaGemstone>(),
-					new List<int> { ModContent.ItemType<Items.Mineral.GalacticDiamondium>() }, //collectables
-					new List<int> { ModContent.ItemType<Items.Mineral.GalacticDiamondium>() }, //other
-					$"Use a [i:{ModContent.ItemType<Items.Mineral.GigaGemstone>()}] at night to send its scanners out of control."
-				);
-				bossChecklist.Call(
-					"AddMiniBoss",
-					14.75f,
-					new List<int> { ModContent.NPCType<NPCs.Minibosses.XenicAcidpumper>() },
-					this,
-					"$Mods.Azercadmium.NPCName.XenicAcidpumper",
-					(Func<bool>)(() => AzercadmiumWorld.downedXenic),
-					ModContent.ItemType<Items.Xenic.TimeDistortingBattery>(),
-					new List<int> { ModContent.ItemType<Items.Xenic.XenicCore>() }, //collectables
-					new List<int> { ModContent.ItemType<Items.Xenic.XenicCore>()}, //other
-					$"The Xenic Acidpumper can rarely spawn in space post-Azercadmiumian Mineral Extractor or can also be summoned with a [i:{ModContent.ItemType<Items.Xenic.TimeDistortingBattery>()}]"
-				);*/
 			}
-
 			AzercadmiumUtils.Initialize();
 		}
 
