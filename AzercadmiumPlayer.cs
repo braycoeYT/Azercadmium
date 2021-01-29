@@ -33,7 +33,7 @@ namespace Azercadmium
 		public bool eyeCandy;
 		public bool hyperCell;
 		public bool magentiteBonus;
-		public bool bloodJavelance;
+		public bool bloodVial;
 		public bool cyanixShort;
 		public bool cytocellPet;
 		public bool mineralExpert;
@@ -77,7 +77,7 @@ namespace Azercadmium
 			eyeCandy = false;
 			hyperCell = false;
 			magentiteBonus = false;
-			bloodJavelance = false;
+			bloodVial = false;
 			cytocellPet = false;
 			mineralExpert = false;
 			xenicAcid = false;
@@ -526,10 +526,30 @@ namespace Azercadmium
 			if (xenicExpert && Main.rand.NextFloat() < .25f) {
 				target.AddBuff(mod.BuffType("XenicAcid"), 60 * Main.rand.Next(3, 11), false);
 			}
+			if (bloodVial && Main.rand.NextFloat() < .08f && target.type != NPCID.TargetDummy) {
+				player.statLife += 1;
+				player.HealEffect(1, true);
+			}
 		}
 		public override void OnHitNPCWithProj(Projectile proj, NPC target, int damage, float knockback, bool crit) {
 			if (xenicExpert && Main.rand.NextFloat() < .25f) {
 				target.AddBuff(mod.BuffType("XenicAcid"), 60 * Main.rand.Next(3, 11), false);
+			}
+			if (bloodVial && Main.rand.NextFloat() < .08f && target.type != NPCID.TargetDummy) {
+				player.statLife += 1;
+				player.HealEffect(1, true);
+			}
+		}
+		public override void OnHitPvp(Item item, Player target, int damage, bool crit) {
+			if (bloodVial && Main.rand.NextFloat() < .08f) {
+				player.statLife += 1;
+				player.HealEffect(1, true);
+			}
+		}
+		public override void OnHitPvpWithProj(Projectile proj, Player target, int damage, bool crit) {
+			if (bloodVial && Main.rand.NextFloat() < .08f) {
+				player.statLife += 1;
+				player.HealEffect(1, true);
 			}
 		}
 		public override void PostUpdateBuffs()

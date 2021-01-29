@@ -13,6 +13,7 @@ namespace Azercadmium
 		{
 			
 		}
+		public static Mod Mod => ModLoader.GetMod("Azercadmium");
 		public override void PostSetupContent()
 		{
 			Mod bossChecklist = ModLoader.GetMod("BossChecklist");
@@ -31,28 +32,16 @@ namespace Azercadmium
 				);
 				bossChecklist.Call(
 					"AddBoss",
-					1.95f,
-					new List<int> { ModContent.NPCType<NPCs.Bosses.AncientDesertDiscus>() },
+					6.75f,
+					new List<int> { ModContent.NPCType<NPCs.Titan.TitanTankorb>() },
 					this,
-					"$Mods.Azercadmium.NPCName.AncientDesertDiscus",
-					(Func<bool>)(() => AzercadmiumWorld.downedDiscus),
-					ModContent.ItemType<Items.Discus.SuspiciousLookingDisc>(),
-					new List<int> { ModContent.ItemType<Items.Discus.DriedEssence>() }, //collectables
-					new List<int> { ModContent.ItemType<Items.Discus.DriedEssence>() }, //other
-					$"Use a [i:{ModContent.ItemType<Items.Discus.SuspiciousLookingDisc>()}]  to summon the discus leader in the desert night."
+					"$Mods.Azercadmium.NPCName.TitanTankorb",
+					(Func<bool>)(() => AzercadmiumWorld.downedTitan),
+					ModContent.ItemType<Items.Titan.TitaniumEnergyCore>(),
+					new List<int> { ModContent.ItemType<Items.Titan.TitanicEnergy>() }, //collectables
+					new List<int> { ModContent.ItemType<Items.Titan.TitanicEnergy>() }, //other
+					$"Use a [i:{ModContent.ItemType<Items.Titan.AdamantiteEnergyCore>()}] or [i:{ModContent.ItemType<Items.Titan.TitaniumEnergyCore>()}]."
 				);
-				/*bossChecklist.Call(
-					"AddBoss",
-					3.05f,
-					new List<int> { ModContent.NPCType<NPCs.Bosses.ColossalCell>() },
-					this,
-					"$Mods.Azercadmium.NPCName.ColossalCell",
-					(Func<bool>)(() => AzercadmiumWorld.downedCell),
-					ModContent.ItemType<Items.Microbiome.CellularSnack>(),
-					new List<int> { ModContent.ItemType<Items.Microbiome.Cytoplasm>() }, //collectables
-					new List<int> { ModContent.ItemType<Items.Microbiome.Cytoplasm>() }, //other
-					$"Use a [i:{ModContent.ItemType<Items.Microbiome.CellularSnack>()}] in the microbiome."
-				);*/
 				bossChecklist.Call(
 					"AddBoss",
 					9.25f,
@@ -68,7 +57,7 @@ namespace Azercadmium
 				bossChecklist.Call(
 					"AddBoss",
 					10.5f,
-					new List<int> { ModContent.NPCType<NPCs.Bosses.EmpressSlime>()},
+					new List<int> { ModContent.NPCType<NPCs.Empress.EmpressSlime>()},
 					this,
 					"$Mods.Azercadmium.NPCName.EmpressSlime",
 					(Func<bool>)(() => AzercadmiumWorld.downedEmpress),
@@ -77,41 +66,19 @@ namespace Azercadmium
 					new List<int> { ModContent.ItemType<Items.Empress.EmpressShard>() }, //other
 					$"Use a [i:{ModContent.ItemType<Items.Empress.EmpressChalice>()}]"
 				);
-				/*bossChecklist.Call(
-					"AddBoss",
-					14.5f,
-					new List<int> { ModContent.NPCType<NPCs.Bosses.AzercadmiumianMineralExtractor>()},
-					this,
-					"$Mods.Azercadmium.NPCName.AzercadmiumianMineralExtractor",
-					(Func<bool>)(() => AzercadmiumWorld.downedMineral),
-					ModContent.ItemType<Items.Mineral.GigaGemstone>(),
-					new List<int> { ModContent.ItemType<Items.Mineral.GalacticDiamondium>() }, //collectables
-					new List<int> { ModContent.ItemType<Items.Mineral.GalacticDiamondium>() }, //other
-					$"Use a [i:{ModContent.ItemType<Items.Mineral.GigaGemstone>()}] at night to send its scanners out of control."
-				);
-				bossChecklist.Call(
-					"AddMiniBoss",
-					14.75f,
-					new List<int> { ModContent.NPCType<NPCs.Minibosses.XenicAcidpumper>() },
-					this,
-					"$Mods.Azercadmium.NPCName.XenicAcidpumper",
-					(Func<bool>)(() => AzercadmiumWorld.downedXenic),
-					ModContent.ItemType<Items.Xenic.TimeDistortingBattery>(),
-					new List<int> { ModContent.ItemType<Items.Xenic.XenicCore>() }, //collectables
-					new List<int> { ModContent.ItemType<Items.Xenic.XenicCore>()}, //other
-					$"The Xenic Acidpumper can rarely spawn in space post-Azercadmiumian Mineral Extractor or can also be summoned with a [i:{ModContent.ItemType<Items.Xenic.TimeDistortingBattery>()}]"
-				);*/
 			}
+			AzercadmiumUtils.Initialize();
 		}
 
 		public override void AddRecipeGroups()
 		{
-			RecipeGroup group = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " Prehardmode Bar", new int[]
+			RecipeGroup group = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + "Basic Prehardmode Bar", new int[]
 			{
 			ItemID.CopperBar,
 			ItemID.TinBar,
 			ItemID.IronBar,
 			ItemID.LeadBar,
+			ItemType("ZincBar"),
 			ItemID.SilverBar,
 			ItemID.TungstenBar,
 			ItemID.GoldBar,
@@ -190,6 +157,13 @@ namespace Azercadmium
 			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(ItemID.BandofRegeneration);
 			recipe.AddRecipe();
+
+			recipe = new ModRecipe(this);
+			recipe.AddIngredient(null, "ZincBand");
+			recipe.AddIngredient(ItemID.LifeCrystal);
+			recipe.AddTile(TileID.Anvils);
+			recipe.SetResult(ItemID.BandofRegeneration);
+			recipe.AddRecipe();
 			
 			recipe = new ModRecipe(this);
 			recipe.AddIngredient(null, "IronBand");
@@ -200,6 +174,13 @@ namespace Azercadmium
 
 			recipe = new ModRecipe(this);
 			recipe.AddIngredient(null, "LeadBand");
+			recipe.AddIngredient(ItemID.ManaCrystal);
+			recipe.AddTile(TileID.Anvils);
+			recipe.SetResult(ItemID.BandofStarpower);
+			recipe.AddRecipe();
+
+			recipe = new ModRecipe(this);
+			recipe.AddIngredient(null, "ZincBand");
 			recipe.AddIngredient(ItemID.ManaCrystal);
 			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(ItemID.BandofStarpower);
@@ -377,6 +358,48 @@ namespace Azercadmium
 			recipe.AddTile(TileID.LunarCraftingStation);
 			recipe.SetResult(ItemID.FragmentStardust);
 			recipe.AddRecipe();
+			
+			recipe = new ModRecipe(this);
+			recipe.AddIngredient(ItemID.CobaltBar);
+			recipe.AddIngredient(null, "TitanicEnergy");
+			recipe.AddTile(TileID.MythrilAnvil);
+			recipe.SetResult(ItemID.PalladiumBar);
+			recipe.AddRecipe();
+
+			recipe = new ModRecipe(this);
+			recipe.AddIngredient(ItemID.PalladiumBar);
+			recipe.AddIngredient(null, "TitanicEnergy");
+			recipe.AddTile(TileID.MythrilAnvil);
+			recipe.SetResult(ItemID.CobaltBar);
+			recipe.AddRecipe();
+
+			recipe = new ModRecipe(this);
+			recipe.AddIngredient(ItemID.MythrilBar);
+			recipe.AddIngredient(null, "TitanicEnergy");
+			recipe.AddTile(TileID.MythrilAnvil);
+			recipe.SetResult(ItemID.OrichalcumBar);
+			recipe.AddRecipe();
+
+			recipe = new ModRecipe(this);
+			recipe.AddIngredient(ItemID.OrichalcumBar);
+			recipe.AddIngredient(null, "TitanicEnergy");
+			recipe.AddTile(TileID.MythrilAnvil);
+			recipe.SetResult(ItemID.MythrilBar);
+			recipe.AddRecipe();
+
+			recipe = new ModRecipe(this);
+			recipe.AddIngredient(ItemID.AdamantiteBar);
+			recipe.AddIngredient(null, "TitanicEnergy");
+			recipe.AddTile(TileID.MythrilAnvil);
+			recipe.SetResult(ItemID.TitaniumBar);
+			recipe.AddRecipe();
+
+			recipe = new ModRecipe(this);
+			recipe.AddIngredient(ItemID.TitaniumBar);
+			recipe.AddIngredient(null, "TitanicEnergy");
+			recipe.AddTile(TileID.MythrilAnvil);
+			recipe.SetResult(ItemID.AdamantiteBar);
+			recipe.AddRecipe();
 		}
 		/*public override void UpdateMusic(ref int music, ref MusicPriority priority)
 		{
@@ -395,5 +418,8 @@ namespace Azercadmium
 				priority = MusicPriority.BiomeHigh;
 			}
 		}*/
+		public override void Unload() {
+			AzercadmiumUtils.Unload();
+		}
 	}
 }

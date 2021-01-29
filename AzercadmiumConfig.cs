@@ -28,5 +28,9 @@ namespace Azercadmium
 		[Label("Dirtboi Cries for its Father")]
 		[Tooltip("If you defeat Dirtball, he will cry before running away.")]
 		public bool dirtboiCries;
+
+		[Label("Ice Sickle Auto Re-use")]
+		[Tooltip("Enables auto re-use for the Ice Sickle. No more spam clicking! Reload required.")]
+		public bool iceSickleAuto;
 	}
 }

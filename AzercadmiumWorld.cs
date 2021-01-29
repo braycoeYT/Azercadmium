@@ -18,7 +18,7 @@ namespace Azercadmium
 	{
 		public static bool downedDirtball;
 		public static bool downedDiscus;
-		public static bool downedMineral;
+		public static bool downedTitan;
 		public static bool generatedEctojewelo;
 		public static bool downedScavenger;
 		public static bool hasAlertSlime;
@@ -35,7 +35,7 @@ namespace Azercadmium
 		public override void Initialize() {
 			downedDirtball = false;
 			downedDiscus = false;
-			downedMineral = false;
+			downedTitan = false;
 			generatedEctojewelo = false;
 			downedScavenger = false;
 			hasAlertSlime = false;
@@ -55,7 +55,7 @@ namespace Azercadmium
             {
                 {"downedDirtball", downedDirtball},
                 {"downedDiscus", downedDiscus},
-                {"downedMineral", downedMineral},
+                {"downedTitan", downedTitan},
 				{"generatedEctojewelo", generatedEctojewelo},
 				{"downedScavenger", downedScavenger},
 				{"hasAlertSlime", hasAlertSlime},
@@ -73,7 +73,7 @@ namespace Azercadmium
         public override void Load(TagCompound tag) {
             downedDirtball = tag.GetBool("downedDirtball");
 			downedDiscus = tag.GetBool("downedDiscus");
-			downedMineral = tag.GetBool("downedMineral");
+			downedTitan = tag.GetBool("downedTitan");
 			generatedEctojewelo = tag.GetBool("generatedEctojewelo");
 			downedScavenger = tag.GetBool("downedScavenger");
 			hasAlertSlime = tag.GetBool("hasAlertSlime");
@@ -93,7 +93,7 @@ namespace Azercadmium
             BitsByte flags = new BitsByte(); //restate every "7"
             flags[0] = downedDirtball;
             flags[1] = downedDiscus;
-            flags[2] = downedMineral;
+            flags[2] = downedTitan;
 			flags[3] = generatedEctojewelo;
 			flags[4] = downedScavenger;
 			flags[5] = hasAlertCarnallite;
@@ -115,7 +115,7 @@ namespace Azercadmium
             BitsByte flags = reader.ReadByte(); //same as above
             downedDirtball = flags[0];
             downedDiscus = flags[1];
-            downedMineral = flags[2];
+            downedTitan = flags[2];
 			generatedEctojewelo = flags[3];
 			downedScavenger = flags[4];
 			hasAlertCarnallite = flags[5];
