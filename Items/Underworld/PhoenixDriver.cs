@@ -18,7 +18,7 @@ namespace Azercadmium.Items.Underworld
 			item.value = Item.sellPrice(0, 0, 54, 0);
 			item.rare = ItemRarityID.Green;
 			item.autoReuse = true;
-			item.useTurn = true;
+			item.useTurn = false;
 			item.shoot = ProjectileID.ImpFireball;
 			item.shootSpeed = 10f;
 			item.noMelee = true;

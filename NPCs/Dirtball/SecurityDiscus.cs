@@ -7,7 +7,7 @@ namespace Azercadmium.NPCs.Dirtball
 	public class SecurityDiscus : ModNPC
 	{
 		public override void SetStaticDefaults() {
-			DisplayName.SetDefault("Security Discus");
+			DisplayName.SetDefault("Security Drone");
 			Main.npcFrameCount[npc.type] = 6;
 		}
         public override void SetDefaults() {

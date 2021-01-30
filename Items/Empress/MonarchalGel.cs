@@ -48,10 +48,10 @@ namespace Azercadmium.Items.Empress
 		public override void AddRecipes() {
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.RoyalGel);
-			recipe.AddIngredient(mod.ItemType("SackofProtection"));
+			recipe.AddIngredient(mod.ItemType("EmpressCrown"));
 			recipe.AddIngredient(mod.ItemType("EmpressShard"), 3);
 			recipe.AddIngredient(mod.ItemType("ElementalGel"), 25);
-			recipe.AddTile(TileID.MythrilAnvil);
+			recipe.AddTile(TileID.TinkerersWorkbench);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}

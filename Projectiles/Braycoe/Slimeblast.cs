@@ -10,8 +10,8 @@ namespace Azercadmium.Projectiles.Braycoe
 			DisplayName.SetDefault("Slimeblast");
         }
 		public override void SetDefaults() {
-			projectile.width = 32;
-			projectile.height = 32;
+			projectile.width = 34;
+			projectile.height = 34;
 			projectile.aiStyle = 1;
 			projectile.friendly = true;
 			projectile.penetrate = -1;

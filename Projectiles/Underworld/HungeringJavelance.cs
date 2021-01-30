@@ -24,7 +24,7 @@ namespace Azercadmium.Projectiles.Underworld
 			if (Main.rand.NextFloat() < .1f)
 				Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, projectile.velocity.X * -1, projectile.velocity.Y * -1, mod.ProjectileType("HungeringJavelance2"), projectile.damage / 2, 3, Main.myPlayer);
 			AzercadmiumPlayer zp = Main.player[projectile.owner].GetModPlayer<AzercadmiumPlayer>();
-			if (zp.bloodJavelance && Main.rand.NextFloat() < .06f && target.type != NPCID.TargetDummy) {
+			if (zp.bloodVial && Main.rand.NextFloat() < .06f && target.type != NPCID.TargetDummy) {
 				Player p = Main.player[projectile.owner];
 				p.statLife += 1;
 				p.HealEffect(1, true);
@@ -34,7 +34,7 @@ namespace Azercadmium.Projectiles.Underworld
 			if (Main.rand.NextFloat() < .1f)
 				Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, projectile.velocity.X * -1, projectile.velocity.Y * -1, mod.ProjectileType("HungeringJavelance2"), projectile.damage / 2, 3, Main.myPlayer);
 			AzercadmiumPlayer zp = Main.player[projectile.owner].GetModPlayer<AzercadmiumPlayer>();
-			if (zp.bloodJavelance && Main.rand.NextFloat() < .06f) {
+			if (zp.bloodVial && Main.rand.NextFloat() < .06f) {
 				Player p = Main.player[projectile.owner];
 				p.statLife += 1;
 				p.HealEffect(1, true);

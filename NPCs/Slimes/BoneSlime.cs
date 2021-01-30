@@ -27,8 +27,10 @@ namespace Azercadmium.NPCs.Slimes
 		public override void ScaleExpertStats(int numPlayers, float bossLifeScale) {
             npc.lifeMax = 189;
             npc.damage = 71;
-			npc.defense = 10;
         }
+		public override void AI() {
+			npc.spriteDirection = npc.direction;
+		}
 		public override float SpawnChance(NPCSpawnInfo spawnInfo) {
 			return SpawnCondition.Dungeon.Chance * 0.1f;
         }

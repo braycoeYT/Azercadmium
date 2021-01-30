@@ -30,7 +30,11 @@ namespace Azercadmium.NPCs.Scavenger
 			npc.value = 120000;
 			npc.boss = true;
 			npc.lavaImmune = true;
-			music = MusicID.Boss5; //mod.GetSoundSlot(SoundType.Music, "Sounds/Music/MS");
+			Mod azercadmiumMusic = ModLoader.GetMod("AzercadmiumMusic");
+			if (azercadmiumMusic != null) 
+				music = azercadmiumMusic.GetSoundSlot(SoundType.Music, "Sounds/Music/Reactor");
+			else 
+				music = MusicID.Boss5;
 			for (int k = 0; k < npc.buffImmune.Length; k++) {
 				npc.buffImmune[k] = true;
 			}

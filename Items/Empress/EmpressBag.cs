@@ -42,6 +42,6 @@ namespace Azercadmium.Items.Empress
 				}
 			}
 		}
-		public override int BossBagNPC => NPCType<NPCs.Bosses.EmpressSlime>();
+		public override int BossBagNPC => NPCType<NPCs.Empress.EmpressSlime>();
 	}
 }

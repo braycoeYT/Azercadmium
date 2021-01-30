@@ -1,0 +1,39 @@
+using Terraria;
+using Terraria.ID;
+using Terraria.ModLoader;
+
+namespace Azercadmium.Items.Underworld
+{
+	public class BlazingEgg : ModItem
+	{
+		public override void SetStaticDefaults() {
+			DisplayName.SetDefault("Egg of the Inferno");
+			Tooltip.SetDefault("It's smell greatly dissuades enemies\nEnemies are less likely to target you\n5% increased damage and critical strike chance\nInflicts fire damage on attack");
+		}
+		public override void SetDefaults() {
+			item.width = 40;
+			item.height = 40;
+			item.accessory = true;
+			item.value = Item.sellPrice(0, 5, 0, 0);
+			item.rare = ItemRarityID.LightPurple;
+		}
+		public override void UpdateAccessory(Player player, bool hideVisual) {
+			player.aggro -= 400;
+			player.allDamage += 0.05f;
+			player.meleeCrit += 5;
+			player.magicCrit += 5;
+			player.rangedCrit += 5;
+			player.thrownCrit += 5;
+			player.magmaStone = true;
+		}
+		public override void AddRecipes() {
+			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(ItemID.PutridScent);
+			recipe.AddIngredient(ItemID.MagmaStone);
+			recipe.AddIngredient(ItemID.SoulofFright, 8);
+			recipe.AddTile(TileID.TinkerersWorkbench);
+			recipe.SetResult(this);
+			recipe.AddRecipe();
+		}
+	}
+}

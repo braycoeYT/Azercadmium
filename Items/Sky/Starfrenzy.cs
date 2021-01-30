@@ -11,12 +11,12 @@ namespace Azercadmium.Items.Sky
 			Tooltip.SetDefault("Causes stars to rain from the sky\nForged from the fury of shortsword heaven");
 		}
 		public override void SetDefaults() {
-			item.damage = 20;
+			item.damage = 16;
 			item.melee = true;
 			item.width = 42;
 			item.height = 42;
-			item.useTime = 16;
-			item.useAnimation = 16;
+			item.useTime = 32;
+			item.useAnimation = 32;
 			item.useStyle = ItemUseStyleID.Stabbing;
 			item.knockBack = 5.5f;
 			item.value = Item.sellPrice(0, 1, 0, 0);

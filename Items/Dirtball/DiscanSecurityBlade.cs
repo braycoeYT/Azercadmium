@@ -47,10 +47,8 @@ namespace Azercadmium.Items.Dirtball
 		public override void AddRecipes() {
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(mod.ItemType("OvergrownHilt"));
-			recipe.AddIngredient(mod.ItemType("BrokenDiscus"), 8);
-			recipe.AddIngredient(mod.ItemType("Electroid"));
-			recipe.AddIngredient(ItemID.HellstoneBar);
-			recipe.AddIngredient(ItemID.Bone);
+			recipe.AddIngredient(ItemID.HellstoneBar, 8);
+			recipe.AddIngredient(ItemID.Bone, 5);
 			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

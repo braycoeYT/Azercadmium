@@ -34,8 +34,11 @@ namespace Azercadmium.NPCs.Dirtball
 			npc.buffImmune[BuffID.Poisoned] = true;
 			npc.buffImmune[BuffID.Confused] = true;
 			npc.lavaImmune = true;
-			//animationType = NPCID.Drippler;
-			//npc.takenDamageMultiplier = 0f;
+			Mod azercadmiumMusic = ModLoader.GetMod("AzercadmiumMusic");
+			if (azercadmiumMusic != null) 
+				music = azercadmiumMusic.GetSoundSlot(SoundType.Music, "Sounds/Music/MechanicalMud");
+			else 
+				music = MusicID.Boss3;
         }
 		public override void ScaleExpertStats(int numPlayers, float bossLifeScale) {
             npc.lifeMax = 1250;
@@ -533,7 +536,7 @@ namespace Azercadmium.NPCs.Dirtball
 						break;
 				}
 				switch (Main.rand.Next(1, 4)) {
-					case 1: Item.NewItem(npc.getRect(), mod.ItemType("EarthmightHelm"));
+					case 1: Item.NewItem(npc.getRect(), mod.ItemType("EarthmightVisor"));
 						break;
 					case 2: Item.NewItem(npc.getRect(), mod.ItemType("EarthmightBreastplate"));
 						break;
@@ -571,7 +574,7 @@ namespace Azercadmium.NPCs.Dirtball
 				}
 			}
 			if (!AzercadmiumWorld.downedDirtball && Main.dayTime && canSpawn)
-			    return 0f; //0.00005
+			    return 0.000025f; //0.00005
 			return 0f;
         }
 	}

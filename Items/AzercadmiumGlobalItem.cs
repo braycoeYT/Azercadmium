@@ -7,7 +7,7 @@ using Terraria.ModLoader;
 using Terraria.Utilities;
 using static Terraria.ModLoader.ModContent;
 
-namespace Azercadmium.Tiles
+namespace Azercadmium.Items
 {
 	public class AzercadmiumGlobalItem : GlobalItem
 	{
@@ -55,6 +55,8 @@ namespace Azercadmium.Tiles
 				item.damage = 10;
 			if (item.type == ItemID.CookedMarshmallow)
 				item.buffTime = 7200;
+			if (item.type == ItemID.Coal) 
+				item.maxStack = 999;
 			if (GetInstance<AzercadmiumConfig>().pearlwoodBuff) {
 				if (item.type == ItemID.PearlwoodBow)
 					item.damage = 29;
@@ -124,9 +126,10 @@ namespace Azercadmium.Tiles
 					item.ammo = AmmoID.Dart;
 					item.maxStack = 999;
 				}
-				if (item.type == ItemID.Coal) {
-					item.maxStack = 999;
-				}
+			}
+			if (GetInstance<AzercadmiumConfig>().iceSickleAuto) {
+				if (item.type == ItemID.IceSickle)
+					item.autoReuse = true;
 			}
 		}
 		public override int ChoosePrefix(Item item, UnifiedRandom rand)

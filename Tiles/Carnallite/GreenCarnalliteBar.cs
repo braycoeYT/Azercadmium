@@ -20,6 +20,7 @@ namespace Azercadmium.Tiles.Carnallite
 			TileObjectData.newTile.LavaDeath = false;
 			TileObjectData.addTile(Type);
 			AddMapEntry(new Color(110, 150, 98), Language.GetText("MapObject.MetalBar"));
+			dustType = mod.DustType("GreenCarnalliteDust");
 		}
 		public override bool Drop(int i, int j)
 		{

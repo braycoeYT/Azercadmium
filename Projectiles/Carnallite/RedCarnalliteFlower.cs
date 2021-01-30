@@ -12,13 +12,13 @@ namespace Azercadmium.Projectiles.Carnallite
 			DisplayName.SetDefault("Red Carnallite Flower");
         }
 		public override void SetDefaults() {
-			projectile.CloneDefaults(ProjectileID.Seed);
-			projectile.aiStyle = 0;
-			aiType = 0;
+			projectile.aiStyle = -1;
 			projectile.penetrate = -1;
 			projectile.timeLeft = 60;
 			projectile.width = 20;
 			projectile.height = 20;
+			projectile.friendly = true;
+			projectile.hostile = false;
 		}
 		public override void PostAI() {
 			if (Main.rand.NextBool()) {

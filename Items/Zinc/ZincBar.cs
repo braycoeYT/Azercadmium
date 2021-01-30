@@ -7,6 +7,9 @@ namespace Azercadmium.Items.Zinc
 {
 	public class ZincBar : ModItem
 	{
+		public override void SetStaticDefaults() {
+			Tooltip.SetDefault("Can be used in Any Iron Bar recipes");
+		}
 		public override void SetDefaults() {
 			item.rare = ItemRarityID.White;
 			item.width = 20;

@@ -22,7 +22,7 @@ namespace Azercadmium.Projectiles.Mech
 		}
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit) {
 			AzercadmiumPlayer zp = Main.player[projectile.owner].GetModPlayer<AzercadmiumPlayer>();
-			if (zp.bloodJavelance && Main.rand.NextFloat() < .06f && target.type != NPCID.TargetDummy) {
+			if (zp.bloodVial && Main.rand.NextFloat() < .06f && target.type != NPCID.TargetDummy) {
 				Player p = Main.player[projectile.owner];
 				p.statLife += 1;
 				p.HealEffect(1, true);
@@ -30,7 +30,7 @@ namespace Azercadmium.Projectiles.Mech
 		}
 		public override void OnHitPlayer(Player target, int damage, bool crit) {
 			AzercadmiumPlayer zp = Main.player[projectile.owner].GetModPlayer<AzercadmiumPlayer>();
-			if (zp.bloodJavelance && Main.rand.NextFloat() < .06f) {
+			if (zp.bloodVial && Main.rand.NextFloat() < .06f) {
 				Player p = Main.player[projectile.owner];
 				p.statLife += 1;
 				p.HealEffect(1, true);

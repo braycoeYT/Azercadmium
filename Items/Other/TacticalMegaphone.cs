@@ -27,7 +27,7 @@ namespace Azercadmium.Items.Other
 			item.shootSpeed = 15f;
 			item.noMelee = true;
 			item.mana = 11;
-			item.UseSound = SoundID.Item47;
+			item.UseSound = mod.GetLegacySoundSlot(SoundType.Item, "Sounds/Item/MegaphoneNoise");
 		}
 		public override Vector2? HoldoutOffset() {
 			return new Vector2(8, -4);

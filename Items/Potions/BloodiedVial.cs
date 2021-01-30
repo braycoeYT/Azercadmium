@@ -6,7 +6,7 @@ namespace Azercadmium.Items.Potions
     public class BloodiedVial : ModItem
 	{
         public override void SetStaticDefaults() {
-            Tooltip.SetDefault("Gives you a 6% chance of any javelance to leech health from enemies");
+            Tooltip.SetDefault("Gives you a 8% to leech life from enemies");
         }
         public override void SetDefaults() {
             item.width = 20;
@@ -20,7 +20,7 @@ namespace Azercadmium.Items.Potions
             item.consumable = true;
             item.rare = ItemRarityID.Blue;
             item.value = 300;
-            item.buffType = mod.BuffType("BloodDrop");
+            item.buffType = mod.BuffType("BloodiedVial");
             item.buffTime = 25200;
         }
 		public override void AddRecipes() {

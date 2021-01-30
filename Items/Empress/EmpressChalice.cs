@@ -26,7 +26,7 @@ namespace Azercadmium.Items.Empress
 			return !NPC.AnyNPCs(mod.NPCType("EmpressSlime"));
 		}
 		public override bool UseItem(Player player) {
-			NPC.SpawnOnPlayer(player.whoAmI, ModContent.NPCType<NPCs.Bosses.EmpressSlime>());
+			NPC.SpawnOnPlayer(player.whoAmI, ModContent.NPCType<NPCs.Empress.EmpressSlime>());
 			Main.PlaySound(SoundID.Roar, player.position, 0);
 			return true;
 		}

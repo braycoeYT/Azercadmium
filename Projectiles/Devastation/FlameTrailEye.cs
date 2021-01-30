@@ -9,7 +9,7 @@ namespace Azercadmium.Projectiles.Devastation
 	public class FlameTrailEye : ModProjectile
 	{
         public override void SetStaticDefaults() {
-			DisplayName.SetDefault("Cthulhu Flame Trail");
+			DisplayName.SetDefault("Flame Trail");
         }
 		public override void SetDefaults() {
 			aiType = ProjectileID.Bullet;

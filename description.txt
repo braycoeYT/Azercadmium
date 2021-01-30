@@ -1,8 +1,8 @@
 The best Terraria mod that starts with Aze, or your money back, guaranteed!
-This mod has unique content, including ore furniture and three new subclasses.
+This mod has unique content, including ore furniture and a new subclass.
 This mod also has QoL changes, such as an easier Slime Crown recipe, crimson alternates, tons of vanilla recipes, and some hardmode enemies dropping prehardmode loot.
 Some changes can be only accessed via the config, like the Pearlwood buff.
-PLEASE READ: Some parts of the mod are very bad, I am trying my hardest to fix them as soon as possible, please be patient...
+Most of the reworks are complete, but Empress Slime still needs to be improved.
 
 Stats:
 ~262 Items
@@ -14,8 +14,8 @@ Stats:
 ~30 total NPCs
 ~50 Tiles
 ~29 Buffs
-~2 Subclasses
-~2 Custom Soundtracks
+~1 Subclass
+~3 Custom Soundtracks (get the Music mod)
 ~3 Rarities
 ~1 Unfinished Game Mode
 ~18 Modifiers
@@ -58,12 +58,10 @@ EternalAvant (Old Featherfall Shield)
 Thunderminer79 (Help with Matrix Scavenger movement)
 Mr. Raccoon (A couple sprites)
 Lamb Sauce (Empress Chalice sprite)
+Deranged Lynx (Tactical Megaphone use sound)
 
 Multiplayer support is unknown, but most of us play alone anyway.
 
-Update V0.2.7.3: Music Update
-~Eye of the Cosmos can now be crafted at a Demon Altar.
-~Resprited Delicious Gelatin and Checkered Flag.
-~Revamped the credits again.
-~Resprited Titan Tankorb.
-~Added a separate mod for the mod's music. Make sure to download it for the new boss themes!
+Update V0.2.7.4: Bugfixes Update
+~Fixed Copper Yoyo since I accidentally added it last update and forgot to remove it.
+~Gave Tactical Megaphone its own use sound.
