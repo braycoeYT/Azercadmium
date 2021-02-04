@@ -31,10 +31,10 @@ namespace Azercadmium.Items.Scavenger
 		}
 		public override void AddRecipes() {
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(mod.ItemType("BrokenDiscus"), 4);
+			recipe.AddIngredient(ItemID.PixieDust, 6);
 			recipe.AddRecipeGroup("IronBar", 5);
-			recipe.AddIngredient(ItemID.SoulofNight, 3);
-			recipe.AddIngredient(ItemID.SoulofFlight, 3);
+			recipe.AddIngredient(ItemID.SoulofNight, 4);
+			recipe.AddIngredient(ItemID.SoulofLight, 2);
 			recipe.AddTile(TileID.MythrilAnvil);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

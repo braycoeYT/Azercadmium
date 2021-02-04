@@ -12,10 +12,9 @@ namespace Azercadmium.Projectiles.Wood
         }
 		int frameRand = Main.rand.Next(0, 6);
 		public override void SetDefaults() {
-			aiType = ProjectileID.Bullet;
 			projectile.width = 16;
 			projectile.height = 36;
-			projectile.aiStyle = 1;
+			projectile.aiStyle = -1;
 			projectile.hostile = false;
 			projectile.friendly = true;
 			projectile.timeLeft = 300;

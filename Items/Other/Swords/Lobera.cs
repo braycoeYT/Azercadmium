@@ -55,8 +55,8 @@ namespace Azercadmium.Items.Other.Swords
 		}
 		public override void AddRecipes()  {
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(mod.ItemType("LostHeroSword"));
 			recipe.AddIngredient(ItemID.BrokenHeroSword);
+			recipe.AddIngredient(ItemID.PixieDust, 30);
 			recipe.AddIngredient(ItemID.SoulofMight, 8);
 			recipe.AddIngredient(ItemID.AncientBattleArmorMaterial);
 			recipe.AddTile(TileID.MythrilAnvil);

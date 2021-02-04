@@ -25,8 +25,7 @@ namespace Azercadmium.Items.Gems.Ruby
 		}
 		public override void AddRecipes() {
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(mod.ItemType("BasicBowMold"));
-			recipe.AddIngredient(ItemID.Ruby, 8);
+			recipe.AddIngredient(ItemID.Ruby, 9);
 			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

@@ -24,7 +24,7 @@ namespace Azercadmium.Items.Other
 		}
 		public override void AddRecipes() {
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.Worm, 3996);
+			recipe.AddIngredient(ItemID.Worm, 500);
 			recipe.AddTile(TileID.CrystalBall);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

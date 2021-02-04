@@ -202,10 +202,6 @@ namespace Azercadmium.NPCs
 			if (npc.type == NPCID.KingSlime) {
 				Item.NewItem(npc.getRect(), ItemType<Items.Slime.SlimyCore>(), Main.rand.Next(8, 12));
 			}
-			if (npc.type == NPCID.Retinazer || npc.type == NPCID.SkeletronPrime) {
-				if (Main.rand.Next(2) == 0)
-				Item.NewItem(npc.getRect(), ItemType<Items.Other.Accessories.ShardOfPrejudice>());
-			}
 			if (npc.type == NPCID.Plantera) {
 				Item.NewItem(npc.getRect(), ItemType<Items.Plantera.PlanteraTooth>(), Main.rand.Next(1, 5));
 				if (Main.rand.Next(3) == 0)

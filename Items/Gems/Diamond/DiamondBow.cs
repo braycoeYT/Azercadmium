@@ -25,8 +25,7 @@ namespace Azercadmium.Items.Gems.Diamond
 		}
 		public override void AddRecipes() {
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(mod.ItemType("BasicBowMold"));
-			recipe.AddIngredient(ItemID.Diamond, 8);
+			recipe.AddIngredient(ItemID.Diamond, 9);
 			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

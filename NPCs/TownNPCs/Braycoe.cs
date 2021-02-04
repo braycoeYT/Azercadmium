@@ -237,7 +237,7 @@ namespace Azercadmium.NPCs.TownNPCs
 			nextSlot++;
 			if (Main.hardMode == true)
 			{
-				shop.item[nextSlot].SetDefaults(ItemType<Items.Braycoe.LemonadeTea>());
+				shop.item[nextSlot].SetDefaults(ItemType<Items.Developer.Braycoe.LemonadeTea>());
 				shop.item[nextSlot].shopCustomPrice = 2500;
 			    nextSlot++;
 				shop.item[nextSlot].SetDefaults(ItemID.SlimeCrown);

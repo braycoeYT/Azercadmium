@@ -38,7 +38,7 @@ namespace Azercadmium.Tiles.Banners
 					item = "VeinTunnelerBanner";
 					break;
 				case 2:
-					item = "CocoaTintedDiscusBanner";
+					item = "ArteryTunnelerBanner";
 					break;
 				case 3:
 					item = "CorruptDiscusBanner";
@@ -64,7 +64,7 @@ namespace Azercadmium.Tiles.Banners
 						type = "VeinTunnelerHead";
 						break;
 					case 2:
-						type = "CocoaDiscus";
+						type = "ArteryTunnelerHead";
 						break;
 					case 3:
 						type = "CorruptDiscus";
