@@ -115,7 +115,8 @@ namespace Azercadmium.NPCs.TownNPCs
 				chat.Add("Yes, being a slime is fun.");
 				chat.Add("Have you seen my slimebender anywhere?");
 				chat.Add("If you get your hands on Azercadmium, you would probably be one of the greatest terrarians of all time. Or a cheater.");
-				chat.Add("I wish I didn't make an earlygame desert boss... whyyy 2019 me!?");
+				chat.Add("I wonder what it would be like to eat a pumpkin full of lava...");
+				chat.Add("No, I don't care that I break the fourth wall sometimes!");
 				if (AzercadmiumWorld.devastation)
 					chat.Add("Devastation mode is very WIP, I hope you like it so far.");
 				if (Main.raining)
@@ -233,6 +234,9 @@ namespace Azercadmium.NPCs.TownNPCs
 			shop.item[nextSlot].shopCustomPrice = 2000;
 			nextSlot++;
 			shop.item[nextSlot].SetDefaults(mod.ItemType("CheckeredFlag"));
+			shop.item[nextSlot].shopCustomPrice = 250000;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults(ItemType<Items.Slime.GiantGelCluster>());
 			shop.item[nextSlot].shopCustomPrice = 250000;
 			nextSlot++;
 			if (Main.hardMode == true)

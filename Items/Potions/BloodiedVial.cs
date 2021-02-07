@@ -6,7 +6,7 @@ namespace Azercadmium.Items.Potions
     public class BloodiedVial : ModItem
 	{
         public override void SetStaticDefaults() {
-            Tooltip.SetDefault("Gives you a 8% to leech life from enemies");
+            Tooltip.SetDefault("Gives you a 8% to leech life from enemies on hit");
         }
         public override void SetDefaults() {
             item.width = 20;

@@ -9,11 +9,11 @@ namespace Azercadmium.Items.Developer.Braycoe
 	{
 		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Very Suspicious and Retro Looking Petri Dish");
-			Tooltip.SetDefault("Contains 1.2 hectograms of slime food.\nThis dish is very mobile.\nSummons Braycoe's favorite slime");
+			Tooltip.SetDefault("Contains 1.2 hectograms of slime food\nThis dish is very mobile\nSummons Braycoe's favorite slime");
 		}
 		public override void SetDefaults() {
 			item.CloneDefaults(ItemID.ZephyrFish);
-			item.shoot = ProjectileType<Projectiles.Braycoe.BraycoeSlime>();
+			item.shoot = ProjectileType<Projectiles.Developer.Braycoe.BraycoeSlime>();
 			item.buffType = BuffType<Buffs.Pets.BraycoeSlimeBuff>();
 			item.mana = 0;
 			item.damage = 0;

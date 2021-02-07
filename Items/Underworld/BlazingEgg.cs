@@ -8,7 +8,7 @@ namespace Azercadmium.Items.Underworld
 	{
 		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Egg of the Inferno");
-			Tooltip.SetDefault("It's smell greatly dissuades enemies\nEnemies are less likely to target you\n5% increased damage and critical strike chance\nInflicts fire damage on attack");
+			Tooltip.SetDefault("Its smell greatly dissuades enemies\nEnemies are less likely to target you\n5% increased damage and critical strike chance\nInflicts fire damage on attack");
 		}
 		public override void SetDefaults() {
 			item.width = 40;
@@ -23,7 +23,6 @@ namespace Azercadmium.Items.Underworld
 			player.meleeCrit += 5;
 			player.magicCrit += 5;
 			player.rangedCrit += 5;
-			player.thrownCrit += 5;
 			player.magmaStone = true;
 		}
 		public override void AddRecipes() {

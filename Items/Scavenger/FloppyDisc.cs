@@ -8,7 +8,7 @@ namespace Azercadmium.Items.Scavenger
 	{
 		public override void SetStaticDefaults() {
 			Tooltip.SetDefault("Contains malicious and illegal software\nSummons the Matrix Scavenger");
-			ItemID.Sets.SortingPriorityBossSpawns[item.type] = 13;
+			ItemID.Sets.SortingPriorityBossSpawns[item.type] = 7;
 		}
 		public override void SetDefaults() {
 			item.width = 40;

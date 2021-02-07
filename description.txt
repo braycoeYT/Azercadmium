@@ -5,7 +5,7 @@ Some changes can be only accessed via the config, like the Pearlwood buff.
 Most of the reworks are complete, but Empress Slime still needs to be improved.
 
 Stats:
-~251 Items
+~250 Items
 ~4 Bosses:
 ^1 Prehardmode Bosses
 ^3 Hardmode Bosses
@@ -13,7 +13,7 @@ Stats:
 ~2 Town NPCs
 ~30 total NPCs
 ~50 Tiles
-~29 Buffs
+~30 Buffs
 ~1 Subclass
 ~3 Custom Soundtracks (get the Music mod)
 ~1 Unfinished Game Mode (Devastation Mode)
@@ -61,18 +61,13 @@ Lamb Sauce (Empress Chalice sprite)
 
 Multiplayer support is unknown, but most of us play alone anyway.
 
-Update V0.2.7.5: Bugfixing Update
-~Added Tin Yoyo.
-~Changed Floppy Disc recipe.
-~Removed Cave Crate and its drops.
-~Removed Feathered Fury.
-~Removed Lost Hero Sword.
-~Revamped Lobera recipe.
-~Resprited Creepy Mud.
-~Made Endless Worm Pouch more craftable(?).
-~Removed Red Present and gave regular Present a chance to drop Red Present Loot.
-~Fixed Sprouted Seed sprite not appearing correctly.
-~Removed Basic Bow Mold.
-~Changed Ruby and Diamond Bow recipes.
-~Removed Squarge Spit Staff.
-~Fixed Artery Clogger banner not dropping or working correctly.
+Update V0.2.7.6: Empress Update
+~Resprited some Empress projectiles.
+~Fixed Egg of the Inferno grammar error.
+~Fixed Artery Clogger banner not working again.
+~Devastation Mode: Killed town npcs (exluding Angler) will now become skeletons (they don't drop bones, though).
+~Remade Empress drops.
+~Added Giant Gel Cluster.
+~Fixed boss summon priorities.
+~Fixed Repaired Dirtball Fragment tooltips stating removed content.
+~Added more Braycoe chat messages.

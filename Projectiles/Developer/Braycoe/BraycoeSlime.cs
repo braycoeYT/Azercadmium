@@ -2,7 +2,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace Azercadmium.Projectiles.Braycoe
+namespace Azercadmium.Projectiles.Developer.Braycoe
 {
 	public class BraycoeSlime : ModProjectile
 	{

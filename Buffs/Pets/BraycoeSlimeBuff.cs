@@ -15,9 +15,9 @@ namespace Azercadmium.Buffs.Pets
 		public override void Update(Player player, ref int buffIndex) {
 			player.buffTime[buffIndex] = 18000;
 			player.GetModPlayer<AzercadmiumPlayer>().BraycoeSlimePet = true;
-			bool petProjectileNotSpawned = player.ownedProjectileCounts[ProjectileType<Projectiles.Braycoe.BraycoeSlime>()] <= 0;
+			bool petProjectileNotSpawned = player.ownedProjectileCounts[ProjectileType<Projectiles.Developer.Braycoe.BraycoeSlime>()] <= 0;
 			if (petProjectileNotSpawned && player.whoAmI == Main.myPlayer) {
-				Projectile.NewProjectile(player.position.X + (float)(player.width / 2), player.position.Y + (float)(player.height / 2), 0f, 0f, ProjectileType<Projectiles.Braycoe.BraycoeSlime>(), 0, 0f, player.whoAmI, 0f, 0f);
+				Projectile.NewProjectile(player.position.X + (float)(player.width / 2), player.position.Y + (float)(player.height / 2), 0f, 0f, ProjectileType<Projectiles.Developer.Braycoe.BraycoeSlime>(), 0, 0f, player.whoAmI, 0f, 0f);
 			}
 		}
 	}

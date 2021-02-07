@@ -1,4 +1,5 @@
 using Microsoft.Xna.Framework;
+using ReLogic.Text;
 using System;
 using Terraria;
 using Terraria.ID;
@@ -327,6 +328,16 @@ namespace Azercadmium.NPCs
 						if (AITimer % 5 == 0)
 							Projectile.NewProjectile(npc.Center, new Vector2(0, 0), mod.ProjectileType("FlameTrailEye"), npc.damage, 0f, Main.myPlayer);
 						break;
+			}
+		}
+		public override void HitEffect(NPC npc, int hitDirection, double damage) {
+			if (AzercadmiumWorld.devastation) {
+				if (npc.townNPC == true && npc.life <= 0) {
+					if (Main.rand.Next(2) == 0)
+						NPC.NewNPC((int)npc.position.X, (int)npc.position.Y, NPCID.BigSkeleton);
+					else
+						NPC.NewNPC((int)npc.position.X, (int)npc.position.Y, NPCID.BigPantlessSkeleton);
+				}
 			}
 		}
 		public override void NPCLoot(NPC npc) {

@@ -2,7 +2,7 @@ using Terraria.ID;
 using Terraria;
 using Terraria.ModLoader;
 
-namespace Azercadmium.Projectiles.HBDeus
+namespace Azercadmium.Projectiles.Developer.HBDeus
 {
 	public class ShatteredSword : ModProjectile
 	{

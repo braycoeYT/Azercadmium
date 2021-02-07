@@ -9,7 +9,7 @@ namespace Azercadmium.Items.Dirtball
 	public class DiscanSecurityHandgun : ModItem
 	{
 		public override void SetStaticDefaults() {
-			Tooltip.SetDefault("A ranged weapon used by an abandoned model of discus\nEvery third shot is an electric bolt that does 150% damage");
+			Tooltip.SetDefault("Every third shot is an electric bolt that does 150% damage");
 		}
 		public override void SetDefaults() {
 			item.value = Item.sellPrice(0, 3, 0, 0);

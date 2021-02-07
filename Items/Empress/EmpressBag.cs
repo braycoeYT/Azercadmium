@@ -23,21 +23,26 @@ namespace Azercadmium.Items.Empress
 		}
 		public override void OpenBossBag(Player player) {
 			player.TryGettingDevArmor();
-			int ran = Main.rand.Next(1, 7);
-			if (ran == 1) player.QuickSpawnItem(mod.ItemType("EmpressYolk"));
-			if (ran == 2) player.QuickSpawnItem(mod.ItemType("EmpressBleeders"));
-			if (ran == 3) player.QuickSpawnItem(mod.ItemType("Egg"));
-			if (ran == 4) player.QuickSpawnItem(mod.ItemType("EmpressShuriken"));
-			if (ran == 5) player.QuickSpawnItem(mod.ItemType("Eggspray"));
-			if (ran == 6) player.QuickSpawnItem(mod.ItemType("EmpressTears"));
-			player.QuickSpawnItem(mod.ItemType("SackofProtection"));
-			player.QuickSpawnItem(mod.ItemType("EmpressShard"), Main.rand.Next(16, 24));
-			player.QuickSpawnItem(mod.ItemType("ElementalGel"), Main.rand.Next(30, 71));
+			int rand = Main.rand.Next(3);
+			switch (rand) {
+				case 0:
+					player.QuickSpawnItem(ModContent.ItemType<Items.Empress.Exallite>());
+					break;
+				case 1:
+					player.QuickSpawnItem(ModContent.ItemType<Items.Empress.RoyalSlimeGun>());
+					break;
+				case 2:
+					player.QuickSpawnItem(ModContent.ItemType<Items.Empress.SacredCarrotTome>());
+					break;
+			}
+			player.QuickSpawnItem(ModContent.ItemType<Items.Empress.EmpressCrown>());
+			player.QuickSpawnItem(ModContent.ItemType<Items.Empress.EmpressShard>(), Main.rand.Next(16, 24));
+			player.QuickSpawnItem(ModContent.ItemType<Items.Elemental.ElementalGel>(), Main.rand.Next(30, 71));
 
 			//Dev sets Azercadmium
 			if (Main.rand.NextFloat() < .05f) {
 				switch (Main.rand.Next(1, 2)) {
-					case 1: player.QuickSpawnItem(mod.ItemType("BraycoesHair"));
+					case 1: player.QuickSpawnItem(ModContent.ItemType<Items.Developer.Braycoe.BraycoesHair>());
 						break;
 				}
 			}

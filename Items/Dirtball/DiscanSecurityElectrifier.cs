@@ -10,7 +10,7 @@ namespace Azercadmium.Items.Dirtball
 	public class DiscanSecurityElectrifier : ModItem
 	{
 		public override void SetStaticDefaults() {
-			Tooltip.SetDefault("A magic weapon used by a constantly overheating scrapped model of discus\nEvery third shot fires a bolt that explodes into electricity");
+			Tooltip.SetDefault("Every third shot fires a bolt that explodes into electricity");
 		}
 		public override void SetDefaults() {
 			item.damage = 26;

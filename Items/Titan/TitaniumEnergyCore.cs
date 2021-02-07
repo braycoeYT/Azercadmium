@@ -9,7 +9,7 @@ namespace Azercadmium.Items.Titan
 		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Titanium Energy Core");
 			Tooltip.SetDefault("The energy core is greatly empowered by the essence of the skies\nSummons the Titan Tankorb");
-			ItemID.Sets.SortingPriorityBossSpawns[item.type] = 13;
+			ItemID.Sets.SortingPriorityBossSpawns[item.type] = 5;
 		}
 		public override void SetDefaults() {
 			item.width = 22;

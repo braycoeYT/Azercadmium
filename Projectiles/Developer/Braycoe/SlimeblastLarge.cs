@@ -3,7 +3,7 @@ using Terraria;
 using Terraria.ModLoader;
 using Terraria.ID;
 
-namespace Azercadmium.Projectiles.Braycoe
+namespace Azercadmium.Projectiles.Developer.Braycoe
 {
 	public class SlimeblastLarge : ModProjectile
 	{

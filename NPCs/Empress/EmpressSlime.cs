@@ -380,17 +380,23 @@ namespace Azercadmium.NPCs.Empress
 		}
 		public override void NPCLoot() {
 			if (Main.expertMode)
-				Item.NewItem(npc.getRect(), mod.ItemType("EmpressBag"));
+				Item.NewItem(npc.getRect(), ModContent.ItemType<Items.Empress.EmpressBag>());
 			else {
-				int ran = Main.rand.Next(1, 7);
-				if (ran == 1) Item.NewItem(npc.getRect(), mod.ItemType("EmpressYolk"));
-				if (ran == 2) Item.NewItem(npc.getRect(), mod.ItemType("EmpressBleeders"));
-				if (ran == 3) Item.NewItem(npc.getRect(), mod.ItemType("Egg"));
-				if (ran == 4) Item.NewItem(npc.getRect(), mod.ItemType("EmpressShuriken"));
-				if (ran == 5) Item.NewItem(npc.getRect(), mod.ItemType("Eggspray"));
-				if (ran == 6) Item.NewItem(npc.getRect(), mod.ItemType("EmpressTears"));
-				Item.NewItem(npc.getRect(), mod.ItemType("EmpressShard"), Main.rand.Next(9, 15));
-				Item.NewItem(npc.getRect(), mod.ItemType("ElementalGel"), Main.rand.Next(30, 61));
+				int rand = Main.rand.Next(3);
+				switch (rand)
+				{
+					case 0:
+						Item.NewItem(npc.getRect(), ModContent.ItemType<Items.Empress.Exallite>());
+						break;
+					case 1:
+						Item.NewItem(npc.getRect(), ModContent.ItemType<Items.Empress.RoyalSlimeGun>());
+						break;
+					case 2:
+						Item.NewItem(npc.getRect(), ModContent.ItemType<Items.Empress.SacredCarrotTome>());
+						break;
+				}
+				Item.NewItem(npc.getRect(), ModContent.ItemType<Items.Empress.EmpressShard>(), Main.rand.Next(9, 15));
+				Item.NewItem(npc.getRect(), ModContent.ItemType<Items.Elemental.ElementalGel>(), Main.rand.Next(30, 61));
 			}
 			AzercadmiumWorld.downedEmpress = true;
 		}

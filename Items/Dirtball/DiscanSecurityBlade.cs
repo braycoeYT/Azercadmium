@@ -10,7 +10,7 @@ namespace Azercadmium.Items.Dirtball
 	public class DiscanSecurityBlade : ModItem
 	{
 		public override void SetStaticDefaults() {
-			Tooltip.SetDefault("A melee weapon used by some prototype discuses\nEvery third swing releases an electric bolt");
+			Tooltip.SetDefault("Every third swing releases an electric bolt");
 		}
 		public override void SetDefaults() {
 			item.damage = 23;

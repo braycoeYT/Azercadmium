@@ -8,7 +8,7 @@ namespace Azercadmium.Items.Dirtball
 	{
 		public override void SetStaticDefaults() {
 			Tooltip.SetDefault("It is literally just dirt, mud, slime, and a lens mashed together...\nSummons Dirtball");
-			ItemID.Sets.SortingPriorityBossSpawns[item.type] = 13;
+			ItemID.Sets.SortingPriorityBossSpawns[item.type] = 0;
 		}
 		public override void SetDefaults() {
 			item.width = 38;
