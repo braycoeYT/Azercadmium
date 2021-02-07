@@ -332,7 +332,7 @@ namespace Azercadmium.NPCs
 		}
 		public override void HitEffect(NPC npc, int hitDirection, double damage) {
 			if (AzercadmiumWorld.devastation) {
-				if (npc.townNPC == true && npc.life <= 0) {
+				if (npc.townNPC == true && npc.life <= 0 && npc.type != NPCID.Angler) {
 					if (Main.rand.Next(2) == 0)
 						NPC.NewNPC((int)npc.position.X, (int)npc.position.Y, NPCID.BigSkeleton);
 					else

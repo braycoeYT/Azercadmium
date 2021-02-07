@@ -71,3 +71,6 @@ Update V0.2.7.6: Empress Update
 ~Fixed boss summon priorities.
 ~Fixed Repaired Dirtball Fragment tooltips stating removed content.
 ~Added more Braycoe chat messages.
+
+Update V0.2.7.7: Oops Update
+~Forgot to press save on the last file I was editing, so uhhh... quick update!
