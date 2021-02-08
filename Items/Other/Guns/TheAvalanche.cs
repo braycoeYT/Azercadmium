@@ -7,20 +7,17 @@ namespace Azercadmium.Items.Other.Guns
 {
     public class TheAvalanche : ModItem
     {
-        public override void SetStaticDefaults()
-        {
+        public override void SetStaticDefaults() {
             Tooltip.SetDefault("Left click to fire snowballs, and right click to fire sand\n33% chance to not consume ammo");
         }
-
-        public override void SetDefaults()
-        {
+        public override void SetDefaults() {
             item.value = Item.sellPrice(gold: 10);
             item.useStyle = ItemUseStyleID.HoldingOut;
             item.useAnimation = 11;
             item.useTime = 11;
             item.damage = 220;
-            item.width = 54;
-            item.height = 26;
+            item.width = 42;
+            item.height = 22;
             item.knockBack = 0f;
             item.shoot = ProjectileID.WoodenArrowFriendly;
             item.shootSpeed = 13f;
@@ -30,14 +27,11 @@ namespace Azercadmium.Items.Other.Guns
             item.rare = 10;
             item.autoReuse = true;
         }
-
-        public override bool ConsumeAmmo(Player player)
-        {
+        public override bool ConsumeAmmo(Player player) {
             if (Main.rand.NextBool(3))
                 return false;
             return true;
         }
-
         public override bool AltFunctionUse(Player player) => true;
 
         public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack) => false;

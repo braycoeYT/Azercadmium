@@ -5,11 +5,10 @@ using Terraria.DataStructures;
 
 namespace Azercadmium.Items.Elemental
 {
-	public class ElementalGel : ModItem
+	public class ElementalGoop : ModItem
 	{
 		public override void SetStaticDefaults() {
-			Tooltip.SetDefault("I'm pretty sure this is what you get after mixing every flavor of gelatin together");
-			Main.RegisterItemAnimation(item.type, new DrawAnimationVertical(3, 8));
+			Tooltip.SetDefault("Looks extra tasty!");
 		}
 		public override void SetDefaults() {
 			item.width = 40;

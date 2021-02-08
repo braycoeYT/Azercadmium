@@ -29,7 +29,7 @@ namespace Azercadmium.Projectiles.Empress
 				projectile.velocity.X = 0;
 				projectile.velocity.Y = 0;
 			}
-			for (int i = 0; i < 10; i++) {
+			for (int i = 0; i < 1; i++) {
 				int dustType = 183;
 				int dustIndex = Dust.NewDust(projectile.position, projectile.width, projectile.height, dustType);
 				Dust dust = Main.dust[dustIndex];

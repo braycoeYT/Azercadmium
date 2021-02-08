@@ -50,7 +50,7 @@ namespace Azercadmium.Items.Empress
 			recipe.AddIngredient(ItemID.RoyalGel);
 			recipe.AddIngredient(mod.ItemType("EmpressCrown"));
 			recipe.AddIngredient(mod.ItemType("EmpressShard"), 3);
-			recipe.AddIngredient(mod.ItemType("ElementalGel"), 25);
+			recipe.AddIngredient(mod.ItemType("ElementalGoop"), 25);
 			recipe.AddTile(TileID.TinkerersWorkbench);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

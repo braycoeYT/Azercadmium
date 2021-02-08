@@ -1,14 +1,16 @@
+using Azercadmium.Items.Other.Accessories;
+using Azercadmium.Items.Plantera;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace Azercadmium.Items.Jungle
 {
-	public class SouloftheJungle : ModItem
+	public class JunglesProsperity : ModItem
 	{
 		public override void SetStaticDefaults() {
-			DisplayName.SetDefault("Soul of the Jungle");
-			Tooltip.SetDefault("Increases max health by 25\nSummons spores over time that will damage enemies\nGreatly increases life regen when not moving\nReleases bees when damaged\nIncreases the strength of friendly bees");
+			DisplayName.SetDefault("Jungle's Prosperity");
+			Tooltip.SetDefault("Increases max health by 25\nSummons spores over time that will damage enemies\nGreatly increases life regen when not moving\nReleases bees when damaged\nIncreases the strength of friendly bees\nYou gain life every time you take damage");
 		}
 		public override void SetDefaults() {
 			item.width = 40;
@@ -19,12 +21,16 @@ namespace Azercadmium.Items.Jungle
 			item.expert = true;
 		}
 		public override void UpdateAccessory(Player player, bool hideVisual) {
+			AzercadmiumPlayer p = player.GetModPlayer<AzercadmiumPlayer>();
 			player.statLifeMax2 += 25;
 			player.SporeSac();
 			player.sporeSac = true;
 			player.shinyStone = true;
 			player.strongBees = true;
 			player.bee = true;
+			p.hurtHeal = true;
+			if (player.statLife < player.statLifeMax2 / 4)
+			player.lifeRegen += 5;
 		}
 		public override void AddRecipes() {
 			ModRecipe recipe = new ModRecipe(mod);
@@ -32,11 +38,10 @@ namespace Azercadmium.Items.Jungle
 			recipe.AddIngredient(ItemID.ShinyStone);
 			recipe.AddIngredient(ItemID.HoneyComb);
 			recipe.AddIngredient(ItemID.HiveBackpack);
+			recipe.AddIngredient(ModContent.ItemType<BloomofLife>());
+			recipe.AddIngredient(ModContent.ItemType<SunProtection>());
 			recipe.AddIngredient(ItemID.JungleSpores, 20);
 			recipe.AddIngredient(ItemID.ChlorophyteBar, 12);
-			recipe.AddIngredient(ItemID.LunarBar, 10);
-			recipe.AddIngredient(ItemID.Stinger, 8);
-			recipe.AddIngredient(ItemID.Vine, 5);
 			recipe.AddIngredient(ItemID.LifeFruit, 3);
 			recipe.AddTile(TileID.LunarCraftingStation);
 			recipe.SetResult(this);

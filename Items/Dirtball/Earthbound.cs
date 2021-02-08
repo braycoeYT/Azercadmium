@@ -34,7 +34,7 @@ namespace Azercadmium.Items.Dirtball
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(mod.ItemType("MuddyGreatsword"));
 			recipe.AddIngredient(ItemID.DirtBlock, 150);
-			recipe.AddIngredient(mod.ItemType("ElementalGel"), 50);
+			recipe.AddIngredient(mod.ItemType("ElementalGoop"), 50);
 			recipe.AddTile(TileID.MythrilAnvil);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

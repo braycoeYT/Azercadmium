@@ -37,7 +37,7 @@ namespace Azercadmium.Items.Empress
 			}
 			player.QuickSpawnItem(ModContent.ItemType<Items.Empress.EmpressCrown>());
 			player.QuickSpawnItem(ModContent.ItemType<Items.Empress.EmpressShard>(), Main.rand.Next(16, 24));
-			player.QuickSpawnItem(ModContent.ItemType<Items.Elemental.ElementalGel>(), Main.rand.Next(30, 71));
+			player.QuickSpawnItem(ModContent.ItemType<Items.Elemental.ElementalGoop>(), Main.rand.Next(30, 71));
 
 			//Dev sets Azercadmium
 			if (Main.rand.NextFloat() < .05f) {

@@ -4,10 +4,10 @@ using Terraria.ID;
 
 namespace Azercadmium.Items.Plantera
 {
-	public class FruitOfLife : ModItem
+	public class BloomofLife : ModItem
 	{
 		public override void SetStaticDefaults() {
-			DisplayName.SetDefault("Fruit of Life");
+			DisplayName.SetDefault("Bloom of Life");
 			Tooltip.SetDefault("Increases max life by 20\nYou gain life every time you take damage");
 		}
 		public override void SetDefaults() {

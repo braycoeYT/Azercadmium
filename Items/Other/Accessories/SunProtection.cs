@@ -7,7 +7,7 @@ namespace Azercadmium.Items.Other.Accessories
 	public class SunProtection : ModItem
 	{
 		public override void SetStaticDefaults() {
-			DisplayName.SetDefault("Sun's Protection");
+			DisplayName.SetDefault("Sol Necklace");
 			Tooltip.SetDefault("When you have low health, you have heavily increased life regen");
 		}
 		public override void SetDefaults() {

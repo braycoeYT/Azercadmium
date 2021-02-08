@@ -11,7 +11,7 @@ Stats:
 ^3 Hardmode Bosses
 ^(1) Unobtainable Joke Superboss
 ~2 Town NPCs
-~30 total NPCs
+~32 total NPCs
 ~50 Tiles
 ~30 Buffs
 ~1 Subclass
@@ -53,24 +53,18 @@ Ashe (Minor Wiki)
 Setnour6 (Old Matrix Scavenger Theme)
 Polaris (Minor Wiki)
 ChimneyEggs (Ore Staff Sprites and Heartbreaker Sprite)
-Don't Call Me Klarson (Wooden Shield)
+Don't Call Me Klarson (Old Wooden Shield)
 EternalAvant (Old Featherfall Shield)
 Thunderminer79 (Help with Matrix Scavenger movement)
 Mr. Raccoon (A couple sprites)
-Lamb Sauce (Empress Chalice sprite)
+Lamb Sauce (Empress Chalice and Delicious Gelatin sprites)
 
 Multiplayer support is unknown, but most of us play alone anyway.
 
-Update V0.2.7.6: Empress Update
-~Resprited some Empress projectiles.
-~Fixed Egg of the Inferno grammar error.
-~Fixed Artery Clogger banner not working again.
-~Devastation Mode: Killed town npcs (exluding Angler) will now become skeletons (they don't drop bones, though).
-~Remade Empress drops.
-~Added Giant Gel Cluster.
-~Fixed boss summon priorities.
-~Fixed Repaired Dirtball Fragment tooltips stating removed content.
-~Added more Braycoe chat messages.
-
-Update V0.2.7.7: Oops Update
-~Forgot to press save on the last file I was editing, so uhhh... quick update!
+Update V0.2.7.8: Empress Update pt. 2
+~Reworked Empress Slime ai.
+~Renamed Elemental Gel to Elemental Goop (and changed the tooltip), Neutron Blaster to Neutrobliterator, Giygaclaws to Giygaclaw (and changed the tooltip), Twin Opticbow to Sightseer, Sprouted Seed to Sprouted Seedling, Endless Seed Pouch to Bottomless Sack of Seeds, Endless Worm Pouch to Bottomless Sack of Worms, True Tree Truncheon to Enchanted Tree Truncheon, Sun's Protection to Sol Necklace, Life Crystal Shield to Crystalline Heart Shield, Fruit of Life to Bloom of Life, and Soul of the Jungle to Jungle's Prosperity.
+~Resprited Delicious Gelatin, Dirty Medal, Neutrobliterator, Labyrinth Fish, Inhaler, The Avalanche, Deadlock Pistol, Giygaclaw, Sightseer, Ironfist Medal, Ruby and Diamond Bow, Mecharang, Sprouted Seedling, Vineshot, Bottomless Sack of Seeds, Bottomless Sack of Worms, Tree Truncheon, Enchanted Tree Truncheon, Electrolight, Cactirang, Sol Necklace, Crystalline Heart Shield, Lifeforce Shield, Beaker of Lightning, Aquite Repeater, Bloom of Life, Jungle's Prosperity, Lemonade Tea, Suspicious and Retro Looking Petri Dish, Wooden Shield, Stalagmite, Stalactite, and Giant Gel Cluster.
+~Added Bloom of Life and Sol Necklace to Jungle's Prosperity.
+~Changed Mecharang laser projectile.
+~Resprited Slimy Ooze and Scared.

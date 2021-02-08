@@ -29,7 +29,7 @@ namespace Azercadmium.Items.Developer.Braycoe
 		}
 		public override void AddRecipes() {
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(mod.ItemType("ElementalGel"), 125);
+			recipe.AddIngredient(mod.ItemType("ElementalGoop"), 125);
 			recipe.AddIngredient(mod.ItemType("SoulofByte"), 10);
 			recipe.AddIngredient(ItemID.HallowedBar, 5);
 			recipe.AddIngredient(ItemID.BottledWater);

@@ -33,7 +33,7 @@ namespace Azercadmium.Items.Empress
 		public override void AddRecipes() {
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddRecipeGroup("Azercadmium:AnyPHBar", 5);
-			recipe.AddIngredient(mod.ItemType("ElementalGel"), 20);
+			recipe.AddIngredient(mod.ItemType("ElementalGoop"), 20);
 			recipe.AddIngredient(ItemID.Gel, 30);
 			recipe.AddTile(TileID.MythrilAnvil);
 			recipe.SetResult(this);

@@ -27,7 +27,7 @@ namespace Azercadmium.Projectiles.Mech
 			velocity2 *= 2;
 			if (Timer % 180 == 0 || Timer % 180 == 30 || Timer % 180 == 60) {
 				Main.PlaySound(SoundID.Item12);
-				Projectile.NewProjectile(projectile.Center, velocity2, ProjectileID.Bullet, projectile.damage, projectile.knockBack / 3, Main.myPlayer);
+				Projectile.NewProjectile(projectile.Center, velocity2, ProjectileID.GreenLaser, projectile.damage, projectile.knockBack / 3, Main.myPlayer);
 			}
 		}
 	}   

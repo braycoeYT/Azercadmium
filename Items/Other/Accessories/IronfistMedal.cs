@@ -10,8 +10,8 @@ namespace Azercadmium.Items.Other.Accessories
 			Tooltip.SetDefault("Increases true melee damage by 15%");
 		}
 		public override void SetDefaults() {
-			item.width = 50;
-			item.height = 50;
+			item.width = 30;
+			item.height = 30;
 			item.accessory = true;
 			item.value = Item.sellPrice(0, 1, 0, 0);
 			item.rare = ItemRarityID.Green;

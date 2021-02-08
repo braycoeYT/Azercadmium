@@ -5,10 +5,9 @@ using Terraria.ModLoader;
 
 namespace Azercadmium.Items.Neutron
 {
-	public class NeutronBlaster : ModItem
+	public class Neutrobliterator: ModItem
 	{
 		public override void SetStaticDefaults() {
-			DisplayName.SetDefault("Neutron Blaster");
 			Tooltip.SetDefault("Shoots multiple short ranged Neutron Blasts that chase your enemies");
 		}
 		public override void SetDefaults() {

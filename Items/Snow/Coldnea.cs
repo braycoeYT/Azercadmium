@@ -34,7 +34,7 @@ namespace Azercadmium.Items.Snow
 		public override void AddRecipes() {
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.Amarok);
-			recipe.AddIngredient(mod.ItemType("ElementalGel"), 50);
+			recipe.AddIngredient(mod.ItemType("ElementalGoop"), 50);
 			recipe.AddTile(TileID.MythrilAnvil);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

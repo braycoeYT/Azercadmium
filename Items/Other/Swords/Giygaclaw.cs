@@ -4,10 +4,10 @@ using Terraria.ModLoader;
 
 namespace Azercadmium.Items.Other.Swords
 {
-	public class Giygaclaws : ModItem
+	public class Giygaclaw : ModItem
 	{
 		public override void SetStaticDefaults() {
-			Tooltip.SetDefault("'I loved him, as if he was my own child... He was always wagging his tail, just like a pup... EXCEPT for when I tried to SING him lullabies...'\nLeeches life and mana on hit\nHaving low health or an emotional buff/debuff causes the Giygaclaws to deal one damage and not leech anything");
+			Tooltip.SetDefault("It appears to be a claw of a mentally unstable alien\nLeeches life and mana on hit\nHaving low health or an emotional buff/debuff causes the Giygaclaw to deal one damage and not leech anything");
 		}
 		public override void SetDefaults() {
 			item.damage = 319;

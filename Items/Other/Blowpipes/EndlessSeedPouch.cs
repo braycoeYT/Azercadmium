@@ -7,7 +7,7 @@ namespace Azercadmium.Items.Other.Blowpipes
 	public class EndlessSeedPouch : ModItem
 	{
 		public override void SetStaticDefaults() {
-			DisplayName.SetDefault("Endless Seed Pouch");
+			DisplayName.SetDefault("Bottomless Sack of Seeds");
 			Tooltip.SetDefault("For use with blowpipes");
         }
 		public override void SetDefaults() {

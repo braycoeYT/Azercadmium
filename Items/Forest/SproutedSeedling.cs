@@ -5,7 +5,7 @@ using static Terraria.ModLoader.ModContent;
 
 namespace Azercadmium.Items.Forest
 {
-	public class SproutedSeed : ModItem
+	public class SproutedSeedling : ModItem
 	{
 		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Sprouted Seed");
@@ -21,7 +21,7 @@ namespace Azercadmium.Items.Forest
 			item.knockBack = 0f; //0
 			item.value = Item.sellPrice(0, 0, 0, 2); //0
 			item.rare = ItemRarityID.White;
-			item.shoot = ProjectileType<Projectiles.Wood.SproutedSeed>();
+			item.shoot = ProjectileType<Projectiles.Wood.SproutedSeedling>();
 			item.shootSpeed = 0f; //0
 			item.ammo = AmmoID.Dart;
 		}

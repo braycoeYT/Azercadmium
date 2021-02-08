@@ -7,7 +7,7 @@ namespace Azercadmium.Items.Cave
 	public class LifeCrystalShield : ModItem
 	{
 		public override void SetStaticDefaults() {
-			DisplayName.SetDefault("Life Crystal Shield");
+			DisplayName.SetDefault("Crystalline Heart Shield");
 			Tooltip.SetDefault("Increases life regen by 2\nIncreases max life by 20");
 		}
 		public override void SetDefaults() {

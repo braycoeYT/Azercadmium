@@ -172,10 +172,10 @@ namespace Azercadmium.NPCs
 					Item.NewItem(npc.getRect(), mod.ItemType("RedPresent"));
 			}
 			if (NPC.downedPlantBoss && (npc.type == NPCID.IceSlime || npc.type == NPCID.SandSlime || npc.type == NPCID.JungleSlime || npc.type == NPCID.SpikedJungleSlime || npc.type == NPCID.SpikedIceSlime || npc.type == NPCID.LavaSlime || npc.type == NPCID.DungeonSlime || npc.type == NPCID.UmbrellaSlime)) {
-				Item.NewItem(npc.getRect(), mod.ItemType("ElementalGel"), Main.rand.Next(1, 4));
+				Item.NewItem(npc.getRect(), mod.ItemType("ElementalGoop"), Main.rand.Next(1, 4));
 			}
 			if (NPC.downedPlantBoss && (npc.type == NPCID.RainbowSlime || npc.type == NPCID.Pinky)) {
-				Item.NewItem(npc.getRect(), mod.ItemType("ElementalGel"), Main.rand.Next(20, 51));
+				Item.NewItem(npc.getRect(), mod.ItemType("ElementalGoop"), Main.rand.Next(20, 51));
 			}
 			if (Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)].ZoneSkyHeight && Main.hardMode && Main.rand.NextFloat() < .2f) {
 				Item.NewItem(npc.getRect(), mod.ItemType("Electrolight"));
@@ -205,7 +205,7 @@ namespace Azercadmium.NPCs
 			if (npc.type == NPCID.Plantera) {
 				Item.NewItem(npc.getRect(), ItemType<Items.Plantera.PlanteraTooth>(), Main.rand.Next(1, 5));
 				if (Main.rand.Next(3) == 0)
-					Item.NewItem(npc.getRect(), ItemType<Items.Plantera.FruitOfLife>());
+					Item.NewItem(npc.getRect(), ItemType<Items.Plantera.BloomofLife>());
 			}
 			if (npc.type == NPCID.Golem) {
 				if (Main.rand.Next(3) == 0)

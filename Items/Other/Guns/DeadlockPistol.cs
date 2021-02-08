@@ -17,8 +17,8 @@ namespace Azercadmium.Items.Other.Guns
 			item.useAnimation = 34;
 			item.useTime = 34;
 			item.damage = 7;
-			item.width = 58;
-			item.height = 28;
+			item.width = 36;
+			item.height = 22;
 			item.knockBack = 0.2f;
 			item.shoot = ProjectileID.Bullet;
 			item.shootSpeed = 5.2f;

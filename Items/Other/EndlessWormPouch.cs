@@ -7,6 +7,7 @@ namespace Azercadmium.Items.Other
 	public class EndlessWormPouch : ModItem
 	{
 		public override void SetStaticDefaults() {
+			DisplayName.SetDefault("Bottomless Sack of Worms");
 			Tooltip.SetDefault("Why would you even bother to try and craft this?");
         }
 		public override void SetDefaults() {

@@ -62,7 +62,7 @@ namespace Azercadmium.NPCs.Slimes
         }
 		public override void NPCLoot() {
 			if (NPC.downedPlantBoss)
-				Item.NewItem(npc.getRect(), mod.ItemType("ElementalGel"), Main.rand.Next(1, 3));
+				Item.NewItem(npc.getRect(), mod.ItemType("ElementalGoop"), Main.rand.Next(1, 3));
 		}
 	}
 }
