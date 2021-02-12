@@ -270,20 +270,20 @@ namespace Azercadmium.NPCs
 							{
 								if (AIFlag2) {
 									Vector2 projDir = Vector2.Normalize(target.Center - npc.Center) * 8;
-									Projectile.NewProjectile(npc.Center, projDir.RotatedBy(-0.54f), ProjectileID.DeathLaser, npc.damage / 4, 0f, Main.myPlayer);
-									Projectile.NewProjectile(npc.Center, projDir.RotatedBy(-0.27f), ProjectileID.DeathLaser, npc.damage / 4, 0f, Main.myPlayer);
-									Projectile.NewProjectile(npc.Center, projDir, ProjectileID.DeathLaser, npc.damage / 4, 0f, Main.myPlayer);
-									Projectile.NewProjectile(npc.Center, projDir.RotatedBy(0.27f), ProjectileID.DeathLaser, npc.damage / 4, 0f, Main.myPlayer);
-									Projectile.NewProjectile(npc.Center, projDir.RotatedBy(0.54f), ProjectileID.DeathLaser, npc.damage / 4, 0f, Main.myPlayer);
+									Projectile.NewProjectile(npc.Center, projDir.RotatedBy(-0.54f), ProjectileID.Fireball, npc.damage / 4, 0f, Main.myPlayer);
+									Projectile.NewProjectile(npc.Center, projDir.RotatedBy(-0.27f), ProjectileID.Fireball, npc.damage / 4, 0f, Main.myPlayer);
+									Projectile.NewProjectile(npc.Center, projDir, ProjectileID.Fireball, npc.damage / 4, 0f, Main.myPlayer);
+									Projectile.NewProjectile(npc.Center, projDir.RotatedBy(0.27f), ProjectileID.Fireball, npc.damage / 4, 0f, Main.myPlayer);
+									Projectile.NewProjectile(npc.Center, projDir.RotatedBy(0.54f), ProjectileID.Fireball, npc.damage / 4, 0f, Main.myPlayer);
 								}
 								else if (AIFlag) {
 									Vector2 projDir = Vector2.Normalize(target.Center - npc.Center) * 8;
-									Projectile.NewProjectile(npc.Center, projDir.RotatedBy(-0.27f), ProjectileID.DeathLaser, npc.damage / 4, 0f, Main.myPlayer);
-									Projectile.NewProjectile(npc.Center, projDir, ProjectileID.DeathLaser, npc.damage / 4, 0f, Main.myPlayer);
-									Projectile.NewProjectile(npc.Center, projDir.RotatedBy(0.27f), ProjectileID.DeathLaser, npc.damage / 4, 0f, Main.myPlayer);
+									Projectile.NewProjectile(npc.Center, projDir.RotatedBy(-0.27f), ProjectileID.Fireball, npc.damage / 4, 0f, Main.myPlayer);
+									Projectile.NewProjectile(npc.Center, projDir, ProjectileID.Fireball, npc.damage / 4, 0f, Main.myPlayer);
+									Projectile.NewProjectile(npc.Center, projDir.RotatedBy(0.27f), ProjectileID.Fireball, npc.damage / 4, 0f, Main.myPlayer);
 								}
 								else {
-									Projectile.NewProjectile(npc.position, new Vector2(0, 8).RotatedBy(npc.rotation), ProjectileID.DeathLaser, npc.damage / 4, 0f, Main.myPlayer);
+									Projectile.NewProjectile(npc.position, new Vector2(0, 8).RotatedBy(npc.rotation), ProjectileID.Fireball, npc.damage / 4, 0f, Main.myPlayer);
 								}
 							}
 							if (AITimer % 5 == 0)
@@ -337,6 +337,10 @@ namespace Azercadmium.NPCs
 						NPC.NewNPC((int)npc.position.X, (int)npc.position.Y, NPCID.BigSkeleton);
 					else
 						NPC.NewNPC((int)npc.position.X, (int)npc.position.Y, NPCID.BigPantlessSkeleton);
+				}
+				if (npc.type == NPCID.LavaSlime) {
+					Vector2 projDir = Vector2.Normalize(Main.player[npc.target].Center - npc.Center) * 8;
+					Projectile.NewProjectile(npc.Center, projDir, ProjectileID.Fireball, npc.damage / 4, 0f, Main.myPlayer);
 				}
 			}
 		}

@@ -16,7 +16,7 @@ namespace Azercadmium.Items
 				TooltipLine line = new TooltipLine(mod, "Tooltip#0", "Increases ranged critcal strike chance by 5\nIncreases melee speed by 6%");
 				tooltips.Add(line);
 			}
-			if (GetInstance<AzercadmiumConfig>().vanillaSeedAmmo) {
+			/*if (GetInstance<AzercadmiumConfig>().vanillaSeedAmmo) {
 				if (item.type == ItemID.GrassSeeds) {
 					TooltipLine line = new TooltipLine(mod, "Tooltip#0", "For use with blowpipes\nBecause of the sharpness of the seed, it has a chance to deal an extra 2 damage to enemies (shown in dark green)");
 					tooltips.Add(line);
@@ -41,7 +41,7 @@ namespace Azercadmium.Items
 					TooltipLine line = new TooltipLine(mod, "Tooltip#0", "For use with blowpipes");
 					tooltips.Add(line);
 				}
-			}
+			}*/
 		}
 		public override void SetDefaults(Item item)
 		{
@@ -73,7 +73,7 @@ namespace Azercadmium.Items
 				if (item.type == ItemID.PearlwoodSword)
 					item.damage = 46;
 			}
-			if (GetInstance<AzercadmiumConfig>().vanillaSeedAmmo) {
+			/*if (GetInstance<AzercadmiumConfig>().vanillaSeedAmmo) {
 				if (item.type == ItemID.GrassSeeds) {
 					item.damage = 7;
 					item.ranged = true;
@@ -128,7 +128,7 @@ namespace Azercadmium.Items
 					item.ammo = AmmoID.Dart;
 					item.maxStack = 999;
 				}
-			}
+			}*/
 			if (GetInstance<AzercadmiumConfig>().iceSickleAuto) {
 				if (item.type == ItemID.IceSickle)
 					item.autoReuse = true;
@@ -136,7 +136,7 @@ namespace Azercadmium.Items
 		}
 		public override int ChoosePrefix(Item item, UnifiedRandom rand)
 		{
-			if (item.damage > 1 && !item.accessory) {
+			if (item.damage > 1 && !item.accessory && item.notAmmo == true) {
 				if (Main.rand.Next(25) == 0)
 					return ModContent.PrefixType<Rough>();
 				if (Main.rand.Next(30) == 0)

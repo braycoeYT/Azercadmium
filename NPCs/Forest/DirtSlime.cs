@@ -2,7 +2,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace Azercadmium.NPCs.Slimes
+namespace Azercadmium.NPCs.Forest
 {
 	public class DirtSlime : ModNPC
 	{

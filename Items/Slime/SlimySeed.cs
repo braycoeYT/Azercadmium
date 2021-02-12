@@ -1,4 +1,3 @@
-using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -6,14 +5,14 @@ using static Terraria.ModLoader.ModContent;
 
 namespace Azercadmium.Items.Slime
 {
-	public class SlimySeedshot : ModItem
+	public class SlimySeed : ModItem
 	{
 		public override void SetStaticDefaults() {
-			DisplayName.SetDefault("Slimy Seedshot");
+			DisplayName.SetDefault("Slimy Seed");
 			Tooltip.SetDefault("For use with blowpipes\nEach seedshot has a high chance of sliming enemies");
         }
 		public override void SetDefaults() {
-			item.damage = 4; //3
+			item.damage = 6;
 			item.ranged = true;
 			item.width = 12;
 			item.height = 8;
@@ -22,7 +21,7 @@ namespace Azercadmium.Items.Slime
 			item.knockBack = 0f; //0
 			item.value = Item.sellPrice(0, 0, 0, 1); //0
 			item.rare = ItemRarityID.White;
-			item.shoot = ProjectileType<Projectiles.Slime.SlimySeedshot>();
+			item.shoot = ProjectileType<Projectiles.Slime.SlimySeed>();
 			item.shootSpeed = 0f; //0
 			item.ammo = AmmoID.Dart;
 		}

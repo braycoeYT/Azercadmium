@@ -6,10 +6,10 @@ using Terraria.ID;
 
 namespace Azercadmium.Projectiles.Slime
 {
-	public class SlimySeedshot : ModProjectile
+	public class SlimySeed : ModProjectile
 	{
         public override void SetStaticDefaults() {
-			DisplayName.SetDefault("Slimy Seedshot");
+			DisplayName.SetDefault("Slimy Seed");
         }
 		public override void SetDefaults() {
 			projectile.CloneDefaults(ProjectileID.Seed);

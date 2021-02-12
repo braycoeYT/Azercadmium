@@ -12,7 +12,7 @@ namespace Azercadmium.Items.Forest
 			Tooltip.SetDefault("For use with blowpipes\nEach seedshot creates a damaging temporary sapling on impact");
         }
 		public override void SetDefaults() {
-			item.damage = 5; //3
+			item.damage = 8; //3
 			item.ranged = true;
 			item.width = 12;
 			item.height = 14;

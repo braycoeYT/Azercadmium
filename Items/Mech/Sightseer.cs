@@ -5,17 +5,17 @@ using Terraria.ModLoader;
 
 namespace Azercadmium.Items.Mech
 {
-	public class TwinOpticbow : ModItem
+	public class Sightseer : ModItem
 	{
 		public override void SetStaticDefaults() {
-			Tooltip.SetDefault("Has a chance to replace arrows with cursed flames or lasers");
+			Tooltip.SetDefault("Converts regular arrows into lasers and cursed flames");
 		}
 		public override void SetDefaults() {
-			item.value = Item.sellPrice(0, 4, 0, 0);
+			item.value = Item.sellPrice(0, 5, 0, 0);
 			item.useStyle = ItemUseStyleID.HoldingOut;
-			item.useAnimation = 25;
-			item.useTime = 25;
-			item.damage = 51;
+			item.useAnimation = 19;
+			item.useTime = 19;
+			item.damage = 58;
 			item.width = 12;
 			item.height = 24;
 			item.knockBack = 2f;
@@ -28,10 +28,13 @@ namespace Azercadmium.Items.Mech
 			item.autoReuse = true;
 			item.rare = ItemRarityID.LightPurple;
 		}
+		int shootCount;
         public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack) {
-			int ran = Main.rand.Next(1, 21);
-            if (ran == 1) type = 95;
-			if (ran == 2) type = 14;
+			shootCount++;
+			if (type == ProjectileID.WoodenArrowFriendly) {
+				if (shootCount % 2 == 0) type = 95;
+				else type = 88;
+			}
             return true;
         }
 		public override void AddRecipes() {

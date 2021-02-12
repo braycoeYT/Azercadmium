@@ -14,7 +14,7 @@ namespace Azercadmium.Items.Elemental
 			item.width = 40;
 			item.height = 30;
 			item.maxStack = 999;
-			item.value = Item.sellPrice(0, 0, 0, 50);
+			item.value = Item.sellPrice(0, 0, 1, 0);
 			item.rare = ItemRarityID.Lime;
 		}
 	}

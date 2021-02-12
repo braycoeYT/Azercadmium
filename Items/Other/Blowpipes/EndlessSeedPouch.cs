@@ -11,7 +11,7 @@ namespace Azercadmium.Items.Other.Blowpipes
 			Tooltip.SetDefault("For use with blowpipes");
         }
 		public override void SetDefaults() {
-			item.damage = 5; //3
+			item.damage = 6; //3
 			item.ranged = true;
 			item.width = 24;
 			item.height = 32;

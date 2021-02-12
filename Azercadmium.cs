@@ -72,7 +72,7 @@ namespace Azercadmium
 
 		public override void AddRecipeGroups()
 		{
-			RecipeGroup group = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + "Basic Prehardmode Bar", new int[]
+			RecipeGroup group = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " Basic Prehardmode Bar", new int[]
 			{
 			ItemID.CopperBar,
 			ItemID.TinBar,

@@ -8,7 +8,7 @@ namespace Azercadmium.Items.Electrolight
 	{
 		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Electrolight");
-			Tooltip.SetDefault("Unbelievably electrical");
+			Tooltip.SetDefault("Unbelievably electrical\nDropped by sky enemues in hardmode");
 		}
 		public override void SetDefaults() {
 			item.width = 40;
