@@ -46,11 +46,6 @@ namespace Azercadmium.NPCs
 				shop.item[nextSlot].shopCustomPrice = 3;
 				nextSlot++;
 			}
-			if (type == NPCID.Merchant) {
-				shop.item[nextSlot].SetDefaults(mod.ItemType("BasicBowMold"));
-				shop.item[nextSlot].shopCustomPrice = 5000;
-				nextSlot++;
-			}
 			if (type == NPCID.WitchDoctor) {
 				shop.item[nextSlot].SetDefaults(mod.ItemType("Vineshot"));
 				shop.item[nextSlot].shopCustomPrice = 8;

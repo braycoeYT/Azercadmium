@@ -64,7 +64,7 @@ namespace Azercadmium
 					ModContent.ItemType<Items.Empress.EmpressChalice>(),
 					new List<int> { ModContent.ItemType<Items.Empress.EmpressShard>() }, //collectables
 					new List<int> { ModContent.ItemType<Items.Empress.EmpressShard>() }, //other
-					$"Use a [i:{ModContent.ItemType<Items.Empress.EmpressChalice>()}]"
+					$"Use a [i:{ModContent.ItemType<Items.Empress.EmpressChalice>()}]."
 				);
 			}
 			AzercadmiumUtils.Initialize();

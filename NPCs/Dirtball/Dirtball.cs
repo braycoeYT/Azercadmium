@@ -439,9 +439,9 @@ namespace Azercadmium.NPCs.Dirtball
 			}
 			if (attack == 1 || attack == 2) {
 				if (attackTimer == 0) {
-					if (phase == 1)
+					if (phase == 1 && !AzercadmiumWorld.devastation)
 						Projectile.NewProjectile(npc.Center, Vector2.Normalize((target.position - new Vector2(0, -10)) - npc.Center) * 12, mod.ProjectileType("DirtGlobuleHostile"), 10, 0f, Main.myPlayer, 0f, 0f);
-					if (phase == 2)
+					if (phase == 2 || AzercadmiumWorld.devastation)
 						Projectile.NewProjectile(npc.Center, Vector2.Normalize((target.position - new Vector2(0, -10)) - npc.Center) * 12, mod.ProjectileType("DirtGlobuleLaserHostile"), 12, 0f, Main.myPlayer, 0f, 0f);
 				}
 				attackTimer++;
@@ -515,6 +515,18 @@ namespace Azercadmium.NPCs.Dirtball
 					dashTimer = 0;
 				}
 					
+			}
+			if (AzercadmiumWorld.devastation) {
+				if (Timer % 600 == 0)
+				{
+					for (int pos = -800; pos < 800; pos += 160) {
+						Projectile.NewProjectile(npc.Center.X - 1600, npc.Center.Y - pos, 10, 0, mod.ProjectileType("DirtGlobHostile"), 16, 0f, Main.myPlayer, 0f, 0f);
+						Projectile.NewProjectile(npc.Center.X + 1600, npc.Center.Y - pos - 80, -10, 0, mod.ProjectileType("DirtGlobHostile"), 16, 0f, Main.myPlayer, 0f, 0f);
+					}
+				}
+				if (Timer % 600 > 300 && Timer % 10 == 0) {
+					Projectile.NewProjectile(target.Center.X + Main.rand.Next(-400, 400), target.Center.Y - 600, Main.rand.NextFloat(-6, 7), Main.rand.Next(4, 7), mod.ProjectileType("DirtGlobHostile"), 16, 0f, Main.myPlayer, 0f, 0f);
+				}
 			}
 		}
 		public override void BossLoot(ref string name, ref int potionType) {

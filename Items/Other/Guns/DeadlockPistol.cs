@@ -16,7 +16,7 @@ namespace Azercadmium.Items.Other.Guns
 			item.useStyle = ItemUseStyleID.HoldingOut;
 			item.useAnimation = 34;
 			item.useTime = 34;
-			item.damage = 7;
+			item.damage = 13;
 			item.width = 36;
 			item.height = 22;
 			item.knockBack = 0.2f;
@@ -28,6 +28,9 @@ namespace Azercadmium.Items.Other.Guns
 			item.UseSound = SoundID.Item41;
 			item.autoReuse = false;
 			item.rare = ItemRarityID.Blue;
+		}
+		public override Vector2? HoldoutOffset() {
+			return new Vector2(-4, 0);
 		}
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack) {
 			int numberProjectiles = 2 + Main.rand.Next(3);

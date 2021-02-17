@@ -1,4 +1,3 @@
-using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -13,9 +12,9 @@ namespace Azercadmium.Items.Other.Blowpipes
 		public override void SetDefaults() {
 			item.value = Item.sellPrice(0, 3, 0, 0);
 			item.useStyle = ItemUseStyleID.HoldingOut;
-			item.useAnimation = 14;
-			item.useTime = 14;
-			item.damage = 21;
+			item.useAnimation = 12;
+			item.useTime = 12;
+			item.damage = 26;
 			item.width = 36;
 			item.height = 22;
 			item.knockBack = 0.8f;
