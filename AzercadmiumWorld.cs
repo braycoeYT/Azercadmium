@@ -32,6 +32,7 @@ namespace Azercadmium
 		public static bool hasAlertCarnallite;
 		public static bool generatedAquite;
 		public static int microbiomeTiles;
+		public static bool Devastation => devastation && Main.expertMode;
 		public override void Initialize() {
 			downedDirtball = false;
 			downedDiscus = false;

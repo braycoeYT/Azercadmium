@@ -20,7 +20,7 @@ namespace Azercadmium.NPCs.Empress
 			npc.height = 172;
 			npc.damage = 60;
 			npc.defense = 41;
-			npc.lifeMax = 35000;
+			npc.lifeMax = 45000;
 			npc.HitSound = SoundID.NPCHit1;
 			npc.DeathSound = SoundID.NPCDeath1;
 			npc.value = Item.buyPrice(0, 16, 0, 0);
@@ -42,7 +42,7 @@ namespace Azercadmium.NPCs.Empress
 		}
 		public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
         {
-            npc.lifeMax = 48000 + numPlayers * 8000;
+            npc.lifeMax = 60000 + numPlayers * 8000;
 			npc.damage = 120;
 			if (AzercadmiumWorld.devastation) {
 				npc.lifeMax = 60000 + numPlayers * 10000;

@@ -245,8 +245,8 @@ namespace Azercadmium.NPCs.Dirtball
 									num293 *= num294;
 									if (npc.ai[3] == 32f) {
 										int num297;
-										if (phase == 1 && attack != 4) num297 = Projectile.NewProjectile(vector33.X, vector33.Y, num292 / 2, num293 / 2, mod.ProjectileType("DirtGlobHostile"), 11, 0f, Main.myPlayer, 0f, 0f);
-										if (phase == 2 && attack != 4) num297 = Projectile.NewProjectile(vector33.X, vector33.Y, (int)(num292 / 1.75), (int)(num293 / 1.75), ProjectileID.EyeLaser, 15, 0f, Main.myPlayer);
+										if (phase == 1 && attack != 4) num297 = Projectile.NewProjectile(vector33.X, vector33.Y, num292 / 2, num293 / 2, mod.ProjectileType("DirtGlobHostile"), 9, 0f, Main.myPlayer, 0f, 0f);
+										if (phase == 2 && attack != 4) num297 = Projectile.NewProjectile(vector33.X, vector33.Y, (int)(num292 / 1.75), (int)(num293 / 1.75), ProjectileID.EyeLaser, 13, 0f, Main.myPlayer);
 									}
 									num290 = 8;
 									if (npc.ai[3] > 0f)
@@ -440,9 +440,9 @@ namespace Azercadmium.NPCs.Dirtball
 			if (attack == 1 || attack == 2) {
 				if (attackTimer == 0) {
 					if (phase == 1 && !AzercadmiumWorld.devastation)
-						Projectile.NewProjectile(npc.Center, Vector2.Normalize((target.position - new Vector2(0, -10)) - npc.Center) * 12, mod.ProjectileType("DirtGlobuleHostile"), 10, 0f, Main.myPlayer, 0f, 0f);
+						Projectile.NewProjectile(npc.Center, Vector2.Normalize((target.position - new Vector2(0, -10)) - npc.Center) * 12, mod.ProjectileType("DirtGlobuleHostile"), 8, 0f, Main.myPlayer, 0f, 0f);
 					if (phase == 2 || AzercadmiumWorld.devastation)
-						Projectile.NewProjectile(npc.Center, Vector2.Normalize((target.position - new Vector2(0, -10)) - npc.Center) * 12, mod.ProjectileType("DirtGlobuleLaserHostile"), 12, 0f, Main.myPlayer, 0f, 0f);
+						Projectile.NewProjectile(npc.Center, Vector2.Normalize((target.position - new Vector2(0, -10)) - npc.Center) * 12, mod.ProjectileType("DirtGlobuleLaserHostile"), 10, 0f, Main.myPlayer, 0f, 0f);
 				}
 				attackTimer++;
 				if (attackTimer >= 300 - difficultyBonus)
@@ -484,7 +484,7 @@ namespace Azercadmium.NPCs.Dirtball
 				else
 					npc.velocity /= 1.25f;
 				if (attackTimer % 5 == 0)
-					Projectile.NewProjectile(npc.Center, new Vector2(Main.rand.Next(-6, 7), Main.rand.Next(-14, -6)), mod.ProjectileType("DirtSphereHostile"), 12, 0f, Main.myPlayer, 0f, 0f);
+					Projectile.NewProjectile(npc.Center, new Vector2(Main.rand.Next(-6, 7), Main.rand.Next(-14, -6)), mod.ProjectileType("DirtSphereHostile"), 10, 0f, Main.myPlayer, 0f, 0f);
 				if (attackTimer >= 120)
 					attackDone = true;
 			}
@@ -517,15 +517,15 @@ namespace Azercadmium.NPCs.Dirtball
 					
 			}
 			if (AzercadmiumWorld.devastation) {
-				if (Timer % 600 == 0)
+				if (Timer % 1800 == 0)
 				{
 					for (int pos = -800; pos < 800; pos += 160) {
-						Projectile.NewProjectile(npc.Center.X - 1600, npc.Center.Y - pos, 10, 0, mod.ProjectileType("DirtGlobHostile"), 16, 0f, Main.myPlayer, 0f, 0f);
-						Projectile.NewProjectile(npc.Center.X + 1600, npc.Center.Y - pos - 80, -10, 0, mod.ProjectileType("DirtGlobHostile"), 16, 0f, Main.myPlayer, 0f, 0f);
+						Projectile.NewProjectile(npc.Center.X - 1600, npc.Center.Y - pos, 10, 0, mod.ProjectileType("DirtGlobHostile"), 14, 0f, Main.myPlayer, 0f, 0f);
+						Projectile.NewProjectile(npc.Center.X + 1600, npc.Center.Y - pos - 80, -10, 0, mod.ProjectileType("DirtGlobHostile"), 14, 0f, Main.myPlayer, 0f, 0f);
 					}
 				}
-				if (Timer % 600 > 300 && Timer % 10 == 0) {
-					Projectile.NewProjectile(target.Center.X + Main.rand.Next(-400, 400), target.Center.Y - 600, Main.rand.NextFloat(-6, 7), Main.rand.Next(4, 7), mod.ProjectileType("DirtGlobHostile"), 16, 0f, Main.myPlayer, 0f, 0f);
+				if (Timer % 1800 > 1200 && Timer % 1800 < 1500 && Timer % 10 == 0) {
+					Projectile.NewProjectile(target.Center.X + Main.rand.Next(-400, 400), target.Center.Y - 600, Main.rand.NextFloat(-6, 7), Main.rand.Next(4, 7), mod.ProjectileType("DirtGlobHostile"), 14, 0f, Main.myPlayer, 0f, 0f);
 				}
 			}
 		}

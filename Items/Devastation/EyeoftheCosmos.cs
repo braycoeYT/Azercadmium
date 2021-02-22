@@ -11,7 +11,7 @@ namespace Azercadmium.Items.Devastation
 	{
 		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Eye of the Cosmos");
-			Tooltip.SetDefault("Used to activate and deactivate Devastation Mode\nDevastation mode heavily increases the difficulty of the game and is not recommended for a first playthrough\nNote: Heavily unfinished\nCan only be activated in Expert Mode and when no bosses are alive\nDevastation mode only items will have the Mint Chocolate rarity\nCheck the Azercadmium Discord Server in #info for full list of changes");
+			Tooltip.SetDefault("Used to toggle Devastation Mode\nDevastation mode heavily increases the difficulty of the game and is not recommended for a first playthrough\nNote: Heavily unfinished\nCan only be activated in Expert Mode and when no bosses are alive\nDevastation mode only items will have the Mint Chocolate rarity\nCheck the Azercadmium Discord Server in #info for full list of changes");
 			ItemID.Sets.SortingPriorityBossSpawns[item.type] = 13;
 		}
 		public override void SetDefaults() {

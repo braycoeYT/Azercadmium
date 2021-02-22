@@ -21,7 +21,7 @@ namespace Azercadmium.Tiles.Carnallite
 			Main.tileBlockLight[Type] = true;
 			ModTranslation name = CreateMapEntryName();
 			name.SetDefault("Green Carnallite Ore");
-			AddMapEntry(new Color(255, 0, 0), name); //110, 150, 98
+			AddMapEntry(new Color(103, 217, 69), name); //110, 150, 98
 			dustType = mod.DustType("GreenCarnalliteDust");
 			drop = ItemType<Items.Carnallite.GreenCarnalliteOre>();
 			soundType = SoundID.Tink;

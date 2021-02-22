@@ -4,7 +4,7 @@ Make sure to check the config every once in a while!
 The reworks have finally been completed! It has been a lot time since September, but we finally did it!
 
 Stats:
-~255 Items
+~257 Items
 ~4 Bosses:
 ^1 Prehardmode Bosses
 ^3 Hardmode Bosses
@@ -61,14 +61,13 @@ Lamb Sauce (Empress Chalice and Delicious Gelatin sprites)
 
 Multiplayer support is unknown, but most of us play alone anyway.
 
-Update V0.2.8: Update
-~Added a period to Empress Slime's boss checklist entry.
-~Increased Slimy Blowpipe Damage.
-~Added Starshot.
-~Buffed Vortex Blowpipe.
-~Added Starshooter and Molten Blowpipe..
-~Fixed Merchant having an empty spot.
-~Buffed Deadlock Pistol and fixed how it is held.
-~Devastation Mode:
-^Dirtball now summons walls of projectiles from the left and right and can also rain dirt globs from the sky.
-^Dirtball now uses some of its phase 2 attacks in phase 1.
+Update V0.2.8.1: Update
+~Changed wording of Eye of the Cosmos.
+~Nerfed Devastation Mode Dirtball.
+~Buffed Empress Slime max health.
+~Added Floral Rebirth, an upgrade to the Seedler.
+~Nerfed Familiar Foam Dart Pistol.
+~Added Chaos Caster, a 5% chance drop from Goblin Sorcerers.
+~Fixed Green Carnallite Ore appearing red on the map.
+~Familiar Foam Dart Pistol tooltip now tells the player its ammo type.
+~Nerfed Dirtball projectile damage.

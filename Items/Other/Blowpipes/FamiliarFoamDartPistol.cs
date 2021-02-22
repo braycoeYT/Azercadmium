@@ -7,14 +7,14 @@ namespace Azercadmium.Items.Other.Blowpipes
 	public class FamiliarFoamDartPistol : ModItem
 	{
 		public override void SetStaticDefaults() {
-			Tooltip.SetDefault("It's this or nothing, they say...");
+			Tooltip.SetDefault("It's this or nothing, they say...\nUses seeds and darts as ammo");
 		}
 		public override void SetDefaults() {
 			item.value = Item.sellPrice(0, 3, 0, 0);
 			item.useStyle = ItemUseStyleID.HoldingOut;
-			item.useAnimation = 12;
-			item.useTime = 12;
-			item.damage = 26;
+			item.useAnimation = 20;
+			item.useTime = 20;
+			item.damage = 23;
 			item.width = 36;
 			item.height = 22;
 			item.knockBack = 0.8f;
