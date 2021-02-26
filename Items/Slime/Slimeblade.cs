@@ -12,8 +12,8 @@ namespace Azercadmium.Items.Slime
 		public override void SetDefaults() {
 			item.damage = 12;
 			item.melee = true;
-			item.width = 72;
-			item.height = 72;
+			item.width = 42;
+			item.height = 42;
 			item.useTime = 21;
 			item.useAnimation = 21;
 			item.useStyle = ItemUseStyleID.SwingThrow;

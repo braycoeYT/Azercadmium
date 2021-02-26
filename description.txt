@@ -4,7 +4,7 @@ Make sure to check the config every once in a while!
 The reworks have finally been completed! It has been a lot time since September, but we finally did it!
 
 Stats:
-~257 Items
+~261 Items
 ~4 Bosses:
 ^1 Prehardmode Bosses
 ^3 Hardmode Bosses
@@ -61,13 +61,9 @@ Lamb Sauce (Empress Chalice and Delicious Gelatin sprites)
 
 Multiplayer support is unknown, but most of us play alone anyway.
 
-Update V0.2.8.1: Update
-~Changed wording of Eye of the Cosmos.
-~Nerfed Devastation Mode Dirtball.
-~Buffed Empress Slime max health.
-~Added Floral Rebirth, an upgrade to the Seedler.
-~Nerfed Familiar Foam Dart Pistol.
-~Added Chaos Caster, a 5% chance drop from Goblin Sorcerers.
-~Fixed Green Carnallite Ore appearing red on the map.
-~Familiar Foam Dart Pistol tooltip now tells the player its ammo type.
-~Nerfed Dirtball projectile damage.
+Update V0.2.8.2: Update
+~Updated Desert Rose.
+~Buffed Matrix Scavenger.
+~Added Barfarang, Tenderizer, Pukerang, and Pulverizer.
+~Resprited Matrix Scavenger Treasure Bag, Slimy Core, Slimeblade, Slime Bow, Slime Arrow, Slimy Blowpipe, Slimy Seed, and Slimy Throw.
+~Buffed Mecharang.

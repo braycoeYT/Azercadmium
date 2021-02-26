@@ -2,30 +2,29 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace Azercadmium.Items.Mech
+namespace Azercadmium.Items.Crimson
 {
-	public class Mecharang : ModItem
+	public class Pulverizer : ModItem
 	{
 		public override void SetStaticDefaults() {
-			Tooltip.SetDefault("Occasionally fires lasers");
+			Tooltip.SetDefault("Inflicts ichor on struck enemies\nShoots ichor splashes at nearby enemies");
 		}
 		public override void SetDefaults() {
+			item.damage = 75;
 			item.melee = true;
-			item.damage = 89;
-			item.width = 45;
-			item.height = 45;
-			item.useTime = 15;
-			item.useAnimation = 15;
-			item.useStyle = ItemUseStyleID.SwingThrow;
-			item.knockBack = 1.5f;
-			item.value = Item.sellPrice(0, 4, 50, 0);
-			item.rare = ItemRarityID.LightPurple;
+			item.width = 30;
+			item.height = 30;
+			item.useTime = 16;
+			item.useAnimation = 16;
+			item.useStyle = ItemUseStyleID.HoldingUp;
+			item.knockBack = 5.6f;
+			item.value = Item.sellPrice(0, 3, 56, 0);
+			item.rare = ItemRarityID.Pink;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
 			item.useTurn = true;
-			item.shoot = mod.ProjectileType("Mecharang");
-			item.shootSpeed = 17;
-			item.crit = 6;
+			item.shoot = ModContent.ProjectileType<Projectiles.Crimson.Pulverizer>();
+			item.shootSpeed = 16f;
 			item.noUseGraphic = true;
 		}
 		public override bool CanUseItem(Player player) {
@@ -38,8 +37,9 @@ namespace Azercadmium.Items.Mech
         }
 		public override void AddRecipes() {
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.HallowedBar, 13);
-			recipe.AddIngredient(ItemID.SoulofMight, 6);
+			recipe.AddIngredient(ModContent.ItemType<Tenderizer>());
+			recipe.AddIngredient(ItemID.Ichor, 15);
+			recipe.AddIngredient(ItemID.SoulofNight, 3);
 			recipe.AddTile(TileID.MythrilAnvil);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
