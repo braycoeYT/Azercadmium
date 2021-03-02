@@ -129,8 +129,8 @@ namespace Azercadmium.Items
 					item.maxStack = 999;
 				}
 			}*/
-			if (GetInstance<AzercadmiumConfig>().iceSickleAuto) {
-				if (item.type == ItemID.IceSickle)
+			if (GetInstance<AzercadmiumConfig>().itemAuto) {
+				if (item.type == ItemID.IceSickle || item.type == ItemID.WaterGun)
 					item.autoReuse = true;
 			}
 		}

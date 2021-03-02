@@ -17,7 +17,7 @@ namespace Azercadmium.Projectiles.Other
 			projectile.friendly = true;
 			projectile.penetrate = 6;
 			projectile.ranged = true;
-			projectile.timeLeft = 600;
+			projectile.timeLeft = 180;
 			projectile.ignoreWater = true;
 			projectile.light = 0.3f;
 			aiType = ProjectileID.Bullet;

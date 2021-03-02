@@ -12,7 +12,7 @@ namespace Azercadmium.Items.Vortex
 		}
 		public override void SetDefaults() {
 			item.CloneDefaults(ItemID.Blowpipe);
-			item.damage = 74;
+			item.damage = 60;
 			item.knockBack = 3.1f;
 			item.shootSpeed = 16f;
 			item.useTime = 14;

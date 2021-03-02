@@ -22,10 +22,9 @@ namespace Azercadmium.Projectiles.Mech
 		int Timer;
 		public override void AI() {
 			Timer++;
-			projectile.timeLeft = 999;
 			Vector2 velocity2 = projectile.velocity;
 			velocity2 *= 2;
-			if (Timer % 180 == 0 || Timer % 180 == 30 || Timer % 180 == 60) {
+			if (Timer % 180 == 1 || Timer % 180 == 31 || Timer % 180 == 61) {
 				Main.PlaySound(SoundID.Item12);
 				Projectile.NewProjectile(projectile.Center, velocity2, ProjectileID.GreenLaser, projectile.damage, projectile.knockBack / 3, Main.myPlayer);
 			}

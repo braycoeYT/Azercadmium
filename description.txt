@@ -1,16 +1,15 @@
-This mod has unique content, including ore furniture and a new subclass.
+This mod has unique content, including new ores, a ball of dirt, and a new subclass.
 This mod also has QoL changes, such as an easier Slime Crown recipe, crimson alternates, tons of vanilla recipes, and some hardmode enemies dropping prehardmode loot.
 Make sure to check the config every once in a while!
-The reworks have finally been completed! It has been a lot time since September, but we finally did it!
+WARNING: Do not use the wiki, it is extremely outdated since no one cares.
 
-Stats:
+[i:3123] Stats:
 ~261 Items
 ~4 Bosses:
 ^1 Prehardmode Bosses
 ^3 Hardmode Bosses
-^(1) Unobtainable Joke Superboss
-~2 Town NPCs
 ~32 total NPCs
+~2 Town NPCs
 ~50 Tiles
 ~30 Buffs
 ~1 Subclass (Blowpipes/Dart Guns)
@@ -19,8 +18,27 @@ Stats:
 ~18 Modifiers
 ^11 Weapon Modifiers
 ^7 Accessory Modifiers
+~A secret unobtainable joke boss
+~[i:458]Cross content with: Asteri (dead), Havoc (dead), and Cacti and More 2 Mod.
 
-[i:458]Cross content with: Asteri (dead), Havoc (dead), and Cacti and More 2 Mod.
+Update V0.2.8.3: Update
+~Nerfed Vortex Blowpipe.
+~Living Marshmallows no longer require snowstorms to spawn.
+~Reworded Sol Necklace and Bloom of Life tooltips.
+~Updated a missing section of Jungle's Prosperity's tooltip.
+~Sol Necklace is now dropped by hallow and space enemies instead of Golem, and expanded the tooltip to hint at this.
+~Fixed a bug where the mecharang shot two lasers on spawn instead of three.
+~Auto re-use config now affects the water gun.
+~Added a warning about the wiki in the mod description.
+~Rearranged part of the mod description.
+~Changed some of the credit entries a bit.
+~Added the mod owner (Braycoe) to the credits.
+~Fixed a typo in the Electrolight tooltip.
+
+Credits:
+
+Owner:
+Braycoe (Owner, Coder, Minor Spriter, Minor Wiki)
 
 Spriters:
 FunkItOut
@@ -29,18 +47,14 @@ That One Book Man
 HBDeus
 Pufferfish77
 Skymanisbtman
-Koolaidlemonade
+Koolaidlemonade (Inactive)
 
 Coders:
 Nalyddd
 Woodio
 
-Composer:
+Composer (get the Music mod):
 Skymanisbtman
-
-Wiki (still pretty dead):
-Unboxing Video
-Deranged Lynx (Also made Tactical Megaphone use sound)
 
 Quit:
 CrazySapling1 (Spriter)
@@ -51,19 +65,12 @@ Math (Minor Wiki)
 Ashe (Minor Wiki)
 Setnour6 (Old Matrix Scavenger Theme)
 Polaris (Minor Wiki)
-ChimneyEggs (Ore Staff Sprites and Heartbreaker Sprite)
-Don't Call Me Klarson (Old Wooden Shield)
-EternalAvant (Old Featherfall Shield)
+ChimneyEggs (Minor Spriter)
+Don't Call Me Klarson (Minor Spriter)
+EternalAvant (Minor Spriter)
 Thunderminer79 (Help with Matrix Scavenger movement)
-Mr. Raccoon (A couple sprites)
-Lamb Sauce (Empress Chalice and Delicious Gelatin sprites)
+Mr. Raccoon (Minor Spriter)
+Lamb Sauce (Minor Spriter)
 [The World] (Lore)
-
-Multiplayer support is unknown, but most of us play alone anyway.
-
-Update V0.2.8.2: Update
-~Updated Desert Rose.
-~Buffed Matrix Scavenger.
-~Added Barfarang, Tenderizer, Pukerang, and Pulverizer.
-~Resprited Matrix Scavenger Treasure Bag, Slimy Core, Slimeblade, Slime Bow, Slime Arrow, Slimy Blowpipe, Slimy Seed, and Slimy Throw.
-~Buffed Mecharang.
+Unboxing Video (Minor Wiki)
+Deranged Lynx (Minor Wiki and Tactical Megaphone use sound)

@@ -8,7 +8,7 @@ namespace Azercadmium.Items.Plantera
 	{
 		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Bloom of Life");
-			Tooltip.SetDefault("Increases max life by 20\nYou gain life every time you take damage");
+			Tooltip.SetDefault("Increases max life by 20\nHeals life after taking damage");
 		}
 		public override void SetDefaults() {
 			item.width = 40;

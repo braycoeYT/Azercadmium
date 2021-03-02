@@ -10,7 +10,7 @@ namespace Azercadmium.Items.Jungle
 	{
 		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Jungle's Prosperity");
-			Tooltip.SetDefault("Increases max health by 25\nSummons spores over time that will damage enemies\nGreatly increases life regen when not moving\nReleases bees when damaged\nIncreases the strength of friendly bees\nYou gain life every time you take damage");
+			Tooltip.SetDefault("Increases max health by 25\nSummons spores over time that will damage enemies\nGreatly increases life regen when not moving\nReleases bees and heals life when damaged\nIncreases the strength of friendly bees\nLife regen is heavily increased in low health");
 		}
 		public override void SetDefaults() {
 			item.width = 40;
@@ -39,7 +39,7 @@ namespace Azercadmium.Items.Jungle
 			recipe.AddIngredient(ItemID.HoneyComb);
 			recipe.AddIngredient(ItemID.HiveBackpack);
 			recipe.AddIngredient(ModContent.ItemType<BloomofLife>());
-			recipe.AddIngredient(ModContent.ItemType<SunProtection>());
+			recipe.AddIngredient(ModContent.ItemType<Hallow.SunProtection>());
 			recipe.AddIngredient(ItemID.JungleSpores, 20);
 			recipe.AddIngredient(ItemID.ChlorophyteBar, 12);
 			recipe.AddIngredient(ItemID.LifeFruit, 3);

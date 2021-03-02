@@ -34,8 +34,8 @@ namespace Azercadmium.NPCs.Snow
 				npc.Transform(mod.NPCType("RoastedLivingMarshmellow"));
 		}
 		public override float SpawnChance(NPCSpawnInfo spawnInfo) {
-			if (spawnInfo.player.ZoneSnow && Main.raining)
-			return 0.1f;
+			if (spawnInfo.player.ZoneSnow)
+				return 0.1f;
 			return 0f;
         }
 	    public override void NPCLoot() {

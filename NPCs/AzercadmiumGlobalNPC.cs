@@ -1,3 +1,4 @@
+using Azercadmium.Items.Other.Accessories;
 using Microsoft.Xna.Framework;
 using System;
 using Terraria;
@@ -172,8 +173,11 @@ namespace Azercadmium.NPCs
 			if (NPC.downedPlantBoss && (npc.type == NPCID.RainbowSlime || npc.type == NPCID.Pinky)) {
 				Item.NewItem(npc.getRect(), mod.ItemType("ElementalGoop"), Main.rand.Next(20, 51));
 			}
-			if (Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)].ZoneSkyHeight && Main.hardMode && Main.rand.NextFloat() < .2f) {
+			if (Main.player[Player.FindClosest(npc.position, npc.width, npc.height)].ZoneSkyHeight && Main.hardMode && Main.rand.NextFloat() < .2f) {
 				Item.NewItem(npc.getRect(), mod.ItemType("Electrolight"));
+			}
+			if ((Main.player[Player.FindClosest(npc.position, npc.width, npc.height)].ZoneHoly || Main.player[Player.FindClosest(npc.position, npc.width, npc.height)].ZoneSkyHeight) && Main.hardMode && Main.rand.NextFloat() < .005f) {
+				Item.NewItem(npc.getRect(), ModContent.ItemType<Items.Hallow.SunProtection>());
 			}
 			if (npc.type == NPCID.Derpling || npc.type == NPCID.GiantTortoise || npc.type == NPCID.GiantFlyingFox || npc.type == NPCID.AngryTrapper || npc.type == NPCID.Arapaima) {
 				if (Main.rand.NextFloat() < .01f)
@@ -205,10 +209,6 @@ namespace Azercadmium.NPCs
 				Item.NewItem(npc.getRect(), ItemType<Items.Plantera.PlanteraTooth>(), Main.rand.Next(1, 5));
 				if (Main.rand.Next(3) == 0)
 					Item.NewItem(npc.getRect(), ItemType<Items.Plantera.BloomofLife>());
-			}
-			if (npc.type == NPCID.Golem) {
-				if (Main.rand.Next(3) == 0)
-					Item.NewItem(npc.getRect(), ItemType<Items.Other.Accessories.SunProtection>());
 			}
 			if (npc.type == NPCID.MossHornet) {
 				if (Main.rand.Next(2) == 0)

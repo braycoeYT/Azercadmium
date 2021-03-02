@@ -25,8 +25,9 @@ namespace Azercadmium
 		[Tooltip("If you defeat Dirtball, he will cry before running away.")]
 		public bool dirtboiCries;
 
-		[Label("Ice Sickle Auto Re-use")]
-		[Tooltip("Enables auto re-use for the Ice Sickle. No more spam clicking! Reload required.")]
-		public bool iceSickleAuto;
+		[DefaultValue(true)]
+		[Label("Extra Item Auto Re-use")]
+		[Tooltip("Enables auto re-use for the Ice Sickle and Water Gun. No more spam clicking! Reload required.")]
+		public bool itemAuto;
 	}
 }
