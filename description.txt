@@ -1,10 +1,10 @@
-This mod has unique content, including new ores, a ball of dirt, and a new subclass.
+This mod has unique content, including new ores, a ball of dirt, a new gamemode + leveling system, and a new subclass.
 This mod also has QoL changes, such as an easier Slime Crown recipe, crimson alternates, tons of vanilla recipes, and some hardmode enemies dropping prehardmode loot.
 Make sure to check the config every once in a while!
 WARNING: Do not use the wiki, it is extremely outdated since no one cares.
 
 [i:3123] Stats:
-~261 Items
+~262 Items
 ~4 Bosses:
 ^1 Prehardmode Bosses
 ^3 Hardmode Bosses
@@ -14,26 +14,16 @@ WARNING: Do not use the wiki, it is extremely outdated since no one cares.
 ~30 Buffs
 ~1 Subclass (Blowpipes/Dart Guns)
 ~3 Custom Soundtracks (get the Music mod)
-~1 Unfinished Game Mode (Devastation Mode)
+~1 Unfinished Game Mode + Leveling System (Devastation Mode and Devastation Level)
 ~18 Modifiers
 ^11 Weapon Modifiers
 ^7 Accessory Modifiers
 ~A secret unobtainable joke boss
 ~[i:458]Cross content with: Asteri (dead), Havoc (dead), and Cacti and More 2 Mod.
 
-Update V0.2.8.3: Update
-~Nerfed Vortex Blowpipe.
-~Living Marshmallows no longer require snowstorms to spawn.
-~Reworded Sol Necklace and Bloom of Life tooltips.
-~Updated a missing section of Jungle's Prosperity's tooltip.
-~Sol Necklace is now dropped by hallow and space enemies instead of Golem, and expanded the tooltip to hint at this.
-~Fixed a bug where the mecharang shot two lasers on spawn instead of three.
-~Auto re-use config now affects the water gun.
-~Added a warning about the wiki in the mod description.
-~Rearranged part of the mod description.
-~Changed some of the credit entries a bit.
-~Added the mod owner (Braycoe) to the credits.
-~Fixed a typo in the Electrolight tooltip.
+Update V0.2.8.4: Devastation Update
+~Added a new leveling system for devastation mode, in which killing enemies increases your devastation points. Reaching your max devastation points increases your devastation level. To prevent this from being too overpowered, there is a cap to the maximum level, which can be increased by killing certain bosses. A special device sold by the Engineer and the Goblin Tinkerer allows you to track your stats.
+~Fixed an issue with the Braycoe Town NPC shop.
 
 Credits:
 

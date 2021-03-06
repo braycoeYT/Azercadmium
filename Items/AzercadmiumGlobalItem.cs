@@ -59,6 +59,8 @@ namespace Azercadmium.Items
 				item.maxStack = 999;
 			if (item.type == ItemID.SnowGlobe) 
 				item.maxStack = 999;
+			if (item.type == ItemID.LaserDrill)
+				item.pick = 220;
 			if (GetInstance<AzercadmiumConfig>().pearlwoodBuff) {
 				if (item.type == ItemID.PearlwoodBow)
 					item.damage = 29;

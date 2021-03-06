@@ -1,4 +1,6 @@
+using Azercadmium.Items.Devastation;
 using Azercadmium.Items.Other.Accessories;
+using Azercadmium.NPCs.TownNPCs;
 using Microsoft.Xna.Framework;
 using System;
 using Terraria;
@@ -58,6 +60,11 @@ namespace Azercadmium.NPCs
 			if (type == NPCID.Cyborg) {
 				shop.item[nextSlot].SetDefaults(mod.ItemType("Batsaber"));
 				shop.item[nextSlot].shopCustomPrice = Item.buyPrice(1, 0, 0, 0);
+				nextSlot++;
+			}
+			if ((type == ModContent.NPCType<Engineer>() || type == NPCID.GoblinTinkerer) && AzercadmiumWorld.devastation) {
+				shop.item[nextSlot].SetDefaults(ModContent.ItemType<DevastatedRemote>());
+				shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 5, 0, 0);
 				nextSlot++;
 			}
 		}

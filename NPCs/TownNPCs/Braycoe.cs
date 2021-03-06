@@ -4,6 +4,7 @@ using Terraria.Utilities;
 using Terraria.Localization;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
+using Azercadmium.Items.Slime;
 
 namespace Azercadmium.NPCs.TownNPCs
 {
@@ -227,7 +228,7 @@ namespace Azercadmium.NPCs.TownNPCs
 			else
 				shop.item[nextSlot].shopCustomPrice = 3;
 			nextSlot++;
-			shop.item[nextSlot].SetDefaults(mod.ItemType("SlimySeedshot"));
+			shop.item[nextSlot].SetDefaults(ItemType<SlimySeed>());
 			shop.item[nextSlot].shopCustomPrice = 5;
 			nextSlot++;
 			shop.item[nextSlot].SetDefaults(mod.ItemType("DeliciousGelatin"));
