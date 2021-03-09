@@ -55,7 +55,7 @@ namespace Azercadmium.NPCs
 					case NPCID.BlueSlime:
                         switch (npc.netID) {
                             case NPCID.Pinky:
-								if (Main.rand.Next(20) == 0) {
+								if (Main.rand.Next(10) == 0) {
 									damage = 0;
 									projectile.velocity *= -1;
 									projectile.friendly = false;
@@ -141,6 +141,18 @@ namespace Azercadmium.NPCs
 					case NPCID.EyeofCthulhu:
 						target.AddBuff(mod.BuffType("Scared"), Main.rand.Next(3, 9) * 60, true);
 						break;
+					case NPCID.SpikeBall:
+						target.AddBuff(BuffID.BrokenArmor, 3600, true);
+						break;
+					case NPCID.LeechHead:
+						target.AddBuff(BuffID.Bleeding, Main.rand.Next(5, 12) * 60, true);
+						break;
+					case NPCID.LeechBody:
+						target.AddBuff(BuffID.Bleeding, Main.rand.Next(5, 12) * 60, true);
+						break;
+					case NPCID.LeechTail:
+						target.AddBuff(BuffID.Bleeding, Main.rand.Next(5, 12) * 60, true);
+						break;
 				}
 			}
 		}
@@ -155,8 +167,12 @@ namespace Azercadmium.NPCs
             }
 			switch (npc.type)
 			{
-				case NPCID.Pinky:
-					npc.ai[0] = -2000; //nonstop bouncing
+				case NPCID.BlueSlime:
+						switch (npc.netID)
+						{
+							case NPCID.Pinky:
+								//if (npc.HasPlayerTarget)
+								//npc.ai[0] = -2000; //nonstop bouncing
 					Timer[0]++;
 					if (Timer[0] > 120)
 					{
@@ -166,6 +182,15 @@ namespace Azercadmium.NPCs
 							Timer[1] = 0;
 							Timer[2]++;
 					        Shoot(npc, 10, 200, 12, ProjectileID.SpikedSlimeSpike, npc.damage / 2, 1f, true, DustID.PinkSlime);
+							float num291 = 10f; //7f
+							Vector2 vector33 = new Vector2(npc.position.X + (float)npc.width * 0.5f, npc.position.Y + (float)npc.height * 0.5f);
+							float num292 = Main.player[npc.target].position.X + (float)(Main.player[npc.target].width / 2) - vector33.X;
+							float num293 = Main.player[npc.target].position.Y + (float)(Main.player[npc.target].height / 2) - vector33.Y;
+							float num294 = (float)Math.Sqrt((double)(num292 * num292 + num293 * num293));
+							num294 = num291 / num294;
+							num292 *= num294;
+							num293 *= num294;
+							Projectile.NewProjectile(vector33.X, vector33.Y, (int)(num292 / 1.75), (int)(num293 / 1.75), ProjectileID.SpikedSlimeSpike, npc.damage / 2, 0f, Main.myPlayer);
 						}
 						if (Timer[2] >= 3)
 						{
@@ -173,6 +198,8 @@ namespace Azercadmium.NPCs
 							Timer[2] = 0;
 						}
 					}
+					break;
+						}
 					break;
 			}
 			}
@@ -328,6 +355,11 @@ namespace Azercadmium.NPCs
 						if (AITimer % 5 == 0)
 							Projectile.NewProjectile(npc.Center, new Vector2(0, 0), mod.ProjectileType("FlameTrailEye"), npc.damage, 0f, Main.myPlayer);
 						break;
+						case NPCID.MeteorHead:
+						AITimer++;
+						if (AITimer % 90 == 0)
+							NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y, NPCID.BurningSphere);
+						break;
 			}
 		}
 		public override void HitEffect(NPC npc, int hitDirection, double damage) {
@@ -341,6 +373,11 @@ namespace Azercadmium.NPCs
 				if (npc.type == NPCID.LavaSlime) {
 					Vector2 projDir = Vector2.Normalize(Main.player[npc.target].Center - npc.Center) * 8;
 					Projectile.NewProjectile(npc.Center, projDir, ProjectileID.Fireball, npc.damage / 4, 0f, Main.myPlayer);
+				}
+				if (npc.life <= 0 && npc.type == NPCID.MotherSlime) {
+					for (int i = 0; i < Main.rand.Next(2, 5); i++) {
+						NPC.NewNPC((int)npc.position.X + Main.rand.Next(-20, 21), (int)npc.position.Y + Main.rand.Next(0, 11), NPCID.BlackSlime);
+					}
 				}
 			}
 		}

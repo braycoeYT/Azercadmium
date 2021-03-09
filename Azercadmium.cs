@@ -319,10 +319,8 @@ namespace Azercadmium
 
 			recipe = new ModRecipe(this);
 			recipe.AddIngredient(ItemID.Worm);
-			recipe.AddIngredient(ItemID.GlowingMushroom, 75);
-			recipe.AddIngredient(ItemID.ShroomiteBar, 12);
-			recipe.AddIngredient(ItemID.Mushroom, 10);
-			recipe.AddIngredient(ItemID.Ectoplasm, 6);
+			recipe.AddIngredient(ItemID.ShroomiteBar, 15);
+			recipe.AddIngredient(ItemID.Ectoplasm, 10);
 			recipe.AddTile(TileID.Autohammer);
 			recipe.SetResult(ItemID.TruffleWorm);
 			recipe.AddRecipe();

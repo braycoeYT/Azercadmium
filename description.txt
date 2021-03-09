@@ -1,6 +1,4 @@
-This mod has unique content, including new ores, a ball of dirt, a new gamemode + leveling system, and a new subclass.
-This mod also has QoL changes, such as an easier Slime Crown recipe, crimson alternates, tons of vanilla recipes, and some hardmode enemies dropping prehardmode loot.
-Make sure to check the config every once in a while!
+This mod has new ores, a ball of dirt, a new gamemode + leveling system, a new subclass, an easier Slime Crown recipe (and truffle worm recipe), crimson alternates, tons of vanilla recipes, and some hardmode enemies dropping prehardmode loot.
 WARNING: Do not use the wiki, it is extremely outdated since no one cares.
 
 [i:3123] Stats:
@@ -19,11 +17,19 @@ WARNING: Do not use the wiki, it is extremely outdated since no one cares.
 ^11 Weapon Modifiers
 ^7 Accessory Modifiers
 ~A secret unobtainable joke boss
-~[i:458]Cross content with: Asteri (dead), Havoc (dead), and Cacti and More 2 Mod.
+~[i:458]Cross content with: Asteri and Cacti and More 2 Mod.
 
-Update V0.2.8.4: Devastation Update
-~Added a new leveling system for devastation mode, in which killing enemies increases your devastation points. Reaching your max devastation points increases your devastation level. To prevent this from being too overpowered, there is a cap to the maximum level, which can be increased by killing certain bosses. A special device sold by the Engineer and the Goblin Tinkerer allows you to track your stats.
-~Fixed an issue with the Braycoe Town NPC shop.
+Update V0.2.8.5: Devastation Update
+~Updated Green Carnallite Ore tile sprite.
+~Changed mod description.
+~Adjusted Truffle Worm recipe.
+~Devastation Mode:
+^Pinky projectile reflect rate increased from 5% to 10%.
+^Pinky now shoots slime spikes at the player.
+^Mother Slime now spawns several black slimes on death.
+^Meteor Head now shoots burning sphere at the player.
+^Spike Balls now inflict Broken Armor.
+^Leeches now inflict Bleeding.
 
 Credits:
 
