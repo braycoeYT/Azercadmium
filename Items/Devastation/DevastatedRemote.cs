@@ -9,7 +9,7 @@ namespace Azercadmium.Items.Devastation
 	public class DevastatedRemote : ModItem
 	{
 		public override void SetStaticDefaults() {
-			Tooltip.SetDefault("Tracks your devastation level");
+			Tooltip.SetDefault("Tracks your devastation level\nDevastation");
 		}
 		public override void SetDefaults() {
 			item.width = 26;

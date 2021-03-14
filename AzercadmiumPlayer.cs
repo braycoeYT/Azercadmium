@@ -53,11 +53,13 @@ namespace Azercadmium
 		public bool shroomed;
 		public bool webdriver;
 		public bool erodedMotherboard;
+		public bool osmiumRover;
 		int numberShot = 0;
 		public int upgradeHearts;
 		public int upgradeStars;
 		public int playerTimer;
 		public int healHurt;
+		public int javelinPenetration;
 		public override void ResetEffects()
 		{
 			MarblePet = false;
@@ -95,10 +97,12 @@ namespace Azercadmium
 			shroomed = false;
 			webdriver = false;
 			erodedMotherboard = false;
+			osmiumRover = false;
 			player.statLifeMax2 += upgradeHearts * 25;
 			player.statManaMax2 += upgradeStars * 50;
 			playerTimer = 0;
 			healHurt = 0;
+			javelinPenetration = 0;
 		}
 		public override void UpdateDead() {
 			xenicAcid = false;

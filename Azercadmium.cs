@@ -14,6 +14,7 @@ namespace Azercadmium
 			
 		}
 		public static Mod Mod => ModLoader.GetMod("Azercadmium");
+		public static bool[] JavelinCache;
 		public override void PostSetupContent()
 		{
 			Mod bossChecklist = ModLoader.GetMod("BossChecklist");
@@ -67,6 +68,14 @@ namespace Azercadmium
 					$"Use a [i:{ModContent.ItemType<Items.Empress.EmpressChalice>()}]."
 				);
 			}
+			JavelinCache = new bool[ProjectileLoader.ProjectileCount];
+			JavelinCache[ProjectileID.JavelinFriendly] = true;
+			JavelinCache[ProjectileID.BoneJavelin] = true;
+			JavelinCache[ProjectileID.Daybreak] = true;
+			JavelinCache[ModContent.ProjectileType<Projectiles.Wood.WoodenSplinter>()] = true;
+			JavelinCache[ModContent.ProjectileType<Projectiles.Corruption.DemoniteJavelin>()] = true;
+			JavelinCache[ModContent.ProjectileType<Projectiles.Crimson.CrimtaneJavelin>()] = true;
+			JavelinCache[ModContent.ProjectileType<Projectiles.Jungle.Snarevine>()] = true;
 			AzercadmiumUtils.Initialize();
 		}
 

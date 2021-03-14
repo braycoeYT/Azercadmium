@@ -28,5 +28,12 @@ namespace Azercadmium.Items.Wood
 		public override bool CanUseItem(Player player) {
 			return player.ownedProjectileCounts[item.shoot] < 1;
 		}
+		public override void AddRecipes() {
+			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(ItemID.Wood, 12);
+			recipe.AddTile(TileID.WorkBenches);
+			recipe.SetResult(this);
+			recipe.AddRecipe();
+		}
 	}
 }

@@ -8,7 +8,7 @@ namespace Azercadmium.Items.Scavenger
 	public class ScavengerBag : ModItem
 	{
 		public override void SetStaticDefaults() {
-			DisplayName.SetDefault("Error Loading C:/Tmodloader/Mods/Azercadmium/Items/Scavenger/ScavengerBag: Item not found");
+			DisplayName.SetDefault("Treasure Bag");
 			Tooltip.SetDefault("{$CommonItemTooltip.RightClickToOpen}");
 		}
 		public override void SetDefaults() {

@@ -1,6 +1,5 @@
 using Microsoft.Xna.Framework;
 using System;
-using System.Threading;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -17,9 +16,9 @@ namespace Azercadmium.NPCs.Devastation
 			npc.width = 32;
 			npc.height = 32;
 			npc.aiStyle = -1;
-			npc.lifeMax = 61;
-			npc.damage = 36;
-			npc.defense = 4;
+			npc.lifeMax = 45;
+			npc.damage = 31;
+			npc.defense = 2;
 			npc.noTileCollide = true;
 			npc.noGravity = true;
         }

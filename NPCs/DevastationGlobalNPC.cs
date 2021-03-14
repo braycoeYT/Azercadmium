@@ -34,17 +34,23 @@ namespace Azercadmium.NPCs
 						npc.defense += 6;
 						break;
 					case NPCID.EaterofWorldsHead:
-						npc.lifeMax += 70;
+						npc.lifeMax += 50;
 						npc.damage += 12;
 						break;
 					case NPCID.EaterofWorldsBody:
-						npc.lifeMax += 70;
+						npc.lifeMax += 40;
 						npc.damage += 6;
-						npc.defense += 6;
+						npc.defense += 3;
 						break;
 					case NPCID.EaterofWorldsTail:
-						npc.lifeMax += 70;
-						npc.defense += 12;
+						npc.lifeMax += 40;
+						npc.defense += 9;
+						break;
+					case NPCID.BrainofCthulhu:
+						npc.lifeMax += 1100;
+						npc.damage += 18;
+						npc.defense += 10;
+						npc.knockBackResist = 0f;
 						break;
 				}
 			}
@@ -147,11 +153,19 @@ namespace Azercadmium.NPCs
 					case NPCID.LeechHead:
 						target.AddBuff(BuffID.Bleeding, Main.rand.Next(5, 12) * 60, true);
 						break;
-					case NPCID.LeechBody:
-						target.AddBuff(BuffID.Bleeding, Main.rand.Next(5, 12) * 60, true);
-						break;
-					case NPCID.LeechTail:
-						target.AddBuff(BuffID.Bleeding, Main.rand.Next(5, 12) * 60, true);
+					case NPCID.BrainofCthulhu:
+						int rand = Main.rand.Next(3);
+						switch (rand) {
+							case 0:
+								target.AddBuff(BuffID.Ichor, Main.rand.Next(5, 8) * 60, true);
+								break;
+							case 1:
+								target.AddBuff(BuffID.Venom, Main.rand.Next(5, 8) * 60, true);
+								break;
+							case 2:
+								target.AddBuff(BuffID.Blackout, Main.rand.Next(1, 3) * 60, true);
+								break;
+						}
 						break;
 				}
 			}
@@ -329,7 +343,7 @@ namespace Azercadmium.NPCs
 						case NPCID.EaterofWorldsHead:
 						npc.noGravity = true;
 						AITimer++;
-						if (AITimer % 10 == 0)
+						if (AITimer % 20 == 0)
 							Projectile.NewProjectile(npc.Center, new Vector2(0, -8).RotatedBy(npc.rotation + Main.rand.NextFloat(-0.25f, 0.26f)), ProjectileID.CursedFlameHostile, npc.damage / 4, 0f, Main.myPlayer);
 						if (!AIFlag && npc.life < npc.lifeMax * 0.5f) {
 							AIFlag = true;
@@ -360,6 +374,12 @@ namespace Azercadmium.NPCs
 						if (AITimer % 90 == 0)
 							NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y, NPCID.BurningSphere);
 						break;
+						case NPCID.BrainofCthulhu:
+						if (AIFlag && npc.life <= npc.lifeMax * 0.5f)
+							for (int i = 0; i < 20; i++) {
+								NPC.NewNPC((int)npc.position.X + Main.rand.Next(-20, 21), (int)npc.position.Y + Main.rand.Next(-20, 21), NPCID.Creeper);
+							}
+						break;
 			}
 		}
 		public override void HitEffect(NPC npc, int hitDirection, double damage) {
@@ -379,12 +399,23 @@ namespace Azercadmium.NPCs
 						NPC.NewNPC((int)npc.position.X + Main.rand.Next(-20, 21), (int)npc.position.Y + Main.rand.Next(0, 11), NPCID.BlackSlime);
 					}
 				}
+				if (npc.type == NPCID.Creeper && npc.life <= 0) {
+					for (int i = 0; i < Main.rand.Next(3, 8); i++) {
+						int projID = Main.rand.Next(326, 329);
+						Projectile.NewProjectile(npc.Center, new Vector2(Main.rand.NextFloat(-4, 5), Main.rand.NextFloat(3, 6)), projID, npc.damage / 4, 0f, Main.myPlayer);
+					}
+				}
 			}
 		}
 		public override void NPCLoot(NPC npc) {
 			if (AzercadmiumWorld.devastation) {
-				if (npc.type == NPCID.KingSlime) {
-					Item.NewItem(npc.getRect(), ItemType<Items.Slime.ExtraNeonSlimyCore>());
+				switch (npc.type) {
+					case NPCID.KingSlime:
+						Item.NewItem(npc.getRect(), ItemType<Items.Slime.ExtraNeonSlimyCore>());
+						break;
+					case NPCID.Pinky:
+						Item.NewItem(npc.getRect(), ItemType<Items.Devastation.PinkySlinky>());
+						break;
 				}
 				if (npc.type == NPCID.EaterofWorldsHead || npc.type == NPCID.EaterofWorldsBody || npc.type == NPCID.EaterofWorldsTail || npc.type == mod.NPCType("VileObserver")) {
 					if (Main.rand.Next(4) == 0)

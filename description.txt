@@ -1,15 +1,15 @@
-This mod has new ores, a ball of dirt, a new gamemode + leveling system, a new subclass, an easier Slime Crown recipe (and truffle worm recipe), crimson alternates, tons of vanilla recipes, and some hardmode enemies dropping prehardmode loot.
+This mod strives for unique and fun content, and has new ores, a ball of dirt, a new gamemode + leveling system, a new subclass, an easier Slime Crown recipe (and truffle worm recipe), crimson alternates, tons of vanilla recipes, and some hardmode enemies dropping prehardmode loot.
 WARNING: Do not use the wiki, it is extremely outdated since no one cares.
 
 [i:3123] Stats:
-~262 Items
+~269 Items
 ~4 Bosses:
-^1 Prehardmode Bosses
+^1 Prehardmode Boss
 ^3 Hardmode Bosses
 ~32 total NPCs
 ~2 Town NPCs
 ~50 Tiles
-~30 Buffs
+~31 Buffs
 ~1 Subclass (Blowpipes/Dart Guns)
 ~3 Custom Soundtracks (get the Music mod)
 ~1 Unfinished Game Mode + Leveling System (Devastation Mode and Devastation Level)
@@ -18,18 +18,21 @@ WARNING: Do not use the wiki, it is extremely outdated since no one cares.
 ^7 Accessory Modifiers
 ~A secret unobtainable joke boss
 ~[i:458]Cross content with: Asteri and Cacti and More 2 Mod.
+^Open to creating cross content with other mods!
 
-Update V0.2.8.5: Devastation Update
-~Updated Green Carnallite Ore tile sprite.
-~Changed mod description.
-~Adjusted Truffle Worm recipe.
-~Devastation Mode:
-^Pinky projectile reflect rate increased from 5% to 10%.
-^Pinky now shoots slime spikes at the player.
-^Mother Slime now spawns several black slimes on death.
-^Meteor Head now shoots burning sphere at the player.
-^Spike Balls now inflict Broken Armor.
-^Leeches now inflict Bleeding.
+Update V0.2.8.6: 100K Update
+~Thanks once again for 100K downloads!
+~Added Goopy Flappers, the mod's "first" wings.
+~Changed mod description a tiny bit.
+~Made Wooden Spear actually craftable.
+~Brought back the old subclass Javelances as Javelins!
+^Added Wooden Javelin, Snarevine, Demonite Javelin, and Crimtane Javelin.
+^Added Penetration Potion.
+~Devastation changes:
+^Now only Leech Head inflicts Bleeding.
+^Nerfed EoW.
+^Added the Pinky Slinky, dropped by Pinkys.
+^Began Brain of Cthulhu changes.
 
 Credits:
 
