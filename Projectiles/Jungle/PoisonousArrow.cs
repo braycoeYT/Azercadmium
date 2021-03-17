@@ -26,5 +26,9 @@ namespace Azercadmium.Projectiles.Jungle
 		public override void OnHitPvp(Player target, int damage, bool crit) {
 			target.AddBuff(BuffID.Poisoned, 60 * Main.rand.Next(4, 11), false);
 		}
+		public override void Kill(int timeLeft) {
+			Collision.HitTiles(projectile.position + projectile.velocity, projectile.velocity, projectile.width, projectile.height);
+			if (Main.rand.NextFloat() < .1f) Item.NewItem(projectile.getRect(), ModContent.ItemType<Items.Jungle.PoisonousArrow>());
+		}
 	}   
 }

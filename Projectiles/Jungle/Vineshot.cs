@@ -19,7 +19,7 @@ namespace Azercadmium.Projectiles.Jungle
 			if (Main.rand.NextFloat() < .3f)
 		    target.AddBuff(BuffID.Poisoned, 150, false);
 		}
-		public override void OnHitPlayer(Player target, int damage, bool crit) {
+		public override void OnHitPvp(Player target, int damage, bool crit) {
 			if (Main.rand.NextFloat() < .3f)
 				target.AddBuff(BuffID.Poisoned, 150, false);
 		}
@@ -31,6 +31,10 @@ namespace Azercadmium.Projectiles.Jungle
 				spriteBatch.Draw(Main.projectileTexture[projectile.type], drawPos, null, color, projectile.rotation, drawOrigin, projectile.scale, SpriteEffects.None, 0f);
 			}
 			return true;
+		}
+		public override void Kill(int timeLeft) {
+			Collision.HitTiles(projectile.position + projectile.velocity, projectile.velocity, projectile.width, projectile.height);
+			if (Main.rand.NextFloat() < .2f) Item.NewItem(projectile.getRect(), ModContent.ItemType<Items.Jungle.Vineshot>());
 		}
 	}   
 }

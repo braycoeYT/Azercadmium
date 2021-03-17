@@ -35,5 +35,9 @@ namespace Azercadmium.Projectiles.Elemental
 			if (Main.rand.NextFloat() < .5f)
 				target.AddBuff(BuffID.Frostburn, 60 * Main.rand.Next(5, 11), false);
 		}
+		public override void Kill(int timeLeft) {
+			Collision.HitTiles(projectile.position + projectile.velocity, projectile.velocity, projectile.width, projectile.height);
+			if (Main.rand.NextFloat() < .1f) Item.NewItem(projectile.getRect(), ModContent.ItemType<Items.Elemental.ElementalGooshot>());
+		}
 	}   
 }

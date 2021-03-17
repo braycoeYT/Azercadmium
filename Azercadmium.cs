@@ -72,6 +72,7 @@ namespace Azercadmium
 			JavelinCache[ProjectileID.JavelinFriendly] = true;
 			JavelinCache[ProjectileID.BoneJavelin] = true;
 			JavelinCache[ProjectileID.Daybreak] = true;
+			JavelinCache[ProjectileID.TinyEater] = true;
 			JavelinCache[ModContent.ProjectileType<Projectiles.Wood.WoodenSplinter>()] = true;
 			JavelinCache[ModContent.ProjectileType<Projectiles.Corruption.DemoniteJavelin>()] = true;
 			JavelinCache[ModContent.ProjectileType<Projectiles.Crimson.CrimtaneJavelin>()] = true;

@@ -15,12 +15,10 @@ namespace Azercadmium.Items.Crimson
 			item.useAnimation = 36;
 			item.useTime = 36;
 			item.knockBack = 4.8f;
-			item.maxStack = 9999;
 			item.rare = ItemRarityID.Blue;
-			item.value = Item.sellPrice(copper: 3);
+			item.value = Item.sellPrice(0, 0, 27);
 			item.ranged = true;
 			item.noMelee = true;
-			item.consumable = true;
 			item.noUseGraphic = true;
 			item.autoReuse = true;
 			item.UseSound = SoundID.Item1;
@@ -29,9 +27,9 @@ namespace Azercadmium.Items.Crimson
 		}
 		public override void AddRecipes() {
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.CrimtaneBar, 6);
+			recipe.AddIngredient(ItemID.CrimtaneBar, 9);
 			recipe.AddTile(TileID.Anvils);
-			recipe.SetResult(this, 500);
+			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}
 	}

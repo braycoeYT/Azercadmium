@@ -10,7 +10,7 @@ namespace Azercadmium.Items.Aquite
 			Tooltip.SetDefault("Fires a bubble towards the cursor on swing");
 		}
 		public override void SetDefaults() {
-			item.damage = 131;
+			item.damage = 152;
 			item.melee = true;
 			item.width = 38;
 			item.height = 38;

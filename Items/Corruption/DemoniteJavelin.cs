@@ -15,12 +15,10 @@ namespace Azercadmium.Items.Corruption
 			item.useAnimation = 42;
 			item.useTime = 42;
 			item.knockBack = 5.4f;
-			item.maxStack = 9999;
 			item.rare = ItemRarityID.Blue;
-			item.value = Item.sellPrice(copper: 3);
+			item.value = Item.sellPrice(0, 0, 27);
 			item.ranged = true;
 			item.noMelee = true;
-			item.consumable = true;
 			item.noUseGraphic = true;
 			item.autoReuse = true;
 			item.UseSound = SoundID.Item1;
@@ -29,9 +27,9 @@ namespace Azercadmium.Items.Corruption
 		}
 		public override void AddRecipes() {
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.DemoniteBar, 6);
+			recipe.AddIngredient(ItemID.DemoniteBar, 9);
 			recipe.AddTile(TileID.Anvils);
-			recipe.SetResult(this, 500);
+			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}
 	}

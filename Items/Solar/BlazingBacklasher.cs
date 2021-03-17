@@ -13,8 +13,8 @@ namespace Azercadmium.Items.Solar
 		public override void SetDefaults() {
 			item.damage = 243;
 			item.melee = true;
-			item.width = 64;
-			item.height = 64;
+			item.width = 30;
+			item.height = 42;
 			item.useTime = 15;
 			item.useAnimation = 15;
 			item.useStyle = ItemUseStyleID.HoldingUp;

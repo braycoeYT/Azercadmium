@@ -27,7 +27,7 @@ namespace Azercadmium.Tiles.Aquite
 			soundType = SoundID.Tink;
 			soundStyle = 1;
 			mineResist = 6f;
-			minPick = 200;
+			minPick = 210;
 		}
 		public override bool CanExplode(int i, int j) {
 			return false;

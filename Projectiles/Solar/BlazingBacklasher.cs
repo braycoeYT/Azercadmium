@@ -57,10 +57,6 @@ namespace Azercadmium.Projectiles.Solar
 			Timer++;
 			if (Timer % 20 == 0) 
 				Projectile.NewProjectile(projectile.position + projectile.velocity * -5, new Microsoft.Xna.Framework.Vector2(0, 0), ProjectileID.SolarWhipSwordExplosion, projectile.damage, 0, Main.myPlayer);
-			if (Timer > 20) {
-				projectile.width = 64;
-				projectile.height = 64;
-			}
 			else if (Timer > 10) {
 				projectile.width = 32;
 				projectile.height = 32;

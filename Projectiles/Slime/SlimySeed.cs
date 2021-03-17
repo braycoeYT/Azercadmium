@@ -32,5 +32,9 @@ namespace Azercadmium.Projectiles.Slime
 			}
 			return true;
 		}
+		public override void Kill(int timeLeft) {
+			Collision.HitTiles(projectile.position + projectile.velocity, projectile.velocity, projectile.width, projectile.height);
+			if (Main.rand.NextFloat() < .2f) Item.NewItem(projectile.getRect(), ModContent.ItemType<Items.Slime.SlimySeed>());
+		}
 	}   
 }

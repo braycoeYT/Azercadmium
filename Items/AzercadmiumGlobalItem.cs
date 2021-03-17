@@ -138,7 +138,7 @@ namespace Azercadmium.Items
 		}
 		public override int ChoosePrefix(Item item, UnifiedRandom rand)
 		{
-			if (item.damage > 1 && !item.accessory && item.notAmmo == true) {
+			if (item.damage > 1 && !item.accessory && item.notAmmo == true && GetInstance<AzercadmiumConfig>().azercadmiumPrefixes) {
 				if (Main.rand.Next(25) == 0)
 					return ModContent.PrefixType<Rough>();
 				if (Main.rand.Next(30) == 0)

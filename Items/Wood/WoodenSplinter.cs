@@ -18,12 +18,10 @@ namespace Azercadmium.Items.Wood
 			item.useAnimation = 18;
 			item.useTime = 18;
 			item.knockBack = 4f;
-			item.maxStack = 9999;
 			item.rare = ItemRarityID.White;
-			item.value = Item.sellPrice(copper: 2);
+			item.value = Item.sellPrice(0, 0, 0, 20);
 			item.ranged = true;
 			item.noMelee = true;
-			item.consumable = true;
 			item.noUseGraphic = true;
 			item.autoReuse = false;
 			item.UseSound = SoundID.Item1;
@@ -32,9 +30,9 @@ namespace Azercadmium.Items.Wood
 		}
 		public override void AddRecipes() {
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.Wood, 4);
+			recipe.AddIngredient(ItemID.Wood, 7);
 			recipe.AddTile(TileID.WorkBenches);
-			recipe.SetResult(this, 100);
+			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}
 	}
