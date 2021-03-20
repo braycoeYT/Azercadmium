@@ -12,8 +12,8 @@ namespace Azercadmium.Items.Dirtball
 		public override void SetDefaults() {
 			item.value = Item.sellPrice(0, 0, 10, 0);
 			item.useStyle = ItemUseStyleID.HoldingOut;
-			item.useAnimation = 34;
-			item.useTime = 34;
+			item.useAnimation = 22;
+			item.useTime = 22;
 			item.damage = 21;
 			item.width = 36;
 			item.height = 28;

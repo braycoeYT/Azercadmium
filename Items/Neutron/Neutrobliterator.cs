@@ -15,7 +15,7 @@ namespace Azercadmium.Items.Neutron
 			item.useStyle = ItemUseStyleID.HoldingOut;
 			item.useAnimation = 6;
 			item.useTime = 6;
-			item.damage = 68;
+			item.damage = 44;
 			item.width = 58;
 			item.height = 28;
 			item.knockBack = 0.4f;

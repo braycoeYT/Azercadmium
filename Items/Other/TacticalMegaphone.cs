@@ -8,10 +8,10 @@ namespace Azercadmium.Items.Other
 	public class TacticalMegaphone : ModItem
 	{
 		public override void SetStaticDefaults() {
-			Tooltip.SetDefault("Unethically tactical, for your pleasure.");
+			Tooltip.SetDefault("Unethically tactical, for your pleasure.\nProjectile slowly gains size for every struck enemy");
 		}
 		public override void SetDefaults() {
-			item.damage = 51;
+			item.damage = 62;
 			item.magic = true;
 			item.width = 30;
 			item.height = 36;

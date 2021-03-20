@@ -10,7 +10,7 @@ namespace Azercadmium.Items.Corruption
 			Tooltip.SetDefault("Inflicts cursed inferno on struck enemies\nShoots cursed flames at nearby enemies");
 		}
 		public override void SetDefaults() {
-			item.damage = 84;
+			item.damage = 96;
 			item.melee = true;
 			item.width = 30;
 			item.height = 30;
@@ -39,7 +39,7 @@ namespace Azercadmium.Items.Corruption
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ModContent.ItemType<Barfarang>());
 			recipe.AddIngredient(ItemID.CursedFlame, 15);
-			recipe.AddIngredient(ItemID.SoulofNight, 3);
+			recipe.AddIngredient(ItemID.SoulofNight, 5);
 			recipe.AddTile(TileID.MythrilAnvil);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

@@ -1,3 +1,4 @@
+using Azercadmium.Items.Smore;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -12,8 +13,8 @@ namespace Azercadmium.Items.Snow
 		public override void SetDefaults() {
 			item.damage = 56;
 			item.melee = true;
-			item.width = 100;
-			item.height = 100;
+			item.width = 70;
+			item.height = 70;
 			item.useTime = 58;
 			item.useAnimation = 58;
 			item.useStyle = ItemUseStyleID.SwingThrow;
@@ -29,7 +30,7 @@ namespace Azercadmium.Items.Snow
 			recipe.AddIngredient(ItemID.WoodenSword);
 			recipe.AddIngredient(ItemID.SnowBlock, 61);
 			recipe.AddIngredient(ItemID.IceBlock, 46);
-			recipe.AddIngredient(ItemID.Bone, 12);
+			recipe.AddIngredient(ModContent.ItemType<CocoaBeans>(), 2);
 			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

@@ -1,5 +1,4 @@
 using Microsoft.Xna.Framework;
-using ReLogic.Text;
 using System;
 using Terraria;
 using Terraria.ID;
@@ -375,10 +374,13 @@ namespace Azercadmium.NPCs
 							NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y, NPCID.BurningSphere);
 						break;
 						case NPCID.BrainofCthulhu:
-						if (AIFlag && npc.life <= npc.lifeMax * 0.5f)
+						if (!AIFlag && npc.life <= npc.lifeMax * 0.5f)
 							for (int i = 0; i < 20; i++) {
 								NPC.NewNPC((int)npc.position.X + Main.rand.Next(-20, 21), (int)npc.position.Y + Main.rand.Next(-20, 21), NPCID.Creeper);
+								AIFlag = true;
 							}
+						if (NPC.CountNPCS(NPCID.Creeper) > 0) npc.dontTakeDamage = true;
+						else npc.dontTakeDamage = false;
 						break;
 			}
 		}

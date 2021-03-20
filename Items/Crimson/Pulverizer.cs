@@ -10,7 +10,7 @@ namespace Azercadmium.Items.Crimson
 			Tooltip.SetDefault("Inflicts ichor on struck enemies\nShoots ichor splashes at nearby enemies");
 		}
 		public override void SetDefaults() {
-			item.damage = 75;
+			item.damage = 86;
 			item.melee = true;
 			item.width = 30;
 			item.height = 30;
@@ -39,7 +39,7 @@ namespace Azercadmium.Items.Crimson
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ModContent.ItemType<Tenderizer>());
 			recipe.AddIngredient(ItemID.Ichor, 15);
-			recipe.AddIngredient(ItemID.SoulofNight, 3);
+			recipe.AddIngredient(ItemID.SoulofNight, 5);
 			recipe.AddTile(TileID.MythrilAnvil);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

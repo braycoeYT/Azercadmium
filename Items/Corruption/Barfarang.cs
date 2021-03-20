@@ -7,7 +7,7 @@ namespace Azercadmium.Items.Corruption
 	public class Barfarang : ModItem
 	{
 		public override void SetDefaults() {
-			item.damage = 18;
+			item.damage = 25;
 			item.melee = true;
 			item.width = 30;
 			item.height = 30;
@@ -34,7 +34,7 @@ namespace Azercadmium.Items.Corruption
         }
 		public override void AddRecipes() {
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.DemoniteBar, 10);
+			recipe.AddIngredient(ItemID.DemoniteBar, 8);
 			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

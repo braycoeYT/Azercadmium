@@ -11,7 +11,7 @@ namespace Azercadmium.Items.Solar
 			Tooltip.SetDefault("Leaves an explosive trail behind itself\nRight click for a shorter range attack");
 		}
 		public override void SetDefaults() {
-			item.damage = 243;
+			item.damage = 303;
 			item.melee = true;
 			item.width = 30;
 			item.height = 42;
@@ -25,7 +25,7 @@ namespace Azercadmium.Items.Solar
 			item.autoReuse = true;
 			item.useTurn = true;
 			item.shoot = mod.ProjectileType("BlazingBacklasher");
-			item.shootSpeed = 14f;
+			item.shootSpeed = 18f;
 			item.noUseGraphic = true;
 		}
 		public override bool AltFunctionUse(Player player) {

@@ -14,7 +14,7 @@ namespace Azercadmium.Items.Other.Blowpipes
 			item.useStyle = ItemUseStyleID.HoldingOut;
 			item.useAnimation = 20;
 			item.useTime = 20;
-			item.damage = 23;
+			item.damage = 38;
 			item.width = 36;
 			item.height = 22;
 			item.knockBack = 0.8f;

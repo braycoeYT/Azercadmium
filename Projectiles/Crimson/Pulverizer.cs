@@ -42,7 +42,7 @@ namespace Azercadmium.Projectiles.Crimson
 			Vector2 projDir = Vector2.Normalize(targetCenter - projectile.Center) * 10;
 			if (foundTarget) {
 				Timer++;
-				if (Timer % 60 == 0)
+				if (Timer % 20 == 0)
 				Projectile.NewProjectile(projectile.Center, projDir, ProjectileID.IchorSplash, projectile.damage, projectile.knockBack / 4, Main.myPlayer);
 			}
 		}

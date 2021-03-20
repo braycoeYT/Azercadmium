@@ -14,6 +14,7 @@ namespace Azercadmium.NPCs.Titan
 		
 		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Titan Tankorb");
+			Main.npcFrameCount[npc.type] = 4;
 		}
         public override void SetDefaults() {
 			npc.width = 80;
@@ -169,6 +170,12 @@ namespace Azercadmium.NPCs.Titan
 				hpFlag = 0.2f;
 			if ((double)(npc.life) < (double)(npc.lifeMax * hpFlag))
 				phase = 6;
+
+			if (Timer % 6 == 0)
+				animationTimer++;
+			if (animationTimer > 3)
+				animationTimer = 0;
+			npc.frame.Y = animationTimer * 78;
 
 			if (movement)
 			{

@@ -6,12 +6,12 @@ namespace Azercadmium.Items.Cave
 	public class Stalactite : ModItem
 	{
 		public override void SetDefaults() {
-			item.damage = 14;
+			item.damage = 16;
 			item.melee = true;
 			item.width = 38;
 			item.height = 38;
-			item.useTime = 26;
-			item.useAnimation = 26;
+			item.useTime = 10;
+			item.useAnimation = 10;
 			item.useStyle = ItemUseStyleID.SwingThrow;
 			item.knockBack = 5f;
 			item.value = 25000;
@@ -24,6 +24,7 @@ namespace Azercadmium.Items.Cave
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.StoneBlock, 40);
 			recipe.AddIngredient(ItemID.MarbleBlock, 24);
+			recipe.AddRecipeGroup("Azercadmium:AnyPHBar", 6);
 			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

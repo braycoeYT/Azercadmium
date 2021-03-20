@@ -7,7 +7,7 @@ namespace Azercadmium.Items.Crimson
 	public class Tenderizer : ModItem
 	{
 		public override void SetDefaults() {
-			item.damage = 16;
+			item.damage = 23;
 			item.melee = true;
 			item.width = 30;
 			item.height = 30;
@@ -34,7 +34,7 @@ namespace Azercadmium.Items.Crimson
         }
 		public override void AddRecipes() {
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.CrimtaneBar, 10);
+			recipe.AddIngredient(ItemID.CrimtaneBar, 8);
 			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

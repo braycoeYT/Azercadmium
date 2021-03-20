@@ -15,12 +15,18 @@ namespace Azercadmium.Projectiles.Other
 			projectile.height = 20;
 			projectile.aiStyle = 1;
 			projectile.friendly = true;
-			projectile.penetrate = 6;
+			projectile.penetrate = 12;
 			projectile.ranged = true;
-			projectile.timeLeft = 180;
+			projectile.timeLeft = 360;
 			projectile.ignoreWater = true;
 			projectile.light = 0.3f;
 			aiType = ProjectileID.Bullet;
+		}
+		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit) {
+			grow += 0.25f;
+		}
+		public override void OnHitPvp(Player target, int damage, bool crit) {
+			grow += 0.25f;
 		}
 		public override bool OnTileCollide(Vector2 oldVelocity) {
 			projectile.penetrate--;
@@ -38,6 +44,15 @@ namespace Azercadmium.Projectiles.Other
 				}
 			}
 			return false;
+		}
+		float grow;
+		public override void AI() {
+			if (grow > 0) {
+				grow -= 0.01f;
+				projectile.scale += 0.01f;
+			}
+			projectile.width = (int)(20 * projectile.scale);
+			projectile.height = (int)(20 * projectile.scale);
 		}
 		public override void PostAI() {
 			if (Main.rand.NextBool()) {

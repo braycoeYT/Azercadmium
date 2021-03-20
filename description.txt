@@ -2,14 +2,14 @@ This mod strives for unique and fun content, and has new ores, a ball of dirt, a
 WARNING: Do not use the wiki, it is extremely outdated since no one cares.
 
 [i:3123] Stats:
-~271 Items
+~270 Items
 ~4 Bosses:
 ^1 Prehardmode Boss
 ^3 Hardmode Bosses
 ~32 total NPCs
 ~2 Town NPCs
 ~50 Tiles
-~31 Buffs
+~32 Buffs
 ~1 Subclass (Blowpipes/Dart Guns)
 ~3 Custom Soundtracks (get the Music mod)
 ~1 Unfinished Game Mode + Leveling System (Devastation Mode and Devastation Level)
@@ -18,20 +18,27 @@ WARNING: Do not use the wiki, it is extremely outdated since no one cares.
 ^7 Accessory Modifiers
 ~A secret unobtainable joke boss
 ~[i:458]Cross content with: Asteri and Cacti and More 2 Mod.
-^Open to creating cross content with other mods!
+^Open to creating cross content with other mods.
 
-Update V0.2.8.7: Update
-~Resprited Blazing Backlasher.
-~Added Oceanic Javelin.
-~Scourge of the Corruptor is now affected by the penetration potion (Tiny Eaters only).
-~Some modded ammo now have a chance to drop after being shot.
-~Javelins are no longer consumable.
-~Azercadmium prefixes on items no longer roll if the config is disabled.
-~Added new accessory prefixes: Dangerous, Natural, Restored, and Awakened.
-~Resprited Crown Slime.
-~Resprited Tactical Megaphone.
-~Buffed Aquite Saber.
-~Increased minimum pickaxe power for Aquite Ore.
+Update V0.2.8.8: Balancing Update
+~Added some Devastation BoC changes.
+~Resprited Titan Tankorb.
+~Fixed Tacitcal Megaphone projectile being sideways.
+~Increased Tactical Megaphone damage, max penetration, and now gains size after striking enemies.
+~Buffed Stalactite damage and use speed.
+~Heavily buffed Stalagmite damage, and striking enemies now gives the user the Hardened buff, increasing defense.
+~Stalagmite and Stalactite now require 6 Any Basic Prehardmode Bars.
+~Heavily increased Familiar Foam Dart Pistol damage.
+~Desert Rose projectiles are now a lot more precise, and changed crafting recipe.
+~At least one Desert Rose projectile will now fall directly towards the cursor.
+~Heavily increased Barfarang and Tenderizer damage.
+~Paydirt Pistol now shoots faster.
+~Heavily decreased Vortex Blowpipe damage.
+~Heavily decreased Neutrobliterator damage.
+~Removed Solar Homerun Hitter.
+~Heavily increased Blazing Backlasher damage and increased shoot speed to a lesser extent.
+~Changed Cold Crusher recipe and shrunk hitbox.
+
 
 Credits:
 
