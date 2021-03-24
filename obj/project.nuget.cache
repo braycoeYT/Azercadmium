@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "3nKBucr3tp2+kZv971cWrO9eBIQxIXKoZydyQCrCxwH8VWosy72ID6n6lHr1u8z1K13t5vrNtOV9N6EuaE584A==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\MickC\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\Azercadmium\\Azercadmium.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\MickC\\.nuget\\packages\\tmodloader.codeassist\\0.1.1\\tmodloader.codeassist.0.1.1.nupkg.sha512"
+  ],
+  "logs": []
+}
