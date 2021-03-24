@@ -18,9 +18,9 @@ namespace Azercadmium.NPCs.Scavenger
         public override void SetDefaults() {
 			npc.width = 120;
 			npc.height = 140;
-			npc.damage = 39;
-			npc.defense = 35;
-			npc.lifeMax = 30000;
+			npc.damage = 54;
+			npc.defense = 45;
+			npc.lifeMax = 45000;
 			npc.HitSound = SoundID.NPCHit4;
 			npc.DeathSound = SoundID.NPCDeath14;
 			npc.knockBackResist = 0f;
@@ -42,11 +42,11 @@ namespace Azercadmium.NPCs.Scavenger
 			npc.buffImmune[BuffID.CursedInferno] = false;
 		}
 		public override void ScaleExpertStats(int numPlayers, float bossLifeScale) {
-			npc.lifeMax = 48000;
-			npc.damage = 59;
+			npc.lifeMax = 60000;
+			npc.damage = 81;
 			if (AzercadmiumWorld.devastation) {
-				npc.lifeMax = 64000;
-				npc.damage = 76;
+				npc.lifeMax = 80000;
+				npc.damage = 122;
 			}
 		}
 		public override void HitEffect(int hitDirection, double damage) {

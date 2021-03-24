@@ -22,7 +22,7 @@ namespace Azercadmium
 		
 		[DefaultValue(true)]
 		[Label("Dirtboi Cries for its Father")]
-		[Tooltip("If you defeat Dirtball, he will cry before running away.")]
+		[Tooltip("If you defeat Dirtball, Dirtboi will cry before running away.")]
 		public bool dirtboiCries;
 
 		[DefaultValue(true)]

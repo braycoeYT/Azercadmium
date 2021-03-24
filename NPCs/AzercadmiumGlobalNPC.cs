@@ -209,8 +209,11 @@ namespace Azercadmium.NPCs
 				Item.NewItem(npc.getRect(), ItemType<Items.Slime.SlimyCore>(), Main.rand.Next(8, 12));
 			}
 			if (npc.type == NPCID.WallofFlesh) {
-				if (Main.rand.NextFloat() < .33f)
-					Item.NewItem(npc.getRect(), ItemType<Items.Other.Blowpipes.FamiliarFoamDartPistol>());
+				if (Main.rand.NextFloat() < .5f)
+					if (Main.rand.Next(2) == 0)
+						Item.NewItem(npc.getRect(), ItemType<Items.Other.Blowpipes.FamiliarFoamDartPistol>());
+					else
+						Item.NewItem(npc.getRect(), ItemType<Items.Underworld.HungeringJavelin>());
 			}
 			if (npc.type == NPCID.Plantera) {
 				Item.NewItem(npc.getRect(), ItemType<Items.Plantera.PlanteraTooth>(), Main.rand.Next(1, 5));

@@ -2,7 +2,7 @@ This mod strives for unique and fun content, and has new ores, a ball of dirt, a
 WARNING: Do not use the wiki, it is extremely outdated since no one cares.
 
 [i:3123] Stats:
-~270 Items
+~271 Items
 ~4 Bosses:
 ^1 Prehardmode Boss
 ^3 Hardmode Bosses
@@ -20,25 +20,12 @@ WARNING: Do not use the wiki, it is extremely outdated since no one cares.
 ~[i:458]Cross content with: Asteri and Cacti and More 2 Mod.
 ^Open to creating cross content with other mods.
 
-Update V0.2.8.8: Balancing Update
-~Added some Devastation BoC changes.
-~Resprited Titan Tankorb.
-~Fixed Tacitcal Megaphone projectile being sideways.
-~Increased Tactical Megaphone damage, max penetration, and now gains size after striking enemies.
-~Buffed Stalactite damage and use speed.
-~Heavily buffed Stalagmite damage, and striking enemies now gives the user the Hardened buff, increasing defense.
-~Stalagmite and Stalactite now require 6 Any Basic Prehardmode Bars.
-~Heavily increased Familiar Foam Dart Pistol damage.
-~Desert Rose projectiles are now a lot more precise, and changed crafting recipe.
-~At least one Desert Rose projectile will now fall directly towards the cursor.
-~Heavily increased Barfarang and Tenderizer damage.
-~Paydirt Pistol now shoots faster.
-~Heavily decreased Vortex Blowpipe damage.
-~Heavily decreased Neutrobliterator damage.
-~Removed Solar Homerun Hitter.
-~Heavily increased Blazing Backlasher damage and increased shoot speed to a lesser extent.
-~Changed Cold Crusher recipe and shrunk hitbox.
-
+Update V0.2.8.9: Update
+~Gave the Braycoe Town NPC a Challenge button...
+~Buffed Matrix Scavenger.
+~Clarified one of the config descriptions.
+~Added Hungering Javelin.
+~Resprited Barfarang.
 
 Credits:
 

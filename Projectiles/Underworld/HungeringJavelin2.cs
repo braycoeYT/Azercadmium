@@ -4,7 +4,7 @@ using Terraria.ID;
 
 namespace Azercadmium.Projectiles.Underworld
 {
-	public class HungeringJavelance2 : ModProjectile
+	public class HungeringJavelin2 : ModProjectile
 	{
         public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Hungry");
@@ -27,24 +27,12 @@ namespace Azercadmium.Projectiles.Underworld
 				p.statLife += healNum;
 				p.HealEffect(healNum, true);
 			}
-			AzercadmiumPlayer zp = Main.player[projectile.owner].GetModPlayer<AzercadmiumPlayer>();
-			if (zp.bloodVial && Main.rand.NextFloat() < .06f && target.type != NPCID.TargetDummy) {
-				Player p = Main.player[projectile.owner];
-				p.statLife += 1;
-				p.HealEffect(1, true);
-			}
 		}
 		public override void OnHitPlayer(Player target, int damage, bool crit) {
 			Player p = Main.player[projectile.owner];
 			int healNum = Main.rand.Next(1, 4);
 			p.statLife += healNum;
 			p.HealEffect(healNum, true);
-			AzercadmiumPlayer zp = Main.player[projectile.owner].GetModPlayer<AzercadmiumPlayer>();
-			if (zp.bloodVial && Main.rand.NextFloat() < .06f) {
-				p = Main.player[projectile.owner];
-				p.statLife += 1;
-				p.HealEffect(1, true);
-			}
 		}
 		public override void PostAI() {
 			if (Main.rand.NextBool()) {
