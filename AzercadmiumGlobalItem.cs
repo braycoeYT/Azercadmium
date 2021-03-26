@@ -21,6 +21,7 @@ namespace Azercadmium
 			string Dirtball = Language.GetTextValue("Dirtball Treasure Bag");
 			string TitanTankorb = Language.GetTextValue("Titan Tankorb Treasure Bag");
 			string MatrixScavenger = Language.GetTextValue("Matrix Scavenger Treasure Bag");
+			string EmpressSlime = Language.GetTextValue("Empress Slime Treasure Bag");
 
 			if (item.type == mod.ItemType("DirtballBag"))
 			{
@@ -39,6 +40,13 @@ namespace Azercadmium
 			if (item.type == mod.ItemType("ScavengerBag"))
 			{
 				TooltipLine line = new TooltipLine(mod, "MatrixScavenger", MatrixScavenger);
+				line.overrideColor = Color.LimeGreen;
+				tooltips.Insert(1, line);
+			}
+
+			if (item.type == mod.ItemType("EmpressBag"))
+			{
+				TooltipLine line = new TooltipLine(mod, "EmpressSlime", EmpressSlime);
 				line.overrideColor = Color.LimeGreen;
 				tooltips.Insert(1, line);
 			}
