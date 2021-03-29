@@ -1,8 +1,8 @@
-This mod strives for unique and fun content, and has new ores, a ball of dirt, a new gamemode + leveling system, a new subclass, an easier Slime Crown recipe (and truffle worm recipe), crimson alternates, tons of vanilla recipes, and some hardmode enemies dropping prehardmode loot.
-WARNING: Do not use the wiki, it is extremely outdated since no one cares.
+This mod strives for unique and fun content, and has new ores, a ball of dirt, a new gamemode + leveling system, 2 new subclasses, an easier Slime Crown recipe (and truffle worm recipe), crimson alternates, tons of vanilla recipes, and some hardmode enemies dropping prehardmode loot.
+Note: The wiki is a bit outdated.
 
 [i:3123] Stats:
-~271 Items
+~274 Items
 ~4 Bosses:
 ^1 Prehardmode Boss
 ^3 Hardmode Bosses
@@ -10,7 +10,7 @@ WARNING: Do not use the wiki, it is extremely outdated since no one cares.
 ~2 Town NPCs
 ~50 Tiles
 ~32 Buffs
-~1 Subclass (Blowpipes/Dart Guns)
+~2 Subclasses (Blowpipes/Dart Guns and Javelins)
 ~3 Custom Soundtracks (get the Music mod)
 ~1 Unfinished Game Mode + Leveling System (Devastation Mode and Devastation Level)
 ~18 Modifiers
@@ -20,12 +20,16 @@ WARNING: Do not use the wiki, it is extremely outdated since no one cares.
 ~[i:458]Cross content with: Asteri and Cacti and More 2 Mod.
 ^Open to creating cross content with other mods.
 
-Update V0.2.8.9: Update
-~Gave the Braycoe Town NPC a Challenge button...
-~Buffed Matrix Scavenger.
-~Clarified one of the config descriptions.
-~Added Hungering Javelin.
-~Resprited Barfarang.
+Update V0.2.9:
+~Resprited Pukerang.
+~Fixed Empress Slime theme vanishing when phase 2 begins.
+~Titan Tankorb now drops more Titanic Energy.
+~Titan Tankorb now drops more Adamantite and Titanium Bars.
+~Added France.
+~S'more recipe now requires 2 Graham Crackers instead of 1.
+~Added Iron and Lead Yoyo.
+~Updated Credits.
+~Fixed a Titan Tankorb code redundancy.
 
 Credits:
 
@@ -67,3 +71,4 @@ Lamb Sauce (Minor Spriter)
 Unboxing Video (Minor Wiki)
 Deranged Lynx (Minor Wiki and Tactical Megaphone use sound)
 Max (Minor Spriter)
+Mick (Wiki)

@@ -77,6 +77,10 @@ namespace Azercadmium
 			JavelinCache[ModContent.ProjectileType<Projectiles.Corruption.DemoniteJavelin>()] = true;
 			JavelinCache[ModContent.ProjectileType<Projectiles.Crimson.CrimtaneJavelin>()] = true;
 			JavelinCache[ModContent.ProjectileType<Projectiles.Jungle.Snarevine>()] = true;
+			JavelinCache[ModContent.ProjectileType<Projectiles.Underworld.InfernalJavelin>()] = true;
+			JavelinCache[ModContent.ProjectileType<Projectiles.Underworld.HungeringJavelin>()] = true;
+			JavelinCache[ModContent.ProjectileType<Projectiles.Underworld.HungeringJavelin2>()] = true;
+			JavelinCache[ModContent.ProjectileType<Projectiles.Mech.France>()] = true;
 			AzercadmiumUtils.Initialize();
 		}
 

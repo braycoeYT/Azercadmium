@@ -23,11 +23,11 @@ namespace Azercadmium.Items.Titan
 			return true;
 		}
 		public override void OpenBossBag(Player player) {
-			player.QuickSpawnItem(ItemID.AdamantiteBar, Main.rand.Next(5, 16));
-			player.QuickSpawnItem(ItemID.TitaniumBar, Main.rand.Next(5, 16));
+			player.QuickSpawnItem(ItemID.AdamantiteBar, Main.rand.Next(10, 21));
+			player.QuickSpawnItem(ItemID.TitaniumBar, Main.rand.Next(10, 21));
 			player.QuickSpawnItem(ItemID.SoulofLight, Main.rand.Next(5, 16));
 			player.QuickSpawnItem(ItemID.SoulofNight, Main.rand.Next(5, 16));
-			player.QuickSpawnItem(ModContent.ItemType<Items.Titan.TitanicEnergy>(), Main.rand.Next(45, 76));
+			player.QuickSpawnItem(ModContent.ItemType<Items.Titan.TitanicEnergy>(), Main.rand.Next(70, 141));
 
 			//Dev sets Azercadmium
 			if (Main.rand.NextFloat() < .05f) {

@@ -35,7 +35,6 @@ namespace Azercadmium.NPCs.Titan
 			npc.buffImmune[BuffID.OnFire] = true;
 			npc.buffImmune[BuffID.Poisoned] = true;
 			npc.buffImmune[BuffID.Confused] = true;
-			npc.buffImmune[BuffID.OnFire] = true;
 			npc.buffImmune[BuffID.Frostburn] = true;
 			npc.buffImmune[BuffID.CursedInferno] = true;
 			npc.buffImmune[BuffID.Ichor] = true;
@@ -668,11 +667,11 @@ namespace Azercadmium.NPCs.Titan
 			if (Main.expertMode)
 				Item.NewItem(npc.getRect(), mod.ItemType("TitanBag"));
 		    else {
-				Item.NewItem(npc.getRect(), ItemID.AdamantiteBar, Main.rand.Next(5, 11));
-				Item.NewItem(npc.getRect(), ItemID.TitaniumBar, Main.rand.Next(5, 11));
+				Item.NewItem(npc.getRect(), ItemID.AdamantiteBar, Main.rand.Next(8, 17));
+				Item.NewItem(npc.getRect(), ItemID.TitaniumBar, Main.rand.Next(8, 17));
 				Item.NewItem(npc.getRect(), ItemID.SoulofLight, Main.rand.Next(5, 11));
 				Item.NewItem(npc.getRect(), ItemID.SoulofNight, Main.rand.Next(5, 11));
-				Item.NewItem(npc.getRect(), ModContent.ItemType<Items.Titan.TitanicEnergy>(), Main.rand.Next(30, 61));
+				Item.NewItem(npc.getRect(), ModContent.ItemType<Items.Titan.TitanicEnergy>(), Main.rand.Next(50, 101));
 			}
 			AzercadmiumWorld.downedTitan = true;
 		}

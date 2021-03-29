@@ -30,6 +30,11 @@ namespace Azercadmium.NPCs.Empress
 			npc.netAlways = true;
 			npc.boss = true;
 			npc.dontTakeDamageFromHostiles = true;
+			Mod azercadmiumMusic = ModLoader.GetMod("AzercadmiumMusic");
+			if (azercadmiumMusic != null) 
+				music = azercadmiumMusic.GetSoundSlot(SoundType.Music, "Sounds/Music/ImitationalAcrophobia");
+			else 
+				music = MusicID.Boss2;
         }
 		public override void ScaleExpertStats(int numPlayers, float bossLifeScale) {
             npc.damage = 120;

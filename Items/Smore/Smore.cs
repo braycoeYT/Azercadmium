@@ -31,7 +31,7 @@ namespace Azercadmium.Items.Smore
 		}
 		public override void AddRecipes() {
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(mod.ItemType("GrahamCracker"));
+			recipe.AddIngredient(mod.ItemType("GrahamCracker"), 2);
 			recipe.AddIngredient(mod.ItemType("CocoaBeans"));
 			recipe.AddIngredient(ItemID.CookedMarshmallow);
 			recipe.AddTile(TileID.Campfire);
