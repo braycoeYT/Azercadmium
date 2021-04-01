@@ -20,16 +20,9 @@ Note: The wiki is a bit outdated.
 ~[i:458]Cross content with: Asteri and Cacti and More 2 Mod.
 ^Open to creating cross content with other mods.
 
-Update V0.2.9:
-~Resprited Pukerang.
-~Fixed Empress Slime theme vanishing when phase 2 begins.
-~Titan Tankorb now drops more Titanic Energy.
-~Titan Tankorb now drops more Adamantite and Titanium Bars.
-~Added France.
-~S'more recipe now requires 2 Graham Crackers instead of 1.
-~Added Iron and Lead Yoyo.
-~Updated Credits.
-~Fixed a Titan Tankorb code redundancy.
+Update V0.2.9.1: April Fools Update 2021
+~Resprited Barfarang and Pukerang.
+~Made the logo really stupid for april fools day!
 
 Credits:
 
