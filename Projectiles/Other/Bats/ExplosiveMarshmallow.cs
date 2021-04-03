@@ -15,7 +15,7 @@ namespace Azercadmium.Projectiles.Other.Bats
 			projectile.aiStyle = 1;
 			projectile.friendly = true;
 			projectile.penetrate = 1;
-			projectile.melee = true;
+			//projectile.melee = true;
 			projectile.timeLeft = 9999;
 			projectile.ignoreWater = true;
 			aiType = 1;

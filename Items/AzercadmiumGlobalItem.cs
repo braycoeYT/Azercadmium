@@ -303,5 +303,13 @@ namespace Azercadmium.Items
 				Projectile.NewProjectile(pos, new Vector2(Main.rand.NextFloat(-2, 2), 10), ProjectileID.FallingStar, 40, 2, Main.myPlayer);
 			}
 		}
+		static int shootCount;
+		public override bool Shoot(Item item, Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack) {
+			shootCount++;
+			AzercadmiumPlayer p = player.GetModPlayer<AzercadmiumPlayer>();
+			if (p.gooeySetBonus && item.summon == false && shootCount % 3 == 0)
+				Projectile.NewProjectile(position, new Vector2(speedX, speedY), ModContent.ProjectileType<Projectiles.Other.Bats.ExplosiveMarshmallow>(), (int)(item.damage * 1.25f), 2f, Main.myPlayer);
+			return true;
+		}
 	}
 }

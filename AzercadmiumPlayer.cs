@@ -54,6 +54,7 @@ namespace Azercadmium
 		public bool webdriver;
 		public bool erodedMotherboard;
 		public bool osmiumRover;
+		public bool gooeySetBonus;
 		int numberShot = 0;
 		public int upgradeHearts;
 		public int upgradeStars;
@@ -98,6 +99,7 @@ namespace Azercadmium
 			webdriver = false;
 			erodedMotherboard = false;
 			osmiumRover = false;
+			gooeySetBonus = false;
 			player.statLifeMax2 += upgradeHearts * 25;
 			player.statManaMax2 += upgradeStars * 50;
 			playerTimer = 0;
@@ -274,8 +276,8 @@ namespace Azercadmium
 		{
 			if ((Main.player[(int)Player.FindClosest(player.position, player.width, player.height)].ZoneDirtLayerHeight || Main.player[(int)Player.FindClosest(player.position, player.width, player.height)].ZoneRockLayerHeight) && Main.rand.NextFloat() < .05f)
 				caughtType = mod.ItemType("LabyrinthFish");
-
-			if (Main.player[(int)Player.FindClosest(player.position, player.width, player.height)].GetModPlayer<AzercadmiumPlayer>().ZoneMicrobiome)
+		}
+			/*if (Main.player[(int)Player.FindClosest(player.position, player.width, player.height)].GetModPlayer<AzercadmiumPlayer>().ZoneMicrobiome)
 			{
 				if (player.cratePotion)
 				{
@@ -394,7 +396,7 @@ namespace Azercadmium
 					}
 				}
 			}*/
-			if (Main.player[(int)Player.FindClosest(player.position, player.width, player.height)].ZoneRockLayerHeight)
+			/*if (Main.player[(int)Player.FindClosest(player.position, player.width, player.height)].ZoneRockLayerHeight)
 			{
 				if (Main.hardMode)
 				{
@@ -431,7 +433,7 @@ namespace Azercadmium
 					}
 				}
 			}
-		}
+		}*/
 		public override void OnHitAnything(float x, float y, Entity victim)
 		{
 			if (gemstoneManaBullet)

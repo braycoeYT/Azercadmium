@@ -2,7 +2,7 @@ This mod strives for unique and fun content, and has new ores, a ball of dirt, a
 Note: The wiki is a bit outdated.
 
 [i:3123] Stats:
-~274 Items
+~277 Items
 ~4 Bosses:
 ^1 Prehardmode Boss
 ^3 Hardmode Bosses
@@ -20,9 +20,10 @@ Note: The wiki is a bit outdated.
 ~[i:458]Cross content with: Asteri and Cacti and More 2 Mod.
 ^Open to creating cross content with other mods.
 
-Update V0.2.9.1: April Fools Update 2021
-~Resprited Barfarang and Pukerang.
-~Made the logo really stupid for april fools day!
+Update V0.2.9.2
+~Turned the logo back to normal.
+~Resprited Barfarang and Pukerang projectiles.
+~Added Gooey Armor.
 
 Credits:
 
