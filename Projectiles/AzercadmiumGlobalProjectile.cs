@@ -11,7 +11,7 @@ namespace Azercadmium.Projectiles
 			if (!init) {
 				Player player = Main.player[projectile.owner];
 				AzercadmiumPlayer p = player.GetModPlayer<AzercadmiumPlayer>();
-				if (Azercadmium.JavelinCache[projectile.type])
+				if (Azercadmium.JavelinSet[projectile.type])
 					projectile.penetrate += p.javelinPenetration;
 				init = true;
 			}

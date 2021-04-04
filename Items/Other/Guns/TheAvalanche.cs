@@ -24,7 +24,7 @@ namespace Azercadmium.Items.Other.Guns
             item.noMelee = true;
             item.ranged = true;
             item.UseSound = SoundID.Item11;
-            item.rare = 10;
+            item.rare = ItemRarityID.Red;
             item.autoReuse = true;
         }
         public override bool ConsumeAmmo(Player player) {
@@ -44,7 +44,7 @@ namespace Azercadmium.Items.Other.Guns
                 useAmount = 0;
             if (player.altFunctionUse == 2)
             {
-                if (ModUtils.Player.UseAmmo(player, AmmoID.Sand, out int ammoTypeUsed, useAmount))
+                if (AzercadmiumUtils.ConsumeAmmo(player, AmmoID.Sand, out int ammoTypeUsed, useAmount))
                 {
                     int shoot = ProjectileID.SandBallGun;
                     if (ammoTypeUsed == ItemID.PearlsandBlock)
@@ -53,14 +53,13 @@ namespace Azercadmium.Items.Other.Guns
                         shoot = ProjectileID.EbonsandBallGun;
                     else if (ammoTypeUsed == ItemID.CrimsandBlock)
                         shoot = ProjectileID.CrimsandBallGun;
-
                     float decreasedShootSpeed = item.shootSpeed * 0.55f;
                     Vector2 perturbedSpeed = shootDirection.RotatedByRandom(MathHelper.ToRadians(5)) * decreasedShootSpeed;
                     Projectile.NewProjectile(player.MountedCenter, perturbedSpeed, shoot, item.damage, item.knockBack, player.whoAmI);
                     return true;
                 }
             }
-            else if (ModUtils.Player.UseAmmo(player, AmmoID.Snowball, useAmount))
+            else if (AzercadmiumUtils.UseAmmo(player, AmmoID.Snowball, useAmount))
             {
                 Vector2 perturbedSpeed = shootDirection.RotatedByRandom(MathHelper.ToRadians(5)) * item.shootSpeed;
                 Projectile.NewProjectile(player.MountedCenter, perturbedSpeed, ProjectileID.SnowBallFriendly, item.damage, item.knockBack, player.whoAmI);
