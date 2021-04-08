@@ -9,7 +9,7 @@ namespace Azercadmium.Items.Smore.Armor
 	public class GooeyLeggings : ModItem
 	{
 		public override void SetStaticDefaults() {
-			Tooltip.SetDefault("Somehow just as strong as metal, but I wouldn't question it\nIncreases all damage by 4%");
+			Tooltip.SetDefault("Somehow just as strong as metal, but I wouldn't question it\nIncreases damage by 4%");
 		}
 		public override void SetDefaults() {
 			item.width = 18;

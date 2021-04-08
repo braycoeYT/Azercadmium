@@ -2,7 +2,7 @@ This mod strives for unique and fun content, and has new ores, a ball of dirt, a
 Note: The wiki is a bit outdated.
 
 [i:3123] Stats:
-~277 Items
+~278 Items
 ~4 Bosses:
 ^1 Prehardmode Boss
 ^3 Hardmode Bosses
@@ -20,10 +20,12 @@ Note: The wiki is a bit outdated.
 ~[i:458]Cross content with: Asteri and Cacti and More 2 Mod.
 ^Open to creating cross content with other mods.
 
-Update V0.2.9.2
-~Turned the logo back to normal.
-~Resprited Barfarang and Pukerang projectiles.
-~Added Gooey Armor.
+Update V0.2.9.3
+~Fixed Molten Blowpipe not applying Out of Breath.
+~Resprited Tenderizer and Pulverizer.
+~Updated credits.
+~Added Zinc Spear.
+~Gooey Leggings now says "Increases damage by 4%" instead of "Increases all damage by 4%".
 
 Credits:
 
@@ -40,7 +42,6 @@ Skymanisbtman
 Koolaidlemonade (Inactive)
 
 Coders:
-Nalyddd
 Woodio
 
 Composer (get the Music mod):
@@ -49,6 +50,7 @@ Skymanisbtman
 Quit:
 CrazySapling1 (Spriter)
 ULTIMATEDQVID (Spriter)
+Nalyddd (Banned and probably not returning for a while)
 
 Minor Help:
 Math (Minor Wiki)

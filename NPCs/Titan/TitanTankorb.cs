@@ -15,10 +15,7 @@ namespace Azercadmium.NPCs.Titan
 		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Titan Tankorb");
 			Main.npcFrameCount[npc.type] = 4;
-			NPCID.Sets.TrailCacheLength[npc.type] = 6;
-			NPCID.Sets.TrailingMode[npc.type] = 1;
 		}
-
         public override void SetDefaults() {
 			npc.width = 80;
 			npc.height = 80;
@@ -44,9 +41,10 @@ namespace Azercadmium.NPCs.Titan
 			npc.buffImmune[BuffID.Venom] = true;
 			npc.buffImmune[BuffID.ShadowFlame] = true;
 			npc.lavaImmune = true;
+			//animationType = NPCID.Drippler;
+			//npc.takenDamageMultiplier = 0f;
         }
-		public override void ScaleExpertStats(int numPlayers, float bossLifeScale) 
-		{
+		public override void ScaleExpertStats(int numPlayers, float bossLifeScale) {
             npc.lifeMax = 30000 + (numPlayers * 3000);
             npc.damage = 83;
 			if (AzercadmiumWorld.devastation) {
@@ -74,10 +72,9 @@ namespace Azercadmium.NPCs.Titan
 				dust.scale *= 0.75f + Main.rand.Next(-30, 31) * 0.01f;
 			}
 		}
-		public override bool PreDraw(SpriteBatch spriteBatch, Color drawColor) 
-		{
+		public override bool PreDraw(SpriteBatch spriteBatch, Color drawColor) {
 			if (attack == 5)
-				DrawingHelper.NPCAfterImageEffect(npc, null, null, 0.6f);
+				DrawingHelper.NPCAfterImageEffect(npc, null);
             return true;
         }
 		int Timer;

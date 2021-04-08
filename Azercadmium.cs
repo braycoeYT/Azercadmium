@@ -9,20 +9,13 @@ namespace Azercadmium
 {
 	public class Azercadmium : Mod
 	{
-		public Azercadmium() // Seemingly uneeded.
+		public Azercadmium()
 		{
+			
 		}
-
-		internal static Azercadmium Instance { get; set; }
-
-		public static bool[] JavelinSet { get; set; }
-
-        public override void Load()
-        {
-			Instance = this;
-        }
-
-        public override void PostSetupContent()
+		public static Mod Mod => ModLoader.GetMod("Azercadmium");
+		public static bool[] JavelinCache;
+		public override void PostSetupContent()
 		{
 			Mod bossChecklist = ModLoader.GetMod("BossChecklist");
 			if (bossChecklist != null) {
@@ -75,64 +68,63 @@ namespace Azercadmium
 					$"Use a [i:{ModContent.ItemType<Items.Empress.EmpressChalice>()}]."
 				);
 			}
-			JavelinSet = new bool[ProjectileLoader.ProjectileCount];
-			JavelinSet[ProjectileID.JavelinFriendly] = true;
-			JavelinSet[ProjectileID.BoneJavelin] = true;
-			JavelinSet[ProjectileID.Daybreak] = true;
-			JavelinSet[ProjectileID.TinyEater] = true;
-			JavelinSet[ModContent.ProjectileType<Projectiles.Wood.WoodenSplinter>()] = true;
-			JavelinSet[ModContent.ProjectileType<Projectiles.Corruption.DemoniteJavelin>()] = true;
-			JavelinSet[ModContent.ProjectileType<Projectiles.Crimson.CrimtaneJavelin>()] = true;
-			JavelinSet[ModContent.ProjectileType<Projectiles.Jungle.Snarevine>()] = true;
-			JavelinSet[ModContent.ProjectileType<Projectiles.Underworld.InfernalJavelin>()] = true;
-			JavelinSet[ModContent.ProjectileType<Projectiles.Underworld.HungeringJavelin>()] = true;
-			JavelinSet[ModContent.ProjectileType<Projectiles.Underworld.HungeringJavelin2>()] = true;
-			JavelinSet[ModContent.ProjectileType<Projectiles.Mech.France>()] = true;
+			JavelinCache = new bool[ProjectileLoader.ProjectileCount];
+			JavelinCache[ProjectileID.JavelinFriendly] = true;
+			JavelinCache[ProjectileID.BoneJavelin] = true;
+			JavelinCache[ProjectileID.Daybreak] = true;
+			JavelinCache[ProjectileID.TinyEater] = true;
+			JavelinCache[ModContent.ProjectileType<Projectiles.Wood.WoodenSplinter>()] = true;
+			JavelinCache[ModContent.ProjectileType<Projectiles.Corruption.DemoniteJavelin>()] = true;
+			JavelinCache[ModContent.ProjectileType<Projectiles.Crimson.CrimtaneJavelin>()] = true;
+			JavelinCache[ModContent.ProjectileType<Projectiles.Jungle.Snarevine>()] = true;
+			JavelinCache[ModContent.ProjectileType<Projectiles.Underworld.InfernalJavelin>()] = true;
+			JavelinCache[ModContent.ProjectileType<Projectiles.Underworld.HungeringJavelin>()] = true;
+			JavelinCache[ModContent.ProjectileType<Projectiles.Underworld.HungeringJavelin2>()] = true;
+			JavelinCache[ModContent.ProjectileType<Projectiles.Mech.France>()] = true;
+			AzercadmiumUtils.Initialize();
 		}
 
 		public override void AddRecipeGroups()
 		{
 			RecipeGroup group = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " Basic Prehardmode Bar", new int[]
 			{
-				ItemID.CopperBar,
-				ItemID.TinBar,
-				ItemID.IronBar,
-				ItemID.LeadBar,
-				ItemType("ZincBar"),
-				ItemID.SilverBar,
-				ItemID.TungstenBar,
-				ItemID.GoldBar,
-				ItemID.PlatinumBar
+			ItemID.CopperBar,
+			ItemID.TinBar,
+			ItemID.IronBar,
+			ItemID.LeadBar,
+			ItemType("ZincBar"),
+			ItemID.SilverBar,
+			ItemID.TungstenBar,
+			ItemID.GoldBar,
+			ItemID.PlatinumBar
 			});
 			RecipeGroup.RegisterGroup("Azercadmium:AnyPHBar", group);
 
 			group = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " Gem", new int[]
 			{
-				ItemID.Amethyst,
-				ItemID.Topaz,
-				ItemID.Sapphire,
-				ItemID.Emerald,
-				ItemID.Amber,
-				ItemID.Diamond,
-				ItemID.Ruby
+			ItemID.Amethyst,
+			ItemID.Topaz,
+			ItemID.Sapphire,
+			ItemID.Emerald,
+			ItemID.Amber,
+			ItemID.Diamond,
+			ItemID.Ruby
 			});
 			RecipeGroup.RegisterGroup("Azercadmium:AnyGem", group);
 
 			group = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " Shadow Scale", new int[]
 			{
-				ItemID.ShadowScale,
-				ItemID.TissueSample,
+			ItemID.ShadowScale,
+			ItemID.TissueSample,
 			});
 			RecipeGroup.RegisterGroup("Azercadmium:AnyShadowScale", group);
 
-			if (RecipeGroup.recipeGroupIDs.ContainsKey("IronBar")) 
-			{
+			if (RecipeGroup.recipeGroupIDs.ContainsKey("IronBar")) {
 				int index = RecipeGroup.recipeGroupIDs["IronBar"];
 				group = RecipeGroup.recipeGroups[index];
 				group.ValidItems.Add(ItemType("ZincBar"));
 			}
 		}
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(this);
@@ -421,7 +413,6 @@ namespace Azercadmium
 			recipe.SetResult(ItemID.AdamantiteBar);
 			recipe.AddRecipe();
 		}
-
 		/*public override void UpdateMusic(ref int music, ref MusicPriority priority)
 		{
 			if (Main.myPlayer == -1 || Main.gameMenu || !Main.LocalPlayer.active)
@@ -439,9 +430,8 @@ namespace Azercadmium
 				priority = MusicPriority.BiomeHigh;
 			}
 		}*/
-
-		public override void Unload() 
-		{
+		public override void Unload() {
+			AzercadmiumUtils.Unload();
 		}
 	}
 }

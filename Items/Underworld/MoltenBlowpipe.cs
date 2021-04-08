@@ -30,6 +30,7 @@ namespace Azercadmium.Items.Underworld
 			item.crit = 6;
 		}
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack) {
+			player.AddBuff(mod.BuffType("OutOfBreath"), item.useTime, false);
 			if (type == ProjectileID.Seed || type == ModContent.ProjectileType<Projectiles.Wood.WoodenSeed>())
 				type =  ModContent.ProjectileType<Projectiles.Underworld.MoltenSeed>();
 			return true;
