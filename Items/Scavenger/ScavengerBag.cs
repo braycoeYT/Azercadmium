@@ -25,7 +25,7 @@ namespace Azercadmium.Items.Scavenger
 		public override void OpenBossBag(Player player) {
 			player.TryGettingDevArmor();
 			player.QuickSpawnItem(mod.ItemType("SoulofByte"), Main.rand.Next(25, 40));
-			player.QuickSpawnItem(ItemID.HallowedBar, Main.rand.Next(20, 35));
+			player.QuickSpawnItem(mod.ItemType("DarkronBar"), Main.rand.Next(20, 35));
 			player.QuickSpawnItem(mod.ItemType("MechanicalGearPiece"));
 
 			//Dev sets Azercadmium
