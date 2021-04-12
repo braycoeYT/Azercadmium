@@ -294,7 +294,7 @@ namespace Azercadmium.NPCs.Scavenger
 				Item.NewItem(npc.getRect(), mod.ItemType("ScavengerBag"));
 			else {
 				Item.NewItem(npc.getRect(), mod.ItemType("SoulofByte"), Main.rand.Next(20, 40));
-				Item.NewItem(npc.getRect(), ItemID.HallowedBar, Main.rand.Next(15, 31));
+				Item.NewItem(npc.getRect(), ModContent.ItemType<Items.Darkron.DarkronBar>(), Main.rand.Next(15, 31));
 			}
 			AzercadmiumWorld.downedScavenger = true;
 		}

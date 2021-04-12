@@ -1,8 +1,8 @@
-This mod strives for unique and fun content, and has new ores, a ball of dirt, a new gamemode + leveling system, 2 new subclasses, an easier Slime Crown recipe (and truffle worm recipe), crimson alternates, tons of vanilla recipes, and some hardmode enemies dropping prehardmode loot.
+This mod strives for unique and fun content, and has new ores, a ball of dirt, a new gamemode + leveling system, 2 new subclasses, an easier Slime Crown recipe (and truffle worm recipe), flare gun buff, crimson alternates, tons of vanilla recipes, and some hardmode enemies dropping prehardmode loot.
 Note: The wiki is a bit outdated.
 
 [i:3123] Stats:
-~278 Items
+~279 Items
 ~4 Bosses:
 ^1 Prehardmode Boss
 ^3 Hardmode Bosses
@@ -20,12 +20,16 @@ Note: The wiki is a bit outdated.
 ~[i:458]Cross content with: Asteri and Cacti and More 2 Mod.
 ^Open to creating cross content with other mods.
 
-Update V0.2.9.3
-~Fixed Molten Blowpipe not applying Out of Breath.
-~Resprited Tenderizer and Pulverizer.
-~Updated credits.
-~Added Zinc Spear.
-~Gooey Leggings now says "Increases damage by 4%" instead of "Increases all damage by 4%".
+Update V0.2.9.4
+~Elemental Goop's tooltip now tells you how to obtain it.
+~Buffed Flare Gun, Flare, and Blue Flare.
+~Flares and Blue Flares now disappear a minute after being shot, removing the shot limit.
+~Added Zinc Yoyo.
+~Added tooltip to Meteor Headgear.
+~Matrix Scavenger now drops the previously unobtainable Darkron Bar instead of Hallowed Bars.
+~Added tooltip to Darkron Bar.
+~Matrix Scavenger items are now crafted with Darkron Bars instead of Hallowed Bars.
+~Resprited Empress Slime map icon.
 
 Credits:
 
@@ -68,3 +72,4 @@ Unboxing Video (Minor Wiki)
 Deranged Lynx (Minor Wiki and Tactical Megaphone use sound)
 Max (Minor Spriter)
 Mick (Wiki)
+Biscuiteer (Minor Spriter)

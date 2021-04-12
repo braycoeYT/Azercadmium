@@ -8,11 +8,9 @@ namespace Azercadmium.Items.Darkron
 {
 	public class DarkronBar : ModItem
 	{
-		/*public override string Texture => "Azercadmium/Items/Darkron/DarkronBar_" + WorldGen.crimson;
 		public override void SetStaticDefaults() {
-			if (WorldGen.crimson) 
-				Main.RegisterItemAnimation(item.type, new DrawAnimationVertical(5, 5)); //first is speed, second is amount of frames
-		}*/
+			Tooltip.SetDefault("Filled with malice");
+		}
 		public override void SetDefaults() {
 			item.rare = ItemRarityID.LightRed;
 			item.width = 30;
@@ -26,7 +24,6 @@ namespace Azercadmium.Items.Darkron
 			item.autoReuse = true;
 			item.consumable = true;
 			item.createTile = mod.TileType("DarkronBar");
-			//item.createTile = mod.TileType("DarkronBar_" + WorldGen.crimson);
 			item.placeStyle = 0;
 		}
 	}

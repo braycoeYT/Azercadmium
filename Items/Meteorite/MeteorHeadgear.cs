@@ -8,7 +8,7 @@ namespace Azercadmium.Items.Meteorite
 	public class MeteorHeadgear : ModItem
 	{
 		public override void SetStaticDefaults() {
-			Tooltip.SetDefault("Increases ranged critcal strike chance by 5");
+			Tooltip.SetDefault("Increases ranged critcal strike chance by 5\nWhy does everyone who sees me wear this say things like 'Amogus' and 'Sus'...");
 		}
 		public override void SetDefaults() {
 			item.width = 20;

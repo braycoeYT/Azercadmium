@@ -38,7 +38,7 @@ namespace Azercadmium.Items.Scavenger
 		}
 		public override void AddRecipes() {
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.HallowedBar, 12);
+			recipe.AddIngredient(ModContent.ItemType<Darkron.DarkronBar>(), 12);
 			recipe.AddIngredient(mod.ItemType("SoulofByte"), 14);
 			recipe.AddTile(TileID.MythrilAnvil);
 			recipe.SetResult(this);

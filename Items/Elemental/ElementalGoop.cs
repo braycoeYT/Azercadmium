@@ -8,7 +8,7 @@ namespace Azercadmium.Items.Elemental
 	public class ElementalGoop : ModItem
 	{
 		public override void SetStaticDefaults() {
-			Tooltip.SetDefault("Looks extra tasty!");
+			Tooltip.SetDefault("Looks extra tasty!\nDrops from elemental themed slimes post-Plantera");
 		}
 		public override void SetDefaults() {
 			item.width = 40;

@@ -61,6 +61,10 @@ namespace Azercadmium.Items
 				item.maxStack = 999;
 			if (item.type == ItemID.LaserDrill)
 				item.pick = 220;
+			if (item.type == ItemID.FlareGun)
+				item.damage = 12;
+			if (item.type == ItemID.Flare || item.type == ItemID.BlueFlare)
+				item.damage = 7;
 			if (GetInstance<AzercadmiumConfig>().pearlwoodBuff) {
 				if (item.type == ItemID.PearlwoodBow)
 					item.damage = 29;
