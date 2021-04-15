@@ -2,7 +2,7 @@ This mod strives for unique and fun content, and has new ores, a ball of dirt, a
 Note: The wiki is a bit outdated.
 
 [i:3123] Stats:
-~279 Items
+~280 Items
 ~4 Bosses:
 ^1 Prehardmode Boss
 ^3 Hardmode Bosses
@@ -20,16 +20,13 @@ Note: The wiki is a bit outdated.
 ~[i:458]Cross content with: Asteri and Cacti and More 2 Mod.
 ^Open to creating cross content with other mods.
 
-Update V0.2.9.4
-~Elemental Goop's tooltip now tells you how to obtain it.
-~Buffed Flare Gun, Flare, and Blue Flare.
-~Flares and Blue Flares now disappear a minute after being shot, removing the shot limit.
-~Added Zinc Yoyo.
-~Added tooltip to Meteor Headgear.
-~Matrix Scavenger now drops the previously unobtainable Darkron Bar instead of Hallowed Bars.
-~Added tooltip to Darkron Bar.
-~Matrix Scavenger items are now crafted with Darkron Bars instead of Hallowed Bars.
-~Resprited Empress Slime map icon.
+Update V0.2.9.5
+~Replaced Devastation EoC's lasers with fireballs.
+~Devastation EoC now spawns its fire trail in the correct spot.
+~Updated all boss minimap icons.
+~Added Spectre Scythe, an upgrade to the Death Sickle.
+~Empress Slime's stomp attack now stops after 2.5 seconds instead of lasting forever, fixing exploits.
+~Changed a bit of devastation code.
 
 Credits:
 
@@ -43,18 +40,18 @@ That One Book Man
 HBDeus
 Pufferfish77
 Skymanisbtman
-Koolaidlemonade (Inactive)
 
 Coders:
 Woodio
+Nalyddd (Minor Spriter)
 
 Composer (get the Music mod):
 Skymanisbtman
 
 Quit:
 CrazySapling1 (Spriter)
+Koolaidlemonade (Spriter)
 ULTIMATEDQVID (Spriter)
-Nalyddd (Banned and probably not returning for a while)
 
 Minor Help:
 Math (Minor Wiki)

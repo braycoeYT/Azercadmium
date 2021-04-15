@@ -428,6 +428,7 @@ namespace Azercadmium.NPCs.Empress
 				jumpDir = 0;
 				else
 				jumpDir = 1;
+				jumpTimer = 0;
 				jumpMode = 2;
 			}
 			if (jumpMode == 2)
@@ -441,7 +442,7 @@ namespace Azercadmium.NPCs.Empress
 					npc.velocity.X = jumpTimer2;
 				else
 					npc.velocity.X = jumpTimer2 * -1;
-				if (npc.position.Y < target.position.Y - 150 && Math.Abs(npc.position.X - target.position.X) < 10)
+				if ((npc.position.Y < target.position.Y - 150 && Math.Abs(npc.position.X - target.position.X) < 10) || jumpTimer > 150)
 				jumpMode = 3;
 				if (npc.position.X > target.position.X)
 					jumpDir = 1;

@@ -269,18 +269,18 @@ namespace Azercadmium.NPCs
 							AITimer2++;
 							if (AITimer2 % 60 == 5)
 								NPC.NewNPC((int)npc.position.X, (int)npc.position.Y, mod.NPCType("DreaminEye"));
-							//lasers everywhere while spin
+							//fireballs everywhere while spin
 							if (AITimer2 % 10 == 0)
-								Projectile.NewProjectile(npc.Center, new Vector2(0, 10).RotatedBy(npc.rotation), ProjectileID.DeathLaser, npc.damage / 4, 0f, Main.myPlayer);
+								Projectile.NewProjectile(npc.Center, new Vector2(0, 10).RotatedBy(npc.rotation), ProjectileID.Fireball, npc.damage / 4, 0f, Main.myPlayer);
 						}
-						//lasers lol
+						//fireballs lol
 						if ((float)npc.life > (float)npc.lifeMax * 0.65f) {
 							if (AITimer % (int)(240 * ((float)npc.life/(float)npc.lifeMax)) == 0)
-								Projectile.NewProjectile(npc.Center, new Vector2(0, 8).RotatedBy(npc.rotation), ProjectileID.EyeLaser, npc.damage / 4, 0f, Main.myPlayer);
+								Projectile.NewProjectile(npc.Center, new Vector2(0, 8).RotatedBy(npc.rotation), ProjectileID.Fireball, npc.damage / 4, 0f, Main.myPlayer);
 							if (AITimer % (int)(240 * ((float)npc.life/(float)npc.lifeMax)) == 20)
-								Projectile.NewProjectile(npc.Center, new Vector2(0, 8).RotatedBy(npc.rotation), ProjectileID.EyeLaser, npc.damage / 4, 0f, Main.myPlayer);
+								Projectile.NewProjectile(npc.Center, new Vector2(0, 8).RotatedBy(npc.rotation), ProjectileID.Fireball, npc.damage / 4, 0f, Main.myPlayer);
 							if (AITimer % (int)(240 * ((float)npc.life/(float)npc.lifeMax)) == 40)
-								Projectile.NewProjectile(npc.Center, new Vector2(0, 8).RotatedBy(npc.rotation), ProjectileID.EyeLaser, npc.damage / 4, 0f, Main.myPlayer);
+								Projectile.NewProjectile(npc.Center, new Vector2(0, 8).RotatedBy(npc.rotation), ProjectileID.Fireball, npc.damage / 4, 0f, Main.myPlayer);
 						}
 						//keep on dreamin
 						Vector2 vector = new Vector2(npc.position.X + (float)npc.width * 0.5f, npc.position.Y + (float)npc.height * 0.5f);
@@ -330,7 +330,7 @@ namespace Azercadmium.NPCs
 								}
 							}
 							if (AITimer % 5 == 0)
-							Projectile.NewProjectile(npc.position, new Vector2(0, 0), mod.ProjectileType("FlameTrailEye"), npc.damage / 2, 0f, Main.myPlayer);
+							Projectile.NewProjectile(npc.Center, new Vector2(0, 0), mod.ProjectileType("FlameTrailEye"), npc.damage / 2, 0f, Main.myPlayer);
 						}
 						else {
 							npc.damage = 41;
@@ -389,12 +389,6 @@ namespace Azercadmium.NPCs
 		}
 		public override void HitEffect(NPC npc, int hitDirection, double damage) {
 			if (AzercadmiumWorld.devastation) {
-				if (npc.townNPC == true && npc.life <= 0 && npc.type != NPCID.Angler) {
-					if (Main.rand.Next(2) == 0)
-						NPC.NewNPC((int)npc.position.X, (int)npc.position.Y, NPCID.BigSkeleton);
-					else
-						NPC.NewNPC((int)npc.position.X, (int)npc.position.Y, NPCID.BigPantlessSkeleton);
-				}
 				if (npc.type == NPCID.LavaSlime) {
 					Vector2 projDir = Vector2.Normalize(Main.player[npc.target].Center - npc.Center) * 8;
 					Projectile.NewProjectile(npc.Center, projDir, ProjectileID.Fireball, npc.damage / 4, 0f, Main.myPlayer);
@@ -425,6 +419,12 @@ namespace Azercadmium.NPCs
 				if (npc.type == NPCID.EaterofWorldsHead || npc.type == NPCID.EaterofWorldsBody || npc.type == NPCID.EaterofWorldsTail || npc.type == mod.NPCType("VileObserver")) {
 					if (Main.rand.Next(4) == 0)
 					Item.NewItem(npc.getRect(), ItemType<Items.Corruption.VileHeart>());
+				}
+				if (npc.townNPC == true && npc.type != NPCID.Angler) {
+					if (Main.rand.Next(2) == 0)
+						NPC.NewNPC((int)npc.position.X, (int)npc.position.Y, NPCID.BigSkeleton);
+					else
+						NPC.NewNPC((int)npc.position.X, (int)npc.position.Y, NPCID.BigPantlessSkeleton);
 				}
 			}
 		}
