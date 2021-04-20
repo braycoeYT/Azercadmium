@@ -7,7 +7,7 @@ namespace Azercadmium.Items.Dirtball
 	public class DirtyMedal : ModItem
 	{
 		public override void SetStaticDefaults() {
-			Tooltip.SetDefault("Max minions increased by one");
+			Tooltip.SetDefault("Increases max minions increased by one");
 		}
 		public override void SetDefaults() {
 			item.width = 40;

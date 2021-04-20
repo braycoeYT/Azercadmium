@@ -10,7 +10,7 @@ namespace Azercadmium.Items.Carnallite
 			Tooltip.SetDefault("True melee hits inflict venom, and shoots a tile bouncing wave");
 		}
 		public override void SetDefaults() {
-			item.damage = 91;
+			item.damage = 115;
 			item.melee = true;
 			item.width = 46;
 			item.height = 46;

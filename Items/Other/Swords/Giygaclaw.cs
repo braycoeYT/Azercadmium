@@ -38,7 +38,7 @@ namespace Azercadmium.Items.Other.Swords
 			}
 		}
 		public override void AddRecipes()  {
-			ModRecipe recipe = new ModRecipe(mod); //add osmium
+			ModRecipe recipe = new ModRecipe(mod); //add Kinoite
 			recipe.AddIngredient(ItemID.FetidBaghnakhs);
 			recipe.AddIngredient(ItemID.LunarBar, 12);
 			recipe.AddIngredient(ItemID.FragmentSolar, 8);

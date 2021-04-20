@@ -1,5 +1,5 @@
 This mod strives for unique and fun content, and has new ores, a ball of dirt, a new gamemode + leveling system, 2 new subclasses, an easier Slime Crown recipe (and truffle worm recipe), flare gun buff, crimson alternates, tons of vanilla recipes, and some hardmode enemies dropping prehardmode loot.
-Note: The wiki is a bit outdated.
+Note: The wiki is really outdated.
 
 [i:3123] Stats:
 ~280 Items
@@ -20,13 +20,10 @@ Note: The wiki is a bit outdated.
 ~[i:458]Cross content with: Asteri and Cacti and More 2 Mod.
 ^Open to creating cross content with other mods.
 
-Update V0.2.9.5
-~Replaced Devastation EoC's lasers with fireballs.
-~Devastation EoC now spawns its fire trail in the correct spot.
-~Updated all boss minimap icons.
-~Added Spectre Scythe, an upgrade to the Death Sickle.
-~Empress Slime's stomp attack now stops after 2.5 seconds instead of lasting forever, fixing exploits.
-~Changed a bit of devastation code.
+Update V0.2.9.6
+~Buffed Red Carnallite.
+~Reworded Dirty Medal tooltip slightly.
+(Busy with 0.3, sorry)
 
 Credits:
 

@@ -53,7 +53,7 @@ namespace Azercadmium
 		public bool shroomed;
 		public bool webdriver;
 		public bool erodedMotherboard;
-		public bool osmiumRover;
+		public bool KinoiteRover;
 		public bool gooeySetBonus;
 		int numberShot = 0;
 		public int upgradeHearts;
@@ -98,7 +98,7 @@ namespace Azercadmium
 			shroomed = false;
 			webdriver = false;
 			erodedMotherboard = false;
-			osmiumRover = false;
+			KinoiteRover = false;
 			gooeySetBonus = false;
 			player.statLifeMax2 += upgradeHearts * 25;
 			player.statManaMax2 += upgradeStars * 50;

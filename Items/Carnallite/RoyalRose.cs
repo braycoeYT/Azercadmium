@@ -11,7 +11,7 @@ namespace Azercadmium.Items.Carnallite
 			Item.staff[item.type] = true;
 		}
 		public override void SetDefaults() {
-			item.damage = 79;
+			item.damage = 97;
 			item.magic = true;
 			item.width = 44;
 			item.height = 42;

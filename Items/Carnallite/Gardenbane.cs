@@ -14,7 +14,7 @@ namespace Azercadmium.Items.Carnallite
 			item.useStyle = ItemUseStyleID.HoldingOut;
 			item.useAnimation = 27;
 			item.useTime = 27;
-			item.damage = 81;
+			item.damage = 102;
 			item.width = 36;
 			item.height = 56;
 			item.knockBack = 1.3f;
