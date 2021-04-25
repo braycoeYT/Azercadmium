@@ -30,7 +30,7 @@ namespace Azercadmium.Items.Zinc
 		}
 		public override void AddRecipes() {
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.LeadBar, 8);
+			recipe.AddIngredient(mod.ItemType("ZincBar"), 8);
 			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

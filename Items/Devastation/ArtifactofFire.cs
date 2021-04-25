@@ -5,19 +5,19 @@ using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Terraria.DataStructures;
 
-namespace Azercadmium.Items.Slime
+namespace Azercadmium.Items.Devastation
 {
-	public class ExtraNeonSlimyCore : ModItem
+	public class ArtifactofFire : ModItem
 	{
 		public override void SetStaticDefaults() {
-			Tooltip.SetDefault("Grants immunity to Slimy Ooze, and slightly increases jump height\nDevastation");
-			Main.RegisterItemAnimation(item.type, new DrawAnimationVertical(3, 40)); //first is speed, second is amount of frames
+			DisplayName.SetDefault("Artifact of Fire");
+			Tooltip.SetDefault("Not to be confused with the Emblem of Fire\nLeaves a trail of fire behind the user while moving\nUsing a weapon/tool has a small chance of releasing a fireball\nDevastation");
 		}
 		public override void SetDefaults() {
-			item.width = 42;
-			item.height = 42;
+			item.width = 20;
+			item.height = 24;
 			item.accessory = true;
-			item.value = Item.sellPrice(0, 1, 0, 0);
+			item.value = Item.sellPrice(0, 5, 0, 0);
 			item.rare = ItemRarityID.Green;
 		}
 		public override void ModifyTooltips(List<TooltipLine> list) {
@@ -32,8 +32,8 @@ namespace Azercadmium.Items.Slime
             }
         }
 		public override void UpdateAccessory(Player player, bool hideVisual) {
-			player.buffImmune[mod.BuffType("SlimyOoze")] = true;
-			player.jumpSpeedBoost += 1f;
+			AzercadmiumPlayer p = player.GetModPlayer<AzercadmiumPlayer>();
+			p.artifactofFire = true;
 		}
 	}
 }

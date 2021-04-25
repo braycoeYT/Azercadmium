@@ -15,7 +15,7 @@ namespace Azercadmium.Items.Zinc.Armor
 		}
 		public override void AddRecipes() {
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(mod.ItemType("ZincBar"), 25);
+			recipe.AddIngredient(mod.ItemType("ZincBar"), 16);
 			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

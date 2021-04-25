@@ -20,10 +20,14 @@ Note: The wiki is really outdated.
 ~[i:458]Cross content with: Asteri and Cacti and More 2 Mod.
 ^Open to creating cross content with other mods.
 
-Update V0.2.9.6
-~Buffed Red Carnallite.
-~Reworded Dirty Medal tooltip slightly.
-(Busy with 0.3, sorry)
+Update V0.2.9.7: Fixes Update
+~Fixed Zinc Spear using Lead Bars instead of Zinc Bars.
+~Fixed the amount of bars each Zinc armor piece uses.
+~Increased Jungle's Prosperity's sell price.
+~Added the Artifact of Fire, dropped by Devastation mode Eye of Cthulhu.
+~Reworked the Extra Neon Slimy Core to not be trash.
+~Slimy Ooze now slows enemies instead of bosses.
+No, this does not mean I am done being on break.
 
 Credits:
 

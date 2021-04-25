@@ -410,7 +410,10 @@ namespace Azercadmium.NPCs
 			if (AzercadmiumWorld.devastation) {
 				switch (npc.type) {
 					case NPCID.KingSlime:
-						Item.NewItem(npc.getRect(), ItemType<Items.Slime.ExtraNeonSlimyCore>());
+						Item.NewItem(npc.getRect(), ItemType<Items.Devastation.ExtraNeonSlimyCore>());
+						break;
+					case NPCID.EyeofCthulhu:
+						Item.NewItem(npc.getRect(), ItemType<Items.Devastation.ArtifactofFire>());
 						break;
 					case NPCID.Pinky:
 						Item.NewItem(npc.getRect(), ItemType<Items.Devastation.PinkySlinky>());

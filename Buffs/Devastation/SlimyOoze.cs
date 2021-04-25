@@ -19,7 +19,7 @@ namespace Azercadmium.Buffs.Devastation
 		}
   		public override void Update(NPC npc, ref int buffIndex) {
 			npc.GetGlobalNPC<NPCs.AzercadmiumGlobalNPC>().slimyOoze = true;
-            if (npc.boss != false)
+            if (npc.boss == false)
             npc.velocity *= 0.8f;
 		}
     }

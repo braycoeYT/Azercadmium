@@ -1,3 +1,4 @@
+using Azercadmium.Projectiles.Devastation;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
@@ -52,9 +53,10 @@ namespace Azercadmium
 		public bool outofBreath;
 		public bool shroomed;
 		public bool webdriver;
-		public bool erodedMotherboard;
+		public bool artifactofFire;
 		public bool KinoiteRover;
 		public bool gooeySetBonus;
+		public bool extraNeonSlimyCore;
 		int numberShot = 0;
 		public int upgradeHearts;
 		public int upgradeStars;
@@ -97,9 +99,10 @@ namespace Azercadmium
 			outofBreath = false;
 			shroomed = false;
 			webdriver = false;
-			erodedMotherboard = false;
+			artifactofFire = false;
 			KinoiteRover = false;
 			gooeySetBonus = false;
+			extraNeonSlimyCore = false;
 			player.statLifeMax2 += upgradeHearts * 25;
 			player.statManaMax2 += upgradeStars * 50;
 			playerTimer = 0;
@@ -235,8 +238,8 @@ namespace Azercadmium
 			}
 		}
 		public override void PreUpdate() {
-			if (erodedMotherboard && player.velocity != new Vector2(0, 0) && Main.GameUpdateCount % 5 == 0) {
-				Projectile.NewProjectile(player.Center, new Vector2(0, 0), mod.ProjectileType("MotherboardZap"), 30, 0.5f, Main.myPlayer);
+			if (artifactofFire && player.velocity != new Vector2(0, 0) && Main.GameUpdateCount % 5 == 0) {
+				Projectile.NewProjectile(player.Center, new Vector2(0, 0), ModContent.ProjectileType<FlameTrailEyeFriendly>(), 30, 0.5f, Main.myPlayer);
 			}
 		}
 		public override bool CustomBiomesMatch(Player other) 
@@ -454,57 +457,15 @@ namespace Azercadmium
 			}
 			return true;
 		}
-		public override void Hurt(bool pvp, bool quiet, double damage, int hitDirection, bool crit)
-		{
-			if (gemstoneSpikes)
-            {
-				float numberProjectiles = Main.rand.Next(3, 13);
-				for (int i = 0; i < numberProjectiles; i++)
+		public override void Hurt(bool pvp, bool quiet, double damage, int hitDirection, bool crit) {
+			if (extraNeonSlimyCore) {
+				if (damage > 19)
 				{
-					Projectile.NewProjectile(player.Center.X, player.Center.Y, Main.rand.Next(-6, 6), Main.rand.Next(-17, -3), mod.ProjectileType("GemstoneSpike"), 100, 2, Main.myPlayer);
+					Projectile.NewProjectile(player.Center + new Vector2(-50, 0), new Vector2(0, 0), ModContent.ProjectileType<GiantSlimeSpikeFriendly>(), 5, 1, Main.myPlayer);
+					Projectile.NewProjectile(player.Center + new Vector2(50, 0), new Vector2(0, 0), ModContent.ProjectileType<GiantSlimeSpikeFriendly>(), 5, 1, Main.myPlayer);
+					Projectile.NewProjectile(player.Center + new Vector2(0, 100), new Vector2(0, 0), ModContent.ProjectileType<GiantSlimeSpikeFriendly>(), 5, 1, Main.myPlayer);
+					Projectile.NewProjectile(player.Center + new Vector2(0, -100), new Vector2(0, 0), ModContent.ProjectileType<GiantSlimeSpikeFriendly>(), 5, 1, Main.myPlayer);
 				}
-			}
-			if (empressExpert)
-			{
-				Projectile.NewProjectile(player.Center, new Vector2(0, 0), mod.ProjectileType("EmpressGlobPassive"), 75, 1, Main.myPlayer);
-			}
-			if (darkstarFall)
-			{
-				float numberProjectiles = Main.rand.Next(1, 4);
-				for (int i = 0; i < numberProjectiles; i++)
-				{
-					Projectile.NewProjectile(player.Center.X - Main.rand.Next(-200, 201), player.Center.Y - 600, Main.rand.Next(-5, 5), 35, mod.ProjectileType("Darkstar"), 85, 2, Main.myPlayer);
-				}
-			}
-			if (hurtHeal)
-			{
-				player.statLife += 1;
-				player.HealEffect(1, true);
-			}
-			if (electricField)
-			{
-				if (damage >= 40)
-				Projectile.NewProjectile(player.Center.X - 90, player.Center.Y + 90, 0, 0, mod.ProjectileType("ElectricField"), (int)damage, 0, Main.myPlayer);
-			}
-			if (eyeCandy)
-			{
-				player.AddBuff(mod.BuffType("EyeCandy"), 60);
-			}
-			if (gemstoneRain)
-			{
-				if (Main.rand.Next(4) == 0)
-				{
-					float numberProjectiles = Main.rand.Next(10, 26);
-					for (int i = 0; i < numberProjectiles; i++)
-					{
-						Projectile.NewProjectile(player.Center.X + Main.rand.Next(-250, 250), player.Center.Y - 400, 0, Main.rand.Next(-6, -3), mod.ProjectileType("GemstoneSpikeRain"), 95, 2f, Main.myPlayer);
-					}
-				}
-			}
-			if (gemstoneMelee)
-			{
-				if (Main.rand.NextFloat() < .25f)
-				player.AddBuff(mod.BuffType("Encased"), Main.rand.Next(240, 601));
 			}
 		}
 		public override bool Shoot(Item item, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
