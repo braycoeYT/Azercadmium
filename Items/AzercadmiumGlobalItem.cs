@@ -137,7 +137,7 @@ namespace Azercadmium.Items
 				}
 			}*/
 			if (GetInstance<AzercadmiumConfig>().itemAuto) {
-				if (item.type == ItemID.IceSickle || item.type == ItemID.WaterGun)
+				if (item.type == ItemID.IceSickle || item.type == ItemID.WaterGun || item.type == ItemID.TrueNightsEdge || item.type == ItemID.TrueExcalibur)
 					item.autoReuse = true;
 			}
 		}

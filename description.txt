@@ -20,14 +20,11 @@ Note: The wiki is really outdated.
 ~[i:458]Cross content with: Asteri and Cacti and More 2 Mod.
 ^Open to creating cross content with other mods.
 
-Update V0.2.9.7: Fixes Update
-~Fixed Zinc Spear using Lead Bars instead of Zinc Bars.
-~Fixed the amount of bars each Zinc armor piece uses.
-~Increased Jungle's Prosperity's sell price.
-~Added the Artifact of Fire, dropped by Devastation mode Eye of Cthulhu.
-~Reworked the Extra Neon Slimy Core to not be trash.
-~Slimy Ooze now slows enemies instead of bosses.
-No, this does not mean I am done being on break.
+Update V0.2.9.8: Update
+~Added Darkscalibur, and True Darkscalibur.
+~Item Auto Re-use config now affects the True Excalibur and True Night's Edge.
+~Item Auto Re-use config is now disabled by default.
+(Still busy with 0.3)
 
 Credits:
 
