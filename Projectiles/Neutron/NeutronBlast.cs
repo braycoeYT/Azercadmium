@@ -12,7 +12,7 @@ namespace Azercadmium.Projectiles.Neutron
 			DisplayName.SetDefault("Neutron Blast");
         }
 		public override void SetDefaults() {
-			projectile.aiStyle = 1;
+			projectile.aiStyle = -1;
 			projectile.width = 18;
 			projectile.height = 18;
 			projectile.ranged = false;

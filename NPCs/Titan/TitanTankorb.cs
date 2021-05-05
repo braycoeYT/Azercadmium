@@ -19,7 +19,7 @@ namespace Azercadmium.NPCs.Titan
         public override void SetDefaults() {
 			npc.width = 80;
 			npc.height = 80;
-			npc.damage = 55;
+			npc.damage = 94;
 			npc.lifeMax = 20000;
 			npc.defense = 20;
 			npc.HitSound = SoundID.NPCHit4;
@@ -46,10 +46,10 @@ namespace Azercadmium.NPCs.Titan
         }
 		public override void ScaleExpertStats(int numPlayers, float bossLifeScale) {
             npc.lifeMax = 30000 + (numPlayers * 3000);
-            npc.damage = 83;
+            npc.damage = 132;
 			if (AzercadmiumWorld.devastation) {
 				npc.lifeMax = 45000 + (numPlayers * 4500);
-				npc.damage = 124;
+				npc.damage = 174;
 			}
         }
 		public override void HitEffect(int hitDirection, double damage) {

@@ -11,18 +11,18 @@ namespace Azercadmium.Items.Dirtball
 			Tooltip.SetDefault("Casts a dirt ball");
 		}
 		public override void SetDefaults() {
-			item.damage = 15;
+			item.damage = 20;
 			item.melee = true;
 			item.width = 36;
 			item.height = 44;
-			item.useTime = 23;
-			item.useAnimation = 23;
+			item.useTime = 17;
+			item.useAnimation = 17;
 			item.useStyle = ItemUseStyleID.SwingThrow;
-			item.knockBack = 6.2f;
-			item.value = Item.sellPrice(0, 0, 10, 0);
-			item.rare = -1;
+			item.knockBack = 4f;
+			item.value = Item.sellPrice(0, 0, 28, 0);
+			item.rare = 1;
 			item.UseSound = SoundID.Item1;
-			item.autoReuse = false;
+			item.autoReuse = true;
 			item.useTurn = true;
 			item.shoot = mod.ProjectileType("DirtSphere");
 			item.shootSpeed = 12f;

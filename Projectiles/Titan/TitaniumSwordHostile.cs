@@ -13,8 +13,8 @@ namespace Azercadmium.Projectiles.Titan
         }
 		public override void SetDefaults() {
 			//aiType = ProjectileID.Bullet;
-			projectile.width = 48;
-			projectile.height = 48;
+			projectile.width = 32;
+			projectile.height = 32;
 			projectile.aiStyle = -1;
 			projectile.hostile = true;
 			projectile.friendly = false;
@@ -22,6 +22,7 @@ namespace Azercadmium.Projectiles.Titan
 			projectile.ignoreWater = true;
 			projectile.extraUpdates = 2;
 			projectile.tileCollide = false;
+			projectile.light = 0.5f;
 		}
 		public override void PostAI() {
 			if (Main.rand.NextBool()) {

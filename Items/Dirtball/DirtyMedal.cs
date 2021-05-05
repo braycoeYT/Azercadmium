@@ -13,7 +13,7 @@ namespace Azercadmium.Items.Dirtball
 			item.width = 40;
 			item.height = 40;
 			item.accessory = true;
-			item.value = Item.sellPrice(0, 0, 20, 0);
+			item.value = Item.sellPrice(0, 0, 75, 0);
 			item.rare = ItemRarityID.Blue;
 		}
 		public override void UpdateAccessory(Player player, bool hideVisual) {

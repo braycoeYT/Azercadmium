@@ -12,17 +12,17 @@ namespace Azercadmium.NPCs.Dirtball
 		
 		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Dirtball");
-			Main.npcFrameCount[npc.type] = 16;
+			Main.npcFrameCount[npc.type] = 20;
 		}
         public override void SetDefaults() {
-			npc.width = 138;
-			npc.height = 110; //144
-			npc.damage = 20;
-			npc.lifeMax = 900;
+			npc.width = 90;
+			npc.height = 90;
+			npc.damage = 24;
+			npc.lifeMax = 3000;
 			npc.defense = 10;
 			npc.HitSound = SoundID.NPCHit1;
 			npc.DeathSound = SoundID.NPCDeath9;
-			npc.value = Item.buyPrice(0, 0, 75, 0);
+			npc.value = Item.buyPrice(0, 4, 0, 0);
 			npc.knockBackResist = 0f;
 			npc.aiStyle = -1;
 			npc.noGravity = true;
@@ -41,19 +41,14 @@ namespace Azercadmium.NPCs.Dirtball
 				music = MusicID.Boss3;
         }
 		public override void ScaleExpertStats(int numPlayers, float bossLifeScale) {
-            npc.lifeMax = 1250;
-            npc.damage = 32;
+            npc.lifeMax = 4200;
+            npc.damage = 48;
 			if (AzercadmiumWorld.devastation) {
-				npc.lifeMax = 1600;
-				npc.damage = 52;
+				npc.lifeMax = 5800;
+				npc.damage = 68;
 			}
         }
 		public override void HitEffect(int hitDirection, double damage) {
-			if (Main.expertMode)
-				shieldValue -= 0.008f;
-			else
-				shieldValue -= 0.01f;
-			
 			for (int i = 0; i < 10; i++) {
 				int dustType = 0;
 				int dustIndex = Dust.NewDust(npc.position, npc.width, npc.height, dustType);
@@ -156,15 +151,11 @@ namespace Azercadmium.NPCs.Dirtball
 				phase = 2;
 			if (phase == 2)
 				npc.height = 110;
-			if (Timer % 6 == 0)
+			if (Timer % 5 == 0)
 				animationTimer++;
-			if (animationTimer > 6)
+			if (animationTimer > 19)
 				animationTimer = 0;
-			if (phase == 1)
-				npc.frame.Y = animationTimer * 164;
-			if (phase == 2)
-				npc.frame.Y = animationTimer * 164 + 1148;
-
+			npc.frame.Y = animationTimer * 96;
 
 			if (movement)
 			{
@@ -469,10 +460,10 @@ namespace Azercadmium.NPCs.Dirtball
 				//npc.noTileCollide = false;
 				//npc.noGravity = false;
 				npc.dontTakeDamage = true;
-				if (phase == 1)
+				/*if (phase == 1)
 					npc.frame.Y = 14 * 164;
 				else if (phase == 2)
-					npc.frame.Y = 15 * 164;
+					npc.frame.Y = 15 * 164;*/
 				if (attackTimer < 80)
 					npc.velocity /= 4;
 				else if (attackTimer < 90)
@@ -514,7 +505,6 @@ namespace Azercadmium.NPCs.Dirtball
 					dashDone = true;
 					dashTimer = 0;
 				}
-					
 			}
 			if (AzercadmiumWorld.devastation) {
 				if (Timer % 1800 == 0)

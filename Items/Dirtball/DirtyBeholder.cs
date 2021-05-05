@@ -19,15 +19,15 @@ namespace Azercadmium.Items.Dirtball
 			item.useAnimation = 25;
 			item.useTime = 25;
 			item.shootSpeed = 16f;
-			item.knockBack = 3.5f;
-			item.damage = 13;
-			item.rare = -1;
+			item.knockBack = 5f;
+			item.damage = 25;
+			item.rare = 1;
 			item.melee = true;
 			item.channel = true;
 			item.noMelee = true;
 			item.noUseGraphic = true;
 			item.UseSound = SoundID.Item1;
-			item.value = Item.sellPrice(0, 0, 10, 0);
+			item.value = Item.sellPrice(0, 0, 28, 0);
 			item.shoot = ProjectileType<Projectiles.Dirtball.DirtyBeholder>();
 		}
 	}

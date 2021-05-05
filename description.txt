@@ -2,7 +2,7 @@ This mod strives for unique and fun content, and has new ores, a ball of dirt, a
 Note: The wiki is really outdated.
 
 [i:3123] Stats:
-~280 Items
+~283 Items
 ~4 Bosses:
 ^1 Prehardmode Boss
 ^3 Hardmode Bosses
@@ -18,13 +18,24 @@ Note: The wiki is really outdated.
 ^7 Accessory Modifiers
 ~A secret unobtainable joke boss
 ~[i:458]Cross content with: Asteri and Cacti and More 2 Mod.
-^Open to creating cross content with other mods.
 
-Update V0.2.9.8: Update
-~Added Darkscalibur, and True Darkscalibur.
-~Item Auto Re-use config now affects the True Excalibur and True Night's Edge.
-~Item Auto Re-use config is now disabled by default.
-(Still busy with 0.3)
+Update V0.2.9.9: Pre-0.3 Update
+~Neutrobliterator projectiles no longer adhere to gravity.
+~Moved Dirtball from pre-boss to post EoC.
+~Buffed a lot of Dirtball's weapon drops' damage.
+~Made Dirtball's Scepter much more accurate and quicker, and uses less mana.
+~Made the Dirty 3-String auto reuse and shoot faster.
+~Increased Dirty 3-String's knockback.
+~Increased Dirty Beholder's knockback.
+~Decreased Paydirt Pistol's knockback but increased use speed.
+~Changed most of Dirtball's drops' rarities from Gray to Blue.
+~Updated credits.
+~Renamed Darkscalibur and True Darkscalibur to Dusk Cleaver and True Dusk Cleaver respectively.
+~Resprited Dusk Cleaver and True Dusk Cleaver.
+~Resprited Dirtball.
+~Added more effects to the Hardened Dirt Shield.
+~Increased sell prices of Dirtball's drops.
+~Increased armor penetration of Earthmight armor.
 
 Credits:
 
@@ -41,7 +52,6 @@ Skymanisbtman
 
 Coders:
 Woodio
-Nalyddd (Minor Spriter)
 
 Composer (get the Music mod):
 Skymanisbtman
@@ -50,6 +60,7 @@ Quit:
 CrazySapling1 (Spriter)
 Koolaidlemonade (Spriter)
 ULTIMATEDQVID (Spriter)
+Nalyddd (Coder and Minor Spriter)
 
 Minor Help:
 Math (Minor Wiki)

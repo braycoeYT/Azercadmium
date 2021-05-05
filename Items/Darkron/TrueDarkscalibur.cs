@@ -9,6 +9,7 @@ namespace Azercadmium.Items.Darkron
 	public class TrueDarkscalibur : ModItem
 	{
 		public override void SetStaticDefaults() {
+			DisplayName.SetDefault("True Dusk Cleaver");
 			Tooltip.SetDefault("The forgotten lost cousin of the True Exalibur\nShoots a homing darkron blob along with several mini homing darkron blobs");
 		}
 		public override void SetDefaults() {
