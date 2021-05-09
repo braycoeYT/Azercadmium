@@ -2,7 +2,7 @@ This mod strives for unique and fun content, and has new ores, a ball of dirt, a
 Note: The wiki is really outdated.
 
 [i:3123] Stats:
-~283 Items
+~284 Items
 ~4 Bosses:
 ^1 Prehardmode Boss
 ^3 Hardmode Bosses
@@ -19,48 +19,35 @@ Note: The wiki is really outdated.
 ~A secret unobtainable joke boss
 ~[i:458]Cross content with: Asteri and Cacti and More 2 Mod.
 
-Update V0.2.9.9: Pre-0.3 Update
-~Neutrobliterator projectiles no longer adhere to gravity.
-~Moved Dirtball from pre-boss to post EoC.
-~Buffed a lot of Dirtball's weapon drops' damage.
-~Made Dirtball's Scepter much more accurate and quicker, and uses less mana.
-~Made the Dirty 3-String auto reuse and shoot faster.
-~Increased Dirty 3-String's knockback.
-~Increased Dirty Beholder's knockback.
-~Decreased Paydirt Pistol's knockback but increased use speed.
-~Changed most of Dirtball's drops' rarities from Gray to Blue.
+Update V0.2.10.0: 10 Update
 ~Updated credits.
-~Renamed Darkscalibur and True Darkscalibur to Dusk Cleaver and True Dusk Cleaver respectively.
-~Resprited Dusk Cleaver and True Dusk Cleaver.
-~Resprited Dirtball.
-~Added more effects to the Hardened Dirt Shield.
-~Increased sell prices of Dirtball's drops.
-~Increased armor penetration of Earthmight armor.
+~Added a crafting recipe for the Lihzahrd Power Cell.
+~Added Lihzahrd Lance.
+~Resprited Heartbreaker projectile.
 
 Credits:
 
 Owner:
-Braycoe (Owner, Coder, Minor Spriter, Minor Wiki)
+[i:560]Braycoe (Owner, Coder, Minor Spriter, Minor Wiki)
 
 Spriters:
 FunkItOut
-Astrum
-That One Book Man
-HBDeus
-Pufferfish77
-Skymanisbtman
+That One Book Man (Inactive)
+HBDeus (Inactive)
+Pufferfish77 (Inactive)
 
 Coders:
 Woodio
 
 Composer (get the Music mod):
-Skymanisbtman
+Skymanisbtman (Also Inactive Spriter)
 
 Quit:
 CrazySapling1 (Spriter)
 Koolaidlemonade (Spriter)
 ULTIMATEDQVID (Spriter)
 Nalyddd (Coder and Minor Spriter)
+Astrum (Spriter)
 
 Minor Help:
 Math (Minor Wiki)
@@ -74,6 +61,7 @@ Thunderminer79 (Help with Matrix Scavenger movement)
 Mr. Raccoon (Minor Spriter)
 Lamb Sauce (Minor Spriter)
 [The World] (Lore)
+Le Supreme Slimelad (Minor Lore)
 Unboxing Video (Minor Wiki)
 Deranged Lynx (Minor Wiki and Tactical Megaphone use sound)
 Max (Minor Spriter)

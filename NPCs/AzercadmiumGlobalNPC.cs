@@ -220,6 +220,10 @@ namespace Azercadmium.NPCs
 				if (Main.rand.Next(3) == 0)
 					Item.NewItem(npc.getRect(), ItemType<Items.Plantera.BloomofLife>());
 			}
+			if (npc.type == NPCID.Golem) {
+				if (Main.rand.NextFloat() < .2f)
+					Item.NewItem(npc.getRect(), ModContent.ItemType<Items.Lihzahrd.LihzahrdLance>());
+			}
 			if (npc.type == NPCID.MossHornet) {
 				if (Main.rand.Next(2) == 0)
 					Item.NewItem(npc.getRect(), ItemID.Stinger, Main.rand.Next(1, 4));

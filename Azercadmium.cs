@@ -412,6 +412,14 @@ namespace Azercadmium
 			recipe.AddTile(TileID.MythrilAnvil);
 			recipe.SetResult(ItemID.AdamantiteBar);
 			recipe.AddRecipe();
+
+			recipe = new ModRecipe(this);
+			recipe.AddIngredient(ItemID.LunarTabletFragment, 15);
+			recipe.AddIngredient(ItemID.Glass, 5);
+			recipe.AddIngredient(ItemID.FallenStar, 5);
+			recipe.AddTile(TileID.MythrilAnvil);
+			recipe.SetResult(ItemID.LihzahrdPowerCell);
+			recipe.AddRecipe();
 		}
 		/*public override void UpdateMusic(ref int music, ref MusicPriority priority)
 		{

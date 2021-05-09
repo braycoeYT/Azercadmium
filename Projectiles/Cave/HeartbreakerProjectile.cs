@@ -8,6 +8,7 @@ namespace Azercadmium.Projectiles.Cave
 	{
         public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Life Crystal");
+			Main.projFrames[projectile.type] = 6;
         }
 		public override void SetDefaults() {
 			projectile.width = 22;
@@ -18,6 +19,13 @@ namespace Azercadmium.Projectiles.Cave
 			projectile.timeLeft = 9999;
 			projectile.penetrate = 5;
 			projectile.ignoreWater = true;
+		}
+		public override void AI() {
+			if (++projectile.frameCounter >= 6) {
+				projectile.frameCounter = 0;
+				if (++projectile.frame >= 6)
+					projectile.frame = 0;
+			}
 		}
 		public override void PostAI() {
 			if (Main.rand.NextBool()) {
