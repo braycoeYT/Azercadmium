@@ -6,7 +6,7 @@ using System;
 
 namespace Azercadmium.Projectiles.Titan
 {
-	public class TitaniumSwordHostile : ModProjectile
+	public class TitansExecutionerPassive : ModProjectile
 	{
         public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Titan's Executioner");
@@ -16,13 +16,14 @@ namespace Azercadmium.Projectiles.Titan
 			projectile.width = 32;
 			projectile.height = 32;
 			projectile.aiStyle = -1;
-			projectile.hostile = true;
-			projectile.friendly = false;
+			projectile.hostile = false;
+			projectile.friendly = true;
 			projectile.timeLeft = 600;
 			projectile.ignoreWater = true;
 			projectile.extraUpdates = 2;
 			projectile.tileCollide = false;
-			projectile.light = 0.5f;
+			projectile.light = 0.33f;
+			projectile.penetrate = -1;
 		}
 		public override void PostAI() {
 			if (Main.rand.NextBool()) {
@@ -36,9 +37,8 @@ namespace Azercadmium.Projectiles.Titan
 		float lowestDistance;
 		float angle = 0.5f * (float)Math.PI;
 		float spinSpeed = 0f;
-		Player target;
+		NPC target;
 		public override void AI() {
-			
 			Timer++;
 			if (Timer > 149) { //99 scale complete
 				//projectile.aiStyle = 1;
@@ -47,18 +47,19 @@ namespace Azercadmium.Projectiles.Titan
 					aiType = ProjectileID.Bullet;
 					projectile.width = 30;
 					projectile.height = 30;
+					projectile.penetrate = 2;
 				}
-				projectile.velocity = 5f * new Vector2((float)Math.Cos(trueRotation), (float)Math.Sin(trueRotation));
+				projectile.velocity = 7.5f * new Vector2((float)Math.Cos(trueRotation), (float)Math.Sin(trueRotation));
 				//new Vector2((float)Math.Cos(trueRotation), (float)Math.Sin(trueRotation)).RotatedBy((float)((Math.PI / 180) * 45));
 			}
 			else {
 				lowestDistance = 999999;
-				int playerCount;
-				for (playerCount = 0; playerCount < 255; playerCount++) {
-					if (Main.player[playerCount].active) {
-						if (Vector2.Distance(projectile.Center, Main.player[playerCount].Center) < lowestDistance) {
-							lowestDistance = Vector2.Distance(projectile.Center, Main.player[playerCount].Center);
-							target = Main.player[playerCount];
+				int npcCount;
+				for (npcCount = 0; npcCount < Main.maxNPCs; npcCount++) {
+					if (Main.npc[npcCount].active) {
+						if (Vector2.Distance(projectile.Center, Main.npc[npcCount].Center) < lowestDistance) {
+							lowestDistance = Vector2.Distance(projectile.Center, Main.npc[npcCount].Center);
+							target = Main.npc[npcCount];
 						}
 					}
 				}
@@ -76,6 +77,7 @@ namespace Azercadmium.Projectiles.Titan
 				if (spinSpeed < 0.2f)
 					spinSpeed += 0.0025f;
 				projectile.rotation += spinSpeed;
+				projectile.velocity *= 0.955f;
 			}
 		}
 	}   

@@ -29,7 +29,7 @@ namespace Azercadmium
 					ModContent.ItemType<Items.Dirtball.CreepyMud>(),
 					new List<int> { ModContent.ItemType<Items.Dirtball.MuddyGreatsword>() }, //collectables
 					new List<int> { ModContent.ItemType<Items.Dirtball.MuddyGreatsword>()}, //other
-					$"Dirtball has an extremely low chance of spawning if not defeated and any player's max health is over 100. It can also be manually summoned with a [i:{ModContent.ItemType<Items.Dirtball.CreepyMud>()}], which can be crafted or rarely dropped from enemies."
+					$"Dirtball has an extremely low chance of spawning if not defeated and any player's max health is 300 or more. It can also be manually summoned with a [i:{ModContent.ItemType<Items.Dirtball.CreepyMud>()}], which can be crafted or rarely dropped from enemies."
 				);
 				bossChecklist.Call(
 					"AddBoss",

@@ -17,6 +17,10 @@ namespace Azercadmium.Items
 				TooltipLine line = new TooltipLine(mod, "Tooltip#0", "Increases ranged critcal strike chance by 5\nIncreases melee speed by 6%");
 				tooltips.Add(line);
 			}
+			if (item.type == ItemID.DaedalusStormbow && GetInstance<AzercadmiumConfig>().daedalusNerf) {
+				TooltipLine line = new TooltipLine(mod, "Tooltip#0", "Nerfed by Azercadmium, can be disabled in the config");
+				tooltips.Add(line);
+			}
 			/*if (GetInstance<AzercadmiumConfig>().vanillaSeedAmmo) {
 				if (item.type == ItemID.GrassSeeds) {
 					TooltipLine line = new TooltipLine(mod, "Tooltip#0", "For use with blowpipes\nBecause of the sharpness of the seed, it has a chance to deal an extra 2 damage to enemies (shown in dark green)");
@@ -79,6 +83,11 @@ namespace Azercadmium.Items
 					item.hammer = 80;
 				if (item.type == ItemID.PearlwoodSword)
 					item.damage = 46;
+			}
+			if (GetInstance<AzercadmiumConfig>().daedalusNerf && item.type == ItemID.DaedalusStormbow) {
+				item.damage = 23;
+				item.useTime = 38;
+				item.useAnimation = 38;
 			}
 			/*if (GetInstance<AzercadmiumConfig>().vanillaSeedAmmo) {
 				if (item.type == ItemID.GrassSeeds) {

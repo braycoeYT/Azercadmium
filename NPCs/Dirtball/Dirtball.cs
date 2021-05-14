@@ -571,7 +571,7 @@ namespace Azercadmium.NPCs.Dirtball
 			bool canSpawn = false;
 			int playerCount;
 			for (playerCount = 0; playerCount < 255; playerCount++) {
-				if (Main.player[playerCount].statLifeMax2 > 100) {
+				if (Main.player[playerCount].statLifeMax2 >= 300) {
 					canSpawn = true;
 				}
 			}

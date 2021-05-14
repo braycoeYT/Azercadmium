@@ -19,11 +19,10 @@ Note: The wiki is really outdated.
 ~A secret unobtainable joke boss
 ~[i:458]Cross content with: Asteri and Cacti and More 2 Mod.
 
-Update V0.2.10.0: 10 Update
-~Updated credits.
-~Added a crafting recipe for the Lihzahrd Power Cell.
-~Added Lihzahrd Lance.
-~Resprited Heartbreaker projectile.
+Update V0.2.10.1: Smol Update
+~Added a config that nerfs the Daedalus Stormbow.
+~Dirtball now spawns if a player has 300 or more health instead of having over 100 health.
+(Busy with major stuff)
 
 Credits:
 

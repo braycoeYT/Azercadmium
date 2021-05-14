@@ -28,5 +28,10 @@ namespace Azercadmium
 		[Label("Extra Item Auto Re-use")]
 		[Tooltip("Enables auto re-use for the Ice Sickle, Water Gun, True Night's Edge, and True Excalibur. No more spam clicking! Reload required.")]
 		public bool itemAuto;
+
+		[DefaultValue(true)]
+		[Label("Daedalus Nerf")]
+		[Tooltip("The Daedalus Stormbow is nerfed. Stupid overpowered bow making the destroyer look like a mechanical popsickle stick!")]
+		public bool daedalusNerf;
 	}
 }
