@@ -85,7 +85,7 @@ namespace Azercadmium.Items
 					item.damage = 46;
 			}
 			if (GetInstance<AzercadmiumConfig>().daedalusNerf && item.type == ItemID.DaedalusStormbow) {
-				item.damage = 23;
+				item.damage = 29;
 				item.useTime = 38;
 				item.useAnimation = 38;
 			}

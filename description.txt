@@ -1,8 +1,8 @@
-This mod strives for unique and fun content, and has new ores, a ball of dirt, a new gamemode + leveling system, 2 new subclasses, an easier Slime Crown recipe (and truffle worm recipe), flare gun buff, crimson alternates, tons of vanilla recipes, and some hardmode enemies dropping prehardmode loot.
+Welcome to the Azercadmium Mod! We’ll spare you the whole generic description and cut straight to the chase: This mod doesn’t strive to fit in with vanilla, and it’s more of a giant passion project, where we add what we think is interesting. Have fun!
 Note: The wiki is really outdated.
 
 [i:3123] Stats:
-~284 Items
+~286 Items
 ~4 Bosses:
 ^1 Prehardmode Boss
 ^3 Hardmode Bosses
@@ -19,10 +19,12 @@ Note: The wiki is really outdated.
 ~A secret unobtainable joke boss
 ~[i:458]Cross content with: Asteri and Cacti and More 2 Mod.
 
-Update V0.2.10.1: Smol Update
-~Added a config that nerfs the Daedalus Stormbow.
-~Dirtball now spawns if a player has 300 or more health instead of having over 100 health.
-(Busy with major stuff)
+Update V0.2.10.2: Update
+~Nerfed Pulverizer.
+~Nerfed True Dusk Cleaver.
+~Added Blackout and Shadowbang.
+~Updated description.
+(Okay I'm around halfway done with the TT reworks)
 
 Credits:
 

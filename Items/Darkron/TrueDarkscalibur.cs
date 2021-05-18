@@ -13,7 +13,7 @@ namespace Azercadmium.Items.Darkron
 			Tooltip.SetDefault("The forgotten lost cousin of the True Exalibur\nShoots a homing darkron blob along with several mini homing darkron blobs");
 		}
 		public override void SetDefaults() {
-			item.damage = 50;
+			item.damage = 40;
 			item.melee = true;
 			item.width = 58;
 			item.height = 58;
@@ -26,7 +26,7 @@ namespace Azercadmium.Items.Darkron
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;
 			item.useTurn = false;
-			item.shoot = ModContent.ProjectileType<Projectiles.Darkron.DarkronBlob>();
+			item.shoot = ModContent.ProjectileType<DarkronBlob>();
 			item.shootSpeed = 11f;
 		}
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack) {

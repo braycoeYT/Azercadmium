@@ -10,7 +10,7 @@ namespace Azercadmium.Items.Crimson
 			Tooltip.SetDefault("Inflicts ichor on struck enemies\nShoots ichor splashes at nearby enemies");
 		}
 		public override void SetDefaults() {
-			item.damage = 86;
+			item.damage = 64;
 			item.melee = true;
 			item.width = 30;
 			item.height = 30;

@@ -43,7 +43,7 @@ namespace Azercadmium.Projectiles.Crimson
 			if (foundTarget) {
 				Timer++;
 				if (Timer % 20 == 0)
-				Projectile.NewProjectile(projectile.Center, projDir, ProjectileID.IchorSplash, projectile.damage, projectile.knockBack / 4, Main.myPlayer);
+				Projectile.NewProjectile(projectile.Center, projDir, ProjectileID.IchorSplash, projectile.damage / 2, projectile.knockBack / 4, Main.myPlayer);
 			}
 		}
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit) {
