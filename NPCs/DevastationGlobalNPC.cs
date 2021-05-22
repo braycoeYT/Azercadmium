@@ -83,7 +83,7 @@ namespace Azercadmium.NPCs
 							npc.life += damage;
 							npc.HealEffect(damage, true);
 						}
-						else if (projectile.penetrate == -1) {
+						else if (projectile.penetrate == -1 || projectile.type == ProjectileID.GreenLaser || projectile.type == ProjectileID.WaterBolt) {
 							npc.life += damage / 2;
 							npc.HealEffect(damage / 2, true);
 						}
@@ -96,8 +96,8 @@ namespace Azercadmium.NPCs
 							npc.HealEffect(damage / 4, true);
 						}
 						else if (projectile.penetrate >= 2) {
-							npc.life += 1;
-							npc.HealEffect(1, true);
+							npc.life += damage / 6;
+							npc.HealEffect(damage / 6, true);
 						}
 					break;
 				}

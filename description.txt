@@ -19,12 +19,15 @@ Note: The wiki is really outdated.
 ~A secret unobtainable joke boss
 ~[i:458]Cross content with: Asteri and Cacti and More 2 Mod.
 
-Update V0.2.10.2: Update
-~Nerfed Pulverizer.
-~Nerfed True Dusk Cleaver.
-~Added Blackout and Shadowbang.
-~Updated description.
-(Okay I'm around halfway done with the TT reworks)
+Update V0.2.10.3: Update
+~Dirtball's summon now requires a Green Carnallite Bar.
+~Changed Shadowbang's use sound.
+~Titanic Energy is no longer affected by gravity.
+~Resprited Titan Tankorb's Treasure Bag.
+~Nerfed Artifact of Fire.
+~The Space Gun and Water Bolt now fare worse against Devastation EoW.
+~Low piercing projectiles are now fare worse against Devastation EoW.
+(TT reworks: >50% done)
 
 Credits:
 

@@ -1,3 +1,4 @@
+using Azercadmium.Items.Carnallite;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -35,6 +36,7 @@ namespace Azercadmium.Items.Dirtball
 			recipe.AddIngredient(ItemID.MudBlock, 5);
 			recipe.AddIngredient(ItemID.Gel, 3);
 			recipe.AddIngredient(ItemID.Lens);
+			recipe.AddIngredient(ModContent.ItemType<GreenCarnalliteBar>());
 			recipe.AddTile(TileID.DemonAltar);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

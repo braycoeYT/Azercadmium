@@ -14,8 +14,8 @@ namespace Azercadmium.Projectiles.Titan
 			projectile.width = 50;
 			projectile.height = 50;
 			projectile.aiStyle = 1;
-			projectile.hostile = false;
-			projectile.friendly = true;
+			projectile.hostile = true;
+			projectile.friendly = false;
 			projectile.timeLeft = 120;
 			projectile.ignoreWater = true;
 			projectile.tileCollide = false;

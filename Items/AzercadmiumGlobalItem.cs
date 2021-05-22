@@ -316,8 +316,8 @@ namespace Azercadmium.Items
 				pos.Y = player.position.Y - 400;
 				Projectile.NewProjectile(pos, new Vector2(Main.rand.NextFloat(-2, 2), 10), ProjectileID.FallingStar, 40, 2, Main.myPlayer);
 			}
-			if (p.artifactofFire && Main.rand.Next(35) == 0)
-				Projectile.NewProjectile(player.Center, player.DirectionTo(Main.MouseWorld) * 10f, 15, 25, 2f, Main.myPlayer);
+			if (p.artifactofFire && Main.rand.Next(45) == 0)
+				Projectile.NewProjectile(player.Center, player.DirectionTo(Main.MouseWorld) * 10f, 15, 20, 2f, Main.myPlayer);
 		}
 		static int shootCount;
 		public override bool Shoot(Item item, Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack) {

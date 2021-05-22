@@ -239,7 +239,7 @@ namespace Azercadmium
 		}
 		public override void PreUpdate() {
 			if (artifactofFire && player.velocity != new Vector2(0, 0) && Main.GameUpdateCount % 5 == 0) {
-				Projectile.NewProjectile(player.Center, new Vector2(0, 0), ModContent.ProjectileType<FlameTrailEyeFriendly>(), 30, 0.5f, Main.myPlayer);
+				Projectile.NewProjectile(player.Center, new Vector2(0, 0), ModContent.ProjectileType<FlameTrailEyeFriendly>(), 13, 0.5f, Main.myPlayer);
 			}
 		}
 		public override bool CustomBiomesMatch(Player other) 

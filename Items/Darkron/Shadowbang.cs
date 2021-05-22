@@ -24,7 +24,7 @@ namespace Azercadmium.Items.Darkron
 			item.noMelee = true;
 			item.ranged = true;
 			item.useAmmo = AmmoID.Bullet;
-			item.UseSound = SoundID.Item11;
+			item.UseSound = SoundID.Item92;
 			item.autoReuse = true;
 			item.rare = ItemRarityID.Pink;
 		}
