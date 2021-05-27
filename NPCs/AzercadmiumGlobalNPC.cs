@@ -224,6 +224,10 @@ namespace Azercadmium.NPCs
 				if (Main.rand.NextFloat() < .2f)
 					Item.NewItem(npc.getRect(), ModContent.ItemType<Items.Lihzahrd.LihzahrdLance>());
 			}
+			if (npc.type == NPCID.DukeFishron) {
+				if (Main.rand.NextFloat() < .15f)
+					Item.NewItem(npc.getRect(), ModContent.ItemType<Items.Duke.OceanPiercer>());
+			}
 			if (npc.type == NPCID.MossHornet) {
 				if (Main.rand.Next(2) == 0)
 					Item.NewItem(npc.getRect(), ItemID.Stinger, Main.rand.Next(1, 4));

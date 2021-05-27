@@ -20,7 +20,7 @@ namespace Azercadmium.Items.Underworld
 			item.useTime = 38;
 			item.knockBack = 5.4f;
 			item.rare = ItemRarityID.Orange;
-			item.value = Item.sellPrice(0, 0, 54);
+			item.value = Item.sellPrice(0, 0, 52);
 			item.ranged = true;
 			item.noMelee = true;
 			item.noUseGraphic = true;

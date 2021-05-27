@@ -2,7 +2,7 @@ Welcome to the Azercadmium Mod! We’ll spare you the whole generic description 
 Note: The wiki is really outdated.
 
 [i:3123] Stats:
-~286 Items
+~276 Items
 ~4 Bosses:
 ^1 Prehardmode Boss
 ^3 Hardmode Bosses
@@ -19,15 +19,11 @@ Note: The wiki is really outdated.
 ~A secret unobtainable joke boss
 ~[i:458]Cross content with: Asteri and Cacti and More 2 Mod.
 
-Update V0.2.10.3: Update
-~Dirtball's summon now requires a Green Carnallite Bar.
-~Changed Shadowbang's use sound.
-~Titanic Energy is no longer affected by gravity.
-~Resprited Titan Tankorb's Treasure Bag.
-~Nerfed Artifact of Fire.
-~The Space Gun and Water Bolt now fare worse against Devastation EoW.
-~Low piercing projectiles are now fare worse against Devastation EoW.
-(TT reworks: >50% done)
+Update V0.2.10.4: Update
+~Removed all Ore Spears and Ore Yoyos.
+~Added Ocean Piercer, a new spear dropped by Duke Fishron.
+~Added Fiery Pointsword, a special sword that is pointed at the cursor and can be waved at enemies (it is more of a spear than a sword coding-wise).
+(TT Reworks: ~75% done?)
 
 Credits:
 

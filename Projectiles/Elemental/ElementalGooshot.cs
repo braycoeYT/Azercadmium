@@ -25,7 +25,7 @@ namespace Azercadmium.Projectiles.Elemental
 			if (Main.rand.NextFloat() < .5f)
 				target.AddBuff(BuffID.Frostburn, 60 * Main.rand.Next(5, 11), false);
 		}
-		public override void OnHitPlayer(Player target, int damage, bool crit) {
+		public override void OnHitPvp(Player target, int damage, bool crit) {
 			if (Main.rand.NextFloat() < .5f)
 				target.AddBuff(BuffID.OnFire, 60 * Main.rand.Next(5, 11), false);
 			if (Main.rand.NextFloat() < .5f)
