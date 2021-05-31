@@ -57,12 +57,14 @@ namespace Azercadmium
 		public bool KinoiteRover;
 		public bool gooeySetBonus;
 		public bool extraNeonSlimyCore;
+		public bool titanFragment;
 		int numberShot = 0;
 		public int upgradeHearts;
 		public int upgradeStars;
 		public int playerTimer;
 		public int healHurt;
 		public int javelinPenetration;
+		public int hurtCounter;
 		public override void ResetEffects()
 		{
 			MarblePet = false;
@@ -103,9 +105,9 @@ namespace Azercadmium
 			KinoiteRover = false;
 			gooeySetBonus = false;
 			extraNeonSlimyCore = false;
+			titanFragment = false;
 			player.statLifeMax2 += upgradeHearts * 25;
 			player.statManaMax2 += upgradeStars * 50;
-			playerTimer = 0;
 			healHurt = 0;
 			javelinPenetration = 0;
 		}
@@ -114,6 +116,8 @@ namespace Azercadmium
 			slimyOoze = false;
 			outofBreath = false;
 			shroomed = false;
+			hurtCounter = 0;
+			playerTimer = 0;
 		}
 		int badRegenTimer;
 		public override void UpdateBadLifeRegen() {
@@ -458,6 +462,7 @@ namespace Azercadmium
 			return true;
 		}
 		public override void Hurt(bool pvp, bool quiet, double damage, int hitDirection, bool crit) {
+			hurtCounter++;
 			if (extraNeonSlimyCore) {
 				if (damage > 19)
 				{
@@ -519,8 +524,7 @@ namespace Azercadmium
 				player.HealEffect(1, true);
 			}
 		}
-		public override void PostUpdateBuffs()
-		{
+		public override void PostUpdateBuffs() {
 			/*if (player.HasBuff(BuffID.ChaosState) && NPC.CountNPCS(ModContent.NPCType<NPCs.Minibosses.XenicAcidpumper>()) > 0)
 			player.KillMe(PlayerDeathReason.ByCustomReason(player.name + "'s mind melted."), 9999, 0, false);
 			if (gemstoneMagic)
@@ -528,6 +532,8 @@ namespace Azercadmium
 				if (player.statLife / 4 < player.statLifeMax2)
 					player.manaCost -= 0.75f;
 			}*/
+			if (Main.GameUpdateCount % 180 == 90 && player.ownedProjectileCounts[ProjectileType<Projectiles.Titan.TitanFragment>()] < 5)
+				Projectile.NewProjectile(player.position, new Vector2(), ProjectileType<Projectiles.Titan.TitanFragment>(), 30, 1f, Main.myPlayer);
 		}
 		public override void PreUpdateBuffs() {
 			/*if (webdriver) {

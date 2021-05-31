@@ -27,7 +27,17 @@ namespace Azercadmium.Items.Titan
 			player.QuickSpawnItem(ItemID.TitaniumBar, Main.rand.Next(10, 21));
 			player.QuickSpawnItem(ItemID.SoulofLight, Main.rand.Next(5, 16));
 			player.QuickSpawnItem(ItemID.SoulofNight, Main.rand.Next(5, 16));
-			player.QuickSpawnItem(ModContent.ItemType<Items.Titan.TitanicEnergy>(), Main.rand.Next(70, 141));
+			player.QuickSpawnItem(ItemType<TitanicEnergy>(), Main.rand.Next(70, 141));
+			int rand = Main.rand.Next(3);
+			switch (rand) {
+				case 0: player.QuickSpawnItem(ItemType<TitansExecutioner>());
+					break;
+				case 1: player.QuickSpawnItem(ItemType<TitansGatlibow>());
+					break;
+				case 2: player.QuickSpawnItem(ItemType<TitansEnergizer>());
+					break;
+			}
+			player.QuickSpawnItem(ItemType<TitanFragment>());
 
 			//Dev sets Azercadmium
 			if (Main.rand.NextFloat() < .05f) {

@@ -118,7 +118,7 @@ namespace Azercadmium.NPCs.Dirtball
                 Timer++;
                 if (Timer % 10 == 0 && GetInstance<AzercadmiumConfig>().dirtboiCries)
                 {
-                    Projectile.NewProjectile(npc.Center.X + Main.rand.Next(-30, 31), npc.Center.Y, 0, 10, mod.ProjectileType("DirtboiTears"), 0, 0f, Main.myPlayer, 0f, 0f);
+                    Projectile.NewProjectile(npc.Center.X + Main.rand.Next(-15, 16), npc.Center.Y + 20, 0, 10, mod.ProjectileType("DirtboiTears"), 0, 0f, Main.myPlayer, 0f, 0f);
                 }
                 if (Timer > 180 || !GetInstance<AzercadmiumConfig>().dirtboiCries)
                     npc.velocity.Y = 10;

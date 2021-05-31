@@ -4,11 +4,11 @@ using Terraria.ModLoader;
 
 namespace Azercadmium.Items.Titan
 {
-	public class AdamantiteEnergyCore : ModItem
+	public class TitansCapsule : ModItem
 	{
 		public override void SetStaticDefaults() {
-			DisplayName.SetDefault("Adamantite Energy Core");
-			Tooltip.SetDefault("The energy core is greatly empowered by the essence of the skies\nSummons the Titan Tankorb");
+			DisplayName.SetDefault("Titan's Capsule");
+			Tooltip.SetDefault("The energy capsure is greatly empowered by the essence of the skies\nSummons the Titan Tankorb");
 			ItemID.Sets.SortingPriorityBossSpawns[item.type] = 5;
 		}
 		public override void SetDefaults() {
@@ -33,6 +33,14 @@ namespace Azercadmium.Items.Titan
 		public override void AddRecipes() {
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.AdamantiteBar, 3);
+			recipe.AddIngredient(ItemID.SoulofFlight, 3);
+			recipe.AddIngredient(ModContent.ItemType<Electrolight.Electrolight>(), 5);
+			recipe.AddTile(TileID.MythrilAnvil);
+			recipe.SetResult(this);
+			recipe.AddRecipe();
+
+			recipe = new ModRecipe(mod);
+			recipe.AddIngredient(ItemID.TitaniumBar, 3);
 			recipe.AddIngredient(ItemID.SoulofFlight, 3);
 			recipe.AddIngredient(ModContent.ItemType<Electrolight.Electrolight>(), 5);
 			recipe.AddTile(TileID.MythrilAnvil);

@@ -241,10 +241,11 @@ namespace Azercadmium
 					WorldGen.TileRunner(x, y, WorldGen.genRand.Next(3, 8), WorldGen.genRand.Next(2, 8), ModContent.TileType<GreenCarnalliteOre>());
 				}
 			}
-			for (int k = 0; k < (int)((Main.maxTilesX * Main.maxTilesY) * 6E-05); k++) {
-				int x = WorldGen.genRand.Next(0, Main.maxTilesX);
-				int y = WorldGen.genRand.Next((int)WorldGen.worldSurfaceLow, Main.maxTilesY); 
-				WorldGen.TileRunner(x, y, WorldGen.genRand.Next(3, 6), WorldGen.genRand.Next(2, 6), mod.TileType("ZincOre"));
+			for (int num = 0; num < (int)((double)(Main.maxTilesX * Main.maxTilesY) * 0.00006); num++) { //0.00008
+				WorldGen.TileRunner(WorldGen.genRand.Next(0, Main.maxTilesX), WorldGen.genRand.Next((int)WorldGen.worldSurfaceHigh, (int)WorldGen.rockLayerHigh), (double)WorldGen.genRand.Next(3, 6), WorldGen.genRand.Next(3, 6), ModContent.TileType<Tiles.Zinc.ZincOre>(), false, 0f, 0f, false, true);
+			}
+			for (int num2 = 0; num2 < (int)((double)(Main.maxTilesX * Main.maxTilesY) * 0.00015); num2++) { //0.0002
+				WorldGen.TileRunner(WorldGen.genRand.Next(0, Main.maxTilesX), WorldGen.genRand.Next((int)WorldGen.rockLayerLow, Main.maxTilesY), (double)WorldGen.genRand.Next(4, 9), WorldGen.genRand.Next(4, 8), ModContent.TileType<Tiles.Zinc.ZincOre>(), false, 0f, 0f, false, true);
 			}
 		}
 		/*int sizeBonus;

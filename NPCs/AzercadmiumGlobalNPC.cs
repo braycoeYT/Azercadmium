@@ -143,11 +143,32 @@ namespace Azercadmium.NPCs
 			}
 		}
 		int Timer;
+		bool prevNoGrav;
 		public override void AI(NPC npc) {
+			if (Timer == 0)
+				prevNoGrav = npc.noGravity;
 			if (GetInstance<AzercadmiumConfig>().nebulaAttack && npc.type == NPCID.LunarTowerNebula) {
 				Timer++;
 				if ((Main.expertMode == true && Timer % 300 == 0) || (!Main.expertMode && Timer % 360 == 0))
 					Projectile.NewProjectile(npc.Center, new Vector2(Main.rand.NextFloat(-2, 3), -20), ProjectileID.NebulaSphere, 37, 1f);
+			}
+			int projectileCount;
+			for (projectileCount = 0; projectileCount < Main.maxProjectiles; projectileCount++) {
+				if (Main.projectile[projectileCount].active && Main.projectile[projectileCount].type == ProjectileType<Projectiles.Titan.TitansEnergizer>()) {
+					if (Vector2.Distance(npc.Center, Main.projectile[projectileCount].Center) < 120 && !npc.boss && !npc.townNPC && npc.type != NPCID.TargetDummy) {
+						npc.noGravity = true;
+						if (npc.Center.X > Main.projectile[projectileCount].Center.X && npc.velocity.X > -15)
+							npc.velocity.X -= 3;
+						if (npc.Center.X < Main.projectile[projectileCount].Center.X && npc.velocity.X < 15)
+							npc.velocity.X += 3;
+						if (npc.Center.Y > Main.projectile[projectileCount].Center.Y && npc.velocity.Y > -15)
+							npc.velocity.Y -= 3;
+						if (npc.Center.Y < Main.projectile[projectileCount].Center.Y && npc.velocity.Y < 15)
+							npc.velocity.Y += 3;
+					}
+					else npc.noGravity = prevNoGrav;
+				}
+				else npc.noGravity = prevNoGrav;
 			}
 		}
 		public override void NPCLoot(NPC npc) {

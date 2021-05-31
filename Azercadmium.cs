@@ -38,10 +38,10 @@ namespace Azercadmium
 					this,
 					"$Mods.Azercadmium.NPCName.TitanTankorb",
 					(Func<bool>)(() => AzercadmiumWorld.downedTitan),
-					ModContent.ItemType<Items.Titan.TitaniumEnergyCore>(),
+					ModContent.ItemType<Items.Titan.TitansCapsule>(),
 					new List<int> { ModContent.ItemType<Items.Titan.TitanicEnergy>() }, //collectables
 					new List<int> { ModContent.ItemType<Items.Titan.TitanicEnergy>() }, //other
-					$"Use a [i:{ModContent.ItemType<Items.Titan.AdamantiteEnergyCore>()}] or [i:{ModContent.ItemType<Items.Titan.TitaniumEnergyCore>()}]."
+					$"Use a [i:{ModContent.ItemType<Items.Titan.TitansCapsule>()}]."
 				);
 				bossChecklist.Call(
 					"AddBoss",

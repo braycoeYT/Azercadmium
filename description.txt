@@ -2,11 +2,11 @@ Welcome to the Azercadmium Mod! We’ll spare you the whole generic description 
 Note: The wiki is really outdated.
 
 [i:3123] Stats:
-~276 Items
+~280 Items
 ~4 Bosses:
 ^1 Prehardmode Boss
-^3 Hardmode Bosses
-~32 total NPCs
+^3 Hardmode Bosses (2 bosses left to rework)
+~33 total NPCs
 ~2 Town NPCs
 ~50 Tiles
 ~32 Buffs
@@ -19,11 +19,14 @@ Note: The wiki is really outdated.
 ~A secret unobtainable joke boss
 ~[i:458]Cross content with: Asteri and Cacti and More 2 Mod.
 
-Update V0.2.10.4: Update
-~Removed all Ore Spears and Ore Yoyos.
-~Added Ocean Piercer, a new spear dropped by Duke Fishron.
-~Added Fiery Pointsword, a special sword that is pointed at the cursor and can be waved at enemies (it is more of a spear than a sword coding-wise).
-(TT Reworks: ~75% done?)
+Update V0.3: Update
+Ever since work on the next big update was started, the mod began to die. The changes started as unnoticeable but now the mod is in the crippled state it is now. Maybe someday the mod will return to the good times, but for now, no more big updates. The content planned for the original 0.3 will either be scrapped or put in future updates.
+~Resprited Ocean Piercer.
+~Added Palladium Chair.
+~Zinc ore now generates at about the same rate as Lead ore.
+~Dirtboi's tears are now more accurately positioned.
+~Reworked Titan Tankorb.
+(2 bosses left to rework)
 
 Credits:
 
