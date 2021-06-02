@@ -44,7 +44,7 @@ namespace Azercadmium.Projectiles.Titan
 		float spinRotation = Main.rand.NextFloat(0, 360);
 		float spinRotationSpeed = Main.rand.NextFloat(0.6f, 2.2f);
 		bool check;
-		NPC target;
+		NPC target = Main.npc[0];
 		public override void AI() {
 			Timer++;
 			AzercadmiumPlayer p = Main.player[projectile.owner].GetModPlayer<AzercadmiumPlayer>();
@@ -60,6 +60,7 @@ namespace Azercadmium.Projectiles.Titan
 					projectile.rotation = angle + (56.25f * (float)Math.PI); //45 = halfway?
 					aiType = ProjectileID.Bullet;
 					projectile.penetrate = -1;
+					check = true;
 				}
 				if (Timer == 150) {
 					projectile.rotation = angle + (56.25f * (float)Math.PI); //45 = halfway?

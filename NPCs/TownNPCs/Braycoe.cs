@@ -101,32 +101,35 @@ namespace Azercadmium.NPCs.TownNPCs
 		public override string GetChat()
 		{
 			WeightedRandom<string> chat = new WeightedRandom<string>();
-				chat.Add("No, I will not turn into a green slime for you.");
-				chat.Add("I can turn into any slime, name one and I could do it.");
-				chat.Add("You won the lottery! No, not really.", 0.001);
-				chat.Add("Can my house be a bit bigger? Oh, never mind...");
-				chat.Add("Oh, you want me to defend you now. Do you want me to bake cookies too?");
-				chat.Add("Destroy the dark power of this world!");
-				chat.Add("Get stronger and I will sell stronger items and reveal more of my power.");
-				chat.Add("Lemonade Tea is an excellent drink!");
-				chat.Add("If you think about it, blackberries are just very small grapes.");
-				chat.Add("Have you happened to see any Azercadmium Ore anywhere? No?");
-				chat.Add("Have you ever heard of a Starlite Crystal..? Never mind.");
-				chat.Add("Yes, being a slime is fun.");
-				chat.Add("Have you seen my slimebender anywhere?");
-				chat.Add("If you get your hands on Azercadmium, you would probably be one of the greatest terrarians of all time. Or a cheater.");
-				chat.Add("I wonder what it would be like to eat a pumpkin full of lava...");
-				chat.Add("No, I don't care that I break the fourth wall sometimes!");
-				if (AzercadmiumWorld.devastation)
-					chat.Add("Devastation mode is very WIP, I hope you like it so far.");
-				if (Main.raining)
-					chat.Add("Hey, since I generate slime a lot faster while its raining, I'll sell gel to you for a discount price! Buy some now!", 6);
-			    if (NPC.downedSlimeKing == true)
-					chat.Add("That King Slime is such a loser, thanks for breaking him into hundreds of normal size slimes.");
-				if (Main.hardMode && !NPC.downedMechBossAny)
-					chat.Add("Early hardmode getting the best of you?", 2);
-				if (NPC.downedMoonlord)
-					chat.Add("You defeated the Moon Lord? It appears you have broken the Moon Seal, and new things will happen in your world. Of course, that is for a future update.", 1.5);
+			chat.Add("No, I will not turn into a green slime for you.");
+			chat.Add("I can turn into any slime, name one and I could do it.");
+			chat.Add("You won the lottery! No, not really.", 0.001);
+			chat.Add("Can my house be a bit bigger? Oh, never mind...");
+			chat.Add("Destroy the dark power of this world!");
+			chat.Add("Get stronger and I will sell stronger items and reveal more of my power.");
+			chat.Add("Lemonade Tea is an excellent drink!");
+			chat.Add("If you think about it, blackberries are just very small grapes.");
+			chat.Add("Have you happened to see any Azercadmium Ore anywhere? No?");
+			chat.Add("Have you ever heard of a Starlite Crystal..? Never mind.");
+			chat.Add("Yes, being a slime is fun.");
+			chat.Add("Have you seen my slimebender anywhere?");
+			chat.Add("If you get your hands on Azercadmium, you would probably be one of the greatest terrarians of all time. Or a cheater.");
+			chat.Add("No, I don't care that I break the fourth wall sometimes!");
+			chat.Add("I miss the good old days, when it was actually fun to develop Azercadmium.", 0.1f);
+			chat.Add("Azercadmium's slowly disappearing, you know.", 0.1f);
+			chat.Add("What..?", 0.5);
+			chat.Add("What?", 0.5);
+			chat.Add("What.", 0.5);
+			if (AzercadmiumWorld.devastation)
+				chat.Add("Devastation mode is very WIP, I hope you like it so far.", 2);
+			if (Main.raining)
+				chat.Add("Hey, since I generate slime a lot faster while its raining, I'll sell gel to you for a discount price! Buy some now!", 6);
+		    if (NPC.downedSlimeKing == true)
+				chat.Add("That King Slime is such a loser, thanks for breaking him into hundreds of normal size slimes.");
+			if (Main.hardMode && !NPC.downedMechBossAny)
+				chat.Add("Early hardmode getting the best of you?", 2);
+			if (NPC.downedMoonlord)
+				chat.Add("You defeated the Moon Lord? It appears you have broken the Moon Seal, and new things will happen in your world. Of course, that is for a future update.", 1.5);
 			return chat;
 		}
 		int Timer;
@@ -163,9 +166,10 @@ namespace Azercadmium.NPCs.TownNPCs
 					challenge.Add("Nah.");
 					challenge.Add("Go wait for V1.0 to release.");
 					challenge.Add("Nope.");
-					challenge.Add("Convince me the bring back the harp subclass first.");
+					challenge.Add("Convince me to bring back the harp subclass first.");
 					challenge.Add("Go away.");
 					challenge.Add("Are you kidding me?");
+					challenge.Add("Make developing Azercadmium fun again.");
 					Main.npcChatText = challenge;
 				}
 			}

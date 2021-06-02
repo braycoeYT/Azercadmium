@@ -10,7 +10,6 @@ namespace Azercadmium.Items.Titan
 		public override void SetStaticDefaults() {
 			Main.RegisterItemAnimation(item.type, new DrawAnimationVertical(5, 6)); //first is speed, second is amount of frames
 			Tooltip.SetDefault("Can be used to convert basic hardmode ores into their alts");
-			ItemID.Sets.AnimatesAsSoul[item.type] = true;
 			ItemID.Sets.ItemIconPulse[item.type] = true;
 			ItemID.Sets.ItemNoGravity[item.type] = true;
 		}

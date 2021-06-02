@@ -29,7 +29,11 @@ namespace Azercadmium.NPCs.Titan
 			npc.aiStyle = -1;
 			npc.noGravity = true;
 			npc.boss = true;
-			music = MusicID.Boss2;
+			Mod azercadmiumMusic = ModLoader.GetMod("AzercadmiumMusic");
+			if (azercadmiumMusic != null) 
+				music = azercadmiumMusic.GetSoundSlot(SoundType.Music, "Sounds/Music/Orbas");
+			else 
+				music = MusicID.Boss2;
 			npc.netAlways = true;
 			npc.noTileCollide = true;
 			npc.lavaImmune = true;

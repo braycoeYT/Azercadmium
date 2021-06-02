@@ -1,15 +1,17 @@
 Welcome to the Azercadmium Mod! We’ll spare you the whole generic description and cut straight to the chase: This mod doesn’t strive to fit in with vanilla, and it’s more of a giant passion project, where we add what we think is interesting. Have fun!
-Note: The wiki is really outdated.
+DON'T USE THE WIKI! And make sure to get the music mod for music.
+
+Looking for help/support/feedback.
 
 [i:3123] Stats:
-~280 Items
+~281 Items
 ~4 Bosses:
 ^1 Prehardmode Boss
 ^3 Hardmode Bosses (2 bosses left to rework)
 ~33 total NPCs
 ~2 Town NPCs
-~50 Tiles
-~32 Buffs
+~51 Tiles
+~33 Buffs
 ~2 Subclasses (Blowpipes/Dart Guns and Javelins)
 ~3 Custom Soundtracks (get the Music mod)
 ~1 Unfinished Game Mode + Leveling System (Devastation Mode and Devastation Level)
@@ -19,37 +21,30 @@ Note: The wiki is really outdated.
 ~A secret unobtainable joke boss
 ~[i:458]Cross content with: Asteri and Cacti and More 2 Mod.
 
-Update V0.3: Update
-Ever since work on the next big update was started, the mod began to die. The changes started as unnoticeable but now the mod is in the crippled state it is now. Maybe someday the mod will return to the good times, but for now, no more big updates. The content planned for the original 0.3 will either be scrapped or put in future updates.
-~Resprited Ocean Piercer.
-~Added Palladium Chair.
-~Zinc ore now generates at about the same rate as Lead ore.
-~Dirtboi's tears are now more accurately positioned.
-~Reworked Titan Tankorb.
-(2 bosses left to rework)
+Update V0.3.0.1: Update
+~Gave Titan Tankorb a theme.
+~Added Slime Pheromones.
+~Updated Braycoe's chat messages.
+~Fixed many bugs involving Titan Tankorb.
+~Updated credits.
 
 Credits:
 
-Owner:
-[i:560]Braycoe (Owner, Coder, Minor Spriter, Minor Wiki)
+Active Devs:
+Braycoe (Owner, Coder, Minor Spriter, Minor Wiki)
+FunkItOut (Spriter)
+Skymanisbtman (Composer, Minor Spriter)
 
-Spriters:
-FunkItOut
-That One Book Man (Inactive)
-HBDeus (Inactive)
-Pufferfish77 (Inactive)
-
-Coders:
-Woodio
-
-Composer (get the Music mod):
-Skymanisbtman (Also Inactive Spriter)
+Inactive Devs:
+HBDeus (Spriter)
+Pufferfish77 (Spriter)
+Woodio (Coder)
 
 Quit:
 CrazySapling1 (Spriter)
 Koolaidlemonade (Spriter)
 ULTIMATEDQVID (Spriter)
-Nalyddd (Coder and Minor Spriter)
+That One Book Man (Spriter)
 Astrum (Spriter)
 
 Minor Help:
@@ -68,5 +63,5 @@ Le Supreme Slimelad (Minor Lore)
 Unboxing Video (Minor Wiki)
 Deranged Lynx (Minor Wiki and Tactical Megaphone use sound)
 Max (Minor Spriter)
-Mick (Wiki)
+Mick (Wiki and Minor Coder)
 Biscuiteer (Minor Spriter)

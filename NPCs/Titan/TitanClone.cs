@@ -31,16 +31,14 @@ namespace Azercadmium.NPCs.Titan
 				npc.buffImmune[k] = true;
 			}
 			npc.dontTakeDamage = true;
-			npc.boss = true;
+			//npc.boss = true;
 			npc.netAlways = true;
 			npc.lavaImmune = true;
 			music = MusicID.Boss2;
         }
 		public override void ScaleExpertStats(int numPlayers, float bossLifeScale) {
-            npc.lifeMax = 30000 + (numPlayers * 3000);
             npc.damage = 96;
 			if (AzercadmiumWorld.devastation) {
-				npc.lifeMax = 45000 + (numPlayers * 4500);
 				npc.damage = 144;
 			}
         }
