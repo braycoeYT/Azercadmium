@@ -300,6 +300,7 @@ namespace Azercadmium
                     CarnivorousPlant.chainTexture[i] = ModContent.GetTexture("Azercadmium/NPCs/Chain" + i);
                 }*/
                 chainTexture = new Texture2D[3];
+            if (Main.netMode == NetmodeID.SinglePlayer) { //HELP
                 for (int i = 0; i < 3; i++)
                 {
                     chainTexture[i] = ModContent.GetTexture("Azercadmium/Textures/Chain" + i);
@@ -351,6 +352,7 @@ namespace Azercadmium
                 //GameShaders.Armor.BindShader(ModContent.ItemType<LoudDye>(), new ArmorShaderData(NoiseDye, "NoiseTesting").UseColor(Color.LightSalmon).UseSecondaryColor(Color.Blue).UseImage("Terraria/Misc/Noise"));
                 VertexShader = GetEffect("Effects/Trailshader");
             }
+        }
 		public override void PostSetupContent()
 		{
 			Mod bossChecklist = ModLoader.GetMod("BossChecklist");

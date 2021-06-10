@@ -35,6 +35,9 @@ Update V0.3.0.2: Ember Glades Update
 ~Devastation Eye of Cthulhu now has a cap for spawning Dreamin Eyes.
 (Wow this update adds 46 items)
 
+Update V0.3.0.3: Bug Fixes
+~Fixed a bug that caused multiplayer to not load.
+
 Credits:
 
 Active Devs:
