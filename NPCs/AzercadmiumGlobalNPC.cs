@@ -277,6 +277,10 @@ namespace Azercadmium.NPCs
 				if (Main.rand.Next(20) == 0)
 					Item.NewItem(npc.getRect(), ItemType<Items.Goblins.ChaosCaster>());
 			}
+			if (npc.type == NPCID.BoneSerpentHead) {
+				if (NPC.downedBoss3)
+				Item.NewItem(npc.getRect(), ItemID.Bone, Main.rand.Next(3) + 1);
+			}
 			/*//blowpipes:
 			if (Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)].HasItem(mod.ItemType("FrostBlowpipe")))
 				if (npc.type == NPCID.IceSlime || npc.type == NPCID.SpikedIceSlime || npc.type == mod.NPCType("IcyDiscus")) {

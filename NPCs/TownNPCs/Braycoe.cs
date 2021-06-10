@@ -115,11 +115,12 @@ namespace Azercadmium.NPCs.TownNPCs
 			chat.Add("Have you seen my slimebender anywhere?");
 			chat.Add("If you get your hands on Azercadmium, you would probably be one of the greatest terrarians of all time. Or a cheater.");
 			chat.Add("No, I don't care that I break the fourth wall sometimes!");
-			chat.Add("I miss the good old days, when it was actually fun to develop Azercadmium.", 0.1f);
-			chat.Add("Azercadmium's slowly disappearing, you know.", 0.1f);
+			chat.Add("I miss the good old days...", 0.1f);
 			chat.Add("What..?", 0.5);
 			chat.Add("What?", 0.5);
 			chat.Add("What.", 0.5);
+			if (!Main.expertMode)
+				chat.Add("You should play expert mode, everything is cooler in expert mode.", 3);
 			if (AzercadmiumWorld.devastation)
 				chat.Add("Devastation mode is very WIP, I hope you like it so far.", 2);
 			if (Main.raining)

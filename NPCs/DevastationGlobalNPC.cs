@@ -1,3 +1,4 @@
+using Azercadmium.NPCs.Devastation;
 using Microsoft.Xna.Framework;
 using System;
 using Terraria;
@@ -260,6 +261,23 @@ namespace Azercadmium.NPCs
 						if (!(npc.ai[1] == 5f || npc.ai[1] == 6f)) {
 							npc.ai[0] += 2f;
 						}
+			if (Main.player[npc.target].statLife < 1)
+			{
+				npc.TargetClosest(true);
+				if (Main.player[npc.target].statLife < 1) {
+					if (AITimer2 == 0)
+					AITimer2++;
+				}
+				else
+				AITimer2 = 0;
+			}
+			if (AITimer2 >= 1) {
+                AITimer2++;
+                npc.noTileCollide = true;
+                npc.velocity.Y = -10f;
+                if (AITimer2 >= 450)
+                    npc.active = false;
+            }
 						break;
 					case NPCID.EyeofCthulhu:
 						Player target = Main.player[npc.target];
@@ -267,7 +285,7 @@ namespace Azercadmium.NPCs
 						AITimer++;
 						if (npc.ai[0] == 1 || npc.ai[0] == 2) {
 							AITimer2++;
-							if (AITimer2 % 60 == 5)
+							if (AITimer2 % 60 == 5 && (NPC.CountNPCS(ModContent.NPCType<DreaminEye>()) < 6))
 								NPC.NewNPC((int)npc.position.X, (int)npc.position.Y, mod.NPCType("DreaminEye"));
 							//fireballs everywhere while spin
 							if (AITimer2 % 10 == 0)
@@ -293,6 +311,7 @@ namespace Azercadmium.NPCs
 								AITimer3++;
 								if (AITimer3 >= 110f) {
 									AITimer3 = 0;
+									if (NPC.CountNPCS(ModContent.NPCType<DreaminEye>()) < 6)
 									NPC.NewNPC((int)npc.position.X, (int)npc.position.Y, mod.NPCType("DreaminEye"));
 								}
 							}

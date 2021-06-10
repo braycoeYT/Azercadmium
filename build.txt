@@ -1,7 +1,7 @@
 displayName = [c/0000FF:Azer][c/00C6FF:cad][c/00FFA6:mium] Mod (No Music)
 author = BraycoeYT and the Developers
-version = 0.3.0.1
+version = 0.3.0.2
 homepage = https://forums.terraria.org/index.php?threads/azercadmium-mod.97680/
-hideCode = true;
-hideResources = true;
-includeSource = false;
+hideCode = true
+hideResources = false
+includeSource = false

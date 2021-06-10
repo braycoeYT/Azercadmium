@@ -1,15 +1,30 @@
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using System;
 using Terraria;
 using Terraria.ModLoader;
 
 namespace Azercadmium.Helpers
 {
+    [Obsolete("Replaced with mod methods")]
     public static class DrawingHelper
     {
         public static SpriteEffects DirectionToSpriteEffects(int direction) => direction < 0 ? SpriteEffects.FlipHorizontally : SpriteEffects.None;
 
-        public static void WorldDraw(this SpriteBatch spriteBatch, string texture, Vector2 worldCoordinates, Rectangle? frame, Color color, float rotation = 0f, Vector2? origin = null, float scale = 1f, SpriteEffects effects = SpriteEffects.None, float layerDepth = 0f, Point maxFrames = default(Point), Point frameNumber = default(Point)) => spriteBatch.WorldDraw(ModContent.GetTexture(texture), worldCoordinates, frame, color, rotation, origin, scale, effects, layerDepth, maxFrames, frameNumber);
+        public static void BeginProjectileShaderDraw()
+        {
+            Main.spriteBatch.End();
+            Main.spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend, SamplerState.PointWrap, DepthStencilState.Default, RasterizerState.CullNone, null, Main.GameViewMatrix.ZoomMatrix);
+        }
+
+        public static void BeginProjectileDraw()
+        {
+            Main.spriteBatch.End();
+            Main.spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, Main.DefaultSamplerState, DepthStencilState.None, Main.instance.Rasterizer, null, Main.GameViewMatrix.TransformationMatrix);
+        }
+
+        public static void WorldDraw(this SpriteBatch spriteBatch, string texture, Vector2 worldCoordinates, Rectangle? frame, Color color, float rotation = 0f, Vector2? origin = null, float scale = 1f, SpriteEffects effects = SpriteEffects.None, float layerDepth = 0f, Point maxFrames = default(Point), Point frameNumber = default(Point)) 
+            => spriteBatch.WorldDraw(ModContent.GetTexture(texture), worldCoordinates, frame, color, rotation, origin, scale, effects, layerDepth, maxFrames, frameNumber);
 
         public static void WorldDraw(this SpriteBatch spriteBatch, Texture2D texture, Vector2 worldCoordinates, Rectangle? frame, Color color, float rotation = 0f, Vector2? origin = null, float scale = 1f, SpriteEffects effects = SpriteEffects.None, float layerDepth = 0f, Point maxFrames = default(Point), Point frameNumber = default(Point))
         {
@@ -41,13 +56,10 @@ namespace Azercadmium.Helpers
         }
 
         public static void TileDraw(Texture2D texture, int i, int j, Rectangle? frame, Color color, float rotation = 0f, Vector2 origin = default(Vector2), float scale = 1f, SpriteEffects effects = SpriteEffects.None, float layerDepth = 0f, Vector2 offset = default(Vector2))
-        { 
-            Tile tile = Main.tile[i, j];
+        {
             Vector2 zero = Main.drawToScreen ? Vector2.Zero : new Vector2(Main.offScreenRange, Main.offScreenRange);
-            int height = tile.frameY == 36 ? 18 : 16;
             Main.spriteBatch.Draw(texture, new Vector2(i * 16 - (int)Main.screenPosition.X, j * 16 - (int)Main.screenPosition.Y) + zero + offset, frame, color, rotation, origin, scale, effects, layerDepth);
         }
-
         public static void NPCAfterImageEffect(this NPC npc, Color? color = null, Rectangle? frame = null, float fadeMult = 0.9f)
         {
             color = color == null ? Lighting.GetColor(npc.Center.ToTileCoordinates().X, npc.Center.ToTileCoordinates().Y) : color;

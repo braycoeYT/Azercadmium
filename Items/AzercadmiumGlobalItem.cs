@@ -1,9 +1,11 @@
+using Azercadmium.Aaa;
 using Azercadmium.Items.Devastation;
 using Azercadmium.Prefixes;
 using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
+using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.Utilities;
 using static Terraria.ModLoader.ModContent;
@@ -12,6 +14,68 @@ namespace Azercadmium.Items
 {
 	public class AzercadmiumGlobalItem : GlobalItem
 	{
+		public static Item GetItem(int type, int stack = 1)
+        {
+            Item item = new Item();
+            item.SetDefaults(type);
+            item.stack = stack;
+            return item;
+        }
+
+        public static Item GetItem(short type, int stack = 1)
+        {
+            Item item = new Item();
+            item.SetDefaults(type);
+            item.stack = stack;
+            return item;
+        }
+
+        public static void AddDeveloperLine(List<TooltipLine> tooltips)
+        {
+            string text = Language.GetTextValue("Mods.Azercadmium.CommonText.DeveloperItem");
+            TooltipLine developer = new TooltipLine(Azercadmium.Instance, "Developer", text) { overrideColor = new Color(255, 0, 0) };
+            int index = tooltips.FindIndex(t => t.Name.Equals("ItemName") && t.mod.Equals("Terraria"));
+            if (index != -1)
+            {
+                tooltips.Insert(index + 1, developer);
+                return;
+            }
+            tooltips.Add(developer);
+        }
+
+        public static void AddDevastationLine(List<TooltipLine> tooltips)
+        {
+            string text = Language.GetTextValue("Mods.Azercadmium.CommonText.Devastation");
+            TooltipLine devastation = new TooltipLine(Azercadmium.Instance, "Devastation", text);
+            int index = tooltips.FindIndex(t => t.Name.Equals("SpecialPrice") && t.mod.Equals("Terraria"));
+            if (index != -1)
+            {
+                tooltips.Insert(index, devastation);
+                return;
+            }
+            index = tooltips.FindIndex(t => t.Name.Equals("Price") && t.mod.Equals("Terraria"));
+            if (index != -1)
+            {
+                tooltips.Insert(index, devastation);
+                return;
+            }
+            tooltips.Add(devastation);
+        }
+
+        public static void TileDefaults(Item item, int createTile, int style = 0, int maxStack = 999, int width = 14, int height = 14)
+        {
+            item.createTile = createTile;
+            item.placeStyle = style;
+            item.width = width;
+            item.height = height;
+            item.useStyle = ItemUseStyleID.SwingThrow;
+            item.useAnimation = 15;
+            item.useTime = 10;
+            item.maxStack = maxStack;
+            item.useTurn = true;
+            item.autoReuse = true;
+            item.consumable = true;
+        }
 		public override void ModifyTooltips(Item item, List<TooltipLine> tooltips) {
 			if (item.type == ItemID.MeteorSuit || item.type == ItemID.MeteorLeggings) {
 				TooltipLine line = new TooltipLine(mod, "Tooltip#0", "Increases ranged critcal strike chance by 5\nIncreases melee speed by 6%");
@@ -48,10 +112,7 @@ namespace Azercadmium.Items
 				}
 			}*/
 		}
-		public override void SetDefaults(Item item)
-		{
-			if (item.type == ItemID.PoisonDart)
-				item.damage = 4;
+		public override void SetDefaults(Item item) {
 			if (item.type == ItemID.Blowpipe)
 				item.damage = 10;
 			if (item.type == ItemID.Blowgun)
@@ -327,5 +388,24 @@ namespace Azercadmium.Items
 				Projectile.NewProjectile(position, new Vector2(speedX, speedY), ModContent.ProjectileType<Projectiles.Other.Bats.ExplosiveMarshmallow>(), (int)(item.damage * 1.25f), 2f, Main.myPlayer);
 			return true;
 		}
+		public override bool CanUseItem(Item item, Player player) {
+			return !Azercadmium.sTree && !player.ModPlayer().hoveringOverUI;
+		}
+		public override bool UseItem(Item item, Player player) {
+            Point mouseTileWorld = Main.MouseWorld.ToTileCoordinates();
+            if (Main.myPlayer == player.whoAmI) {
+                if (item.createTile == ModContent.TileType<Tiles.Ember.EmberGrass>()) {
+                    Tile tile = Framing.GetTileSafely(mouseTileWorld.X, mouseTileWorld.Y);
+                    if (tile.type == TileID.Ash) {
+                        Main.PlaySound(SoundID.Dig, player.position);
+                        Framing.GetTileSafely(mouseTileWorld.X, mouseTileWorld.Y).type = (ushort)ModContent.TileType<Tiles.Ember.EmberGrass>();
+                        WorldGen.TileFrame(mouseTileWorld.X, mouseTileWorld.Y, true, false);
+                        Azercadmium.NetTile(mouseTileWorld.X, mouseTileWorld.Y, 1);
+                        return true;
+                    }
+                }
+            }
+            return base.UseItem(item, player);
+        }
 	}
 }

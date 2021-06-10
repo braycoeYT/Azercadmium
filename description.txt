@@ -4,14 +4,15 @@ DON'T USE THE WIKI! And make sure to get the music mod for music.
 Looking for help/support/feedback.
 
 [i:3123] Stats:
-~281 Items
+~[i:172]A new biome: The Ember Glades! It can be found under the Jungle in the Underworld.
+~327 Items
 ~4 Bosses:
 ^1 Prehardmode Boss
 ^3 Hardmode Bosses (2 bosses left to rework)
-~33 total NPCs
+~41 total NPCs
 ~2 Town NPCs
-~51 Tiles
-~33 Buffs
+~67 Tiles
+~35 Buffs
 ~2 Subclasses (Blowpipes/Dart Guns and Javelins)
 ~3 Custom Soundtracks (get the Music mod)
 ~1 Unfinished Game Mode + Leveling System (Devastation Mode and Devastation Level)
@@ -21,12 +22,18 @@ Looking for help/support/feedback.
 ~A secret unobtainable joke boss
 ~[i:458]Cross content with: Asteri and Cacti and More 2 Mod.
 
-Update V0.3.0.1: Update
-~Gave Titan Tankorb a theme.
-~Added Slime Pheromones.
-~Updated Braycoe's chat messages.
-~Fixed many bugs involving Titan Tankorb.
+Update V0.3.0.2: Ember Glades Update
+~Added a new biome: The Ember Glades!
 ~Updated credits.
+~Added Worldgen Config.
+~Removed the poison dart damage nerf.
+~Increased Molten Blowpipe's use speed.
+~Bone Serpents now drop bones post-Skeletron.
+~Frost Daggerfish now counts as a javelin.
+~Added Ore Doors (hey it rhymes :D).
+~Devastation King Slime now can despawn easier.
+~Devastation Eye of Cthulhu now has a cap for spawning Dreamin Eyes.
+(Wow this update adds 46 items)
 
 Credits:
 
@@ -45,6 +52,7 @@ CrazySapling1 (Spriter)
 Koolaidlemonade (Spriter)
 ULTIMATEDQVID (Spriter)
 That One Book Man (Spriter)
+Anonymous Programmer (Coder and Minor Spriter)
 Astrum (Spriter)
 
 Minor Help:

@@ -1,3 +1,4 @@
+using Azercadmium.Aaa;
 using Azercadmium.Projectiles.Devastation;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -283,164 +284,17 @@ namespace Azercadmium
 		{
 			if ((Main.player[(int)Player.FindClosest(player.position, player.width, player.height)].ZoneDirtLayerHeight || Main.player[(int)Player.FindClosest(player.position, player.width, player.height)].ZoneRockLayerHeight) && Main.rand.NextFloat() < .05f)
 				caughtType = mod.ItemType("LabyrinthFish");
+			if (Main.player[(int)Player.FindClosest(player.position, player.width, player.height)].GetModPlayer<TAZPlayer>().ZoneEmberGlades) {
+				if (player.cratePotion) {
+					if (liquidType == 1 && Main.rand.NextFloat() < .1f && NPC.downedMechBossAny && worldLayer == 4)
+						caughtType = mod.ItemType("EmberCrate");
+				}
+				else {
+					if (liquidType == 1 && Main.rand.NextFloat() < .05f && NPC.downedMechBossAny && worldLayer == 4)
+						caughtType = mod.ItemType("EmberCrate");
+				}
+			}
 		}
-			/*if (Main.player[(int)Player.FindClosest(player.position, player.width, player.height)].GetModPlayer<AzercadmiumPlayer>().ZoneMicrobiome)
-			{
-				if (player.cratePotion)
-				{
-					if (liquidType == 0 && Main.rand.NextFloat() < .2f)
-					{
-						if (Main.hardMode)
-						{
-							caughtType = mod.ItemType("PlaguedCrate");
-						}
-						else
-						{
-							caughtType = mod.ItemType("BacterialCrate");
-						}
-					}
-				}
-				else
-				{
-					if (liquidType == 0 && Main.rand.NextFloat() < .1f)
-					{
-						if (Main.hardMode)
-						{
-							caughtType = mod.ItemType("PlaguedCrate");
-						}
-						else
-						{
-							caughtType = mod.ItemType("BacterialCrate");
-						}
-					}
-				}
-			}
-			/*if (Main.player[(int)Player.FindClosest(player.position, player.width, player.height)].ZoneOverworldHeight || Main.player[(int)Player.FindClosest(player.position, player.width, player.height)].ZoneDirtLayerHeight)
-			{
-				if (Main.hardMode)
-				{
-					if (player.cratePotion)
-					{
-						if (liquidType == 0 && Main.rand.NextFloat() < .025f)
-						{
-							caughtType = mod.ItemType("MushroomCrate");
-						}
-					}
-					else
-					{
-						if (liquidType == 0 && Main.rand.NextFloat() < .005f)
-						{
-							caughtType = mod.ItemType("MushroomCrate");
-						}
-					}
-				}
-				else
-				{
-					if (player.cratePotion)
-					{
-						if (liquidType == 0 && Main.rand.NextFloat() < .05f)
-						{
-							caughtType = mod.ItemType("MushroomCrate");
-						}
-					}
-					else
-					{
-						if (liquidType == 0 && Main.rand.NextFloat() < .01f)
-						{
-							caughtType = mod.ItemType("MushroomCrate");
-						}
-					}
-				}
-			}
-			if (Main.player[(int)Player.FindClosest(player.position, player.width, player.height)].ZoneGlowshroom)
-			{
-				if (Main.hardMode)
-				{
-					if (player.cratePotion)
-					{
-						if (liquidType == 0 && Main.rand.NextFloat() < .1f)
-						{
-							caughtType = mod.ItemType("GlowingMushroomCrate");
-						}
-					}
-					else
-					{
-						if (liquidType == 0 && Main.rand.NextFloat() < .05f)
-						{
-							caughtType = mod.ItemType("GlowingMushroomCrate");
-						}
-					}
-				}
-				else if (NPC.downedBoss1)
-				{
-					if (player.cratePotion)
-					{
-						if (liquidType == 0 && Main.rand.NextFloat() < .2f)
-						{
-							caughtType = mod.ItemType("GlowingMushroomCrate");
-						}
-					}
-					else
-					{
-						if (liquidType == 0 && Main.rand.NextFloat() < .1f)
-						{
-							caughtType = mod.ItemType("GlowingMushroomCrate");
-						}
-					}
-				}
-				if (player.cratePotion)
-				{
-					if (liquidType == 0 && Main.rand.NextFloat() < .02f)
-					{
-						caughtType = mod.ItemType("MushroomCrate");
-					}
-				}
-				else
-				{
-					if (liquidType == 0 && Main.rand.NextFloat() < .01f)
-					{
-						caughtType = mod.ItemType("MushroomCrate");
-					}
-				}
-			}*/
-			/*if (Main.player[(int)Player.FindClosest(player.position, player.width, player.height)].ZoneRockLayerHeight)
-			{
-				if (Main.hardMode)
-				{
-					if (player.cratePotion)
-					{
-						if (liquidType == 0 && Main.rand.NextFloat() < .08f)
-						{
-							caughtType = mod.ItemType("SedimentaryCrate");
-						}
-					}
-					else
-					{
-						if (liquidType == 0 && Main.rand.NextFloat() < .04f)
-						{
-							caughtType = mod.ItemType("SedimentaryCrate");
-						}
-					}
-				}
-				else if (!Main.hardMode)
-				{
-					if (player.cratePotion)
-					{
-						if (liquidType == 0 && Main.rand.NextFloat() < .08f)
-						{
-							caughtType = mod.ItemType("CaveCrate");
-						}
-					}
-					else
-					{
-						if (liquidType == 0 && Main.rand.NextFloat() < .04f)
-						{
-							caughtType = mod.ItemType("CaveCrate");
-						}
-					}
-				}
-			}
-		}*/
 		public override void OnHitAnything(float x, float y, Entity victim)
 		{
 			if (gemstoneManaBullet)

@@ -7,6 +7,8 @@ namespace Azercadmium
 	{
 		public override ConfigScope Mode => ConfigScope.ServerSide;
 
+		[Header("General")]
+
 		[Label("Pearlwood Buff")]
 		[Tooltip("Buffs pearlwood tools and armor. Reload required.")]
 		public bool pearlwoodBuff;
@@ -33,5 +35,7 @@ namespace Azercadmium
 		[Label("Daedalus Nerf")]
 		[Tooltip("The Daedalus Stormbow is nerfed. Stupid overpowered bow making the destroyer look like a mechanical popsickle stick!")]
 		public bool daedalusNerf;
+
+		public override void OnLoaded() => Azercadmium.serverConfigInstance = this;
 	}
 }
