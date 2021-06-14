@@ -36,6 +36,11 @@ namespace Azercadmium
 		[Tooltip("The Daedalus Stormbow is nerfed. Stupid overpowered bow making the destroyer look like a mechanical popsickle stick!")]
 		public bool daedalusNerf;
 
+		[DefaultValue(true)]
+		[Label("PML Enemy Stat Scaling")]
+		[Tooltip("In an expert post-Moon Lord world, the stats of enemies are buffed greatly. Also increases the defense of Town NPCs to be fair.")]
+		public bool pmlEnemyScaling;
+
 		public override void OnLoaded() => Azercadmium.serverConfigInstance = this;
 	}
 }

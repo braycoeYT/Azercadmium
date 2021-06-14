@@ -104,19 +104,7 @@ namespace Azercadmium.NPCs.Scavenger
 					npc.active = false;
 			}
 			if (Main.dayTime)
-			{
 				npc.active = false;
-				Color messageColor = Color.DarkSlateGray;
-				string chat = "C:Terraria/Azercadmium/NPCs/Scavenger/MatrixScavenger failed with 1 error: Overheat Warning (daytime #00=6)";
-				if (Main.netMode == NetmodeID.Server)
-				{
-					NetMessage.BroadcastChatMessage(NetworkText.FromKey(chat), messageColor);
-				}
-				else if (Main.netMode == NetmodeID.SinglePlayer)
-				{
-					Main.NewText(Language.GetTextValue(chat), messageColor);
-				}
-			}
 			int phase = 1;
 			float hpFlag = 0.55f;
 			if (Main.expertMode)

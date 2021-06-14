@@ -12,7 +12,7 @@ namespace Azercadmium.Items.Developer.Braycoe
 			Tooltip.SetDefault("Developer Item\nShoots a large slimeblast that explodes into smaller slimeblasts");
 		}
 		public override void SetDefaults() {
-			item.damage = 917;
+			item.damage = 797;
 			item.melee = true;
 			item.width = 33;
 			item.height = 33;

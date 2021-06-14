@@ -13,7 +13,7 @@ namespace Azercadmium.Items.Developer.HBDeus
 			Tooltip.SetDefault("Developer Item\nRains Shattered Swords near the cursor from above and below");
 		}
 		public override void SetDefaults() {
-			item.damage = 1534;
+			item.damage = 4134;
 			item.melee = true;
 			item.width = 112;
 			item.height = 112;

@@ -5,14 +5,14 @@ Looking for help/support/feedback.
 
 [i:3123] Stats:
 ~[i:172]A new biome: The Ember Glades! It can be found under the Jungle in the Underworld.
-~327 Items
+~338 Items
 ~4 Bosses:
 ^1 Prehardmode Boss
 ^3 Hardmode Bosses (2 bosses left to rework)
-~41 total NPCs
+~42 total NPCs
 ~2 Town NPCs
-~67 Tiles
-~35 Buffs
+~69 Tiles
+~36 Buffs
 ~2 Subclasses (Blowpipes/Dart Guns and Javelins)
 ~3 Custom Soundtracks (get the Music mod)
 ~1 Unfinished Game Mode + Leveling System (Devastation Mode and Devastation Level)
@@ -22,21 +22,16 @@ Looking for help/support/feedback.
 ~A secret unobtainable joke boss
 ~[i:458]Cross content with: Asteri and Cacti and More 2 Mod.
 
-Update V0.3.0.2: Ember Glades Update
-~Added a new biome: The Ember Glades!
+Update V0.3.0.4: Update
+~Resprited Flare Serpent Scale, Burnt Stinger, Sparking Bat Foot, Fiery Flare, and Charred Chakram.
 ~Updated credits.
-~Added Worldgen Config.
-~Removed the poison dart damage nerf.
-~Increased Molten Blowpipe's use speed.
-~Bone Serpents now drop bones post-Skeletron.
-~Frost Daggerfish now counts as a javelin.
-~Added Ore Doors (hey it rhymes :D).
-~Devastation King Slime now can despawn easier.
-~Devastation Eye of Cthulhu now has a cap for spawning Dreamin Eyes.
-(Wow this update adds 46 items)
-
-Update V0.3.0.3: Bug Fixes
-~Fixed a bug that caused multiplayer to not load.
+~Removed a hotkey accidentally left in from the beta.
+~Added a small bit of PML content: Kinoite. It generates in the underground desert after ML is defeated (note: probably going to rework Kinoite once all the stuff is resprited).
+~Buffed a large amount of enemies if the Moon Lord is defeated and the world is in expert mode (can be disabled in the config).
+~Heavily increases Town NPC stats in the above conditions (also affected by the config).
+~Slimebender's Slimeblast now chases after enemies.
+~Resprited Slimebender.
+~Removed Matrix Scavenger's daytime despawn message.
 
 Credits:
 
@@ -44,9 +39,10 @@ Active Devs:
 Braycoe (Owner, Coder, Minor Spriter, Minor Wiki)
 FunkItOut (Spriter)
 Skymanisbtman (Composer, Minor Spriter)
+Slayer (Concepts)
+HBDeus (Spriter)
 
 Inactive Devs:
-HBDeus (Spriter)
 Pufferfish77 (Spriter)
 Woodio (Coder)
 

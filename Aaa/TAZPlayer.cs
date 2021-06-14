@@ -341,11 +341,11 @@ namespace Azercadmium.Aaa
 		}
         public override void ProcessTriggers(TriggersSet triggersSet)
         {
-            if (Azercadmium.skillTreeKey.JustPressed)
+            /*if (Azercadmium.skillTreeKey.JustPressed)
             {
                 Main.PlaySound(SoundID.MenuTick);
                 Azercadmium.sTree = !Azercadmium.sTree;
-            }
+            }*/
         }
 
         public override void SetControls()

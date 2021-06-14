@@ -251,7 +251,7 @@ namespace Azercadmium
             PlantInfo = new List<PlantInfo>();
             AZTreeLoader.trees = new Dictionary<int, AZTree>();
             AZTreeLoader.saplings = new List<int>();
-            skillTreeKey = RegisterHotKey("Skill Tree", "N");
+            //skillTreeKey = RegisterHotKey("Skill Tree", "N");
             /*if (Main.netMode != NetmodeID.Server && !Main.dedServ)
             {
                 tileWandUI = new TilewandUI();

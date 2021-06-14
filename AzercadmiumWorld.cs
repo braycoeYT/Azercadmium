@@ -31,6 +31,7 @@ namespace Azercadmium
 		public static bool devastation;
 		public static bool hasAlertCarnallite;
 		public static bool generatedAquite;
+		public static bool generatedKinoite;
 		public static int microbiomeTiles;
 		public static bool Devastation => devastation && Main.expertMode;
 		public override void Initialize() {
@@ -49,6 +50,7 @@ namespace Azercadmium
 			devastation = false;
 			hasAlertCarnallite = false;
 			generatedAquite = false;
+			generatedKinoite = false;
 		}
 		public override TagCompound Save()
         {
@@ -68,7 +70,8 @@ namespace Azercadmium
 				{"rollercoasterTown", rollercoasterTown},
 				{"devastation", devastation},
 				{"hasAlertCarnallite", hasAlertCarnallite},
-				{"generatedAquite", generatedAquite}
+				{"generatedAquite", generatedAquite},
+				{"generatedKinoite", generatedKinoite}
 			};
         }
         public override void Load(TagCompound tag) {
@@ -87,6 +90,7 @@ namespace Azercadmium
 			devastation = tag.GetBool("devastation");
 			hasAlertCarnallite = tag.GetBool("hasAlertCarnallite");
 			generatedAquite = tag.GetBool("generatedAquite");
+			generatedKinoite = tag.GetBool("generatedKinoite");
 		}
 		
 		 public override void NetSend(BinaryWriter writer)
@@ -108,6 +112,7 @@ namespace Azercadmium
 			flags2[3] = rollercoasterTown;
 			flags2[4] = devastation;
 			flags2[5] = generatedAquite;
+			flags2[6] = generatedKinoite;
 			writer.Write(flags2);
 		}
 		
@@ -130,6 +135,7 @@ namespace Azercadmium
 			rollercoasterTown = flags2[3];
 			devastation = flags2[4];
 			generatedAquite = flags2[5];
+			generatedKinoite = flags2[6];
 		}
 		public override void ModifyWorldGenTasks(List<GenPass> tasks, ref float totalWeight)
 		{
@@ -206,25 +212,32 @@ namespace Azercadmium
 				}	
 				generatedAquite = true;
 			}
-			
-			/*if (!hasAlertEvil && NPC.downedMoonlord)
+			if (!generatedKinoite && NPC.downedMoonlord)
 			{
-				Color messageColor;
-				if (WorldGen.crimson)
-				messageColor = Color.Red;
-				else
-				messageColor = Color.Purple;
-					string chat = "Something has changed in this world's evil...";
-					if (Main.netMode == NetmodeID.Server)
-					{
-						NetMessage.BroadcastChatMessage(NetworkText.FromKey(chat), messageColor);
+				Color messageColor = Color.DeepSkyBlue;
+				string chat = "Cosmic energy has settled in the world's hardened sands.";
+				if (Main.netMode == NetmodeID.Server)
+				{
+					NetMessage.BroadcastChatMessage(NetworkText.FromKey(chat), messageColor);
+				}
+				else if (Main.netMode == NetmodeID.SinglePlayer)
+				{
+					Main.NewText(Language.GetTextValue(chat), messageColor);
+				}
+
+				// "6E-05" = 0.00006 = normal ore
+				for (int k = 0; k < (int)((Main.maxTilesX * Main.maxTilesY) * 0.002); k++) {
+					// The inside of this for loop corresponds to one single splotch of our Ore.
+					// First, we randomly choose any coordinate in the world by choosing a random x and y value.
+					int x = WorldGen.genRand.Next(0, Main.maxTilesX);
+					int y = WorldGen.genRand.Next(0, Main.maxTilesY);
+					Tile tile = Framing.GetTileSafely(x, y);
+					if (tile.active() && (tile.type == TileID.HardenedSand || tile.type == TileID.CorruptHardenedSand || tile.type == TileID.CrimsonHardenedSand || tile.type == TileID.HallowHardenedSand)) {
+						WorldGen.TileRunner(x, y, WorldGen.genRand.Next(4, 8), WorldGen.genRand.Next(14, 22), ModContent.TileType<Tiles.Kinoite.ProOre>());
 					}
-					else if (Main.netMode == NetmodeID.SinglePlayer)
-					{
-						Main.NewText(Language.GetTextValue(chat), messageColor);
-					}
-				hasAlertEvil = true;
-			}*/
+				}	
+				generatedKinoite = true;
+			}
 		}
 		
 		private void AzercadmiumOres(GenerationProgress progress) {

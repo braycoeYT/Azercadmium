@@ -11,6 +11,10 @@ namespace Azercadmium.Items.Ember
             item.CloneDefaults(ItemID.GoldenCrate);
             item.SetShopValues(6, Item.buyPrice(gold: 8));
             item.createTile = ModContent.TileType<Tiles.Ember.EmberCrate>();
+            item.placeStyle = 0;
+            item.useAnimation = 10;
+            item.useTime = 10;
+			item.useStyle = ItemUseStyleID.SwingThrow;
         }
 
         public override bool CanRightClick() => true;
