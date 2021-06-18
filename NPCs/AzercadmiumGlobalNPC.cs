@@ -1,3 +1,4 @@
+using Azercadmium.Aaa;
 using Azercadmium.Items.Devastation;
 using Azercadmium.Items.Other.Accessories;
 using Azercadmium.NPCs.TownNPCs;
@@ -750,6 +751,11 @@ namespace Azercadmium.NPCs
 			}
 		}
 		public override void NPCLoot(NPC npc) {
+			if (TAZWorld.emberGladesTileCount > 140 && Main.hardMode && NPC.downedMechBossAny)
+				if (Main.player[Player.FindClosest(npc.position, npc.width, npc.height)].ZoneUnderworldHeight)
+					if (Main.rand.NextFloat() < .005f)
+						if (npc.life > 5 && npc.friendly == false && npc.boss == false && npc.type != NPCID.BlueSlime)
+							Item.NewItem(npc.getRect(), ModContent.ItemType<Items.Ember.HellKey>());
 			/*if (AzercadmiumWorld.microbiomeTiles > 140 && Main.hardMode) {
 				if (Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)].ZoneSkyHeight) {
 					if (Main.expertMode) {

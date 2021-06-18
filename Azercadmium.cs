@@ -644,46 +644,6 @@ namespace Azercadmium
 			recipe.AddRecipe();
 
 			recipe = new ModRecipe(this);
-			recipe.AddIngredient(null, "CopperPlatform", 2);
-			recipe.SetResult(ItemID.CopperBar);
-			recipe.AddRecipe();
-
-			recipe = new ModRecipe(this);
-			recipe.AddIngredient(null, "TinPlatform", 2);
-			recipe.SetResult(ItemID.TinBar);
-			recipe.AddRecipe();
-
-			recipe = new ModRecipe(this);
-			recipe.AddIngredient(null, "IronPlatform", 2);
-			recipe.SetResult(ItemID.IronBar);
-			recipe.AddRecipe();
-
-			recipe = new ModRecipe(this);
-			recipe.AddIngredient(null, "LeadPlatform", 2);
-			recipe.SetResult(ItemID.LeadBar);
-			recipe.AddRecipe();
-
-			recipe = new ModRecipe(this);
-			recipe.AddIngredient(null, "SilverPlatform", 2);
-			recipe.SetResult(ItemID.SilverBar);
-			recipe.AddRecipe();
-
-			recipe = new ModRecipe(this);
-			recipe.AddIngredient(null, "TungstenPlatform", 2);
-			recipe.SetResult(ItemID.TungstenBar);
-			recipe.AddRecipe();
-
-			recipe = new ModRecipe(this);
-			recipe.AddIngredient(null, "AlternateGoldPlatform", 2);
-			recipe.SetResult(ItemID.GoldBar);
-			recipe.AddRecipe();
-
-			recipe = new ModRecipe(this);
-			recipe.AddIngredient(null, "PlatinumPlatform", 2);
-			recipe.SetResult(ItemID.PlatinumBar);
-			recipe.AddRecipe();
-
-			recipe = new ModRecipe(this);
 			recipe.AddIngredient(ItemID.EmptyBullet, 50);
 			recipe.AddIngredient(null, "Electrolight");
 			recipe.SetResult(ItemID.HighVelocityBullet, 50);

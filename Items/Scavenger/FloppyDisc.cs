@@ -7,7 +7,7 @@ namespace Azercadmium.Items.Scavenger
 	public class FloppyDisc : ModItem
 	{
 		public override void SetStaticDefaults() {
-			Tooltip.SetDefault("Contains malicious and illegal software\nSummons the Matrix Scavenger");
+			Tooltip.SetDefault("Summons the Matrix Scavenger");
 			ItemID.Sets.SortingPriorityBossSpawns[item.type] = 7;
 		}
 		public override void SetDefaults() {

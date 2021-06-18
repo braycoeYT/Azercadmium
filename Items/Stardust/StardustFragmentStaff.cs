@@ -15,7 +15,7 @@ namespace Azercadmium.Items.Stardust
 			ItemID.Sets.LockOnIgnoresCollision[item.type] = true;
 		}
 		public override void SetDefaults() {
-			item.damage = 46;
+			item.damage = 69;
 			item.knockBack = 1.9f;
 			item.mana = 10;
 			item.width = 36;

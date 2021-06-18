@@ -28,7 +28,7 @@ namespace Azercadmium.Projectiles.Ember
 		public override void AI() {
 			Timer++;
 			if (Timer % 1 == 0)
-				Projectile.NewProjectile(projectile.position, new Microsoft.Xna.Framework.Vector2(0, 0), ModContent.ProjectileType<VesuviusTrail>(), projectile.damage / 5, 0f, Main.myPlayer);
+				Projectile.NewProjectile(projectile.position, new Microsoft.Xna.Framework.Vector2(0, 0), ModContent.ProjectileType<VesuviusTrail>(), 1, 0f, Main.myPlayer);
 		}
 	}
 }

@@ -6,10 +6,6 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
 using Azercadmium.Items.Ember;
-using Azercadmium.Items.Copper;
-using Azercadmium.Items.Iron;
-using Azercadmium.Items.Lead;
-using Azercadmium.Items.Tin;
 
 namespace Azercadmium.Tiles.Furniture.Doors
 {
@@ -17,23 +13,11 @@ namespace Azercadmium.Tiles.Furniture.Doors
     {
         private static int DoorItem(int frameX = 0, int frameY = 0)
         {
-            if (frameY >= 54 && frameY <= 90)
-            {
-                return ModContent.ItemType<TinDoor>();
-            }
-            if (frameY >= 108 && frameY <= 144)
-            {
-                return ModContent.ItemType<IronDoor>();
-            }
-            if (frameY >= 162 && frameY <= 198)
-            {
-                return ModContent.ItemType<LeadDoor>();
-            }
             if (frameY >= 432 && frameY <= 468)
             {
                 return ModContent.ItemType<CinderCedarDoor>();
             }
-            return ModContent.ItemType<CopperDoor>();
+            return ModContent.ItemType<CinderCedarDoor>();
         }
 
         public override void SetDefaults()

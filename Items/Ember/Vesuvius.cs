@@ -22,7 +22,7 @@ namespace Azercadmium.Items.Ember
 			item.useTime = 25;
 			item.shootSpeed = 16f;
 			item.knockBack = 4.5f;
-			item.damage = 29;
+			item.damage = 19;
 			item.rare = ItemRarityID.Orange;
 			item.melee = true;
 			item.channel = true;

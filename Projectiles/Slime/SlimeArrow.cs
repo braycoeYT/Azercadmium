@@ -29,7 +29,7 @@ namespace Azercadmium.Projectiles.Slime
 		}
 		public override void Kill(int timeLeft) {
 			Collision.HitTiles(projectile.position + projectile.velocity, projectile.velocity, projectile.width, projectile.height);
-			if (Main.rand.NextFloat() < .25f) Item.NewItem(projectile.getRect(), ModContent.ItemType<Items.Slime.SlimeArrow>());
+			//if (Main.rand.NextFloat() < .25f) Item.NewItem(projectile.getRect(), ModContent.ItemType<Items.Slime.SlimeArrow>());
 		}
 	}   
 }

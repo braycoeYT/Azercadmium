@@ -5,13 +5,13 @@ Looking for help/support/feedback.
 
 [i:3123] Stats:
 ~[i:172]A new biome: The Ember Glades! It can be found under the Jungle in the Underworld.
-~338 Items
+~259 Items
 ~4 Bosses:
 ^1 Prehardmode Boss
 ^3 Hardmode Bosses (2 bosses left to rework)
 ~42 total NPCs
 ~2 Town NPCs
-~69 Tiles
+~34 Tiles
 ~36 Buffs
 ~2 Subclasses (Blowpipes/Dart Guns and Javelins)
 ~3 Custom Soundtracks (get the Music mod)
@@ -22,16 +22,14 @@ Looking for help/support/feedback.
 ~A secret unobtainable joke boss
 ~[i:458]Cross content with: Asteri and Cacti and More 2 Mod.
 
-Update V0.3.0.4: Update
-~Resprited Flare Serpent Scale, Burnt Stinger, Sparking Bat Foot, Fiery Flare, and Charred Chakram.
-~Updated credits.
-~Removed a hotkey accidentally left in from the beta.
-~Added a small bit of PML content: Kinoite. It generates in the underground desert after ML is defeated (note: probably going to rework Kinoite once all the stuff is resprited).
-~Buffed a large amount of enemies if the Moon Lord is defeated and the world is in expert mode (can be disabled in the config).
-~Heavily increases Town NPC stats in the above conditions (also affected by the config).
-~Slimebender's Slimeblast now chases after enemies.
-~Resprited Slimebender.
-~Removed Matrix Scavenger's daytime despawn message.
+Update V0.3.0.5: Update
+~Resprited Starpack Slime.
+~Greatly nerfed Vesuvius.
+~Removed Adamantite Ore Staff, Adamantite Stabber, Bat Basher, Heartbreaker, Life Crystal Shield, Lifeforce Shield, Stalagmite, Stalactite, Cobalt Chair, Cobalt Table, Cobalt Ore Staff, Cobalt Wakizashi, Copper Chair, Copper Door, Copper Platform, Copper Table, Copper Workbench, Ebonwood Bat, Shadewood Bat, Prickly Club, Ghastly Swinger, Dynasty Bat, Ruby Bow, Diamond Bow, Alternate Gold Chair, Alternate Gold Door, Alternate Gold Platform, Alternate Gold Table, Alternate Gold Workbench, Pearlwood Bat, Iron Chair, Alternate Iron Door, Iron Platform, Iron Table, Iron Workbench, Rich Mahogany Bat, Lead Chair, Lead Door, Lead Platform, Lead Table, Lead Workbench, Meteor Headgear, Meteor Helm, Mythril Ore Staff, Mythril Shortsword, Palm Wood Bat, Orichalcum Ore Staff, Orichalcum Jabber, Palladium Chair, Palladium Ore Staff, Palladium Piercer, Floral Rebirth, Platinum Chair, Platinum Door, Platinum Platform, Platinum Table, Platinum Workbench, Silver Chair, Silver Door, Silver Plarform, Silver Table, Silver Workbench, Slime Arrow, Marshmallow Bat, Boreal Bat, Cold Crusher, Tin Chair, Tin Door, Tin Platform, Tin Table, Tin Workbench, Titanium Knife, Titanium Ore Staff, Tungsten Chair, Tungsten Door, Tungsten Platform, Tungsten Table, Tungsten Workbench, and Wooden Seed.
+~The Ember Key can now be dropped with a 0.5% chance from any enemy in the post-Mech Ember Glades.
+~Inferno, L Lace, and Siltwing butterflies can now spawn in the Ember Glades.
+~Buffed Snarevine, Stardust Fragment Staff, and Blazing Backlasher greatly.
+(It seems every time the mod gets over 300 items something happens, eh?)
 
 Credits:
 

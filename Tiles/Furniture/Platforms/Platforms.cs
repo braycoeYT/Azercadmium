@@ -86,15 +86,7 @@ namespace Azercadmium.Tiles.Furniture.Platforms
         public override bool Drop(int i, int j)
         {
             Tile tile = Framing.GetTileSafely(i, j);
-            if (tile.frameY == 0 * 18)
-            {
-                Item.NewItem(new Vector2(i * 16, j * 16), ModContent.ItemType<Items.Copper.CopperPlatform>());
-            }
-            else if (tile.frameY == 1 * 18)
-            {
-                Item.NewItem(new Vector2(i * 16, j * 16), ModContent.ItemType<Items.Tin.TinPlatform>());
-            }
-            else if (tile.frameY == 8 * 18)
+            if (tile.frameY == 8 * 18)
             {
                 Item.NewItem(new Vector2(i * 16, j * 16), ModContent.ItemType<Items.Ember.CinderCedarPlatform>());
             }

@@ -11,7 +11,7 @@ namespace Azercadmium.Items.Solar
 			Tooltip.SetDefault("Leaves an explosive trail behind itself\nRight click for a shorter range attack");
 		}
 		public override void SetDefaults() {
-			item.damage = 303;
+			item.damage = 393;
 			item.melee = true;
 			item.width = 30;
 			item.height = 42;

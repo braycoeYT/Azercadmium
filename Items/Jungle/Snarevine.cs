@@ -13,7 +13,7 @@ namespace Azercadmium.Items.Jungle
 		public override void SetDefaults() {
 			item.width = 26;
 			item.height = 26;
-			item.damage = 26;
+			item.damage = 38;
 			item.useStyle = ItemUseStyleID.SwingThrow;
 			item.useAnimation = 34;
 			item.useTime = 34;

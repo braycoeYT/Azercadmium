@@ -5,14 +5,6 @@ using Terraria;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
 using Azercadmium.ID;
-using Azercadmium.Items.Copper;
-using Azercadmium.Items.Gold;
-using Azercadmium.Items.Iron;
-using Azercadmium.Items.Lead;
-using Azercadmium.Items.Platinum;
-using Azercadmium.Items.Silver;
-using Azercadmium.Items.Tin;
-using Azercadmium.Items.Tungsten;
 
 namespace Azercadmium.Helpers
 {
@@ -46,95 +38,6 @@ namespace Azercadmium.Helpers
             }
             return false;
         }*/
-
-        public static int DoorDrop(int frameX, int frameY, bool opened)
-        {
-            int num = opened ? 4 : 3;
-            Point frame = GetFrame(frameX, frameY, num, 3);
-            switch (frame.X)
-            {
-                case 0:
-                switch (frame.Y)
-                {
-                    case DoorID.CopperDoorStyle:
-                    return ModContent.ItemType<CopperDoor>();
-
-                    case DoorID.TinDoorStyle:
-                    return ModContent.ItemType<TinDoor>();
-
-                    case DoorID.IronDoorStyle:
-                    return ModContent.ItemType<IronDoor>();
-
-                    case DoorID.LeadDoorStyle:
-                    return ModContent.ItemType<LeadDoor>();
-
-                    case DoorID.SilverDoorStyle:
-                    return ModContent.ItemType<SilverDoor>();
-
-                    case DoorID.TungstenDoorStyle:
-                    return ModContent.ItemType<TungstenDoor>();
-
-                    case DoorID.GoldDoorStyle:
-                    return ModContent.ItemType<GoldDoor>();
-
-                    case DoorID.PlatinumDoorStyle:
-                    return ModContent.ItemType<PlatinumDoor>();
-                }
-                break;
-            }
-            return 0;
-        }
-
-        public static int ChairDrop(int frameX, int frameY)
-        {
-            Point frame = GetFrame(frameX, frameY, 2, 2);
-            switch (frame.Y)
-            {
-                case 0:
-                return ModContent.ItemType<CopperChair>();
-                case 1:
-                return ModContent.ItemType<TinChair>();
-                case 2:
-                return ModContent.ItemType<IronChair>();
-                case 3:
-                return ModContent.ItemType<LeadChair>();
-                case 4:
-                return ModContent.ItemType<SilverChair>();
-                case 5:
-                return ModContent.ItemType<TungstenChair>();
-                case 6:
-                return ModContent.ItemType<AlternateGoldChair>();
-                case 7:
-                return ModContent.ItemType<PlatinumChair>();
-            }
-            return 0;
-        }
-
-        public static int TableDrop(int frameX, int frameY)
-        {
-            Point frame = GetFrame(frameX, frameY, 3, 2);
-            switch (frame.X)
-            {
-                case 0:
-                return ModContent.ItemType<CopperTable>();
-                case 1:
-                return ModContent.ItemType<TinTable>();
-                case 2:
-                return ModContent.ItemType<IronTable>();
-                case 3:
-                return ModContent.ItemType<LeadTable>();
-                case 4:
-                return ModContent.ItemType<SilverTable>();
-                case 5:
-                return ModContent.ItemType<TungstenTable>();
-                case 6:
-                return ModContent.ItemType<AlternateGoldTable>();
-                case 7:
-                return ModContent.ItemType<PlatinumTable>();
-            }
-            return 0;
-        }
-
         /*public static int StatueDrop(int frameX, int frameY)
         {
             Point frame = GetFrame(frameX, frameY, 4, 4);

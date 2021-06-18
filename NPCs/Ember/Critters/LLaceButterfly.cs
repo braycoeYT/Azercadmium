@@ -2,6 +2,7 @@
 using Terraria.ID;
 using Terraria.ModLoader;
 using Azercadmium.Items.Ember;
+using Azercadmium.Aaa;
 
 namespace Azercadmium.NPCs.Ember.Critters
 {
@@ -29,6 +30,9 @@ namespace Azercadmium.NPCs.Ember.Critters
 
         public override bool? CanBeHitByProjectile(Projectile projectile) => true;
 
+        public override float SpawnChance(NPCSpawnInfo spawnInfo) {
+            return spawnInfo.player.GetModPlayer<TAZPlayer>().ZoneEmberGlades ? 0.1f : 0f;
+        }
         public override void OnCatchNPC(Player player, Item item) => item.SetDefaults(ModContent.ItemType<LLaceButterflyItem>());
     }
 }

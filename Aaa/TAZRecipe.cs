@@ -1,17 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
-
-using Terraria;
-using Terraria.ID;
 using Terraria.ModLoader;
-using Azercadmium.Items.Copper;
-using Azercadmium.Items.Gold;
-using Azercadmium.Items.Iron;
-using Azercadmium.Items.Lead;
-using Azercadmium.Items.Platinum;
-using Azercadmium.Items.Silver;
-using Azercadmium.Items.Tin;
-using Azercadmium.Items.Tungsten;
-using Azercadmium.Items.Zinc;
 
 namespace Azercadmium.Aaa
 {
