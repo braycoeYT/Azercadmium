@@ -148,6 +148,20 @@ namespace Azercadmium
 		
 		public override void PreUpdate()
         {
+			if (devastation == true) {
+				Color messageColor = Color.MintCream;
+					string chat = "Devastation Mode has been temporarily removed. Thanks for playing.";
+					if (Main.netMode == NetmodeID.Server)
+					{
+						NetMessage.BroadcastChatMessage(NetworkText.FromKey(chat), messageColor);
+					}
+					else if (Main.netMode == NetmodeID.SinglePlayer)
+					{
+						Main.NewText(Language.GetTextValue(chat), messageColor);
+					}
+				devastation = false;
+			}
+
 			if (!hasAlertCarnallite && NPC.downedBoss1) {
 				Color messageColor = Color.LawnGreen;
 					string chat = "A green light shimmers from the jungle!";
@@ -339,7 +353,7 @@ namespace Azercadmium
 			}
 		}*/
 		public override void PostWorldGen() {
-			int[] itemsToPlaceInSkywareChests = { ItemType<Items.Sky.Starfrenzy>() };
+			int[] itemsToPlaceInSkywareChests = { ItemType<Items.Sky.Starfrenzy>(), ItemType<Items.Sky.SpaceAmulet>() };
 			int itemsToPlaceInSkywareChestsChoice = 0;
 			for (int chestIndex = 0; chestIndex < 1000; chestIndex++) {
 				Chest chest = Main.chest[chestIndex];
@@ -348,21 +362,6 @@ namespace Azercadmium
 						if (chest.item[inventoryIndex].type == ItemID.None) {
 							chest.item[inventoryIndex].SetDefaults(itemsToPlaceInSkywareChests[itemsToPlaceInSkywareChestsChoice]);
 							itemsToPlaceInSkywareChestsChoice = (itemsToPlaceInSkywareChestsChoice + 1) % itemsToPlaceInSkywareChests.Length;
-							break;
-						}
-					}
-				}
-			}
-
-			int[] itemsToPlaceInDungeonChests = { ItemType<Items.Sky.Starfrenzy>() };
-			int itemsToPlaceInDungeonChestsChoice = 0;
-			for (int chestIndex = 0; chestIndex < 1000; chestIndex++) {
-				Chest chest = Main.chest[chestIndex];
-				if (chest != null && Main.tile[chest.x, chest.y].type == TileID.Containers && Main.tile[chest.x, chest.y].frameX == 1 * 36 && WorldGen.genRand.Next(3) == 0 && (Main.tile[chest.x, chest.y].type == TileID.BlueDungeonBrick || Main.tile[chest.x, chest.y].type == TileID.GreenDungeonBrick || Main.tile[chest.x, chest.y].type == TileID.PinkDungeonBrick)) {
-					for (int inventoryIndex = 0; inventoryIndex < 40; inventoryIndex++) {
-						if (chest.item[inventoryIndex].type == ItemID.None) {
-							chest.item[inventoryIndex].SetDefaults(itemsToPlaceInDungeonChests[itemsToPlaceInDungeonChestsChoice]);
-							itemsToPlaceInSkywareChestsChoice = (itemsToPlaceInDungeonChestsChoice + 1) % itemsToPlaceInDungeonChests.Length;
 							break;
 						}
 					}

@@ -30,10 +30,12 @@ namespace Azercadmium.Items.Sky
 			item.color = new Color(150, 150, 150, 0);
 		}
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack) {
-			position.X = Main.MouseWorld.X;
-			position.Y = player.position.Y - 600;
-			speedX = 0;
-			speedY = 20;
+			position = Main.MouseWorld;
+			float rand = Main.rand.NextFloat(-4, 4);
+			position.X -= rand*28;
+			position.Y = player.position.Y - 420;
+			speedX = rand;
+			speedY = 15;
 			return true;
 		}
 	}

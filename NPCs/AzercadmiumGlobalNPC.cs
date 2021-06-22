@@ -1,6 +1,4 @@
 using Azercadmium.Aaa;
-using Azercadmium.Items.Devastation;
-using Azercadmium.Items.Other.Accessories;
 using Azercadmium.NPCs.TownNPCs;
 using Microsoft.Xna.Framework;
 using System;
@@ -63,11 +61,11 @@ namespace Azercadmium.NPCs
 				shop.item[nextSlot].shopCustomPrice = Item.buyPrice(1, 0, 0, 0);
 				nextSlot++;
 			}
-			if ((type == ModContent.NPCType<Engineer>() || type == NPCID.GoblinTinkerer) && AzercadmiumWorld.devastation) {
+			/*if ((type == ModContent.NPCType<Engineer>() || type == NPCID.GoblinTinkerer) && AzercadmiumWorld.devastation) {
 				shop.item[nextSlot].SetDefaults(ModContent.ItemType<DevastatedRemote>());
 				shop.item[nextSlot].shopCustomPrice = Item.buyPrice(0, 5, 0, 0);
 				nextSlot++;
-			}
+			}*/
 		}
 		public override void SetDefaults(NPC npc) {
 			if (npc.type == NPCID.SkeletronPrime || npc.type == NPCID.TheDestroyer || npc.type == NPCID.TheDestroyerBody || npc.type == NPCID.TheDestroyerTail || npc.type == NPCID.Retinazer || npc.type == NPCID.Spazmatism || npc.type == NPCID.Golem || npc.type == NPCID.GolemFistLeft || npc.type == NPCID.GolemFistRight || npc.type == NPCID.GolemHead || npc.type == NPCID.GolemHeadFree || npc.type == NPCID.CultistBoss || npc.type == NPCID.MoonLordCore || npc.type == NPCID.MoonLordFreeEye || npc.type == NPCID.MoonLordHand || npc.type == NPCID.MoonLordHead) {

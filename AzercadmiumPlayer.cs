@@ -59,6 +59,12 @@ namespace Azercadmium
 		public bool gooeySetBonus;
 		public bool extraNeonSlimyCore;
 		public bool titanFragment;
+		public bool spaceAmulet;
+		public bool lifeforceShield;
+		public bool bandofRegen;
+		public bool bandofStarpower;
+		public bool bandofMagicRegen;
+		public bool bandofMetal;
 		int numberShot = 0;
 		public int upgradeHearts;
 		public int upgradeStars;
@@ -107,6 +113,12 @@ namespace Azercadmium
 			gooeySetBonus = false;
 			extraNeonSlimyCore = false;
 			titanFragment = false;
+			spaceAmulet = false;
+			lifeforceShield = false;
+			bandofRegen = false;
+			bandofStarpower = false;
+			bandofMagicRegen = false;
+			bandofMetal = false;
 			player.statLifeMax2 += upgradeHearts * 25;
 			player.statManaMax2 += upgradeStars * 50;
 			healHurt = 0;
@@ -349,21 +361,39 @@ namespace Azercadmium
         }
 		
 		public override void OnHitNPC(Item item, NPC target, int damage, float knockback, bool crit) {
-			if (xenicExpert && Main.rand.NextFloat() < .25f) {
-				target.AddBuff(mod.BuffType("XenicAcid"), 60 * Main.rand.Next(3, 11), false);
-			}
+			//if (xenicExpert && Main.rand.NextFloat() < .25f) {
+			//	target.AddBuff(mod.BuffType("XenicAcid"), 60 * Main.rand.Next(3, 11), false);
+			//}
 			if (bloodVial && Main.rand.NextFloat() < .08f && target.type != NPCID.TargetDummy) {
 				player.statLife += 1;
 				player.HealEffect(1, true);
+			}
+			if (lifeforceShield && target.type != NPCID.TargetDummy) {
+				player.AddBuff(BuffType<Buffs.Accessories.LifeOverflow>(), 1);
+				int l = 0;
+				for (int k = 0; k < Player.MaxBuffs; k++) {
+					if (player.buffType[k] == BuffType<Buffs.Accessories.LifeOverflow>())
+						l = k;
+				}
+				player.AddBuff(BuffType<Buffs.Accessories.LifeOverflow>(), 40 + player.buffTime[l]);
 			}
 		}
 		public override void OnHitNPCWithProj(Projectile proj, NPC target, int damage, float knockback, bool crit) {
-			if (xenicExpert && Main.rand.NextFloat() < .25f) {
-				target.AddBuff(mod.BuffType("XenicAcid"), 60 * Main.rand.Next(3, 11), false);
-			}
+			//if (xenicExpert && Main.rand.NextFloat() < .25f) {
+			//	target.AddBuff(mod.BuffType("XenicAcid"), 60 * Main.rand.Next(3, 11), false);
+			//}
 			if (bloodVial && Main.rand.NextFloat() < .08f && target.type != NPCID.TargetDummy) {
 				player.statLife += 1;
 				player.HealEffect(1, true);
+			}
+			if (lifeforceShield && target.type != NPCID.TargetDummy) {
+				player.AddBuff(BuffType<Buffs.Accessories.LifeOverflow>(), 1);
+				int l = 0;
+				for (int k = 0; k < Player.MaxBuffs; k++) {
+					if (player.buffType[k] == BuffType<Buffs.Accessories.LifeOverflow>())
+						l = k;
+				}
+				player.AddBuff(BuffType<Buffs.Accessories.LifeOverflow>(), 35 + player.buffTime[l]);
 			}
 		}
 		public override void OnHitPvp(Item item, Player target, int damage, bool crit) {
@@ -371,11 +401,29 @@ namespace Azercadmium
 				player.statLife += 1;
 				player.HealEffect(1, true);
 			}
+			if (lifeforceShield) {
+				player.AddBuff(BuffType<Buffs.Accessories.LifeOverflow>(), 1);
+				int l = 0;
+				for (int k = 0; k < Player.MaxBuffs; k++) {
+					if (player.buffType[k] == BuffType<Buffs.Accessories.LifeOverflow>())
+						l = k;
+				}
+				player.AddBuff(BuffType<Buffs.Accessories.LifeOverflow>(), 40 + player.buffTime[l]);
+			}
 		}
 		public override void OnHitPvpWithProj(Projectile proj, Player target, int damage, bool crit) {
 			if (bloodVial && Main.rand.NextFloat() < .08f) {
 				player.statLife += 1;
 				player.HealEffect(1, true);
+			}
+			if (lifeforceShield) {
+				player.AddBuff(BuffType<Buffs.Accessories.LifeOverflow>(), 1);
+				int l = 0;
+				for (int k = 0; k < Player.MaxBuffs; k++) {
+					if (player.buffType[k] == BuffType<Buffs.Accessories.LifeOverflow>())
+						l = k;
+				}
+				player.AddBuff(BuffType<Buffs.Accessories.LifeOverflow>(), 35 + player.buffTime[l]);
 			}
 		}
 		public override void PostUpdateBuffs() {
@@ -388,6 +436,14 @@ namespace Azercadmium
 			}*/
 			if (Main.GameUpdateCount % 180 == 90 && player.ownedProjectileCounts[ProjectileType<Projectiles.Titan.TitanFragment>()] < 5)
 				Projectile.NewProjectile(player.position, new Vector2(), ProjectileType<Projectiles.Titan.TitanFragment>(), 30, 1f, Main.myPlayer);
+			if (bandofRegen && player.HasBuff(BuffID.Regeneration))
+				player.lifeRegen += 1;
+			if (bandofStarpower && player.HasBuff(BuffID.MagicPower))
+				player.magicDamage += 0.1f;
+			if (bandofMagicRegen && player.HasBuff(BuffID.ManaRegeneration))
+				player.manaRegen += 1;
+			if (bandofMetal && player.HasBuff(BuffID.Ironskin))
+				player.statDefense += 4;
 		}
 		public override void PreUpdateBuffs() {
 			/*if (webdriver) {

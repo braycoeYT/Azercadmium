@@ -1,5 +1,4 @@
 using Azercadmium.Aaa;
-using Azercadmium.Items.Devastation;
 using Azercadmium.Prefixes;
 using Microsoft.Xna.Framework;
 using System.Collections.Generic;
@@ -77,12 +76,20 @@ namespace Azercadmium.Items
             item.consumable = true;
         }
 		public override void ModifyTooltips(Item item, List<TooltipLine> tooltips) {
-			if (item.type == ItemID.MeteorSuit || item.type == ItemID.MeteorLeggings) {
-				TooltipLine line = new TooltipLine(mod, "Tooltip#0", "Increases ranged critcal strike chance by 5\nIncreases melee speed by 6%");
-				tooltips.Add(line);
-			}
 			if (item.type == ItemID.DaedalusStormbow && GetInstance<AzercadmiumConfig>().daedalusNerf) {
 				TooltipLine line = new TooltipLine(mod, "Tooltip#0", "Nerfed by Azercadmium, can be disabled in the config");
+				tooltips.Add(line);
+			}
+			if (item.type == ItemID.BandofRegeneration || item.type == ItemID.CharmofMyths) {
+				TooltipLine line = new TooltipLine(mod, "Tooltip#0", "Increases the power of Regeneration Potions");
+				tooltips.Add(line);
+			}
+			if (item.type == ItemID.BandofStarpower || item.type == ItemID.ManaRegenerationBand || item.type == ItemID.MagicCuffs) {
+				TooltipLine line = new TooltipLine(mod, "Tooltip#0", "Increases the power of Magic Power potions");
+				tooltips.Add(line);
+			}
+			if (item.type == ItemID.ManaRegenerationBand) {
+				TooltipLine line = new TooltipLine(mod, "Tooltip#0", "Increases the power of Magic Regeneration potions");
 				tooltips.Add(line);
 			}
 			/*if (GetInstance<AzercadmiumConfig>().vanillaSeedAmmo) {
@@ -245,13 +252,6 @@ namespace Azercadmium.Items
 			}
 			return -1;
 		}
-		public override void UpdateEquip(Item item, Player player)
-		{
-			if (item.type == ItemID.MeteorSuit || item.type == ItemID.MeteorLeggings) {
-				player.rangedCrit += 5;
-				player.meleeSpeed -= 0.06f;
-			}
-		}
 		public override string IsArmorSet(Item head, Item body, Item legs) {
 			if (head.type == ItemID.PearlwoodHelmet && body.type == ItemID.PearlwoodBreastplate && legs.type == ItemID.PearlwoodGreaves)
 				return "Pearlwood";
@@ -267,14 +267,23 @@ namespace Azercadmium.Items
 		}
 		public override void UpdateAccessory(Item item, Player player, bool hideVisual)
 		{
-			if (item.type == ItemID.RoyalGel || item.type == mod.ItemType("MonarchalGel"))
-			{
+			AzercadmiumPlayer p = player.GetModPlayer<AzercadmiumPlayer>();
+			if (item.type == ItemID.RoyalGel || item.type == mod.ItemType("MonarchalGel")) {
 				player.npcTypeNoAggro[mod.NPCType("BoneSlime")] = true;
 				player.npcTypeNoAggro[mod.NPCType("MechanicalSlime")] = true;
 				player.npcTypeNoAggro[mod.NPCType("StarpackSlime")] = true;
 				player.npcTypeNoAggro[mod.NPCType("LivingMarshmellow")] = true;
 				player.npcTypeNoAggro[mod.NPCType("RoastedLivingMarshmellow")] = true;
 				player.npcTypeNoAggro[mod.NPCType("DirtSlime")] = true;
+			}
+			if (item.type == ItemID.BandofRegeneration || item.type == ItemID.CharmofMyths) {
+				p.bandofRegen = true;
+			}
+			if (item.type == ItemID.BandofStarpower || item.type == ItemID.ManaRegenerationBand || item.type == ItemID.MagicCuffs) {
+				p.bandofStarpower = true;
+			}
+			if (item.type == ItemID.ManaRegenerationBand) {
+				p.bandofMagicRegen = true;
 			}
 		}
 		public override void OpenVanillaBag(string context, Player player, int arg)
@@ -372,10 +381,12 @@ namespace Azercadmium.Items
 		{
 			AzercadmiumPlayer p = player.GetModPlayer<AzercadmiumPlayer>();
 			useItemCount++;
-			if (p.meteorMelee && item.melee && useItemCount % 120 == 0) {
+			if (p.spaceAmulet && item.damage > 0 && useItemCount % 90 == 0) {
 				Vector2 pos = Main.MouseWorld;
-				pos.Y = player.position.Y - 400;
-				Projectile.NewProjectile(pos, new Vector2(Main.rand.NextFloat(-2, 2), 10), ProjectileID.FallingStar, 40, 2, Main.myPlayer);
+				float rand = Main.rand.NextFloat(-4, 4);
+				pos.X -= rand*28;
+				pos.Y = player.position.Y - 420;
+				Projectile.NewProjectile(pos, new Vector2(rand, 15), ModContent.ProjectileType<Projectiles.Sky.AmuletStar>(), 40, 2, Main.myPlayer);
 			}
 			if (p.artifactofFire && Main.rand.Next(45) == 0)
 				Projectile.NewProjectile(player.Center, player.DirectionTo(Main.MouseWorld) * 10f, 15, 20, 2f, Main.myPlayer);
