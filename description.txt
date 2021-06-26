@@ -1,8 +1,6 @@
 Welcome to the Azercadmium Mod! We’ll spare you the whole generic description and cut straight to the chase: This mod doesn’t strive to fit in with vanilla, and it’s more of a giant passion project, where we add what we think is interesting. Have fun!
 DON'T USE THE WIKI! And make sure to get the music mod for music.
 
-Looking for help/support/feedback.
-
 [i:3123] Stats:
 ~[i:172]A new biome: The Ember Glades! It can be found under the Jungle in the Underworld.
 ~256 Items
@@ -15,20 +13,22 @@ Looking for help/support/feedback.
 ~37 Buffs
 ~2 Subclasses (Blowpipes/Dart Guns and Javelins)
 ~3 Custom Soundtracks (get the Music mod)
-~1 Unfinished Game Mode + Leveling System (Devastation Mode and Devastation Level)
 ~18 Modifiers
 ^11 Weapon Modifiers
 ^7 Accessory Modifiers
 ~A secret unobtainable joke boss
 ~[i:458]Cross content with: Asteri and Cacti and More 2 Mod.
 
-Update V0.3.0.6: Update
-~Removed Meteor Armor changes.
-~Added Space Amulet.
-~Improved Starfrenzy.
-~Readded the Lifeforce Shield (with reworks).
-~Removed Devastation Mode (will return soon).
-~Band of Regeneration (and other bands and upgrades) now increase the power of certain potions (thanks random dream for the idea).
+Update V0.3.0.7: Ember Glades Minor Reworks Update
+~Updated Credits.
+~Renamed Burning Moss Hornet to Cinder Hornet.
+~Renamed Sparking Bat to Crackling Bat.
+~Crackling Bat now spawns projectiles.
+~Changed a lot of Ember Glades recipes.
+~Added Scorch Sap.
+~Removed Empress Slime.
+~Made Wand of Sparking craftable.
+~Changed Flashpoint tooltip.
 
 Credits:
 
@@ -38,6 +38,7 @@ FunkItOut (Spriter)
 Skymanisbtman (Composer, Minor Spriter)
 Slayer (Concepts)
 HBDeus (Spriter)
+Mjoon (Spriter)
 
 Inactive Devs:
 Pufferfish77 (Spriter)

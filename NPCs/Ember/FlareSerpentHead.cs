@@ -457,7 +457,9 @@ namespace Azercadmium.NPCs.Ember
             return spawnInfo.player.GetModPlayer<TAZPlayer>().ZoneEmberGlades ? 0.13f : 0f;
         }
 		public override void NPCLoot() {
-			Item.NewItem(npc.getRect(), ModContent.ItemType<FlareSerpentScale>(), Main.rand.Next(8, 16));
+			if (Main.rand.NextFloat() < 0.66f)
+                Item.NewItem(npc.getRect(), ModContent.ItemType<ScorchSap>());
+			Item.NewItem(npc.getRect(), ItemType<FlareSerpentScale>(), Main.rand.Next(1, 3));
 		}
 	}
 }

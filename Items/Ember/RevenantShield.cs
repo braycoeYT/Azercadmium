@@ -25,6 +25,7 @@ namespace Azercadmium.Items.Ember
 			ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(ModContent.ItemType<CinderCedar>(), 30);
 			recipe.AddIngredient(ItemID.HellstoneBar, 12);
+            recipe.AddIngredient(ModContent.ItemType<ScorchSap>(), 6);
             recipe.AddIngredient(ModContent.ItemType<BurntStinger>(), 3);
             recipe.AddIngredient(ModContent.ItemType<SparkingBatFoot>(), 3);
             recipe.AddIngredient(ModContent.ItemType<FlareSerpentScale>(), 3);

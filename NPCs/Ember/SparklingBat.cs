@@ -1,6 +1,7 @@
 ﻿using Azercadmium.Aaa;
 using Azercadmium.Items.Ember;
 using Microsoft.Xna.Framework;
+using System.Threading;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -11,8 +12,9 @@ namespace Azercadmium.NPCs.Ember
     {
         public override string Texture => "Terraria/NPC_" + NPCID.JungleBat;
 
-        public override void SetStaticDefaults() => Main.npcFrameCount[npc.type] = Main.npcFrameCount[NPCID.JungleBat];
-
+        public override void SetStaticDefaults() { Main.npcFrameCount[npc.type] = Main.npcFrameCount[NPCID.JungleBat];
+            DisplayName.SetDefault("Crackling Bat");  
+        }
         public override void SetDefaults()
         {
             npc.CloneDefaults(NPCID.JungleBat);
@@ -60,6 +62,12 @@ namespace Azercadmium.NPCs.Ember
                 npc.knockBackResist *= 0.9f;
             }
         }
+        int Timer;
+        public override void AI() {
+            Timer++;
+            if (Timer % 50 == 0)
+                Projectile.NewProjectile(npc.Center, new Vector2(), ModContent.ProjectileType<Projectiles.Ember.CracklingBatProj>(), npc.damage / 6, 0f, Main.myPlayer);
+        }
         public override void OnHitPlayer(Player target, int damage, bool crit) {
             if (Main.rand.Next(2) == 0)
                 target.AddBuff(BuffID.OnFire, 60*Main.rand.Next(4, 9));
@@ -70,6 +78,8 @@ namespace Azercadmium.NPCs.Ember
         public override void NPCLoot() {
             if (Main.rand.NextFloat() < 0.66f)
                 Item.NewItem(npc.getRect(), ModContent.ItemType<SparkingBatFoot>());
+            if (Main.rand.NextFloat() < 0.66f)
+                Item.NewItem(npc.getRect(), ModContent.ItemType<ScorchSap>());
         }
     }
 }

@@ -393,18 +393,6 @@ namespace Azercadmium
 					new List<int> { ModContent.ItemType<Items.Scavenger.SoulofByte>() }, //other
 					$"Use a [i:{ModContent.ItemType<Items.Scavenger.FloppyDisc>()}]."
 				);
-				bossChecklist.Call(
-					"AddBoss",
-					10.5f,
-					new List<int> { ModContent.NPCType<NPCs.Empress.EmpressSlime>()},
-					this,
-					"$Mods.Azercadmium.NPCName.EmpressSlime",
-					(Func<bool>)(() => AzercadmiumWorld.downedEmpress),
-					ModContent.ItemType<Items.Empress.EmpressChalice>(),
-					new List<int> { ModContent.ItemType<Items.Empress.EmpressShard>() }, //collectables
-					new List<int> { ModContent.ItemType<Items.Empress.EmpressShard>() }, //other
-					$"Use a [i:{ModContent.ItemType<Items.Empress.EmpressChalice>()}]."
-				);
 			}
 			JavelinCache = new bool[ProjectileLoader.ProjectileCount];
 			JavelinCache[ProjectileID.JavelinFriendly] = true;
@@ -451,7 +439,6 @@ namespace Azercadmium
             NPCNoEnviroDropsCache[NPCID.WyvernTail] = true;
             NPCNoEnviroDropsCache[NPCID.SlimeSpiked] = true;
             NPCNoEnviroDropsCache[NPCID.BlueSlime] = true;
-            NPCNoEnviroDropsCache[ModContent.NPCType<NPCs.Empress.CrownSlime>()] = true;
             NPCXPCache = new int[NPCLoader.NPCCount];
 			AzercadmiumUtils.Initialize();
 		}
@@ -751,6 +738,13 @@ namespace Azercadmium
 			recipe.AddIngredient(ItemID.FallenStar, 5);
 			recipe.AddTile(TileID.MythrilAnvil);
 			recipe.SetResult(ItemID.LihzahrdPowerCell);
+			recipe.AddRecipe();
+
+            recipe = new ModRecipe(this);
+			recipe.AddRecipeGroup("Wood", 12);
+			recipe.AddIngredient(ItemID.Torch, 5);
+			recipe.AddTile(TileID.Anvils);
+			recipe.SetResult(ItemID.WandofSparking);
 			recipe.AddRecipe();
 		}
 		/*public override void UpdateMusic(ref int music, ref MusicPriority priority)

@@ -1,7 +1,6 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using Azercadmium.Items.Ember;
 using static Terraria.ModLoader.ModContent;
 
 namespace Azercadmium.Items.Ember
@@ -35,10 +34,10 @@ namespace Azercadmium.Items.Ember
 		public override void AddRecipes() {
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.AshBlock, 21);
-			recipe.AddIngredient(ModContent.ItemType<CinderCedar>(), 12);
+			recipe.AddIngredient(ItemType<CinderCedar>(), 12);
 			recipe.AddIngredient(ItemID.HellstoneBar, 2);
-			recipe.AddIngredient(ModContent.ItemType<SparkingBatFoot>(), 8);
-			recipe.AddIngredient(ModContent.ItemType<BurntStinger>(), 5);
+			recipe.AddIngredient(ItemType<ScorchSap>(), 8);
+			recipe.AddIngredient(ItemType<BurntStinger>(), 5);
 			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

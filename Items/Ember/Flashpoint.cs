@@ -8,7 +8,7 @@ namespace Azercadmium.Items.Ember
     public class Flashpoint : ModItem
     {
         public override void SetStaticDefaults() {
-            Tooltip.SetDefault("'Get the flash you need in a dash at Flashpoint!'\nCasts ember sparks that shoot at blinding speeds that face towards your cursor every 1.5 seconds");
+            Tooltip.SetDefault("Does not give you 'cash in a flash' or anything like that\nCasts ember sparks that shoot at blinding speeds that face towards your cursor every 1.5 seconds");
         }
         public override void SetDefaults() {
             item.width = 30;
@@ -34,8 +34,7 @@ namespace Azercadmium.Items.Ember
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(ItemID.SpellTome);
             recipe.AddIngredient(mod.ItemType("CinderCedar"), 11);
-            recipe.AddIngredient(ModContent.ItemType<BurntStinger>(), 2);
-            recipe.AddIngredient(ModContent.ItemType<SparkingBatFoot>());
+            recipe.AddIngredient(ModContent.ItemType<ScorchSap>(), 8);
             recipe.AddIngredient(ItemID.SoulofFright, 15);
             recipe.AddTile(TileID.MythrilAnvil);
             recipe.SetResult(this);

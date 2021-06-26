@@ -40,7 +40,7 @@ namespace Azercadmium.Items.Ember
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ModContent.ItemType<CinderCedar>(), 10);
 			recipe.AddIngredient(ItemID.HellstoneBar, 2);
-			recipe.AddIngredient(ModContent.ItemType<FlareSerpentScale>(), 11);
+			recipe.AddIngredient(ModContent.ItemType<ScorchSap>(), 8);
 			recipe.AddIngredient(ModContent.ItemType<BurntStinger>(), 8);
 			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);

@@ -54,7 +54,7 @@ namespace Azercadmium.Items.Ember
             recipe.AddIngredient(ModContent.ItemType<RevenantShield>());
             recipe.AddIngredient(ItemID.ObsidianSkinPotion, 3);
             recipe.AddIngredient(ItemID.HellstoneBar, 20);
-            recipe.AddIngredient(ModContent.ItemType<CinderCedar>(), 16);
+            recipe.AddIngredient(ModContent.ItemType<ScorchSap>(), 16);
             recipe.AddIngredient(ModContent.ItemType<BurntStinger>(), 9);
             recipe.AddIngredient(ModContent.ItemType<SparkingBatFoot>(), 9);
             recipe.AddIngredient(ModContent.ItemType<FlareSerpentScale>(), 9);

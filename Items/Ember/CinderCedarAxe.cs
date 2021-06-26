@@ -25,7 +25,6 @@ namespace Azercadmium.Items.Ember
 		public override void AddRecipes() {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(mod.ItemType("CinderCedar"), 15);
-			recipe.AddIngredient(ModContent.ItemType<FlareSerpentScale>(), 3);
             recipe.AddIngredient(ItemID.HallowedBar, 2);
             recipe.AddTile(TileID.MythrilAnvil);
             recipe.SetResult(this);
@@ -33,7 +32,6 @@ namespace Azercadmium.Items.Ember
 
             recipe = new ModRecipe(mod);
             recipe.AddIngredient(mod.ItemType("CinderCedar"), 15);
-            recipe.AddIngredient(ModContent.ItemType<FlareSerpentScale>(), 3);
             recipe.AddIngredient(ModContent.ItemType<Darkron.DarkronBar>(), 2);
             recipe.AddTile(TileID.MythrilAnvil);
             recipe.SetResult(this);

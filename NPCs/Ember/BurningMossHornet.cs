@@ -12,8 +12,10 @@ namespace Azercadmium.NPCs.Ember
 {
     public class BurningMossHornet : ModNPC
     {
-        public override void SetStaticDefaults() => Main.npcFrameCount[npc.type] = Main.npcFrameCount[NPCID.Hornet];
-
+        public override void SetStaticDefaults() {
+            Main.npcFrameCount[npc.type] = Main.npcFrameCount[NPCID.Hornet];
+            DisplayName.SetDefault("Cinder Hornet");
+        }
         public override void SetDefaults()
         {
             npc.CloneDefaults(NPCID.Hornet);
@@ -128,6 +130,8 @@ namespace Azercadmium.NPCs.Ember
         public override void NPCLoot() {
             if (Main.rand.NextFloat() < 0.66f)
                 Item.NewItem(npc.getRect(), ModContent.ItemType<BurntStinger>());
+            if (Main.rand.NextFloat() < 0.66f)
+                Item.NewItem(npc.getRect(), ModContent.ItemType<ScorchSap>());
         }
     }
 }
