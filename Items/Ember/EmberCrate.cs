@@ -37,10 +37,7 @@ namespace Azercadmium.Items.Ember
             }
             player.QuickSpawnItem(ModContent.ItemType<EmberGlobber>(), Main.rand.Next(4, 12));
             player.QuickSpawnItem(ItemID.HellstoneBar, Main.rand.Next(4, 12));
-            int rand = Main.rand.Next(4);
-            if (rand < 2 || rand > 2) player.QuickSpawnItem(ModContent.ItemType<BurntStinger>(), Main.rand.Next(1, 6));
-            if (rand < 1 || rand > 1) player.QuickSpawnItem(ModContent.ItemType<SparkingBatFoot>(), Main.rand.Next(1, 6));
-            if (rand == 1 || rand == 2) player.QuickSpawnItem(ModContent.ItemType<SparkingBatFoot>(), Main.rand.Next(1, 6));
+            if (Main.rand.Next(4) < 3) player.QuickSpawnItem(ModContent.ItemType<BurntStinger>(), Main.rand.Next(1, 6));
             player.QuickSpawnItem(ItemID.GoldCoin, Main.rand.Next(2, 10));
         }
     }

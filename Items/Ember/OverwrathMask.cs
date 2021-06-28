@@ -55,9 +55,20 @@ namespace Azercadmium.Items.Ember
             recipe.AddIngredient(ItemID.ObsidianSkinPotion, 3);
             recipe.AddIngredient(ItemID.HellstoneBar, 20);
             recipe.AddIngredient(ModContent.ItemType<ScorchSap>(), 16);
-            recipe.AddIngredient(ModContent.ItemType<BurntStinger>(), 9);
-            recipe.AddIngredient(ModContent.ItemType<SparkingBatFoot>(), 9);
-            recipe.AddIngredient(ModContent.ItemType<FlareSerpentScale>(), 9);
+            recipe.AddIngredient(ItemID.HallowedBar, 12);
+            recipe.AddTile(TileID.TinkerersWorkbench);
+			recipe.SetResult(this); 
+			recipe.AddRecipe(); 
+
+            recipe = new ModRecipe(mod);
+			recipe.AddIngredient(ItemID.ArcticDivingGear);
+            recipe.AddIngredient(ItemID.ObsidianRose);
+            recipe.AddIngredient(ItemID.HandWarmer);
+            recipe.AddIngredient(ModContent.ItemType<RevenantShield>());
+            recipe.AddIngredient(ItemID.ObsidianSkinPotion, 3);
+            recipe.AddIngredient(ItemID.HellstoneBar, 20);
+            recipe.AddIngredient(ModContent.ItemType<ScorchSap>(), 16);
+            recipe.AddIngredient(ModContent.ItemType<Darkron.DarkronBar>(), 12);
             recipe.AddTile(TileID.TinkerersWorkbench);
 			recipe.SetResult(this); 
 			recipe.AddRecipe(); 

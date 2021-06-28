@@ -18,7 +18,7 @@ namespace Azercadmium.NPCs.Ember
 			npc.lifeMax = 300;
 			npc.damage = 40;
 			npc.defense = 5;
-			npc.height = 76;
+			npc.height = 78;
 			npc.width = 20;
 			npc.value = Item.buyPrice(0, 0, 12, 50);
 		}
@@ -458,8 +458,7 @@ namespace Azercadmium.NPCs.Ember
         }
 		public override void NPCLoot() {
 			if (Main.rand.NextFloat() < 0.66f)
-                Item.NewItem(npc.getRect(), ModContent.ItemType<ScorchSap>());
-			Item.NewItem(npc.getRect(), ItemType<FlareSerpentScale>(), Main.rand.Next(1, 3));
+                Item.NewItem(npc.getRect(), ItemType<ScorchSap>());
 		}
 	}
 }

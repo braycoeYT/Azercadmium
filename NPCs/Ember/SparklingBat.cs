@@ -77,8 +77,6 @@ namespace Azercadmium.NPCs.Ember
         }
         public override void NPCLoot() {
             if (Main.rand.NextFloat() < 0.66f)
-                Item.NewItem(npc.getRect(), ModContent.ItemType<SparkingBatFoot>());
-            if (Main.rand.NextFloat() < 0.66f)
                 Item.NewItem(npc.getRect(), ModContent.ItemType<ScorchSap>());
         }
     }

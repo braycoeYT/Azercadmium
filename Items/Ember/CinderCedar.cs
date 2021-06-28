@@ -18,5 +18,12 @@ namespace Azercadmium.Items.Ember
             item.createTile = ModContent.TileType<CinderCedarTile>();
             item.rare = ItemRarityID.Green;
         }
+        public override void AddRecipes()
+        {
+            ModRecipe recipe = new ModRecipe(mod);
+            recipe.AddIngredient(ModContent.ItemType<CinderCedarPlatform>(), 2);
+            recipe.SetResult(this);
+            recipe.AddRecipe();
+        }
     }
 }

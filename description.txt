@@ -3,14 +3,14 @@ DON'T USE THE WIKI! And make sure to get the music mod for music.
 
 [i:3123] Stats:
 ~[i:172]A new biome: The Ember Glades! It can be found under the Jungle in the Underworld.
-~256 Items
-~4 Bosses:
+~241 Items
+~3 Bosses:
 ^1 Prehardmode Boss
-^3 Hardmode Bosses (2 bosses left to rework)
-~42 total NPCs
+^2 Hardmode Bosses (Matrix Scavenger needs reworks)
+~36 total NPCs
 ~2 Town NPCs
 ~34 Tiles
-~37 Buffs
+~36 Buffs
 ~2 Subclasses (Blowpipes/Dart Guns and Javelins)
 ~3 Custom Soundtracks (get the Music mod)
 ~18 Modifiers
@@ -19,16 +19,12 @@ DON'T USE THE WIKI! And make sure to get the music mod for music.
 ~A secret unobtainable joke boss
 ~[i:458]Cross content with: Asteri and Cacti and More 2 Mod.
 
-Update V0.3.0.7: Ember Glades Minor Reworks Update
-~Updated Credits.
-~Renamed Burning Moss Hornet to Cinder Hornet.
-~Renamed Sparking Bat to Crackling Bat.
-~Crackling Bat now spawns projectiles.
-~Changed a lot of Ember Glades recipes.
-~Added Scorch Sap.
-~Removed Empress Slime.
-~Made Wand of Sparking craftable.
-~Changed Flashpoint tooltip.
+Update V0.3.0.8: Update
+~Removed Crackling Bat Foot, Fiery Serpent Scale, and Fiery Flare.
+~Made Overwrath Mask now post 1 mechanical boss.
+~Cinder Cedar Platforms can now be crafted back into Cinder Cedar.
+~Fixed Flare Serpent offset.
+(The main developer is going to be away on vacation for a week, so no updates for a while)
 
 Credits:
 
