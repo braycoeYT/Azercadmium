@@ -18,7 +18,7 @@ namespace Azercadmium.NPCs.Ember
 			npc.lifeMax = 300;
 			npc.damage = 40;
 			npc.defense = 5;
-			npc.height = 78;
+			npc.height = 77;
 			npc.width = 20;
 			npc.value = Item.buyPrice(0, 0, 12, 50);
 		}
@@ -37,24 +37,12 @@ namespace Azercadmium.NPCs.Ember
 		public override void ReceiveExtraAI(BinaryReader reader) {
 			attackCounter = reader.ReadInt32();
 		}
-		/*public override void CustomBehavior() {
-			if (Main.netMode != NetmodeID.MultiplayerClient) {
-				if (attackCounter > 0) {
-					attackCounter--;
-				}
-
-				Player target = Main.player[npc.target];
-				if (attackCounter <= 0 && Vector2.Distance(npc.Center, target.Center) < 200 && Collision.CanHit(npc.Center, 1, 1, target.Center, 1, 1)) {
-					Vector2 direction = (target.Center - npc.Center).SafeNormalize(Vector2.UnitX);
-					direction = direction.RotatedByRandom(MathHelper.ToRadians(10));
-
-					int projectile = Projectile.NewProjectile(npc.Center, direction * 1, ProjectileID.ShadowBeamHostile, 5, 0, Main.myPlayer);
-					Main.projectile[projectile].timeLeft = 300;
-					attackCounter = 500;
-					npc.netUpdate = true;
-				}
-			}
-		}*/
+		int Timer;
+		public override void PostAI() {
+			Timer++;
+			if (Timer % 5 == 0)
+				Projectile.NewProjectile(npc.Center + new Vector2(0, 16), new Vector2(), ModContent.ProjectileType<Projectiles.Ember.FlareSerpentTrail>(), npc.damage / 4, 0f, Main.myPlayer);
+		}
 	}
 	public abstract class FlareSerpent : FlareSerpentWorm
 	{

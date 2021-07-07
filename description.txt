@@ -19,12 +19,12 @@ DON'T USE THE WIKI! And make sure to get the music mod for music.
 ~A secret unobtainable joke boss
 ~[i:458]Cross content with: Asteri and Cacti and More 2 Mod.
 
-Update V0.3.0.8: Update
-~Removed Crackling Bat Foot, Fiery Serpent Scale, and Fiery Flare.
-~Made Overwrath Mask now post 1 mechanical boss.
-~Cinder Cedar Platforms can now be crafted back into Cinder Cedar.
-~Fixed Flare Serpent offset.
-(The main developer is going to be away on vacation for a week, so no updates for a while)
+Update V0.3.0.9: Update
+~Resprited Flare Serpent.
+~Added Glazing Star.
+~Made friendly feather projectile more similar to hostile ones.
+~Resprited Molten Blowpipe, Fiery Pointsword, and Soul of Byte.
+(New boss: around 40-50% done?)
 
 Credits:
 
@@ -35,6 +35,7 @@ Skymanisbtman (Composer, Minor Spriter)
 Slayer (Concepts)
 HBDeus (Spriter)
 Mjoon (Spriter)
+Astrum (Spriter)
 
 Inactive Devs:
 Pufferfish77 (Spriter)
@@ -46,7 +47,6 @@ Koolaidlemonade (Spriter)
 ULTIMATEDQVID (Spriter)
 That One Book Man (Spriter)
 Anonymous Programmer (Coder and Minor Spriter)
-Astrum (Spriter)
 
 Minor Help:
 Math (Minor Wiki)

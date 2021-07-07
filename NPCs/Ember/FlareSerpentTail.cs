@@ -1,5 +1,7 @@
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
+using Terraria.ModLoader;
 
 namespace Azercadmium.NPCs.Ember
 {
@@ -12,7 +14,7 @@ namespace Azercadmium.NPCs.Ember
 			npc.damage = 13;
 			npc.defense = 9;
 			npc.width = 20;
-			npc.height = 40;
+			npc.height = 37;
 		}
 		public override void ScaleExpertStats(int numPlayers, float bossLifeScale) {
 			npc.damage = 26;

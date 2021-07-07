@@ -28,6 +28,9 @@ namespace Azercadmium.Items.Underworld
 			item.autoReuse = true;
 			item.rare = ItemRarityID.Orange;
 		}
+		public override Vector2? HoldoutOffset() {
+			return new Vector2(6, -4);
+		}
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack) {
 			player.AddBuff(mod.BuffType("OutOfBreath"), item.useTime, false);
 			if (type == ProjectileID.Seed || type == ModContent.ProjectileType<Projectiles.Wood.WoodenSeed>())

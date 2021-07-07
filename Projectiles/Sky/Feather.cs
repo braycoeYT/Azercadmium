@@ -1,3 +1,4 @@
+using Terraria.ID;
 using Terraria;
 using Terraria.ModLoader;
 
@@ -9,17 +10,16 @@ namespace Azercadmium.Projectiles.Sky
 			DisplayName.SetDefault("Feather");
         }
 		public override void SetDefaults() {
-			projectile.width = 16;
-			projectile.height = 16;
-			projectile.aiStyle = 1;
+			projectile.CloneDefaults(ProjectileID.HarpyFeather);
+			projectile.hostile = false;
 			projectile.friendly = true;
-			projectile.penetrate = 3;
-			projectile.damage = 10;
-			projectile.timeLeft = 3000;
-			projectile.ignoreWater = true;
-			aiType = 1;
 		}
 		public override void Kill(int timeLeft) {
+			for (int i = 0; i < 5; i++) {
+				Dust dust = Dust.NewDustDirect(projectile.position, projectile.width, projectile.height, 116);
+				dust.noGravity = false;
+				dust.scale = 1f;
+			}
 			Collision.HitTiles(projectile.position + projectile.velocity, projectile.velocity, projectile.width, projectile.height);
 		}
 	}   
