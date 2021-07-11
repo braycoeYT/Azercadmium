@@ -14,7 +14,7 @@ namespace Azercadmium.Items.Underworld
 		public override void SetDefaults() {
 			item.width = 60;
 			item.height = 60;
-			item.damage = 42;
+			item.damage = 36;
 			item.useStyle = ItemUseStyleID.SwingThrow;
 			item.useAnimation = 38;
 			item.useTime = 38;
@@ -41,7 +41,9 @@ namespace Azercadmium.Items.Underworld
 			return true;
 		}
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack) {
+			item.useStyle = ItemUseStyleID.SwingThrow;
 			if (player.altFunctionUse == 2) {
+				item.useStyle = 5;
 				speedX /= 6f;
 				speedY /= 6f;
 				type = ModContent.ProjectileType<Projectiles.Underworld.InfernalSpear>();

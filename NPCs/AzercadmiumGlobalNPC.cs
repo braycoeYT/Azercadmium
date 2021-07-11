@@ -863,6 +863,9 @@ namespace Azercadmium.NPCs
 				if (NPC.downedBoss3)
 				Item.NewItem(npc.getRect(), ItemID.Bone, Main.rand.Next(3) + 1);
 			}
+			if (Main.player[Player.FindClosest(npc.position, npc.width, npc.height)].ZoneSkyHeight && npc.type == NPCID.Harpy && Main.rand.Next(75) == 0 && NPC.downedBoss2) {
+				Item.NewItem(npc.getRect(), ItemType<Items.Sky.GlazingStar>());
+			}
 			/*//blowpipes:
 			if (Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)].HasItem(mod.ItemType("FrostBlowpipe")))
 				if (npc.type == NPCID.IceSlime || npc.type == NPCID.SpikedIceSlime || npc.type == mod.NPCType("IcyDiscus")) {

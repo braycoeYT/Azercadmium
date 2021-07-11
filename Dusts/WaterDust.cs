@@ -16,7 +16,7 @@ namespace Azercadmium.Dusts
 		}
 		public override bool Update(Dust dust) {
 			dust.position += dust.velocity;
-			dust.rotation += dust.velocity.X;
+			dust.rotation += dust.velocity.X / 5;
 			dust.scale -= 0.03f;
 			if (dust.scale < 0.5f) {
 				dust.active = false;

@@ -11,10 +11,10 @@ namespace Azercadmium.Items.Aquite
 			Tooltip.SetDefault("Shoots multiple bubbles to the side on swing");
 		}
 		public override void SetDefaults() {
-			item.damage = 124;
+			item.damage = 139;
 			item.melee = true;
-			item.width = 30;
-			item.height = 30;
+			item.width = 38;
+			item.height = 38;
 			item.useTime = 21;
 			item.useAnimation = 21;
 			item.useStyle = ItemUseStyleID.Stabbing;

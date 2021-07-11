@@ -124,6 +124,8 @@ namespace Azercadmium.Items
 				item.damage = 10;
 			if (item.type == ItemID.Blowgun)
 				item.damage = 29;
+			if (item.type == ItemID.PoisonDart)
+				item.damage = 7;
 			if (item.type == ItemID.BoneArrow)
 				item.damage = 10;
 			if (item.type == ItemID.CookedMarshmallow)

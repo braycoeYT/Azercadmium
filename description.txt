@@ -3,7 +3,7 @@ DON'T USE THE WIKI! And make sure to get the music mod for music.
 
 [i:3123] Stats:
 ~[i:172]A new biome: The Ember Glades! It can be found under the Jungle in the Underworld.
-~241 Items
+~239 Items
 ~3 Bosses:
 ^1 Prehardmode Boss
 ^2 Hardmode Bosses (Matrix Scavenger needs reworks)
@@ -13,18 +13,18 @@ DON'T USE THE WIKI! And make sure to get the music mod for music.
 ~36 Buffs
 ~2 Subclasses (Blowpipes/Dart Guns and Javelins)
 ~3 Custom Soundtracks (get the Music mod)
-~18 Modifiers
-^11 Weapon Modifiers
-^7 Accessory Modifiers
-~A secret unobtainable joke boss
-~[i:458]Cross content with: Asteri and Cacti and More 2 Mod.
+~18 Modifiers (11 weapon, 7 accessory)
 
-Update V0.3.0.9: Update
-~Resprited Flare Serpent.
-~Added Glazing Star.
-~Made friendly feather projectile more similar to hostile ones.
-~Resprited Molten Blowpipe, Fiery Pointsword, and Soul of Byte.
-(New boss: around 40-50% done?)
+Update V0.3.1: Update
+~Decreased Infernal Javelin damage.
+~Resprited some parts of the Aquite set.
+~Removed Tenderizer, Pulverizer, and Demonite Javelin.
+~Resprited Crimtane Javelin.
+~Resprited Barfarang and Pukerang.
+~Made Glazing Sky obtainable.
+~Made the Stats section of the mod description shorter, removing some unnecessary details.
+~Resprited Titan Blast.
+(New Boss: around 60%-80% done)
 
 Credits:
 

@@ -12,8 +12,8 @@ namespace Azercadmium.Items.Aquite
 		public override void SetDefaults() {
 			item.damage = 152;
 			item.melee = true;
-			item.width = 38;
-			item.height = 38;
+			item.width = 86;
+			item.height = 86;
 			item.useTime = 12;
 			item.useAnimation = 12;
 			item.useStyle = ItemUseStyleID.SwingThrow;
