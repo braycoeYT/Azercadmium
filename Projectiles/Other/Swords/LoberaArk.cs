@@ -1,6 +1,7 @@
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.ID;
+using Microsoft.Xna.Framework;
 
 namespace Azercadmium.Projectiles.Other.Swords
 {
@@ -17,8 +18,8 @@ namespace Azercadmium.Projectiles.Other.Swords
 		int Timer;
 		public override void AI() {
 			Timer++;
-			if (Timer % 60 == 10)
-				Projectile.NewProjectile(projectile.Center, projectile.DirectionTo(Main.MouseWorld) * 10, mod.ProjectileType("LoberaTropicalOrb"), projectile.damage, 1.5f, Main.myPlayer);
+			if (Timer % 5 == 0)
+				Projectile.NewProjectile(new Vector2(Main.MouseWorld.X + Main.rand.Next(-160, 161), Main.player[projectile.owner].position.Y - 400), projectile.DirectionTo(Main.MouseWorld + new Vector2(0, 400)) * 20f, ModContent.ProjectileType<LoberaTropicalOrb>(), (int)(projectile.damage * 0.6f), projectile.knockBack / 4, Main.myPlayer);
 		}
 		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit) {
 			if (target.boss == false)

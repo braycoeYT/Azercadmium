@@ -8,7 +8,7 @@ namespace Azercadmium.Items.Other.Swords
 	public class Lobera : ModItem
 	{
 		public override void SetStaticDefaults() {
-			Tooltip.SetDefault("Hits will slash the enemy's soul, causing their defense to be halved\nAttacks can spawn tropical orbs");
+			Tooltip.SetDefault("Hits will slash the enemy's soul, causing their defense to be halved\nUsage of the sword rains tropical orbs from the sky");
 		}
 		public override void SetDefaults() {
 			item.damage = 101;
@@ -29,14 +29,6 @@ namespace Azercadmium.Items.Other.Swords
 			item.shoot = mod.ProjectileType("LoberaArk");
 			item.shootSpeed = 15f;
 			item.channel = true;
-		}
-		int shootCount;
-		public override bool UseItem(Player player)
-		{
-			shootCount++;
-			if (shootCount % 3 == 0)
-				Projectile.NewProjectile(player.position, item.DirectionTo(Main.MouseWorld) * 10, mod.ProjectileType("LoberaTropicalOrb"), item.damage, item.knockBack / 4, player.whoAmI);
-			return true;
 		}
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{

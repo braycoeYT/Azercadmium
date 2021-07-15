@@ -18,7 +18,7 @@ namespace Azercadmium.Items.Corruption
 			item.useAnimation = 16;
 			item.useStyle = ItemUseStyleID.HoldingUp;
 			item.knockBack = 4.8f;
-			item.value = Item.sellPrice(0, 3, 56, 0);
+			item.value = Item.sellPrice(0, 3, 56);
 			item.rare = ItemRarityID.Pink;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;

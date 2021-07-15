@@ -409,6 +409,7 @@ namespace Azercadmium
 			JavelinCache[ModContent.ProjectileType<Projectiles.Underworld.HungeringJavelin2>()] = true;
 			JavelinCache[ModContent.ProjectileType<Projectiles.Mech.France>()] = true;
             JavelinCache[ModContent.ProjectileType<Projectiles.Ember.CinderCedarJavelin>()] = true;
+            JavelinCache[ModContent.ProjectileType<Projectiles.Crimson.FleshstabJavelin>()] = true;
 			TileEmberGladesCache = new bool[TileLoader.TileCount];
             TileEmberGladesCache[ModContent.TileType<EmberGrass>()] = true;
             TileEmberGladesCache[ModContent.TileType<EmberThornTile>()] = true;
