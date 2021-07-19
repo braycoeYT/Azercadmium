@@ -119,7 +119,7 @@ namespace Azercadmium.NPCs.Dirtball
 				}
 				chat1 = false;
 			}*/
-			npc.velocity = Vector2.Normalize(npc.Center - Main.player[npc.target].Center) * (float)(-3.75f + npc.scale);
+			npc.velocity = Vector2.Normalize(npc.Center - Main.player[npc.target].Center) * (-3.75f + npc.scale);
 			npc.rotation = npc.velocity.X * 0.05f;
 			npc.TargetClosest(true);
 			target = Main.player[npc.target];

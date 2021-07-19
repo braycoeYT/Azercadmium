@@ -3,7 +3,7 @@ DON'T USE THE WIKI! And make sure to get the music mod for music.
 
 [i:3123] Stats:
 ~[i:172]A new biome: The Ember Glades! It can be found under the Jungle in the Underworld.
-~239 Items
+~241 Items
 ~3 Bosses:
 ^1 Prehardmode Boss
 ^2 Hardmode Bosses (Matrix Scavenger needs reworks)
@@ -15,11 +15,10 @@ DON'T USE THE WIKI! And make sure to get the music mod for music.
 ~3 Custom Soundtracks (get the Music mod)
 ~18 Modifiers (11 weapon, 7 accessory)
 
-Update V0.3.1.1: Sorry for a small update
-~Resprited Spectre Scythe.
-~Reworked Lobera.
-~Added Fleshstab Javelin.
-(New Boss: around 61%-71% done)
+Update V0.3.1.2: Fun Flails Update
+~Added Boulderona Chain.
+~Added Sticky Hand.
+(New Boss: around 70-80% done)
 
 Credits:
 
