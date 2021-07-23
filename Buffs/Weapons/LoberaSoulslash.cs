@@ -42,7 +42,7 @@ namespace Azercadmium.Buffs.Weapons
                 dust.scale *= 0.5f + Main.rand.Next(-30, 31) * 0.01f;
             }
             npc.color = Color.LightGoldenrodYellow;
-            if (npc.buffTime[buffIndex] < 10)
+            if (npc.buffTime[buffIndex] < 5)
                 npc.color = safeColor;
         }
     }

@@ -32,6 +32,7 @@ namespace Azercadmium
 		public static bool hasAlertCarnallite;
 		public static bool generatedAquite;
 		public static bool generatedKinoite;
+		public static bool downedJelly;
 		public static int microbiomeTiles;
 		public static bool Devastation => devastation && Main.expertMode;
 		public override void Initialize() {
@@ -51,6 +52,7 @@ namespace Azercadmium
 			hasAlertCarnallite = false;
 			generatedAquite = false;
 			generatedKinoite = false;
+			downedJelly = false;
 		}
 		public override TagCompound Save()
         {
@@ -71,7 +73,8 @@ namespace Azercadmium
 				{"devastation", devastation},
 				{"hasAlertCarnallite", hasAlertCarnallite},
 				{"generatedAquite", generatedAquite},
-				{"generatedKinoite", generatedKinoite}
+				{"generatedKinoite", generatedKinoite},
+				{"downedJelly", downedJelly}
 			};
         }
         public override void Load(TagCompound tag) {
@@ -91,6 +94,7 @@ namespace Azercadmium
 			hasAlertCarnallite = tag.GetBool("hasAlertCarnallite");
 			generatedAquite = tag.GetBool("generatedAquite");
 			generatedKinoite = tag.GetBool("generatedKinoite");
+			downedJelly = tag.GetBool("downedJelly");
 		}
 		
 		 public override void NetSend(BinaryWriter writer)
@@ -113,6 +117,7 @@ namespace Azercadmium
 			flags2[4] = devastation;
 			flags2[5] = generatedAquite;
 			flags2[6] = generatedKinoite;
+			flags2[7] = downedJelly;
 			writer.Write(flags2);
 		}
 		
@@ -136,6 +141,7 @@ namespace Azercadmium
 			devastation = flags2[4];
 			generatedAquite = flags2[5];
 			generatedKinoite = flags2[6];
+			downedJelly = flags2[7];
 		}
 		public override void ModifyWorldGenTasks(List<GenPass> tasks, ref float totalWeight)
 		{

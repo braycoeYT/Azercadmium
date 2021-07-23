@@ -567,17 +567,5 @@ namespace Azercadmium.NPCs.Dirtball
 			}
 			AzercadmiumWorld.downedDirtball = true;
 		}
-		public override float SpawnChance(NPCSpawnInfo spawnInfo) {
-			bool canSpawn = false;
-			int playerCount;
-			for (playerCount = 0; playerCount < 255; playerCount++) {
-				if (Main.player[playerCount].statLifeMax2 >= 300) {
-					canSpawn = true;
-				}
-			}
-			if (!AzercadmiumWorld.downedDirtball && Main.dayTime && canSpawn)
-			    return 0.000025f; //0.00005
-			return 0f;
-        }
 	}
 }

@@ -191,7 +191,7 @@ namespace Azercadmium
         /// <summary>
         /// Color for items with a rarity of 12
         /// </summary>
-        public static readonly Color Magenta = new Color(255, 10, 255);
+        public static readonly Color Magenta = new Color(255, 0, 255);
 
         [Obsolete("Replaced with magenta")]
         public static readonly Color ForestGreen = new Color(11, 102, 35);
@@ -367,7 +367,19 @@ namespace Azercadmium
 					ModContent.ItemType<Items.Dirtball.CreepyMud>(),
 					new List<int> { ModContent.ItemType<Items.Dirtball.MuddyGreatsword>() }, //collectables
 					new List<int> { ModContent.ItemType<Items.Dirtball.MuddyGreatsword>()}, //other
-					$"Dirtball has an extremely low chance of spawning if not defeated and any player's max health is 300 or more. It can also be manually summoned with a [i:{ModContent.ItemType<Items.Dirtball.CreepyMud>()}], which can be crafted or rarely dropped from enemies."
+					$"Use a [i:{ModContent.ItemType<Items.Dirtball.CreepyMud>()}] (Green Carnallite can be found in the jungle and can be mined after the Eye of Cthulhu is defeated)."
+				);
+                bossChecklist.Call(
+					"AddBoss",
+					5.75f,
+					new List<int> { ModContent.NPCType<NPCs.Jelly.EldritchJellyfish>() },
+					this,
+					"$Mods.Azercadmium.NPCName.EldritchJellyfish",
+					(Func<bool>)(() => AzercadmiumWorld.downedJelly),
+					ModContent.ItemType<Items.Jelly.EldritchBell>(),
+					new List<int> { ModContent.ItemType<Items.Jelly.EerieBell>() }, //collectables
+					new List<int> { ModContent.ItemType<Items.Jelly.EerieBell>(), ModContent.ItemType<Items.Jelly.OtherworldlyFang>() }, //other
+					$"Use a [i:{ModContent.ItemType<Items.Jelly.EldritchBell>()}] in the ocean biome."
 				);
 				bossChecklist.Call(
 					"AddBoss",
@@ -383,7 +395,7 @@ namespace Azercadmium
 				);
 				bossChecklist.Call(
 					"AddBoss",
-					9.25f,
+					8.5f,
 					new List<int> { ModContent.NPCType<NPCs.Scavenger.MatrixScavenger>() },
 					this,
 					"$Mods.Azercadmium.NPCName.MatrixScavenger",

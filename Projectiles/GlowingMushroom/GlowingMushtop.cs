@@ -32,7 +32,7 @@ namespace Azercadmium.Projectiles.GlowingMushroom
 		public override bool MinionContactDamage() {
 			return false;
 		}
-		int Timer;
+		int Timer = Main.rand.Next(0, 180);
 		public override void AI() {
 			Timer++;
 			Player player = Main.player[projectile.owner];
@@ -78,7 +78,7 @@ namespace Azercadmium.Projectiles.GlowingMushroom
 			#endregion
 
 			#region Find target
-			float distanceFromTarget = 700f;
+			float distanceFromTarget = 911f;
 			Vector2 targetCenter = projectile.position;
 			bool foundTarget = false;
 
@@ -116,7 +116,7 @@ namespace Azercadmium.Projectiles.GlowingMushroom
 
 			#region Movement
 
-			float speed = 8f;
+			float speed = 9f;
 			float inertia = 20f;
 			if (foundTarget)
 			{
@@ -149,16 +149,17 @@ namespace Azercadmium.Projectiles.GlowingMushroom
             #endregion
 
             #region Projectile
-			Vector2 projDir = Vector2.Normalize(targetCenter - projectile.Center) * 13;
-			if (Timer % 60 == 0 && foundTarget)
-			Projectile.NewProjectile(projectile.Center, projDir, mod.ProjectileType("GlowingMushroomBolt"), 10, 3, Main.myPlayer);
+			Vector2 projDir = Vector2.Normalize(targetCenter - projectile.Center) * 1;
+			if (Timer % 180 == 0 && foundTarget)
+				for (int i = 0; i < 6; i++)
+					Projectile.NewProjectile(projectile.Center, new Vector2(0, -6).RotatedByRandom(0.5f), ProjectileType<GlowingMushroomSpore>(), projectile.damage, projectile.knockBack, Main.myPlayer);
 
 			#endregion
 
             #region Animation and visuals
             projectile.rotation = projectile.velocity.X * 0.05f;
 
-			int frameSpeed = 8;
+			int frameSpeed = 4;
 			projectile.frameCounter++;
 			if (projectile.frameCounter >= frameSpeed) {
 				projectile.frameCounter = 0;

@@ -32,7 +32,7 @@ namespace Azercadmium.Projectiles.Mushroom
 		public override bool MinionContactDamage() {
 			return false;
 		}
-		int Timer;
+		int Timer = Main.rand.Next(0, 180);
 		public override void AI() {
 			Timer++;
 			Player player = Main.player[projectile.owner];
@@ -78,7 +78,7 @@ namespace Azercadmium.Projectiles.Mushroom
 			#endregion
 
 			#region Find target
-			float distanceFromTarget = 700f;
+			float distanceFromTarget = 900f;
 			Vector2 targetCenter = projectile.position;
 			bool foundTarget = false;
 
@@ -149,16 +149,17 @@ namespace Azercadmium.Projectiles.Mushroom
             #endregion
 
             #region Projectile
-			Vector2 projDir = Vector2.Normalize(targetCenter - projectile.Center) * 10;
-			if (Timer % 120 == 0 && foundTarget)
-			Projectile.NewProjectile(projectile.Center, projDir, mod.ProjectileType("MushroomBolt"), projectile.damage, projectile.knockBack, Main.myPlayer);
+			Vector2 projDir = Vector2.Normalize(targetCenter - projectile.Center) * 1;
+			if (Timer % 180 == 0 && foundTarget)
+				for (int i = 0; i < 5; i++)
+					Projectile.NewProjectile(projectile.Center, new Vector2(0, -5).RotatedByRandom(0.5f), ProjectileType<MushroomSpore>(), projectile.damage, projectile.knockBack, Main.myPlayer);
 
 			#endregion
 
             #region Animation and visuals
             projectile.rotation = projectile.velocity.X * 0.05f;
 
-			int frameSpeed = 8;
+			int frameSpeed = 4;
 			projectile.frameCounter++;
 			if (projectile.frameCounter >= frameSpeed) {
 				projectile.frameCounter = 0;

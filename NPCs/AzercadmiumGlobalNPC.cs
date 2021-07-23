@@ -1,7 +1,5 @@
 using Azercadmium.Aaa;
-using Azercadmium.NPCs.TownNPCs;
 using Microsoft.Xna.Framework;
-using System;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -101,6 +99,7 @@ namespace Azercadmium.NPCs
 				if (damage < 1) {
 					damage = 1;
 				}
+				Lighting.AddLight(npc.Center, new Vector3(0.63f, 0.69f, 2.39f));
 			}
 		}
 		public override void DrawEffects(NPC npc, ref Color drawColor) {
@@ -215,10 +214,6 @@ namespace Azercadmium.NPCs
 			if (npc.type == NPCID.Derpling || npc.type == NPCID.GiantTortoise || npc.type == NPCID.GiantFlyingFox || npc.type == NPCID.AngryTrapper || npc.type == NPCID.Arapaima) {
 				if (Main.rand.NextFloat() < .01f)
 					Item.NewItem(npc.getRect(), mod.ItemType("VenomousPill"));
-			}
-			if (!AzercadmiumWorld.downedDirtball) {
-				if (Main.rand.NextFloat() < .001f && npc.lifeMax > 5)
-					Item.NewItem(npc.getRect(), ItemType<Items.Dirtball.CreepyMud>());
 			}
 			if (npc.type == NPCID.JungleBat || npc.type == NPCID.CaveBat || npc.type == NPCID.IceBat) {
 				if (Main.rand.NextFloat() < .005f)

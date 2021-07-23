@@ -65,6 +65,7 @@ namespace Azercadmium
 		public bool bandofStarpower;
 		public bool bandofMagicRegen;
 		public bool bandofMetal;
+		public bool jellyExpert;
 		int numberShot = 0;
 		public int upgradeHearts;
 		public int upgradeStars;
@@ -119,6 +120,7 @@ namespace Azercadmium
 			bandofStarpower = false;
 			bandofMagicRegen = false;
 			bandofMetal = false;
+			jellyExpert = false;
 			player.statLifeMax2 += upgradeHearts * 25;
 			player.statManaMax2 += upgradeStars * 50;
 			healHurt = 0;
@@ -377,6 +379,8 @@ namespace Azercadmium
 				}
 				player.AddBuff(BuffType<Buffs.Accessories.LifeOverflow>(), 40 + player.buffTime[l]);
 			}
+			if (crit && player.ownedProjectileCounts[ProjectileType<Projectiles.Jelly.JellyExpertProj>()] < 2)
+				Projectile.NewProjectile(player.Center, new Vector2(), ProjectileType<Projectiles.Jelly.JellyExpertProj>(), damage, 1f, Main.myPlayer);
 		}
 		public override void OnHitNPCWithProj(Projectile proj, NPC target, int damage, float knockback, bool crit) {
 			//if (xenicExpert && Main.rand.NextFloat() < .25f) {
@@ -395,6 +399,8 @@ namespace Azercadmium
 				}
 				player.AddBuff(BuffType<Buffs.Accessories.LifeOverflow>(), 35 + player.buffTime[l]);
 			}
+			if (crit && player.ownedProjectileCounts[ProjectileType<Projectiles.Jelly.JellyExpertProj>()] < 2)
+				Projectile.NewProjectile(player.Center, new Vector2(), ProjectileType<Projectiles.Jelly.JellyExpertProj>(), damage, 1f, Main.myPlayer);
 		}
 		public override void OnHitPvp(Item item, Player target, int damage, bool crit) {
 			if (bloodVial && Main.rand.NextFloat() < .08f) {
@@ -410,6 +416,8 @@ namespace Azercadmium
 				}
 				player.AddBuff(BuffType<Buffs.Accessories.LifeOverflow>(), 40 + player.buffTime[l]);
 			}
+			if (crit && player.ownedProjectileCounts[ProjectileType<Projectiles.Jelly.JellyExpertProj>()] < 2)
+				Projectile.NewProjectile(player.Center, new Vector2(), ProjectileType<Projectiles.Jelly.JellyExpertProj>(), damage, 1f, Main.myPlayer);
 		}
 		public override void OnHitPvpWithProj(Projectile proj, Player target, int damage, bool crit) {
 			if (bloodVial && Main.rand.NextFloat() < .08f) {
@@ -425,6 +433,8 @@ namespace Azercadmium
 				}
 				player.AddBuff(BuffType<Buffs.Accessories.LifeOverflow>(), 35 + player.buffTime[l]);
 			}
+			if (crit && player.ownedProjectileCounts[ProjectileType<Projectiles.Jelly.JellyExpertProj>()] < 2)
+				Projectile.NewProjectile(player.Center, new Vector2(), ProjectileType<Projectiles.Jelly.JellyExpertProj>(), damage, 1f, Main.myPlayer);
 		}
 		public override void PostUpdateBuffs() {
 			/*if (player.HasBuff(BuffID.ChaosState) && NPC.CountNPCS(ModContent.NPCType<NPCs.Minibosses.XenicAcidpumper>()) > 0)

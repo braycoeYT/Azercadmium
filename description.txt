@@ -3,22 +3,24 @@ DON'T USE THE WIKI! And make sure to get the music mod for music.
 
 [i:3123] Stats:
 ~[i:172]A new biome: The Ember Glades! It can be found under the Jungle in the Underworld.
-~241 Items
+~258 Items
 ~3 Bosses:
 ^1 Prehardmode Boss
 ^2 Hardmode Bosses (Matrix Scavenger needs reworks)
-~36 total NPCs
+~41 total NPCs
 ~2 Town NPCs
 ~34 Tiles
-~36 Buffs
+~38 Buffs
 ~2 Subclasses (Blowpipes/Dart Guns and Javelins)
 ~3 Custom Soundtracks (get the Music mod)
 ~18 Modifiers (11 weapon, 7 accessory)
 
-Update V0.3.1.2: Fun Flails Update
-~Added Boulderona Chain.
-~Added Sticky Hand.
-(New Boss: around 70-80% done)
+Update V0.3.1.3:
+~Added Sporophyte.
+~Readded and reworked the Mushtop Staff and Glowing Mushtop Staff.
+~Creepy Mud no longer drops from enemies, and dirtball no longer spawns rarely.
+~Added a new boss: the Eldritch Jellyfish! After Skeletron is defeated, a mysterious new jellyfish begins spawning in the ocean and underground...
+Update 0.3 is now fully complete.
 
 Credits:
 
