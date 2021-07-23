@@ -5,8 +5,8 @@ DON'T USE THE WIKI! And make sure to get the music mod for music.
 ~[i:172]A new biome: The Ember Glades! It can be found under the Jungle in the Underworld.
 ~258 Items
 ~3 Bosses:
-^1 Prehardmode Boss
-^2 Hardmode Bosses (Matrix Scavenger needs reworks)
+^2 Prehardmode Bosses
+^1 Hardmode Boss (Matrix Scavenger needs reworks)
 ~41 total NPCs
 ~2 Town NPCs
 ~34 Tiles
