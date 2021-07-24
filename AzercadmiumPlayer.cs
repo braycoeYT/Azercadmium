@@ -379,7 +379,7 @@ namespace Azercadmium
 				}
 				player.AddBuff(BuffType<Buffs.Accessories.LifeOverflow>(), 40 + player.buffTime[l]);
 			}
-			if (crit && player.ownedProjectileCounts[ProjectileType<Projectiles.Jelly.JellyExpertProj>()] < 2)
+			if (jellyExpert && crit && player.ownedProjectileCounts[ProjectileType<Projectiles.Jelly.JellyExpertProj>()] < 2)
 				Projectile.NewProjectile(player.Center, new Vector2(), ProjectileType<Projectiles.Jelly.JellyExpertProj>(), damage, 1f, Main.myPlayer);
 		}
 		public override void OnHitNPCWithProj(Projectile proj, NPC target, int damage, float knockback, bool crit) {
@@ -399,7 +399,7 @@ namespace Azercadmium
 				}
 				player.AddBuff(BuffType<Buffs.Accessories.LifeOverflow>(), 35 + player.buffTime[l]);
 			}
-			if (crit && player.ownedProjectileCounts[ProjectileType<Projectiles.Jelly.JellyExpertProj>()] < 2)
+			if (jellyExpert && crit && player.ownedProjectileCounts[ProjectileType<Projectiles.Jelly.JellyExpertProj>()] < 2)
 				Projectile.NewProjectile(player.Center, new Vector2(), ProjectileType<Projectiles.Jelly.JellyExpertProj>(), damage, 1f, Main.myPlayer);
 		}
 		public override void OnHitPvp(Item item, Player target, int damage, bool crit) {
@@ -416,7 +416,7 @@ namespace Azercadmium
 				}
 				player.AddBuff(BuffType<Buffs.Accessories.LifeOverflow>(), 40 + player.buffTime[l]);
 			}
-			if (crit && player.ownedProjectileCounts[ProjectileType<Projectiles.Jelly.JellyExpertProj>()] < 2)
+			if (jellyExpert && crit && player.ownedProjectileCounts[ProjectileType<Projectiles.Jelly.JellyExpertProj>()] < 2)
 				Projectile.NewProjectile(player.Center, new Vector2(), ProjectileType<Projectiles.Jelly.JellyExpertProj>(), damage, 1f, Main.myPlayer);
 		}
 		public override void OnHitPvpWithProj(Projectile proj, Player target, int damage, bool crit) {
@@ -433,7 +433,7 @@ namespace Azercadmium
 				}
 				player.AddBuff(BuffType<Buffs.Accessories.LifeOverflow>(), 35 + player.buffTime[l]);
 			}
-			if (crit && player.ownedProjectileCounts[ProjectileType<Projectiles.Jelly.JellyExpertProj>()] < 2)
+			if (jellyExpert && crit && player.ownedProjectileCounts[ProjectileType<Projectiles.Jelly.JellyExpertProj>()] < 2)
 				Projectile.NewProjectile(player.Center, new Vector2(), ProjectileType<Projectiles.Jelly.JellyExpertProj>(), damage, 1f, Main.myPlayer);
 		}
 		public override void PostUpdateBuffs() {
