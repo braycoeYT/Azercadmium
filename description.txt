@@ -15,17 +15,12 @@ DON'T USE THE WIKI! And make sure to get the music mod for music.
 ~3 Custom Soundtracks (get the Music mod)
 ~18 Modifiers (11 weapon, 7 accessory)
 
-Update V0.3.1.3:
-~Added Sporophyte.
-~Readded and reworked the Mushtop Staff and Glowing Mushtop Staff.
-~Creepy Mud no longer drops from enemies, and dirtball no longer spawns rarely.
-~Added a new boss: the Eldritch Jellyfish! After Skeletron is defeated, a mysterious new jellyfish begins spawning in the ocean and underground...
-Update 0.3 is now fully complete.
+Update V0.3.1.5: Bugfixes and Balancing
+~Fixed Cinder Cedar Bow having the same use speed with both left and right clicking.
+~Fixed the Jelly Bit projectile being upside down.
+~Fixed the Jelly Staff's Mini Jellies not attacking when in tiles.
+~Eldritch Jellyfish's expert drop now has a constant damage value instead of using the player's current weapon's damage.
 
-Update V0.3.1.4: Quick Bug Fixes
-~Resprited Eldritch Jelly map icon.
-~Fixed an important bug.
-~Changed the logo back to the cave form.
 
 Credits:
 
