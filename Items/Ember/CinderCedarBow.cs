@@ -41,8 +41,8 @@ namespace Azercadmium.Items.Ember
             item.useAmmo = AmmoID.Arrow;
             item.shoot = ProjectileID.WoodenArrowFriendly;
             item.shootSpeed = 12;
-            item.useTime = 20;
-            item.useAnimation = 20;
+            item.useTime = 19;
+            item.useAnimation = 19;
             item.useStyle = ItemUseStyleID.HoldingOut;
             item.UseSound = SoundID.Item5;
             item.rare = ItemRarityID.Orange;
@@ -70,16 +70,16 @@ namespace Azercadmium.Items.Ember
         }
         public override bool CanUseItem(Player player)
         {
-            if (player.altFunctionUse == 1)
+            if (player.altFunctionUse == 2)
             {
-                item.useTime = 19;
-                item.useAnimation = 19;
+                item.useTime = 34;
+                item.useAnimation = 34;
                 item.shootSpeed = 12.12f;
             }
             else
             {
-                item.useTime = 34;
-                item.useAnimation = 34;
+                item.useTime = 19;
+                item.useAnimation = 19;
                 item.shootSpeed = 11.11f;
             }
             return true;
@@ -102,11 +102,17 @@ namespace Azercadmium.Items.Ember
         {
             if (player.altFunctionUse == 2)
             {
+                item.useTime = 34;
+                item.useAnimation = 34;
                 Vector2 velocity = new Vector2(speedX, speedY);
                 int p = Projectile.NewProjectile(position + new Vector2(0, 10).RotatedBy(velocity.ToRotation() + MathHelper.Pi), velocity, type, damage, knockBack, player.whoAmI);
                 Main.projectile[p].noDropItem = true;
                 Projectile.NewProjectile(position + new Vector2(0, 10).RotatedBy(velocity.ToRotation()), velocity, type, damage, knockBack, player.whoAmI);
                 return false;
+            }
+            else {
+                item.useTime = 19;
+                item.useAnimation = 19;
             }
             return true;
         }

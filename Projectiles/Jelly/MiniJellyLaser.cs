@@ -21,6 +21,7 @@ namespace Azercadmium.Projectiles.Jelly
 			projectile.timeLeft = 10 + (int)(projectile.ai[1] / 1.5f);
 			projectile.usesLocalNPCImmunity = true;
 			projectile.localNPCHitCooldown = 4 + (int)(projectile.ai[1] / 10);
+			projectile.tileCollide = false;
 		}
 		bool a;
 		public override void AI(){
